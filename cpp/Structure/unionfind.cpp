@@ -1,3 +1,7 @@
+#pragma once
+
+#include "../util.hpp"
+
 struct UnionFind {
   vector<int> parent;
   UnionFind (int n) : parent(n, -1) {}

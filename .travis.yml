@@ -1,0 +1,23 @@
+language: cpp
+
+compiler:
+  - g++-4.8
+
+sudo: false
+
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-4.8
+
+install:
+  - g++-4.8 --version
+  - g++-4.8 -std=c++11 cpp/spec.cpp -Wall -o exec
+
+script:
+  - ./exec
+
+notifications:
+  email: false
