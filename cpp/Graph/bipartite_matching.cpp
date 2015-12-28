@@ -1,6 +1,6 @@
 #pragma once
 
-#include <bits/stdc++.h>
+#include "../util.hpp"
 
 // Verified : AOJ GRL_7_A (Bipartite Matching)
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include <bits/stdc++.h>
+#include "../util.hpp"
 
 // Verified : AOJ DSL_1_A (Disjoint Set: Union Find Tree)
 
