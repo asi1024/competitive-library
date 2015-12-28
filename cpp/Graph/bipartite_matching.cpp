@@ -10,7 +10,8 @@ class BipartiteMatching {
     for (int u: g[v]) {
       int w = match[u];
       if (w < 0 || (!used[w] && dfs(w))) {
-        match[v] = u; match[u] = v;
+        match[v] = u;
+        match[u] = v;
         return true;
       }
     }
@@ -28,7 +29,7 @@ public:
     REP(v, V) {
       if (match[v] < 0) {
         fill (ALL(used), 0);
-        if (dfs(v)) res++;
+        if (dfs(v)) ++res;
       }
     }
     return res;
