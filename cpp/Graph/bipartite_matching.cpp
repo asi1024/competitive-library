@@ -1,4 +1,8 @@
+#pragma once
+
 #include "../util.hpp"
+
+// Verified : AOJ GRL_7_A (Bipartite Matching)
 
 class BipartiteMatching {
   int V;
@@ -18,20 +22,33 @@ class BipartiteMatching {
     return false;
   }
 public:
-  BipartiteMatching (int v) : V(v), g(v), match(v), used(v) {}
+  BipartiteMatching(int v) : V(v), g(v), match(v), used(v) {}
   void add_edge(int u, int v) {
     g[u].push_back(v);
     g[v].push_back(u);
   }
   int maximum_matching(void) {
     int res = 0;
-    fill (ALL(match), -1);
-    REP(v, V) {
-      if (match[v] < 0) {
-        fill (ALL(used), 0);
-        if (dfs(v)) ++res;
-      }
+    fill(begin(match), end(match), -1);
+    for (int v = 0; v < V; ++v) {
+      if (match[v] >= 0) continue;
+      fill(begin(used), end(used), 0);
+      if (dfs(v)) ++res;
     }
     return res;
   }
 };
+
+/*
+int main() {
+  int X, Y, E, x, y;
+  cin >> X >> Y >> E;
+  BipartiteMatching mat(X + Y);
+  while (E--) {
+    cin >> x >> y;
+    mat.add_edge(x, X + y);
+  }
+  cout << mat.maximum_matching() << endl;
+  return 0;
+}
+*/
