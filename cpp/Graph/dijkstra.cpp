@@ -4,7 +4,7 @@
 
 // Verified : AOJ GRL_1_A (Single Source Shortest Path)
 
-template<typename Weight>
+template <typename Weight>
 Array<Weight> dijkstra(Graph<Weight> &g, int s) {
   const Weight INF = 1e9;
   Array<Weight> d(g.size(), INF);

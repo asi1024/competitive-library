@@ -4,7 +4,7 @@
 
 // Verified : AOJ DSL_2_A (Range Minimum Query)
 
-template<typename T>
+template <typename T>
 class SegmentTree {
   using func_t = function<T(T, T)>;
 private:
