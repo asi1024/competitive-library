@@ -1,12 +1,14 @@
-#include <bits/stdc++.h>
+#pragma once
 
-using namespace std;
+#include "../util.hpp"
+
+// Verified : AOJ DSL_2_B (Range Sum Query)
 
 template <typename T>
-struct BIT {
+struct FenwickTree {
   int n;
   vector<T> data;
-  BIT(int n) : n(n), data(n, 0) {}
+  FenwickTree(int n) : n(n), data(n, 0) {}
   void update(int i, T value) {
     for (; i < n; i |= i+1) data[i] += value;
   }
@@ -19,7 +21,7 @@ struct BIT {
 
 template <typename T>
 struct RARS {
-  BIT<T> bit1, bit2;
+  FenwickTree<T> bit1, bit2;
   RARS(int n) : bit1(n+1), bit2(n+1) {}
   void add(int fr, int to, T val) {
     bit1.update(fr, -val * fr);
@@ -38,7 +40,7 @@ struct RARS {
 int main() {
   int n, q, com, x, y;
   cin >> n >> q;
-  BIT<int> bit(n+1);
+  FenwickTree<int> bit(n+1);
   while (q--) {
     cin >> com >> x >> y;
     if (com) cout << bit.sum(y) - bit.sum(x-1) << endl;

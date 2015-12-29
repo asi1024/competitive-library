@@ -1,5 +1,6 @@
 #include "Structure/unionfind.cpp"
 #include "Structure/segment_tree.cpp"
+#include "Structure/fenwick_tree.cpp"
 #include "Graph/dijkstra.cpp"
 #include "Graph/bipartite_matching.cpp"
 #include "template.cpp"
