@@ -2,8 +2,6 @@
 
 #include "../util.hpp"
 
-// Verified : AOJ DSL_1_A (Disjoint Set: Union Find Tree)
-
 struct UnionFind {
   vector<int> p;
   UnionFind (int n) : p(n, -1) {}
@@ -19,6 +17,7 @@ struct UnionFind {
   }
 };
 
+// Verified : AOJ DSL_1_A (Disjoint Set: Union Find Tree)
 /*
 int main() {
   int n, q, com, x, y;

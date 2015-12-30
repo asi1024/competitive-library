@@ -2,10 +2,8 @@
 
 #include "Graph.hpp"
 
-// Verified : AOJ GRL_1_A (Single Source Shortest Path)
-
 template <typename Weight>
-Array<Weight> dijkstra(Graph<Weight> &g, int s) {
+Array<Weight> dijkstra(const Graph<Weight> &g, int s) {
   const Weight INF = 1e9;
   Array<Weight> d(g.size(), INF);
   d[s] = 0;
@@ -26,6 +24,7 @@ Array<Weight> dijkstra(Graph<Weight> &g, int s) {
   return d;
 }
 
+// Verified : AOJ GRL_1_A (Single Source Shortest Path)
 /*
 int main() {
   int V, E, r, s, t, d;

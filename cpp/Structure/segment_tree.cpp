@@ -2,8 +2,6 @@
 
 #include "../util.hpp"
 
-// Verified : AOJ DSL_2_A (Range Minimum Query)
-
 template <typename T>
 class SegmentTree {
   using func_t = function<T(T, T)>;
@@ -35,6 +33,7 @@ public:
   }
 };
 
+// Verified : AOJ DSL_2_A (Range Minimum Query)
 /*
 int main() {
   int n, q, com, x, y;

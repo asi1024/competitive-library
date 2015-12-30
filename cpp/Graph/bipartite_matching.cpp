@@ -2,8 +2,6 @@
 
 #include "../util.hpp"
 
-// Verified : AOJ GRL_7_A (Bipartite Matching)
-
 class BipartiteMatching {
   int V;
   vector<vector<int>> g;
@@ -39,6 +37,7 @@ public:
   }
 };
 
+// Verified : AOJ GRL_7_A (Bipartite Matching)
 /*
 int main() {
   int X, Y, E, x, y;

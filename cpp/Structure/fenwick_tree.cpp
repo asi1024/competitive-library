@@ -2,8 +2,6 @@
 
 #include "../util.hpp"
 
-// Verified : AOJ DSL_2_B (Range Sum Query)
-
 template <typename T>
 struct FenwickTree {
   int n;
@@ -36,6 +34,7 @@ struct RARS {
   }
 };
 
+// Verified : AOJ DSL_2_B (Range Sum Query)
 /*
 int main() {
   int n, q, com, x, y;
