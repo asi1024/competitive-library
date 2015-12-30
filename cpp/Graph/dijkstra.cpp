@@ -7,7 +7,7 @@ Array<Weight> dijkstra(const Graph<Weight> &g, int s) {
   const Weight INF = 1e9;
   Array<Weight> d(g.size(), INF);
   d[s] = 0;
-  typedef pair<Weight,int> P;
+  using P = pair<Weight,int>;
   priority_queue<P, vector<P>, greater<P>> que;
   que.push(P(0, s));
   while (!que.empty()) {

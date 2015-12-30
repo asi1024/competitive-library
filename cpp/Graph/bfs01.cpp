@@ -7,7 +7,7 @@ Array<Weight> bfs01(const Graph<Weight> &g, int s) {
   const Weight INF = 1e9;
   Array<Weight> d(g.size(), INF);
   d[s] = 0;
-  typedef pair<Weight,int> P;
+  using P = pair<Weight,int>;
   deque<P> que;
   que.push_back(P(0, s));
   while (!que.empty()) {
