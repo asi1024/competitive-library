@@ -2,10 +2,24 @@
 
 #include "../util.hpp"
 
+/*
 template <typename Weight>
 struct Edge{
   int from, to; Weight cost;
   Edge(int s, int t, Weight c) : from(s), to(t), cost(c) {}
+};
+*/
+
+using Flow = int;
+
+template <typename Weight>
+struct Edge{
+  int from, to;
+  Flow cap; int rev;
+  Weight cost;
+  Edge(int s, int t, Weight c) : from(s), to(t), cost(c) {}
+  Edge(int s, int t, Flow f, int r, Weight c) :
+    from(s), to(t), cap(f), rev(r), cost(c) {}
 };
 
 template <typename Weight> using Edges = vector<Edge<Weight>>;
@@ -15,4 +29,10 @@ template <typename Weight> using Array = vector<Weight>;
 template <typename Weight>
 void add_edge(Graph<Weight> &g, int from, int to, Weight cost) {
   g[from].push_back(Edge<Weight>(from, to, cost));
+}
+
+template <typename Weight>
+void add_edge(Graph<Weight> &g, int from, int to, Flow cap, Weight cost) {
+  g[from].push_back(Edge<Weight>(from, to, cap, (int)g[to].size(), cost));
+  g[to].push_back(Edge<Weight>(to, from, 0, (int)g[from].size() - 1, -cost));
 }

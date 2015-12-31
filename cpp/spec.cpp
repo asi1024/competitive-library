@@ -4,5 +4,6 @@
 #include "Graph/dijkstra.cpp"
 #include "Graph/spfa.cpp"
 #include "Graph/bfs01.cpp"
+#include "Graph/min_cost_flow.cpp"
 #include "Graph/bipartite_matching.cpp"
 #include "template.cpp"
