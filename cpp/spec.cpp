@@ -1,6 +1,7 @@
 #include "Structure/unionfind.cpp"
 #include "Structure/segment_tree.cpp"
 #include "Structure/fenwick_tree.cpp"
+#include "Structure/starry_sky_tree.cpp"
 #include "Graph/Graph.hpp"
 #include "Graph/dijkstra.cpp"
 #include "Graph/spfa.cpp"
