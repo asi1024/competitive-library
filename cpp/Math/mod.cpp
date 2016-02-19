@@ -5,26 +5,23 @@ struct Mod {
   Mod () : n(0) {;}
   Mod (int n) : n(n) { if (n >= mod) n %= mod; }
   operator int() { return n; }
+  bool operator==(const Mod &a) { return n == a.n; }
+  Mod operator+=(const Mod &a) { n += a.n; if (n >= mod) n -= mod; return *this; }
+  Mod operator-=(const Mod &a) { n -= a.n; if (n < 0) n += mod; return *this; }
+  Mod operator*=(const Mod &a) { n = ((long long)n * a.n) % mod; return *this; }
 };
 
-bool operator==(Mod a, Mod b) { return a.n == b.n; }
-Mod operator+=(Mod &a, Mod b) { a.n += b.n; if (a.n >= mod) a.n -= mod; return a; }
-Mod operator-=(Mod &a, Mod b) { a.n -= b.n; if (a.n < 0) a.n += mod; return a; }
-Mod operator*=(Mod &a, Mod b) { a.n = ((long long)a.n * b.n) % mod; return a; }
-Mod operator+(Mod a, Mod b) { return a += b; }
-Mod operator-(Mod a, Mod b) { return a -= b; }
-Mod operator*(Mod a, Mod b) { return a *= b; }
-Mod operator^(Mod a, int n) {
+int inv(int a, int p) { return (a == 1 ? 1 : (1 - p * inv(p%a, a)) / a + p); }
+Mod operator+(Mod a, const Mod &b) { return a += b; }
+Mod operator-(Mod a, const Mod &b) { return a -= b; }
+Mod operator*(Mod a, const Mod &b) { return a *= b; }
+Mod operator/(Mod a, Mod b) { return a * Mod(inv(b, mod)); }
+Mod operator^(const Mod &a, int n) {
   if (n == 0) return Mod(1);
   Mod res = (a * a) ^ (n / 2);
   if (n % 2) res = res * a;
   return res;
 }
-
-int inv(int a, int p) {
-  return (a == 1 ? 1 : (1 - p * inv(p%a, a)) / a + p);
-}
-Mod operator/(Mod a, Mod b) { return a * Mod(inv(b, mod)); }
 
 #define MAX_N 1024000
 
