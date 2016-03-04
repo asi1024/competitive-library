@@ -27,7 +27,6 @@ struct Circle {
 };
 
 Line to_line(Segment s) { return Line(s.a, s.b); }
-Segment to_segment(Line l) { return Segment(l.a, l.b); }
 
 // counter clockwise
 int ccw (Point a, Point b, Point c) {
