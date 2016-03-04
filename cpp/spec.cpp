@@ -19,6 +19,8 @@
 #include "Geometry/distance.cpp"
 #include "Geometry/intersect_circle.cpp"
 
+#include "String/rolling_hash.cpp"
+
 #include "template.cpp"
 
 void spec() {
