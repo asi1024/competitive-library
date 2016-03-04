@@ -14,5 +14,6 @@
 #include "Math/mod.cpp"
 
 #include "Geometry/Geometry.hpp"
+#include "Geometry/intersect.cpp"
 
 #include "template.cpp"
