@@ -15,5 +15,6 @@
 
 #include "Geometry/Geometry.hpp"
 #include "Geometry/intersect.cpp"
+#include "Geometry/distance.cpp"
 
 #include "template.cpp"
