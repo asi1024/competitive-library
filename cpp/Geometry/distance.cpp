@@ -17,7 +17,7 @@ ld dist_ls(Line l, Segment s) {
 }
 
 ld dist_sp(Segment s, Point p) {
-  Point r = proj(to_line(s), p);
+  Point r = proj(Line(s), p);
   if (isis_sp(s, r)) return abs(r - p);
   return min(abs(s.a - p), abs(s.b - p));
 }

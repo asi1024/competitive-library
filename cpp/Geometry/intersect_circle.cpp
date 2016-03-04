@@ -29,7 +29,7 @@ vector<Point> is_lc(Circle c, Line l){
 }
 
 vector<Point> is_sc(Circle c, Segment s){
-  vector<Point> v = is_lc(c, to_line(s)), res;
+  vector<Point> v = is_lc(c, Line(s)), res;
   for (Point p : v)
     if (isis_sp(s, p)) res.push_back(p);
   return res;
