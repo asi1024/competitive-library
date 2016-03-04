@@ -1,19 +1,25 @@
 #pragma once
 
+using ll = long long;
+
 const int mod = 1000000007;
 
 struct Mod {
   int n;
   Mod () : n(0) {;}
-  Mod (int n) : n(n) { if (n >= mod) n %= mod; }
+  Mod (int m) : n(m) {
+    if (n >= mod) n %= mod;
+    else if (n < 0) n = (n % mod + mod) % mod;
+  }
   operator int() { return n; }
   bool operator==(const Mod &a) { return n == a.n; }
   Mod operator+=(const Mod &a) { n += a.n; if (n >= mod) n -= mod; return *this; }
   Mod operator-=(const Mod &a) { n -= a.n; if (n < 0) n += mod; return *this; }
-  Mod operator*=(const Mod &a) { n = ((long long)n * a.n) % mod; return *this; }
+  Mod operator*=(const Mod &a) { n = (ll(n) * a.n) % mod; return *this; }
 };
 
-int inv(int a, int p) { return (a == 1 ? 1 : (1 - p * inv(p%a, a)) / a + p); }
+ll inv(ll a, ll p) { return (a == 1 ? 1 : (1 - p * inv(p%a, a)) / a + p); }
+
 Mod operator+(Mod a, const Mod &b) { return a += b; }
 Mod operator-(Mod a, const Mod &b) { return a -= b; }
 Mod operator*(Mod a, const Mod &b) { return a *= b; }
