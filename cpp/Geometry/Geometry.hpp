@@ -1,0 +1,26 @@
+#pragma once
+
+#include "../util.hpp"
+
+using ld = long double;
+using Point = complex<ld>;
+using Polygon = vector<Point>;
+
+const ld eps = 1e-9;
+
+ld dot(Point a, Point b) { return real(conj(a) * b); }
+ld cross(Point a, Point b) { return imag(conj(a) * b); }
+
+struct Line { Point a, b; };
+struct Segment { Point a, b; };
+struct Circle { Point p; ld r; };
+
+// counter clockwise
+int ccw (Point a, Point b, Point c) {
+  b -= a; c -= a;
+  if (cross(b, c) > eps) return 1;   // counter clockwise
+  if (cross(b, c) < -eps) return -1; // clockwise
+  if (dot(b, c) < 0) return 2;       // c--a--b on line
+  if (norm(b) < norm(c)) return -2;  // a--b--c on line
+  return 0;
+}
