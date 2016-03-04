@@ -1,3 +1,5 @@
+#pragma once
+
 const int mod = 1000000007;
 
 struct Mod {
@@ -23,16 +25,18 @@ Mod operator^(const Mod &a, int n) {
   return res;
 }
 
-const int MAX_N = 1024000;
+const int Factorial_N = 1024000;
 
-Mod fact[MAX_N], factinv[MAX_N];
-void init() {
+Mod fact[Factorial_N], factinv[Factorial_N];
+
+void fact_init() {
   fact[0] = Mod(1); factinv[0] = 1;
-  for (int i = 0; i < MAX_N - 1; ++i) {
+  for (int i = 0; i < Factorial_N - 1; ++i) {
     fact[i+1] = fact[i] * Mod(i+1);
     factinv[i+1] = factinv[i] / Mod(i+1);
   }
 }
+
 Mod comb(int a, int b) {
   return fact[a] * factinv[b] * factinv[a-b];
 }
