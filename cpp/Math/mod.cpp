@@ -23,12 +23,12 @@ Mod operator^(const Mod &a, int n) {
   return res;
 }
 
-#define MAX_N 1024000
+const int MAX_N = 1024000;
 
 Mod fact[MAX_N], factinv[MAX_N];
 void init() {
   fact[0] = Mod(1); factinv[0] = 1;
-  REP(i,MAX_N-1) {
+  for (int i = 0; i < MAX_N - 1; ++i) {
     fact[i+1] = fact[i] * Mod(i+1);
     factinv[i+1] = factinv[i] / Mod(i+1);
   }
