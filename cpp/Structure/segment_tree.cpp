@@ -5,7 +5,6 @@
 template <typename T>
 class SegmentTree {
   using func_t = function<T(T, T)>;
-private:
   int n; T id; vector<T> data; func_t merge;
   T sub(int fr, int to, int node, int la, int ra) {
     if (ra<=fr || to<=la) return id;

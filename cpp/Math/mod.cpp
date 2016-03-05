@@ -4,8 +4,9 @@ using ll = long long;
 
 const int mod = 1000000007;
 
-struct Mod {
+class Mod {
   int n;
+public:
   Mod () : n(0) {;}
   Mod (int m) : n(m) {
     if (n >= mod) n %= mod;

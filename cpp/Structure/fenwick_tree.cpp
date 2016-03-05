@@ -3,9 +3,10 @@
 #include "../util.hpp"
 
 template <typename T>
-struct FenwickTree {
+class FenwickTree {
   int n;
   vector<T> data;
+public:
   FenwickTree(int n) : n(n), data(n, 0) {}
   void update(int i, T value) {
     for (; i < n; i |= i+1) data[i] += value;
@@ -18,8 +19,9 @@ struct FenwickTree {
 };
 
 template <typename T>
-struct RARS {
+class RARS {
   FenwickTree<T> bit1, bit2;
+public:
   RARS(int n) : bit1(n+1), bit2(n+1) {}
   void add(int fr, int to, T val) {
     bit1.update(fr, -val * fr);
