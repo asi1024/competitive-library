@@ -14,6 +14,8 @@
 
 #include "Math/mod.cpp"
 #include "Math/eratosthenes.cpp"
+#include "Math/vector.cpp"
+#include "Math/matrix.cpp"
 
 #include "Geometry/Geometry.hpp"
 #include "Geometry/intersect.cpp"
