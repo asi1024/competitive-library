@@ -17,6 +17,8 @@ struct Edge{
   int from, to;
   Flow cap; int rev;
   Weight cost;
+  Edge(int t) : to(t) {}
+  Edge(int s, int t) : from(s), to(t) {}
   Edge(int s, int t, Weight c) : from(s), to(t), cost(c) {}
   Edge(int s, int t, Flow f, int r) :
     from(s), to(t), cap(f), rev(r) {}
@@ -27,6 +29,11 @@ struct Edge{
 template <typename Weight> using Edges = vector<Edge<Weight>>;
 template <typename Weight> using Graph = vector<Edges<Weight>>;
 template <typename Weight> using Array = vector<Weight>;
+
+template <typename Weight>
+void add_edge(Graph<Weight> &g, int src, int dest) {
+  g[src].push_back(Edge<Weight>(src, dest));
+}
 
 template <typename Weight>
 void add_edge(Graph<Weight> &g, int from, int to, Weight cost) {
