@@ -24,6 +24,7 @@
 #include "Geometry/intersect_circle.cpp"
 
 #include "String/rolling_hash.cpp"
+#include "String/kmp.cpp"
 
 #include "template.cpp"
 
