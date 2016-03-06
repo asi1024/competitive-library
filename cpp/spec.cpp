@@ -26,6 +26,8 @@
 #include "String/rolling_hash.cpp"
 #include "String/kmp.cpp"
 
+#include "Others/cout.cpp"
+
 #include "template.cpp"
 
 void spec() {
