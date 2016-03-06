@@ -2,6 +2,7 @@
 #include "Structure/segment_tree.cpp"
 #include "Structure/fenwick_tree.cpp"
 #include "Structure/starry_sky_tree.cpp"
+#include "Structure/slide_min.cpp"
 
 #include "Graph/Graph.hpp"
 #include "Graph/dijkstra.cpp"
