@@ -31,8 +31,8 @@ template <typename Weight> using Graph = vector<Edges<Weight>>;
 template <typename Weight> using Array = vector<Weight>;
 
 template <typename Weight>
-void add_edge(Graph<Weight> &g, int src, int dest) {
-  g[src].push_back(Edge<Weight>(src, dest));
+void add_edge(Graph<Weight> &g, int src, int to) {
+  g[src].push_back(Edge<Weight>(src, to));
 }
 
 template <typename Weight>
