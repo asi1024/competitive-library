@@ -14,7 +14,7 @@ class RollingHash {
 public:
   RollingHash (string str) : n(str.size()), a(n + 1, 0) {
     for (int i = 0; i < n; ++i)
-      a[i+1] = (a[i] * v) % mod;
+      a[i+1] = (a[i] * v + str[i]) % mod;
     int m = inv_list.size() - 1;
     if (n > m) {
       inv_list.resize(n + 1);
