@@ -6,6 +6,13 @@ using ld = long double;
 using Point = complex<ld>;
 using Polygon = vector<Point>;
 
+Point at(const Polygon &g, int i) {
+  i %= (int)g.size();
+  return g[i < 0 ? i + g.size() : i];
+}
+
+bool comp(Point a, Point b) { return real(a - b) * 1.347589 + imag(a - b) > 0; }
+
 const ld eps = 1e-9;
 
 ld dot(Point a, Point b) { return real(conj(a) * b); }
