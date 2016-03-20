@@ -12,6 +12,7 @@
 #include "Graph/min_cost_flow.cpp"
 #include "Graph/bipartite_matching.cpp"
 #include "Graph/lca.cpp"
+#include "Graph/recession.cpp"
 
 #include "Math/mod.cpp"
 #include "Math/eratosthenes.cpp"
