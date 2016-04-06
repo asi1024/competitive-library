@@ -34,7 +34,7 @@ Point mirror(Line l, Point p) {
   return (ld)2 * proj(l, p) - p;
 }
 
-Point is_ll(Line s, Line t){
+Point is_ll(Line s, Line t) {
   Point sv = s.b - s.a, tv = t.b - t.a;
   return s.a + sv * cross(tv, t.a - s.a) / cross(tv, sv);
 }

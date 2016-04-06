@@ -6,14 +6,16 @@ using ld = long double;
 using Point = complex<ld>;
 using Polygon = vector<Point>;
 
+const ld eps = 1e-10;
+
 Point at(const Polygon &g, int i) {
   i %= (int)g.size();
   return g[i < 0 ? i + g.size() : i];
 }
 
-bool comp(Point a, Point b) { return real(a - b) * 1.347589 + imag(a - b) > 0; }
-
-const ld eps = 1e-9;
+bool comp(Point a, Point b) {
+  return real(a - b) * 1.347589 + imag(a - b) > 0;
+}
 
 ld dot(Point a, Point b) { return real(conj(a) * b); }
 ld cross(Point a, Point b) { return imag(conj(a) * b); }
@@ -42,4 +44,13 @@ int ccw (Point a, Point b, Point c) {
   if (dot(b, c) < 0) return 2;       // c--a--b on line
   if (norm(b) < norm(c)) return -2;  // a--b--c on line
   return 0;
+}
+
+vector<Point> unique(vector<Point> ps) {
+  sort(ALL(ps), comp);
+  vector<Point> res;
+  for (Point p: ps)
+    if (res.empty() || abs(res.back() - p) > eps)
+      res.push_back(p);
+  return res;
 }
