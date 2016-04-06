@@ -24,6 +24,9 @@ using ld = long double;
 
 const int INF = 1e9;
 
+template <typename T> T &chmin(T &a, const T &b) { return a = min(a, b); }
+template <typename T> T &chmax(T &a, const T &b) { return a = max(a, b); }
+
 int main() {
 
   return 0;
