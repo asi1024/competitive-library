@@ -47,7 +47,7 @@ int ccw (Point a, Point b, Point c) {
 }
 
 vector<Point> unique(vector<Point> ps) {
-  sort(ALL(ps), comp);
+  sort(begin(ps), end(ps), comp);
   vector<Point> res;
   for (Point p: ps)
     if (res.empty() || abs(res.back() - p) > eps)
