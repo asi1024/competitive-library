@@ -1,22 +1,51 @@
 language: cpp
+matrix:
+  include:
+    - os: linux
+      compiler: gcc
+      addons:
+        apt:
+          sources: ['ubuntu-toolchain-r-test']
+          packages: ['g++-4.7']
+      env: COMPILER=g++-4.7
 
-compiler:
-  - g++-4.8
+    - os: linux
+      compiler: gcc
+      addons:
+        apt:
+          sources: ['ubuntu-toolchain-r-test']
+          packages: ['g++-4.8']
+      env: COMPILER=g++-4.8
+
+    - os: linux
+      compiler: gcc
+      addons:
+        apt:
+          sources: ['ubuntu-toolchain-r-test']
+          packages: ['g++-4.9']
+      env: COMPILER=g++-4.9
+
+    - os: linux
+      compiler: gcc
+      addons:
+        apt:
+          sources: ['ubuntu-toolchain-r-test']
+          packages: ['g++-5']
+      env: COMPILER=g++-5
+
+    - os: linux
+      compiler: gcc
+      addons:
+        apt:
+          sources: ['ubuntu-toolchain-r-test']
+          packages: ['g++-6']
+      env: COMPILER=g++-6
 
 sudo: false
 
-addons:
-  apt:
-    sources:
-    - ubuntu-toolchain-r-test
-    packages:
-    - g++-4.8
-
-install:
-  - g++-4.8 --version
-  - g++-4.8 -std=c++11 cpp/spec.cpp -Wall -o exec
-
 script:
+  - $COMPILER --version
+  - $COMPILER -std=c++11 cpp/spec.cpp -Wall -o exec
   - ./exec
 
 notifications:
