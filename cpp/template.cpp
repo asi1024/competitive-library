@@ -1,28 +1,12 @@
 #include <bits/stdc++.h>
 
-using namespace std;
+#define REP(i,n) for(int i=0;i<(int)(n);i++)
+#define ALL(x) (x).begin(),(x).end()
 
-class rep {
-  struct repi {
-    size_t it;
-    repi() : it(0) { }
-    repi(size_t n) : it(n) {}
-    bool operator==(const repi &rhs) const { return it == rhs.it; }
-    bool operator!=(const repi &rhs) const { return it != rhs.it; }
-    size_t& operator*() { return it; }
-    repi& operator++() { ++it; return *this; }
-  };
-  size_t i;
-public:
-  rep(size_t n) : i(n) { }
-  repi begin() const { return 0; }
-  repi end() const { return i; }
-};
+using namespace std;
 
 using ll = long long;
 using ld = long double;
-
-const int INF = 1e9;
 
 template <typename T> T &chmin(T &a, const T &b) { return a = min(a, b); }
 template <typename T> T &chmax(T &a, const T &b) { return a = max(a, b); }
