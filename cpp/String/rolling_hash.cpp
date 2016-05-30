@@ -8,7 +8,7 @@ vector<ll> inv_list;
 
 class RollingHash {
   static const ll mod = 1000000000000037LL;
-  static const ll v = 17, w = 529411764705902;
+  static const ll v = 17LL, w = 529411764705902LL;
   const int n;
   vector<ll> a;
 public:
