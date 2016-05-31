@@ -28,7 +28,7 @@ int main() {
   int n, q, com, x, y;
   cin >> n >> q;
   UnionFind uf(n);
-  REP(i,q) {
+  for (int i = 0; i < q; ++i) {
     cin >> com >> x >> y;
     if (com) cout << uf.same(x, y) << endl;
     else uf.unite(x, y);
