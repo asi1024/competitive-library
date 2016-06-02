@@ -9,11 +9,11 @@ class SegmentTree {
   const T id;
   func_t merge;
   vector<T> data;
-  T sub(int fr, int to, int node, int la, int ra) {
-    if (ra <= fr || to <= la) return id;
-    if (fr <= la && ra <= to) return data[node];
-    T vl = sub(fr, to, node * 2 + 0, la, (la + ra) / 2);
-    T vr = sub(fr, to, node * 2 + 1, (la + ra) / 2, ra);
+  T sub(int l, int r, int node, int lb, int ub) {
+    if (ub <= l || r <= lb) return id;
+    if (l <= lb && ub <= r) return data[node];
+    T vl = sub(l, r, node * 2 + 0, lb, (lb + ub) / 2);
+    T vr = sub(l, r, node * 2 + 1, (lb + ub) / 2, ub);
     return merge(vl, vr);
   }
   int size(int n) {
@@ -31,8 +31,8 @@ public:
       data[p] = merge(data[l], data[r]);
     }
   }
-  T find(int fr, int to) {
-    return sub(fr, to, 1, 0, n);
+  T find(int l, int r) {
+    return sub(l, r, 1, 0, n);
   }
 };
 
