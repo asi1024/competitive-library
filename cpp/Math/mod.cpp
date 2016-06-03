@@ -33,12 +33,12 @@ public:
 template<int M> Cyclic<M> fact(int n, bool sw = true) {
   static vector<Cyclic<M>> v1 = {1}, v2 = {1};
   if (n > (int)v1.size()) {
-    const int from = v1.size(), to = n + 1;
-    v1.resize(to);
-    v2.resize(to);
+    const int from = v1.size(), to = n + 1024;
+    v1.reserve(to);
+    v2.reserve(to);
     for (int i = from; i < to; ++i) {
-      v1[i] = v1[i-1] * Cyclic<M>(i);
-      v2[i] = v2[i-1] / Cyclic<M>(i);
+      v1.push_back(v1.back() * Cyclic<M>(i));
+      v2.push_back(v2.back() / Cyclic<M>(i));
     }
   }
   return sw ? v1[n] : v2[n];
