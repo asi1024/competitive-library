@@ -36,7 +36,7 @@ void spec() {
   std::cout << "-- spec --" << std::endl;
 // Math
   std::cout << "Math/mod-factorial" << std::endl;
-  fact_init();
+  assert (comb<mod>(10, 4) == Mod(210));
   std::cout << "Math/eratosthenes" << std::endl;
   primes();
   std::cout << "OK!" << std::endl;

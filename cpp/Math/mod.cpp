@@ -1,49 +1,52 @@
 #pragma once
 
-using ll = long long;
+#include "../util.hpp"
 
-const int mod = 1000000007;
-
-class Mod {
+template<int M>
+class Cyclic {
+  using ll = long long;
   int n;
+  static ll inv(ll a, ll p) { return (a == 1 ? 1 : (1 - p * inv(p%a, a)) / a + p); }
 public:
-  Mod () : n(0) {;}
-  Mod (int m) : n(m) {
-    if (n >= mod) n %= mod;
-    else if (n < 0) n = (n % mod + mod) % mod;
+  Cyclic () : n(0) {;}
+  Cyclic (int m) : n(m) {
+    if (n >= M) n %= M;
+    else if (n < 0) n = (n % M + M) % M;
   }
-  operator int() { return n; }
-  bool operator==(const Mod &a) { return n == a.n; }
-  Mod operator+=(const Mod &a) { n += a.n; if (n >= mod) n -= mod; return *this; }
-  Mod operator-=(const Mod &a) { n -= a.n; if (n < 0) n += mod; return *this; }
-  Mod operator*=(const Mod &a) { n = (ll(n) * a.n) % mod; return *this; }
+  operator int() const { return n; }
+  bool operator==(const Cyclic &a) const { return n == a.n; }
+  Cyclic operator+=(const Cyclic &a) { n += a.n; if (n >= M) n -= M; return *this; }
+  Cyclic operator-=(const Cyclic &a) { n -= a.n; if (n < 0) n += M; return *this; }
+  Cyclic operator*=(const Cyclic &a) { n = (ll(n) * a.n) % M; return *this; }
+  Cyclic operator+(const Cyclic &a) const { Cyclic res = *this; return res += a; }
+  Cyclic operator-(const Cyclic &a) const { Cyclic res = *this; return res -= a; }
+  Cyclic operator*(const Cyclic &a) const { Cyclic res = *this; return res *= a; }
+  Cyclic operator/(const Cyclic &a) const { return *this * Cyclic<M>(inv(a, M)); }
+  Cyclic operator^(int n) const {
+    if (n == 0) return Cyclic(1);
+    const Cyclic a = *this;
+    Cyclic res = (a * a) ^ (n / 2);
+    return n % 2 ? res * a : res;
+  }
 };
 
-ll inv(ll a, ll p) { return (a == 1 ? 1 : (1 - p * inv(p%a, a)) / a + p); }
-
-Mod operator+(Mod a, const Mod &b) { return a += b; }
-Mod operator-(Mod a, const Mod &b) { return a -= b; }
-Mod operator*(Mod a, const Mod &b) { return a *= b; }
-Mod operator/(Mod a, Mod b) { return a * Mod(inv(b, mod)); }
-Mod operator^(const Mod &a, int n) {
-  if (n == 0) return Mod(1);
-  Mod res = (a * a) ^ (n / 2);
-  if (n % 2) res = res * a;
-  return res;
-}
-
-const int Factorial_N = 1024000;
-
-Mod fact[Factorial_N], factinv[Factorial_N];
-
-void fact_init() {
-  fact[0] = Mod(1); factinv[0] = 1;
-  for (int i = 0; i < Factorial_N - 1; ++i) {
-    fact[i+1] = fact[i] * Mod(i+1);
-    factinv[i+1] = factinv[i] / Mod(i+1);
+template<int M> Cyclic<M> fact(int n, bool sw = true) {
+  static vector<Cyclic<M>> v1 = {1}, v2 = {1};
+  if (n > (int)v1.size()) {
+    const int from = v1.size(), to = n + 1;
+    v1.resize(to);
+    v2.resize(to);
+    for (int i = from; i < to; ++i) {
+      v1[i] = v1[i-1] * Cyclic<M>(i);
+      v2[i] = v2[i-1] / Cyclic<M>(i);
+    }
   }
+  return sw ? v1[n] : v2[n];
 }
 
-Mod comb(int a, int b) {
-  return fact[a] * factinv[b] * factinv[a-b];
+template<int M> Cyclic<M> comb(int a, int b) {
+  return fact<M>(a, true) * fact<M>(b, false) * fact<M>(a-b, false);
 }
+
+const int mod = 1000000007;
+using Mod = Cyclic<mod>;
