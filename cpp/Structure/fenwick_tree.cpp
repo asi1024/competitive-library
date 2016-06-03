@@ -4,7 +4,7 @@
 
 template <typename T>
 class FenwickTree {
-  int n;
+  const int n;
   vector<T> data;
 public:
   FenwickTree(int n) : n(n), data(n, 0) {}
@@ -23,15 +23,15 @@ class RARS {
   FenwickTree<T> bit1, bit2;
 public:
   RARS(int n) : bit1(n+1), bit2(n+1) {}
-  void add(int fr, int to, T val) {
-    bit1.update(fr, -val * fr);
-    bit1.update(to, val * to);
-    bit2.update(fr, val);
-    bit2.update(to, -val);
+  void add(int l, int r, T val) {
+    bit1.update(l, -val * l);
+    bit1.update(r,  val * r);
+    bit2.update(l,  val);
+    bit2.update(r, -val);
   }
-  T sum(int fr, int to) {
-    T s1 = bit1.sum(to) + bit2.sum(to) * to;
-    T s2 = bit1.sum(fr) + bit2.sum(fr) * fr;
+  T sum(int l, int r) {
+    T s1 = bit1.sum(r) + bit2.sum(r) * r;
+    T s2 = bit1.sum(l) + bit2.sum(l) * l;
     return s1 - s2;
   }
 };
