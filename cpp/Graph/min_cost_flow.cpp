@@ -5,12 +5,12 @@
 template <typename Weight>
 Weight min_cost_flow(Graph<Weight> &g, int s, int t, Flow f) {
   const int V = g.size();
-  const Weight INF = 1000000000;
+  const Weight INF = 1e9;
   // const Weight eps = 1e-8;
-  vector<Weight> h(V, 0), dist(V, 0);
-  vector<int> prevv(V), preve(V);
+  static vector<Weight> h(V, 0), dist(V, 0);
+  static vector<int> prevv(V), preve(V);
+  using P = pair<Weight, int>;
   Weight res = 0;
-  typedef pair<Weight, int> P;
   while (f > 0) {
     priority_queue<P, vector<P>, greater<P>> que;
     fill(begin(dist), end(dist), INF);
@@ -21,7 +21,7 @@ Weight min_cost_flow(Graph<Weight> &g, int s, int t, Flow f) {
       int v = p.second;
       if (dist[v] < p.first) continue;
       for (int i = 0; i < (int)g[v].size(); ++i) {
-        auto &e = g[v][i];
+        const auto &e = g[v][i];
         if (e.cap <= 0) continue;
         if (dist[e.to] > dist[v] + e.cost + h[v] - h[e.to] /* + eps */) {
           dist[e.to] = dist[v] + e.cost + h[v] - h[e.to];
@@ -32,11 +32,14 @@ Weight min_cost_flow(Graph<Weight> &g, int s, int t, Flow f) {
       }
     }
     if (dist[t] == INF) return -1;
-    for (int v = 0; v < V; ++v) h[v] += dist[v];
+    for (int i = 0; i < V; ++i) {
+      h[i] += dist[i];
+    }
 
     Flow d = f;
-    for (int v = t; v != s; v = prevv[v])
+    for (int v = t; v != s; v = prevv[v]) {
       d = min(d, g[prevv[v]][preve[v]].cap);
+    }
     f -= d;
     res += d * h[t];
     for (int v = t; v != s; v = prevv[v]) {
