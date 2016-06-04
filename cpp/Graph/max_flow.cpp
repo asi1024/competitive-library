@@ -4,7 +4,7 @@
 
 template <typename Weight>
 Flow augment(Graph<Weight> &g, vector<Flow> &d, vector<int> &iter,
-         int v, int t, Flow f) {
+             int v, int t, Flow f) {
   if (v == t) return f;
   for (int &i = iter[v]; i < (int)g[v].size(); i++) {
     auto &e = g[v][i];
