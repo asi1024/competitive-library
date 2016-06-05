@@ -51,26 +51,18 @@ Weight min_cost_flow(Graph<Weight> &g, int s, int t, Flow f) {
   return res;
 }
 
-// Verified : AOJ 0290 (Microorganism Power Generation)
+// Verified : AOJ GRL_6_B (Minimum Cost Flow)
 /*
-int bm[16], bw[16];
-
 int main() {
-  int M, N;
-  while (cin >> M >> N, M) {
-    REP(i,M) cin >> bm[i];
-    REP(i,N) cin >> bw[i];
-    Graph<int> g(M + N + 2);
-    const int src = M + N, sink = M + N + 1;
-    REP(i,M) add_edge(g, src, i, 1, 0);
-    REP(i,N) add_edge(g, i+M, sink, 1, 0);
-    REP(i,M) REP(j,N) {
-      int diff = abs(bm[i] - bw[j]);
-      int c = diff * (diff - 30) * (diff - 30);
-      add_edge(g, i, j+M, 1, -c);
-    }
-    cout << -min_cost_flow(g, src, sink, min(M, N)) << endl;
+  int V, E, F;
+  cin >> V >> E >> F;
+  Graph<int> g(V);
+  while (E--) {
+    int u, v, c, d;
+    cin >> u >> v >> c >> d;
+    add_edge(g, u, v, c, d);
   }
+  cout << min_cost_flow(g, 0, V-1, F) << endl;
   return 0;
 }
 */
