@@ -7,7 +7,7 @@ struct SlideMin {
     ++c;
     while (!deq.empty() && deq.front().first <= c - w) deq.pop_front();
     while (!deq.empty() && deq.back().second >= d) deq.pop_back();
-    deq.push_back(make_pair(c, d));
+    deq.push_back({c, d});
     return deq.front().second;
   }
 };
