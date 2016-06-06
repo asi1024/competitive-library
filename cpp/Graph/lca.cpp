@@ -32,7 +32,7 @@ public:
       }
     }
   }
-  int lca(int u, int v) {
+  int query(int u, int v) {
     if (depth[u] > depth[v]) swap(u, v);
     for (int k = 0; k < LOG_V; ++k)
       if (((depth[v] - depth[u]) >> k) & 1) v = parent[k][v];
@@ -46,3 +46,28 @@ public:
     return parent[0][u];
   }
 };
+
+// Verified : AOJ GRL_5_C (Lowest Common Ancestor)
+/*
+int main() {
+  int n, q;
+  cin >> n;
+  Graph<int> g(n);
+  for (int i = 0; i < n; ++i) {
+    int k, c;
+    cin >> k;
+    while (k--) {
+      cin >> c;
+      add_edge(g, i, c);
+    }
+  }
+  LCA lca(g, 0);
+  cin >> q;
+  while (q--) {
+    int u, v;
+    cin >> u >> v;
+    cout << lca.query(u, v) << endl;
+  }
+  return 0;
+}
+*/
