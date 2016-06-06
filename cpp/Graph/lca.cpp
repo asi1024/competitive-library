@@ -3,8 +3,8 @@
 /*
 template <typename Weight>
 void add_edge(Graph<Weight> &g, int src, int to) {
-  g[src].push_back(Edge<Weight>(src, to));
-  g[to].push_back(Edge<Weight>(to, src));
+  g[src].push_back(Edge<Weight>(to));
+  g[to].push_back(Edge<Weight>(src));
 }
 */
 
@@ -15,8 +15,9 @@ class LCA {
   template<typename T>
   void dfs(const Graph<T> &g, int v, int p, int d) {
     parent[0][v] = p; depth[v] = d;
-    for (const Edge<T> &e: g[v])
+    for (const Edge<T> &e: g[v]) {
       if (e.to != p) dfs(g, e.to, v, d + 1);
+    }
   }
 public:
   template<typename T>
