@@ -50,3 +50,23 @@ template<int M> Cyclic<M> comb(int a, int b) {
 
 const int mod = 1000000007;
 using Mod = Cyclic<mod>;
+
+// Verified : ABC 003D
+/*
+int main() {
+  int R, C, X, Y, D, L;
+  cin >> R >> C >> X >> Y >> D >> L;
+  Mod a = Mod(R - X + 1) * Mod(C - Y + 1);
+  Mod b = solve(X, Y, D, L);
+  b -= solve(X-1, Y, D, L) * Mod(2);
+  b -= solve(X, Y-1, D, L) * Mod(2);
+  b += solve(X-2, Y, D, L);
+  b += solve(X, Y-2, D, L);
+  b += solve(X-1, Y-1, D, L) * Mod(4);
+  b -= solve(X-2, Y-1, D, L) * Mod(2);
+  b -= solve(X-1, Y-2, D, L) * Mod(2);
+  b += solve(X-2, Y-2, D, L);
+  cout << a * b << endl;
+  return 0;
+}
+*/
