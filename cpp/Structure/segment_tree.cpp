@@ -20,8 +20,8 @@ class SegmentTree {
     return n == 1 ? n : size((n + 1) / 2) * 2;
   }
 public:
-  SegmentTree(int n, T id, func_t merge) :
-    n(size(n)), id(id), merge(merge), data(n * 2, id) {}
+  SegmentTree(int m, T id, func_t merge) :
+    n(size(m)), id(id), merge(merge), data(n * 2, id) {}
   void update(int p, T val) {
     assert (0 <= p && p < n);
     p += n;
