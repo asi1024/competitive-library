@@ -5,30 +5,30 @@
 template <typename T>
 class StarrySkyTree {
   static const T INF = 0x7FFFFFFF;
-  int n; vector<T> data, lazy;
-  void upd_sub(int fr, int to, int node, int la, int ra, T val) {
-    if (ra<=fr || to<=la) return;
-    if (fr<=la && ra<=to) { lazy[node] += val; return; }
-    int left = (node - n) * 2, right = left + 1;
-    upd_sub(fr, to, left, la, (la+ra)/2, val);
-    upd_sub(fr, to, right, (la+ra)/2, ra, val);
+  const int n;
+  vector<T> data, lazy;
+  void add_sub(int l, int r, int node, int lb, int ub, T val) {
+    if (ub <= l || r <= lb) return;
+    if (l <= lb && ub <= r) { lazy[node] += val; return; }
+    int left = node * 2, right = left + 1;
+    add_sub(l, r, left, lb, (lb + ub) / 2, val);
+    add_sub(l, r, right, (lb + ub) / 2, ub, val);
     data[node] = min(data[left] + lazy[left], data[right] + lazy[right]);
   }
-  T min_sub(int fr, int to, int node, int la, int ra) {
-    if (ra<=fr || to<=la) return INF;
-    if (fr<=la && ra<=to) return data[node] + lazy[node];
-    T vl = min_sub(fr, to, (node-n)*2+0, la, (la+ra)/2);
-    T vr = min_sub(fr, to, (node-n)*2+1, (la+ra)/2, ra);
+  T min_sub(int l, int r, int node, int lb, int ub) {
+    if (ub <= l || r <= lb) return INF;
+    if (l <= lb && ub <= r) return data[node] + lazy[node];
+    T vl = min_sub(l, r, node * 2 + 0, lb, (lb + ub) / 2);
+    T vr = min_sub(l, r, node * 2 + 1, (lb + ub) / 2, ub);
     return lazy[node] + min(vl, vr);
   }
-public:
-  StarrySkyTree(int N) : n(N) {
-    while (n != (n & -n)) n += n & -n;
-    data.assign(n * 2, 0);
-    lazy.assign(n * 2, 0);
+  int size(int n) {
+    return n == 1 ? n : size((n + 1) / 2) * 2;
   }
-  void add(int fr, int to, T val) { upd_sub(fr, to, 2*n-2, 0, n, val); }
-  T min_element(int fr, int to) { return min_sub(fr, to, 2*n-2, 0, n); }
+public:
+  StarrySkyTree(int m) : n(size(m)), data(n * 2, 0), lazy(n * 2, 0) {}
+  void add(int l, int r, T val) { add_sub(l, r, 1, 0, n, val); }
+  T query(int l, int r) { return min_sub(l, r, 1, 0, n); }
 };
 
 // Verified : Codeforces 52C (Circular RMQ)
@@ -66,9 +66,8 @@ int main() {
     vector<int> com = get_int();
     int l = com[0], r = com[1];
     if (com.size() == 2) {
-      if (l > r) cout << min(seg.min_element(l, N),
-                             seg.min_element(0, r+1)) << endl;
-      else cout << seg.min_element(l, r+1) << endl;
+      if (l > r) cout << min(seg.query(l, N), seg.query(0, r+1)) << endl;
+      else cout << seg.query(l, r+1) << endl;
     }
     else {
       ll v = com[2];
