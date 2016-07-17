@@ -3,6 +3,7 @@
 #include "Structure/fenwick_tree.cpp"
 #include "Structure/starry_sky_tree.cpp"
 #include "Structure/slide_min.cpp"
+#include "Structure/skew_heap.cpp"
 
 #include "Graph/Graph.hpp"
 #include "Graph/dijkstra.cpp"
@@ -18,6 +19,7 @@
 #include "Math/eratosthenes.cpp"
 #include "Math/vector.cpp"
 #include "Math/matrix.cpp"
+#include "Math/fft.cpp"
 
 #include "Geometry/Geometry.hpp"
 #include "Geometry/intersect.cpp"
