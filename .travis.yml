@@ -45,7 +45,7 @@ sudo: false
 
 script:
   - $COMPILER --version
-  - $COMPILER -std=c++11 cpp/spec.cpp -Wall -o exec
+  - $COMPILER -std=c++11 spec.cpp -Wall -o exec
   - ./exec
 
 notifications:
