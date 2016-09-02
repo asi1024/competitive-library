@@ -16,7 +16,7 @@ vector<Point> is_cc(Circle c1, Circle c2){
   return res;
 }
 
-vector<Point> is_lc(Circle c, Line l){
+vector<Point> is_cl(Circle c, Line l){
   vector<Point> res;
   ld d = dist_lp(l, c.p);
   if (d < c.r + eps){
@@ -28,8 +28,8 @@ vector<Point> is_lc(Circle c, Line l){
   return res;
 }
 
-vector<Point> is_sc(Circle c, Segment s){
-  vector<Point> v = is_lc(c, Line(s)), res;
+vector<Point> is_cs(Circle c, Segment s){
+  vector<Point> v = is_cl(c, Line(s)), res;
   for (Point p : v)
     if (isis_sp(s, p)) res.push_back(p);
   return res;

@@ -40,6 +40,7 @@ uniform_real_distribution<> rnd(-100, 100);
 Point rnd_point() { return Point(rnd(mt), rnd(mt)); }
 Segment rnd_segment() { return Segment(rnd_point(), rnd_point()); }
 Line rnd_line() { return Line(rnd_segment()); }
+Circle rnd_circle() { return Circle(rnd_point(), rnd(mt)); }
 Polygon rnd_polygon() {
   Polygon poly;
   for (int i = 0; i < 30; ++i) poly.push_back(rnd_point());
@@ -105,6 +106,11 @@ void spec() {
   check(is_polygon,    rnd_polygon, rnd_segment);
   check(is_in_polygon, rnd_polygon, rnd_point);
   check(max_distance,  rnd_polygon);
+
+  std::cout << "Geometry/intersect_circle" << std::endl;
+  check(is_cc, rnd_circle, rnd_circle);
+  check(is_cl, rnd_circle, rnd_line);
+  check(is_cs, rnd_circle, rnd_segment);
 }
 
 struct Spec {
