@@ -2,8 +2,8 @@
 
 #include "Graph.hpp"
 
-template <typename Weight>
-Flow augment(Graph<Weight> &g, vector<Flow> &d, vector<int> &iter,
+template <typename Flow>
+Flow augment(FGraph<Flow> &g, vector<Flow> &d, vector<int> &iter,
              int v, int t, Flow f) {
   if (v == t) return f;
   for (int &i = iter[v]; i < (int)g[v].size(); i++) {
@@ -20,28 +20,27 @@ Flow augment(Graph<Weight> &g, vector<Flow> &d, vector<int> &iter,
   return 0;
 }
 
-template <typename Weight>
-Flow max_flow(Graph<Weight> &g, int s, int t) {
+template <typename Flow>
+Flow max_flow(FGraph<Flow> &g, int s, int t, Flow inf, Flow zero = 0) {
   const int V = g.size();
-  const Flow INF = 1e9;
-  Flow flow = 0;
+  Flow flow = zero;
   for (;;) {
     vector<Flow> d(V, -1);
     queue<int> que;
-    d[s] = 0;
+    d[s] = zero;
     que.push(s);
     while(!que.empty()) {
       int v = que.front(); que.pop();
       for (auto e: g[v]) {
-        if (e.cap <= 0 || d[e.to] >= 0) continue;
+        if (e.cap <= zero || d[e.to] >= zero) continue;
         d[e.to] = d[v] + 1;
         que.push(e.to);
       }
     }
-    if (d[t] < 0) return flow;
+    if (d[t] < zero) return flow;
     vector<int> iter(V, 0);
     Flow f;
-    while ((f = augment(g, d, iter, s, t, INF)) > 0) flow += f;
+    while ((f = augment(g, d, iter, s, t, inf)) > 0) flow += f;
   }
 }
 
@@ -50,12 +49,12 @@ Flow max_flow(Graph<Weight> &g, int s, int t) {
 int main() {
   int V, E, u, v, c;
   cin >> V >> E;
-  Graph<int> g(V);
+  FGraph<int> g(V);
   while (E--) {
     cin >> u >> v >> c;
     add_edge(g, u, v, c);
   }
-  cout << max_flow(g, 0, V-1) << endl;
+  cout << max_flow(g, 0, V-1, int(1e9)) << endl;
   return 0;
 }
 */
