@@ -18,7 +18,7 @@ void print(const char *name, double t, double x) {
 }
 
 void check(double (*f)(), const char *name) {
-  const int N = 3;
+  const int N = 10;
   vector<double> res(N);
   for (auto &i: res) i = f();
   double ave = accumulate(begin(res), end(res), 0.0) / N; 
