@@ -1,9 +1,8 @@
 #include "../util.hpp"
 
 double test_max_flow() {
-  int V = 10000, E = 20000;
-  auto g = random_fgraph(10000, 20000, 1000);
+  auto g = random_fgraph(vertex_num, edge_num, 1000);
   Timer timer;
   max_flow(g, 0, 1, (int)1e9);
-  return timer.stop() / E / V / V;
+  return timer.stop() / edge_num;
 }

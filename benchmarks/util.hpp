@@ -45,8 +45,8 @@ public:
 };
 
 void print(const char *name, double t, double x) {
-  t *= 1e9; x *= 1e9;
-  printf("%s : %.3f ns\n", name, t + 2 * x);
+  t = (t + 2 * x) * 1e9;
+  printf("%s : %.3f ns\n", name, t);
   // printf("%s : %.3f ns (%.3f ns - %.3f ns)\n", name, t, t - 2 * x, t + 2 * x);
 }
 
@@ -96,7 +96,7 @@ vector<Query> random_query() {
 
 // Graph
 
-const int vertex_num = 100000;
+const int vertex_num = 50000;
 const int edge_num = 200000;
 
 CGraph<int> random_cgraph(int min_cost, int max_cost) {
