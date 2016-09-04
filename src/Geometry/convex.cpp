@@ -1,4 +1,4 @@
-#include "../util.hpp"
+#include "intersect.cpp"
 
 ld area(const Polygon &g) {
   ld res = 0;
