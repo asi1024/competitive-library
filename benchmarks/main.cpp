@@ -13,6 +13,7 @@
 
 #include "Graph/bfs01.cpp"
 #include "Graph/dijkstra.cpp"
+#include "Graph/lca.cpp"
 #include "Graph/max_flow.cpp"
 #include "Graph/min_cost_flow.cpp"
 #include "Graph/spfa.cpp"
@@ -41,5 +42,6 @@ int main() {
   check(test_bfs01, "01-BFS");
   check(test_max_flow, "Dinic");
   check(test_min_cost_flow, "Primal Dual");
+  check(test_lca, "LCA");
   return 0;
 }

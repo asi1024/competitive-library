@@ -18,7 +18,7 @@ void print(const char *name, double t, double x) {
 }
 
 void check(double (*f)(), const char *name) {
-  const int N = 10;
+  const int N = 1;
   vector<double> res(N);
   for (auto &i: res) i = f();
   double ave = accumulate(begin(res), end(res), 0.0) / N; 
@@ -100,3 +100,15 @@ FCGraph<int, int> random_fcgraph(int V, int E, int max_flow, int max_cost) {
   return g;
 }
 
+Graph random_tree(int V) {
+  vector<pair<int,int>> edges;
+  for (int i = 1; i < V; ++i) {
+    int p = mt() % i;
+    if (mt() % 2) edges.emplace_back(i, p);
+    else edges.emplace_back(p, i);
+  }
+  shuffle(begin(edges), end(edges), mt);
+  Graph g(V);
+  for (auto e: edges) add_edge(g, e.first, e.second);
+  return g;
+}
