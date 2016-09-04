@@ -147,6 +147,8 @@ Graph random_tree(int V) {
   return g;
 }
 
+// Geometry
+
 template<typename T, T (*f)()>
 vector<T> vectorize() {
   vector<T> res;
@@ -154,11 +156,14 @@ vector<T> vectorize() {
   return res;
 }
 
+template<typename T>
+int zero(T x) { return max(0, min(int(abs(x)), 0)); }
+
 Point random_point() { return Point(rnd(mt), rnd(mt)); }
 Segment random_segment() { return Segment(random_point(), random_point()); }
 Line random_line() { return Line(random_segment()); }
 Circle random_circle() { return Circle(random_point(), rnd(mt)); }
-vector<Point> random_points() { return vectorize<Point, random_point>(); }
+vector<Point> random_points() { return unique(vectorize<Point, random_point>()); }
 vector<Segment> random_segments() { return vectorize<Segment, random_segment>(); }
 vector<Line> random_lines() { return vectorize<Line, random_line>(); }
 vector<Circle> random_circles() { return vectorize<Circle, random_circle>(); }

@@ -19,6 +19,7 @@
 #include "Graph/spfa.cpp"
 
 #include "Geometry/intersect.cpp"
+#include "Geometry/intersect_circle.cpp"
 
 int main() {
   cout << setprecision(3) << fixed;
@@ -55,5 +56,8 @@ int main() {
   check(test_proj, "proj");
   check(test_mirror, "mirror");
   check(test_is_ll, "is_ll");
+  check(test_is_cc, "is_cc");
+  check(test_is_cl, "is_cl");
+  check(test_is_cs, "is_cs");
   return 0;
 }

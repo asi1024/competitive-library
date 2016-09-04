@@ -1,8 +1,5 @@
 #include "../util.hpp"
 
-template<typename T>
-int zero(T x) { return max(0, min(int(abs(x)), 0)); }
-
 double test_isis_ll() {
   auto l1 = random_lines();
   auto l2 = random_lines();
