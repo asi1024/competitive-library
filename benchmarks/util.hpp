@@ -51,7 +51,7 @@ void print(const char *name, double t, double x) {
 }
 
 void check(double (*f)(), const char *name) {
-  const int N = 1;
+  const int N = 5;
   vector<double> res(N);
   for (auto &i: res) i = f();
   double ave = accumulate(begin(res), end(res), 0.0) / N; 
@@ -61,9 +61,10 @@ void check(double (*f)(), const char *name) {
 }
 
 mt19937 mt(0);
+uniform_real_distribution<double> rnd(-100.0, 100.0);
 
 const int array_len = 200000;
-const int query_num = 10000000;
+const int query_num = 1000000;
 
 // STL
 
@@ -144,4 +145,28 @@ Graph random_tree(int V) {
   Graph g(V);
   for (auto e: edges) add_edge(g, e.first, e.second);
   return g;
+}
+
+template<typename T, T (*f)()>
+vector<T> vectorize() {
+  vector<T> res;
+  for (int i = 0; i < query_num; ++i) res.push_back(f());
+  return res;
+}
+
+Point random_point() { return Point(rnd(mt), rnd(mt)); }
+Segment random_segment() { return Segment(random_point(), random_point()); }
+Line random_line() { return Line(random_segment()); }
+Circle random_circle() { return Circle(random_point(), rnd(mt)); }
+vector<Point> random_points() { return vectorize<Point, random_point>(); }
+vector<Segment> random_segments() { return vectorize<Segment, random_segment>(); }
+vector<Line> random_lines() { return vectorize<Line, random_line>(); }
+vector<Circle> random_circles() { return vectorize<Circle, random_circle>(); }
+
+Polygon random_polygon() {
+  Polygon res;
+  const ld pi = acos(-1.0);
+  for (int i = 0; i < query_num; ++i)
+    res.push_back(polar(100.0L, 2 * pi / query_num));
+  return res;
 }

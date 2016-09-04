@@ -18,6 +18,8 @@
 #include "Graph/min_cost_flow.cpp"
 #include "Graph/spfa.cpp"
 
+#include "Geometry/intersect.cpp"
+
 int main() {
   cout << setprecision(3) << fixed;
 
@@ -43,5 +45,15 @@ int main() {
   check(test_max_flow, "Dinic");
   check(test_min_cost_flow, "Primal Dual");
   check(test_lca, "LCA");
+
+  cout << endl << "=== Geometry ===" << endl;
+  check(test_isis_ll, "isis_ll");
+  check(test_isis_ls, "isis_ls");
+  check(test_isis_lp, "isis_lp");
+  check(test_isis_ss, "isis_ss");
+  check(test_isis_sp, "isis_sp");
+  check(test_proj, "proj");
+  check(test_mirror, "mirror");
+  check(test_is_ll, "is_ll");
   return 0;
 }
