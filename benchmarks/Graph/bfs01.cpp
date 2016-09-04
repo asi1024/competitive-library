@@ -1,5 +1,4 @@
 #include "../util.hpp"
-#include "../../src/Graph/bfs01.cpp"
 
 double test_bfs01() {
   auto g = random_cgraph(0, 2);

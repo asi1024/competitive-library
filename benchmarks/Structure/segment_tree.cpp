@@ -1,5 +1,4 @@
 #include "../util.hpp"
-#include "../../src/Structure/segment_tree.cpp"
 
 double test_segment_tree() {
   SegmentTree<int, min> seg(array_len, 0x7FFFFFFF);

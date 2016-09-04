@@ -1,5 +1,4 @@
 #include "../util.hpp"
-#include "../../src/Structure/starry_sky_tree.cpp"
 
 double test_starry_sky_tree() {
   StarrySkyTree<int> seg(array_len);

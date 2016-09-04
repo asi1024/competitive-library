@@ -1,5 +1,4 @@
 #include "../util.hpp"
-#include "../../src/Graph/dijkstra.cpp"
 
 double test_dijkstra() {
   auto g = random_cgraph(0, 1000);

@@ -1,5 +1,4 @@
 #include "../util.hpp"
-#include "../../src/Graph/lca.cpp"
 
 double test_lca() {
   auto g = random_tree(array_len);

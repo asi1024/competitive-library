@@ -1,5 +1,4 @@
 #include "../util.hpp"
-#include "../../src/Structure/unionfind.cpp"
 
 double test_unionfind() {
   UnionFind uf(array_len);

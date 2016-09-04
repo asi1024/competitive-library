@@ -1,5 +1,4 @@
 #include "../util.hpp"
-#include "../../src/Graph/max_flow.cpp"
 
 double test_max_flow() {
   int V = 10000, E = 20000;

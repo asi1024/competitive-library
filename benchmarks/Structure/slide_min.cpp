@@ -1,5 +1,4 @@
 #include "../util.hpp"
-#include "../../src/Structure/slide_min.cpp"
 
 double test_slide_min() {
   vector<Query> query = random_query();

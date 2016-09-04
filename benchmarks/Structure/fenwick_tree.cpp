@@ -1,5 +1,4 @@
 #include "../util.hpp"
-#include "../../src/Structure/fenwick_tree.cpp"
 
 double test_fenwick_tree() {
   FenwickTree<int> seg(array_len);

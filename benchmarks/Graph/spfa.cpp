@@ -1,5 +1,4 @@
 #include "../util.hpp"
-#include "../../src/Graph/spfa.cpp"
 
 double test_spfa() {
   auto g = random_cgraph(0, 1000);

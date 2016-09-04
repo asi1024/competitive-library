@@ -1,5 +1,4 @@
 #include "../util.hpp"
-#include "../../src/Structure/rars.cpp"
 
 double test_rars() {
   RARS<int> seg(array_len);
