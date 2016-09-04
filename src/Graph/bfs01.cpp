@@ -2,17 +2,16 @@
 
 #include "Graph.hpp"
 
-template <typename Weight>
-Array<Weight> bfs01(const Graph<Weight> &g, int s) {
-  const Weight INF = 1e9;
-  Array<Weight> d(g.size(), INF);
-  d[s] = 0;
-  using P = pair<Weight,int>;
+template <typename Cost>
+vector<Cost> bfs01(const CGraph<Cost> &g, int s, Cost inf, Cost zero = 0) {
+  vector<Cost> d(g.size(), inf);
+  d[s] = zero;
+  using P = pair<Cost,int>;
   deque<P> que;
-  que.push_back(P(0, s));
+  que.push_back(P(zero, s));
   while (!que.empty()) {
     P top = que.front(); que.pop_front();
-    Weight dist = top.first; int v = top.second;
+    Cost dist = top.first; int v = top.second;
     if (d[v] < dist) continue;
     for (auto e: g[v]) {
       if (d[e.to] > d[v] + e.cost) {
