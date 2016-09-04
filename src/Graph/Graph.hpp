@@ -2,59 +2,75 @@
 
 #include "../util.hpp"
 
-/*
-template <typename Weight>
-struct Edge{
-  int from, to; Weight cost;
-  Edge(int s, int t, Weight c) : from(s), to(t), cost(c) {}
+struct Edge {
+  int to;
+  Edge(int t) : to(t) {}
 };
-*/
 
-using Flow = int;
+using Graph = vector<vector<Edge>>;
 
-template <typename Weight>
-struct Edge{
+void add_edge(Graph &g, int from, int to) {
+  g[from].push_back(to);
+}
+
+
+struct Edge2 {
+  int from, to;
+  Edge2(int s, int t) : from(s), to(t) {}
+};
+
+using Graph2 = vector<vector<Edge2>>;
+
+void add_edge(Graph2 &g, int from, int to) {
+  g[from].emplace_back(from, to);
+}
+
+
+template <typename Cost>
+struct CEdge {
+  int from, to;
+  Cost cost;
+  CEdge(int s, int t, Cost c) : from(s), to(t), cost(c) {}
+};
+
+template<typename Cost> using CGraph = vector<vector<CEdge<Cost>>>;
+
+template <typename Cost>
+void add_edge(CGraph<Cost> &g, int from, int to, Cost cost) {
+  g[from].emplace_back(from, to, cost);
+}
+
+
+template <typename Flow>
+struct FEdge {
   int from, to;
   Flow cap; int rev;
-  Weight cost;
-  Edge(int t) : to(t) {}
-  Edge(int s, int t) : from(s), to(t) {}
-  Edge(int s, int t, Weight c) : from(s), to(t), cost(c) {}
-  Edge(int s, int t, Flow f, int r) :
-    from(s), to(t), cap(f), rev(r) {}
-  Edge(int s, int t, Flow f, int r, Weight c) :
-    from(s), to(t), cap(f), rev(r), cost(c) {}
+  FEdge(int s, int t, Flow f, int r) : from(s), to(t), cap(f), rev(r) {}
 };
 
-template <typename Weight> using Edges = vector<Edge<Weight>>;
-template <typename Weight> using Graph = vector<Edges<Weight>>;
-template <typename Weight> using Array = vector<Weight>;
+template<typename Flow> using FGraph = vector<vector<FEdge<Flow>>>;
 
-/*
-template <typename Weight>
-void add_edge(Graph<Weight> &g, int from, int to) {
-  g[from].push_back(Edge<Weight>(to));
-}
-*/
-
-template <typename Weight>
-void add_edge(Graph<Weight> &g, int from, int to) {
-  g[from].push_back(Edge<Weight>(from, to));
-}
-
-template <typename Weight>
-void add_edge(Graph<Weight> &g, int from, int to, Weight cost) {
-  g[from].push_back(Edge<Weight>(from, to, cost));
-}
-
-template <typename Weight>
-void add_edge(Graph<Weight> &g, int from, int to, Flow cap) {
+template <typename Flow>
+void add_edge(FGraph<Flow> &g, int from, int to, Flow cap) {
   g[from].emplace_back(from, to, cap, (int)g[to].size());
   g[to].emplace_back(to, from, 0, (int)g[from].size() - 1);
 }
 
-template <typename Weight>
-void add_edge(Graph<Weight> &g, int from, int to, Flow cap, Weight cost) {
-  g[from].push_back(Edge<Weight>(from, to, cap, (int)g[to].size(), cost));
-  g[to].push_back(Edge<Weight>(to, from, 0, (int)g[from].size() - 1, -cost));
+
+template <typename Flow, typename Cost>
+struct FCEdge {
+  int from, to;
+  Flow cap; int rev;
+  Cost cost;
+  FCEdge(int s, int t, Flow f, int r, Cost c) :
+    from(s), to(t), cap(f), rev(r), cost(c) {}
+};
+
+template<typename Flow, typename Cost>
+using FCGraph = vector<vector<FCEdge<Flow, Cost>>>;
+
+template <typename Flow, typename Cost>
+void add_edge(FCGraph<Flow, Cost> &g, int from, int to, Flow cap, Cost cost) {
+  g[from].emplace_back(from, to, cap, (int)g[to].size(), cost);
+  g[to].emplace_back(to, from, 0, (int)g[from].size() - 1, -cost);
 }
