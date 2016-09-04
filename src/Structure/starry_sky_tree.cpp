@@ -28,7 +28,7 @@ class StarrySkyTree {
 public:
   StarrySkyTree(int m) : n(size(m)), data(n * 2, 0), lazy(n * 2, 0) {}
   void add(int l, int r, T val) { add_sub(l, r, 1, 0, n, val); }
-  T query(int l, int r) { return min_sub(l, r, 1, 0, n); }
+  T minimum(int l, int r) { return min_sub(l, r, 1, 0, n); }
 };
 
 // Verified : Codeforces 52C (Circular RMQ)
@@ -66,8 +66,8 @@ int main() {
     vector<int> com = get_int();
     int l = com[0], r = com[1];
     if (com.size() == 2) {
-      if (l > r) cout << min(seg.query(l, N), seg.query(0, r+1)) << endl;
-      else cout << seg.query(l, r+1) << endl;
+      if (l > r) cout << min(seg.minimum(l, N), seg.minimum(0, r+1)) << endl;
+      else cout << seg.minimum(l, r+1) << endl;
     }
     else {
       ll v = com[2];
