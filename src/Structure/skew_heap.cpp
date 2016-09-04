@@ -2,7 +2,7 @@ template<typename T>
 struct Heap {
   T val;
   Heap *l, *r;
-  Heap(T v) : val(v) {}
+  Heap(T v) : val(v), l(nullptr), r(nullptr) {}
 };
 
 template<typename T>
