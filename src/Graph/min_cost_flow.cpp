@@ -2,18 +2,24 @@
 
 #include "Graph.hpp"
 
-template <typename Weight>
-Weight min_cost_flow(Graph<Weight> &g, int s, int t, Flow f) {
+template <typename Flow, typename Cost>
+Cost min_cost_flow(FCGraph<Flow, Cost> &g, int s, int t, Flow f,
+                   Cost inf, bool init = true) {
   const int V = g.size();
-  const Weight INF = 1e9;
-  // const Weight eps = 1e-8;
-  static vector<Weight> h(V, 0), dist(V, 0);
+  // const Cost eps = 1e-8;
+  static vector<Cost> h(V, 0), dist(V, 0);
   static vector<int> prevv(V), preve(V);
-  using P = pair<Weight, int>;
-  Weight res = 0;
+  if (init) {
+    fill(begin(h), end(h), 0);
+    fill(begin(dist), end(dist), 0);
+    fill(begin(prevv), end(prevv), 0);
+    fill(begin(preve), end(preve), 0);
+  }
+  using P = pair<Cost, int>;
+  Cost res = 0;
   while (f > 0) {
     priority_queue<P, vector<P>, greater<P>> que;
-    fill(begin(dist), end(dist), INF);
+    fill(begin(dist), end(dist), inf);
     dist[s] = 0;
     que.push(P(0, s));
     while (!que.empty()) {
@@ -31,7 +37,7 @@ Weight min_cost_flow(Graph<Weight> &g, int s, int t, Flow f) {
         }
       }
     }
-    if (dist[t] == INF) return -1;
+    if (dist[t] == inf) return -1;
     for (int i = 0; i < V; ++i) {
       h[i] += dist[i];
     }
@@ -56,13 +62,13 @@ Weight min_cost_flow(Graph<Weight> &g, int s, int t, Flow f) {
 int main() {
   int V, E, F;
   cin >> V >> E >> F;
-  Graph<int> g(V);
+  FCGraph<int, int> g(V);
   while (E--) {
     int u, v, c, d;
     cin >> u >> v >> c >> d;
     add_edge(g, u, v, c, d);
   }
-  cout << min_cost_flow(g, 0, V-1, F) << endl;
+  cout << min_cost_flow(g, 0, V-1, F, int(1e9)) << endl;
   return 0;
 }
 */
