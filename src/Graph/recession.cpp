@@ -1,6 +1,6 @@
 #include "Graph.hpp"
 
-int update(const Graph<int> &g, vector<int> &res, int v) {
+int update(const Graph &g, vector<int> &res, int v) {
   for (auto e: g[v]) {
     if (res[e.to] == -1) {
       res[v] = 1;
@@ -11,8 +11,8 @@ int update(const Graph<int> &g, vector<int> &res, int v) {
   return 1e9;
 }
 
-template <typename Weight, typename T>
-void recession(const Graph<Weight> &g, vector<T> &res) {
+template <typename T>
+void recession(const Graph &g, vector<T> &res) {
   assert(g.size() == res.size());
   int n = g.size();
   vector<vector<int>> rg(n);
