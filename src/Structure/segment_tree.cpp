@@ -2,12 +2,10 @@
 
 #include "../util.hpp"
 
-template <typename T>
+template <typename T, const T& merge(const T&, const T&)>
 class SegmentTree {
-  using func_t = function<T(T, T)>;
   const int n;
   const T id;
-  func_t merge;
   vector<T> data;
   T sub(int l, int r, int node, int lb, int ub) {
     if (ub <= l || r <= lb) return id;
@@ -20,8 +18,7 @@ class SegmentTree {
     return n == 1 ? n : size((n + 1) / 2) * 2;
   }
 public:
-  SegmentTree(int m, T id, func_t merge) :
-    n(size(m)), id(id), merge(merge), data(n * 2, id) {}
+  SegmentTree(int m, T id) : n(size(m)), id(id), data(n * 2, id) {}
   void update(int p, T val) {
     assert (0 <= p && p < n);
     p += n;
@@ -41,7 +38,7 @@ public:
 int main() {
   int n, q, com, x, y;
   cin >> n >> q;
-  SegmentTree<int> seg(n, 0x7FFFFFFF, [](int a, int b){return min(a, b);});
+  SegmentTree<int,min> seg(n, 0x7FFFFFFF);
   while (q--) {
     cin >> com >> x >> y;
     if (com) cout << seg.find(x, y+1) << endl;
