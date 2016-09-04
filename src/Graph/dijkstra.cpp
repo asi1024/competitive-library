@@ -2,16 +2,15 @@
 
 #include "Graph.hpp"
 
-template <typename Weight>
-Array<Weight> dijkstra(const Graph<Weight> &g, int s) {
-  const Weight INF = 1e9;
-  Array<Weight> d(g.size(), INF);
-  d[s] = 0;
-  using P = pair<Weight,int>;
+template <typename Cost>
+vector<Cost> dijkstra(const CGraph<Cost> &g, int s, Cost inf, Cost zero = 0) {
+  vector<Cost> d(g.size(), inf);
+  d[s] = zero;
+  using P = pair<Cost,int>;
   priority_queue<P, vector<P>, greater<P>> que;
-  que.push(P(0, s));
+  que.push(P(zero, s));
   while (!que.empty()) {
-    Weight dist = que.top().first;
+    Cost dist = que.top().first;
     int v = que.top().second;
     que.pop();
     if (d[v] < dist) continue;
@@ -29,13 +28,13 @@ Array<Weight> dijkstra(const Graph<Weight> &g, int s) {
 int main() {
   int V, E, r, s, t, d;
   cin >> V >> E >> r;
-  Graph<int> g(V);
+  CGraph<int> g(V);
   while (E--) {
     cin >> s >> t >> d;
     add_edge(g, s, t, d);
   }
   const int INF = 1e9;
-  Array<int> res = dijkstra(g, r);
+  auto res = dijkstra(g, r, INF);
   for (int i = 0; i < V; ++i) {
     if (res[i] == INF) cout << "INF" << endl;
     else cout << res[i] << endl;
