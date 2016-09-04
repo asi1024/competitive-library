@@ -1,3 +1,5 @@
+#include "../util.hpp"
+
 template <typename T>
 struct SlideMin {
   deque<pair<int,T>> deq;
