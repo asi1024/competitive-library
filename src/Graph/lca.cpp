@@ -1,27 +1,17 @@
 #include "Graph.hpp"
 
-/*
-template <typename Weight>
-void add_edge(Graph<Weight> &g, int src, int to) {
-  g[src].push_back(Edge<Weight>(to));
-  g[to].push_back(Edge<Weight>(src));
-}
-*/
-
 class LCA {
   int V, LOG_V;
   vector<vector<int>> parent;
   vector<int> depth;
-  template<typename T>
-  void dfs(const Graph<T> &g, int v, int p, int d) {
+  void dfs(const Graph &g, int v, int p, int d) {
     parent[0][v] = p; depth[v] = d;
-    for (const Edge<T> &e: g[v]) {
+    for (const Edge &e: g[v]) {
       if (e.to != p) dfs(g, e.to, v, d + 1);
     }
   }
 public:
-  template<typename T>
-  LCA(const Graph<T> &g, int root) : V(g.size()), LOG_V(0), depth(V, 0) {
+  LCA(const Graph &g, int root) : V(g.size()), LOG_V(0), depth(V, 0) {
     for (int v = V; v > 0; v >>= 1) ++LOG_V;
     parent.assign(LOG_V, vector<int>(V, 0));
     dfs(g, root, -1, 0);
@@ -52,7 +42,7 @@ public:
 int main() {
   int n, q;
   cin >> n;
-  Graph<int> g(n);
+  Graph g(n);
   for (int i = 0; i < n; ++i) {
     int k, c;
     cin >> k;
