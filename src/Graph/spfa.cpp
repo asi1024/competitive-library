@@ -3,9 +3,9 @@
 #include "Graph.hpp"
 
 template <typename Cost>
-pair<bool,vector<Cost>> spfa(const CGraph<Cost> &g, int s, Cost inf, Cost zero = 0) {
+pair<bool,vector<Cost>> spfa(const CGraph<Cost> &g, int s, Cost zero = 0) {
   const int n = g.size();
-  vector<Cost> d(n, inf); d[s] = zero;
+  vector<Cost> d(n, inf<Cost>()); d[s] = zero;
   vector<int> updated(n, 0);
   vector<bool> inque(n, false);
   queue<int> que;
@@ -40,10 +40,9 @@ int main() {
     cin >> s >> t >> d;
     add_edge(g, s, t, d);
   }
-  const int INF = 1e9;
-  auto res = spfa(g, r, INF).second;
+  auto res = spfa(g, r).second;
   for (int i = 0; i < V; ++i) {
-    if (res[i] == INF) cout << "INF" << endl;
+    if (res[i] == inf<int>()) cout << "INF" << endl;
     else cout << res[i] << endl;
   }
   return 0;
@@ -60,13 +59,12 @@ int main() {
     cin >> s >> t >> d;
     add_edge(g, s, t, d);
   }
-  const int INF = 1e9;
   bool flag;
   vector<int> res;
-  tie(flag, res) = spfa(g, r, INF);
+  tie(flag, res) = spfa(g, r);
   if (flag) {
     for (int i = 0; i < V; ++i) {
-      if (res[i] == INF) cout << "INF" << endl;
+      if (res[i] == inf<int>()) cout << "INF" << endl;
       else cout << res[i] << endl;
     }
   }
