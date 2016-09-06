@@ -6,36 +6,6 @@ matrix:
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-4.7']
-      env:
-        COMPILER=g++-4.7
-        GCOV=gcov-4.7
-
-    - os: linux
-      compiler: gcc
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-4.8']
-      env:
-        COMPILER=g++-4.8
-        GCOV=gcov-4.8
-
-    - os: linux
-      compiler: gcc
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-4.9']
-      env:
-        COMPILER=g++-4.9
-        GCOV=gcov-4.9
-
-    - os: linux
-      compiler: gcc
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test']
           packages: ['g++-5']
       env:
         COMPILER=g++-5
