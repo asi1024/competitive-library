@@ -3,8 +3,8 @@
 #include "Graph.hpp"
 
 template <typename Cost>
-vector<Cost> bfs01(const CGraph<Cost> &g, int s, Cost inf, Cost zero = 0) {
-  vector<Cost> d(g.size(), inf);
+vector<Cost> bfs01(const CGraph<Cost> &g, int s, Cost zero = 0) {
+  vector<Cost> d(g.size(), inf<Cost>());
   d[s] = zero;
   using P = pair<Cost,int>;
   deque<P> que;
