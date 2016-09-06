@@ -27,7 +27,7 @@ before_install:
   - pip install --user cpp-coveralls
 script:
   - $COMPILER --version
-  - $COMPILER -coverage -std=c++11 -O2 benchmarks/main.cpp -Wall -o exec
+  - $COMPILER -coverage -std=c++14 -O2 benchmarks/main.cpp -Wall -o exec
   - ./exec
 after_success:
   - coveralls --gcov $GCOV --gcov-options '\-lp'
