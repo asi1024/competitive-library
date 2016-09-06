@@ -2,7 +2,6 @@
 
 #include "../util.hpp"
 
-using ld = long double;
 using Point = complex<ld>;
 using Polygon = vector<Point>;
 
