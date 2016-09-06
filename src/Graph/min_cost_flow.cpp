@@ -4,7 +4,7 @@
 
 template <typename Flow, typename Cost>
 Cost min_cost_flow(FCGraph<Flow, Cost> &g, int s, int t, Flow f,
-                   Cost inf, bool init = true) {
+                   bool init = true) {
   const int V = g.size();
   // const Cost eps = 1e-8;
   static vector<Cost> h(V, 0), dist(V, 0);
@@ -19,7 +19,7 @@ Cost min_cost_flow(FCGraph<Flow, Cost> &g, int s, int t, Flow f,
   Cost res = 0;
   while (f > 0) {
     priority_queue<P, vector<P>, greater<P>> que;
-    fill(begin(dist), end(dist), inf);
+    fill(begin(dist), end(dist), inf<Cost>());
     dist[s] = 0;
     que.push(P(0, s));
     while (!que.empty()) {
@@ -37,7 +37,7 @@ Cost min_cost_flow(FCGraph<Flow, Cost> &g, int s, int t, Flow f,
         }
       }
     }
-    if (dist[t] == inf) return -1;
+    if (dist[t] == inf<Cost>()) return -1;
     for (int i = 0; i < V; ++i) {
       h[i] += dist[i];
     }
@@ -68,7 +68,7 @@ int main() {
     cin >> u >> v >> c >> d;
     add_edge(g, u, v, c, d);
   }
-  cout << min_cost_flow(g, 0, V-1, F, int(1e9)) << endl;
+  cout << min_cost_flow(g, 0, V-1, F) << endl;
   return 0;
 }
 */
