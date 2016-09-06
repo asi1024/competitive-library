@@ -3,8 +3,8 @@
 #include "Graph.hpp"
 
 template <typename Cost>
-vector<Cost> dijkstra(const CGraph<Cost> &g, int s, Cost inf, Cost zero = 0) {
-  vector<Cost> d(g.size(), inf);
+vector<Cost> dijkstra(const CGraph<Cost> &g, int s, Cost zero = 0) {
+  vector<Cost> d(g.size(), inf<Cost>());
   d[s] = zero;
   using P = pair<Cost,int>;
   priority_queue<P, vector<P>, greater<P>> que;
@@ -33,10 +33,9 @@ int main() {
     cin >> s >> t >> d;
     add_edge(g, s, t, d);
   }
-  const int INF = 1e9;
-  auto res = dijkstra(g, r, INF);
+  auto res = dijkstra(g, r);
   for (int i = 0; i < V; ++i) {
-    if (res[i] == INF) cout << "INF" << endl;
+    if (res[i] == inf<int>()) cout << "INF" << endl;
     else cout << res[i] << endl;
   }
   return 0;
