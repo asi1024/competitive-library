@@ -21,7 +21,7 @@ Flow augment(FGraph<Flow> &g, vector<Flow> &d, vector<int> &iter,
 }
 
 template <typename Flow>
-Flow max_flow(FGraph<Flow> &g, int s, int t, Flow inf, Flow zero = 0) {
+Flow max_flow(FGraph<Flow> &g, int s, int t, Flow zero = 0) {
   const int V = g.size();
   Flow flow = zero;
   for (;;) {
@@ -40,7 +40,7 @@ Flow max_flow(FGraph<Flow> &g, int s, int t, Flow inf, Flow zero = 0) {
     if (d[t] < zero) return flow;
     vector<int> iter(V, 0);
     Flow f;
-    while ((f = augment(g, d, iter, s, t, inf)) > 0) flow += f;
+    while ((f = augment(g, d, iter, s, t, inf<Flow>())) > 0) flow += f;
   }
 }
 
@@ -54,7 +54,7 @@ int main() {
     cin >> u >> v >> c;
     add_edge(g, u, v, c);
   }
-  cout << max_flow(g, 0, V-1, int(1e9)) << endl;
+  cout << max_flow(g, 0, V-1) << endl;
   return 0;
 }
 */
