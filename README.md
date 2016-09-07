@@ -3,4 +3,4 @@
 [![Coverage Status](https://coveralls.io/repos/github/asi1024/ContestLibrary/badge.svg?branch=master)](https://coveralls.io/github/asi1024/ContestLibrary?branch=master)
 
 # ContestLibrary
-- document: https://asi1024.github.io/
+- Document: https://asi1024.github.io/
