@@ -18,6 +18,8 @@
 #include "Graph/min_cost_flow.cpp"
 #include "Graph/spfa.cpp"
 
+#include "Math/fft.cpp"
+
 #include "Geometry/intersect.cpp"
 #include "Geometry/intersect_circle.cpp"
 
@@ -46,6 +48,9 @@ int main() {
   check(test_max_flow, "Dinic");
   check(test_min_cost_flow, "Primal Dual");
   check(test_lca, "LCA");
+
+  cout << endl << "=== Math ===" << endl;
+  check(test_fft, "FFT");
 
   cout << endl << "=== Geometry ===" << endl;
   check(test_isis_ll, "isis_ll");
