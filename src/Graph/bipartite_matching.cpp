@@ -3,7 +3,7 @@
 #include "../util.hpp"
 
 class BipartiteMatching {
-  int V;
+  int size;
   vector<vector<int>> g;
   vector<int> match;
   vector<bool> used;
@@ -20,7 +20,7 @@ class BipartiteMatching {
     return false;
   }
 public:
-  BipartiteMatching(int v) : V(v), g(v), match(v), used(v) {}
+  BipartiteMatching(int v) : size(v), g(v), match(v), used(v) {}
   void add_edge(int u, int v) {
     g[u].push_back(v);
     g[v].push_back(u);
@@ -28,7 +28,7 @@ public:
   int maximum_matching(void) {
     int res = 0;
     fill(begin(match), end(match), -1);
-    for (int v = 0; v < V; ++v) {
+    for (int v = 0; v < size; ++v) {
       if (match[v] >= 0) continue;
       fill(begin(used), end(used), 0);
       if (dfs(v)) ++res;
