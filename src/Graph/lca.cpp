@@ -3,7 +3,7 @@
 #include "Graph.hpp"
 
 class LCA {
-  int V, LOG_V;
+  int size, log_size;
   vector<vector<int>> parent;
   vector<int> depth;
   void dfs(const Graph &g, int v, int p, int d) {
@@ -13,12 +13,12 @@ class LCA {
     }
   }
 public:
-  LCA(const Graph &g, int root) : V(g.size()), LOG_V(0), depth(V, 0) {
-    for (int v = V; v > 0; v >>= 1) ++LOG_V;
-    parent.assign(LOG_V, vector<int>(V, 0));
+  LCA(const Graph &g, int root) : size(g.size()), log_size(0), depth(size, 0) {
+    for (int v = size; v > 0; v /= 2) ++log_size;
+    parent.assign(log_size, vector<int>(size, 0));
     dfs(g, root, -1, 0);
-    for (int k = 0; k < LOG_V - 1; ++k) {
-      for (int v = 0; v < V; ++v) {
+    for (int k = 0; k < log_size - 1; ++k) {
+      for (int v = 0; v < size; ++v) {
         if (parent[k][v] < 0) parent[k + 1][v] = -1;
         else parent[k + 1][v] = parent[k][parent[k][v]];
       }
@@ -26,10 +26,10 @@ public:
   }
   int query(int u, int v) {
     if (depth[u] > depth[v]) swap(u, v);
-    for (int k = 0; k < LOG_V; ++k)
+    for (int k = 0; k < log_size; ++k)
       if (((depth[v] - depth[u]) >> k) & 1) v = parent[k][v];
     if (u == v) return u;
-    for (int k = LOG_V - 1; k >= 0; k--) {
+    for (int k = log_size - 1; k >= 0; k--) {
       if (parent[k][u] != parent[k][v]) {
         u = parent[k][u];
         v = parent[k][v];
