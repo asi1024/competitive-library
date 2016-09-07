@@ -14,7 +14,7 @@ vector<Cost> dijkstra(const CGraph<Cost> &g, int s, Cost zero = 0) {
     int v = que.top().second;
     que.pop();
     if (d[v] < dist) continue;
-    for (auto e: g[v]) {
+    for (const auto &e: g[v]) {
       if (d[e.to] <= d[v] + e.cost) continue;
       d[e.to] = d[v] + e.cost;
       que.push(P(d[e.to], e.to));

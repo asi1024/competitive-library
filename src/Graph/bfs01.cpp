@@ -13,7 +13,7 @@ vector<Cost> bfs01(const CGraph<Cost> &g, int s, Cost zero = 0) {
     P top = que.front(); que.pop_front();
     Cost dist = top.first; int v = top.second;
     if (d[v] < dist) continue;
-    for (auto e: g[v]) {
+    for (const auto &e: g[v]) {
       if (d[e.to] > d[v] + e.cost) {
         d[e.to] = d[v] + e.cost;
         if (e.cost) que.push_back(P(d[e.to], e.to));

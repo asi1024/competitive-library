@@ -16,7 +16,7 @@ pair<bool,vector<Cost>> spfa(const CGraph<Cost> &g, int s, Cost zero = 0) {
     inque[from] = false;
     ++updated[from];
     if (updated[from] == n+1) return {false, d}; // negative cycle
-    for (auto e: g[from]) {
+    for (const auto &e: g[from]) {
       Cost cost = d[from] + e.cost;
       if (cost < d[e.to]) {
         d[e.to] = cost;
