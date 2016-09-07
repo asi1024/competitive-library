@@ -4,7 +4,7 @@
 
 template <typename Flow>
 Flow augment(FGraph<Flow> &g, vector<Flow> &d, vector<int> &iter,
-             int v, int t, Flow f) {
+             int v, int t, const Flow &f) {
   if (v == t) return f;
   for (int &i = iter[v]; i < (int)g[v].size(); i++) {
     auto &e = g[v][i];
@@ -31,7 +31,7 @@ Flow max_flow(FGraph<Flow> &g, int s, int t, Flow zero = 0) {
     que.push(s);
     while(!que.empty()) {
       int v = que.front(); que.pop();
-      for (auto e: g[v]) {
+      for (const auto &e: g[v]) {
         if (e.cap <= zero || d[e.to] >= zero) continue;
         d[e.to] = d[v] + 1;
         que.push(e.to);
