@@ -66,6 +66,38 @@ uniform_real_distribution<double> rnd(-100.0, 100.0);
 const int array_len = 200000;
 const int query_num = 1000000;
 
+// Hash
+
+using ull = unsigned long long;
+
+ull my_hash(int n, mt19937 &mt) {
+  return ull(n) * ull(mt());
+}
+
+ull my_hash(long long n, mt19937 &mt) {
+  return ull(n) * ull(mt());
+}
+
+ull my_hash(long double n, mt19937 &mt) {
+  return ull(n - 0.123456789) * ull(mt());
+}
+
+template<typename T> ull my_hash(const complex<T> &n, mt19937 &mt) {
+  return my_hash(real(n), mt) + my_hash(imag(n), mt);
+}
+
+template<typename U, typename T> ull my_hash(const pair<U, T> &n, mt19937 &mt) {
+  return my_hash(n.first, mt) + my_hash(n.second, mt);
+}
+
+template<typename T> ull my_hash(const vector<T> &n, mt19937 &mt) {
+  ull sum = 0;
+  for (const T &i: n) sum += my_hash(i, mt);
+  return sum;
+}
+
+template<typename T> ull my_hash(T n) { mt19937 mt(0); return my_hash(n, mt); }
+
 // STL
 
 vector<int> random_array() {
