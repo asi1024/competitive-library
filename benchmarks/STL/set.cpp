@@ -1,13 +1,13 @@
 #include "../util.hpp"
 
-double test_set() {
+vector<int> test_set(vector<int> ary) {
+  vector<int> res;
   set<int> s;
-  vector<int> query = random_array();
-  Timer timer;
-  for (auto i: query) s.insert(i);
-  for (auto i: query) {
+  for (auto i: ary) s.insert(i);
+  for (auto i: ary) {
     auto it = s.lower_bound(i);
+    res.push_back(*it);
     if (it != s.end()) s.erase(it);
   }
-  return timer.stop() / (array_len * 2);
+  return res;
 }

@@ -70,15 +70,19 @@ const int query_num = 1000000;
 
 using ull = unsigned long long;
 
-ull my_hash(int n, mt19937 &mt) {
+ull my_hash(const int &n, mt19937 &mt) {
   return ull(n) * ull(mt());
 }
 
-ull my_hash(long long n, mt19937 &mt) {
+ull my_hash(const long long &n, mt19937 &mt) {
   return ull(n) * ull(mt());
 }
 
-ull my_hash(long double n, mt19937 &mt) {
+ull my_hash(const unsigned long long &n, mt19937 &mt) {
+  return ull(n) * ull(mt());
+}
+
+ull my_hash(const long double &n, mt19937 &mt) {
   return ull(n - 0.123456789) * ull(mt());
 }
 
@@ -102,31 +106,32 @@ template<typename T> ull my_hash(T n) { mt19937 mt(0); return my_hash(n, mt); }
 
 template<typename T>
 class TestSuite {
-  using func_t = pair<ull,double>*(T);
   vector<T> testset;
   bool flag;
-  ull get_hash() {
+  template<typename Func>
+  ull get_hash(Func f) {
     flag = false;
-    vector<ull> res;
+    vector<ull> hash_vec;
     for (const T &t: testset) {
-      auto p = func_t(t);
-      res.push_back(p.first);
-      cout << p.second << endl;
+      auto ret = f(t);
+      hash_vec.push_back(my_hash(ret));
     }
-    return my_hash(res);
+    return my_hash(hash_vec);
   }
 public:
-  TestSuite(ull ans) : testset(0), flag(true) {}
+  TestSuite() : testset(0), flag(true) {}
   void add(const T &t) {
     assert(flag);
     testset.push_back(t);
   }
-  void run() {
-    ull ret = get_hash();
+  template<typename Func>
+  void run(Func f) {
+    ull ret = get_hash(f);
     cerr << "Returns:  " << ret << endl;
   }
-  void run(ull ans) {
-    ull ret = get_hash();
+  template<typename Func>
+  void run(Func f, ull ans) {
+    ull ret = get_hash(f);
     if (ret != ans) {
       cerr << "Expected: " << ans << endl;
       cerr << "Returns:  " << ret << endl;
@@ -137,9 +142,13 @@ public:
 
 // STL
 
-vector<int> random_array() {
-  vector<int> res(array_len);
-  for (auto &i: res) i = mt();
+TestSuite<vector<int>> random_array() {
+  TestSuite<vector<int>> res;
+  for (int c = 0; c < 20; ++c) {
+    vector<int> ary(200000);
+    for (auto &i: ary) i = mt();
+    res.add(ary);
+  }
   return res;
 }
 
