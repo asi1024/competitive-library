@@ -98,10 +98,10 @@ template<typename T> ull my_hash(const vector<T> &n, mt19937 &mt) {
 
 template<typename T> ull my_hash(T n) { mt19937 mt(0); return my_hash(n, mt); }
 
-// Testsuite
+// TestSuite
 
 template<typename T>
-class Testsuite {
+class TestSuite {
   using func_t = pair<ull,double>*(T);
   vector<T> testset;
   bool flag;
@@ -116,7 +116,7 @@ class Testsuite {
     return my_hash(res);
   }
 public:
-  Testsuite(ull ans) : testset(0), flag(true) {}
+  TestSuite(ull ans) : testset(0), flag(true) {}
   void add(const T &t) {
     assert(flag);
     testset.push_back(t);
