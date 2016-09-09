@@ -98,6 +98,43 @@ template<typename T> ull my_hash(const vector<T> &n, mt19937 &mt) {
 
 template<typename T> ull my_hash(T n) { mt19937 mt(0); return my_hash(n, mt); }
 
+// Testsuite
+
+template<typename T>
+class Testsuite {
+  using func_t = pair<ull,double>*(T);
+  vector<T> testset;
+  bool flag;
+  ull get_hash() {
+    flag = false;
+    vector<ull> res;
+    for (const T &t: testset) {
+      auto p = func_t(t);
+      res.push_back(p.first);
+      cout << p.second << endl;
+    }
+    return my_hash(res);
+  }
+public:
+  Testsuite(ull ans) : testset(0), flag(true) {}
+  void add(const T &t) {
+    assert(flag);
+    testset.push_back(t);
+  }
+  void run() {
+    ull ret = get_hash();
+    cerr << "Returns:  " << ret << endl;
+  }
+  void run(ull ans) {
+    ull ret = get_hash();
+    if (ret != ans) {
+      cerr << "Expected: " << ans << endl;
+      cerr << "Returns:  " << ret << endl;
+    }
+    assert(ret == ans);
+  }
+};
+
 // STL
 
 vector<int> random_array() {
