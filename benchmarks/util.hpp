@@ -37,29 +37,6 @@
 
 using namespace std;
 
-class Timer {
-  double start;
-public:
-  Timer() : start(clock()) {}
-  double stop() { return (clock() - start) / CLOCKS_PER_SEC; }
-};
-
-void print(const char *name, double t, double x) {
-  t = (t + 2 * x) * 1e9;
-  printf("%s : %.3f ns\n", name, t);
-  // printf("%s : %.3f ns (%.3f ns - %.3f ns)\n", name, t, t - 2 * x, t + 2 * x);
-}
-
-void check(double (*f)(), const char *name) {
-  const int N = 5;
-  vector<double> res(N);
-  for (auto &i: res) i = f();
-  double ave = accumulate(begin(res), end(res), 0.0) / N; 
-  transform(begin(res), end(res), begin(res), [&](double x){ return pow(x - ave, 2); });
-  double sd = sqrt(accumulate(begin(res), end(res), 0.0) / N);
-  print(name, ave, sd);
-}
-
 mt19937 mt(0);
 uniform_real_distribution<double> rnd(-100.0, 100.0);
 
