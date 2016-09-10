@@ -147,11 +147,15 @@ TestSuite<vector<int>> random_array() {
 
 class Query {
 public:
-  int type, pos, left, right, value;
+  int type, pos, left, right, value, value_small;
   Query(int len, int type, mt19937 &mt) :
     type(type),
     pos(mt() % len), left(mt() % len), right(mt() % len),
-    value(mt() % 2000 - 1000) {}
+    value(int(mt()) % 1000000)
+  {
+    value_small = value % 1000;
+    if (left > right) swap(left, right);
+  }
 };
 
 TestSuite<vector<Query>> random_query() {

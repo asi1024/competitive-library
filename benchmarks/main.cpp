@@ -4,7 +4,7 @@
 
 // #include "Structure/fenwick_tree.cpp"
 // #include "Structure/rars.cpp"
-// #include "Structure/segment_tree.cpp"
+#include "Structure/segment_tree.cpp"
 // #include "Structure/skew_heap.cpp"
 // #include "Structure/slide_min.cpp"
 // #include "Structure/starry_sky_tree.cpp"
@@ -34,8 +34,8 @@ int main() {
   array_testsuite.run("Set",  test_set,   9895682793213700656ULL);
 
   cout << endl << "=== Structure ===" << endl;
-  query_testsuite.run("UnionFind", test_unionfind, 15315242946220429992ULL);
-  // check(test_unionfind, "UnionFind");
+  query_testsuite.run("UnionFind",   test_unionfind,    15315242946220429992ULL);
+  query_testsuite.run("SegmentTree", test_segment_tree, 15137342583094844102ULL);
   // check(test_segment_tree, "SegmentTree");
   // check(test_fenwick_tree, "FenwickTree");
   // check(test_rars, "RARS");
