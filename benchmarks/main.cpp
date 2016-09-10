@@ -28,9 +28,9 @@ int main() {
   auto array_testsuite = random_array();
 
   cout << endl << "=== STL ===" << endl;
-  array_testsuite.run("Sort", test_sort, 10043273327132148061ULL);
-  array_testsuite.run("PQue", test_pque,  9927045758423964030ULL);
-  array_testsuite.run("Set",  test_set,  15108157720665341275ULL);
+  array_testsuite.run("Sort", test_sort, 10377643567579487844ULL);
+  array_testsuite.run("PQue", test_pque, 15317107113471489615ULL);
+  array_testsuite.run("Set",  test_set,   9895682793213700656ULL);
 
   cout << endl << "=== Structure ===" << endl;
   // check(test_unionfind, "UnionFind");

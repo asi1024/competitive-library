@@ -112,7 +112,8 @@ public:
     message.push_back(string(mes));
   }
   template<typename Func>
-  void run(const char *str, Func f) {
+  void run(const char *mes, Func f) {
+    printf("=== %s ===\n", mes);
     ull ret = get_hash(f);
     cerr << "Returns:  " << ret << endl;
   }
@@ -131,7 +132,7 @@ public:
 // STL
 
 TestSuite<vector<int>> random_array() {
-  mt19937 mt(0);
+  mt19937 mt(1);
   TestSuite<vector<int>> res;
   for (int c = 0; c < 20; ++c) {
     vector<int> ary(200000);
