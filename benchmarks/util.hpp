@@ -131,11 +131,12 @@ public:
 // STL
 
 TestSuite<vector<int>> random_array() {
+  mt19937 mt(0);
   TestSuite<vector<int>> res;
   for (int c = 0; c < 20; ++c) {
     vector<int> ary(200000);
     for (auto &i: ary) i = mt();
-    res.add(ary, "array : len = 200000");
+    res.add(ary, "Array : len = 200000");
   }
   return res;
 }
@@ -145,19 +146,38 @@ TestSuite<vector<int>> random_array() {
 class Query {
 public:
   int type, pos, left, right, value;
-  Query(int len) :
-    type(mt() % 2),
+  Query(int len, int type, mt19937 &mt) :
+    type(type),
     pos(mt() % len), left(mt() % len), right(mt() % len),
-    value(mt() % 2000 - 1000)
-  {
-    if (left > right) swap(left, right);
-    ++right;
-  }
+    value(mt() % 2000 - 1000) {}
 };
 
-vector<Query> random_query() {
-  vector<Query> res(query_num, array_len);
-  for (auto &i: res) i = Query(array_len);
+TestSuite<vector<Query>> random_query() {
+  mt19937 mt(2);
+  TestSuite<vector<Query>> res;
+  for (int i = 0; i < 10; ++i) {
+    vector<Query> query;
+    for (int j = 0; j < 500000; ++j) {
+      query.push_back(Query(0, 200000, mt));
+      query.push_back(Query(1, 200000, mt));
+    }
+    shuffle(begin(query), end(query), mt);
+    res.add(query, "500000 update and 500000 find");
+  }
+  for (int i = 0; i < 5; ++i) {
+    vector<Query> query;
+    for (int j = 0; j < 1000000; ++j) {
+      query.push_back(Query(0, 200000, mt));
+    }
+    res.add(query, "1000000 find queries");
+  }
+  for (int i = 0; i < 5; ++i) {
+    vector<Query> query;
+    for (int j = 0; j < 1000000; ++j) {
+      query.push_back(Query(1, 200000, mt));
+    }
+    res.add(query, "1000000 update queries");
+  }
   return res;
 }
 
