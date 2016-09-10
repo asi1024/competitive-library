@@ -41,7 +41,8 @@ mt19937 mt(0);
 uniform_real_distribution<double> rnd(-100.0, 100.0);
 
 const int array_len = 200000;
-const int query_num = 1000000;
+const int vertex_num = 50000;
+const int edge_num = 200000;
 
 // Hash
 
@@ -135,7 +136,7 @@ TestSuite<vector<int>> random_array() {
   mt19937 mt(1);
   TestSuite<vector<int>> res;
   for (int c = 0; c < 20; ++c) {
-    vector<int> ary(200000);
+    vector<int> ary(array_len);
     for (auto &i: ary) i = mt();
     res.add(ary, "Array : len = 200000");
   }
@@ -159,8 +160,8 @@ TestSuite<vector<Query>> random_query() {
   for (int i = 0; i < 10; ++i) {
     vector<Query> query;
     for (int j = 0; j < 500000; ++j) {
-      query.push_back(Query(200000, 0, mt));
-      query.push_back(Query(200000, 1, mt));
+      query.push_back(Query(array_len, 0, mt));
+      query.push_back(Query(array_len, 1, mt));
     }
     shuffle(begin(query), end(query), mt);
     res.add(query, "500000 update and 500000 find");
@@ -168,14 +169,14 @@ TestSuite<vector<Query>> random_query() {
   for (int i = 0; i < 5; ++i) {
     vector<Query> query;
     for (int j = 0; j < 1000000; ++j) {
-      query.push_back(Query(200000, 0, mt));
+      query.push_back(Query(array_len, 0, mt));
     }
     res.add(query, "1000000 find queries");
   }
   for (int i = 0; i < 5; ++i) {
     vector<Query> query;
     for (int j = 0; j < 1000000; ++j) {
-      query.push_back(Query(200000, 1, mt));
+      query.push_back(Query(array_len, 1, mt));
     }
     res.add(query, "1000000 update queries");
   }
@@ -183,9 +184,6 @@ TestSuite<vector<Query>> random_query() {
 }
 
 // Graph
-
-const int vertex_num = 50000;
-const int edge_num = 200000;
 
 CGraph<int> random_cgraph(int min_cost, int max_cost) {
   CGraph<int> g(vertex_num);
@@ -239,7 +237,7 @@ Graph random_tree(int V) {
 template<typename T, T (*f)()>
 vector<T> vectorize() {
   vector<T> res;
-  for (int i = 0; i < query_num; ++i) res.push_back(f());
+  for (int i = 0; i < 1000000; ++i) res.push_back(f());
   return res;
 }
 
@@ -258,7 +256,7 @@ vector<Circle> random_circles() { return vectorize<Circle, random_circle>(); }
 Polygon random_polygon() {
   Polygon res;
   const ld pi = acos(-1.0);
-  for (int i = 0; i < query_num; ++i)
-    res.push_back(polar(100.0L, 2 * pi / query_num));
+  for (int i = 0; i < 1000000; ++i)
+    res.push_back(polar(100.0L, 2 * pi / 1000000));
   return res;
 }
