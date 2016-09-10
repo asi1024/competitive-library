@@ -8,7 +8,7 @@
 // #include "Structure/skew_heap.cpp"
 // #include "Structure/slide_min.cpp"
 // #include "Structure/starry_sky_tree.cpp"
-// #include "Structure/unionfind.cpp"
+#include "Structure/unionfind.cpp"
 
 // #include "Graph/bfs01.cpp"
 // #include "Graph/dijkstra.cpp"
@@ -26,6 +26,7 @@ int main() {
   cout << setprecision(3) << fixed;
 
   auto array_testsuite = random_array();
+  auto query_testsuite = random_query();
 
   cout << endl << "=== STL ===" << endl;
   array_testsuite.run("Sort", test_sort, 10377643567579487844ULL);
@@ -33,6 +34,7 @@ int main() {
   array_testsuite.run("Set",  test_set,   9895682793213700656ULL);
 
   cout << endl << "=== Structure ===" << endl;
+  query_testsuite.run("UnionFind", test_unionfind, 15315242946220429992ULL);
   // check(test_unionfind, "UnionFind");
   // check(test_segment_tree, "SegmentTree");
   // check(test_fenwick_tree, "FenwickTree");

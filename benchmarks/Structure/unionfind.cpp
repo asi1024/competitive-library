@@ -1,12 +1,11 @@
 #include "../util.hpp"
 
-double test_unionfind() {
+vector<int> test_unionfind(vector<Query> query) {
   UnionFind uf(array_len);
-  vector<Query> query = random_query();
-  Timer timer;
+  vector<int> res;
   for (auto q: query) {
     if (q.type) uf.unite(q.left, q.right);
-    else uf.same(q.left, q.right);
+    else res.push_back(uf.same(q.left, q.right));
   }
-  return timer.stop() / query_num;
+  return res;
 }

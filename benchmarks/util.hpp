@@ -159,8 +159,8 @@ TestSuite<vector<Query>> random_query() {
   for (int i = 0; i < 10; ++i) {
     vector<Query> query;
     for (int j = 0; j < 500000; ++j) {
-      query.push_back(Query(0, 200000, mt));
-      query.push_back(Query(1, 200000, mt));
+      query.push_back(Query(200000, 0, mt));
+      query.push_back(Query(200000, 1, mt));
     }
     shuffle(begin(query), end(query), mt);
     res.add(query, "500000 update and 500000 find");
@@ -168,14 +168,14 @@ TestSuite<vector<Query>> random_query() {
   for (int i = 0; i < 5; ++i) {
     vector<Query> query;
     for (int j = 0; j < 1000000; ++j) {
-      query.push_back(Query(0, 200000, mt));
+      query.push_back(Query(200000, 0, mt));
     }
     res.add(query, "1000000 find queries");
   }
   for (int i = 0; i < 5; ++i) {
     vector<Query> query;
     for (int j = 0; j < 1000000; ++j) {
-      query.push_back(Query(1, 200000, mt));
+      query.push_back(Query(200000, 1, mt));
     }
     res.add(query, "1000000 update queries");
   }
