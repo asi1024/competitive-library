@@ -34,9 +34,8 @@ int main() {
   array_testsuite.run("Set",  test_set,   9895682793213700656ULL);
 
   cout << endl << "=== Structure ===" << endl;
-  query_testsuite.run("UnionFind",   test_unionfind,    15315242946220429992ULL);
-  query_testsuite.run("SegmentTree", test_segment_tree, 15137342583094844102ULL);
-  // check(test_segment_tree, "SegmentTree");
+  query_testsuite.run("UnionFind",   test_unionfind,    17211205483629885308ULL);
+  query_testsuite.run("SegmentTree", test_segment_tree, 12068134179184885807ULL);
   // check(test_fenwick_tree, "FenwickTree");
   // check(test_rars, "RARS");
   // check(test_starry_sky_tree, "StarrySkyTree");

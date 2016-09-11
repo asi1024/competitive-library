@@ -5,7 +5,7 @@ vector<int> test_unionfind(vector<Query> query) {
   vector<int> res;
   for (auto q: query) {
     if (q.type) uf.unite(q.left, q.right);
-    else res.push_back(uf.same(q.left, q.right));
+    else res.push_back(uf.same(q.pos, q.left));
   }
   return res;
 }

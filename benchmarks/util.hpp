@@ -155,6 +155,7 @@ public:
   {
     value_small = value % 1000;
     if (left > right) swap(left, right);
+    ++right;
   }
 };
 
