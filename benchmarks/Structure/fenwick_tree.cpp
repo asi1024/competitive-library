@@ -1,12 +1,11 @@
 #include "../util.hpp"
 
-double test_fenwick_tree() {
-  FenwickTree<int> seg(array_len);
-  vector<Query> query = random_query();
-  Timer timer;
+vector<int> test_fenwick_tree(vector<Query> query) {
+  FenwickTree<int> bit(array_len);
+  vector<int> res;
   for (auto q: query) {
-    if (q.type) seg.add(q.pos, q.value);
-    else seg.sum(q.pos);
+    if (q.type) bit.add(q.pos, q.value);
+    else res.push_back(bit.sum(q.pos));
   }
-  return timer.stop() / query_num;
+  return res;
 }

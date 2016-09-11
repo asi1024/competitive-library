@@ -2,7 +2,7 @@
 #include "STL/set.cpp"
 #include "STL/sort.cpp"
 
-// #include "Structure/fenwick_tree.cpp"
+#include "Structure/fenwick_tree.cpp"
 // #include "Structure/rars.cpp"
 #include "Structure/segment_tree.cpp"
 // #include "Structure/skew_heap.cpp"
@@ -36,7 +36,7 @@ int main() {
   cout << endl << "=== Structure ===" << endl;
   query_testsuite.run("UnionFind",   test_unionfind,    17211205483629885308ULL);
   query_testsuite.run("SegmentTree", test_segment_tree, 12068134179184885807ULL);
-  // check(test_fenwick_tree, "FenwickTree");
+  query_testsuite.run("FenwickTree", test_fenwick_tree, 14174181638196948695ULL);
   // check(test_rars, "RARS");
   // check(test_starry_sky_tree, "StarrySkyTree");
   // check(test_skew_heap, "SkewHeap");
