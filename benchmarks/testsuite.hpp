@@ -1,3 +1,5 @@
+#pragma once
+
 #include "hash.hpp"
 
 template<typename T>

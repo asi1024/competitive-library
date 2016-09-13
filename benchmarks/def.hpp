@@ -1,5 +1,3 @@
-#pragma once
-
 #include "../src/Geometry/Geometry.hpp"
 #include "../src/Geometry/convex.cpp"
 #include "../src/Geometry/distance.cpp"
@@ -36,3 +34,6 @@
 #include "../src/Structure/unionfind.cpp"
 
 using namespace std;
+
+const int array_len = 200000;
+const int query_num = 1000000;
