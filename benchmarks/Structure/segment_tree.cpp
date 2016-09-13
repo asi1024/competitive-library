@@ -1,4 +1,4 @@
-#include "../util.hpp"
+#include "../gen_query.hpp"
 
 vector<int> test_segment_tree(vector<Query> query) {
   SegmentTree<int,min> seg(array_len, 0x7FFFFFFF);

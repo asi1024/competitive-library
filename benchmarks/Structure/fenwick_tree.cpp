@@ -1,4 +1,4 @@
-#include "../util.hpp"
+#include "../gen_query.hpp"
 
 vector<int> test_fenwick_tree(vector<Query> query) {
   FenwickTree<int> bit(array_len);

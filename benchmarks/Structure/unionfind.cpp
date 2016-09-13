@@ -1,4 +1,4 @@
-#include "../util.hpp"
+#include "../gen_query.hpp"
 
 vector<int> test_unionfind(vector<Query> query) {
   UnionFind uf(array_len);

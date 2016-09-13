@@ -1,4 +1,4 @@
-#include "../util.hpp"
+#include "../gen_array.hpp"
 
 vector<int> test_set(const vector<int> &ary) {
   vector<int> res;

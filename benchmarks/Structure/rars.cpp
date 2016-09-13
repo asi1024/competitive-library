@@ -1,4 +1,4 @@
-#include "../util.hpp"
+#include "../gen_query.hpp"
 
 vector<ll> test_rars(vector<Query> query) {
   RARS<ll> seg(array_len);

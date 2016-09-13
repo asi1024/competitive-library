@@ -1,4 +1,4 @@
-#include "../util.hpp"
+#include "../gen_query.hpp"
 
 vector<int> test_starry_sky_tree(vector<Query> query) {
   StarrySkyTree<int> seg(array_len);

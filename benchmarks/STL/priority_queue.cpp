@@ -1,4 +1,4 @@
-#include "../util.hpp"
+#include "../gen_array.hpp"
 
 vector<int> test_pque(const vector<int> &ary) {
   vector<int> res;
