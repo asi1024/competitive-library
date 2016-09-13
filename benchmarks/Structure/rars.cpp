@@ -1,12 +1,11 @@
 #include "../util.hpp"
 
-double test_rars() {
-  RARS<int> seg(array_len);
-  vector<Query> query = random_query();
-  Timer timer;
+vector<ll> test_rars(vector<Query> query) {
+  RARS<ll> seg(array_len);
+  vector<ll> res;
   for (auto q: query) {
     if (q.type) seg.add(q.left, q.right, q.value);
-    else seg.sum(q.left, q.right);
+    else res.push_back(seg.sum(q.left, q.right));
   }
-  return timer.stop() / query_num;
+  return res;
 }
