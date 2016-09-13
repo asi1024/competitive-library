@@ -1,41 +1,6 @@
 #pragma once
 
-#include "../src/Geometry/Geometry.hpp"
-#include "../src/Geometry/convex.cpp"
-#include "../src/Geometry/distance.cpp"
-#include "../src/Geometry/intersect.cpp"
-#include "../src/Geometry/intersect_circle.cpp"
-
-#include "../src/Graph/Graph.hpp"
-#include "../src/Graph/bfs01.cpp"
-#include "../src/Graph/bipartite_matching.cpp"
-#include "../src/Graph/dijkstra.cpp"
-#include "../src/Graph/lca.cpp"
-#include "../src/Graph/max_flow.cpp"
-#include "../src/Graph/min_cost_flow.cpp"
-#include "../src/Graph/recession.cpp"
-#include "../src/Graph/spfa.cpp"
-
-#include "../src/Math/eratosthenes.cpp"
-#include "../src/Math/fft.cpp"
-#include "../src/Math/matrix.cpp"
-#include "../src/Math/mod.cpp"
-#include "../src/Math/vector.cpp"
-
-#include "../src/Others/cout.cpp"
-
-#include "../src/String/kmp.cpp"
-#include "../src/String/rolling_hash.cpp"
-
-#include "../src/Structure/fenwick_tree.cpp"
-#include "../src/Structure/rars.cpp"
-#include "../src/Structure/segment_tree.cpp"
-#include "../src/Structure/skew_heap.cpp"
-#include "../src/Structure/slide_min.cpp"
-#include "../src/Structure/starry_sky_tree.cpp"
-#include "../src/Structure/unionfind.cpp"
-
-using namespace std;
+#include "testsuite.hpp"
 
 mt19937 mt(0);
 uniform_real_distribution<double> rnd(-100.0, 100.0);
@@ -43,92 +8,6 @@ uniform_real_distribution<double> rnd(-100.0, 100.0);
 const int array_len = 200000;
 const int vertex_num = 50000;
 const int edge_num = 200000;
-
-// Hash
-
-using ull = unsigned long long;
-
-ull my_hash(const int &n, mt19937 &mt) {
-  return ull(n) * ull(mt());
-}
-
-ull my_hash(const long long &n, mt19937 &mt) {
-  return ull(n) * ull(mt());
-}
-
-ull my_hash(const unsigned long long &n, mt19937 &mt) {
-  return ull(n) * ull(mt());
-}
-
-ull my_hash(const long double &n, mt19937 &mt) {
-  return ull(n - 0.123456789) * ull(mt());
-}
-
-template<typename T> ull my_hash(const complex<T> &n, mt19937 &mt) {
-  return my_hash(real(n), mt) + my_hash(imag(n), mt);
-}
-
-template<typename U, typename T> ull my_hash(const pair<U, T> &n, mt19937 &mt) {
-  return my_hash(n.first, mt) + my_hash(n.second, mt);
-}
-
-template<typename T> ull my_hash(const vector<T> &n, mt19937 &mt) {
-  ull sum = 0;
-  for (const T &i: n) sum += my_hash(i, mt);
-  return sum;
-}
-
-template<typename T> ull my_hash(T n) { mt19937 mt(0); return my_hash(n, mt); }
-
-// TestSuite
-
-template<typename T>
-class TestSuite {
-  vector<T> testset;
-  vector<string> message;
-  bool flag;
-  template<typename Func>
-  ull get_hash(Func f) {
-    flag = false;
-    vector<ull> hash_vec;
-    const int n = testset.size();
-    double worst = 0;
-    for (int i = 0; i < n; ++i) {
-      const auto &t = testset[i];
-      double start = clock();
-      auto ret = f(t);
-      double s = (clock() - start) / CLOCKS_PER_SEC;
-      worst = max(worst, s);
-      printf("#%.2d (%s) : %.3f s\n", i, message[i].c_str(), s);
-      hash_vec.push_back(my_hash(ret));
-    }
-    printf("%.3f s\n\n", worst);
-    return my_hash(hash_vec);
-  }
-public:
-  TestSuite() : testset(0), message(0), flag(true) {}
-  void add(const T &t, const char *mes) {
-    assert(flag);
-    testset.push_back(t);
-    message.push_back(string(mes));
-  }
-  template<typename Func>
-  void run(const char *mes, Func f) {
-    printf("=== %s ===\n", mes);
-    ull ret = get_hash(f);
-    cerr << "Returns:  " << ret << endl;
-  }
-  template<typename Func>
-  void run(const char *mes, Func f, ull ans) {
-    printf("=== %s ===\n", mes);
-    ull ret = get_hash(f);
-    if (ret != ans) {
-      cerr << "Expected: " << ans << endl;
-      cerr << "Returns:  " << ret << endl;
-    }
-    assert(ret == ans);
-  }
-};
 
 // STL
 
