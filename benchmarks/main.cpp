@@ -3,11 +3,11 @@
 #include "STL/sort.cpp"
 
 #include "Structure/fenwick_tree.cpp"
-// #include "Structure/rars.cpp"
+#include "Structure/rars.cpp"
 #include "Structure/segment_tree.cpp"
 // #include "Structure/skew_heap.cpp"
 // #include "Structure/slide_min.cpp"
-// #include "Structure/starry_sky_tree.cpp"
+#include "Structure/starry_sky_tree.cpp"
 #include "Structure/unionfind.cpp"
 
 // #include "Graph/bfs01.cpp"
@@ -25,20 +25,20 @@
 int main() {
   cout << setprecision(3) << fixed;
 
-  auto array_testsuite = random_array();
-  auto query_testsuite = random_query();
+  auto array = random_array();
+  auto query = random_query();
 
   cout << endl << "=== STL ===" << endl;
-  array_testsuite.run("Sort", test_sort, 10377643567579487844ULL);
-  array_testsuite.run("PQue", test_pque, 15317107113471489615ULL);
-  array_testsuite.run("Set",  test_set,   9895682793213700656ULL);
+  array.run("Sort", test_sort, 10377643567579487844ULL);
+  array.run("PQue", test_pque, 15317107113471489615ULL);
+  array.run("Set",  test_set,   9895682793213700656ULL);
 
   cout << endl << "=== Structure ===" << endl;
-  query_testsuite.run("UnionFind",   test_unionfind,    17211205483629885308ULL);
-  query_testsuite.run("SegmentTree", test_segment_tree, 12068134179184885807ULL);
-  query_testsuite.run("FenwickTree", test_fenwick_tree, 14174181638196948695ULL);
-  // check(test_rars, "RARS");
-  // check(test_starry_sky_tree, "StarrySkyTree");
+  query.run("UnionFind",     test_unionfind,      17211205483629885308ULL);
+  query.run("SegmentTree",   test_segment_tree,   12068134179184885807ULL);
+  query.run("FenwickTree",   test_fenwick_tree,   18089300554097949607ULL);
+  query.run("RARS",          test_rars,            8364133154852900701ULL);
+  query.run("StarrySkyTree", test_starry_sky_tree, 2176377553500610121ULL);
   // check(test_skew_heap, "SkewHeap");
   // check(test_slide_min, "SlideMin");
 
