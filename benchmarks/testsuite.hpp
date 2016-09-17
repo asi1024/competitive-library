@@ -19,10 +19,10 @@ class TestSuite {
       auto ret = f(t);
       double s = (clock() - start) / CLOCKS_PER_SEC;
       worst = max(worst, s);
-      printf("#%.2d (%s) : %.3f s\n", i, message[i].c_str(), s);
+      printf("#%.2d (%s) : %.3f ms\n", i, message[i].c_str(), s * 1e3);
       hash_vec.push_back(my_hash(ret));
     }
-    printf("%.3f s\n\n", worst);
+    printf("%.3f ms\n\n", worst * 1e3);
     return my_hash(hash_vec);
   }
 public:
