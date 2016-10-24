@@ -5,7 +5,7 @@
 template <typename Cost>
 pair<bool,vector<Cost>> spfa(const CGraph<Cost> &g, int s, Cost zero = 0) {
   const int n = g.size();
-  vector<Cost> d(n, inf<Cost>()); d[s] = zero;
+  vector<Cost> d(n, inf<Cost>); d[s] = zero;
   vector<int> updated(n, 0);
   vector<bool> inque(n, false);
   queue<int> que;
@@ -42,7 +42,7 @@ int main() {
   }
   auto res = spfa(g, r).second;
   for (int i = 0; i < V; ++i) {
-    if (res[i] == inf<int>()) cout << "INF" << endl;
+    if (res[i] == inf<int>) cout << "INF" << endl;
     else cout << res[i] << endl;
   }
   return 0;
@@ -64,7 +64,7 @@ int main() {
   tie(flag, res) = spfa(g, r);
   if (flag) {
     for (int i = 0; i < V; ++i) {
-      if (res[i] == inf<int>()) cout << "INF" << endl;
+      if (res[i] == inf<int>) cout << "INF" << endl;
       else cout << res[i] << endl;
     }
   }

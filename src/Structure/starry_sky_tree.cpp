@@ -15,7 +15,7 @@ class StarrySkyTree {
     data[node] = min(data[left] + lazy[left], data[right] + lazy[right]);
   }
   T min_sub(int l, int r, int node, int lb, int ub) {
-    if (ub <= l || r <= lb) return inf<T>();
+    if (ub <= l || r <= lb) return inf<T>;
     if (l <= lb && ub <= r) return data[node] + lazy[node];
     T vl = min_sub(l, r, node * 2 + 0, lb, (lb + ub) / 2);
     T vr = min_sub(l, r, node * 2 + 1, (lb + ub) / 2, ub);

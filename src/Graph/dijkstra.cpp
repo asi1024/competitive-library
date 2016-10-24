@@ -4,7 +4,7 @@
 
 template <typename Cost>
 vector<Cost> dijkstra(const CGraph<Cost> &g, int s, Cost zero = 0) {
-  vector<Cost> d(g.size(), inf<Cost>());
+  vector<Cost> d(g.size(), inf<Cost>);
   d[s] = zero;
   using P = pair<Cost,int>;
   priority_queue<P, vector<P>, greater<P>> que;
@@ -35,7 +35,7 @@ int main() {
   }
   auto res = dijkstra(g, r);
   for (int i = 0; i < V; ++i) {
-    if (res[i] == inf<int>()) cout << "INF" << endl;
+    if (res[i] == inf<int>) cout << "INF" << endl;
     else cout << res[i] << endl;
   }
   return 0;
