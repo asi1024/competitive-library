@@ -18,11 +18,19 @@ template<> constexpr int inf<int> = 1e9;
 template<> constexpr ll inf<ll> = 1e18;
 template<> constexpr ld inf<ld> = 1e30;
 
+struct yes_no : numpunct<char> {
+  string_type do_truename()  const { return "Yes"; }
+  string_type do_falsename() const { return "No"; }
+};
+
 /* -------------------------------- Library -------------------------------- */
 
 /* ---------------------------------- Main ---------------------------------- */
 
 int main() {
+  locale loc(locale(), new yes_no);
+  cout << boolalpha;
+  cout.imbue(loc);
 
   return 0;
 }
