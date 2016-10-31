@@ -24,8 +24,18 @@ matrix:
 sudo: false
 
 before_install:
+  - wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key|sudo apt-key add -
+  - sudo apt-get update -q
+  - sudo apt-get install clang-3.8 -y
   - pip install --user cpp-coveralls
 script:
+  - clang-format --version
+  - clang-format -style=file -output-replacements-xml */*.?pp */*/*.?pp | grep -c "<replacement " >/dev/null
+  - if [ $? -ne 1 ]
+    then
+        echo "Commit did not match clang-format"
+        exit 1;
+    fi
   - $COMPILER --version
   - $COMPILER -coverage -std=c++14 -O0 benchmarks/main.cpp -Wall -o exec
   - ./exec
