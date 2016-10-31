@@ -2,27 +2,26 @@
 
 #include "../util.hpp"
 
-using ll = long long;
-
-vector<ll> inv_list;
-
 class RollingHash {
-  static const ll mod = 1000000000000037LL;
-  static const ll v = 17LL, w = 529411764705902LL;
+  using ll = long long;
   const int n;
-  vector<ll> a;
+  static const ll moda = 1000000000000037LL;
+  static const ll modb = 1000000000000091LL;
+  static const ll pa = 17LL;
+  static const ll pb = 19LL;
+  vector<ll> a, b, p, q;
 public:
-  RollingHash (string str) : n(str.size()), a(n + 1, 0) {
-    for (int i = 0; i < n; ++i)
-      a[i+1] = (a[i] * v + str[i]) % mod;
-    int m = inv_list.size() - 1;
-    if (n > m) {
-      inv_list.resize(n + 1);
-      for (int i = m; i < n; ++i)
-        inv_list[i+1] = (inv_list[i] * __int128(w)) % mod;
+  RollingHash (const string &str) :
+    n(str.size()), a(n+1, 0), b(n+1, 0), p(n+1, 1), q(n+1, 1) {
+    for (int i = 0; i < n; ++i) {
+      a[i+1] = (a[i] * pa + str[i]) % moda;
+      b[i+1] = (b[i] * pb + str[i]) % modb;
+      p[i+1] = p[i] * pa % moda;
+      q[i+1] = q[i] * pb % modb;
     }
   }
-  ll query(int l, int r) {
-    return (a[r] - a[l]) * __int128(inv_list[l]);
+  pair<ll,ll> query(int l, int r) {
+    return make_pair(((__int128)p[r - l] * a[l] - a[r] + moda) % moda,
+                     ((__int128)q[r - l] * b[l] - b[r] + modb) % modb);
   }
 };
