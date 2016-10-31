@@ -2,7 +2,7 @@
 
 #include "../util.hpp"
 
-template<int M, bool IsPrime = true>
+template<int M, bool IsPrime = false>
 class Modulo {
   using ll = long long;
   int n;
@@ -40,27 +40,27 @@ public:
   }
 };
 
-template<int M> Modulo<M> fact(int n, bool sw = true) {
-  static vector<Modulo<M>> v1 = {1}, v2 = {1};
+template<int M> Modulo<M, true> fact(int n, bool sw = true) {
+  static vector<Modulo<M, true>> v1 = {1}, v2 = {1};
   if (n >= (int)v1.size()) {
     const int from = v1.size(), to = n + 1024;
     v1.reserve(to);
     v2.reserve(to);
     for (int i = from; i < to; ++i) {
-      v1.push_back(v1.back() * Modulo<M>(i));
-      v2.push_back(v2.back() / Modulo<M>(i));
+      v1.push_back(v1.back() * Modulo<M, true>(i));
+      v2.push_back(v2.back() / Modulo<M, true>(i));
     }
   }
   return sw ? v1[n] : v2[n];
 }
 
-template<int M> Modulo<M> comb(int a, int b) {
+template<int M> Modulo<M, true> comb(int a, int b) {
   if (b < 0 || b > a) return fact<M>(0);
   return fact<M>(a, true) * fact<M>(b, false) * fact<M>(a-b, false);
 }
 
 const int mod = 1000000007;
-using Mod = Modulo<mod>;
+using Mod = Modulo<mod, true>;
 
 // Verified : ABC 003D
 /*
