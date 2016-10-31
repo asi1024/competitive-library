@@ -11,7 +11,7 @@ public:
     bit1.add(l, -val * l); bit2.add(l,  val);
     bit1.add(r,  val * r); bit2.add(r, -val);
   }
-  T sum(int l, int r) {
+  T sum(int l, int r) const {
     T rsum = bit1.sum(r) + bit2.sum(r) * r;
     T lsum = bit1.sum(l) + bit2.sum(l) * l;
     return rsum - lsum;

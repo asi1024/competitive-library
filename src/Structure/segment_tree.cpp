@@ -7,14 +7,14 @@ class SegmentTree {
   const int n;
   const T id;
   vector<T> data;
-  T sub(int l, int r, int node, int lb, int ub) {
+  T sub(int l, int r, int node, int lb, int ub) const {
     if (ub <= l || r <= lb) return id;
     if (l <= lb && ub <= r) return data[node];
     T vl = sub(l, r, node * 2 + 0, lb, (lb + ub) / 2);
     T vr = sub(l, r, node * 2 + 1, (lb + ub) / 2, ub);
     return merge(vl, vr);
   }
-  int size(int n) {
+  int size(int n) const {
     return n == 1 ? n : size((n + 1) / 2) * 2;
   }
 public:
@@ -28,7 +28,7 @@ public:
       data[p] = merge(data[l], data[r]);
     }
   }
-  T find(int l, int r) {
+  T find(int l, int r) const {
     return sub(l, r, 1, 0, n);
   }
 };

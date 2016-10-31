@@ -11,7 +11,7 @@ public:
   void add(int i, T value) {
     for (; i < n; i |= i+1) data[i] += value;
   }
-  T sum(int i) {
+  T sum(int i) const {
     T s = 0;
     for (; i >= 0; i = (i&(i+1))-1) s += data[i];
     return s;

@@ -14,7 +14,7 @@ class StarrySkyTree {
     add_sub(l, r, right, (lb + ub) / 2, ub, val);
     data[node] = min(data[left] + lazy[left], data[right] + lazy[right]);
   }
-  T min_sub(int l, int r, int node, int lb, int ub) {
+  T min_sub(int l, int r, int node, int lb, int ub) const {
     if (ub <= l || r <= lb) return inf<T>;
     if (l <= lb && ub <= r) return data[node] + lazy[node];
     T vl = min_sub(l, r, node * 2 + 0, lb, (lb + ub) / 2);
@@ -27,7 +27,7 @@ class StarrySkyTree {
 public:
   StarrySkyTree(int m) : n(size(m)), data(n * 2, 0), lazy(n * 2, 0) {}
   void add(int l, int r, T val) { add_sub(l, r, 1, 0, n, val); }
-  T minimum(int l, int r) { return min_sub(l, r, 1, 0, n); }
+  T minimum(int l, int r) const { return min_sub(l, r, 1, 0, n); }
 };
 
 // Verified : Codeforces 52C (Circular RMQ)
