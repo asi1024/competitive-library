@@ -1,12 +1,11 @@
-#include "../util.hpp"
+#include "../gen_query.hpp"
 
-double test_segment_tree() {
-  SegmentTree<int, min> seg(array_len, 0x7FFFFFFF);
-  vector<Query> query = random_query();
-  Timer timer;
+vector<int> test_segment_tree(vector<Query> query) {
+  SegmentTree<int,min> seg(array_len, 0x7FFFFFFF);
+  vector<int> res;
   for (auto q: query) {
     if (q.type) seg.update(q.pos, q.value);
-    else seg.find(q.left, q.right);
+    else res.push_back(seg.find(q.left, q.right));
   }
-  return timer.stop() / query_num;
+  return res;
 }

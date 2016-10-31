@@ -1,12 +1,11 @@
-#include "../util.hpp"
+#include "../gen_query.hpp"
 
-double test_starry_sky_tree() {
+vector<int> test_starry_sky_tree(vector<Query> query) {
   StarrySkyTree<int> seg(array_len);
-  vector<Query> query = random_query();
-  Timer timer;
+  vector<int> res;
   for (auto q: query) {
     if (q.type) seg.add(q.left, q.right, q.value);
-    else seg.minimum(q.left, q.right);
+    else res.push_back(seg.minimum(q.left, q.right));
   }
-  return timer.stop() / query_num;
+  return res;
 }

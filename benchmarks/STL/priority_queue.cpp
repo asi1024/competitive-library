@@ -1,10 +1,12 @@
-#include "../util.hpp"
+#include "../gen_array.hpp"
 
-double test_priority_queue() {
-  vector<int> ary = random_array();
+vector<int> test_pque(const vector<int> &ary) {
+  vector<int> res;
   priority_queue<int> que;
-  Timer timer;
   for (auto i: ary) que.push(i);
-  while (!que.empty()) que.pop();
-  return timer.stop() / (array_len * 2);
+  while (!que.empty()) {
+    res.push_back(que.top());
+    que.pop();
+  }
+  return res;
 }

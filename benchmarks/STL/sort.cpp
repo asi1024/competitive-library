@@ -1,8 +1,6 @@
-#include "../util.hpp"
+#include "../gen_array.hpp"
 
-double test_sort() {
-  vector<int> ary = random_array();
-  Timer timer;
+vector<int> test_sort(vector<int> ary) {
   sort(begin(ary), end(ary));
-  return timer.stop() / array_len;
+  return ary;
 }
