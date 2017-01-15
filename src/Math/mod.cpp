@@ -55,7 +55,7 @@ template<int M> Modulo<M, true> fact(int n, bool sw = true) {
 }
 
 template<int M> Modulo<M, true> comb(int a, int b) {
-  if (b < 0 || b > a) return fact<M>(0);
+  if (b < 0 || b > a) return 0;
   return fact<M>(a, true) * fact<M>(b, false) * fact<M>(a-b, false);
 }
 
