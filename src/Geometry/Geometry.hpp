@@ -27,7 +27,7 @@ struct Segment {
 struct Line {
   Point a, b;
   Line (Point p, Point q) : a(p), b(q) {;}
-  Line (Segment s) : a(s.a), b(s.b) {;}
+  explicit Line (Segment s) : a(s.a), b(s.b) {;}
 };
 
 struct Circle {
