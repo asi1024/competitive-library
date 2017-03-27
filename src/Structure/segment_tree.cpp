@@ -10,7 +10,7 @@ class SegmentTree {
 public:
   SegmentTree(const std::vector<T> &init) :
     sz(init.size()), n(expand(sz)), data(n * 2, T()) {
-    std::copy(begin(init), end(init), begin(data));
+    std::copy(begin(init), end(init), begin(data) + n);
     for (int i = n - 1; i >= 0; --i) {
       data[i] = merge(data[i * 2 + 0], data[i * 2 + 1]);
     }
