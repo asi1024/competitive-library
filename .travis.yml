@@ -27,6 +27,6 @@ sudo: false
 
 script:
   - $CXX --version
-  - ./specs
+  - ./spec.sh
 notifications:
   email: false
