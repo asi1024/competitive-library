@@ -22,7 +22,7 @@ mkdir -p $PROBLEM_ID
 cd $PROBLEM_ID
 
 if [ -f CONFIG ]; then
-    echo -e "$PROBLEM_ID skipped."
+    echo -e "$PROBLEM_ID is already downloaded."
     exit 0
 fi
 
@@ -32,7 +32,7 @@ do
     wget "$URL?id=$PROBLEM_ID&case=$i&type=out" -o /dev/null -O $i.out
     if [ $? != 0 ]; then
         rm $i.in $i.out
-        echo -e "$PROBLEM_ID ok."
+        echo -e "$PROBLEM_ID is downloaded."
         echo $i > CONFIG
         exit 0
     fi
