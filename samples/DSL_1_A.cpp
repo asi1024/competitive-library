@@ -2,11 +2,11 @@
 
 int main() {
   int n, q, com, x, y;
-  cin >> n >> q;
+  scanf("%d%d", &n, &q);
   UnionFind uf(n);
   while (q--) {
-    cin >> com >> x >> y;
-    if (com) cout << uf.same(x, y) << endl;
+    scanf("%d%d%d", &com, &x, &y);
+    if (com) printf("%d\n", uf.same(x, y));
     else uf.unite(x, y);
   }
   return 0;
