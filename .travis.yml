@@ -25,13 +25,8 @@ matrix:
 
 sudo: false
 
-%% before_install:
-%%   - pip install --user cpp-coveralls
 script:
   - $CXX --version
   - ./specs
-  %% - coveralls --gcov $GCOV --gcov-options '\-lp'
-  %% - $COMPILER -std=c++14 -O0 benchmarks/main.cpp -Wall -o exec
-  %% - ./exec
 notifications:
   email: false
