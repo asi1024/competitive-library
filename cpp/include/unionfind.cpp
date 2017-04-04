@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../util.hpp"
+#include "util.hpp"
 
 class UnionFind {
   vector<int> p;
@@ -21,18 +21,3 @@ public:
     return true;
   }
 };
-
-// Verified : AOJ DSL_1_A (Disjoint Set: Union Find Tree)
-/*
-int main() {
-  int n, q, com, x, y;
-  cin >> n >> q;
-  UnionFind uf(n);
-  while (q--) {
-    cin >> com >> x >> y;
-    if (com) cout << uf.same(x, y) << endl;
-    else uf.unite(x, y);
-  }
-  return 0;
-}
-*/

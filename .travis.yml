@@ -27,6 +27,6 @@ sudo: false
 
 script:
   - $COMPILER --version
-  - CXX=$COMPILER ./spec.sh
+  - CXX=$COMPILER ./cpp/spec.sh
 notifications:
   email: false

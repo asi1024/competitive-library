@@ -3,18 +3,19 @@
 set -eu
 
 TARGET=exec
+TESTSUITES="../testsuites"
 
 cd `dirname $0`
 
-for i in `ls samples/*.cpp`
+for i in `ls src/*.cpp`
 do
     PROBLEM_ID=`basename $i .cpp`
-    ./testsuites/aoj.sh $PROBLEM_ID
+    $TESTSUITES/aoj.sh $PROBLEM_ID
     echo -e "Compiling $PROBLEM_ID.cpp ...\r\c"
     $CXX $CXXFLAGS -o $TARGET $i
     echo -e "Compiling $PROBLEM_ID.cpp done."
     MAX_TIME="0.00"
-    for j in `ls -v testsuites/$PROBLEM_ID/*.in`
+    for j in `ls -v $TESTSUITES/$PROBLEM_ID/*.in`
     do
         TESTCASE=`basename $j .in`
         echo -e "$PROBLEM_ID: $TESTCASE.in\r\c"
