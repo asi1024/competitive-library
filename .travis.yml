@@ -6,7 +6,7 @@ matrix:
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-5']
+          packages: ['g++-5', 'bc']
       env:
         COMPILER=g++-5
         CXXFLAGS="-std=c++14 -Wall -Wextra -Werror"
@@ -17,7 +17,7 @@ matrix:
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-6']
+          packages: ['g++-6', 'bc']
       env:
         COMPILER=g++-6
         CXXFLAGS="-std=c++14 -Wall -Wextra -Werror"
