@@ -8,7 +8,7 @@ matrix:
           sources: ['ubuntu-toolchain-r-test']
           packages: ['g++-5']
       env:
-        CXX=g++-5
+        COMPILER=g++-5
         CXXFLAGS="-std=c++14 -Wall -Wextra -Werror"
         GCOV=gcov-5
 
@@ -19,14 +19,14 @@ matrix:
           sources: ['ubuntu-toolchain-r-test']
           packages: ['g++-6']
       env:
-        CXX=g++-6
+        COMPILER=g++-6
         CXXFLAGS="-std=c++14 -Wall -Wextra -Werror"
         GCOV=gcov-6
 
 sudo: false
 
 script:
-  - $CXX --version
-  - ./spec.sh
+  - $COMPILER --version
+  - CXX=$COMPILER ./spec.sh
 notifications:
   email: false
