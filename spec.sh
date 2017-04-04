@@ -15,6 +15,7 @@ do
     echo -e "Compiling $PROBLEM_ID.cpp ...\r\c"
     $CXX $CXXFLAGS -o $TARGET $i
     echo -e "Compiling $PROBLEM_ID.cpp done."
+    MAX_TIME="0.00"
     for j in `ls -v testsuites/$PROBLEM_ID/*.in`
     do
         TESTCASE=`basename $j .in`
@@ -35,12 +36,19 @@ do
                 echo -e "$PROBLEM_ID: \033[0;35mruntime error\033[0m in #$TESTCASE."
             fi
             exit 1)
+        LOG=`echo $LOG | tail -n 1`
+        TIME=${LOG##* }
+        if [ `echo "$TIME > $MAX_TIME" | bc -l` == 1 ]; then
+            MAX_TIME=$TIME
+        fi
         diff out "`dirname $j`/$TESTCASE.out" || (
+            echo ""
+            echo "time: $TIME sec"
             echo -e "$PROBLEM_ID: \033[0;31mwrong answer\033[0m in #$TESTCASE."
             rm out
             exit 1)
     done
-    echo -e "$PROBLEM_ID: \033[0;32mpassed\033[0m."
+    echo -e "$PROBLEM_ID: \033[0;32mpassed\033[0m (time: $MAX_TIME sec)."
 done
 
 rm out
