@@ -31,10 +31,12 @@ do
             else
                 echo "===== error ====="
                 cat log
-                rm log
                 echo "time: $TIME sec"
                 echo -e "$PROBLEM_ID: \033[0;35mruntime error\033[0m in #$TESTCASE."
             fi
+            rm exec
+            rm out
+            rm log
             exit 1)
         LOG=`echo $LOG | tail -n 1`
         TIME=${LOG##* }
@@ -45,10 +47,14 @@ do
             echo ""
             echo "time: $TIME sec"
             echo -e "$PROBLEM_ID: \033[0;31mwrong answer\033[0m in #$TESTCASE."
+            rm exec
             rm out
+            rm log
             exit 1)
     done
     echo -e "$PROBLEM_ID: \033[0;32mpassed\033[0m (time: $MAX_TIME sec)."
 done
 
+rm exec
 rm out
+rm log
