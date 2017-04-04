@@ -8,7 +8,8 @@ matrix:
           sources: ['ubuntu-toolchain-r-test']
           packages: ['g++-5']
       env:
-        COMPILER=g++-5
+        CXX=g++-5
+        CXXFLAGS="--std=c++14 -Wall -Wextra -Werror"
         GCOV=gcov-5
 
     - os: linux
@@ -18,18 +19,19 @@ matrix:
           sources: ['ubuntu-toolchain-r-test']
           packages: ['g++-6']
       env:
-        COMPILER=g++-6
+        CXX=g++-6
+        CXXFLAGS="--std=c++14 -Wall -Wextra -Werror"
         GCOV=gcov-6
 
 sudo: false
 
-before_install:
-  - pip install --user cpp-coveralls
+%% before_install:
+%%   - pip install --user cpp-coveralls
 script:
-  - $COMPILER --version
-  - $COMPILER -coverage -std=c++14 -O0 benchmarks/main.cpp -Wall -o exec
-  - ./exec
-after_success:
-  - coveralls --gcov $GCOV --gcov-options '\-lp'
+  - $CXX --version
+  - ./specs
+  %% - coveralls --gcov $GCOV --gcov-options '\-lp'
+  %% - $COMPILER -std=c++14 -O0 benchmarks/main.cpp -Wall -o exec
+  %% - ./exec
 notifications:
   email: false

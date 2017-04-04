@@ -2,8 +2,6 @@
 
 set -eu
 
-CXX=g++
-CXXFLAGS="--std=c++14 -Wall -Wextra -Werror"
 TARGET=exec
 
 cd `dirname $0`
