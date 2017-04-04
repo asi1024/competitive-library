@@ -9,7 +9,7 @@ matrix:
           packages: ['g++-5']
       env:
         CXX=g++-5
-        CXXFLAGS="--std=c++14 -Wall -Wextra -Werror"
+        CXXFLAGS="-std=c++14 -Wall -Wextra -Werror"
         GCOV=gcov-5
 
     - os: linux
@@ -20,7 +20,7 @@ matrix:
           packages: ['g++-6']
       env:
         CXX=g++-6
-        CXXFLAGS="--std=c++14 -Wall -Wextra -Werror"
+        CXXFLAGS="-std=c++14 -Wall -Wextra -Werror"
         GCOV=gcov-6
 
 sudo: false
