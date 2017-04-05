@@ -26,6 +26,8 @@ matrix:
 sudo: false
 
 script:
+  - ulimit -s unlimited
+  - ulimit -a
   - $COMPILER --version
   - CXX=$COMPILER ./cpp/spec.sh
 notifications:
