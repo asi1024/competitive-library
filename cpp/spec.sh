@@ -46,7 +46,7 @@ do
         if [ `echo "$TIME > $MAX_TIME" | bc -l` == 1 ]; then
             MAX_TIME=$TIME
         fi
-        python3 $TESTSUITES/diff.py out "`dirname $j`/$TESTCASE.out" || (
+        python $TESTSUITES/diff.py out "`dirname $j`/$TESTCASE.out" || (
             echo ""
             echo "time: $TIME sec"
             echo -e "$PROBLEM_ID: \033[0;31mwrong answer\033[0m in #$TESTCASE."
