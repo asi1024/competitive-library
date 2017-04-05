@@ -2,6 +2,10 @@
 
 set -eu
 
+if [ -z ${CXX+x} ]; then
+    exit 0
+fi
+
 TARGET=exec
 TESTSUITES="../testsuites"
 
