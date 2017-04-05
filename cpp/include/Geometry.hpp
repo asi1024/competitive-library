@@ -42,7 +42,7 @@ int ccw (Point a, Point b, Point c) {
   if (cross(b, c) < -eps) return -1; // clockwise
   if (dot(b, c) < 0) return 2;       // c--a--b on line
   if (norm(b) < norm(c)) return -2;  // a--b--c on line
-  return 0;
+  return 0;                          // a--c--b on line
 }
 
 vector<Point> unique(vector<Point> ps) {
