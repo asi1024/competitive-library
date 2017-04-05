@@ -7,7 +7,7 @@ Point input() {
 }
 
 int main() {
-  Line l = Line(input(), input());
+  Line l(input(), input());
   int q;
   scanf("%d", &q);
   while (q--) {
