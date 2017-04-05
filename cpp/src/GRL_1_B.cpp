@@ -6,6 +6,7 @@ int main() {
   Graph<int> g(V);
   while (E--) {
     scanf("%d%d%d", &s, &t, &d);
+    add_edge(g, s, t, d);
   }
   bool flag;
   vector<int> res;

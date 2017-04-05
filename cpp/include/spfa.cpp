@@ -29,7 +29,7 @@ pair<bool,vector<Cost>> spfa(const Graph<Cost> &g, int s, Cost zero = 0) {
     que.pop();
     inque[from] = false;
     ++updated[from];
-    if (updated[from] == n+1) return {false, d}; // negative cycle
+    if (updated[from] == n + 1) return {false, d}; // negative cycle
     for (const auto &e: g[from]) {
       Cost cost = d[from] + e.cost;
       if (cost < d[e.to]) {
