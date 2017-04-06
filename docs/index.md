@@ -5,8 +5,8 @@
 
 ## Data Structures
 
-| Algorithm | Validated | AOJ Problems |
-|:---------:|:---------:|:------------:|
+| Algorithm | Verified | AOJ Problems |
+|:---------:|:--------:|:------------:|
 | [fenwick_tree.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/structure/fenwick_tree.cpp) | <font color="ForestGreen">Yes</font> | [DSL_2_B.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/DSL_2_B.cpp) |
 | [rars.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/structure/rars.cpp) | <font color="ForestGreen">Yes</font> | [DSL_2_G.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/DSL_2_G.cpp) |
 | [segment_tree.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/structure/segment_tree.cpp) | <font color="Red">No</font> |  |
@@ -17,8 +17,8 @@
 
 ## Graph Algorithms
 
-| Algorithm | Validated | AOJ Problems |
-|:---------:|:---------:|:------------:|
+| Algorithm | Verified | AOJ Problems |
+|:---------:|:--------:|:------------:|
 | [bfs01.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/graph/bfs01.cpp) | <font color="ForestGreen">Yes</font> | [2342.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/2342.cpp)<br>[2620.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/2620.cpp) |
 | [bipartite_matching.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/graph/bipartite_matching.cpp) | <font color="ForestGreen">Yes</font> | [GRL_7_A.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/GRL_7_A.cpp) |
 | [dijkstra.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/graph/dijkstra.cpp) | <font color="ForestGreen">Yes</font> | [GRL_1_A.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/GRL_1_A.cpp) |
@@ -30,8 +30,8 @@
 
 ## Numerical Algorithms
 
-| Algorithm | Validated | AOJ Problems |
-|:---------:|:---------:|:------------:|
+| Algorithm | Verified | AOJ Problems |
+|:---------:|:--------:|:------------:|
 | [eratosthenes.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/math/eratosthenes.cpp) | <font color="Red">No</font> |  |
 | [fft.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/math/fft.cpp) | <font color="Red">No</font> |  |
 | [matrix.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/math/matrix.cpp) | <font color="Red">No</font> |  |
@@ -41,16 +41,16 @@
 
 ## String Algorithms
 
-| Algorithm | Validated | AOJ Problems |
-|:---------:|:---------:|:------------:|
+| Algorithm | Verified | AOJ Problems |
+|:---------:|:--------:|:------------:|
 | [kmp.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/string/kmp.cpp) | <font color="Red">No</font> |  |
 | [rolling_hash.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/string/rolling_hash.cpp) | <font color="ForestGreen">Yes</font> | [2444.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/2444.cpp) |
 | [suffix_array.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/string/suffix_array.cpp) | <font color="Red">No</font> |  |
 
 ## Geometric Algorithms
 
-| Algorithm | Validated | AOJ Problems |
-|:---------:|:---------:|:------------:|
+| Algorithm | Verified | AOJ Problems |
+|:---------:|:--------:|:------------:|
 | [Geometry.hpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/geometry/Geometry.hpp) | <font color="ForestGreen">Yes</font> | [CGL_1_C.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/CGL_1_C.cpp) |
 | [convex.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/geometry/convex.cpp) | <font color="Red">No</font> |  |
 | [distance.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/geometry/distance.cpp) | <font color="ForestGreen">Yes</font> | [CGL_2_D.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/CGL_2_D.cpp) |
@@ -59,8 +59,8 @@
 
 ## Others
 
-| Algorithm | Validated | AOJ Problems |
-|:---------:|:---------:|:------------:|
+| Algorithm | Verified | AOJ Problems |
+|:---------:|:--------:|:------------:|
 | [cout.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/others/cout.cpp) | <font color="Red">No</font> |  |
 
 - [Travis CI Report](https://travis-ci.org/asi1024/competitive-library)
