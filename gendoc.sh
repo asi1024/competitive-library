@@ -6,6 +6,5 @@ cd `dirname $0`
 
 INDEX="docs/Index.md"
 
-cat docs/Template.md >  $INDEX
-echo ""              >> $INDEX
-./cpp/gendoc.sh      >> $INDEX
+cat docs/Template.md > $INDEX
+./cpp/gendoc.sh      > $INDEX
