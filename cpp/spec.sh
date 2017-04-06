@@ -8,6 +8,7 @@ fi
 
 TARGET=exec
 TESTSUITES="../testsuites"
+TIMELIMIT=8
 
 cd `dirname $0`
 
@@ -24,7 +25,7 @@ do
         TESTCASE=`basename $j .in`
         echo -e "$PROBLEM_ID: $TESTCASE.in\r\c"
         TIMEFORMAT=%R
-        LOG=`(time timeout -s 9 1 ./$TARGET < $j > out 2> log) 2>&1` || (
+        LOG=`(time timeout -s 9 $TIMELIMIT ./$TARGET < $j > out 2> log) 2>&1` || (
             LOG=`echo $LOG | tail -n 1`
             TIME=${LOG##* }
             echo ""

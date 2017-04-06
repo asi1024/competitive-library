@@ -19,7 +19,7 @@
 
 | Algorithm | Validated | AOJ Problems |
 |:---------:|:---------:|:------------:|
-| [bfs01.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/graph/bfs01.cpp) | <font color="Red">No</font> |  |
+| [bfs01.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/graph/bfs01.cpp) | <font color="ForestGreen">Yes</font> | [2342.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/2342.cpp)<br>[2620.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/2620.cpp) |
 | [bipartite_matching.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/graph/bipartite_matching.cpp) | <font color="ForestGreen">Yes</font> | [GRL_7_A.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/GRL_7_A.cpp) |
 | [dijkstra.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/graph/dijkstra.cpp) | <font color="ForestGreen">Yes</font> | [GRL_1_A.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/GRL_1_A.cpp) |
 | [lca.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/graph/lca.cpp) | <font color="ForestGreen">Yes</font> | [GRL_5_C.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/GRL_5_C.cpp) |

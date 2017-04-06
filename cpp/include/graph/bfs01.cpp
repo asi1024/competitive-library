@@ -1,9 +1,23 @@
 #pragma once
 
-#include "Graph.hpp"
+#include "../util.hpp"
 
 template <typename Cost>
-vector<Cost> bfs01(const CGraph<Cost> &g, int s, Cost zero = 0) {
+struct Edge {
+  int from, to;
+  Cost cost;
+  Edge(int s, int t, Cost c) : from(s), to(t), cost(c) {}
+};
+
+template<typename Cost> using Graph = vector<vector<Edge<Cost>>>;
+
+template <typename Cost>
+void add_edge(Graph<Cost> &g, int from, int to, Cost cost) {
+  g[from].emplace_back(from, to, cost);
+}
+
+template <typename Cost>
+vector<Cost> bfs01(const Graph<Cost> &g, int s, Cost zero = 0) {
   vector<Cost> d(g.size(), inf<Cost>);
   d[s] = zero;
   using P = pair<Cost,int>;
