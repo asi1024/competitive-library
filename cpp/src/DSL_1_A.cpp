@@ -1,4 +1,4 @@
-#include "../include/unionfind.cpp"
+#include "../include/structure/unionfind.cpp"
 
 int main() {
   int n, q, com, x, y;

@@ -1,4 +1,4 @@
-#include "../include/distance.cpp"
+#include "../include/geometry/distance.cpp"
 
 Point input() {
   ld x, y;

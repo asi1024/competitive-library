@@ -1,4 +1,4 @@
-#include "../include/max_flow.cpp"
+#include "../include/graph/max_flow.cpp"
 
 int main() {
   int V, E, u, v, c;

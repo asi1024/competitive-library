@@ -1,4 +1,4 @@
-#include "../include/lca.cpp"
+#include "../include/graph/lca.cpp"
 
 int main() {
   int n, q;

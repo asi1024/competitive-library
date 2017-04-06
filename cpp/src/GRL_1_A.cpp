@@ -1,4 +1,4 @@
-#include "../include/dijkstra.cpp"
+#include "../include/graph/dijkstra.cpp"
 
 int main() {
   int V, E, r, s, t, d;

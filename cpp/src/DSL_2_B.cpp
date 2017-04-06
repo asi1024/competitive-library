@@ -1,4 +1,4 @@
-#include "../include/fenwick_tree.cpp"
+#include "../include/structure/fenwick_tree.cpp"
 
 int main() {
   int n, q, com, x, y;

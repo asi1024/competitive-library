@@ -1,6 +1,6 @@
 #pragma once
 
-#include "util.hpp"
+#include "../util.hpp"
 
 class RollingHash {
   using ll = long long;

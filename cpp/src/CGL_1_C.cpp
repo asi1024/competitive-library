@@ -1,4 +1,4 @@
-#include "../include/Geometry.hpp"
+#include "../include/geometry/Geometry.hpp"
 
 Point input() {
   ld x, y;

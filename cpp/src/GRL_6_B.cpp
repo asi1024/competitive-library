@@ -1,4 +1,4 @@
-#include "../include/min_cost_flow.cpp"
+#include "../include/graph/min_cost_flow.cpp"
 
 int main() {
   int V, E, F;

@@ -1,4 +1,4 @@
-#include "../include/rars.cpp"
+#include "../include/structure/rars.cpp"
 
 int main() {
   int n, q, com, s, t, x;

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "util.hpp"
+#include "../util.hpp"
 
 template<int M, bool IsPrime = false>
 class Modulo {

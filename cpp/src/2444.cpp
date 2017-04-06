@@ -1,4 +1,4 @@
-#include "../include/rolling_hash.cpp"
+#include "../include/string/rolling_hash.cpp"
 
 char str[512000];
 char op[8];

@@ -1,4 +1,4 @@
-#include "../include/mod.cpp"
+#include "../include/math/mod.cpp"
 
 int main() {
   int n, m, k;

@@ -1,4 +1,4 @@
-#include "../include/spfa.cpp"
+#include "../include/graph/spfa.cpp"
 
 int main() {
   int V, E, r, s, t, d;

@@ -1,4 +1,4 @@
-#include "../include/intersect.cpp"
+#include "../include/geometry/intersect.cpp"
 
 Point input() {
   ld x, y;

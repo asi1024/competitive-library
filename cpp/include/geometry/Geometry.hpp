@@ -1,6 +1,6 @@
 #pragma once
 
-#include "util.hpp"
+#include "../util.hpp"
 
 using Point = complex<ld>;
 using Polygon = vector<Point>;
