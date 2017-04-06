@@ -1,8 +1,10 @@
+[![GitHub license](https://img.shields.io/github/license/asi1024/competitive-library.svg)](https://github.com/asi1024/competitive-library/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/asi1024/competitive-library.svg?branch=master)](https://travis-ci.org/asi1024/competitive-library)
 
 ## C++
 
 | Algorithm | Validated | AOJ Problems |
-|:---------:|:---------:|:-------------|
+|:---------:|:---------:|:------------:|
 | [Geometry.hpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/Geometry.hpp) | <font color="ForestGreen">Yes</font> | [CGL_1_C.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/CGL_1_C.cpp) |
 | [Graph.hpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/Graph.hpp) | <font color="Red">No</font> |  |
 | [bfs01.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/bfs01.cpp) | <font color="Red">No</font> |  |
@@ -36,3 +38,4 @@
 | [util.hpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/util.hpp) | <font color="Red">No</font> |  |
 | [vector.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/vector.cpp) | <font color="Red">No</font> |  |
 
+- [Travis CI Report](https://travis-ci.org/asi1024/competitive-library)

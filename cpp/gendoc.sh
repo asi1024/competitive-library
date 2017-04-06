@@ -8,7 +8,7 @@ echo ""
 echo "## C++"
 echo ""
 echo "| Algorithm | Validated | AOJ Problems |"
-echo "|:---------:|:---------:|:-------------|"
+echo "|:---------:|:---------:|:------------:|"
 
 DIR="https://github.com/asi1024/competitive-library/blob/master/cpp"
 
