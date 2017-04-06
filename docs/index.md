@@ -3,17 +3,19 @@
 
 # C++
 
-## geometry
+## Data Structures
 
 | Algorithm | Validated | AOJ Problems |
 |:---------:|:---------:|:------------:|
-| [Geometry.hpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/geometry/Geometry.hpp) | <font color="ForestGreen">Yes</font> | [CGL_1_C.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/CGL_1_C.cpp) |
-| [convex.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/geometry/convex.cpp) | <font color="Red">No</font> |  |
-| [distance.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/geometry/distance.cpp) | <font color="ForestGreen">Yes</font> | [CGL_2_D.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/CGL_2_D.cpp) |
-| [intersect.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/geometry/intersect.cpp) | <font color="ForestGreen">Yes</font> | [CGL_1_A.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/CGL_1_A.cpp)<br>[CGL_2_A.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/CGL_2_A.cpp)<br>[CGL_2_B.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/CGL_2_B.cpp)<br>[CGL_2_C.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/CGL_2_C.cpp) |
-| [intersect_circle.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/geometry/intersect_circle.cpp) | <font color="Red">No</font> |  |
+| [fenwick_tree.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/structure/fenwick_tree.cpp) | <font color="ForestGreen">Yes</font> | [DSL_2_B.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/DSL_2_B.cpp) |
+| [rars.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/structure/rars.cpp) | <font color="ForestGreen">Yes</font> | [DSL_2_G.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/DSL_2_G.cpp) |
+| [segment_tree.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/structure/segment_tree.cpp) | <font color="Red">No</font> |  |
+| [skew_heap.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/structure/skew_heap.cpp) | <font color="Red">No</font> |  |
+| [slide_min.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/structure/slide_min.cpp) | <font color="Red">No</font> |  |
+| [starry_sky_tree.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/structure/starry_sky_tree.cpp) | <font color="Red">No</font> |  |
+| [unionfind.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/structure/unionfind.cpp) | <font color="ForestGreen">Yes</font> | [DSL_1_A.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/DSL_1_A.cpp) |
 
-## graph
+## Graph Algorithms
 
 | Algorithm | Validated | AOJ Problems |
 |:---------:|:---------:|:------------:|
@@ -26,7 +28,7 @@
 | [recession.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/graph/recession.cpp) | <font color="Red">No</font> |  |
 | [spfa.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/graph/spfa.cpp) | <font color="ForestGreen">Yes</font> | [GRL_1_B.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/GRL_1_B.cpp) |
 
-## math
+## Numerical Algorithms
 
 | Algorithm | Validated | AOJ Problems |
 |:---------:|:---------:|:------------:|
@@ -37,13 +39,7 @@
 | [mod_dynamic.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/math/mod_dynamic.cpp) | <font color="Red">No</font> |  |
 | [vector.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/math/vector.cpp) | <font color="Red">No</font> |  |
 
-## others
-
-| Algorithm | Validated | AOJ Problems |
-|:---------:|:---------:|:------------:|
-| [cout.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/others/cout.cpp) | <font color="Red">No</font> |  |
-
-## string
+## String Algorithms
 
 | Algorithm | Validated | AOJ Problems |
 |:---------:|:---------:|:------------:|
@@ -51,16 +47,20 @@
 | [rolling_hash.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/string/rolling_hash.cpp) | <font color="ForestGreen">Yes</font> | [2444.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/2444.cpp) |
 | [suffix_array.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/string/suffix_array.cpp) | <font color="Red">No</font> |  |
 
-## structure
+## Geometric Algorithms
 
 | Algorithm | Validated | AOJ Problems |
 |:---------:|:---------:|:------------:|
-| [fenwick_tree.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/structure/fenwick_tree.cpp) | <font color="ForestGreen">Yes</font> | [DSL_2_B.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/DSL_2_B.cpp) |
-| [rars.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/structure/rars.cpp) | <font color="ForestGreen">Yes</font> | [DSL_2_G.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/DSL_2_G.cpp) |
-| [segment_tree.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/structure/segment_tree.cpp) | <font color="Red">No</font> |  |
-| [skew_heap.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/structure/skew_heap.cpp) | <font color="Red">No</font> |  |
-| [slide_min.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/structure/slide_min.cpp) | <font color="Red">No</font> |  |
-| [starry_sky_tree.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/structure/starry_sky_tree.cpp) | <font color="Red">No</font> |  |
-| [unionfind.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/structure/unionfind.cpp) | <font color="ForestGreen">Yes</font> | [DSL_1_A.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/DSL_1_A.cpp) |
+| [Geometry.hpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/geometry/Geometry.hpp) | <font color="ForestGreen">Yes</font> | [CGL_1_C.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/CGL_1_C.cpp) |
+| [convex.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/geometry/convex.cpp) | <font color="Red">No</font> |  |
+| [distance.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/geometry/distance.cpp) | <font color="ForestGreen">Yes</font> | [CGL_2_D.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/CGL_2_D.cpp) |
+| [intersect.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/geometry/intersect.cpp) | <font color="ForestGreen">Yes</font> | [CGL_1_A.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/CGL_1_A.cpp)<br>[CGL_2_A.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/CGL_2_A.cpp)<br>[CGL_2_B.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/CGL_2_B.cpp)<br>[CGL_2_C.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/CGL_2_C.cpp) |
+| [intersect_circle.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/geometry/intersect_circle.cpp) | <font color="Red">No</font> |  |
+
+## Others
+
+| Algorithm | Validated | AOJ Problems |
+|:---------:|:---------:|:------------:|
+| [cout.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/others/cout.cpp) | <font color="Red">No</font> |  |
 
 - [Travis CI Report](https://travis-ci.org/asi1024/competitive-library)
