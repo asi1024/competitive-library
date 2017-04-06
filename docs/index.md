@@ -4,6 +4,7 @@
 # C++
 
 ## geometry
+
 | Algorithm | Validated | AOJ Problems |
 |:---------:|:---------:|:------------:|
 | [Geometry.hpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/geometry/Geometry.hpp) | <font color="ForestGreen">Yes</font> | [CGL_1_C.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/CGL_1_C.cpp) |
@@ -13,6 +14,7 @@
 | [intersect_circle.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/geometry/intersect_circle.cpp) | <font color="Red">No</font> |  |
 
 ## graph
+
 | Algorithm | Validated | AOJ Problems |
 |:---------:|:---------:|:------------:|
 | [bfs01.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/graph/bfs01.cpp) | <font color="Red">No</font> |  |
@@ -25,6 +27,7 @@
 | [spfa.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/graph/spfa.cpp) | <font color="ForestGreen">Yes</font> | [GRL_1_B.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/GRL_1_B.cpp) |
 
 ## math
+
 | Algorithm | Validated | AOJ Problems |
 |:---------:|:---------:|:------------:|
 | [eratosthenes.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/math/eratosthenes.cpp) | <font color="Red">No</font> |  |
@@ -35,11 +38,13 @@
 | [vector.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/math/vector.cpp) | <font color="Red">No</font> |  |
 
 ## others
+
 | Algorithm | Validated | AOJ Problems |
 |:---------:|:---------:|:------------:|
 | [cout.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/others/cout.cpp) | <font color="Red">No</font> |  |
 
 ## string
+
 | Algorithm | Validated | AOJ Problems |
 |:---------:|:---------:|:------------:|
 | [kmp.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/string/kmp.cpp) | <font color="Red">No</font> |  |
@@ -47,6 +52,7 @@
 | [suffix_array.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/string/suffix_array.cpp) | <font color="Red">No</font> |  |
 
 ## structure
+
 | Algorithm | Validated | AOJ Problems |
 |:---------:|:---------:|:------------:|
 | [fenwick_tree.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/include/structure/fenwick_tree.cpp) | <font color="ForestGreen">Yes</font> | [DSL_2_B.cpp](https://github.com/asi1024/competitive-library/blob/master/cpp/src/DSL_2_B.cpp) |
