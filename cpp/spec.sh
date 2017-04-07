@@ -2,30 +2,60 @@
 
 set -eu
 
-if [ -z ${CXX+x} ]; then
-    exit 0
-fi
+echo "CXX      = $CXX"
+echo "CXXFLAGS = $CXXFLAGS"
 
-TARGET=exec
 TESTSUITES="../testsuites"
 TIMELIMIT=8
 
+COMPILE="./compile.sh"
+RUN="./run.sh"
+
 cd `dirname $0`
+
+BUILD_ONLY=0
+
+for j in $@
+do
+    if [ $j == "--build-only" ]; then
+        BUILD_ONLY=1
+    fi
+done
 
 for i in `ls src/*.cpp`
 do
     PROBLEM_ID=`basename $i .cpp`
-    $TESTSUITES/aoj.sh $PROBLEM_ID
+    FLAG=0
+
+    for j in $@
+    do
+        if [ $j == $PROBLEM_ID ] || [ $j == "--all" ] || [ $j == "-all" ]; then
+            FLAG=1
+        fi
+    done
+    if [ $FLAG == 0 ]; then
+        continue
+    fi
+
+    # compile
     echo -e "Compiling $PROBLEM_ID.cpp ...\r\c"
-    $CXX $CXXFLAGS -o $TARGET $i
+    $COMPILE $i
     echo -e "Compiling $PROBLEM_ID.cpp done."
+    if [ $BUILD_ONLY == 1 ]; then
+        continue
+    fi
+
+    # download
+    $TESTSUITES/aoj.sh $PROBLEM_ID
+
+    # run
     MAX_TIME="0.00"
     for j in `ls -v $TESTSUITES/$PROBLEM_ID/*.in`
     do
         TESTCASE=`basename $j .in`
         echo -e "$PROBLEM_ID: $TESTCASE.in\r\c"
         TIMEFORMAT=%R
-        LOG=`(time timeout -s 9 $TIMELIMIT ./$TARGET < $j > out 2> log) 2>&1` || (
+        LOG=`(time timeout -s 9 $TIMELIMIT ./$RUN < $j > out 2> log) 2>&1` || (
             LOG=`echo $LOG | tail -n 1`
             TIME=${LOG##* }
             echo ""
@@ -38,9 +68,7 @@ do
                 echo "time: $TIME sec"
                 echo -e "$PROBLEM_ID: \033[0;35mruntime error\033[0m in #$TESTCASE."
             fi
-            rm exec
-            rm out
-            rm log
+            rm -f exec out log
             exit 1)
         LOG=`echo $LOG | tail -n 1`
         TIME=${LOG##* }
@@ -51,14 +79,10 @@ do
             echo ""
             echo "time: $TIME sec"
             echo -e "$PROBLEM_ID: \033[0;31mwrong answer\033[0m in #$TESTCASE."
-            rm exec
-            rm out
-            rm log
+            rm -f exec out log
             exit 1)
     done
     echo -e "$PROBLEM_ID: \033[0;32mpassed\033[0m (time: $MAX_TIME sec)."
 done
 
-rm exec
-rm out
-rm log
+rm -f exec out log
