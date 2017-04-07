@@ -12,7 +12,7 @@
 3. `cpp/[AOJ-Problem-ID.cpp]` に書いたライブラリを include して問題を解く (optional)
 
 ### Automated Testing
-4. `CXX` と `CXXFLAGS` を指定して `cpp/spec.sh` を走らせる (例: `CXX=g++ CXXFLAG="--std=c++14 -O2 -Wall" ./cpp/spec.sh`)
+4. `CXX` と `CXXFLAGS` を指定して `cpp/spec.sh` を走らせる (例: `CXX=g++ CXXFLAGS="--std=c++14 -O2 -Wall" ./cpp/spec.sh`)
 5. (optional) Travis CI の方の設定をいい感じにする ([こんな感じ](https://travis-ci.org/asi1024/competitive-library/jobs/219386700#L307) になる)
 
 ### Generates Documentation
