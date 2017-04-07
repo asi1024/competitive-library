@@ -2,6 +2,8 @@
 
 #include <algorithm>
 #include <complex>
+#include <cstdio>
+#include <cstring>
 #include <iostream>
 #include <queue>
 #include <string>
