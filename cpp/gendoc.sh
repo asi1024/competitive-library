@@ -24,8 +24,8 @@ do
     if [ -d "include/$CATEGORY" ]; then
         echo "## $TITLE"
         echo ""
-        echo "| Algorithm | Validated | AOJ Problems |"
-        echo "|:---------:|:---------:|:------------:|"
+        echo "| Algorithm | Verified | AOJ Problems |"
+        echo "|:---------:|:--------:|:------------:|"
         for ALGORITHM in `ls include/$CATEGORY`
         do
             LIST=`grep $ALGORITHM src/* | cut -d ':' -f 1 || true`

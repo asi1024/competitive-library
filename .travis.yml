@@ -9,7 +9,7 @@ matrix:
           packages: ['g++-5', 'bc']
       env:
         COMPILER=g++-5
-        CXXFLAGS="-std=c++14 -Wall -Wextra -Werror"
+        FLAGS="-std=c++14 -O2 -Wall -Wextra -Wno-unused-result -Werror"
         GCOV=gcov-5
 
     - os: linux
@@ -20,7 +20,7 @@ matrix:
           packages: ['g++-6', 'bc']
       env:
         COMPILER=g++-6
-        CXXFLAGS="-std=c++14 -Wall -Wextra -Werror"
+        FLAGS="-std=c++14 -O2 -Wall -Wextra -Wno-unused-result -Werror"
         GCOV=gcov-6
 
     - os: linux
@@ -39,6 +39,6 @@ script:
   - ulimit -s unlimited
   - ulimit -a
   - $COMPILER --version
-  - CXX=$COMPILER ./cpp/spec.sh
+  - CXX=$COMPILER CXXFLAGS=$FLAGS ./cpp/spec.sh --all
 notifications:
   email: false
