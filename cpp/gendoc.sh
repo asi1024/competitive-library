@@ -15,7 +15,7 @@ CATEGORIES=("structure,Data-Structures"
             "geometry,Geometric-Algorithms"
             "others,Others")
 
-DIR="https://github.com/asi1024/competitive-library/blob/master/cpp"
+DIR="{{ site.github.repository_url }}/blob/master/cpp"
 
 for i in ${CATEGORIES[@]}
 do
