@@ -1,6 +1,14 @@
 #pragma once
 
-#include <bits/stdc++.h>
+#include <algorithm>
+#include <complex>
+#include <cstdio>
+#include <cstring>
+#include <iostream>
+#include <queue>
+#include <string>
+#include <tuple>
+#include <vector>
 
 using namespace std;
 
