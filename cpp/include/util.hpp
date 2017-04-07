@@ -7,6 +7,7 @@
 #include <iostream>
 #include <queue>
 #include <string>
+#include <tuple>
 #include <vector>
 
 using namespace std;
