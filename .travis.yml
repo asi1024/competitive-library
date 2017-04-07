@@ -9,7 +9,7 @@ matrix:
           packages: ['g++-5', 'bc']
       env:
         COMPILER=g++-5
-        FLAGS="-std=c++14 -O2 -Wall -Wextra -Werror"
+        FLAGS="-std=c++14 -O2 -Wall -Wextra -Wno-unused-result -Werror"
         GCOV=gcov-5
 
     - os: linux
@@ -20,7 +20,7 @@ matrix:
           packages: ['g++-6', 'bc']
       env:
         COMPILER=g++-6
-        FLAGS="-std=c++14 -O2 -Wall -Wextra -Werror"
+        FLAGS="-std=c++14 -O2 -Wall -Wextra -Wno-unused-result -Werror"
         GCOV=gcov-6
 
 sudo: false
