@@ -11,7 +11,7 @@ int getId(int i, int j, int a, int b, int dir) {
 int main() {
   cin >> H >> W >> A;
   REP(i,H) cin >> str[i];
-  int starty, startx, goaly, goalx;
+  int starty = -1, startx = -1, goaly = -1, goalx = -1;
   REP(i,H) REP(j,W) {
     if (str[i][j] == 'S') starty = i, startx = j;
     if (str[i][j] == 'G') goaly = i, goalx = j;
