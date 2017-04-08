@@ -2,6 +2,9 @@
 
 #include "../util.hpp"
 
+// 非再帰で書き直そうとしたらバグった
+// バグってるから使わないでね
+
 template <typename T>
 class StarrySkyTree {
   const int n;
