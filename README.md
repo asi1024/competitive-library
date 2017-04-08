@@ -7,7 +7,7 @@
 
 ## Usage
 
-1. Fork it.
+1. Fork this repository.
 2. `cpp/[category]/[filename.cpp]` を好みに追加したり書き換えたりする
 3. `cpp/[AOJ-Problem-ID.cpp]` に書いたライブラリを include して問題を解く (optional)
 
@@ -16,12 +16,12 @@
 5. (optional) Travis CI の方の設定をいい感じにする ([こんな感じ](https://travis-ci.org/asi1024/competitive-library/jobs/219386700#L307) になる)
 
 ### Generates Documentation
-4. `./gendoc.sh` を走らせると， `docs/index.md` が生成される ([こんな感じ](https://github.com/asi1024/competitive-library/blob/master/docs/index.md) になる)
+4. `./gendoc.sh` を走らせると， `docs/index.md` が生成される
 5. GitHub Pages の設定をする ([こんな感じ](https://asi1024.github.io/competitive-library/) になる)
 
 ## How to Contribute
-- [Pull Request](https://github.com/asi1024/competitive-library/pull/new/master)
 - [Issue](https://github.com/asi1024/competitive-library/issues/new)
+- [Pull Request](https://github.com/asi1024/competitive-library/pull/new/master)
 
 ## Contributors
 - [Contributors](https://github.com/asi1024/competitive-library/graphs/contributors)
