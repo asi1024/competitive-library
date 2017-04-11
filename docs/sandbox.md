@@ -5,7 +5,7 @@
 
 - test1
 
-{5:12}(https://github.com/asi1024/competitive-library/blob/master/cpp/include/structure/unionfind.cpp)
+{5:12}(../cpp/include/structure/unionfind.cpp)
 
 - test2
 
