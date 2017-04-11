@@ -6,3 +6,7 @@
 - test1
 
 {% include ../cpp/include/structure/unionfind.cpp %}
+
+- test2
+
+{% include https://github.com/asi1024/competitive-library/blob/master/cpp/include/structure/unionfind.cpp %}
