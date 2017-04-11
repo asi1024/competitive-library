@@ -24,7 +24,7 @@ do
         echo "|:---------:|:--------:|:------------:|"
         for ALGORITHM in `ls include/$CATEGORY`
         do
-            LIST=`grep $ALGORITHM src/* | cut -d ':' -f 1 || true`
+            LIST=`grep -r $ALGORITHM src | cut -d ':' -f 1 || true`
             ALGORITHM="[$ALGORITHM]($DIR/include/$CATEGORY/$ALGORITHM)"
             VALIDATED='<font color="Red">No</font>'
             AOJLIST=""
