@@ -1,5 +1,7 @@
 ## suffix_array.cpp
 
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/string/suffix_array.cpp)
+
 ```cpp
 struct SuffixArray {
   struct SAComp {
@@ -80,4 +82,4 @@ public:
 };
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

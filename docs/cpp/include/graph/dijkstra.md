@@ -1,5 +1,7 @@
 ## dijkstra.cpp
 
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/graph/dijkstra.cpp)
+
 ```cpp
 template <typename Cost>
 struct Edge {
@@ -37,4 +39,4 @@ vector<Cost> dijkstra(const Graph<Cost> &g, int s, Cost zero = 0) {
 }
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

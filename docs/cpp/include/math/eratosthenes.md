@@ -1,5 +1,7 @@
 ## eratosthenes.cpp
 
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/math/eratosthenes.cpp)
+
 ```cpp
 const int Prime_N = 1024000;
 
@@ -24,4 +26,4 @@ vector<int> primes() {
 }
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

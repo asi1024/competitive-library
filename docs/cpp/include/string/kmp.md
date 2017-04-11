@@ -1,5 +1,7 @@
 ## kmp.cpp
 
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/string/kmp.cpp)
+
 ```cpp
 struct KMP {
   const int n;
@@ -26,4 +28,4 @@ struct KMP {
 };
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

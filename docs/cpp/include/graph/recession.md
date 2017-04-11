@@ -1,5 +1,7 @@
 ## recession.cpp
 
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/graph/recession.cpp)
+
 ```cpp
 int update(const Graph &g, vector<int> &res, int v) {
   for (auto e: g[v]) {
@@ -58,4 +60,4 @@ int main() {
 */
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

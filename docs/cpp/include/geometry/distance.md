@@ -1,5 +1,7 @@
 ## distance.cpp
 
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/geometry/distance.cpp)
+
 ```cpp
 ld dist_lp(Line l, Point p) {
   return abs(p - proj(l, p));
@@ -28,4 +30,4 @@ ld dist_ss(Segment s, Segment t) {
 }
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

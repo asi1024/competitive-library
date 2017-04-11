@@ -1,5 +1,7 @@
 ## mod_dynamic.cpp
 
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/math/mod_dynamic.cpp)
+
 ```cpp
 /* -------------------------------- Template -------------------------------- */
 
@@ -215,4 +217,4 @@ int main() {
 }
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

@@ -1,5 +1,7 @@
 ## CGL_2_B.cpp
 
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/src/CGL_2_B.cpp)
+
 ```cpp
 Point input() {
   ld x, y;
@@ -20,4 +22,4 @@ int main() {
 }
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

@@ -1,5 +1,7 @@
 ## DSL_2_G.cpp
 
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/src/DSL_2_G.cpp)
+
 ```cpp
 int main() {
   int n, q, com, s, t, x;
@@ -17,4 +19,4 @@ int main() {
 }
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

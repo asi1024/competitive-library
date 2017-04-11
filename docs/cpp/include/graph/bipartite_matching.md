@@ -1,5 +1,7 @@
 ## bipartite_matching.cpp
 
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/graph/bipartite_matching.cpp)
+
 ```cpp
 class BipartiteMatching {
   int size;
@@ -37,4 +39,4 @@ public:
 };
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

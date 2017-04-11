@@ -1,5 +1,7 @@
 ## fenwick_tree.cpp
 
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/structure/fenwick_tree.cpp)
+
 ```cpp
 template <typename T>
 class FenwickTree {
@@ -19,4 +21,4 @@ public:
 };
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

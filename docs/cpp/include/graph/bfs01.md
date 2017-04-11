@@ -1,5 +1,7 @@
 ## bfs01.cpp
 
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/graph/bfs01.cpp)
+
 ```cpp
 template <typename Cost>
 struct Edge {
@@ -38,4 +40,4 @@ vector<Cost> bfs01(const Graph<Cost> &g, int s, Cost zero = 0) {
 }
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

@@ -1,5 +1,7 @@
 ## max_flow.cpp
 
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/graph/max_flow.cpp)
+
 ```cpp
 template <typename Flow>
 struct Edge {
@@ -59,4 +61,4 @@ Flow max_flow(Graph<Flow> &g, int s, int t, Flow zero = 0) {
 }
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

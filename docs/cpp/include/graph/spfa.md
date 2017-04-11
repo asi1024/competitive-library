@@ -1,5 +1,7 @@
 ## spfa.cpp
 
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/graph/spfa.cpp)
+
 ```cpp
 template <typename Cost>
 struct Edge {
@@ -44,4 +46,4 @@ pair<bool,vector<Cost>> spfa(const Graph<Cost> &g, int s, Cost zero = 0) {
 }
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

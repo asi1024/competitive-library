@@ -1,5 +1,7 @@
 ## slide_min.cpp
 
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/structure/slide_min.cpp)
+
 ```cpp
 template <typename T>
 struct SlideMin {
@@ -16,4 +18,4 @@ struct SlideMin {
 };
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

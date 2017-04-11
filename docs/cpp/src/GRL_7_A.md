@@ -1,5 +1,7 @@
 ## GRL_7_A.cpp
 
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/src/GRL_7_A.cpp)
+
 ```cpp
 int main() {
   int X, Y, E, x, y;
@@ -14,4 +16,4 @@ int main() {
 }
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

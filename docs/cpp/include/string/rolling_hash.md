@@ -1,5 +1,7 @@
 ## rolling_hash.cpp
 
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/string/rolling_hash.cpp)
+
 ```cpp
 class RollingHash {
   using ll = long long;
@@ -26,4 +28,4 @@ public:
 };
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

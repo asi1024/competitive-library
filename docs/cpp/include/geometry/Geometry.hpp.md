@@ -1,5 +1,7 @@
 ## Geometry.hpp
 
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/geometry/Geometry.hpp)
+
 ```cpp
 using Point = complex<ld>;
 using Polygon = vector<Point>;
@@ -54,4 +56,4 @@ vector<Point> unique(vector<Point> ps) {
 }
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

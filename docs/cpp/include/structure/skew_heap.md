@@ -1,5 +1,7 @@
 ## skew_heap.cpp
 
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/structure/skew_heap.cpp)
+
 ```cpp
 template<typename T>
 struct Heap {
@@ -32,4 +34,4 @@ Heap<T> *pop(Heap<T> *h) {
 }
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

@@ -1,5 +1,7 @@
 ## fft.cpp
 
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/math/fft.cpp)
+
 ```cpp
 typedef long long ll;
 
@@ -47,4 +49,4 @@ vector<ll> convolution(const vector<ll> &lhs, const vector<ll> &rhs) {
 }
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

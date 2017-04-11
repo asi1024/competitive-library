@@ -1,5 +1,7 @@
 ## matrix.cpp
 
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/math/matrix.cpp)
+
 ```cpp
 template <typename T> using Matrix = vector<vector<T>>;
 
@@ -70,4 +72,4 @@ T det(Matrix<T> A) {
 }
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

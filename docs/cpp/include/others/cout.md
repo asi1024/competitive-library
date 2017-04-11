@@ -1,5 +1,7 @@
 ## cout.cpp
 
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/others/cout.cpp)
+
 ```cpp
 template <class T>
 ostream &operator<<(ostream &os, const vector<T> &v) {
@@ -11,4 +13,4 @@ ostream &operator<<(ostream &os, const vector<T> &v) {
 }
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)
