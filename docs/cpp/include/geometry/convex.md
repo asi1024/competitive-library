@@ -1,6 +1,6 @@
 ## convex.cpp
 
-- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/geometry/convex.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/convex.cpp)
 
 ```cpp
 ld area(const Polygon &g) {

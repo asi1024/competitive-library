@@ -1,6 +1,6 @@
 ## skew_heap.cpp
 
-- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/structure/skew_heap.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/skew_heap.cpp)
 
 ```cpp
 template<typename T>

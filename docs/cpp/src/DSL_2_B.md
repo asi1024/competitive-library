@@ -1,6 +1,6 @@
 ## DSL_2_B.cpp
 
-- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/src/DSL_2_B.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_B.cpp)
 
 ```cpp
 int main() {

@@ -1,6 +1,6 @@
 ## slide_min.cpp
 
-- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/structure/slide_min.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/slide_min.cpp)
 
 ```cpp
 template <typename T>

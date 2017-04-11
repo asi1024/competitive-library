@@ -1,6 +1,6 @@
 ## intersect.cpp
 
-- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/geometry/intersect.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/intersect.cpp)
 
 ```cpp
 bool isis_ll(Line l, Line m) {

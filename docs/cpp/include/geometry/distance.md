@@ -1,6 +1,6 @@
 ## distance.cpp
 
-- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/geometry/distance.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/distance.cpp)
 
 ```cpp
 ld dist_lp(Line l, Point p) {

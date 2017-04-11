@@ -10,8 +10,6 @@ echo ""
 echo "# $LANGUAGE"
 echo ""
 
-DIR="{{ site.github.repository_url }}/blob/master/$2"
-
 cat include/TITLE | while read i
 do
     CATEGORY=`echo $i | cut -d ' ' -f 1`
@@ -27,13 +25,13 @@ do
         for ALGORITHM in `ls include/$CATEGORY`
         do
             LIST=`grep -r $ALGORITHM src | cut -d ':' -f 1 || true`
-            ALGORITHM="[$ALGORITHM]($DIR/include/$CATEGORY/$ALGORITHM)"
+            ALGORITHM="[$ALGORITHM](./$2/include/$CATEGORY/`basename $ALGORITHM .cpp`)"
             VALIDATED='<font color="Red">No</font>'
             AOJLIST=""
             for j in $LIST
             do
                 VALIDATED='<font color="ForestGreen">Yes</font>'
-                AOJLIST="$AOJLIST[`basename $j`]($DIR/$j)<br>"
+                AOJLIST="$AOJLIST[`basename $j`](./$2/`dirname $j`/`basename $j .cpp`)<br>"
             done
             AOJLIST=`echo $AOJLIST | sed -e 's/<br>$//g'`
             echo "| $ALGORITHM | $VALIDATED | $AOJLIST |"

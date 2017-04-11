@@ -1,6 +1,6 @@
 ## mod.cpp
 
-- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/math/mod.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/mod.cpp)
 
 ```cpp
 template<int M, bool IsPrime = false>

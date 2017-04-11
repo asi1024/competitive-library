@@ -1,6 +1,6 @@
 ## unionfind.cpp
 
-- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/structure/unionfind.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/unionfind.cpp)
 
 ```cpp
 class UnionFind {

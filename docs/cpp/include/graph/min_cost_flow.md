@@ -1,6 +1,6 @@
 ## min_cost_flow.cpp
 
-- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/graph/min_cost_flow.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/min_cost_flow.cpp)
 
 ```cpp
 template <typename Flow, typename Cost>

@@ -1,6 +1,6 @@
 ## Geometry.hpp
 
-- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/geometry/Geometry.hpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/Geometry.hpp)
 
 ```cpp
 using Point = complex<ld>;

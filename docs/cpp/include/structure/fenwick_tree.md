@@ -1,6 +1,6 @@
 ## fenwick_tree.cpp
 
-- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/structure/fenwick_tree.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/fenwick_tree.cpp)
 
 ```cpp
 template <typename T>

@@ -1,6 +1,6 @@
 ## kmp.cpp
 
-- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/string/kmp.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/kmp.cpp)
 
 ```cpp
 struct KMP {

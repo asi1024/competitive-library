@@ -1,6 +1,6 @@
 ## starry_sky_tree.cpp
 
-- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/structure/starry_sky_tree.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/starry_sky_tree.cpp)
 
 ```cpp
 // 非再帰で書き直そうとしたらバグった

@@ -1,6 +1,6 @@
 ## mod_dynamic.cpp
 
-- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/math/mod_dynamic.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/mod_dynamic.cpp)
 
 ```cpp
 /* -------------------------------- Template -------------------------------- */

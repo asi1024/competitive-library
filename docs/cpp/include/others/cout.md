@@ -1,6 +1,6 @@
 ## cout.cpp
 
-- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/others/cout.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/others/cout.cpp)
 
 ```cpp
 template <class T>

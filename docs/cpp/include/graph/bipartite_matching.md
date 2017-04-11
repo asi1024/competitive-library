@@ -1,6 +1,6 @@
 ## bipartite_matching.cpp
 
-- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/graph/bipartite_matching.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/bipartite_matching.cpp)
 
 ```cpp
 class BipartiteMatching {
