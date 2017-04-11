@@ -2,16 +2,15 @@
 
 set -eu
 
-cd `dirname $0`
-
 LANGUAGE=$1
-# DIR=$2
+
+cd $2
 
 echo ""
 echo "# $LANGUAGE"
 echo ""
 
-DIR="{{ site.github.repository_url }}/blob/master/cpp"
+DIR="{{ site.github.repository_url }}/blob/master/$2"
 
 cat include/TITLE | while read i
 do
