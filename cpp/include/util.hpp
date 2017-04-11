@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <cassert>
+#include <climits>
 #include <complex>
 #include <cstdio>
 #include <cstring>
