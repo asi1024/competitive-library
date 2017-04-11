@@ -1,6 +1,6 @@
 ## mod.cpp
 
-```
+```cpp
 template<int M, bool IsPrime = false>
 class Modulo {
   using ll = long long;

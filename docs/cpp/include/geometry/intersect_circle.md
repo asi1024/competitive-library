@@ -1,6 +1,6 @@
 ## intersect_circle.cpp
 
-```
+```cpp
 vector<Point> is_cc(Circle c1, Circle c2){
   vector<Point> res;
   ld d = abs(c1.p - c2.p);

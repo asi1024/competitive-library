@@ -1,6 +1,6 @@
 ## DSL_1_A.cpp
 
-```
+```cpp
 int main() {
   int n, q, com, x, y;
   scanf("%d%d", &n, &q);

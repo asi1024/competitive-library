@@ -1,6 +1,6 @@
 ## slide_min.cpp
 
-```
+```cpp
 template <typename T>
 struct SlideMin {
   deque<pair<int,T>> deq;

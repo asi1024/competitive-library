@@ -1,6 +1,6 @@
 ## eratosthenes.cpp
 
-```
+```cpp
 const int Prime_N = 1024000;
 
 bitset<Prime_N> is_prime;

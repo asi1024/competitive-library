@@ -1,6 +1,6 @@
 ## skew_heap.cpp
 
-```
+```cpp
 template<typename T>
 struct Heap {
   T val;

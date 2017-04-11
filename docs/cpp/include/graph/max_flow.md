@@ -1,6 +1,6 @@
 ## max_flow.cpp
 
-```
+```cpp
 template <typename Flow>
 struct Edge {
   int from, to;

@@ -1,6 +1,6 @@
 ## vector.cpp
 
-```
+```cpp
 template<typename T>
 vector<T> operator-(vector<T> v) {
   transform(begin(v), end(v), begin(v), [](T n){ return -n; });

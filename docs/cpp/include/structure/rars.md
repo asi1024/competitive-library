@@ -1,6 +1,6 @@
 ## rars.cpp
 
-```
+```cpp
 template <typename T>
 class RARS {
   FenwickTree<T> bit1, bit2;

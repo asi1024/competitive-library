@@ -1,6 +1,6 @@
 ## segment_tree.cpp
 
-```
+```cpp
 template <class Monoid>
 class SegmentTree {
   using T = typename Monoid::type;

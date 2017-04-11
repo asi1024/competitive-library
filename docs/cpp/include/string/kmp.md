@@ -1,6 +1,6 @@
 ## kmp.cpp
 
-```
+```cpp
 struct KMP {
   const int n;
   const string s;

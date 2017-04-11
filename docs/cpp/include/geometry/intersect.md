@@ -1,6 +1,6 @@
 ## intersect.cpp
 
-```
+```cpp
 bool isis_ll(Line l, Line m) {
   return abs(cross(l.b - l.a, m.b - m.a)) > eps;
 }

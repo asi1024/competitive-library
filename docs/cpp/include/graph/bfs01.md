@@ -1,6 +1,6 @@
 ## bfs01.cpp
 
-```
+```cpp
 template <typename Cost>
 struct Edge {
   int from, to;

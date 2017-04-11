@@ -1,6 +1,6 @@
 ## convex.cpp
 
-```
+```cpp
 ld area(const Polygon &g) {
   ld res = 0;
   int n = g.size();

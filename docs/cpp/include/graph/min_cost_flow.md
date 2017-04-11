@@ -1,6 +1,6 @@
 ## min_cost_flow.cpp
 
-```
+```cpp
 template <typename Flow, typename Cost>
 struct Edge {
   int from, to;

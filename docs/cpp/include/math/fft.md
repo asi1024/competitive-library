@@ -1,6 +1,6 @@
 ## fft.cpp
 
-```
+```cpp
 typedef long long ll;
 
 using ld = long double;

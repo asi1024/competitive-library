@@ -1,6 +1,6 @@
 ## CGL_2_B.cpp
 
-```
+```cpp
 Point input() {
   ld x, y;
   scanf("%Lf%Lf", &x, &y);

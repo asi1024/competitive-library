@@ -1,6 +1,6 @@
 ## lca.cpp
 
-```
+```cpp
 struct Edge {
   int to;
   Edge(int t) : to(t) {}

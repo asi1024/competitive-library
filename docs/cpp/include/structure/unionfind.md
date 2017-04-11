@@ -1,6 +1,6 @@
 ## unionfind.cpp
 
-```
+```cpp
 class UnionFind {
   vector<int> p;
 public:

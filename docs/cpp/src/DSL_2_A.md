@@ -1,6 +1,6 @@
 ## DSL_2_A.cpp
 
-```
+```cpp
 struct RMQ {
   using type = int;
   static type id() { return INT_MAX; }

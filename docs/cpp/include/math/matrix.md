@@ -1,6 +1,6 @@
 ## matrix.cpp
 
-```
+```cpp
 template <typename T> using Matrix = vector<vector<T>>;
 
 template <typename T>

@@ -1,6 +1,6 @@
 ## rolling_hash.cpp
 
-```
+```cpp
 class RollingHash {
   using ll = long long;
   const int n;

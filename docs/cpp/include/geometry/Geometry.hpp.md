@@ -1,6 +1,6 @@
 ## Geometry.hpp
 
-```
+```cpp
 using Point = complex<ld>;
 using Polygon = vector<Point>;
 

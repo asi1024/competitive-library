@@ -1,6 +1,6 @@
 ## GRL_1_B.cpp
 
-```
+```cpp
 int main() {
   int V, E, r, s, t, d;
   scanf("%d%d%d", &V, &E, &r);

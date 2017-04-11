@@ -1,6 +1,6 @@
 ## GRL_5_C.cpp
 
-```
+```cpp
 int main() {
   int n, q;
   scanf("%d", &n);

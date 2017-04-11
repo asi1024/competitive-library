@@ -1,6 +1,6 @@
 ## suffix_array.cpp
 
-```
+```cpp
 struct SuffixArray {
   struct SAComp {
     const int h;

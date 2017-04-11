@@ -5,7 +5,7 @@ do
 
     echo "## `basename $i`" >  $DOC
     echo ""                 >> $DOC
-    echo "\`\`\`"           >> $DOC
+    echo "\`\`\`cpp"        >> $DOC
     cat $i | sed '/^#pragma/d' | sed '/^#include/d' | sed '/./,$!d' >> $DOC
     echo "\`\`\`"           >> $DOC
     echo ""                 >> $DOC

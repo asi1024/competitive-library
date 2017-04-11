@@ -1,6 +1,6 @@
 ## fenwick_tree.cpp
 
-```
+```cpp
 template <typename T>
 class FenwickTree {
   const int n;

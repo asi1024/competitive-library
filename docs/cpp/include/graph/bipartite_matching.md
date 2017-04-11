@@ -1,6 +1,6 @@
 ## bipartite_matching.cpp
 
-```
+```cpp
 class BipartiteMatching {
   int size;
   vector<vector<int>> g;

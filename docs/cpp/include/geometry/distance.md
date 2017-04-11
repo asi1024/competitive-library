@@ -1,6 +1,6 @@
 ## distance.cpp
 
-```
+```cpp
 ld dist_lp(Line l, Point p) {
   return abs(p - proj(l, p));
 }
