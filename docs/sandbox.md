@@ -5,4 +5,4 @@
 
 - test1
 
-<script src="http://gist-it.appspot.com/github/asi1024/competitive-library/blob/master/cpp/include/structure/unionfind.cpp"></script>
+<script src="http://gist-it.appspot.com/github.com/asi1024/competitive-library/blob/master/cpp/include/structure/unionfind.cpp"></script>
