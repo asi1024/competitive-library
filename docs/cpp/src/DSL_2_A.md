@@ -1,6 +1,8 @@
 ## DSL_2_A.cpp
 
-```
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/src/DSL_2_A.cpp)
+
+```cpp
 struct RMQ {
   using type = int;
   static type id() { return INT_MAX; }
@@ -20,4 +22,4 @@ int main() {
 }
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

@@ -1,6 +1,8 @@
 ## min_cost_flow.cpp
 
-```
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/graph/min_cost_flow.cpp)
+
+```cpp
 template <typename Flow, typename Cost>
 struct Edge {
   int from, to;
@@ -75,4 +77,4 @@ Cost min_cost_flow(Graph<Flow, Cost> &g, int s, int t, Flow f,
 }
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

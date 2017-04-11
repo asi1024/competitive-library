@@ -1,6 +1,8 @@
 ## segment_tree.cpp
 
-```
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/structure/segment_tree.cpp)
+
+```cpp
 template <class Monoid>
 class SegmentTree {
   using T = typename Monoid::type;
@@ -37,4 +39,4 @@ public:
 };
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

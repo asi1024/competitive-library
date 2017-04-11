@@ -1,6 +1,8 @@
 ## GRL_5_C.cpp
 
-```
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/src/GRL_5_C.cpp)
+
+```cpp
 int main() {
   int n, q;
   scanf("%d", &n);
@@ -24,4 +26,4 @@ int main() {
 }
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

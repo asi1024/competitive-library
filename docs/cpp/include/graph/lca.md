@@ -1,6 +1,8 @@
 ## lca.cpp
 
-```
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/graph/lca.cpp)
+
+```cpp
 struct Edge {
   int to;
   Edge(int t) : to(t) {}
@@ -50,4 +52,4 @@ public:
 };
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

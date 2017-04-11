@@ -1,6 +1,8 @@
 ## vector.cpp
 
-```
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/math/vector.cpp)
+
+```cpp
 template<typename T>
 vector<T> operator-(vector<T> v) {
   transform(begin(v), end(v), begin(v), [](T n){ return -n; });
@@ -33,4 +35,4 @@ template<typename T>
 T norm(const vector<T> &a) { return dot(a, a); }
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

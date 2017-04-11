@@ -1,6 +1,8 @@
 ## intersect_circle.cpp
 
-```
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/geometry/intersect_circle.cpp)
+
+```cpp
 vector<Point> is_cc(Circle c1, Circle c2){
   vector<Point> res;
   ld d = abs(c1.p - c2.p);
@@ -35,4 +37,4 @@ vector<Point> is_cs(Circle c, Segment s){
 }
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

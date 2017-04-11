@@ -1,6 +1,8 @@
 ## intersect.cpp
 
-```
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/geometry/intersect.cpp)
+
+```cpp
 bool isis_ll(Line l, Line m) {
   return abs(cross(l.b - l.a, m.b - m.a)) > eps;
 }
@@ -39,4 +41,4 @@ Point is_ll(Line s, Line t) {
 }
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

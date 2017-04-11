@@ -1,6 +1,8 @@
 ## starry_sky_tree.cpp
 
-```
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/structure/starry_sky_tree.cpp)
+
+```cpp
 // 非再帰で書き直そうとしたらバグった
 // バグってるから使わないでね
 
@@ -94,4 +96,4 @@ int main() {
 */
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

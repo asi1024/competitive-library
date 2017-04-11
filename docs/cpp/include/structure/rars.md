@@ -1,6 +1,8 @@
 ## rars.cpp
 
-```
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/structure/rars.cpp)
+
+```cpp
 template <typename T>
 class RARS {
   FenwickTree<T> bit1, bit2;
@@ -18,4 +20,4 @@ public:
 };
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

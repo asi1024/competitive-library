@@ -1,6 +1,8 @@
 ## convex.cpp
 
-```
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/geometry/convex.cpp)
+
+```cpp
 ld area(const Polygon &g) {
   ld res = 0;
   int n = g.size();
@@ -57,4 +59,4 @@ ld max_distance(const vector<Point> &ps) {
 }
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

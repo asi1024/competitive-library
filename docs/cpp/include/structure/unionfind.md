@@ -1,6 +1,8 @@
 ## unionfind.cpp
 
-```
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/structure/unionfind.cpp)
+
+```cpp
 class UnionFind {
   vector<int> p;
 public:
@@ -22,4 +24,4 @@ public:
 };
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

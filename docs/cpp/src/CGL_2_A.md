@@ -1,6 +1,8 @@
 ## CGL_2_A.cpp
 
-```
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/src/CGL_2_A.cpp)
+
+```cpp
 Point input() {
   ld x, y;
   scanf("%Lf%Lf", &x, &y);
@@ -21,4 +23,4 @@ int main() {
 }
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)

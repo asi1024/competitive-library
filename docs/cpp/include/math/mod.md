@@ -1,6 +1,8 @@
 ## mod.cpp
 
-```
+- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/math/mod.cpp)
+
+```cpp
 template<int M, bool IsPrime = false>
 class Modulo {
   using ll = long long;
@@ -63,4 +65,4 @@ template<int M = mod> Modulo<M, true> comb(int a, int b) {
 using Mod = Modulo<mod, true>;
 ```
 
-- [Back](../)
+- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)
