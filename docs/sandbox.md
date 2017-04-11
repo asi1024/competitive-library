@@ -5,12 +5,4 @@
 
 - test1
 
-{5:12}(../cpp/include/structure/unionfind.cpp)
-
-- test2
-
-{2:}(https://github.com/asi1024/competitive-library/blob/master/cpp/include/structure/unionfind.cpp)
-
-- test3
-
-(https://github.com/asi1024/competitive-library/blob/master/cpp/include/structure/unionfind.cpp)
+<script src="http://gist-it.appspot.com/github/asi1024/competitive-library/blob/master/cpp/include/structure/unionfind.cpp"></script>
