@@ -9,7 +9,7 @@
 |:---------:|:--------:|:------------:|
 | [fenwick_tree.cpp]({{ site.github.repository_url }}/blob/master/cpp/include/structure/fenwick_tree.cpp) | <font color="ForestGreen">Yes</font> | [DSL_2_B.cpp]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_B.cpp) |
 | [rars.cpp]({{ site.github.repository_url }}/blob/master/cpp/include/structure/rars.cpp) | <font color="ForestGreen">Yes</font> | [DSL_2_G.cpp]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_G.cpp) |
-| [segment_tree.cpp]({{ site.github.repository_url }}/blob/master/cpp/include/structure/segment_tree.cpp) | <font color="Red">No</font> |  |
+| [segment_tree.cpp]({{ site.github.repository_url }}/blob/master/cpp/include/structure/segment_tree.cpp) | <font color="ForestGreen">Yes</font> | [DSL_2_A.cpp]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_A.cpp) |
 | [skew_heap.cpp]({{ site.github.repository_url }}/blob/master/cpp/include/structure/skew_heap.cpp) | <font color="Red">No</font> |  |
 | [slide_min.cpp]({{ site.github.repository_url }}/blob/master/cpp/include/structure/slide_min.cpp) | <font color="Red">No</font> |  |
 | [starry_sky_tree.cpp]({{ site.github.repository_url }}/blob/master/cpp/include/structure/starry_sky_tree.cpp) | <font color="Red">No</font> |  |
