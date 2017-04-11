@@ -1,7 +1,7 @@
 for i in `ls cpp/include/*/* cpp/src/*`
 do
     DOC="docs/`dirname $i`/`basename $i .cpp`.md"
-    REPO="{{ site.github.repository_url }}/bolb/master/$i"
+    REPO="{{ site.github.repository_url }}/blob/master/$i"
     TOP="https://{{ site.github.owner_name }}.github.io/competitive-library"
     mkdir -p "docs/`dirname $i`"
 
