@@ -1,6 +1,7 @@
 #pragma once
 
 #include <algorithm>
+#include <cassert>
 #include <complex>
 #include <cstdio>
 #include <cstring>
