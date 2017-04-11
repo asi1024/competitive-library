@@ -1,6 +1,6 @@
 ## GRL_6_A.cpp
 
-- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/src/GRL_6_A.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_6_A.cpp)
 
 ```cpp
 int main() {

@@ -1,6 +1,6 @@
 ## dijkstra.cpp
 
-- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/graph/dijkstra.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/dijkstra.cpp)
 
 ```cpp
 template <typename Cost>

@@ -1,6 +1,6 @@
 ## vector.cpp
 
-- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/math/vector.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/vector.cpp)
 
 ```cpp
 template<typename T>

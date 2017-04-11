@@ -1,6 +1,6 @@
 ## rars.cpp
 
-- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/structure/rars.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/rars.cpp)
 
 ```cpp
 template <typename T>

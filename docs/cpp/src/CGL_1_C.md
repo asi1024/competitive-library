@@ -1,6 +1,6 @@
 ## CGL_1_C.cpp
 
-- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/src/CGL_1_C.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_1_C.cpp)
 
 ```cpp
 Point input() {

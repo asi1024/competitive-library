@@ -1,6 +1,6 @@
 ## eratosthenes.cpp
 
-- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/math/eratosthenes.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/eratosthenes.cpp)
 
 ```cpp
 const int Prime_N = 1024000;

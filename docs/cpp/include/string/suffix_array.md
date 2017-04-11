@@ -1,6 +1,6 @@
 ## suffix_array.cpp
 
-- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/string/suffix_array.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/suffix_array.cpp)
 
 ```cpp
 struct SuffixArray {

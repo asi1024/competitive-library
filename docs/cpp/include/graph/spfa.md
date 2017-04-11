@@ -1,6 +1,6 @@
 ## spfa.cpp
 
-- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/graph/spfa.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/spfa.cpp)
 
 ```cpp
 template <typename Cost>

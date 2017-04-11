@@ -1,6 +1,6 @@
 ## segment_tree.cpp
 
-- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/structure/segment_tree.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/segment_tree.cpp)
 
 ```cpp
 template <class Monoid>

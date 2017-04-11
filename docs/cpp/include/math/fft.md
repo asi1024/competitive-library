@@ -1,6 +1,6 @@
 ## fft.cpp
 
-- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/math/fft.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/fft.cpp)
 
 ```cpp
 typedef long long ll;

@@ -1,6 +1,6 @@
 ## lca.cpp
 
-- [GitHub]({{ site.github.repository_url }}/bolb/master/cpp/include/graph/lca.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/lca.cpp)
 
 ```cpp
 struct Edge {
