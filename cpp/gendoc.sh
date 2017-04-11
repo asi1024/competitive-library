@@ -18,6 +18,9 @@ do
     CATEGORY=`echo $i | cut -d ' ' -f 1`
     TITLE=`echo $i | cut -d ' ' -f 2- | sed -e 's/-/ /g'`
     if [ -d "include/$CATEGORY" ]; then
+        if [ "`ls include/$CATEGORY`" = "" ]; then
+            continue
+        fi
         echo "## $TITLE"
         echo ""
         echo "| Algorithm | Verified | AOJ Problems |"
