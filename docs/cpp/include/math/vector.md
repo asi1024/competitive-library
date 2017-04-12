@@ -35,4 +35,4 @@ template<typename T>
 T norm(const vector<T> &a) { return dot(a, a); }
 {% endhighlight %}
 
-- [Back](../../../..)
+- [Back](../../..)

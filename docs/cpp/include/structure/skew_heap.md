@@ -34,4 +34,4 @@ Heap<T> *pop(Heap<T> *h) {
 }
 {% endhighlight %}
 
-- [Back](../../../..)
+- [Back](../../..)

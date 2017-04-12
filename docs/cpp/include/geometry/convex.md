@@ -59,4 +59,4 @@ ld max_distance(const vector<Point> &ps) {
 }
 {% endhighlight %}
 
-- [Back](../../../..)
+- [Back](../../..)

@@ -72,4 +72,4 @@ T det(Matrix<T> A) {
 }
 {% endhighlight %}
 
-- [Back](../../../..)
+- [Back](../../..)

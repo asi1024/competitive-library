@@ -13,4 +13,4 @@ ostream &operator<<(ostream &os, const vector<T> &v) {
 }
 {% endhighlight %}
 
-- [Back](../../../..)
+- [Back](../../..)

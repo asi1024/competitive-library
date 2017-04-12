@@ -46,4 +46,4 @@ pair<bool,vector<Cost>> spfa(const Graph<Cost> &g, int s, Cost zero = 0) {
 }
 {% endhighlight %}
 
-- [Back](../../../..)
+- [Back](../../..)

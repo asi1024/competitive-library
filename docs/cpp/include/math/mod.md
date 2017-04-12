@@ -65,4 +65,4 @@ template<int M = mod> Modulo<M, true> comb(int a, int b) {
 using Mod = Modulo<mod, true>;
 {% endhighlight %}
 
-- [Back](../../../..)
+- [Back](../../..)

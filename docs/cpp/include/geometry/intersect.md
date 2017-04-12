@@ -41,4 +41,4 @@ Point is_ll(Line s, Line t) {
 }
 {% endhighlight %}
 
-- [Back](../../../..)
+- [Back](../../..)

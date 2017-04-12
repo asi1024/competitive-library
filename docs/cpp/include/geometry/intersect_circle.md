@@ -37,4 +37,4 @@ vector<Point> is_cs(Circle c, Segment s){
 }
 {% endhighlight %}
 
-- [Back](../../../..)
+- [Back](../../..)

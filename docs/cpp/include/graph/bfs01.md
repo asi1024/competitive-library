@@ -40,4 +40,4 @@ vector<Cost> bfs01(const Graph<Cost> &g, int s, Cost zero = 0) {
 }
 {% endhighlight %}
 
-- [Back](../../../..)
+- [Back](../../..)

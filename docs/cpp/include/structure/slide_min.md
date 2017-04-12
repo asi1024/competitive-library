@@ -18,4 +18,4 @@ struct SlideMin {
 };
 {% endhighlight %}
 
-- [Back](../../../..)
+- [Back](../../..)
