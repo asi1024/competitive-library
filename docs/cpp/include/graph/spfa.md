@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/spfa.cpp)
 
-```cpp
+{% highlight cpp %}
 template <typename Cost>
 struct Edge {
   int from, to;
@@ -44,6 +44,6 @@ pair<bool,vector<Cost>> spfa(const Graph<Cost> &g, int s, Cost zero = 0) {
   }
   return {true, d};
 }
-```
+{% endhighlight %}
 
 - [Back](../../../..)

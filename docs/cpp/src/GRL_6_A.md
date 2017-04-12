@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_6_A.cpp)
 
-```cpp
+{% highlight cpp %}
 int main() {
   int V, E, u, v, c;
   scanf("%d%d", &V, &E);
@@ -14,6 +14,6 @@ int main() {
   printf("%d\n", max_flow(g, 0, V-1));
   return 0;
 }
-```
+{% endhighlight %}
 
 - [Back](../../..)

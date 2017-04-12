@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/mod_dynamic.cpp)
 
-```cpp
+{% highlight cpp %}
 /* -------------------------------- Template -------------------------------- */
 
 
@@ -215,6 +215,6 @@ int main() {
   a.reserve(T);
   return 0;
 }
-```
+{% endhighlight %}
 
 - [Back](../../../..)

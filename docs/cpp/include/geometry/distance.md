@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/distance.cpp)
 
-```cpp
+{% highlight cpp %}
 ld dist_lp(Line l, Point p) {
   return abs(p - proj(l, p));
 }
@@ -28,6 +28,6 @@ ld dist_ss(Segment s, Segment t) {
   ld b = min(dist_sp(s, t.b), dist_sp(t, s.b));
   return min(a, b);
 }
-```
+{% endhighlight %}
 
 - [Back](../../../..)

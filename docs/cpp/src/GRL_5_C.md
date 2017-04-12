@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_5_C.cpp)
 
-```cpp
+{% highlight cpp %}
 int main() {
   int n, q;
   scanf("%d", &n);
@@ -24,6 +24,6 @@ int main() {
   }
   return 0;
 }
-```
+{% endhighlight %}
 
 - [Back](../../..)

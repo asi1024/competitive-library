@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/matrix.cpp)
 
-```cpp
+{% highlight cpp %}
 template <typename T> using Matrix = vector<vector<T>>;
 
 template <typename T>
@@ -70,6 +70,6 @@ T det(Matrix<T> A) {
   }
   return D;
 }
-```
+{% endhighlight %}
 
 - [Back](../../../..)

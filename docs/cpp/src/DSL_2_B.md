@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_B.cpp)
 
-```cpp
+{% highlight cpp %}
 int main() {
   int n, q, com, x, y;
   scanf("%d%d", &n, &q);
@@ -14,6 +14,6 @@ int main() {
   }
   return 0;
 }
-```
+{% endhighlight %}
 
 - [Back](../../..)

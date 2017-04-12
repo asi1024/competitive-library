@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/min_cost_flow.cpp)
 
-```cpp
+{% highlight cpp %}
 template <typename Flow, typename Cost>
 struct Edge {
   int from, to;
@@ -75,6 +75,6 @@ Cost min_cost_flow(Graph<Flow, Cost> &g, int s, int t, Flow f,
   }
   return res;
 }
-```
+{% endhighlight %}
 
 - [Back](../../../..)

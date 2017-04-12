@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_1_A.cpp)
 
-```cpp
+{% highlight cpp %}
 int main() {
   int V, E, r, s, t, d;
   scanf("%d%d%d", &V ,&E, &r);
@@ -18,6 +18,6 @@ int main() {
   }
   return 0;
 }
-```
+{% endhighlight %}
 
 - [Back](../../..)

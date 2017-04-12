@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/skew_heap.cpp)
 
-```cpp
+{% highlight cpp %}
 template<typename T>
 struct Heap {
   T val;
@@ -32,6 +32,6 @@ Heap<T> *pop(Heap<T> *h) {
   free(h);
   return res;
 }
-```
+{% endhighlight %}
 
 - [Back](../../../..)

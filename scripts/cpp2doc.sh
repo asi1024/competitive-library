@@ -5,13 +5,13 @@ do
     TOP="`realpath --relative-to="$i" ./`"
     mkdir -p "docs/`dirname $i`"
 
-    echo "## `basename $i`"  >  $DOC
-    echo ""                  >> $DOC
-    echo "- [GitHub]($REPO)" >> $DOC
-    echo ""                  >> $DOC
-    echo "\`\`\`cpp"         >> $DOC
+    echo "## `basename $i`"    >  $DOC
+    echo ""                    >> $DOC
+    echo "- [GitHub]($REPO)"   >> $DOC
+    echo ""                    >> $DOC
+    echo "{% highlight cpp %}" >> $DOC
     cat $i | sed '/^#pragma/d' | sed '/^#include/d' | sed '/./,$!d' >> $DOC
-    echo "\`\`\`"            >> $DOC
-    echo ""                  >> $DOC
-    echo "- [Back]($TOP)"    >> $DOC
+    echo "{% endhighlight %}"  >> $DOC
+    echo ""                    >> $DOC
+    echo "- [Back]($TOP)"      >> $DOC
 done

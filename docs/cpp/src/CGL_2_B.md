@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_2_B.cpp)
 
-```cpp
+{% highlight cpp %}
 Point input() {
   ld x, y;
   scanf("%Lf%Lf", &x, &y);
@@ -20,6 +20,6 @@ int main() {
   }
   return 0;
 }
-```
+{% endhighlight %}
 
 - [Back](../../..)

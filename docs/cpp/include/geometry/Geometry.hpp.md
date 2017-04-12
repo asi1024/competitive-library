@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/Geometry.hpp)
 
-```cpp
+{% highlight cpp %}
 using Point = complex<ld>;
 using Polygon = vector<Point>;
 
@@ -54,6 +54,6 @@ vector<Point> unique(vector<Point> ps) {
       res.push_back(p);
   return res;
 }
-```
+{% endhighlight %}
 
 - [Back](../../../..)

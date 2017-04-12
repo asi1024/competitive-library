@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/unionfind.cpp)
 
-```cpp
+{% highlight cpp %}
 class UnionFind {
   vector<int> p;
 public:
@@ -22,6 +22,6 @@ public:
     return true;
   }
 };
-```
+{% endhighlight %}
 
 - [Back](../../../..)

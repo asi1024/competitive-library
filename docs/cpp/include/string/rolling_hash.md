@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/rolling_hash.cpp)
 
-```cpp
+{% highlight cpp %}
 class RollingHash {
   using ll = long long;
   const int n;
@@ -26,6 +26,6 @@ public:
                      ((__int128)q[r - l] * b[l] - b[r] + modb) % modb);
   }
 };
-```
+{% endhighlight %}
 
 - [Back](../../../..)

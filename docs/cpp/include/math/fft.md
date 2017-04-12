@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/fft.cpp)
 
-```cpp
+{% highlight cpp %}
 typedef long long ll;
 
 using ld = long double;
@@ -47,6 +47,6 @@ vector<ll> convolution(const vector<ll> &lhs, const vector<ll> &rhs) {
   for (int i = 0; i < n; ++i) res[i] = ra[i].real() / n + 0.5;
   return res;
 }
-```
+{% endhighlight %}
 
 - [Back](../../../..)

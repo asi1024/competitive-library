@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/suffix_array.cpp)
 
-```cpp
+{% highlight cpp %}
 struct SuffixArray {
   struct SAComp {
     const int h;
@@ -80,6 +80,6 @@ public:
     return seg.find(min(i, j), max(i, j));
   }
 };
-```
+{% endhighlight %}
 
 - [Back](../../../..)

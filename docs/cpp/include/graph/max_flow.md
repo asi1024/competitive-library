@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/max_flow.cpp)
 
-```cpp
+{% highlight cpp %}
 template <typename Flow>
 struct Edge {
   int from, to;
@@ -59,6 +59,6 @@ Flow max_flow(Graph<Flow> &g, int s, int t, Flow zero = 0) {
     while ((f = augment(g, d, iter, s, t, inf<Flow>)) > 0) flow += f;
   }
 }
-```
+{% endhighlight %}
 
 - [Back](../../../..)
