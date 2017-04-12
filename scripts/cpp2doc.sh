@@ -3,7 +3,6 @@ do
     DOC="docs/`dirname $i`/`basename $i .cpp`.md"
     REPO="{{ site.github.repository_url }}/blob/master/$i"
     TOP="`realpath --relative-to="$i" cpp`"
-    echo $TOP
     mkdir -p "docs/`dirname $i`"
 
     echo "## `basename $i`"    >  $DOC
