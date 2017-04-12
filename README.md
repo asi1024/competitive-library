@@ -5,19 +5,31 @@
 
 競技プログラミング用ライブラリ管理ツール
 
-## Usage
-
 1. Fork this repository.
 2. `cpp/[category]/[filename.cpp]` を好みに追加したり書き換えたりする
 3. `cpp/[AOJ-Problem-ID.cpp]` に書いたライブラリを include して問題を解く (optional)
 
-### Automated Testing
-4. `CXX` と `CXXFLAGS` を指定して `cpp/spec.sh` を走らせる (例: `CXX=g++ CXXFLAGS="--std=c++14 -O2 -Wall" ./cpp/spec.sh`)
+## Automated Testing
+4. `CXX` と `CXXFLAGS` を指定して `cpp/spec.sh` を走らせる (例:`CXX=g++ CXXFLAGS="--std=c++14 -O2 -Wall" ./cpp/spec.sh -all`)
 5. (optional) Travis CI の方の設定をいい感じにする ([こんな感じ](https://travis-ci.org/asi1024/competitive-library/jobs/219386700#L307) になる)
 
-### Generates Documentation
+## Generates Documentation
 4. `./gendoc.sh` を走らせると， `docs/index.md` が生成される
 5. GitHub Pages の設定をする ([こんな感じ](https://asi1024.github.io/competitive-library/) になる)
+
+### GitHub Pages を公開する方法
+- Settings -> GitHub Pages -> Source を ``master branch /docs folder'' にする
+
+### GitHub Pages のプレビュー
+- 以下を行う
+```
+$ cd docs
+$ gem update bundler
+$ bundle install
+$ bundle exec jekyll serve
+```
+- `Server address` が表示されるので，ブラウザでそこにアクセスする
+- 詳しくは[ここ](https://github.com/github/pages-gem)とかを見てくれ
 
 ## How to Contribute
 - [Issue](https://github.com/asi1024/competitive-library/issues/new)
