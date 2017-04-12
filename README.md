@@ -17,10 +17,10 @@
 4. `./gendoc.sh` を走らせると， `docs/index.md` が生成される
 5. GitHub Pages の設定をする ([こんな感じ](https://asi1024.github.io/competitive-library/) になる)
 
-### GitHub Pages での公開する方法
+### GitHub Pages を公開する方法
 - Settings -> GitHub Pages -> Source を ``master branch /docs folder'' にする
 
-### プレビュー
+### GitHub Pages のプレビュー
 - 以下を行う
 ```
 $ cd docs
@@ -29,6 +29,7 @@ $ bundle install
 $ bundle exec jekyll serve
 ```
 - `Server address` が表示されるので，ブラウザでそこにアクセスする
+- 詳しくは[ここ](https://github.com/github/pages-gem)とかを見てくれ
 
 ## How to Contribute
 - [Issue](https://github.com/asi1024/competitive-library/issues/new)
