@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/eratosthenes.cpp)
 
-```cpp
+{% highlight cpp %}
 const int Prime_N = 1024000;
 
 bitset<Prime_N> is_prime;
@@ -24,6 +24,6 @@ vector<int> primes() {
   }
   return res;
 }
-```
+{% endhighlight %}
 
-- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)
+- [Back](../../../..)

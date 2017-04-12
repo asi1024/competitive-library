@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_1_A.cpp)
 
-```cpp
+{% highlight cpp %}
 Point input() {
   ld x, y;
   scanf("%Lf%Lf", &x, &y);
@@ -19,6 +19,6 @@ int main() {
     printf("%.10Lf %.10Lf\n", real(res), imag(res));
   }
 }
-```
+{% endhighlight %}
 
-- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)
+- [Back](../../..)

@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/fenwick_tree.cpp)
 
-```cpp
+{% highlight cpp %}
 template <typename T>
 class FenwickTree {
   const int n;
@@ -19,6 +19,6 @@ public:
   }
   T sum(int l, int r) const { return sum(r - 1) - sum(l - 1); }
 };
-```
+{% endhighlight %}
 
-- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)
+- [Back](../../../..)

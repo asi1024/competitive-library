@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/segment_tree.cpp)
 
-```cpp
+{% highlight cpp %}
 template <class Monoid>
 class SegmentTree {
   using T = typename Monoid::type;
@@ -37,6 +37,6 @@ public:
     return Monoid::op(res1, res2);
   }
 };
-```
+{% endhighlight %}
 
-- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)
+- [Back](../../../..)

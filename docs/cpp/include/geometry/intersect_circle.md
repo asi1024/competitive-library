@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/intersect_circle.cpp)
 
-```cpp
+{% highlight cpp %}
 vector<Point> is_cc(Circle c1, Circle c2){
   vector<Point> res;
   ld d = abs(c1.p - c2.p);
@@ -35,6 +35,6 @@ vector<Point> is_cs(Circle c, Segment s){
     if (isis_sp(s, p)) res.push_back(p);
   return res;
 }
-```
+{% endhighlight %}
 
-- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)
+- [Back](../../../..)

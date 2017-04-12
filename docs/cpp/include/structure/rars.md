@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/rars.cpp)
 
-```cpp
+{% highlight cpp %}
 template <typename T>
 class RARS {
   FenwickTree<T> bit1, bit2;
@@ -18,6 +18,6 @@ public:
     return rsum - lsum;
   }
 };
-```
+{% endhighlight %}
 
-- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)
+- [Back](../../../..)

@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/bfs01.cpp)
 
-```cpp
+{% highlight cpp %}
 template <typename Cost>
 struct Edge {
   int from, to;
@@ -38,6 +38,6 @@ vector<Cost> bfs01(const Graph<Cost> &g, int s, Cost zero = 0) {
   }
   return d;
 }
-```
+{% endhighlight %}
 
-- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)
+- [Back](../../../..)

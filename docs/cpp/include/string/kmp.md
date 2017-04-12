@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/kmp.cpp)
 
-```cpp
+{% highlight cpp %}
 struct KMP {
   const int n;
   const string s;
@@ -26,6 +26,6 @@ struct KMP {
     return res;
   }
 };
-```
+{% endhighlight %}
 
-- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)
+- [Back](../../../..)

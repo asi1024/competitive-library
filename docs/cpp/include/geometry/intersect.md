@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/intersect.cpp)
 
-```cpp
+{% highlight cpp %}
 bool isis_ll(Line l, Line m) {
   return abs(cross(l.b - l.a, m.b - m.a)) > eps;
 }
@@ -39,6 +39,6 @@ Point is_ll(Line s, Line t) {
   Point sv = s.b - s.a, tv = t.b - t.a;
   return s.a + sv * cross(tv, t.a - s.a) / cross(tv, sv);
 }
-```
+{% endhighlight %}
 
-- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)
+- [Back](../../../..)

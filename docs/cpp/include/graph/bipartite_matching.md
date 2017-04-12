@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/bipartite_matching.cpp)
 
-```cpp
+{% highlight cpp %}
 class BipartiteMatching {
   int size;
   vector<vector<int>> g;
@@ -37,6 +37,6 @@ public:
     return res;
   }
 };
-```
+{% endhighlight %}
 
-- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)
+- [Back](../../../..)

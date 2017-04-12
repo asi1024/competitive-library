@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_7_A.cpp)
 
-```cpp
+{% highlight cpp %}
 int main() {
   int X, Y, E, x, y;
   scanf("%d%d%d", &X, &Y, &E);
@@ -14,6 +14,6 @@ int main() {
   printf("%d\n", mat.maximum_matching());
   return 0;
 }
-```
+{% endhighlight %}
 
-- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)
+- [Back](../../..)

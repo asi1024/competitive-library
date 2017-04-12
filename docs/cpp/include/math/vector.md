@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/vector.cpp)
 
-```cpp
+{% highlight cpp %}
 template<typename T>
 vector<T> operator-(vector<T> v) {
   transform(begin(v), end(v), begin(v), [](T n){ return -n; });
@@ -33,6 +33,6 @@ T dot(const vector<T> &a, const vector<T> &b) {
 
 template<typename T>
 T norm(const vector<T> &a) { return dot(a, a); }
-```
+{% endhighlight %}
 
-- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)
+- [Back](../../../..)

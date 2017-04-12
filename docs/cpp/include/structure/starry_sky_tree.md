@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/starry_sky_tree.cpp)
 
-```cpp
+{% highlight cpp %}
 // 非再帰で書き直そうとしたらバグった
 // バグってるから使わないでね
 
@@ -94,6 +94,6 @@ int main() {
   return 0;
 }
 */
-```
+{% endhighlight %}
 
-- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)
+- [Back](../../../..)

@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_A.cpp)
 
-```cpp
+{% highlight cpp %}
 struct RMQ {
   using type = int;
   static type id() { return INT_MAX; }
@@ -20,6 +20,6 @@ int main() {
   }
   return 0;
 }
-```
+{% endhighlight %}
 
-- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)
+- [Back](../../..)

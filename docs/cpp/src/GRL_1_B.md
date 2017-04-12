@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_1_B.cpp)
 
-```cpp
+{% highlight cpp %}
 int main() {
   int V, E, r, s, t, d;
   scanf("%d%d%d", &V, &E, &r);
@@ -25,6 +25,6 @@ int main() {
   }
   return 0;
 }
-```
+{% endhighlight %}
 
-- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)
+- [Back](../../..)
