@@ -31,3 +31,7 @@
 CONFIG
 *.in
 *.out
+
+# preview
+Gemfile.lock
+_site
