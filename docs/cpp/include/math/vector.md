@@ -35,4 +35,4 @@ template<typename T>
 T norm(const vector<T> &a) { return dot(a, a); }
 ```
 
-- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)
+- [Back](../../../..)

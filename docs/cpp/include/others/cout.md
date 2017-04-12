@@ -13,4 +13,4 @@ ostream &operator<<(ostream &os, const vector<T> &v) {
 }
 ```
 
-- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)
+- [Back](../../../..)

@@ -30,4 +30,4 @@ ld dist_ss(Segment s, Segment t) {
 }
 ```
 
-- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)
+- [Back](../../../..)

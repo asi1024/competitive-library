@@ -41,4 +41,4 @@ Point is_ll(Line s, Line t) {
 }
 ```
 
-- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)
+- [Back](../../../..)

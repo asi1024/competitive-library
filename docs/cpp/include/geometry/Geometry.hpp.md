@@ -56,4 +56,4 @@ vector<Point> unique(vector<Point> ps) {
 }
 ```
 
-- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)
+- [Back](../../../..)

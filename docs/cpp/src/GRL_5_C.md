@@ -26,4 +26,4 @@ int main() {
 }
 ```
 
-- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)
+- [Back](../../..)

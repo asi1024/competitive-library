@@ -61,4 +61,4 @@ Flow max_flow(Graph<Flow> &g, int s, int t, Flow zero = 0) {
 }
 ```
 
-- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)
+- [Back](../../../..)

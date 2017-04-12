@@ -77,4 +77,4 @@ Cost min_cost_flow(Graph<Flow, Cost> &g, int s, int t, Flow f,
 }
 ```
 
-- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)
+- [Back](../../../..)

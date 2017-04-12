@@ -37,4 +37,4 @@ vector<Point> is_cs(Circle c, Segment s){
 }
 ```
 
-- [Back](https://{{ site.github.owner_name }}.github.io/competitive-library)
+- [Back](../../../..)
