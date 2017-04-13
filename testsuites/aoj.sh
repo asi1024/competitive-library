@@ -10,13 +10,6 @@ PORT=8080
 URL=$HOST:$PORT/aoj/testcase.jsp
 PROBLEM_ID=$1
 
-wget "$URL?id=$PROBLEM_ID&case=??&type=in"  -o /dev/null -O /dev/null
-
-if [ $? == 0 ]; then
-    echo "in preparation" >&2
-    exit 1
-fi
-
 cd `dirname $0`
 mkdir -p $PROBLEM_ID
 cd $PROBLEM_ID
@@ -24,6 +17,13 @@ cd $PROBLEM_ID
 if [ -f CONFIG ]; then
     echo -e "$PROBLEM_ID is already downloaded."
     exit 0
+fi
+
+wget "$URL?id=$PROBLEM_ID&case=??&type=in"  -o /dev/null -O /dev/null
+
+if [ $? == 0 ]; then
+    echo "in preparation" >&2
+    exit 1
 fi
 
 for i in `seq 1 1000`
