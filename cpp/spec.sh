@@ -5,11 +5,12 @@ set -eu
 echo "CXX      = $CXX"
 echo "CXXFLAGS = $CXXFLAGS"
 
+function compile() {
+    $CXX $CXXFLAGS -o exec $1
+}
+
 TESTSUITES="../testsuites"
 TIMELIMIT=8
-
-COMPILE="./compile.sh"
-RUN="./run.sh"
 
 cd `dirname $0`
 
@@ -39,7 +40,7 @@ do
 
     # compile
     echo -e "Compiling $PROBLEM_ID.cpp ...\r\c"
-    $COMPILE $i
+    compile $i
     echo -e "Compiling $PROBLEM_ID.cpp done."
     if [ $BUILD_ONLY == 1 ]; then
         continue
@@ -55,7 +56,7 @@ do
         TESTCASE=`basename $j .in`
         echo -e "$PROBLEM_ID: $TESTCASE.in\r\c"
         TIMEFORMAT=%R
-        LOG=`(time timeout -s 9 $TIMELIMIT ./$RUN < $j > out 2> log) 2>&1` || (
+        LOG=`(time timeout -s 9 $TIMELIMIT ./exec < $j > out 2> log) 2>&1` || (
             LOG=`echo $LOG | tail -n 1`
             TIME=${LOG##* }
             echo ""
