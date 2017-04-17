@@ -3,6 +3,8 @@
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_1_A.cpp)
 
 {% highlight cpp %}
+#include "../include/structure/unionfind.cpp"
+
 int main() {
   int n, q, com, x, y;
   scanf("%d%d", &n, &q);

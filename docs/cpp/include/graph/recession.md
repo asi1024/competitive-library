@@ -3,6 +3,8 @@
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/recession.cpp)
 
 {% highlight cpp %}
+#include "Graph.hpp"
+
 int update(const Graph &g, vector<int> &res, int v) {
   for (auto e: g[v]) {
     if (res[e.to] == -1) {

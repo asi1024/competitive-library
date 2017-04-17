@@ -3,6 +3,8 @@
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/rars.cpp)
 
 {% highlight cpp %}
+#include "fenwick_tree.cpp"
+
 template <typename T>
 class RARS {
   FenwickTree<T> bit1, bit2;

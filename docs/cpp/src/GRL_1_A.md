@@ -3,6 +3,8 @@
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_1_A.cpp)
 
 {% highlight cpp %}
+#include "../include/graph/dijkstra.cpp"
+
 int main() {
   int V, E, r, s, t, d;
   scanf("%d%d%d", &V ,&E, &r);

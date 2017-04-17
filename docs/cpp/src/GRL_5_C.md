@@ -3,6 +3,8 @@
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_5_C.cpp)
 
 {% highlight cpp %}
+#include "../include/graph/lca.cpp"
+
 int main() {
   int n, q;
   scanf("%d", &n);

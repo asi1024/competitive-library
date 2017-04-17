@@ -3,6 +3,8 @@
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_G.cpp)
 
 {% highlight cpp %}
+#include "../include/structure/rars.cpp"
+
 int main() {
   int n, q, com, s, t, x;
   scanf("%d%d", &n, &q);

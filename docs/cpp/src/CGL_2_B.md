@@ -3,6 +3,8 @@
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_2_B.cpp)
 
 {% highlight cpp %}
+#include "../include/geometry/intersect.cpp"
+
 Point input() {
   ld x, y;
   scanf("%Lf%Lf", &x, &y);

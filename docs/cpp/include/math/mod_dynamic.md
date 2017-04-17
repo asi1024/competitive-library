@@ -5,6 +5,32 @@
 {% highlight cpp %}
 /* -------------------------------- Template -------------------------------- */
 
+#include <algorithm>
+#include <array>
+#include <bitset>
+#include <cassert>
+#include <cmath>
+#include <complex>
+#include <cstdio>
+#include <cstring>
+#include <deque>
+#include <functional>
+#include <iomanip>
+#include <locale>
+#include <iostream>
+#include <map>
+#include <new>
+#include <numeric>
+#include <queue>
+#include <random>
+#include <set>
+#include <sstream>
+#include <string>
+#include <tuple>
+#include <unordered_map>
+#include <unordered_set>
+#include <utility>
+#include <vector>
 
 #define REP(i,n) for(int i=0;i<(int)(n);i++)
 #define ALL(x) (x).begin(),(x).end()

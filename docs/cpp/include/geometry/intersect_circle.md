@@ -3,6 +3,10 @@
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/intersect_circle.cpp)
 
 {% highlight cpp %}
+#include "Geometry.hpp"
+#include "intersect.cpp"
+#include "distance.cpp"
+
 vector<Point> is_cc(Circle c1, Circle c2){
   vector<Point> res;
   ld d = abs(c1.p - c2.p);
