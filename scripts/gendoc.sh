@@ -22,9 +22,9 @@ do
         echo ""
         echo "| Algorithm | Verified | AOJ Problems |"
         echo "|:---------:|:--------:|:------------:|"
-        for ALGORITHM in `ls include/$CATEGORY`
+        for ALGORITHM in `ls include/$CATEGORY | sort`
         do
-            LIST=`grep -r $ALGORITHM src | cut -d ':' -f 1 || true`
+            LIST=`grep -r $ALGORITHM src | cut -d ':' -f 1 | sort || true`
             ALGORITHM="[$ALGORITHM](./$2/include/$CATEGORY/`basename $ALGORITHM .cpp`)"
             VALIDATED='<font color="Red">No</font>'
             AOJLIST=""
