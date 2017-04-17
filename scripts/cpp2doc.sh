@@ -13,7 +13,7 @@ do
     INCLUDE=`cat $i | sed '/^#include.*util.h/d' |
         sed -n '/^#include.*\"/p' | cut -d"\"" -f2`
     if [ "$INCLUDE" != "" ]; then
-        echo "### Include"         >> $DOC
+        echo "### Includes"        >> $DOC
         echo ""                    >> $DOC
         for FILENAME in $INCLUDE
         do
