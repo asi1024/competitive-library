@@ -37,7 +37,7 @@ sudo: required
 
 script:
   - cp -r docs docs-spec
-  - rm -rf docs-spec/cpp
+  - rm -rf docs/cpp
   - ./gendoc.sh
   - diff -r docs docs-spec
   - ulimit -s unlimited
