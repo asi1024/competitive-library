@@ -9,6 +9,19 @@ do
     echo ""                    >> $DOC
     echo "- [GitHub]($REPO)"   >> $DOC
     echo ""                    >> $DOC
+
+    INCLUDE=`cat $i | sed '/^#include.*util.h/d' |
+        sed -n '/^#include.*\"/p' | cut -d"\"" -f2`
+    if [ "$INCLUDE" != "" ]; then
+        echo "### Include"         >> $DOC
+        echo ""                    >> $DOC
+        for FILENAME in $INCLUDE
+        do
+            echo -n "- [`basename $FILENAME`]" >> $DOC
+            echo "(`dirname $FILENAME`/`basename $FILENAME .cpp`)" >> $DOC
+        done
+        echo ""                    >> $DOC
+    fi
     echo "{% highlight cpp %}" >> $DOC
     cat $i | sed '/^#pragma/d' | sed '/^#include.*util.h/d' | sed '/./,$!d' >> $DOC
     echo "{% endhighlight %}"  >> $DOC
