@@ -2,6 +2,10 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/ITP1_1_B.cpp)
 
+### Include
+
+- [template.cpp](../include/template/template)
+
 {% highlight cpp %}
 #include "../include/template/template.cpp"
 

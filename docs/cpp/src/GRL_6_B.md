@@ -2,6 +2,10 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_6_B.cpp)
 
+### Include
+
+- [min_cost_flow.cpp](../include/graph/min_cost_flow)
+
 {% highlight cpp %}
 #include "../include/graph/min_cost_flow.cpp"
 

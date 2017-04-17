@@ -2,6 +2,10 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_2_C.cpp)
 
+### Include
+
+- [intersect.cpp](../include/geometry/intersect)
+
 {% highlight cpp %}
 #include "../include/geometry/intersect.cpp"
 

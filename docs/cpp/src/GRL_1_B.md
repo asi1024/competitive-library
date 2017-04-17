@@ -2,6 +2,10 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_1_B.cpp)
 
+### Include
+
+- [spfa.cpp](../include/graph/spfa)
+
 {% highlight cpp %}
 #include "../include/graph/spfa.cpp"
 

@@ -2,6 +2,10 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_5_C.cpp)
 
+### Include
+
+- [lca.cpp](../include/graph/lca)
+
 {% highlight cpp %}
 #include "../include/graph/lca.cpp"
 

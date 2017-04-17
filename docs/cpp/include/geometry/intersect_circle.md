@@ -2,6 +2,12 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/intersect_circle.cpp)
 
+### Include
+
+- [Geometry.hpp](./Geometry.hpp)
+- [intersect.cpp](./intersect)
+- [distance.cpp](./distance)
+
 {% highlight cpp %}
 #include "Geometry.hpp"
 #include "intersect.cpp"

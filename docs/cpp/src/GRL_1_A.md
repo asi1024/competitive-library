@@ -2,6 +2,10 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_1_A.cpp)
 
+### Include
+
+- [dijkstra.cpp](../include/graph/dijkstra)
+
 {% highlight cpp %}
 #include "../include/graph/dijkstra.cpp"
 

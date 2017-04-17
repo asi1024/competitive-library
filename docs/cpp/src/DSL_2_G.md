@@ -2,6 +2,10 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_G.cpp)
 
+### Include
+
+- [rars.cpp](../include/structure/rars)
+
 {% highlight cpp %}
 #include "../include/structure/rars.cpp"
 

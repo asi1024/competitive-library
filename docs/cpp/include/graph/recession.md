@@ -2,6 +2,10 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/recession.cpp)
 
+### Include
+
+- [Graph.hpp](./Graph.hpp)
+
 {% highlight cpp %}
 #include "Graph.hpp"
 
