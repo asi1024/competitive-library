@@ -6,7 +6,7 @@ matrix:
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-5', 'bc', 'realpath']
+          packages: ['g++-5', 'bc', 'coreutils']
       env:
         COMPILER=g++-5
         FLAGS="-std=c++14 -O2 -Wall -Wextra -Wno-unused-result -Werror"
@@ -17,7 +17,7 @@ matrix:
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-6', 'bc', 'realpath']
+          packages: ['g++-6', 'bc', 'coreutils']
       env:
         COMPILER=g++-6
         FLAGS="-std=c++14 -O2 -Wall -Wextra -Wno-unused-result -Werror"
@@ -28,7 +28,7 @@ matrix:
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.8', 'llvm-toolchain-precise']
-          packages: ['clang-3.8', 'bc', 'realpath']
+          packages: ['clang-3.8', 'bc', 'coreutils']
       env:
         COMPILER=clang-3.8
         FLAGS="-std=c++14 -O2 -Wall -Wextra -Wno-unused-result -Werror -lstdc++"
