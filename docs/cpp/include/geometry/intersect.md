@@ -2,7 +2,13 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/intersect.cpp)
 
+### Include
+
+- [Geometry.hpp](./Geometry.hpp)
+
 {% highlight cpp %}
+#include "Geometry.hpp"
+
 bool isis_ll(Line l, Line m) {
   return abs(cross(l.b - l.a, m.b - m.a)) > eps;
 }

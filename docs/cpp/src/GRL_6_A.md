@@ -2,7 +2,13 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_6_A.cpp)
 
+### Include
+
+- [max_flow.cpp](../include/graph/max_flow)
+
 {% highlight cpp %}
+#include "../include/graph/max_flow.cpp"
+
 int main() {
   int V, E, u, v, c;
   scanf("%d%d", &V, &E);

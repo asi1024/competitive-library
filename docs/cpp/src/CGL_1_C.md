@@ -2,7 +2,13 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_1_C.cpp)
 
+### Include
+
+- [Geometry.hpp](../include/geometry/Geometry.hpp)
+
 {% highlight cpp %}
+#include "../include/geometry/Geometry.hpp"
+
 Point input() {
   ld x, y;
   scanf("%Lf%Lf", &x, &y);

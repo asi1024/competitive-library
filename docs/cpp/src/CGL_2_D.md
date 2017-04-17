@@ -2,7 +2,13 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_2_D.cpp)
 
+### Include
+
+- [distance.cpp](../include/geometry/distance)
+
 {% highlight cpp %}
+#include "../include/geometry/distance.cpp"
+
 Point input() {
   ld x, y;
   scanf("%Lf%Lf", &x, &y);

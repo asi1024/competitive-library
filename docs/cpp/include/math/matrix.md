@@ -2,7 +2,13 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/matrix.cpp)
 
+### Include
+
+- [vector.cpp](./vector)
+
 {% highlight cpp %}
+#include "vector.cpp"
+
 template <typename T> using Matrix = vector<vector<T>>;
 
 template <typename T>

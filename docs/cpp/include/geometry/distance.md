@@ -2,7 +2,15 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/distance.cpp)
 
+### Include
+
+- [Geometry.hpp](./Geometry.hpp)
+- [intersect.cpp](./intersect)
+
 {% highlight cpp %}
+#include "Geometry.hpp"
+#include "intersect.cpp"
+
 ld dist_lp(Line l, Point p) {
   return abs(p - proj(l, p));
 }

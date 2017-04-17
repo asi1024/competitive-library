@@ -2,7 +2,13 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_A.cpp)
 
+### Include
+
+- [segment_tree.cpp](../include/structure/segment_tree)
+
 {% highlight cpp %}
+#include "../include/structure/segment_tree.cpp"
+
 struct RMQ {
   using type = int;
   static type id() { return INT_MAX; }
