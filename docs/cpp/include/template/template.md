@@ -3,6 +3,8 @@
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/template.cpp)
 
 {% highlight cpp %}
+#include <bits/stdc++.h>
+
 /* -------------------------------- Template -------------------------------- */
 
 #define REP(i,n) for(int i=0;i<(int)(n);i++)
