@@ -33,9 +33,13 @@ matrix:
         COMPILER=clang-3.8
         FLAGS="-std=c++14 -O2 -Wall -Wextra -Wno-unused-result -Werror -lstdc++"
 
-sudo: false
+sudo: required
 
 script:
+  - cp -r docs docs-spec
+  - rm -rf docs/cpp
+  - ./gendoc.sh
+  - diff -r docs docs-spec
   - ulimit -s unlimited
   - ulimit -a
   - $COMPILER --version
