@@ -10,7 +10,7 @@ do
     echo "- [GitHub]($REPO)"   >> $DOC
     echo ""                    >> $DOC
     echo "{% highlight cpp %}" >> $DOC
-    cat $i | sed '/^#pragma/d' | sed '/^#include/d' | sed '/./,$!d' >> $DOC
+    cat $i | sed '/^#pragma/d' | sed '/^#include.*util.h/d' | sed '/./,$!d' >> $DOC
     echo "{% endhighlight %}"  >> $DOC
     echo ""                    >> $DOC
     echo "- [Back]($TOP)"      >> $DOC
