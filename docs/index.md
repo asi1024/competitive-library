@@ -3,6 +3,12 @@
 
 # C++
 
+## Templates
+
+| Algorithm | Verified | AOJ Problems |
+|:---------:|:--------:|:------------:|
+| [template.cpp](./cpp/include/template/template) | <font color="ForestGreen">Yes</font> | [ITP_1_A.cpp](./cpp/src/ITP_1_A) |
+
 ## Data Structures
 
 | Algorithm | Verified | AOJ Problems |
