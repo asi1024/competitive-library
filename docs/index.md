@@ -57,9 +57,9 @@
 
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:------------:|
-| [Geometry.hpp](./cpp/include/geometry/Geometry.hpp) | <font color="ForestGreen">Yes</font> | [CGL_1_C.cpp](./cpp/src/CGL_1_C) |
 | [convex.cpp](./cpp/include/geometry/convex) | <font color="Red">No</font> |  |
 | [distance.cpp](./cpp/include/geometry/distance) | <font color="ForestGreen">Yes</font> | [CGL_2_D.cpp](./cpp/src/CGL_2_D) |
+| [Geometry.hpp](./cpp/include/geometry/Geometry.hpp) | <font color="ForestGreen">Yes</font> | [CGL_1_C.cpp](./cpp/src/CGL_1_C) |
 | [intersect.cpp](./cpp/include/geometry/intersect) | <font color="ForestGreen">Yes</font> | [CGL_1_A.cpp](./cpp/src/CGL_1_A)<br>[CGL_2_A.cpp](./cpp/src/CGL_2_A)<br>[CGL_2_B.cpp](./cpp/src/CGL_2_B)<br>[CGL_2_C.cpp](./cpp/src/CGL_2_C) |
 | [intersect_circle.cpp](./cpp/include/geometry/intersect_circle) | <font color="Red">No</font> |  |
 
