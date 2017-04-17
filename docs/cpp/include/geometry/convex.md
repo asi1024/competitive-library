@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/convex.cpp)
 
-### Include
+### Includes
 
 - [intersect.cpp](./intersect)
 

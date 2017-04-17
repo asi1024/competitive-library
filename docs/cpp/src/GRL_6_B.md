@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_6_B.cpp)
 
-### Include
+### Includes
 
 - [min_cost_flow.cpp](../include/graph/min_cost_flow)
 

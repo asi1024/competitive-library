@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_A.cpp)
 
-### Include
+### Includes
 
 - [segment_tree.cpp](../include/structure/segment_tree)
 

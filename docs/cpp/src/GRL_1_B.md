@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_1_B.cpp)
 
-### Include
+### Includes
 
 - [spfa.cpp](../include/graph/spfa)
 

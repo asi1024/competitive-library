@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_7_A.cpp)
 
-### Include
+### Includes
 
 - [bipartite_matching.cpp](../include/graph/bipartite_matching)
 

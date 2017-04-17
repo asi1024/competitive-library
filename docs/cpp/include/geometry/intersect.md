@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/intersect.cpp)
 
-### Include
+### Includes
 
 - [Geometry.hpp](./Geometry.hpp)
 

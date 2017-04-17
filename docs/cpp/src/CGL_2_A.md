@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_2_A.cpp)
 
-### Include
+### Includes
 
 - [intersect.cpp](../include/geometry/intersect)
 

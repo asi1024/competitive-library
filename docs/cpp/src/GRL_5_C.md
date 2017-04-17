@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_5_C.cpp)
 
-### Include
+### Includes
 
 - [lca.cpp](../include/graph/lca)
 

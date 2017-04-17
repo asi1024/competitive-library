@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/rars.cpp)
 
-### Include
+### Includes
 
 - [fenwick_tree.cpp](./fenwick_tree)
 

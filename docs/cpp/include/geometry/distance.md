@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/distance.cpp)
 
-### Include
+### Includes
 
 - [Geometry.hpp](./Geometry.hpp)
 - [intersect.cpp](./intersect)

@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_6_A.cpp)
 
-### Include
+### Includes
 
 - [max_flow.cpp](../include/graph/max_flow)
 

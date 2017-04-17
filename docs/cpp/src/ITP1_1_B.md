@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/ITP1_1_B.cpp)
 
-### Include
+### Includes
 
 - [template.cpp](../include/template/template)
 

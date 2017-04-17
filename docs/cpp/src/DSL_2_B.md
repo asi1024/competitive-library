@@ -2,7 +2,7 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_B.cpp)
 
-### Include
+### Includes
 
 - [fenwick_tree.cpp](../include/structure/fenwick_tree)
 
