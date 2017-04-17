@@ -7,7 +7,7 @@
 
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:------------:|
-| [template.cpp](./cpp/include/template/template) | <font color="ForestGreen">Yes</font> | [ITP_1_A.cpp](./cpp/src/ITP_1_A) |
+| [template.cpp](./cpp/include/template/template) | <font color="ForestGreen">Yes</font> | [ITP1_1_B.cpp](./cpp/src/ITP1_1_B) |
 
 ## Data Structures
 
