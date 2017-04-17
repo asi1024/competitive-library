@@ -1,5 +1,4 @@
 language: cpp
-
 matrix:
   include:
     - os: linux
@@ -38,6 +37,7 @@ sudo: required
 
 script:
   - cp -r docs docs-spec
+  - rm -rf docs-spec/cpp
   - ./gendoc.sh
   - diff -r docs docs-spec
   - ulimit -s unlimited
