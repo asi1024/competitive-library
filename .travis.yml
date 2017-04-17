@@ -36,6 +36,9 @@ matrix:
 sudo: false
 
 script:
+  - cp -r docs docs-spec
+  - ./gendoc.sh
+  - diff -r docs docs-spec
   - ulimit -s unlimited
   - ulimit -a
   - $COMPILER --version
