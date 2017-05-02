@@ -1,0 +1,48 @@
+#include "../include/geometry/convex.cpp"
+
+Point input() {
+  ld x, y;
+  scanf("%Lf%Lf", &x, &y);
+  return Point(x, y);
+}
+
+ld f(Point x) {
+  return real(x) + imag(x) * 1.2358132134;
+}
+
+int main() {
+  int n;
+  scanf("%d", &n);
+  Polygon poly;
+  vector<ld> vec;
+  for (int i = 0; i < n; ++i) {
+    Point p = input();
+    poly.push_back(p);
+    vec.push_back(f(p));
+  }
+  Polygon ch = convex_hull(poly);
+  const int m = ch.size();
+  Polygon g;
+  for (int i = 0; i < m; ++i) {
+    g.push_back(at(ch, i));
+    g.push_back((at(ch, i) + at(ch, i + 1)) / Point(2, 0));
+  }
+
+  sort(begin(vec), end(vec));
+  bool res = false;
+  for (int i = 0; i < m; ++i) {
+    bool ok = true;
+    Line l = Line(at(g, i), at(g, i + m));
+    if (abs(l.a - l.b) < eps) continue;
+    int cnt = 0;
+    for (int j = 0; j < n; ++j) {
+      Point p = at(poly, j);
+      ld x = f(proj(l, p) * Point(2, 0) - p);
+      ld y = *lower_bound(begin(vec), end(vec), x - eps);
+      if (abs(x - y) > eps) ok = false;
+      if (abs(x - f(p)) < eps) ++cnt;
+    }
+    if (ok && cnt <= 2) res = true;
+  }
+  puts(res ? "Yes" : "No");
+}
