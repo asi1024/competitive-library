@@ -23,3 +23,16 @@ ld max_distance(const vector<Point> &ps) {
   }
   return res;
 }
+
+Polygon convex_cut(const Polygon &g, Line l) {
+  const int n = g.size();
+  Polygon res;
+  for (int i = 0; i < n; i++) {
+    Point p = at(g, i), q = at(g, i + 1);
+    if (ccw(l.a, l.b, p) != -1) res.push_back(p);
+    if (ccw(l.a, l.b, p) * ccw(l.a, l.b, q) < 0) {
+      res.push_back(is_ll(Line(p, q), l));
+    }
+  }
+  return res;
+}
