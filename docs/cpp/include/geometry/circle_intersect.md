@@ -1,6 +1,6 @@
-## intersect_circle.cpp
+## circle_intersect.cpp
 
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/intersect_circle.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/circle_intersect.cpp)
 
 ### Includes
 
