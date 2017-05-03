@@ -24,7 +24,7 @@ do
         echo "|:---------:|:--------:|:------------:|"
         for ALGORITHM in `ls include/$CATEGORY | LC_ALL=C sort`
         do
-            LIST=`grep -r $ALGORITHM src | cut -d ':' -f 1 | LC_ALL=C sort || true`
+            LIST=`grep -r "$CATEGORY/$ALGORITHM" src | cut -d ':' -f 1 | LC_ALL=C sort || true`
             ALGORITHM="[$ALGORITHM](./$2/include/$CATEGORY/`basename $ALGORITHM .cpp`)"
             VALIDATED='<font color="Red">No</font>'
             AOJLIST=""
