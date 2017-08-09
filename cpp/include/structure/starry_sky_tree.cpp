@@ -29,15 +29,10 @@ public:
     while (l != r) {
       if (l % 2) res1 = min(res1, data[l++]);
       if (r % 2) res2 = min(res2, data[--r]);
-      l /= 2; r /= 2;
-      res1 += lazy[l - 1];
-      res2 += lazy[r];
+      l /= 2; r /= 2; res1 += lazy[l - 1]; res2 += lazy[r];
     }
     --l;
-    while (l /= 2, r /= 2) {
-      res1 += lazy[l];
-      res2 += lazy[r];
-    }
+    while (l /= 2, r /= 2) { res1 += lazy[l]; res2 += lazy[r]; }
     return min(min(res1, res2), inf<T>);
   }
 };
