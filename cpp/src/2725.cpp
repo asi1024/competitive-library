@@ -1,0 +1,44 @@
+#include "../include/structure/convex_hull_trick.cpp"
+
+using namespace std;
+
+using ll = long long;
+
+ll dp[4096][4096];
+ll t[4096], p[4096], f[4096];
+
+int main() {
+  int N, T;
+  cin >> N >> T;
+  vector<tuple<int,int,int>> songs;
+  for (int i = 0; i < N; ++i) {
+    int t, p, f;
+    cin >> t >> p >> f;
+    songs.emplace_back(f, t, p);
+  }
+  sort(begin(songs), end(songs));
+  for (int i = 0; i < N; ++i) {
+    tie(f[i], t[i], p[i]) = songs[i];
+  }
+
+  ll res = 0;
+  vector<ConvexHullTrick<ll>> cht(T + 1);
+  for (int i = 0; i < N; ++i) {
+    for (int j = 0; j <= T; ++j) {
+      ll val = -1e12;
+      if (j >= t[i]) {
+        val = p[i];
+        if (!cht[j - t[i]].empty()) {
+          val = max(val, -cht[j - t[i]].minimum(f[i]) + p[i] - f[i] * f[i]);
+        }
+      }
+      dp[i][j] = val;
+      res = max(res, val);
+    }
+    for (int j = 0; j <= T; ++j) {
+      cht[j].add(-2 * f[i], f[i] * f[i] - dp[i][j]);
+    }
+  }
+  cout << res << endl;
+  return 0;
+}
