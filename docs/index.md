@@ -16,10 +16,10 @@
 | [fenwick_tree.cpp](./cpp/include/structure/fenwick_tree) | <font color="ForestGreen">Yes</font> | [DSL_2_B.cpp](./cpp/src/DSL_2_B) |
 | [rars.cpp](./cpp/include/structure/rars) | <font color="ForestGreen">Yes</font> | [DSL_2_G.cpp](./cpp/src/DSL_2_G) |
 | [segment_tree.cpp](./cpp/include/structure/segment_tree) | <font color="ForestGreen">Yes</font> | [DSL_2_A.cpp](./cpp/src/DSL_2_A) |
-| [skew_heap.cpp](./cpp/include/structure/skew_heap) | <font color="Red">No</font> |  |
+| [skew_heap.cpp](./cpp/include/structure/skew_heap) | <font color="ForestGreen">Yes</font> | [2559.cpp](./cpp/src/2559) |
 | [slide_min.cpp](./cpp/include/structure/slide_min) | <font color="Red">No</font> |  |
-| [starry_sky_tree.cpp](./cpp/include/structure/starry_sky_tree) | <font color="Red">No</font> |  |
-| [unionfind.cpp](./cpp/include/structure/unionfind) | <font color="ForestGreen">Yes</font> | [DSL_1_A.cpp](./cpp/src/DSL_1_A) |
+| [starry_sky_tree.cpp](./cpp/include/structure/starry_sky_tree) | <font color="ForestGreen">Yes</font> | [1351.cpp](./cpp/src/1351) |
+| [unionfind.cpp](./cpp/include/structure/unionfind) | <font color="ForestGreen">Yes</font> | [2559.cpp](./cpp/src/2559)<br>[DSL_1_A.cpp](./cpp/src/DSL_1_A) |
 
 ## Graph Algorithms
 
