@@ -28,10 +28,10 @@ matrix:
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.8', 'llvm-toolchain-precise']
-          packages: ['clang-3.8', 'bc']
+          packages: ['clang++-3.8', 'libc++-dev', 'bc']
       env:
-        COMPILER=clang-3.8
-        FLAGS="-std=c++14 -O2 -Wall -Wextra -Wno-unused-result -Werror -lstdc++"
+        COMPILER=clang++-3.8
+        FLAGS="-std=c++14 -O2 -Wall -Wextra -Wno-unused-result -Werror -stdlib=libc++"
 
 sudo: false
 

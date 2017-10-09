@@ -13,6 +13,7 @@
 
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:------------:|
+| [convex_hull_trick.cpp](./cpp/include/structure/convex_hull_trick) | <font color="ForestGreen">Yes</font> | [2725.cpp](./cpp/src/2725) |
 | [fenwick_tree.cpp](./cpp/include/structure/fenwick_tree) | <font color="ForestGreen">Yes</font> | [DSL_2_B.cpp](./cpp/src/DSL_2_B) |
 | [rars.cpp](./cpp/include/structure/rars) | <font color="ForestGreen">Yes</font> | [DSL_2_G.cpp](./cpp/src/DSL_2_G) |
 | [segment_tree.cpp](./cpp/include/structure/segment_tree) | <font color="ForestGreen">Yes</font> | [DSL_2_A.cpp](./cpp/src/DSL_2_A) |
