@@ -6,6 +6,7 @@
 #include <complex>
 #include <cstdio>
 #include <cstring>
+#include <functional>
 #include <iostream>
 #include <iterator>
 #include <queue>
