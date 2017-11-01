@@ -16,7 +16,6 @@ void add_edge(Graph &g, int from, int to) {
 
 class scc {
   const int n;
-  int k;
   vector<vector<int>> g, rg;
   vector<int> cmp, vs, used;
   void dfs(const int v) {
@@ -29,7 +28,7 @@ class scc {
     for (int i: rg[v]) if (!used[i]) rdfs(i, k);
   };
 public:
-  scc(const Graph &graph) : n(graph.size()), k(0), g(n), rg(n), cmp(n), used(n, 0) {
+  scc(const Graph &graph) : n(graph.size()), g(n), rg(n), cmp(n), used(n, 0) {
     for (int i = 0; i < n; ++i) {
       for (Edge e: graph[i]) {
         g[i].push_back(e.to);
@@ -39,6 +38,7 @@ public:
     for (int v = 0; v < n; ++v) if (!used[v]) dfs(v);
     fill(begin(used), end(used), 0);
     reverse(begin(vs), end(vs));
+    int k = 0;
     for (int i: vs) if (!used[i]) rdfs(i, k++);
   }
   operator vector<int>() const { return cmp; }
