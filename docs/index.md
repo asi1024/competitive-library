@@ -33,6 +33,7 @@
 | [max_flow.cpp](./cpp/include/graph/max_flow) | <font color="ForestGreen">Yes</font> | [GRL_6_A.cpp](./cpp/src/GRL_6_A) |
 | [min_cost_flow.cpp](./cpp/include/graph/min_cost_flow) | <font color="ForestGreen">Yes</font> | [GRL_6_B.cpp](./cpp/src/GRL_6_B) |
 | [recession.cpp](./cpp/include/graph/recession) | <font color="Red">No</font> |  |
+| [scc.cpp](./cpp/include/graph/scc) | <font color="ForestGreen">Yes</font> | [GRL_3_C.cpp](./cpp/src/GRL_3_C) |
 | [spfa.cpp](./cpp/include/graph/spfa) | <font color="ForestGreen">Yes</font> | [GRL_1_B.cpp](./cpp/src/GRL_1_B) |
 
 ## Numerical Algorithms
