@@ -3,13 +3,18 @@
 template <typename T>
 struct SlideMin {
   deque<pair<int,T>> deq;
-  int c, w;
-  SlideMin(int w) : c(0), w(w) {;}
-  T query(T d) {
-    ++c;
-    while (!deq.empty() && deq.front().first <= c - w) deq.pop_front();
-    while (!deq.empty() && deq.back().second >= d) deq.pop_back();
-    deq.push_back({c, d});
-    return deq.front().second;
+  int l, r;
+  SlideMin() : l(0), r(0) {;}
+  void push(T val) {
+    while (!deq.empty() && deq.back().second >= val) deq.pop_back();
+    deq.emplace_back(r, val);
+    ++r;
   }
+  void pop() {
+    assert (!deq.empty());
+    if (deq.front().first <= l) deq.pop_front();
+    ++l;
+  }
+  int size() const { return r - l; }
+  T minimum() const { return deq.front().second; }
 };

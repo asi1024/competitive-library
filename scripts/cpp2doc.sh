@@ -2,7 +2,7 @@ for i in `ls cpp/include/*/* cpp/src/*`
 do
     DOC="docs/`dirname $i`/`basename $i .cpp`.md"
     REPO="{{ site.github.repository_url }}/blob/master/$i"
-    TOP="`python -c "import os.path; print os.path.relpath('cpp', '$i')"`"
+    TOP="`python -c "import os.path; print (os.path.relpath('cpp', '$i'))"`"
     mkdir -p "docs/`dirname $i`"
 
     echo "## `basename $i`"    >  $DOC
