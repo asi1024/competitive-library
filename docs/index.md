@@ -26,6 +26,7 @@
 
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:------------:|
+| [articulation_points.cpp](./cpp/include/graph/articulation_points) | <font color="ForestGreen">Yes</font> | [GRL_3_A.cpp](./cpp/src/GRL_3_A) |
 | [bfs01.cpp](./cpp/include/graph/bfs01) | <font color="ForestGreen">Yes</font> | [2342.cpp](./cpp/src/2342)<br>[2620.cpp](./cpp/src/2620) |
 | [bipartite_matching.cpp](./cpp/include/graph/bipartite_matching) | <font color="ForestGreen">Yes</font> | [GRL_7_A.cpp](./cpp/src/GRL_7_A) |
 | [dijkstra.cpp](./cpp/include/graph/dijkstra) | <font color="ForestGreen">Yes</font> | [GRL_1_A.cpp](./cpp/src/GRL_1_A) |
