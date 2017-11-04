@@ -2,22 +2,10 @@
 
 #include "../util.hpp"
 
-template <typename Cost>
-struct Edge {
-  int from, to;
-  Cost cost;
-  Edge(int s, int t, Cost c) : from(s), to(t), cost(c) {}
-};
-
-template<typename Cost> using Graph = vector<vector<Edge<Cost>>>;
-
-template <typename Cost>
-void add_edge(Graph<Cost> &g, int from, int to, Cost cost) {
-  g[from].emplace_back(from, to, cost);
-}
-
-template <typename Cost>
-vector<Cost> dijkstra(const Graph<Cost> &g, int s, Cost zero = 0) {
+template <typename Edge>
+vector<typename Edge::Cost> dijkstra(const vector<vector<Edge>> &g, int s,
+                                     typename Edge::Cost zero = 0) {
+  using Cost = typename Edge::Cost;
   vector<Cost> d(g.size(), inf<Cost>);
   d[s] = zero;
   using P = pair<Cost,int>;
@@ -35,4 +23,17 @@ vector<Cost> dijkstra(const Graph<Cost> &g, int s, Cost zero = 0) {
     }
   }
   return d;
+}
+
+struct Edge {
+  using Cost = int;
+  int from, to;
+  Cost cost;
+  Edge(int s, int t, Cost c) : from(s), to(t), cost(c) {}
+};
+
+using Graph = vector<vector<Edge>>;
+
+void add_edge(Graph &g, int from, int to, Edge::Cost cost) {
+  g[from].emplace_back(from, to, cost);
 }
