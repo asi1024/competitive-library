@@ -37,6 +37,12 @@ public:
     return Monoid::op(res1, res2);
   }
 };
+
+struct RMQ {
+  using type = int;
+  static type id() { return INT_MAX; }
+  static type op(const type &l, const type &r) { return min(l, r); }
+};
 {% endhighlight %}
 
 - [Back](../../..)
