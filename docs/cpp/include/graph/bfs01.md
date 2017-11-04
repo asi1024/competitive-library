@@ -4,7 +4,7 @@
 
 {% highlight cpp %}
 template <typename Edge>
-auto bfs01(const vector<vector<Edge>> &g, int s) {
+vector<typename Edge::Cost> bfs01(const vector<vector<Edge>> &g, int s) {
   using Cost = typename Edge::Cost;
   vector<Cost> d(g.size(), inf<Cost>);
   d[s] = 0;
