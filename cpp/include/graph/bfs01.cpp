@@ -2,38 +2,39 @@
 
 #include "../util.hpp"
 
-template <typename Cost>
-struct Edge {
-  int from, to;
-  Cost cost;
-  Edge(int s, int t, Cost c) : from(s), to(t), cost(c) {}
-};
-
-template<typename Cost> using Graph = vector<vector<Edge<Cost>>>;
-
-template <typename Cost>
-void add_edge(Graph<Cost> &g, int from, int to, Cost cost) {
-  g[from].emplace_back(from, to, cost);
-}
-
-template <typename Cost>
-vector<Cost> bfs01(const Graph<Cost> &g, int s, Cost zero = 0) {
+template <typename Edge>
+auto bfs01(const vector<vector<Edge>> &g, int s) {
+  using Cost = typename Edge::Cost;
   vector<Cost> d(g.size(), inf<Cost>);
-  d[s] = zero;
-  using P = pair<Cost,int>;
-  deque<P> que;
-  que.push_back(P(zero, s));
+  d[s] = 0;
+  deque<pair<Cost,int>> que;
+  que.emplace_back(0, s);
   while (!que.empty()) {
-    P top = que.front(); que.pop_front();
+    auto top = que.front();
+    que.pop_front();
     Cost dist = top.first; int v = top.second;
     if (d[v] < dist) continue;
     for (const auto &e: g[v]) {
       if (d[e.to] > d[v] + e.cost) {
         d[e.to] = d[v] + e.cost;
-        if (e.cost) que.push_back(P(d[e.to], e.to));
-        else que.push_front(P(d[e.to], e.to));
+        if (e.cost == 1) que.emplace_back(d[e.to], e.to);
+        else if (e.cost == 0) que.emplace_front(d[e.to], e.to);
+        else assert(false);
       }
     }
   }
   return d;
+}
+
+struct Edge {
+  using Cost = int;
+  int from, to;
+  Cost cost;
+  Edge(int s, int t, Cost c) : from(s), to(t), cost(c) {}
+};
+
+using Graph = vector<vector<Edge>>;
+
+void add_edge(Graph &g, int from, int to, Edge::Cost cost) {
+  g[from].emplace_back(from, to, cost);
 }
