@@ -1,4 +1,4 @@
-#include "../include/graph/bfs01.cpp"
+#include "../include/graph/dijkstra.cpp"
 
 #define REP(i,n) for(int i=0;i<(n);++i)
 
@@ -28,7 +28,7 @@ int main() {
   REP(i,H) REP(j,W+1) add_edge(g, i*(W+1)+j, (i+1)*(W+1)+j, dw[i][j]);
   REP(i,H+1) REP(j,W) add_edge(g, i*(W+1)+j+1, i*(W+1)+j, ri[i][j]);
   REP(i,H) REP(j,W+1) add_edge(g, (i+1)*(W+1)+j, i*(W+1)+j, dw[i][j]);
-  vector<int> d = bfs01(g, sy*(W+1)+sx);
+  vector<int> d = dijkstra(g, sy*(W+1)+sx);
   printf("%d\n", d[gy*(W+1)+gx]);
   return 0;
 }
