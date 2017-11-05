@@ -2,18 +2,9 @@
 
 #include "../util.hpp"
 
-struct Edge {
-  int to;
-  Edge(int t) : to(t) {}
-};
-
-using Graph = vector<vector<Edge>>;
-
-void add_edge(Graph &g, int from, int to) {
-  g[from].push_back(to);
-}
-
+template <typename Edge>
 class LCA {
+  using Graph = vector<vector<Edge>>;
   int size, log_size;
   vector<vector<int>> parent;
   vector<int> depth;
@@ -49,3 +40,14 @@ public:
     return parent[0][u];
   }
 };
+
+struct Edge {
+  int to;
+  Edge(int t) : to(t) {}
+};
+
+using Graph = vector<vector<Edge>>;
+
+void add_edge(Graph &g, int from, int to) {
+  g[from].push_back(to);
+}

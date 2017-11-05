@@ -27,9 +27,9 @@
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:------------:|
 | [articulation_points.cpp](./cpp/include/graph/articulation_points) | <font color="ForestGreen">Yes</font> | [GRL_3_A.cpp](./cpp/src/GRL_3_A) |
-| [bfs01.cpp](./cpp/include/graph/bfs01) | <font color="ForestGreen">Yes</font> | [2342.cpp](./cpp/src/2342)<br>[2620.cpp](./cpp/src/2620) |
+| [bfs01.cpp](./cpp/include/graph/bfs01) | <font color="ForestGreen">Yes</font> | [2342.cpp](./cpp/src/2342) |
 | [bipartite_matching.cpp](./cpp/include/graph/bipartite_matching) | <font color="ForestGreen">Yes</font> | [GRL_7_A.cpp](./cpp/src/GRL_7_A) |
-| [dijkstra.cpp](./cpp/include/graph/dijkstra) | <font color="ForestGreen">Yes</font> | [GRL_1_A.cpp](./cpp/src/GRL_1_A) |
+| [dijkstra.cpp](./cpp/include/graph/dijkstra) | <font color="ForestGreen">Yes</font> | [2620.cpp](./cpp/src/2620)<br>[GRL_1_A.cpp](./cpp/src/GRL_1_A) |
 | [lca.cpp](./cpp/include/graph/lca) | <font color="ForestGreen">Yes</font> | [GRL_5_C.cpp](./cpp/src/GRL_5_C) |
 | [max_flow.cpp](./cpp/include/graph/max_flow) | <font color="ForestGreen">Yes</font> | [GRL_6_A.cpp](./cpp/src/GRL_6_A) |
 | [min_cost_flow.cpp](./cpp/include/graph/min_cost_flow) | <font color="ForestGreen">Yes</font> | [GRL_6_B.cpp](./cpp/src/GRL_6_B) |

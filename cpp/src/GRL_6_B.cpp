@@ -3,7 +3,7 @@
 int main() {
   int V, E, F;
   scanf("%d%d%d", &V, &E, &F);
-  Graph<int, int> g(V);
+  Graph g(V);
   while (E--) {
     int u, v, c, d;
     scanf("%d%d%d%d", &u, &v, &c, &d);

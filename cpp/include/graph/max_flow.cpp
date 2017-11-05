@@ -2,29 +2,15 @@
 
 #include "../util.hpp"
 
-template <typename Flow>
-struct Edge {
-  int from, to;
-  Flow cap; int rev;
-  Edge(int s, int t, Flow f, int r) : from(s), to(t), cap(f), rev(r) {}
-};
-
-template<typename Flow> using Graph = vector<vector<Edge<Flow>>>;
-
-template <typename Flow>
-void add_edge(Graph<Flow> &g, int from, int to, Flow cap) {
-  g[from].emplace_back(from, to, cap, (int)g[to].size());
-  g[to].emplace_back(to, from, 0, (int)g[from].size() - 1);
-}
-
-template <typename Flow>
-Flow augment(Graph<Flow> &g, vector<Flow> &d, vector<int> &iter,
-             int v, int t, const Flow &f) {
+template <typename Edge>
+typename Edge::Flow augment(vector<vector<Edge>> &g,
+                            vector<int> &d, vector<int> &iter,
+                            int v, int t, const typename Edge::Flow &f) {
   if (v == t) return f;
   for (int &i = iter[v]; i < (int)g[v].size(); i++) {
     auto &e = g[v][i];
     if (e.cap > 0 && d[v] < d[e.to]) {
-      Flow ff = augment(g, d, iter, e.to, t, min(f, e.cap));
+      typename Edge::Flow ff = augment(g, d, iter, e.to, t, min(f, e.cap));
       if (ff > 0) {
         e.cap -= ff;
         g[e.to][e.rev].cap += ff;
@@ -35,12 +21,14 @@ Flow augment(Graph<Flow> &g, vector<Flow> &d, vector<int> &iter,
   return 0;
 }
 
-template <typename Flow>
-Flow max_flow(Graph<Flow> &g, int s, int t, Flow zero = 0) {
+template <typename Edge>
+typename Edge::Flow max_flow(vector<vector<Edge>> &g, int s, int t,
+                             typename Edge::Flow zero = 0) {
+  using Flow = typename Edge::Flow;
   const int V = g.size();
   Flow flow = zero;
   for (;;) {
-    vector<Flow> d(V, -1);
+    vector<int> d(V, -1);
     queue<int> que;
     d[s] = zero;
     que.push(s);
@@ -57,4 +45,18 @@ Flow max_flow(Graph<Flow> &g, int s, int t, Flow zero = 0) {
     Flow f;
     while ((f = augment(g, d, iter, s, t, inf<Flow>)) > 0) flow += f;
   }
+}
+
+struct Edge {
+  using Flow = int;
+  int to, rev;
+  Flow cap;
+  Edge(int t, Flow f, int r) : to(t), rev(r), cap(f) {}
+};
+
+using Graph = vector<vector<Edge>>;
+
+void add_edge(Graph &g, int from, int to, Edge::Flow cap) {
+  g[from].emplace_back(to, cap, (int)g[to].size());
+  g[to].emplace_back(from, 0, (int)g[from].size() - 1);
 }
