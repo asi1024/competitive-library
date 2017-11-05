@@ -3,7 +3,7 @@
 int main() {
   int V, E, r, s, t, d;
   scanf("%d%d%d", &V, &E, &r);
-  Graph<int> g(V);
+  Graph g(V);
   while (E--) {
     scanf("%d%d%d", &s, &t, &d);
     add_edge(g, s, t, d);

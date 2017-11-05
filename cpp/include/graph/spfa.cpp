@@ -2,22 +2,10 @@
 
 #include "../util.hpp"
 
-template <typename Cost>
-struct Edge {
-  int from, to;
-  Cost cost;
-  Edge(int s, int t, Cost c) : from(s), to(t), cost(c) {}
-};
-
-template<typename Cost> using Graph = vector<vector<Edge<Cost>>>;
-
-template <typename Cost>
-void add_edge(Graph<Cost> &g, int from, int to, Cost cost) {
-  g[from].emplace_back(from, to, cost);
-}
-
-template <typename Cost>
-pair<bool,vector<Cost>> spfa(const Graph<Cost> &g, int s, Cost zero = 0) {
+template <typename Edge>
+pair<bool,vector<typename Edge::Cost>> spfa(const vector<vector<Edge>> &g, int s,
+                                            typename Edge::Cost zero = 0) {
+  using Cost = typename Edge::Cost;
   const int n = g.size();
   vector<Cost> d(n, inf<Cost>); d[s] = zero;
   vector<int> updated(n, 0);
@@ -42,4 +30,17 @@ pair<bool,vector<Cost>> spfa(const Graph<Cost> &g, int s, Cost zero = 0) {
     }
   }
   return {true, d};
+}
+
+struct Edge {
+  using Cost = int;
+  int from, to;
+  Cost cost;
+  Edge(int s, int t, Cost c) : from(s), to(t), cost(c) {}
+};
+
+using Graph = vector<vector<Edge>>;
+
+void add_edge(Graph &g, int from, int to, Edge::Cost cost) {
+  g[from].emplace_back(from, to, cost);
 }
