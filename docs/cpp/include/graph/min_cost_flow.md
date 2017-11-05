@@ -3,27 +3,11 @@
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/min_cost_flow.cpp)
 
 {% highlight cpp %}
-template <typename Flow, typename Cost>
-struct Edge {
-  int from, to;
-  Flow cap; int rev;
-  Cost cost;
-  Edge(int s, int t, Flow f, int r, Cost c) :
-    from(s), to(t), cap(f), rev(r), cost(c) {}
-};
-
-template<typename Flow, typename Cost>
-using Graph = vector<vector<Edge<Flow, Cost>>>;
-
-template <typename Flow, typename Cost>
-void add_edge(Graph<Flow, Cost> &g, int from, int to, Flow cap, Cost cost) {
-  g[from].emplace_back(from, to, cap, (int)g[to].size(), cost);
-  g[to].emplace_back(to, from, 0, (int)g[from].size() - 1, -cost);
-}
-
-template <typename Flow, typename Cost>
-Cost min_cost_flow(Graph<Flow, Cost> &g, int s, int t, Flow f,
-                   bool init = true) {
+template <typename Edge>
+typename Edge::Cost min_cost_flow(vector<vector<Edge>> &g, int s, int t,
+                                  typename Edge::Flow f, bool init = true) {
+  using Flow = typename Edge::Flow;
+  using Cost = typename Edge::Cost;
   const int V = g.size();
   // const Cost eps = 1e-8;
   static vector<Cost> h(V, 0), dist(V, 0);
@@ -74,6 +58,23 @@ Cost min_cost_flow(Graph<Flow, Cost> &g, int s, int t, Flow f,
     }
   }
   return res;
+}
+
+struct Edge {
+  using Flow = int;
+  using Cost = int;
+  int from, to, rev;
+  Flow cap;
+  Cost cost;
+  Edge(int s, int t, Flow f, int r, Cost c) :
+    from(s), to(t), rev(r), cap(f), cost(c) {}
+};
+
+using Graph = vector<vector<Edge>>;
+
+void add_edge(Graph &g, int from, int to, Edge::Flow cap, Edge::Cost cost) {
+  g[from].emplace_back(from, to, cap, (int)g[to].size(), cost);
+  g[to].emplace_back(to, from, 0, (int)g[from].size() - 1, -cost);
 }
 {% endhighlight %}
 
