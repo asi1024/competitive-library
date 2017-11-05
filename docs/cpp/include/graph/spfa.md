@@ -35,15 +35,15 @@ pair<bool,vector<typename Edge::Cost>> spfa(const vector<vector<Edge>> &g, int s
 
 struct Edge {
   using Cost = int;
-  int from, to;
+  int to;
   Cost cost;
-  Edge(int s, int t, Cost c) : from(s), to(t), cost(c) {}
+  Edge(int t, Cost c) : to(t), cost(c) {}
 };
 
 using Graph = vector<vector<Edge>>;
 
 void add_edge(Graph &g, int from, int to, Edge::Cost cost) {
-  g[from].emplace_back(from, to, cost);
+  g[from].emplace_back(to, cost);
 }
 {% endhighlight %}
 

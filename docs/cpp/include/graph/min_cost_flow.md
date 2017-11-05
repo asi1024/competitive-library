@@ -63,18 +63,17 @@ typename Edge::Cost min_cost_flow(vector<vector<Edge>> &g, int s, int t,
 struct Edge {
   using Flow = int;
   using Cost = int;
-  int from, to, rev;
+  int to, rev;
   Flow cap;
   Cost cost;
-  Edge(int s, int t, Flow f, int r, Cost c) :
-    from(s), to(t), rev(r), cap(f), cost(c) {}
+  Edge(int t, Flow f, int r, Cost c) : to(t), rev(r), cap(f), cost(c) {}
 };
 
 using Graph = vector<vector<Edge>>;
 
 void add_edge(Graph &g, int from, int to, Edge::Flow cap, Edge::Cost cost) {
-  g[from].emplace_back(from, to, cap, (int)g[to].size(), cost);
-  g[to].emplace_back(to, from, 0, (int)g[from].size() - 1, -cost);
+  g[from].emplace_back(to, cap, (int)g[to].size(), cost);
+  g[to].emplace_back(from, 0, (int)g[from].size() - 1, -cost);
 }
 {% endhighlight %}
 
