@@ -8,7 +8,7 @@ int main() {
     scanf("%d%d", &s, &t);
     add_edge(g, s, t);
   }
-  set<int> art = ArticulationPoints(g).vertices();
+  set<int> art = articulation_points(g).first;
   for (int i: art) printf("%d\n", i);
   return 0;
 }
