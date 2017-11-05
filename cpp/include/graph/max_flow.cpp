@@ -49,14 +49,14 @@ typename Edge::Flow max_flow(vector<vector<Edge>> &g, int s, int t,
 
 struct Edge {
   using Flow = int;
-  int from, to, rev;
+  int to, rev;
   Flow cap;
-  Edge(int s, int t, Flow f, int r) : from(s), to(t), rev(r), cap(f) {}
+  Edge(int t, Flow f, int r) : to(t), rev(r), cap(f) {}
 };
 
 using Graph = vector<vector<Edge>>;
 
 void add_edge(Graph &g, int from, int to, Edge::Flow cap) {
-  g[from].emplace_back(from, to, cap, (int)g[to].size());
-  g[to].emplace_back(to, from, 0, (int)g[from].size() - 1);
+  g[from].emplace_back(to, cap, (int)g[to].size());
+  g[to].emplace_back(from, 0, (int)g[from].size() - 1);
 }
