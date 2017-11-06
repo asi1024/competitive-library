@@ -3,20 +3,20 @@
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/lca.cpp)
 
 {% highlight cpp %}
-template <typename Edge>
 class LCA {
-  using Graph = vector<vector<Edge>>;
   int size, log_size;
   vector<vector<int>> parent;
   vector<int> depth;
-  void dfs(const Graph &g, int v, int p, int d) {
+  template <typename Edge>
+  void dfs(const vector<vector<Edge>> &g, int v, int p, int d) {
     parent[0][v] = p; depth[v] = d;
     for (const Edge &e: g[v]) {
       if (e.to != p) dfs(g, e.to, v, d + 1);
     }
   }
 public:
-  LCA(const Graph &g, int root) : size(g.size()), log_size(0), depth(size, 0) {
+  template <typename Edge>
+  LCA(const vector<vector<Edge>> &g, int root) : size(g.size()), log_size(0), depth(size, 0) {
     for (int v = size; v > 0; v /= 2) ++log_size;
     parent.assign(log_size, vector<int>(size, 0));
     dfs(g, root, -1, 0);

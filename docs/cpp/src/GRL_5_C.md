@@ -21,7 +21,7 @@ int main() {
       add_edge(g, i, c);
     }
   }
-  LCA<Edge> lca(g, 0);
+  LCA lca(g, 0);
   scanf("%d", &q);
   while (q--) {
     int u, v;
