@@ -1,29 +1,3 @@
-## unionfind.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/unionfind.cpp)
-
-{% highlight cpp %}
-class UnionFind {
-  vector<int> p;
-public:
-  UnionFind (int n) : p(n, -1) {}
-  int root(int x) {
-    return p[x] < 0 ? x : p[x] = root(p[x]);
-  }
-  bool same(int x, int y) {
-    return root(x) == root(y);
-  }
-  bool unite(int x, int y) {
-    x = root(x); y = root(y);
-    if (x == y) return false;
-    if (p[y] < p[x]) swap(x, y);
-    if (p[x] == p[y]) --p[x];
-    p[y] = x;
-    return true;
-  }
-};
-{% endhighlight %}
-
 ```
 UnionFind(int n);
 ```
@@ -47,5 +21,3 @@ bool unite(int x, int y);
 ```
 - x を含む集合と y を含む集合を併合する．既に x を含む集合と y を含む集合が同じ集合である場合は， `false` を返し，そうでない場合は `true` を返す．
 - 計算量: amortized O(α(n))
-
-- [Back](../../..)

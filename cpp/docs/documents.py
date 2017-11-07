@@ -51,6 +51,13 @@ def page(path, fname):
 
     writeln("{% endhighlight %}")
     writeln("")
+
+    doc_path = path.replace('cpp/', 'cpp/docs/') + "/" + basename(fname) + ".md"
+    if os.path.exists(doc_path):
+        docf = open(doc_path)
+        writeln("".join(docf.readlines()))
+        docf.close()
+
     writeln("- [Back](%s)" % os.path.relpath("./", path))
     f.close()
 
