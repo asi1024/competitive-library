@@ -4,7 +4,7 @@
 
 ### Includes
 
-- [Geometry.hpp](../include/geometry/Geometry.hpp)
+- [Geometry.hpp](../include/geometry/Geometry)
 
 {% highlight cpp %}
 #include "../include/geometry/Geometry.hpp"

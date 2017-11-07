@@ -4,7 +4,7 @@
 
 ### Includes
 
-- [intersect.cpp](./intersect)
+- [intersect.cpp](intersect)
 
 {% highlight cpp %}
 #include "intersect.cpp"

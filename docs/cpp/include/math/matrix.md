@@ -4,7 +4,7 @@
 
 ### Includes
 
-- [vector.cpp](./vector)
+- [vector.cpp](vector)
 
 {% highlight cpp %}
 #include "vector.cpp"

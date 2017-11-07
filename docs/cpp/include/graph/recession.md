@@ -4,7 +4,7 @@
 
 ### Includes
 
-- [Graph.hpp](./Graph.hpp)
+- [Graph.hpp](Graph)
 
 {% highlight cpp %}
 #include "Graph.hpp"
