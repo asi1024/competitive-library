@@ -8,5 +8,5 @@ INDEX="docs/index.md"
 
 cat docs/header.md   >  $INDEX
 ./cpp/docs/title.py  >> $INDEX
-./scripts/cpp2doc.sh
+./cpp/docs/documents.py
 cat docs/footer.md   >> $INDEX
