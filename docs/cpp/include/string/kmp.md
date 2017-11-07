@@ -28,4 +28,4 @@ struct KMP {
 };
 {% endhighlight %}
 
-- [Back](../../..)
+[Back](../../..)

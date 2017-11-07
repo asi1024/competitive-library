@@ -12,4 +12,4 @@
 struct Init { Init() { int x; cin >> x; cout << x * x * x << endl; } } init;
 {% endhighlight %}
 
-- [Back](../..)
+[Back](../..)

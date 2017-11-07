@@ -29,4 +29,4 @@ template<> constexpr ll inf<ll> = 1e18;
 template<> constexpr ld inf<ld> = 1e30;
 {% endhighlight %}
 
-- [Back](../..)
+[Back](../..)

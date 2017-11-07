@@ -47,4 +47,4 @@ Polygon convex_cut(const Polygon &g, Line l) {
 }
 {% endhighlight %}
 
-- [Back](../../..)
+[Back](../../..)

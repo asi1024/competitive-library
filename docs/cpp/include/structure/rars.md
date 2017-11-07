@@ -26,4 +26,4 @@ public:
 };
 {% endhighlight %}
 
-- [Back](../../..)
+[Back](../../..)
