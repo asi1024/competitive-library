@@ -20,8 +20,8 @@ def category(path, name, verifier):
 
     files.sort()
 
-    print("##", name)
-    print()
+    print("## " + name)
+    print("")
     print("| Algorithm | Verified | AOJ Problems |")
     print("|:---------:|:--------:|:------------:|")
 
@@ -37,7 +37,7 @@ def category(path, name, verifier):
             aojlist = ''
         print("| %s | %s | %s |" % (algorithm, validated, aojlist))
 
-    print()
+    print("")
 
 
 def verifier_dict():
