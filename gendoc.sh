@@ -6,7 +6,7 @@ cd `dirname $0`
 
 INDEX="docs/index.md"
 
-cat docs/header.md          >  $INDEX
-./scripts/gendoc.sh C++ cpp >> $INDEX
+cat docs/header.md   >  $INDEX
+./cpp/docs/title.py  >> $INDEX
 ./scripts/cpp2doc.sh
-cat docs/footer.md          >> $INDEX
+cat docs/footer.md   >> $INDEX
