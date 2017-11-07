@@ -4,7 +4,7 @@
 
 ### Includes
 
-- [vector.cpp](./vector)
+- [vector.cpp](vector)
 
 {% highlight cpp %}
 #include "vector.cpp"
@@ -78,4 +78,4 @@ T det(Matrix<T> A) {
 }
 {% endhighlight %}
 
-- [Back](../../..)
+[Back](../../..)

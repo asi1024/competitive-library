@@ -4,7 +4,7 @@
 
 ### Includes
 
-- [intersect.cpp](./intersect)
+- [intersect.cpp](intersect)
 
 {% highlight cpp %}
 #include "intersect.cpp"
@@ -32,4 +32,4 @@ int is_in_polygon(const Polygon &g, Point p) {
 }
 {% endhighlight %}
 
-- [Back](../../..)
+[Back](../../..)

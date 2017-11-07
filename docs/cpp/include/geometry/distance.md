@@ -4,8 +4,8 @@
 
 ### Includes
 
-- [Geometry.hpp](./Geometry.hpp)
-- [intersect.cpp](./intersect)
+- [Geometry.hpp](Geometry)
+- [intersect.cpp](intersect)
 
 {% highlight cpp %}
 #include "Geometry.hpp"
@@ -38,4 +38,4 @@ ld dist_ss(Segment s, Segment t) {
 }
 {% endhighlight %}
 
-- [Back](../../..)
+[Back](../../..)

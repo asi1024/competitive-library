@@ -60,7 +60,7 @@
 
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:------------:|
-| [Geometry.hpp](./cpp/include/geometry/Geometry.hpp) | <font color="ForestGreen">Yes</font> | [CGL_1_C.cpp](./cpp/src/CGL_1_C) |
+| [Geometry.hpp](./cpp/include/geometry/Geometry) | <font color="ForestGreen">Yes</font> | [CGL_1_C.cpp](./cpp/src/CGL_1_C) |
 | [circle_intersect.cpp](./cpp/include/geometry/circle_intersect) | <font color="ForestGreen">Yes</font> | [CGL_7_D.cpp](./cpp/src/CGL_7_D)<br>[CGL_7_E.cpp](./cpp/src/CGL_7_E)<br>[CGL_7_F.cpp](./cpp/src/CGL_7_F)<br>[CGL_7_G.cpp](./cpp/src/CGL_7_G) |
 | [circle_tangent.cpp](./cpp/include/geometry/circle_tangent) | <font color="ForestGreen">Yes</font> | [CGL_7_F.cpp](./cpp/src/CGL_7_F)<br>[CGL_7_G.cpp](./cpp/src/CGL_7_G) |
 | [convex.cpp](./cpp/include/geometry/convex) | <font color="ForestGreen">Yes</font> | [2159.cpp](./cpp/src/2159)<br>[CGL_4_B.cpp](./cpp/src/CGL_4_B)<br>[CGL_4_C.cpp](./cpp/src/CGL_4_C) |
