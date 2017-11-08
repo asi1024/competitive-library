@@ -4,7 +4,7 @@
 
 ### Includes
 
-- [fenwick_tree.cpp](./fenwick_tree)
+- [fenwick_tree.cpp](fenwick_tree)
 
 {% highlight cpp %}
 #include "fenwick_tree.cpp"
@@ -26,4 +26,4 @@ public:
 };
 {% endhighlight %}
 
-- [Back](../../..)
+[Back](../../..)

@@ -56,4 +56,4 @@ vector<Point> unique(vector<Point> ps) {
 }
 {% endhighlight %}
 
-- [Back](../../..)
+[Back](../../..)

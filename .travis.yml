@@ -38,6 +38,7 @@ sudo: false
 script:
   - cp -r docs docs-spec
   - rm -rf docs/cpp
+  - python --version
   - ./gendoc.sh
   - diff -r docs docs-spec
   - ulimit -s unlimited

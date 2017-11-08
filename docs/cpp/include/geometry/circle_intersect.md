@@ -4,9 +4,9 @@
 
 ### Includes
 
-- [Geometry.hpp](./Geometry.hpp)
-- [intersect.cpp](./intersect)
-- [distance.cpp](./distance)
+- [Geometry.hpp](Geometry)
+- [intersect.cpp](intersect)
+- [distance.cpp](distance)
 
 {% highlight cpp %}
 #include "Geometry.hpp"
@@ -47,4 +47,4 @@ vector<Point> is_cs(Circle c, Segment s){
 }
 {% endhighlight %}
 
-- [Back](../../..)
+[Back](../../..)

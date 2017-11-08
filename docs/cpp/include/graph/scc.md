@@ -45,4 +45,4 @@ void add_edge(Graph &g, int from, int to) {
 }
 {% endhighlight %}
 
-- [Back](../../..)
+[Back](../../..)

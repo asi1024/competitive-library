@@ -4,7 +4,7 @@
 
 ### Includes
 
-- [Geometry.hpp](./Geometry.hpp)
+- [Geometry.hpp](Geometry)
 
 {% highlight cpp %}
 #include "Geometry.hpp"
@@ -47,4 +47,4 @@ Point is_ll(Line s, Line t) {
 }
 {% endhighlight %}
 
-- [Back](../../..)
+[Back](../../..)
