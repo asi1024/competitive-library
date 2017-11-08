@@ -20,6 +20,15 @@ def ignored_line(s):
             (s.find("#include") != -1 and s.find("util.h") != -1))
 
 
+def mkdir_open_write(path):
+    path_list = path.split('/')
+    for i, _ in enumerate(path_list):
+        dirpath = "/".join(path_list[:i])
+        if dirpath and not os.path.exists(dirpath):
+            os.mkdir(dirpath)
+    return open(path, 'w')
+
+
 def page(path, fname):
     filepath = path + "/" + fname
     f = open(filepath, 'r')
@@ -30,7 +39,7 @@ def page(path, fname):
     includes = [s.split('"')[1] for s in code if s.find('#include') != -1
                 and s.find('util.h') == -1 and s.find('"') != -1]
 
-    f = open("docs/" + path + "/" + basename(fname) + ".md", 'a')
+    f = mkdir_open_write("docs/" + path + "/" + basename(fname) + ".md")
     writeln = lambda s: f.write(s + "\n")
 
     writeln("## " + fname)
