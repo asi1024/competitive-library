@@ -30,7 +30,7 @@ def page(path, fname):
     includes = [s.split('"')[1] for s in code if s.find('#include') != -1
                 and s.find('util.h') == -1 and s.find('"') != -1]
 
-    f = open("docs/" + path + "/" + basename(fname) + ".md", 'w')
+    f = open("docs/" + path + "/" + basename(fname) + ".md", 'a')
     writeln = lambda s: f.write(s + "\n")
 
     writeln("## " + fname)
