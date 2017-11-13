@@ -10,6 +10,7 @@
 #include <cstdio>
 #include <cstring>
 #include <functional>
+#include <map>
 #include <iostream>
 #include <iterator>
 #include <queue>
