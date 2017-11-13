@@ -43,8 +43,9 @@
 |:---------:|:--------:|:------------:|
 | [eratosthenes.cpp](./cpp/include/math/eratosthenes) | <font color="Red">No</font> |  |
 | [fft.cpp](./cpp/include/math/fft) | <font color="Red">No</font> |  |
+| [fmt.cpp](./cpp/include/math/fmt) | <font color="ForestGreen">Yes</font> | [2560.cpp](./cpp/src/2560) |
 | [matrix.cpp](./cpp/include/math/matrix) | <font color="Red">No</font> |  |
-| [mod.cpp](./cpp/include/math/mod) | <font color="ForestGreen">Yes</font> | [2335.cpp](./cpp/src/2335) |
+| [mod.cpp](./cpp/include/math/mod) | <font color="ForestGreen">Yes</font> | [2335.cpp](./cpp/src/2335)<br>[2560.cpp](./cpp/src/2560) |
 | [mod_dynamic.cpp](./cpp/include/math/mod_dynamic) | <font color="Red">No</font> |  |
 | [vector.cpp](./cpp/include/math/vector) | <font color="Red">No</font> |  |
 
