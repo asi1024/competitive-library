@@ -75,5 +75,15 @@
 | [cout.cpp](./cpp/include/others/cout) | <font color="Red">No</font> |  |
 | [tree_dp.cpp](./cpp/include/others/tree_dp) | <font color="Red">No</font> |  |
 
+-------------------
+
+# OCaml
+
+## Templates
+
+| Algorithm | Verified | AOJ Problems |
+|:---------:|:--------:|:------------:|
+| [template.ml](./ocaml/include/template/template) | <font color="ForestGreen">Yes</font> | [ITP1_1_B.ml](./ocaml/src/ITP1_1_B) |
+
 ## Travis CI
 - [Travis CI Report](https://travis-ci.org/{{ site.github.owner_name }}/{{ site.github.repository_name }}/builds)

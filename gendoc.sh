@@ -6,7 +6,9 @@ cd `dirname $0`
 
 INDEX="docs/index.md"
 
-cat docs/header.md         >  $INDEX
-python cpp/docs/title.py  >> $INDEX
+cat docs/header.md          > $INDEX
+python cpp/docs/title.py   >> $INDEX
 python cpp/docs/documents.py
+python ocaml/docs/title.py >> $INDEX
+python ocaml/docs/documents.py
 cat docs/footer.md         >> $INDEX
