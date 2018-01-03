@@ -1,9 +1,3 @@
 {
-    "template":  "Templates",
-    // "structure": "Data Structures",
-    // "graph":     "Graph Algorithms",
-    // "math":      "Numerical Algorithms",
-    // "string":    "String Algorithms",
-    // "geometry":  "Geometric Algorithms",
-    // "others":    "Others"
+    "template":  "Templates"
 }
