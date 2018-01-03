@@ -5,6 +5,8 @@ set -eu
 echo "CXX      = $CXX"
 echo "CXXFLAGS = $CXXFLAGS"
 
+SUFFIX=".cpp"
+
 function compile() {
     ${CXX} ${CXXFLAGS} -o exec $1
 }
@@ -23,9 +25,9 @@ do
     fi
 done
 
-for FILEPATH in `ls src/*.cpp`
+for FILEPATH in `ls src/*${SUFFIX}`
 do
-    FILENAME=`basename ${FILEPATH} .cpp`
+    FILENAME=`basename ${FILEPATH} ${SUFFIX}`
     PROBLEM_ID=`echo ${FILENAME} | tr '.' '\n' | head -n 1`
     CHECK=0
 
@@ -40,9 +42,9 @@ do
     fi
 
     # compile
-    echo -e "Compiling ${FILENAME}.cpp ...\r\c"
+    echo -e "Compiling ${FILENAME}${SUFFIX} ...\r\c"
     compile ${FILEPATH}
-    echo -e "Compiling ${FILENAME}.cpp done."
+    echo -e "Compiling ${FILENAME}${SUFFIX} done."
     if [ ${BUILD_ONLY} == 1 ]; then
         continue
     fi
