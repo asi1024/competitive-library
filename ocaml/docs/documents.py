@@ -39,7 +39,7 @@ def page(path, fname):
     f.close()
 
     repo_path = "{{ site.github.repository_url }}/blob/master/%s" % filepath
-    includes = [os.path.relpath("ocaml/" + regex.fullmatch(s).group(1), path)
+    includes = [os.path.relpath("ocaml/" + regex.match(s).group(1), path)
                 for s in code if ignored_line(s)]
 
     f = mkdir_open_write("docs/" + path + "/" + basename(fname) + ".md")

@@ -52,7 +52,7 @@ def verifier_dict():
     for fname in files:
         f = open(path + "/" + fname)
         for s in f:
-            m = regex.fullmatch(s)
+            m = regex.match(s)
             if m:
                 key = m.group(1).split('/')[-1]
                 if key not in res:

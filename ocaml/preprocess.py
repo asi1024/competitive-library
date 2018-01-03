@@ -11,7 +11,7 @@ def expand(fname, parent_files):
     source = open(fname, 'r')
     res = ""
     for line in source:
-        match = re.fullmatch('\(\*\+\s*import\s+([^\s]*)\s*\+\*\)\n', line)
+        match = re.match('\(\*\+\s*import\s+([^\s]*)\s*\+\*\)\n', line)
         if match:
             child = match.group(1)
             res += expand(child, parent_files + [fname])
