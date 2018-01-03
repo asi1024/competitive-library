@@ -34,4 +34,4 @@ skew_heap<T> *pop(skew_heap<T> *h) {
 }
 {% endhighlight %}
 
-[Back](../../..)
+[Back](../..)

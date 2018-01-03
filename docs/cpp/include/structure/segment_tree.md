@@ -45,4 +45,4 @@ struct RMQ {
 };
 {% endhighlight %}
 
-[Back](../../..)
+[Back](../..)

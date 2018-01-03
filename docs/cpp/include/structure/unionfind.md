@@ -48,4 +48,4 @@ public:
 - (3): amortized $O(\alpha(n))$
 - (4): amortized $O(\alpha(n))$
 
-[Back](../../..)
+[Back](../..)

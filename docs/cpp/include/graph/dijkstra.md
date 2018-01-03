@@ -40,4 +40,4 @@ void add_edge(Graph &g, int from, int to, Edge::Cost cost) {
 }
 {% endhighlight %}
 
-[Back](../../..)
+[Back](../..)

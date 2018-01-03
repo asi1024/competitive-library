@@ -26,4 +26,4 @@ vector<int> primes() {
 }
 {% endhighlight %}
 
-[Back](../../..)
+[Back](../..)

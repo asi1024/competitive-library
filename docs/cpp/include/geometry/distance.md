@@ -38,4 +38,4 @@ ld dist_ss(Segment s, Segment t) {
 }
 {% endhighlight %}
 
-[Back](../../..)
+[Back](../..)

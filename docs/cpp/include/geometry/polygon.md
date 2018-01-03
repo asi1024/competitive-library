@@ -32,4 +32,4 @@ int is_in_polygon(const Polygon &g, Point p) {
 }
 {% endhighlight %}
 
-[Back](../../..)
+[Back](../..)

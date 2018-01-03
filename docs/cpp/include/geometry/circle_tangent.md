@@ -45,4 +45,4 @@ vector<Line> tangent_cc(Circle c1, Circle c2) {
 }
 {% endhighlight %}
 
-[Back](../../..)
+[Back](../..)

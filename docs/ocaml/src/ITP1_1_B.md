@@ -12,4 +12,4 @@ let () =
   pf "%d\n" (x * x * x)
 {% endhighlight %}
 
-[Back](../..)
+[Back](..)
