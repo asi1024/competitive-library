@@ -4,11 +4,7 @@ set -eu
 
 cd `dirname $0`
 
-INDEX="docs/index.md"
-
-cat docs/header.md              > ${INDEX}
 python cpp/docs/title.py        > docs/cpp/index.md
 python cpp/docs/documents.py
 python ocaml/docs/title.py      > docs/ocaml/index.md
 python ocaml/docs/documents.py
-cat docs/footer.md             >> $INDEX
