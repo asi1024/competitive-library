@@ -62,7 +62,7 @@ script:
   - diff -r docs docs-spec
   - ulimit -s unlimited
   - ulimit -a
-  - $COMPILER --version
+  - $COMPILER -v
   - CXX=$COMPILER CXXFLAGS=$FLAGS ./${DIR}/spec.sh --all
 
 notifications:
