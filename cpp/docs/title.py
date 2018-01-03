@@ -11,8 +11,8 @@ def category(path, name, verifier):
         return '.'.join(fname.split('.')[:-1])
 
     try:
-        path = "cpp/include/%s" % path
-        files = os.listdir(path)
+        path = "include/%s" % path
+        files = os.listdir("cpp/" + path)
         if not files:
             raise os.FileNotFoundError
     except os.FileNotFoundError:
@@ -29,7 +29,7 @@ def category(path, name, verifier):
         algorithm = "[%s](./%s/%s)" % (fname, path, basename(fname))
         if fname in verifier:
             validated = '<font color="ForestGreen">Yes</font>'
-            aojlist = ["[%s](./cpp/src/%s)" % (vname, basename(vname))
+            aojlist = ["[%s](./src/%s)" % (vname, basename(vname))
                        for vname in verifier[fname]]
             aojlist = '<br>'.join(aojlist)
         else:

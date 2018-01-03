@@ -67,7 +67,7 @@ def page(path, fname):
         writeln("".join(docf.readlines()))
         docf.close()
 
-    writeln("[Back](%s)" % os.path.relpath("./", path))
+    writeln("[Back](%s)" % os.path.relpath("cpp/", path))
     f.close()
 
 
