@@ -77,7 +77,7 @@ do
                 echo "time: ${TIME} sec"
                 echo -e "${FILENAME}: \033[0;35mruntime error\033[0m in #${TESTCASE}."
             fi
-            rm -f exec out log workspace
+            rm -rf exec out log workspace
             exit 1)
         LOG=`echo ${LOG} | tail -n 1`
         TIME=${LOG##* }
@@ -88,10 +88,10 @@ do
             echo ""
             echo "time: ${TIME} sec"
             echo -e "${FILENAME}: \033[0;31mwrong answer\033[0m in #${TESTCASE}."
-            rm -f exec out log
+            rm -rf exec out log workspace
             exit 1)
     done
     echo -e "${FILENAME}: \033[0;32mpassed\033[0m (time: ${MAX_TIME} sec)."
 done
 
-rm -f exec out log
+rm -rf exec out log workspace
