@@ -1,6 +1,7 @@
 matrix:
   include:
     - os: linux
+      language: cpp
       compiler: g++
       addons:
         apt:
@@ -13,6 +14,7 @@ matrix:
         GCOV=gcov-5
 
     - os: linux
+      language: cpp
       compiler: g++
       addons:
         apt:
@@ -25,6 +27,7 @@ matrix:
         GCOV=gcov-6
 
     - os: linux
+      language: cpp
       compiler: clang++
       addons:
         apt:
@@ -36,12 +39,14 @@ matrix:
         FLAGS="-std=c++14 -O2 -Wall -Wextra -Wno-unused-result -Werror -stdlib=libc++"
 
     - os: linux
+      language: ocaml
       install:
         - sudo add-apt-repository --yes ppa:avsm/ppa
         - sudo apt-get update
         - sudo apt-get install opam
         - opam init -y
         - eval $(opam config env)
+        - opam config var root
         - opam install -y num batteries
       env:
         DIR="ocaml"

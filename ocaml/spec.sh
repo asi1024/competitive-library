@@ -6,7 +6,7 @@ OCAMLFIND='ocamlfind'
 OCAMLOPT='ocamlopt'
 OCAMLFLAGS='-linkpkg -thread -package str,num,threads,batteries'
 
-echo "ocamlopt version `ocamlopt --version`"
+echo "ocamlopt version `ocamlfind ocamlopt --version`"
 
 SUFFIX=".ml"
 
