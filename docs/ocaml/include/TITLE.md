@@ -4,7 +4,8 @@
 
 {% highlight ocaml %}
 {
-    "template":  "Templates"
+    "template":  "Templates",
+    "graph":     "Graph Algorithms"
 }
 {% endhighlight %}
 

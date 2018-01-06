@@ -9,7 +9,7 @@ let () =
     let u = read_int () in
     let v = read_int () in
     let c = read_int () in
-    add_edge g u v c 0
+    add_edge int_info g u v c
   done;
-  let f = max_flow g 0 (v - 1) 0 max_int (+) (-) in
+  let f = max_flow int_info g 0 (v - 1) in
   pf "%d\n" f
