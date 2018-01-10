@@ -10,16 +10,15 @@ module L = List
 module Q = Queue
 
 let pf = Printf.printf
-let sf = Scanf.scanf
-let ssf = Scanf.sscanf
 
-let read_int () = sf "%d " (fun x -> x)
-let read_float () = sf "%f " (fun x -> x)
+let read_int () = Scanf.scanf "%d " (fun x -> x)
+let read_float () = Scanf.scanf "%f " (fun x -> x)
+let read_string () = Scanf.scanf "%s " (fun x -> x)
 let read_array read n = A.init n (fun _ -> read ())
-let err s = raise (Failure s)
 
-let inf = int_of_float 1e18
-let eps = 1e-11
+let range s t = A.init (t - s) @@ (+) s
+let foreach fold_f init s t map_f =
+  range s t |> A.map map_f |> A.fold_left fold_f init
 
 module S = struct
   include String
