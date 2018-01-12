@@ -56,6 +56,7 @@ public:
 
 template<typename T>
 class Matrix : public Vec<Vec<T>> {
+  bool is_zero(T dat) { return (abs(dat) < 1e-9); }
 public:
   using Vec<Vec<T>>::Vec;
   Matrix(int n, int m, const T &val) : Vec<Vec<T>>::Vec(n, Vec<T>(m, val)) {}
@@ -84,4 +85,45 @@ public:
     return res;
   }
   Matrix<T> &operator*=(const Matrix<T> &r) { return *this = *this * r; }
+  int rank() const {
+    Matrix<T> A = *this;
+    const int n = Y(), m = X();
+    int r = 0;
+    for (int i = 0; r < n && i < m; ++i) {
+      int pivot = r;
+      for (int j = r+1; j < n; ++j) {
+        if (abs(A[j][i]) > abs(A[pivot][i])) pivot = j;
+      }
+      swap(A[pivot], A[r]);
+      if (is_zero(A[r][i])) continue;
+      for (int k = m-1; k >= i; --k) A[r][k] = A[r][k] / A[r][i];
+      for(int j = r+1; j < n; ++j) {
+        for(int k = m-1; k >= i; --k) {
+          A[j][k] -= A[r][k] * A[j][i];
+        }
+      }
+      ++r;
+    }
+    return r;
+  }
+  T det() const {
+    Matrix<T> A = *this;
+    const int n = A.size();
+    T D = 1;
+    for (int i = 0; i < n; ++i) {
+      int pivot = i;
+      for (int j = i+1; j < n; ++j) {
+        if (abs(A[j][i]) > abs(A[pivot][i])) pivot = j;
+      }
+      swap(A[pivot], A[i]);
+      D = D * A[i][i] * T(i != pivot ? -1 : 1);
+      if (is_zero(A[i][i])) break;
+      for(int j = i+1; j < n; ++j) {
+        for(int k = n-1; k >= i; --k) {
+          A[j][k] -= A[i][k] * A[j][i] / A[i][i];
+        }
+      }
+    }
+    return D;
+  }
 };
