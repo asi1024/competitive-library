@@ -11,6 +11,7 @@
 #include <cstring>
 #include <functional>
 #include <map>
+#include <numeric>
 #include <iostream>
 #include <iterator>
 #include <queue>

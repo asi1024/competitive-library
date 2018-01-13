@@ -45,7 +45,7 @@
 | [matrix.cpp](./include/math/matrix) | <font color="Red">No</font> |  |
 | [mod.cpp](./include/math/mod) | <font color="ForestGreen">Yes</font> | [2335.cpp](./src/2335)<br>[2560.cpp](./src/2560) |
 | [mod_dynamic.cpp](./include/math/mod_dynamic) | <font color="Red">No</font> |  |
-| [vector.cpp](./include/math/vector) | <font color="Red">No</font> |  |
+| [vector.cpp](./include/math/vector) | <font color="ForestGreen">Yes</font> | [ITP1_7_D.cpp](./src/ITP1_7_D) |
 
 ## String Algorithms
 
