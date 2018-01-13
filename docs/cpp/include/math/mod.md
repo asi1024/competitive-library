@@ -24,9 +24,9 @@ public:
   explicit operator int() const { return n; }
   explicit operator ll() const { return n; }
   bool operator==(const Modulo &a) const { return n == a.n; }
-  Modulo operator+=(const Modulo &a) { n += a.n; if (n >= M) n -= M; return *this; }
-  Modulo operator-=(const Modulo &a) { n -= a.n; if (n < 0) n += M; return *this; }
-  Modulo operator*=(const Modulo &a) { n = (ll(n) * a.n) % M; return *this; }
+  Modulo &operator+=(const Modulo &a) { n += a.n; if (n >= M) n -= M; return *this; }
+  Modulo &operator-=(const Modulo &a) { n -= a.n; if (n < 0) n += M; return *this; }
+  Modulo &operator*=(const Modulo &a) { n = (ll(n) * a.n) % M; return *this; }
   Modulo operator+(const Modulo &a) const { Modulo res = *this; return res += a; }
   Modulo operator-(const Modulo &a) const { Modulo res = *this; return res -= a; }
   Modulo operator*(const Modulo &a) const { Modulo res = *this; return res *= a; }
@@ -39,7 +39,15 @@ public:
   enable_if_t<IsPrime, Modulo> operator/(const Modulo &a) const {
     return *this * inv(ll(a), M);
   }
+  enable_if_t<IsPrime, Modulo> operator/=(const Modulo &a) {
+    return *this *= inv(ll(a), M);
+  }
 };
+
+template<int M, bool IsPrime = false>
+bool is_zero(Modulo<M, IsPrime> x) { return int(x) == 0; }
+template<int M, bool IsPrime = false>
+int abs(Modulo<M, IsPrime> x) { return int(x); }
 
 const int mod = 1000000007;
 
