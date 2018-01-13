@@ -84,6 +84,15 @@ public:
     }
     return res;
   }
+  Vec<T> operator*(const Vec<T> &r) const {
+    const int row = Y(), col = r.Y();
+    assert (r.size() == col);
+    Vec<T> res(row);
+    for (int i = 0; i < row; ++i) {
+      res[i] = (*this)[i].dot(r);
+    }
+    return res;
+  }
   Matrix<T> &operator*=(const Matrix<T> &r) { return *this = *this * r; }
   int rank() const {
     Matrix<T> A = *this;
@@ -108,7 +117,8 @@ public:
   }
   T det() const {
     Matrix<T> A = *this;
-    const int n = A.size();
+    assert (Y() == X());
+    const int n = Y();
     T D = 1;
     for (int i = 0; i < n; ++i) {
       int pivot = i;
