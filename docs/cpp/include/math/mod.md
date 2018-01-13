@@ -44,6 +44,11 @@ public:
   }
 };
 
+template<int M, bool IsPrime = false>
+bool is_zero(Modulo<M, IsPrime> x) { return int(x) == 0; }
+template<int M, bool IsPrime = false>
+int abs(Modulo<M, IsPrime> x) { return int(x); }
+
 const int mod = 1000000007;
 
 template<int M = mod> Modulo<M, true> fact(int n, bool sw = true) {
