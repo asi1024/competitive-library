@@ -1,4 +1,4 @@
-#include "../include/math/vector.cpp"
+#include "../include/math/matrix.cpp"
 
 #define REP(i,n) for(int i=0;i<(n);++i)
 
