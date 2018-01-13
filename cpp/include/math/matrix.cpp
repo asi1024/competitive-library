@@ -122,15 +122,16 @@ public:
     }
   }
   void concat_below(const Vec<T> &r) {
-    assert (X() == r.size());
+    assert (Y() == 0 || X() == r.size());
     this->push_back(r);
   }
   void concat_below(const Matrix<T> &r) {
-    assert (X() == r.X());
+    assert (Y() == 0 || X() == r.X());
     for (Vec<T> i: r) (*this).push_back(i);
   }
   int rank() const {
     Matrix<T> A = *this;
+    if (Y() == 0) return 0;
     const int n = Y(), m = X();
     int r = 0;
     for (int i = 0; r < n && i < m; ++i) {
@@ -152,6 +153,7 @@ public:
   }
   T det() const {
     const int n = Y();
+    if (n == 0) return 1;
     assert (Y() == X());
     Matrix<T> A = *this;
     T D = 1;
