@@ -1,24 +1,6 @@
-#include <bits/stdc++.h>
-
 #include "../include/math/mod.cpp"
 
 #define REP(i,n) for(int i=0;i<(int)(n);i++)
-#define ALL(x) (x).begin(),(x).end()
-
-using namespace std;
-
-using ll = long long;
-using ld = long double;
-
-template <typename T> T &chmin(T &a, const T &b) { return a = min(a, b); }
-template <typename T> T &chmax(T &a, const T &b) { return a = max(a, b); }
-
-struct yes_no : numpunct<char> {
-  string_type do_truename()  const { return "Yes"; }
-  string_type do_falsename() const { return "No"; }
-};
-
-using Mod = Modulo<mod, true>;
 
 struct AhoCorasick {
   static const int SIZE = 128;
@@ -113,22 +95,15 @@ int is_match[512][610];
 int next_node[512][610];
 
 int main() {
-  locale loc(locale(), new yes_no);
-  cout << boolalpha;
-  cout.imbue(loc);
   int N, M, K;
   while (cin >> N >> M >> K, N) {
     REP(i,512) g[i].clear();
-    dict_str.clear();
-    dict_memo.clear();
-    vector<int> from(N), to(N);
+    dict_str.clear(); dict_memo.clear();
     vector<string> season(K);
     REP(i,N) {
       string s, t;
       cin >> s >> t;
-      from[i] = dict(s);
-      to[i] = dict(t);
-      g[from[i]].push_back(to[i]);
+      g[dict(s)].push_back(dict(t));
     }
     const int n = dict_str.size();
     REP(i,n) g[n].push_back(i);
@@ -139,29 +114,25 @@ int main() {
     }
     REP(i,BLOCK) REP(j,512) REP(k,610) REP(l,2) dp[i][j][k][l] = 0;
     dp[0][n][0][0] = 1;
-    // M = 2;
     REP(i,M) {
+      int src = i % BLOCK;
       REP(from,n+1) REP(k,aho.pma.size()) {
-        // cout << i << " " << from << " " << k << " " << 0 << " " << int(dp[i%BLOCK][from][k][0]) << endl;
-        // cout << i << " " << from << " " << k << " " << 1 << " " << int(dp[i%BLOCK][from][k][1]) << endl;
         for (int to: g[from]) {
-          int len = dict_str[to].size();
+          int dest = (src + int(dict_str[to].size())) % BLOCK;
           if (is_match[to][k] >= 2) continue;
           if (is_match[to][k]) {
-            dp[(i+len)%BLOCK][to][next_node[to][k]][1] += dp[i%BLOCK][from][k][0];
+            dp[dest][to][next_node[to][k]][1] += dp[src][from][k][0];
           }
           else {
-            dp[(i+len)%BLOCK][to][next_node[to][k]][0] += dp[i%BLOCK][from][k][0];
-            dp[(i+len)%BLOCK][to][next_node[to][k]][1] += dp[i%BLOCK][from][k][1];
+            dp[dest][to][next_node[to][k]][0] += dp[src][from][k][0];
+            dp[dest][to][next_node[to][k]][1] += dp[src][from][k][1];
           }
         }
       }
-      REP(j,n+1) REP(k,aho.pma.size()) REP(l,2) dp[i%BLOCK][j][k][l] = 0;
+      REP(j,n+1) REP(k,aho.pma.size()) REP(l,2) dp[src][j][k][l] = 0;
     }
     Mod res = 0;
-    REP(j,n+1) REP(k,aho.pma.size()) {
-      res += dp[M%BLOCK][j][k][1];
-    }
+    REP(j,n+1) REP(k,aho.pma.size()) res += dp[M%BLOCK][j][k][1];
     cout << int(res) << endl;
   }
   return 0;
