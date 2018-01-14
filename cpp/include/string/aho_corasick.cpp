@@ -75,9 +75,10 @@ class State {
   using reference = int&;
   using const_reference = const int&;
   array<int, 26> edge;
+  int failure;
   vector<int> accept;
 public:
-  State() { fill(begin(edge), end(edge), -1); }
+  State() : failure(-1) { fill(begin(edge), end(edge), -1); }
   reference operator[] (char c) { return edge[c - 'a']; }
   const_reference operator[] (int i) const { return edge[c - 'a']; }
   void push(int x) { accept.push_back(x); }

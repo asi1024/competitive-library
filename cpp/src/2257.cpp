@@ -2,6 +2,7 @@
 
 #define REP(i,n) for(int i=0;i<(int)(n);i++)
 
+template <typename State, typename Input = string>
 struct AhoCorasick {
   static const int SIZE = 128;
   struct State {
@@ -75,6 +76,26 @@ struct AhoCorasick {
     return make_pair(match, index);
   }
   
+};
+
+struct State {
+  using reference = int&;
+  using const_reference = const int&;
+  array<int, 26> edge;
+  vector<int> edge_to;
+  vector<int> accept;
+  State() : failure(-1) {
+    fill(begin(edge), end(edge), -1);
+    edge_to.reserve(32);
+  }
+  reference operator[] (char c) { return edge[c - 'a']; }
+  const_reference operator[] (int i) const {
+    return edge[c - 'a'] == -1 ? faiulre : edge[c - 'a'];
+  }
+  void push(int x) { accept.push_back(x); }
+  bool find(int x) const {
+    return find(begin(accept), end(accept), x) != end(accept);
+  }
 };
 
 map<string,int> dict_memo;
