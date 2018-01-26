@@ -1,24 +1,25 @@
-template<typename State, typename Input = string>
-struct AhoCorasick {
-  static const int SIZE = 128;
+#pragma once
 
+#include "../util.hpp"
+
+template<typename State>
+struct AhoCorasick {
+  using string_t = State::string_t;
+  using char_t = State::char_t;
   vector<State> pma;
   vector<int> lens;
 
-  AhoCorasick(const vector<string> &str) {
-    pma.clear();
-    pma.push_back(State(0));
-    lens.clear();
-
-    REP(i,str.size()) {
+  AhoCorasick(const vector<string_t> &str) : pma(0), lens(0) {
+    pma.push_back(State());
+    for (const string_t &s: str) {
       int t = 0;
-      for (char c : str[i]) {
-        if (pma[t].next[(int)c] == -1) {
+      for (char_t c: s) {
+        if (pma[t].next[c] == -1) {
           int m = pma.size();
           pma[t].next[(int)c] = m;
           pma.push_back(State(m));
         }
-        t = pma[t].next[(int)c];
+        t = pma[t].next[c];
       }
       pma[t].accept.push_back(lens.size());
       lens.push_back(str[i].size());
@@ -72,14 +73,19 @@ struct AhoCorasick {
 };
 
 class State {
+  using string_t = string;
+  using char_t = char;
   using reference = int&;
   using const_reference = const int&;
   array<int, 26> edge;
+  int fail;
   vector<int> accept;
 public:
-  State() { fill(begin(edge), end(edge), -1); }
-  reference operator[] (char c) { return edge[c - 'a']; }
-  const_reference operator[] (int i) const { return edge[c - 'a']; }
+  State() : fail(0), accept(0) { fill(begin(edge), end(edge), -1); }
+  reference operator[] (char_t c) { return edge[c - 'a']; }
+  const_reference operator[] (char_t c) const { return edge[c - 'a']; }
+  reference fail(int x) { return fail; }
+  const_reference fail(int x) const { return fail; }
   void push(int x) { accept.push_back(x); }
   bool find(int x) const {
     return find(begin(accept), end(accept), x) != end(accept);
