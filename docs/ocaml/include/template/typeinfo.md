@@ -11,16 +11,16 @@ type 't typeinfo =
     sub  : 't -> 't -> 't;
     mul  : 't -> 't -> 't; }
 
-let int_info = {
-    zero = 0;
+let int_info =
+  { zero = 0;
     one  = 1;
     inf  = int_of_float 1e18;
     add  = (+);
     sub  = (-);
     mul  = ( * ) }
 
-let float_info = {
-    zero = 0.;
+let float_info =
+  { zero = 0.;
     one  = 1.;
     inf  = 1e18;
     add  = (+.);
