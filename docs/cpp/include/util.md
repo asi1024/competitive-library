@@ -4,6 +4,7 @@
 
 {% highlight cpp %}
 #include <algorithm>
+#include <array>
 #include <cassert>
 #include <climits>
 #include <complex>
