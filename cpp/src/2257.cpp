@@ -1,102 +1,7 @@
+#include "../include/string/aho_corasick.cpp"
 #include "../include/math/mod.cpp"
 
 #define REP(i,n) for(int i=0;i<(int)(n);i++)
-
-template <typename State, typename Input = string>
-struct AhoCorasick {
-  static const int SIZE = 128;
-  struct State {
-    int index, next[SIZE];
-    vector<int> accept;
-    State(int index) : index(index) { memset(next, -1, sizeof(next)); }
-  };
-
-  vector<State> pma;
-  vector<int> lens;
-
-  AhoCorasick(const vector<string> &str) {
-    pma.clear();
-    pma.push_back(State(0));
-    lens.clear();
-
-    REP(i,str.size()) {
-      int t = 0;
-      for (char c : str[i]) {
-        if (pma[t].next[(int)c] == -1) {
-          int m = pma.size();
-          pma[t].next[(int)c] = m;
-          pma.push_back(State(m));
-        }
-        t = pma[t].next[(int)c];
-      }
-      pma[t].accept.push_back(lens.size());
-      lens.push_back(str[i].size());
-    }
-
-    queue<int> que;
-    for (int c = 1; c < SIZE; c++) {
-      if (pma[0].next[c] != -1) {
-        pma[pma[0].next[c]].next[0] = 0;
-        que.push(pma[0].next[c]);
-      }
-      else {
-        pma[0].next[c] = 0;
-      }
-    }
-    while (!que.empty()) {
-      int t = que.front();
-      que.pop();
-      for (int c = 1; c < SIZE; c++) {
-        if (pma[t].next[c] != -1) {
-          que.push(pma[t].next[c]);
-          int r = pma[t].next[0];
-          while (pma[r].next[c] == -1) r = pma[r].next[0];
-          pma[pma[t].next[c]].next[0] = pma[r].next[c];
-          for (int i : pma[pma[r].next[c]].accept)
-            pma[pma[t].next[c]].accept.push_back(i);
-        }
-      }
-    }
-  }
-
-  int sub(int index, int c) {
-    return pma[index].next[c] != -1 ?
-      pma[index].next[c] :
-      pma[index].next[c] = sub(pma[index].next[0], c);
-  }
-
-  pair<int,int> query(string &t, int from) {
-    int index = from;
-    int match = 0;
-    REP(i,t.size()) {
-      int c = t[i];
-      index = sub(index, c);
-      match += pma[index].accept.size();
-    }
-    return make_pair(match, index);
-  }
-  
-};
-
-struct State {
-  using reference = int&;
-  using const_reference = const int&;
-  array<int, 26> edge;
-  vector<int> edge_to;
-  vector<int> accept;
-  State() : failure(-1) {
-    fill(begin(edge), end(edge), -1);
-    edge_to.reserve(32);
-  }
-  reference operator[] (char c) { return edge[c - 'a']; }
-  const_reference operator[] (int i) const {
-    return edge[c - 'a'] == -1 ? faiulre : edge[c - 'a'];
-  }
-  void push(int x) { accept.push_back(x); }
-  bool find(int x) const {
-    return find(begin(accept), end(accept), x) != end(accept);
-  }
-};
 
 map<string,int> dict_memo;
 vector<string> dict_str;
@@ -120,6 +25,9 @@ int main() {
   while (cin >> N >> M >> K, N) {
     REP(i,512) g[i].clear();
     dict_str.clear(); dict_memo.clear();
+    memset(is_match, 0, sizeof(is_match));
+    memset(dp, 0, sizeof(dp));
+    memset(next_node, 0, sizeof(next_node));
     vector<string> season(K);
     REP(i,N) {
       string s, t;
@@ -129,9 +37,14 @@ int main() {
     const int n = dict_str.size();
     REP(i,n) g[n].push_back(i);
     REP(i,K) cin >> season[i];
-    AhoCorasick aho(season);
+    AhoCorasick<State> aho(season);
     REP(i,dict_str.size()) REP(j,aho.pma.size()) {
-      tie(is_match[i][j], next_node[i][j]) = aho.query(dict_str[i], j);
+      int index = j;
+      for (char c: dict_str[i]) {
+        index = aho.next(index, c);
+        is_match[i][j] += aho.pma[index].accept.size();
+      }
+      next_node[i][j] = index;
     }
     REP(i,BLOCK) REP(j,512) REP(k,610) REP(l,2) dp[i][j][k][l] = 0;
     dp[0][n][0][0] = 1;

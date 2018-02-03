@@ -4,8 +4,8 @@
 
 template<typename State>
 struct AhoCorasick {
-  using string_t = State::string_t;
-  using char_t = State::char_t;
+  using string_t = typename State::string_t;
+  using char_t = typename State::char_t;
   vector<State> pma;
   vector<int> lens;
 
@@ -14,55 +14,52 @@ struct AhoCorasick {
     for (const string_t &s: str) {
       int t = 0;
       for (char_t c: s) {
-        if (pma[t].next[c] == -1) {
-          int m = pma.size();
-          pma[t].next[(int)c] = m;
-          pma.push_back(State(m));
+        if (!pma[t].is_set(c)) {
+          pma[t][c] = pma.size();
+          pma.push_back(State());
         }
-        t = pma[t].next[c];
+        t = pma[t][c];
       }
       pma[t].accept.push_back(lens.size());
-      lens.push_back(str[i].size());
+      lens.push_back(s.size());
     }
-
     queue<int> que;
-    for (int c = 1; c < SIZE; c++) {
-      if (pma[0].next[c] != -1) {
-        pma[pma[0].next[c]].next[0] = 0;
-        que.push(pma[0].next[c]);
+    for (char_t c = State::min_char; c <= State::max_char; c++) {
+      if (pma[0].is_set(c)) {
+        pma[pma[0][c]].fail = 0;
+        que.push(pma[0][c]);
       }
       else {
-        pma[0].next[c] = 0;
+        pma[0][c] = 0;
       }
     }
     while (!que.empty()) {
       int t = que.front();
       que.pop();
-      for (int c = 1; c < SIZE; c++) {
-        if (pma[t].next[c] != -1) {
-          que.push(pma[t].next[c]);
-          int r = pma[t].next[0];
-          while (pma[r].next[c] == -1) r = pma[r].next[0];
-          pma[pma[t].next[c]].next[0] = pma[r].next[c];
-          for (int i : pma[pma[r].next[c]].accept)
-            pma[pma[t].next[c]].accept.push_back(i);
+      for (char_t c = State::min_char; c <= State::max_char; c++) {
+        if (pma[t].is_set(c)) {
+          que.push(pma[t][c]);
+          int r = pma[t].fail;
+          while (!pma[r].is_set(c)) r = pma[r].fail;
+          pma[pma[t][c]].fail = pma[r][c];
+          for (int i : pma[pma[r][c]].accept) {
+            pma[pma[t][c]].accept.push_back(i);
+          }
         }
       }
     }
   }
-
-  int sub(int index, int c) {
-    return pma[index].next[c] != -1 ?
-      pma[index].next[c] :
-      pma[index].next[c] = sub(pma[index].next[0], c);
+  int next(int index, char_t c) {
+    return pma[index].is_set(c) ?
+      pma[index][c] :
+      pma[index][c] = next(pma[index].fail, c);
   }
-
-  vector<int> query(string &t) {
+  vector<int> query(string_t &t) {
     int index = 0;
     vector<int> ret(lens.size(), -1);
-    REP(i,t.size()) {
-      int c = t[i];
-      index = sub(index, c);
+    for (int i = 0; i < int(t.size()); ++i) {
+      char_t c = t[i];
+      index = next(index, c);
       for (int j : pma[index].accept) {
         if (ret[j] != -1) continue;
         ret[j] = i - lens[j] + 1;
@@ -72,22 +69,16 @@ struct AhoCorasick {
   }
 };
 
-class State {
+struct State {
   using string_t = string;
   using char_t = char;
-  using reference = int&;
-  using const_reference = const int&;
-  array<int, 26> edge;
+  static const char_t min_char = 'a';
+  static const char_t max_char = 'z';
+  array<int, max_char - min_char + 1> edge;
   int fail;
   vector<int> accept;
-public:
   State() : fail(0), accept(0) { fill(begin(edge), end(edge), -1); }
-  reference operator[] (char_t c) { return edge[c - 'a']; }
-  const_reference operator[] (char_t c) const { return edge[c - 'a']; }
-  reference fail(int x) { return fail; }
-  const_reference fail(int x) const { return fail; }
-  void push(int x) { accept.push_back(x); }
-  bool find(int x) const {
-    return find(begin(accept), end(accept), x) != end(accept);
-  }
+  int& operator[] (char_t c) { return edge[c - 'a']; }
+  const int& operator[] (char_t c) const { return edge[c - 'a']; }
+  bool is_set(char_t c) { return edge[c - 'a'] >= 0; }
 };
