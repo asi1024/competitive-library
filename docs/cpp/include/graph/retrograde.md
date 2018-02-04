@@ -1,6 +1,6 @@
-## recession.cpp
+## retrograde.cpp
 
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/recession.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/retrograde.cpp)
 
 ### Includes
 
