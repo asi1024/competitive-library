@@ -29,7 +29,6 @@ struct SuffixArray {
       for (int i = 0; i < n; ++i) b[i+1] = b[i] + comp(sa[i], sa[i+1]);
       for (int i = 0; i <= n; ++i) g[sa[i]] = b[i];
     }
-
     // build LCP
     int h = 0;
     for (int i = 0; i <= n; ++i) b[sa[i]] = i;
@@ -46,53 +45,43 @@ struct SuffixArray {
     }
   }
 
-  int find(const string_t &t) {
+  template<class Compare>
+  int binary_search(const string_t &t) const {
     int m = t.size();
-    int left = -1, right = n + 1;
-    while (left + 1 < right) {
-      int mid = (left + right) / 2;
-      if (strncmp(str.c_str() + sa[mid], t.c_str(), m) < 0) left = mid;
-      else right = mid;
+    int lb = -1, ub = n + 1;
+    while (lb + 1 < ub) {
+      int mid = (lb + ub) / 2;
+      if (Compare()(strncmp(str.c_str() + sa[mid], t.c_str(), m), 0)) lb = mid;
+      else ub = mid;
     }
-    return strncmp(str.c_str() + sa[right], t.c_str(), m) == 0 ? sa[right] : -1;
+    return ub;
   }
-
-  int lower_bound(const string_t &t) {
-    int m = t.size();
-    int left = -1, right = n + 1;
-    while (left + 1 < right) {
-      int mid = (left + right) / 2;
-      if (strncmp(str.c_str() + sa[mid], t.c_str(), m) < 0) left = mid;
-      else { right = mid; }
-    }
-    return right;
+  int lower_bound(const string_t &t) const {
+    return binary_search<less<int>>(t);
   }
-
-  int upper_bound(const string_t &t) {
-    int m = t.size();
-    int left = -1, right = n + 1;
-    while (left + 1 < right) {
-      int mid = (left + right) / 2;
-      if (strncmp(str.c_str() + sa[mid], t.c_str(), m) <= 0) left = mid;
-      else { right = mid; }
-    }
-    return right;
+  int upper_bound(const string_t &t) const {
+    return binary_search<less_equal<int>>(t);
+  }
+  int find(const string_t &t) const {
+    const int m = t.size();
+    int res = lower_bound(t);
+    return strncmp(str.c_str() + sa[res], t.c_str(), m) == 0 ? sa[res] : -1;
   }
 };
 
-// class LCP {
-//   int n;
-//   vector<int> mapsto;
-//   SegmentTree<RMQ> seg;
-// public:
-//   LCP(const string &str) : n(str.size()), mapsto(n), seg(n) {
-//     SuffixArray sa(str);
-//     for (int i = 0; i < n; ++i) mapsto[sa.sa[i+1]] = i;
-//     for (int i = 0; i < n-1; ++i) seg.update(i, sa.lcp[i+2]);
-//   }
-//   int query(int i, int j) {
-//     if (i == j) return n - i;
-//     i = mapsto[i]; j = mapsto[j];
-//     return seg.find(min(i, j), max(i, j));
-//   }
-// };
+class LCP {
+  int n;
+  vector<int> mapsto;
+  SegmentTree<RMQ> seg;
+public:
+  LCP(const string &str) : n(str.size()), mapsto(n), seg(n) {
+    SuffixArray<string> sa(str);
+    for (int i = 0; i < n; ++i) mapsto[sa.sa[i+1]] = i;
+    for (int i = 0; i < n-1; ++i) seg.update(i, sa.lcp[i+2]);
+  }
+  int query(int i, int j) {
+    if (i == j) return n - i;
+    i = mapsto[i]; j = mapsto[j];
+    return seg.query(min(i, j), max(i, j));
+  }
+};
