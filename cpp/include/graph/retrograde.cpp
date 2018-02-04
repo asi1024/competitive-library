@@ -2,59 +2,41 @@
 
 enum Game { WIN, LOSE, DRAW };
 
-template<typename T>
-struct Game_with_Cost {
-  Game win;
-  T cost;
-  Game_with_Cost() : win(DRAW), cost(inf<T>) {;}
-  Game_with_Cost(Game w, T c) : win(w), cost(c) {;}
-};
-
 template<typename Edge>
-vector<Game_with_Cost<typename Edge::Cost>> retrograde(const vector<vector<Edge>> &g) {
-  using Cost = typename Edge::Cost;
+vector<Game> retrograde(const vector<vector<Edge>> &g) {
   const int n = g.size();
-  vector<vector<Edge>> rg(n);
+  vector<vector<int>> rg(n);
   for (int i = 0; i < n; ++i) {
-    for (auto e: g[i]) rg[e.to].push_back(Edge(i, e.cost));
+    for (auto e: g[i]) rg[e.to].push_back(i);
   }
   vector<int> cnt(n);
   for (int i = 0; i < n; ++i) cnt[i] = g[i].size();
-  using P = pair<Cost,int>;
-  priority_queue<P, vector<P>, greater<P>> que;
-  vector<Game_with_Cost<Cost>> res(n);
+  queue<int> que;
+  vector<Game> res(n, DRAW);
   for (int i = 0; i < n; ++i) {
     if (cnt[i] == 0) {
-      res[i] = Game_with_Cost<Cost>(LOSE, 0);
-      que.emplace(Cost(0), i);
+      res[i] = LOSE;
+      que.emplace(i);
     }
   }
   while (!que.empty()) {
-    Cost cost;
-    int v;
-    tie(cost, v) = que.top();
+    int v = que.front();
     que.pop();
-    if (res[v].win == WIN) {
-      if (res[v].cost != cost) continue;
+    if (res[v] == WIN) {
       for (Edge e: rg[v]) {
-        if (res[e.to].win == WIN) continue;
+        if (res[e.to] == WIN) continue;
         cnt[e.to]--;
         if (cnt[e.to] == 0) {
-          res[e.to].win = LOSE;
-          que.emplace(Cost(0), e.to);
+          res[e.to] = LOSE;
+          que.emplace(e.to);
         }
       }
     }
     else {
-      for (Edge e: g[v]) {
-        cost = max(cost, res[e.to].cost + e.cost);
-      }
-      res[v].cost = cost;
       for (Edge e: rg[v]) {
-        res[e.to].win = WIN;
-        if (cost + e.cost < res[e.to].cost) {
-          res[e.to].cost = cost + e.cost;
-          que.emplace(res[e.to].cost, e.to);
+        if (res[e.to] != WIN) {
+          res[e.to] = WIN;
+          que.emplace(e.to);
         }
       }
     }
@@ -63,14 +45,12 @@ vector<Game_with_Cost<typename Edge::Cost>> retrograde(const vector<vector<Edge>
 }
 
 struct Edge {
-  using Cost = int;
   int to;
-  Cost cost;
-  Edge(int t, Cost c) : to(t), cost(c) {}
+  Edge(int t) : to(t) {}
 };
 
 using Graph = vector<vector<Edge>>;
 
-void add_edge(Graph &g, int from, int to, Edge::Cost cost) {
-  g[from].emplace_back(to, cost);
+void add_edge(Graph &g, int from, int to) {
+  g[from].emplace_back(to);
 }
