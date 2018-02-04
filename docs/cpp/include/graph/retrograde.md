@@ -2,68 +2,89 @@
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/retrograde.cpp)
 
-### Includes
-
-- [Graph.hpp](Graph)
-
 {% highlight cpp %}
-#include "Graph.hpp"
+enum Game { WIN, LOSE, DRAW };
 
-int update(const Graph &g, vector<int> &res, int v) {
-  for (auto e: g[v]) {
-    if (res[e.to] == -1) {
-      res[v] = 1;
-      return 1;
-    }
+template<typename T>
+struct Game_with_Cost {
+  Game win;
+  T cost;
+  Game_with_Cost() : win(DRAW), cost(inf<T>) {;}
+  Game_with_Cost(Game w, T c) : win(w), cost(c) {;}
+};
+
+template<typename Edge>
+vector<Game_with_Cost<typename Edge::Cost>> retrograde(const vector<vector<Edge>> &g) {
+  using Cost = typename Edge::Cost;
+  const int n = g.size();
+  vector<vector<Edge>> rg(n);
+  for (int i = 0; i < n; ++i) {
+    for (auto e: g[i]) rg[e.to].push_back(Edge(i, e.cost));
   }
-  res[v] = -1;
-  return 1e9;
-}
-
-template <typename T>
-void recession(const Graph &g, vector<T> &res) {
-  assert(g.size() == res.size());
-  int n = g.size();
-  vector<vector<int>> rg(n);
-  for (int i = 0; i < n; ++i)
-    for (auto e: g[i]) rg[e.to].push_back(i);
   vector<int> cnt(n);
   for (int i = 0; i < n; ++i) cnt[i] = g[i].size();
-  queue<int> que;
-  for (int i = 0; i < n; ++i)
-    if (cnt[i] == 0) que.push(i);
-  while (!que.empty()) {
-    int v = que.front(); que.pop();
-    int c = update(g, res, v);
-    for (int i: rg[v]) {
-      if (cnt[i] <= 0) continue;
-      cnt[i] -= c;
-      if (cnt[i] <= 0) que.push(i);
+  using P = pair<Cost,int>;
+  priority_queue<P, vector<P>, greater<P>> que;
+  vector<Game_with_Cost<Cost>> res(n);
+  for (int i = 0; i < n; ++i) {
+    if (cnt[i] == 0) {
+      res[i] = Game_with_Cost<Cost>(LOSE, 0);
+      que.emplace(Cost(0), i);
     }
   }
+  while (!que.empty()) {
+    Cost cost;
+    int v;
+    tie(cost, v) = que.top();
+    que.pop();
+    if (res[v].win == WIN) {
+      if (res[v].cost != cost) continue;
+      for (Edge e: rg[v]) {
+        if (res[e.to].win == WIN) continue;
+        cnt[e.to]--;
+        if (cnt[e.to] == 0) {
+          res[e.to].win = LOSE;
+          que.emplace(Cost(0), e.to);
+        }
+      }
+    }
+    else {
+      for (Edge e: g[v]) {
+        cost = max(cost, res[e.to].cost + e.cost);
+      }
+      res[v].cost = cost;
+      for (Edge e: rg[v]) {
+        res[e.to].win = WIN;
+        if (cost + e.cost < res[e.to].cost) {
+          res[e.to].cost = cost + e.cost;
+          que.emplace(res[e.to].cost, e.to);
+        }
+      }
+    }
+  }
+  return res;
 }
 
-// Verified : CodeFestival2015WF D (Dictionary for Shiritori Game)
-/*
-int main() {
-  int N, M;
-  cin >> N >> M;
-  Graph<int> g(2 * N);
-  for (int i = 0; i < M; ++i) {
-    int p, q;
-    cin >> p >> q;
-    --p; --q;
-    add_edge(g, p, q + N);
-    add_edge(g, p + N, q);
-  }
-  vector<int> res(2 * N, 0);
-  recession(g, res);
-  if (res[0] == -1) cout << "Sothe" << endl;
-  if (res[0] ==  0) cout << "Draw"  << endl;
-  if (res[0] ==  1) cout << "Snuke" << endl;
-  return 0;
+struct Edge {
+  using Cost = int;
+  int to;
+  Cost cost;
+  Edge(int t, Cost c) : to(t), cost(c) {}
+};
+
+using Graph = vector<vector<Edge>>;
+
+void add_edge(Graph &g, int from, int to, Edge::Cost cost) {
+  g[from].emplace_back(to, cost);
 }
-*/
 {% endhighlight %}
+
+{% include mathjax.html %}
+
+### Memo
+
+- 二人ゲーム．グラフ上を交互に移動していき，移動できなくなった方が負け．
+- 勝者はパスのコストがなるべく小さくなるように，敗者は長くなるように選ぶ．
+- 各ノードから始めたときの先手の勝敗とコストを返す．
 
 [Back](../..)
