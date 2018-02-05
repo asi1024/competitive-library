@@ -55,7 +55,8 @@
 |:---------:|:--------:|:------------:|
 | [aho_corasick.cpp](./include/string/aho_corasick) | <font color="ForestGreen">Yes</font> | [2257.cpp](./src/2257) |
 | [kmp.cpp](./include/string/kmp) | <font color="Red">No</font> |  |
-| [rolling_hash.cpp](./include/string/rolling_hash) | <font color="ForestGreen">Yes</font> | [2444.cpp](./src/2444) |
+| [manacher.cpp](./include/string/manacher) | <font color="ForestGreen">Yes</font> | [2292.cpp](./src/2292) |
+| [rolling_hash.cpp](./include/string/rolling_hash) | <font color="ForestGreen">Yes</font> | [2292.cpp](./src/2292)<br>[2444.cpp](./src/2444) |
 | [suffix_array.cpp](./include/string/suffix_array) | <font color="ForestGreen">Yes</font> | [2644.cpp](./src/2644) |
 
 ## Geometric Algorithms
