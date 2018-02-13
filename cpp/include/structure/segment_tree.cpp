@@ -21,7 +21,7 @@ public:
   int size() const { return size_; }
   void update(int pos, const T &value) {
     assert (0 <= pos && pos < size_); // assertion
-    data[pos + n] = data[value];
+    data[pos += n] = value;
     while (pos /= 2) {
       data[pos] = Monoid::op(data[pos * 2], data[pos * 2 + 1]);
     }
