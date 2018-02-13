@@ -4,13 +4,13 @@
 
 template <typename T>
 class StarrySkyTree {
-  const int n;
+  const int n_;
   vector<T> data, lazy;
   int expand(int n) const { return n == 1 ? n : expand((n + 1) / 2) * 2; }
 public:
-  StarrySkyTree(int m) : n(expand(m)), data(n * 2, 0), lazy(n * 2, 0) {}
+  StarrySkyTree(int n) : n_(expand(n)), data(n_ * 2, 0), lazy(n_ * 2, 0) {}
   void add(int l, int r, T val) {
-    l += n; r += n;
+    l += n_; r += n_;
     const int left = l, right = r;
     while (l != r) {
       if (l % 2) { lazy[l] += val; data[l++] += val; }
@@ -24,7 +24,7 @@ public:
     }
   }
   T minimum(int l, int r) const {
-    l += n; r += n;
+    l += n_; r += n_;
     T res1 = inf<T>, res2 = inf<T>;
     while (l != r) {
       if (l % 2) res1 = min(res1, data[l++]);

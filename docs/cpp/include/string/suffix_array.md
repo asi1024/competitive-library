@@ -14,7 +14,7 @@ struct SuffixArray {
   struct SAComp {
     const int h;
     const vector<int> &g;
-    SAComp(int h, vector<int> &g) : h(h), g(g) {;}
+    SAComp(int h_, vector<int> &g_) : h(h_), g(g_) {;}
     bool operator() (int a, int b) {
       return a != b && (g[a] != g[b] ? g[a] < g[b] : g[a + h] < g[b + h]);
     }

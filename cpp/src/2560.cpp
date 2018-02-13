@@ -24,10 +24,10 @@ int main() {
   for (int i = 0; i < n; ++i) {
     for (int j = -n + 1; j < n; ++j) {
       if (i == 0 && j <= 0) continue;
-      const int c = int(res[2 * n * n - 1 + 2 * i * n + j]);
-      if (c > 0) count[i * i + j * j] += c;
-      cnt += c;
-      sum += sqrt(ld(i * i + j * j)) * c;
+      const int d = int(res[2 * n * n - 1 + 2 * i * n + j]);
+      if (d > 0) count[i * i + j * j] += d;
+      cnt += d;
+      sum += sqrt(ld(i * i + j * j)) * d;
     }
   }
   printf("%.9Lf\n", sum / cnt);
