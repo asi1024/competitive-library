@@ -7,7 +7,7 @@ struct Ret {
   int l, r;
   ll cnt;
   Ret() : l(0), r(0), cnt(0) {;}
-  Ret(int l, int r, ll cnt) : l(l), r(r), cnt(cnt) {;}
+  Ret(int l_, int r_, ll cnt_) : l(l_), r(r_), cnt(cnt_) {;}
 };
 
 vector<map<hash_t, Ret>> count(const string &s) {
