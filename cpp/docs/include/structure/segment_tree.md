@@ -16,18 +16,20 @@ class Monoid
 - (3): Monoid の二項演算．この演算は結合則を満たす必要がある．
 
 {% highlight cpp %}
-(1) SegmentTree(vector<Monoid::type> init);
-(2) SegmentTree(int n, Monoid::type init = Monoid::id());
-(3) int size();
-(4) void update(int p, Monoid::type val);
-(5) Monoid::type query(int l, int r);
+(1) SegmentTree(vector<Monoid::type> vec);
+(2) SegmentTree(const int count, Monoid::type value = Monoid::id());
+(3) int size() const;
+(4) void update(int pos, Monoid::type &value);
+(5) Monoid::type query(int l, int r) const;
 {% endhighlight %}
 
-- (1): 列 init のセグメント木を作る．
-- (2): 長さ n のセグメント木を作り，全ての要素を init で初期化する．
+- (1): vector<T> 型の列 vec を表現するセグメント木を作る．
+- (2): 長さ count のセグメント木を作り，全ての要素を value で初期化する．
 - (3): セグメント木のサイズを返す．
 - (4): p 番目の要素を val に更新する．
-- (5): 区間 $a_l op a_{l+1} op \ldots op a_{r-1}$ を返す．
+  - p はセグメント木のサイズ未満の非負整数である必要があり，その範囲を超えた場合は例外を送出する．
+- (5): セグメント木の区間 [l, r) を演算 op で畳み込んだ値を返す．
+  - すなわち，$a_l op a_{l+1} op \ldots op a_{r-1}$ を返す．
   - $l = r$ の場合は Monoid::id() を返す．
 
 ### Time Complexity
