@@ -9,9 +9,9 @@ class SegmentTree {
   std::vector<T> data;
   int expand(int m) const { return m == 1 ? m : expand((m + 1) / 2) * 2; }
 public:
-  SegmentTree(const std::vector<T> &other) :
-    size_(other.size()), n(expand(size_)), data(n * 2, Monoid::id()) {
-    std::copy(begin(other), end(other), begin(data) + n);
+  SegmentTree(const std::vector<T> &vec) :
+    size_(vec.size()), n(expand(size_)), data(n * 2, Monoid::id()) {
+    std::copy(begin(vec), end(vec), begin(data) + n);
     for (int i = n - 1; i >= 0; --i) {
       data[i] = Monoid::op(data[i * 2 + 0], data[i * 2 + 1]);
     }
