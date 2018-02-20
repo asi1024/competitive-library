@@ -6,27 +6,29 @@
 template <class Monoid>
 class SegmentTree {
   using T = typename Monoid::type;
-  const int sz, n;
+  const int size_, n;
   std::vector<T> data;
-  int expand(int n) const { return n == 1 ? n : expand((n + 1) / 2) * 2; }
+  int expand(int m) const { return m == 1 ? m : expand((m + 1) / 2) * 2; }
 public:
-  SegmentTree(const std::vector<T> &init) :
-    sz(init.size()), n(expand(sz)), data(n * 2, Monoid::id()) {
-    std::copy(begin(init), end(init), begin(data) + n);
+  SegmentTree(const std::vector<T> &other) :
+    size_(other.size()), n(expand(size_)), data(n * 2, Monoid::id()) {
+    std::copy(begin(other), end(other), begin(data) + n);
     for (int i = n - 1; i >= 0; --i) {
       data[i] = Monoid::op(data[i * 2 + 0], data[i * 2 + 1]);
     }
   }
-  SegmentTree(const int n, const T &init = Monoid::id()) :
-    SegmentTree(std::vector<T>(n, init)) {}
-  int size() const { return sz; }
-  void update(int p, T val) {
-    assert (0 <= p && p < sz); // assertion
-    data[p += n] = val;
-    while (p /= 2) data[p] = Monoid::op(data[p * 2], data[p * 2 + 1]);
+  SegmentTree(const int count, const T &value = Monoid::id()) :
+    SegmentTree(std::vector<T>(count, value)) {}
+  int size() const { return size_; }
+  void update(int pos, const T &value) {
+    assert (0 <= pos && pos < size_); // assertion
+    data[pos += n] = value;
+    while (pos /= 2) {
+      data[pos] = Monoid::op(data[pos * 2], data[pos * 2 + 1]);
+    }
   }
   T query(int l, int r) const {
-    assert (0 <= l && l <= r && r <= sz); // assertion
+    assert (0 <= l && l <= r && r <= size_); // assertion
     l += n; r += n;
     T res1 = Monoid::id(), res2 = Monoid::id();
     while (l != r) {

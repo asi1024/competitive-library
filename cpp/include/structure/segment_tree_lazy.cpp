@@ -10,7 +10,7 @@ class SegmentTreeLazy {
   vector<type> data;
   vector<Update> lazy;
   vector<bool> flag;
-  void lazyset(int node, Update f) {
+  void lazyset(int node, const Update &f) {
     if (node < n) {
       if (flag[node]) { lazy[node] = f(lazy[node]); }
       else { lazy[node] = f; flag[node] = true; }
@@ -23,7 +23,7 @@ class SegmentTreeLazy {
     lazyset(node * 2 + 0, lazy[node]);
     lazyset(node * 2 + 1, lazy[node]);
   }
-  void update_sub(int l, int r, int node, int lb, int ub, Update f) {
+  void update_sub(int l, int r, int node, int lb, int ub, const Update &f) {
     if (ub <= l || r <= lb) { return; }
     if (l <= lb && ub <= r) { lazyset(node, f); return; }
     evaluate(node);
@@ -41,11 +41,11 @@ class SegmentTreeLazy {
     type rval = query_sub(l, r, node * 2 + 1, mid, ub);
     return Monoid::op(lval, rval);
   }
-  int expand(int n) const { return n == 1 ? n : expand((n + 1) / 2) * 2; }
+  int expand(int m) const { return m == 1 ? m : expand((m + 1) / 2) * 2; }
 public:
-  SegmentTreeLazy(int N) :
-    n(expand(N)), data(n * 2, Monoid::id()), lazy(n), flag(n, false) {;}
-  void update(int l, int r, Update f) { update_sub(l, r, 1, 0, n, f); }
+  SegmentTreeLazy(int count) :
+    n(expand(count)), data(n * 2, Monoid::id()), lazy(n), flag(n, false) {;}
+  void update(int l, int r, const Update &f) { update_sub(l, r, 1, 0, n, f); }
   type query(int l, int r) { return query_sub(l, r, 1, 0, n); }
 };
 

@@ -30,11 +30,11 @@ public:
   Modulo operator+(const Modulo &a) const { Modulo res = *this; return res += a; }
   Modulo operator-(const Modulo &a) const { Modulo res = *this; return res -= a; }
   Modulo operator*(const Modulo &a) const { Modulo res = *this; return res *= a; }
-  Modulo operator^(int n) const {
-    if (n == 0) return Modulo(1);
+  Modulo operator^(int m) const {
+    if (m == 0) return Modulo(1);
     const Modulo a = *this;
-    Modulo res = (a * a) ^ (n / 2);
-    return n % 2 ? res * a : res;
+    Modulo res = (a * a) ^ (m / 2);
+    return m % 2 ? res * a : res;
   }
   enable_if_t<IsPrime, Modulo> operator/(const Modulo &a) const {
     return *this * inv(ll(a), M);

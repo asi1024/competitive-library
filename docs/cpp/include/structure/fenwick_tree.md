@@ -8,7 +8,7 @@ class FenwickTree {
   const int n;
   vector<T> data;
 public:
-  FenwickTree(int n) : n(n), data(n, 0) {}
+  FenwickTree(int n_) : n(n_), data(n_, 0) {}
   void add(int i, T value) {
     for (; i < n; i |= i + 1) data[i] += value;
   }
