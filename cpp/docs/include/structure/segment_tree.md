@@ -2,13 +2,13 @@
 
 ### Usage
 
-代数系をクラスで定義して，以下のようにテンプレート引数を用いて渡す．
+[モノイド](https://ja.wikipedia.org/wiki/モノイド)をクラスで定義して，以下のようにテンプレート引数を用いて渡す．
 
 {% highlight cpp %}
 class Monoid
 (1) typename type;
 (2) static type id();
-(3) static type op(type l, type r);
+(3) static type op(const type& l, const type& r);
 {% endhighlight %}
 
 - (1): Monoid のデータ型
@@ -16,10 +16,10 @@ class Monoid
 - (3): Monoid の二項演算．この演算は結合則を満たす必要がある．
 
 {% highlight cpp %}
-(1) SegmentTree(vector<Monoid::type> vec);
-(2) SegmentTree(const int count, Monoid::type value = Monoid::id());
+(1) SegmentTree(const vector<Monoid::type>& vec);
+(2) SegmentTree(int count, const Monoid::type& value = Monoid::id());
 (3) int size() const;
-(4) void update(int pos, Monoid::type &value);
+(4) void update(int pos, const Monoid::type& value);
 (5) Monoid::type query(int l, int r) const;
 {% endhighlight %}
 
@@ -29,7 +29,7 @@ class Monoid
 - (4): p 番目の要素を val に更新する．
   - p はセグメント木のサイズ未満の非負整数である必要がある．
   - その範囲を超えた場合は例外を送出する．
-- (5): セグメント木の区間 [l, r) を演算 op で畳み込んだ値を返す．
+- (5): セグメント木の区間 [l, r) を演算 Monoid::op ($\cdot$) で畳み込んだ値を返す．
   - すなわち，$a_l \cdot a_{l+1} \cdot \ldots \cdot a_{r-1}$ を返す．
   - $l = r$ の場合は Monoid::id() を返す．
 
