@@ -6,8 +6,8 @@ template <typename T>
 class RARS {
   FenwickTree<T> bit1, bit2;
 public:
-  RARS(int n) : bit1(n+1), bit2(n+1) {}
-  void add(int l, int r, T val) {
+  RARS(int count) : bit1(n+1), bit2(n+1) {}
+  void add(int l, int r, const T& val) {
     bit1.add(l, -val * l); bit2.add(l,  val);
     bit1.add(r,  val * r); bit2.add(r, -val);
   }
