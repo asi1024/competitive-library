@@ -2,7 +2,7 @@
 
 #include "../util.hpp"
 
-template <typename Edge, typename Cost = Edge::Cost>
+template <typename Edge, typename Cost = typename Edge::Cost>
 vector<Cost> dijkstra(const vector<vector<Edge>> &g, int s, Cost zero = 0) {
   vector<Cost> d(g.size(), inf<Cost>);
   d[s] = zero;
