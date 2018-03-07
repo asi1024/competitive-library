@@ -3,10 +3,8 @@
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/dijkstra.cpp)
 
 {% highlight cpp %}
-template <typename Edge>
-vector<typename Edge::Cost> dijkstra(const vector<vector<Edge>> &g, int s,
-                                     typename Edge::Cost zero = 0) {
-  using Cost = typename Edge::Cost;
+template <typename Edge, typename Cost = typename Edge::Cost>
+vector<Cost> dijkstra(const vector<vector<Edge>> &g, int s, Cost zero = 0) {
   vector<Cost> d(g.size(), inf<Cost>);
   d[s] = zero;
   using P = pair<Cost,int>;

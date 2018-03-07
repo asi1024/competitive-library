@@ -3,9 +3,8 @@
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/bfs01.cpp)
 
 {% highlight cpp %}
-template <typename Edge>
-vector<typename Edge::Cost> bfs01(const vector<vector<Edge>> &g, int s) {
-  using Cost = typename Edge::Cost;
+template <typename Edge, typename Cost = typename Edge::Cost>
+vector<Cost> bfs01(const vector<vector<Edge>> &g, int s) {
   vector<Cost> d(g.size(), inf<Cost>);
   d[s] = 0;
   deque<pair<Cost,int>> que;

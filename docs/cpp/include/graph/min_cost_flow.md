@@ -3,11 +3,10 @@
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/min_cost_flow.cpp)
 
 {% highlight cpp %}
-template <typename Edge>
-typename Edge::Cost min_cost_flow(vector<vector<Edge>> &g, int s, int t,
-                                  typename Edge::Flow f, bool init = true) {
-  using Flow = typename Edge::Flow;
-  using Cost = typename Edge::Cost;
+template <typename Edge,
+          typename Flow = typename Edge::Flow,
+          typename Cost = typename Edge::Cost>
+Cost min_cost_flow(vector<vector<Edge>> &g, int s, int t, Flow f, bool init = true) {
   const int V = g.size();
   // const Cost eps = 1e-8;
   static vector<Cost> h(V, 0), dist(V, 0);

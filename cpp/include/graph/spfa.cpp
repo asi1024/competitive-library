@@ -2,10 +2,8 @@
 
 #include "../util.hpp"
 
-template <typename Edge>
-pair<bool,vector<typename Edge::Cost>> spfa(const vector<vector<Edge>> &g, int s,
-                                            typename Edge::Cost zero = 0) {
-  using Cost = typename Edge::Cost;
+template <typename Edge, typename Cost = typename Edge::Cost>
+pair<bool,vector<Cost>> spfa(const vector<vector<Edge>> &g, int s, Cost zero = 0) {
   const int n = g.size();
   vector<Cost> d(n, inf<Cost>); d[s] = zero;
   vector<int> updated(n, 0);
