@@ -3,15 +3,14 @@
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/max_flow.cpp)
 
 {% highlight cpp %}
-template <typename Edge>
-typename Edge::Flow augment(vector<vector<Edge>> &g,
-                            vector<int> &d, vector<int> &iter,
-                            int v, int t, const typename Edge::Flow &f) {
+template <typename Edge, typename Flow = typename Edge::Flow>
+Flow augment(vector<vector<Edge>> &g, vector<int> &d, vector<int> &iter,
+             int v, int t, const Flow &f) {
   if (v == t) return f;
   for (int &i = iter[v]; i < (int)g[v].size(); i++) {
     auto &e = g[v][i];
     if (e.cap > 0 && d[v] < d[e.to]) {
-      typename Edge::Flow ff = augment(g, d, iter, e.to, t, min(f, e.cap));
+      Flow ff = augment(g, d, iter, e.to, t, min(f, e.cap));
       if (ff > 0) {
         e.cap -= ff;
         g[e.to][e.rev].cap += ff;
@@ -22,10 +21,8 @@ typename Edge::Flow augment(vector<vector<Edge>> &g,
   return 0;
 }
 
-template <typename Edge>
-typename Edge::Flow max_flow(vector<vector<Edge>> &g, int s, int t,
-                             typename Edge::Flow zero = 0) {
-  using Flow = typename Edge::Flow;
+template <typename Edge, typename Flow = typename Edge::Flow>
+Flow max_flow(vector<vector<Edge>> &g, int s, int t, Flow zero = 0) {
   const int V = g.size();
   Flow flow = zero;
   for (;;) {
