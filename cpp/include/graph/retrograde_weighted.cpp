@@ -10,9 +10,8 @@ struct Game_with_Cost {
   Game_with_Cost(Game w, T c) : win(w), cost(c) {;}
 };
 
-template<typename Edge>
-vector<Game_with_Cost<typename Edge::Cost>> retrograde(const vector<vector<Edge>> &g) {
-  using Cost = typename Edge::Cost;
+template<typename Edge, typename Cost = typename Edge::Cost>
+vector<Game_with_Cost<Cost>> retrograde(const vector<vector<Edge>> &g) {
   const int n = g.size();
   vector<vector<Edge>> rg(n);
   for (int i = 0; i < n; ++i) {
