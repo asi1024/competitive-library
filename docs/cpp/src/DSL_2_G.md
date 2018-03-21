@@ -15,10 +15,10 @@ int main() {
   RARS<ll> bit(n + 1);
   while (q--) {
     scanf("%d%d%d", &com, &s, &t);
-    if (com) printf("%lld\n", bit.sum(s, t + 1));
+    if (com) printf("%lld\n", bit.query(s, t + 1));
     else {
       scanf("%d", &x);
-      bit.add(s, t + 1, x);
+      bit.update(s, t + 1, x);
     }
   }
   return 0;
