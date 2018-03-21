@@ -52,7 +52,8 @@ vector<Cost> dijkstra(const vector<vector<Edge>> &g, int s, Cost zero = 0);
 - `g` : 負辺のない重み付きグラフ
 - `s` : 始点の頂点番号
 - `zero` : 型 Cost のゼロ値
-#### Type requirements
+
+### Type requirements
 - `Cost` 同士の加算と比較が定義されている必要がある．
 
 ### Return value
