@@ -4,8 +4,8 @@
 
 {% highlight cpp %}
 (1) RARS<typename T>(int count);
-(2) T add(int l, int r, const T& value);
-(4) T sum(int l, int r) const;
+(2) T update(int l, int r, const T& value);
+(3) T query(int l, int r) const;
 {% endhighlight %}
 
 - (1): 長さ count の Fenwick Tree を作り，全ての要素を 0 で初期化する．
@@ -14,5 +14,5 @@
 
 ### Time Complexity
 - (1): $O(n)$
+- (2): $O(\log(n))$
 - (3): $O(\log(n))$
-- (4): $O(\log(n))$
