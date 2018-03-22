@@ -35,4 +35,5 @@ public:
     while (l /= 2, r /= 2) { res1 += lazy[l]; res2 += lazy[r]; }
     return min(min(res1, res2), inf<T>);
   }
+  using value_type = T;
 };

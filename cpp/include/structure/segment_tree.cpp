@@ -37,6 +37,7 @@ public:
     }
     return Monoid::op(res1, res2);
   }
+  using value_type = T;
 };
 
 struct RMQ {
