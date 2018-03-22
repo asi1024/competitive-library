@@ -25,6 +25,7 @@ public:
     assert (0 <= l && l <= r && r <= n);
     return sum(r) + (-sum(l));
   }
+  using value_type = T;
 };
 {% endhighlight %}
 

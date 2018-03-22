@@ -13,9 +13,10 @@
 |:---------:|:--------:|:------------:|
 | [convex_hull_trick.cpp](./include/structure/convex_hull_trick) | <font color="ForestGreen">Yes</font> | [2725.cpp](./src/2725) |
 | [fenwick_tree.cpp](./include/structure/fenwick_tree) | <font color="ForestGreen">Yes</font> | [DSL_2_B.cpp](./src/DSL_2_B) |
+| [heavy_light_decomposition.cpp](./include/structure/heavy_light_decomposition) | <font color="ForestGreen">Yes</font> | [2450.cpp](./src/2450) |
 | [rars.cpp](./include/structure/rars) | <font color="ForestGreen">Yes</font> | [DSL_2_G.cpp](./src/DSL_2_G) |
 | [segment_tree.cpp](./include/structure/segment_tree) | <font color="ForestGreen">Yes</font> | [DSL_2_A.0.cpp](./src/DSL_2_A.0) |
-| [segment_tree_lazy.cpp](./include/structure/segment_tree_lazy) | <font color="ForestGreen">Yes</font> | [DSL_2_F.cpp](./src/DSL_2_F) |
+| [segment_tree_lazy.cpp](./include/structure/segment_tree_lazy) | <font color="ForestGreen">Yes</font> | [2450.cpp](./src/2450)<br>[DSL_2_F.cpp](./src/DSL_2_F) |
 | [skew_heap.cpp](./include/structure/skew_heap) | <font color="ForestGreen">Yes</font> | [2559.cpp](./src/2559) |
 | [slide_min.cpp](./include/structure/slide_min) | <font color="ForestGreen">Yes</font> | [DPL_1_G.cpp](./src/DPL_1_G) |
 | [starry_sky_tree.cpp](./include/structure/starry_sky_tree) | <font color="ForestGreen">Yes</font> | [1351.cpp](./src/1351)<br>[DSL_2_A.1.cpp](./src/DSL_2_A.1) |
