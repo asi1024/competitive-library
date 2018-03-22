@@ -18,4 +18,5 @@ public:
     return bit1.sum(l + 1, r + 1) + bit2.sum(r + 1) * r - bit2.sum(l + 1) * l;
   }
   using value_type = T;
+  using update_type = T;
 };

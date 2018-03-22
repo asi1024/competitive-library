@@ -25,4 +25,5 @@ public:
     return sum(r) + (-sum(l));
   }
   using value_type = T;
+  using update_type = T;
 };
