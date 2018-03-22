@@ -38,6 +38,13 @@ struct HeavyLightDecomposition {
     decomposition(g, start, start, 0, 0, 0, size, init);
   }
 
+  void update(int i, const Update &val) {
+    pair<int,int> chain_id = mapto[i];
+    const int n = chains[chain_id.first].mapfrom.size();
+    chains[chain_id.first].up.update(n - i - 1, val);
+    chains[chain_id.first].down.update(i, val);
+  }
+
   void update(int s, int t, const Update &update) {
     pair<int,int> chain_s = mapto[s], chain_t = mapto[t];
     while (chain_s.first != chain_t.first) {
