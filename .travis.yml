@@ -11,7 +11,9 @@ matrix:
         DIR="cpp"
         COMPILER=g++-5
         FLAGS="-std=c++14 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror"
-        GCOV=gcov-5
+      script:
+        - ulimit -s unlimited
+        - CXX=$COMPILER CXXFLAGS=$FLAGS ./${DIR}/spec.sh --all
 
     - os: linux
       language: cpp
@@ -24,7 +26,9 @@ matrix:
         DIR="cpp"
         COMPILER=g++-6
         FLAGS="-std=c++14 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror"
-        GCOV=gcov-6
+      script:
+        - ulimit -s unlimited
+        - CXX=$COMPILER CXXFLAGS=$FLAGS ./${DIR}/spec.sh --all
 
     - os: linux
       language: cpp
@@ -37,6 +41,9 @@ matrix:
         DIR="cpp"
         COMPILER=clang++-3.8
         FLAGS="-std=c++14 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror -stdlib=libc++"
+      script:
+        - ulimit -s unlimited
+        - CXX=$COMPILER CXXFLAGS=$FLAGS ./${DIR}/spec.sh --all
 
     - os: linux
       language: ocaml
@@ -51,19 +58,21 @@ matrix:
       env:
         DIR="ocaml"
         COMPILER=ocamlopt
+      script:
+        - ulimit -s unlimited
+        - CXX=$COMPILER CXXFLAGS=$FLAGS ./${DIR}/spec.sh --all
+
+    - os: linux
+      language: python
+      script:
+        - cp -r docs docs-spec
+        - rm -rf docs/cpp
+        - python --version
+        - ./gendoc.sh
+        - diff -r docs docs-spec
 
 sudo: required
 
-script:
-  - cp -r docs docs-spec
-  - rm -rf docs/cpp
-  - python --version
-  - ./gendoc.sh
-  - diff -r docs docs-spec
-  - ulimit -s unlimited
-  - ulimit -a
-  - $COMPILER -v
-  - CXX=$COMPILER CXXFLAGS=$FLAGS ./${DIR}/spec.sh --all
 
 notifications:
   email: false
