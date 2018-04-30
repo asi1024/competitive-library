@@ -2,7 +2,7 @@
 
 set -eu
 
-for file in `ls ../cpp/src/*`; do
+for file in `ls ../src/*`; do
     base=`basename ${file}`
     echo -n "Compiling ${base} ... "
     python preprocess.py ${file} > tmp.cpp
