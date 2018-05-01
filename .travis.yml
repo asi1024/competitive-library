@@ -71,8 +71,21 @@ matrix:
         - ./gendoc.sh
         - diff -r docs docs-spec
 
-sudo: required
+    - os: linux
+      language: cpp
+      compiler: g++
+      addons:
+        apt:
+          sources: ['ubuntu-toolchain-r-test']
+          packages: ['g++-6', 'bc']
+      env:
+        DIR="cpp"
+        COMPILER=g++-6
+        FLAGS="-std=c++14 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror"
+      script:
+        - CXX=$COMPILER CXXFLAGS=$FLAGS ./cpp/preprocess/test.sh
 
+sudo: required
 
 notifications:
   email: false
