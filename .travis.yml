@@ -8,10 +8,12 @@ matrix:
           sources: ['ubuntu-toolchain-r-test']
           packages: ['g++-5', 'bc']
       env:
-        DIR="cpp"
+        ENV="GCC 5"
         COMPILER=g++-5
         FLAGS="-std=c++14 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror"
-        GCOV=gcov-5
+      script:
+        - ulimit -s unlimited
+        - CXX=$COMPILER CXXFLAGS=$FLAGS ./cpp/spec.sh --all
 
     - os: linux
       language: cpp
@@ -21,10 +23,12 @@ matrix:
           sources: ['ubuntu-toolchain-r-test']
           packages: ['g++-6', 'bc']
       env:
-        DIR="cpp"
+        ENV="GCC 6"
         COMPILER=g++-6
         FLAGS="-std=c++14 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror"
-        GCOV=gcov-6
+      script:
+        - ulimit -s unlimited
+        - CXX=$COMPILER CXXFLAGS=$FLAGS ./cpp/spec.sh --all
 
     - os: linux
       language: cpp
@@ -34,9 +38,12 @@ matrix:
           sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.8', 'llvm-toolchain-precise']
           packages: ['clang++-3.8', 'libc++-dev', 'bc']
       env:
-        DIR="cpp"
+        ENV="Clang 3.8"
         COMPILER=clang++-3.8
         FLAGS="-std=c++14 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror -stdlib=libc++"
+      script:
+        - ulimit -s unlimited
+        - CXX=$COMPILER CXXFLAGS=$FLAGS ./cpp/spec.sh --all
 
     - os: linux
       language: ocaml
@@ -49,21 +56,38 @@ matrix:
         - opam config var root
         - opam install -y num batteries
       env:
-        DIR="ocaml"
+        ENV="OCaml"
         COMPILER=ocamlopt
+      script:
+        - ulimit -s unlimited
+        - CXX=$COMPILER CXXFLAGS=$FLAGS ./ocaml/spec.sh --all
+
+    - os: linux
+      language: python
+      env:
+        ENV="Docs"
+      script:
+        - cp -r docs docs-spec
+        - rm -rf docs/cpp
+        - python --version
+        - ./gendoc.sh
+        - diff -r docs docs-spec
+
+    - os: linux
+      language: cpp
+      compiler: g++
+      addons:
+        apt:
+          sources: ['ubuntu-toolchain-r-test']
+          packages: ['g++-6', 'bc']
+      env:
+        ENV="Preprocessor w/ GCC 6"
+        COMPILER=g++-6
+        FLAGS="-std=c++14 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror"
+      script:
+        - CXX=$COMPILER CXXFLAGS=$FLAGS ./cpp/preprocess/test.sh
 
 sudo: required
-
-script:
-  - cp -r docs docs-spec
-  - rm -rf docs/cpp
-  - python --version
-  - ./gendoc.sh
-  - diff -r docs docs-spec
-  - ulimit -s unlimited
-  - ulimit -a
-  - $COMPILER -v
-  - CXX=$COMPILER CXXFLAGS=$FLAGS ./${DIR}/spec.sh --all
 
 notifications:
   email: false
