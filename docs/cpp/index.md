@@ -71,6 +71,7 @@
 | [distance.cpp](./include/geometry/distance) | <font color="ForestGreen">Yes</font> | [CGL_2_D.cpp](./src/CGL_2_D) |
 | [intersect.cpp](./include/geometry/intersect) | <font color="ForestGreen">Yes</font> | [CGL_1_A.cpp](./src/CGL_1_A)<br>[CGL_2_A.cpp](./src/CGL_2_A)<br>[CGL_2_B.cpp](./src/CGL_2_B)<br>[CGL_2_C.cpp](./src/CGL_2_C) |
 | [polygon.cpp](./include/geometry/polygon) | <font color="ForestGreen">Yes</font> | [CGL_3_A.cpp](./src/CGL_3_A)<br>[CGL_3_C.cpp](./src/CGL_3_C)<br>[CGL_4_C.cpp](./src/CGL_4_C) |
+| [solid_geometry.cpp](./include/geometry/solid_geometry) | <font color="Red">No</font> |  |
 
 ## Others
 
