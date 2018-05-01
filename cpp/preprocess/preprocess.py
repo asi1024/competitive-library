@@ -9,7 +9,9 @@ def preprocess(path):
     res = []
 
     def preprocess_line(path, line):
-        if line.strip().startswith('#'):
+        if line.strip().startswith('//'):
+            return ''
+        elif line.strip().startswith('#'):
             line = line.strip()
             if line.startswith('#include') and len(line.split('"')) >= 3:
                 lx = line.split('"')
@@ -32,7 +34,7 @@ def preprocess(path):
             for line in open(path):
                 s = preprocess_line(path, line)
                 if has_not_started and s.strip() is not "":
-                    prefix = '//===== {} =====\n\n'.format(os.path.basename(path))
+                    prefix = '// ===== {} =====\n\n'.format(os.path.basename(path))
                     res.append(prefix)
                     has_not_started = False
                 res.append(s.rstrip())
