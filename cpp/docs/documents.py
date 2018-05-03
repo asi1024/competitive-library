@@ -52,12 +52,12 @@ def page(path, fname):
                        for name in includes)
         res += '\n'
 
+    res += '## Implementation\n\n'
+    res += '- [GitHub]({})\n\n'.format(repo_path)
+
     res += '{% highlight cpp %}\n'
     res += code + '\n'
     res += '{% endhighlight %}\n\n'
-
-    res += '## Implementation\n\n'
-    res += '- [GitHub]({})\n\n'.format(repo_path)
 
     doc_path = path.replace('cpp/', 'cpp/docs/') + '/' + basename(fname) + '.md'
     if os.path.exists(doc_path):

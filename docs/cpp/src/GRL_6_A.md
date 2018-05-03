@@ -2,6 +2,10 @@
 
 - [max_flow.cpp](../include/graph/max_flow)
 
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_6_A.cpp)
+
 {% highlight cpp %}
 #include "../include/graph/max_flow.cpp"
 
@@ -17,9 +21,5 @@ int main() {
   return 0;
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_6_A.cpp)
 
 [Back](..)

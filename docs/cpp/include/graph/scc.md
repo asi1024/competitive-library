@@ -6,7 +6,11 @@ vector<int> scc(const vector< vector< Edge >> &g);{% endhighlight %}
 ## add_edge
 
 {% highlight cpp %}
-void add_edge(Graph &g, int from, int to);{% endhighlight %}{% highlight cpp %}
+void add_edge(Graph &g, int from, int to);{% endhighlight %}## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/scc.cpp)
+
+{% highlight cpp %}
 template<typename Edge>
 vector<int> scc(const vector<vector<Edge>> &g) {
   const int n = g.size();
@@ -48,9 +52,5 @@ void add_edge(Graph &g, int from, int to) {
   g[from].emplace_back(to);
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/scc.cpp)
 
 [Back](../..)

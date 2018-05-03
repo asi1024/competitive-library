@@ -2,6 +2,10 @@
 
 - [convex.cpp](../include/geometry/convex)
 
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_4_B.cpp)
+
 {% highlight cpp %}
 #include "../include/geometry/convex.cpp"
 
@@ -21,9 +25,5 @@ int main() {
   printf("%.10Lf\n", max_distance(poly));
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_4_B.cpp)
 
 [Back](..)

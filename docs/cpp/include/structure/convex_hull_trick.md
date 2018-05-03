@@ -1,3 +1,7 @@
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/convex_hull_trick.cpp)
+
 {% highlight cpp %}
 template<class Data>
 struct ConvexHullTrick {
@@ -24,9 +28,5 @@ struct ConvexHullTrick {
   }
 };
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/convex_hull_trick.cpp)
 
 [Back](../..)

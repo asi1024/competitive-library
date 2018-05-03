@@ -4,6 +4,10 @@
 - [intersect.cpp](intersect)
 - [distance.cpp](distance)
 
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/circle_intersect.cpp)
+
 {% highlight cpp %}
 #include "Geometry.hpp"
 #include "intersect.cpp"
@@ -42,9 +46,5 @@ vector<Point> is_cs(Circle c, Segment s){
   return res;
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/circle_intersect.cpp)
 
 [Back](../..)

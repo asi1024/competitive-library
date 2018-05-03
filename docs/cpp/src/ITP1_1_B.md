@@ -2,14 +2,14 @@
 
 - [template.cpp](../include/template/template)
 
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/ITP1_1_B.cpp)
+
 {% highlight cpp %}
 #include "../include/template/template.cpp"
 
 struct Init { Init() { int x; cin >> x; cout << x * x * x << endl; } } init;
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/ITP1_1_B.cpp)
 
 [Back](..)

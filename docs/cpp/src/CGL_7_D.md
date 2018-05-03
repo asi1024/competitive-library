@@ -2,6 +2,10 @@
 
 - [circle_intersect.cpp](../include/geometry/circle_intersect)
 
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_7_D.cpp)
+
 {% highlight cpp %}
 #include "../include/geometry/circle_intersect.cpp"
 
@@ -28,9 +32,5 @@ int main() {
   }
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_7_D.cpp)
 
 [Back](..)

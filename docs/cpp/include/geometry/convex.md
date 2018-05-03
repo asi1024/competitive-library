@@ -15,6 +15,10 @@ Polygon convex_cut(const Polygon &g, Line l);{% endhighlight %}### Includes
 
 - [intersect.cpp](intersect)
 
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/convex.cpp)
+
 {% highlight cpp %}
 #include "intersect.cpp"
 
@@ -55,9 +59,5 @@ Polygon convex_cut(const Polygon &g, Line l) {
   return res;
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/convex.cpp)
 
 [Back](../..)

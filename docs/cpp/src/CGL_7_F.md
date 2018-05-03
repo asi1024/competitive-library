@@ -3,6 +3,10 @@
 - [circle_intersect.cpp](../include/geometry/circle_intersect)
 - [circle_tangent.cpp](../include/geometry/circle_tangent)
 
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_7_F.cpp)
+
 {% highlight cpp %}
 #include "../include/geometry/circle_intersect.cpp"
 #include "../include/geometry/circle_tangent.cpp"
@@ -29,9 +33,5 @@ int main() {
   return 0;
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_7_F.cpp)
 
 [Back](..)

@@ -1,3 +1,7 @@
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/starry_sky_tree.cpp)
+
 {% highlight cpp %}
 template <typename T>
 class StarrySkyTree {
@@ -36,10 +40,6 @@ public:
   using update_type = T;
 };
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/starry_sky_tree.cpp)
 
 {% include mathjax.html %}
 

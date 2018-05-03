@@ -1,3 +1,7 @@
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/unionfind.cpp)
+
 {% highlight cpp %}
 class UnionFind {
   vector<int> p;
@@ -19,10 +23,6 @@ public:
   }
 };
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/unionfind.cpp)
 
 {% include mathjax.html %}
 

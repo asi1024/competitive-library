@@ -26,6 +26,10 @@ ld dist_ss(Segment s, Segment t);{% endhighlight %}### Includes
 - [Geometry.hpp](Geometry)
 - [intersect.cpp](intersect)
 
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/distance.cpp)
+
 {% highlight cpp %}
 #include "Geometry.hpp"
 #include "intersect.cpp"
@@ -56,9 +60,5 @@ ld dist_ss(Segment s, Segment t) {
   return min(a, b);
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/distance.cpp)
 
 [Back](../..)

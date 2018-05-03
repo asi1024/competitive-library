@@ -2,6 +2,10 @@
 
 - [polygon.cpp](../include/geometry/polygon)
 
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_3_A.cpp)
+
 {% highlight cpp %}
 #include "../include/geometry/polygon.cpp"
 
@@ -21,9 +25,5 @@ int main() {
   printf("%.10Lf\n", area(poly));
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_3_A.cpp)
 
 [Back](..)

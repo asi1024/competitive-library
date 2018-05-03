@@ -2,6 +2,10 @@
 
 - [fenwick_tree.cpp](../include/structure/fenwick_tree)
 
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_B.cpp)
+
 {% highlight cpp %}
 #include "../include/structure/fenwick_tree.cpp"
 
@@ -17,9 +21,5 @@ int main() {
   return 0;
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_B.cpp)
 
 [Back](..)

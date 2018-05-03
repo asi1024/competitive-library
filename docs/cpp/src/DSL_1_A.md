@@ -2,6 +2,10 @@
 
 - [unionfind.cpp](../include/structure/unionfind)
 
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_1_A.cpp)
+
 {% highlight cpp %}
 #include "../include/structure/unionfind.cpp"
 
@@ -17,9 +21,5 @@ int main() {
   return 0;
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_1_A.cpp)
 
 [Back](..)

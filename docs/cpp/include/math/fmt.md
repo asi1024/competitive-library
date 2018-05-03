@@ -10,6 +10,10 @@ vector<Modulo<mod, true> > convolution(vector< Modulo< mod, true >> a, vector< M
 
 - [mod.cpp](mod)
 
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/fmt.cpp)
+
 {% highlight cpp %}
 #include "mod.cpp"
 
@@ -54,9 +58,5 @@ vector<Modulo<mod, true>> convolution(vector<Modulo<mod, true>> a,
   return a;
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/fmt.cpp)
 
 [Back](../..)

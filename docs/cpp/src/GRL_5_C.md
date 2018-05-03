@@ -2,6 +2,10 @@
 
 - [lca.cpp](../include/graph/lca)
 
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_5_C.cpp)
+
 {% highlight cpp %}
 #include "../include/graph/lca.cpp"
 
@@ -27,9 +31,5 @@ int main() {
   return 0;
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_5_C.cpp)
 
 [Back](..)

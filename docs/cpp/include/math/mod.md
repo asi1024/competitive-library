@@ -16,7 +16,11 @@ Modulo<M, true> fact(int n, bool sw=true);{% endhighlight %}
 ## comb
 
 {% highlight cpp %}
-Modulo<M, true> comb(int a, int b);{% endhighlight %}{% highlight cpp %}
+Modulo<M, true> comb(int a, int b);{% endhighlight %}## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/mod.cpp)
+
+{% highlight cpp %}
 template<int M, bool IsPrime = false>
 class Modulo {
   using ll = long long;
@@ -86,9 +90,5 @@ template<int M = mod> Modulo<M, true> comb(int a, int b) {
 
 using Mod = Modulo<mod, true>;
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/mod.cpp)
 
 [Back](../..)

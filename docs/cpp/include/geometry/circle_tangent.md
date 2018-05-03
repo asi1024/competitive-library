@@ -2,6 +2,10 @@
 
 - [Geometry.hpp](Geometry)
 
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/circle_tangent.cpp)
+
 {% highlight cpp %}
 #include "Geometry.hpp"
 
@@ -40,9 +44,5 @@ vector<Line> tangent_cc(Circle c1, Circle c2) {
   return res;
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/circle_tangent.cpp)
 
 [Back](../..)

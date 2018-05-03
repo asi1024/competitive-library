@@ -1,7 +1,11 @@
 ## primes
 
 {% highlight cpp %}
-vector<int> primes();{% endhighlight %}{% highlight cpp %}
+vector<int> primes();{% endhighlight %}## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/eratosthenes.cpp)
+
+{% highlight cpp %}
 const int Prime_N = 1024000;
 
 bitset<Prime_N> is_prime;
@@ -24,9 +28,5 @@ vector<int> primes() {
   return res;
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/eratosthenes.cpp)
 
 [Back](../..)

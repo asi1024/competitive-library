@@ -2,6 +2,10 @@
 
 - [segment_tree_lazy.cpp](../include/structure/segment_tree_lazy)
 
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_F.cpp)
+
 {% highlight cpp %}
 #include "../include/structure/segment_tree_lazy.cpp"
 
@@ -23,9 +27,5 @@ int main() {
   return 0;
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_F.cpp)
 
 [Back](..)

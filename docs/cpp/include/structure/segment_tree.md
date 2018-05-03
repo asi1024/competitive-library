@@ -1,3 +1,7 @@
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/segment_tree.cpp)
+
 {% highlight cpp %}
 template <class Monoid>
 class SegmentTree {
@@ -44,10 +48,6 @@ struct RMQ {
   static type op(const type &l, const type &r) { return min(l, r); }
 };
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/segment_tree.cpp)
 
 {% include mathjax.html %}
 

@@ -2,6 +2,10 @@
 
 - [starry_sky_tree.cpp](../include/structure/starry_sky_tree)
 
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_A.1.cpp)
+
 {% highlight cpp %}
 #include "../include/structure/starry_sky_tree.cpp"
 
@@ -21,9 +25,5 @@ int main() {
   return 0;
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_A.1.cpp)
 
 [Back](..)

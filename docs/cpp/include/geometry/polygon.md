@@ -10,6 +10,10 @@ int is_in_polygon(const Polygon &g, Point p);{% endhighlight %}### Includes
 
 - [intersect.cpp](intersect)
 
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/polygon.cpp)
+
 {% highlight cpp %}
 #include "intersect.cpp"
 
@@ -35,9 +39,5 @@ int is_in_polygon(const Polygon &g, Point p) {
   return abs(sum) > 0.5 ? 1 : -1;
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/polygon.cpp)
 
 [Back](../..)

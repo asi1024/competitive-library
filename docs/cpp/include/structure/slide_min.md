@@ -1,3 +1,7 @@
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/slide_min.cpp)
+
 {% highlight cpp %}
 template <typename T>
 struct SlideMin {
@@ -18,9 +22,5 @@ struct SlideMin {
   T minimum() const { return deq.front().second; }
 };
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/slide_min.cpp)
 
 [Back](../..)

@@ -2,6 +2,10 @@
 
 - [segment_tree.cpp](../structure/segment_tree)
 
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/suffix_array.cpp)
+
 {% highlight cpp %}
 #include "../structure/segment_tree.cpp"
 
@@ -88,9 +92,5 @@ public:
   }
 };
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/suffix_array.cpp)
 
 [Back](../..)

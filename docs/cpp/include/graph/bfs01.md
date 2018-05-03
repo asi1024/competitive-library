@@ -6,7 +6,11 @@ vector<Cost> bfs01(const vector< vector< Edge >> &g, int s);{% endhighlight %}
 ## add_edge
 
 {% highlight cpp %}
-void add_edge(Graph &g, int from, int to, Edge::Cost cost);{% endhighlight %}{% highlight cpp %}
+void add_edge(Graph &g, int from, int to, Edge::Cost cost);{% endhighlight %}## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/bfs01.cpp)
+
+{% highlight cpp %}
 template <typename Edge, typename Cost = typename Edge::Cost>
 vector<Cost> bfs01(const vector<vector<Edge>> &g, int s) {
   vector<Cost> d(g.size(), inf<Cost>);
@@ -43,9 +47,5 @@ void add_edge(Graph &g, int from, int to, Edge::Cost cost) {
   g[from].emplace_back(to, cost);
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/bfs01.cpp)
 
 [Back](../..)

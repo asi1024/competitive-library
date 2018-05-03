@@ -1,3 +1,7 @@
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/skew_heap.cpp)
+
 {% highlight cpp %}
 template<typename T>
 struct skew_heap {
@@ -29,9 +33,5 @@ skew_heap<T> *pop(skew_heap<T> *h) {
   return res;
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/skew_heap.cpp)
 
 [Back](../..)

@@ -2,6 +2,10 @@
 
 - [Geometry.hpp](../include/geometry/Geometry)
 
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_1_C.cpp)
+
 {% highlight cpp %}
 #include "../include/geometry/Geometry.hpp"
 
@@ -30,9 +34,5 @@ int main() {
   return 0;
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_1_C.cpp)
 
 [Back](..)

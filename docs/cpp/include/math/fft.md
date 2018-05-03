@@ -6,7 +6,11 @@ vector<P> FFT(const vector< P > &a, int m);{% endhighlight %}
 ## convolution
 
 {% highlight cpp %}
-vector<ll> convolution(const vector< ll > &lhs, const vector< ll > &rhs);{% endhighlight %}{% highlight cpp %}
+vector<ll> convolution(const vector< ll > &lhs, const vector< ll > &rhs);{% endhighlight %}## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/fft.cpp)
+
+{% highlight cpp %}
 typedef long long ll;
 
 using ld = long double;
@@ -52,9 +56,5 @@ vector<ll> convolution(const vector<ll> &lhs, const vector<ll> &rhs) {
   return res;
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/fft.cpp)
 
 [Back](../..)

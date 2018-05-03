@@ -2,6 +2,10 @@
 
 - [matrix.cpp](../include/math/matrix)
 
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/ITP1_7_D.cpp)
+
 {% highlight cpp %}
 #include "../include/math/matrix.cpp"
 
@@ -18,9 +22,5 @@ int main() {
   return 0;
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/ITP1_7_D.cpp)
 
 [Back](..)

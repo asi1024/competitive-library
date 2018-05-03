@@ -1,3 +1,7 @@
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/others/tree_dp.cpp)
+
 {% highlight cpp %}
 // Verified: Codeforces 804D
 
@@ -190,9 +194,5 @@ int main() {
   return 0;
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/others/tree_dp.cpp)
 
 [Back](../..)

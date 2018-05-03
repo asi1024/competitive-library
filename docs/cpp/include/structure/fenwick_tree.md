@@ -1,3 +1,7 @@
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/fenwick_tree.cpp)
+
 {% highlight cpp %}
 template <typename T>
 class FenwickTree {
@@ -25,10 +29,6 @@ public:
   using update_type = T;
 };
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/fenwick_tree.cpp)
 
 {% include mathjax.html %}
 

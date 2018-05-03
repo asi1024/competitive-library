@@ -2,6 +2,10 @@
 
 - [scc.cpp](../include/graph/scc)
 
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_3_C.cpp)
+
 {% highlight cpp %}
 #include "../include/graph/scc.cpp"
 
@@ -22,9 +26,5 @@ int main() {
   return 0;
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_3_C.cpp)
 
 [Back](..)

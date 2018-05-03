@@ -2,6 +2,10 @@
 
 - [fenwick_tree.cpp](fenwick_tree)
 
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/rars.cpp)
+
 {% highlight cpp %}
 #include "fenwick_tree.cpp"
 
@@ -24,10 +28,6 @@ public:
   using update_type = T;
 };
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/rars.cpp)
 
 {% include mathjax.html %}
 

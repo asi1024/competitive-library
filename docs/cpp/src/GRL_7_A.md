@@ -2,6 +2,10 @@
 
 - [bipartite_matching.cpp](../include/graph/bipartite_matching)
 
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_7_A.cpp)
+
 {% highlight cpp %}
 #include "../include/graph/bipartite_matching.cpp"
 
@@ -17,9 +21,5 @@ int main() {
   return 0;
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_7_A.cpp)
 
 [Back](..)

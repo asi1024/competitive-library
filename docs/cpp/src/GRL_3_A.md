@@ -2,6 +2,10 @@
 
 - [articulation_points.cpp](../include/graph/articulation_points)
 
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_3_A.cpp)
+
 {% highlight cpp %}
 #include "../include/graph/articulation_points.cpp"
 
@@ -18,9 +22,5 @@ int main() {
   return 0;
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_3_A.cpp)
 
 [Back](..)

@@ -1,3 +1,7 @@
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/util.hpp)
+
 {% highlight cpp %}
 #include <algorithm>
 #include <array>
@@ -28,9 +32,5 @@ template<> constexpr int inf<int> = 1e9;
 template<> constexpr ll inf<ll> = 1e18;
 template<> constexpr ld inf<ld> = 1e30;
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/util.hpp)
 
 [Back](..)

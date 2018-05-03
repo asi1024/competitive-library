@@ -2,6 +2,10 @@
 
 - [rars.cpp](../include/structure/rars)
 
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_G.cpp)
+
 {% highlight cpp %}
 #include "../include/structure/rars.cpp"
 
@@ -20,9 +24,5 @@ int main() {
   return 0;
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_G.cpp)
 
 [Back](..)

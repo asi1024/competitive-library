@@ -2,6 +2,10 @@
 
 - [intersect.cpp](../include/geometry/intersect)
 
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_2_C.cpp)
+
 {% highlight cpp %}
 #include "../include/geometry/intersect.cpp"
 
@@ -23,9 +27,5 @@ int main() {
   return 0;
 }
 {% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_2_C.cpp)
 
 [Back](..)
