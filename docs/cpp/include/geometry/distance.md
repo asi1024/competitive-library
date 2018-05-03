@@ -21,7 +21,9 @@ ld dist_sp(Segment s, Point p);{% endhighlight %}
 ## dist_ss
 
 {% highlight cpp %}
-ld dist_ss(Segment s, Segment t);{% endhighlight %}### Includes
+ld dist_ss(Segment s, Segment t);{% endhighlight %}
+
+### Includes
 
 - [Geometry.hpp](Geometry)
 - [intersect.cpp](intersect)

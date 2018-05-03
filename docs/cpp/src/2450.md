@@ -1,3 +1,5 @@
+
+
 ### Includes
 
 - [segment_tree_lazy.cpp](../include/structure/segment_tree_lazy)

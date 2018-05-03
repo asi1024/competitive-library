@@ -45,6 +45,7 @@ def page(path, fname):
                 and s.find('util.h') == -1 and s.find('"') != -1]
 
     res = xml_parser.main('cpp/docs/xml/' + basename(fname) + '_8cpp.xml')
+    res += '\n\n'
 
     if includes:
         res += '### Includes\n\n'

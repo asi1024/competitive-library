@@ -11,7 +11,9 @@ T& chmax(T &a, const T &b);{% endhighlight %}
 ## main
 
 {% highlight cpp %}
-int main();{% endhighlight %}## Implementation
+int main();{% endhighlight %}
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/template.cpp)
 

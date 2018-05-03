@@ -6,7 +6,9 @@ pair<bool,vector<Cost> > spfa(const vector< vector< Edge >> &g, int s, Cost zero
 ## add_edge
 
 {% highlight cpp %}
-void add_edge(Graph &g, int from, int to, Edge::Cost cost);{% endhighlight %}## Implementation
+void add_edge(Graph &g, int from, int to, Edge::Cost cost);{% endhighlight %}
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/spfa.cpp)
 

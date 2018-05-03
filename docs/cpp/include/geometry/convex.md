@@ -11,7 +11,9 @@ ld max_distance(const vector< Point > &ps);{% endhighlight %}
 ## convex_cut
 
 {% highlight cpp %}
-Polygon convex_cut(const Polygon &g, Line l);{% endhighlight %}### Includes
+Polygon convex_cut(const Polygon &g, Line l);{% endhighlight %}
+
+### Includes
 
 - [intersect.cpp](intersect)
 

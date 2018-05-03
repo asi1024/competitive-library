@@ -1,3 +1,5 @@
+
+
 ### Includes
 
 - [segment_tree.cpp](../include/structure/segment_tree)

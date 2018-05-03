@@ -6,7 +6,9 @@ ld area(const Polygon &g);{% endhighlight %}
 ## is_in_polygon
 
 {% highlight cpp %}
-int is_in_polygon(const Polygon &g, Point p);{% endhighlight %}### Includes
+int is_in_polygon(const Polygon &g, Point p);{% endhighlight %}
+
+### Includes
 
 - [intersect.cpp](intersect)
 

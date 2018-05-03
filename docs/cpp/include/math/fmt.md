@@ -6,7 +6,9 @@ void FMT(vector< Modulo< mod, true >> &a);{% endhighlight %}
 ## convolution
 
 {% highlight cpp %}
-vector<Modulo<mod, true> > convolution(vector< Modulo< mod, true >> a, vector< Modulo< mod, true >> b);{% endhighlight %}### Includes
+vector<Modulo<mod, true> > convolution(vector< Modulo< mod, true >> a, vector< Modulo< mod, true >> b);{% endhighlight %}
+
+### Includes
 
 - [mod.cpp](mod)
 

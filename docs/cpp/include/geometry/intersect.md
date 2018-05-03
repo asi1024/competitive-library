@@ -36,7 +36,9 @@ Point mirror(Line l, Point p);{% endhighlight %}
 ## is_ll
 
 {% highlight cpp %}
-Point is_ll(Line s, Line t);{% endhighlight %}### Includes
+Point is_ll(Line s, Line t);{% endhighlight %}
+
+### Includes
 
 - [Geometry.hpp](Geometry)
 

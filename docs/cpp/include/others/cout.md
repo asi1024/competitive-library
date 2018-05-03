@@ -1,7 +1,9 @@
 ## operator<<
 
 {% highlight cpp %}
-ostream& operator<<(ostream &os, const vector< T > &v);{% endhighlight %}## Implementation
+ostream& operator<<(ostream &os, const vector< T > &v);{% endhighlight %}
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/others/cout.cpp)
 

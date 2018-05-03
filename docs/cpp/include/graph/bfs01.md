@@ -6,7 +6,9 @@ vector<Cost> bfs01(const vector< vector< Edge >> &g, int s);{% endhighlight %}
 ## add_edge
 
 {% highlight cpp %}
-void add_edge(Graph &g, int from, int to, Edge::Cost cost);{% endhighlight %}## Implementation
+void add_edge(Graph &g, int from, int to, Edge::Cost cost);{% endhighlight %}
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/bfs01.cpp)
 

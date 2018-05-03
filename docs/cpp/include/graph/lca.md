@@ -1,7 +1,9 @@
 ## add_edge
 
 {% highlight cpp %}
-void add_edge(Graph &g, int from, int to);{% endhighlight %}## Implementation
+void add_edge(Graph &g, int from, int to);{% endhighlight %}
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/lca.cpp)
 
