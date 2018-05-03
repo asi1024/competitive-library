@@ -5,16 +5,9 @@ import re
 import xml.etree.ElementTree as ET
 
 
-def get_class(node):
-    return [elem for elem in node.findall('./*/*/innerclass')]
-
 def get_typedef(node):
     return [elem for elem in node.findall('./*/*/memberdef')
             if elem.attrib['kind'] == 'typedef']
-
-def get_function(node):
-    return [elem for elem in node.findall('./*/*/memberdef')
-            if elem.attrib['kind'] == 'function']
 
 def tostring(node):
     return re.sub('<.*?>', '', ET.tostring(node).decode('utf-8').strip())
@@ -22,7 +15,7 @@ def tostring(node):
 def filter_kind(nodes, tag):
     return [node for node in nodes if node.attrib['kind'] == tag][0]
 
-def function(node):
+def function_doc(node):
     res = ''
     res += '## {}\n\n'.format(node.find('name').text)
 
@@ -67,11 +60,17 @@ def function(node):
 
 def main(filepath):
     try:
-        res = ''
         root = ET.fromstring(''.join(_ for _ in open(filepath)))
-        for elem in get_function(root):
-            res += function(elem) + '\n\n'
+        functions = [node for node in root.findall('./*/*/memberdef')
+                     if node.attrib['kind'] == 'function']
+        classes = [node for node in root.findall('./*/*/innerclass')]
+
+        res = ''
+        for node in functions:
+            res += function_doc(node) + '\n\n'
+
         return res.strip()
+
     except FileNotFoundError:
         return ''
 
