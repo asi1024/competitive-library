@@ -66,6 +66,10 @@ matrix:
       language: python
       env:
         ENV="Docs"
+      addons:
+        apt:
+          sources: ['ubuntu-toolchain-r-test']
+          packages: ['doxygen']
       script:
         - cp -r docs docs-spec
         - rm -rf docs/cpp
