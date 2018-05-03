@@ -76,7 +76,7 @@ def directory(path):
     for fname in os.listdir(path):
         if os.path.isdir(path + '/'+ fname):
             directory(path + '/' + fname)
-        else:
+        elif fname.endswith('.cpp') or fname.endswith('.hpp'):
             page(path, fname)
 
 
