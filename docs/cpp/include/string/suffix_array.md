@@ -4,10 +4,6 @@
 
 ## LCP
 
-### Includes
-
-- [segment_tree.cpp](../structure/segment_tree)
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/suffix_array.cpp)
@@ -98,5 +94,9 @@ public:
   }
 };
 {% endhighlight %}
+
+### Includes
+
+- [segment_tree.cpp](../structure/segment_tree)
 
 [Back](../..)

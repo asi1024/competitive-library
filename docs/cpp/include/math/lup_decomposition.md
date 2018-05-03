@@ -10,10 +10,6 @@ LUP<T> LUPDecomposition(Matrix< T > A);
 Vec<T> LUPBackSubstitution(const LUP< T > &lup, Vec< T > a);
 {% endhighlight %}
 
-### Includes
-
-- [matrix.cpp](matrix)
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/lup_decomposition.cpp)
@@ -70,5 +66,9 @@ Vec<T> LUPBackSubstitution(const LUP<T> &lup, Vec<T> a) {
   return a;
 }
 {% endhighlight %}
+
+### Includes
+
+- [matrix.cpp](matrix)
 
 [Back](../..)

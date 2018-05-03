@@ -1,9 +1,5 @@
 
 
-### Includes
-
-- [dijkstra.cpp](../include/graph/dijkstra)
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_1_A.cpp)
@@ -27,5 +23,9 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+### Includes
+
+- [dijkstra.cpp](../include/graph/dijkstra)
 
 [Back](..)

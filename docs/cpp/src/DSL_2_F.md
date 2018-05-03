@@ -1,9 +1,5 @@
 
 
-### Includes
-
-- [segment_tree_lazy.cpp](../include/structure/segment_tree_lazy)
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_F.cpp)
@@ -29,5 +25,9 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+### Includes
+
+- [segment_tree_lazy.cpp](../include/structure/segment_tree_lazy)
 
 [Back](..)

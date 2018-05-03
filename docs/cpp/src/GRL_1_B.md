@@ -1,9 +1,5 @@
 
 
-### Includes
-
-- [spfa.cpp](../include/graph/spfa)
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_1_B.cpp)
@@ -34,5 +30,9 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+### Includes
+
+- [spfa.cpp](../include/graph/spfa)
 
 [Back](..)

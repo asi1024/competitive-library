@@ -1,9 +1,5 @@
 
 
-### Includes
-
-- [template.cpp](../include/template/template)
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/ITP1_1_B.cpp)
@@ -13,5 +9,9 @@
 
 struct Init { Init() { int x; cin >> x; cout << x * x * x << endl; } } init;
 {% endhighlight %}
+
+### Includes
+
+- [template.cpp](../include/template/template)
 
 [Back](..)

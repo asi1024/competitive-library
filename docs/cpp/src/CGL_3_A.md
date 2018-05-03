@@ -1,9 +1,5 @@
 
 
-### Includes
-
-- [polygon.cpp](../include/geometry/polygon)
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_3_A.cpp)
@@ -27,5 +23,9 @@ int main() {
   printf("%.10Lf\n", area(poly));
 }
 {% endhighlight %}
+
+### Includes
+
+- [polygon.cpp](../include/geometry/polygon)
 
 [Back](..)

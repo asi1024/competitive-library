@@ -10,10 +10,6 @@ void FMT(vector< Modulo< mod, true >> &a);
 vector<Modulo<mod, true> > convolution(vector< Modulo< mod, true >> a, vector< Modulo< mod, true >> b);
 {% endhighlight %}
 
-### Includes
-
-- [mod.cpp](mod)
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/fmt.cpp)
@@ -62,5 +58,9 @@ vector<Modulo<mod, true>> convolution(vector<Modulo<mod, true>> a,
   return a;
 }
 {% endhighlight %}
+
+### Includes
+
+- [mod.cpp](mod)
 
 [Back](../..)

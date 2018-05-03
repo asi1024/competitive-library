@@ -1,9 +1,5 @@
 
 
-### Includes
-
-- [slide_min.cpp](../include/structure/slide_min)
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DPL_1_G.cpp)
@@ -32,5 +28,9 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+### Includes
+
+- [slide_min.cpp](../include/structure/slide_min)
 
 [Back](..)

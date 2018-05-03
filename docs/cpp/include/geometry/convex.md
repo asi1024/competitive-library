@@ -16,10 +16,6 @@ ld max_distance(const vector< Point > &ps);
 Polygon convex_cut(const Polygon &g, Line l);
 {% endhighlight %}
 
-### Includes
-
-- [intersect.cpp](intersect)
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/convex.cpp)
@@ -64,5 +60,9 @@ Polygon convex_cut(const Polygon &g, Line l) {
   return res;
 }
 {% endhighlight %}
+
+### Includes
+
+- [intersect.cpp](intersect)
 
 [Back](../..)

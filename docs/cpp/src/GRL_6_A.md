@@ -1,9 +1,5 @@
 
 
-### Includes
-
-- [max_flow.cpp](../include/graph/max_flow)
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_6_A.cpp)
@@ -23,5 +19,9 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+### Includes
+
+- [max_flow.cpp](../include/graph/max_flow)
 
 [Back](..)

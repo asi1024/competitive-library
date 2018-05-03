@@ -1,9 +1,5 @@
 
 
-### Includes
-
-- [unionfind.cpp](../include/structure/unionfind)
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_1_A.cpp)
@@ -23,5 +19,9 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+### Includes
+
+- [unionfind.cpp](../include/structure/unionfind)
 
 [Back](..)

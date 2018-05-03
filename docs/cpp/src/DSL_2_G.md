@@ -1,9 +1,5 @@
 
 
-### Includes
-
-- [rars.cpp](../include/structure/rars)
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_G.cpp)
@@ -26,5 +22,9 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+### Includes
+
+- [rars.cpp](../include/structure/rars)
 
 [Back](..)

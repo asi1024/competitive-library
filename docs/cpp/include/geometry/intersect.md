@@ -46,10 +46,6 @@ Point mirror(Line l, Point p);
 Point is_ll(Line s, Line t);
 {% endhighlight %}
 
-### Includes
-
-- [Geometry.hpp](Geometry)
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/intersect.cpp)
@@ -94,5 +90,9 @@ Point is_ll(Line s, Line t) {
   return s.a + sv * cross(tv, t.a - s.a) / cross(tv, sv);
 }
 {% endhighlight %}
+
+### Includes
+
+- [Geometry.hpp](Geometry)
 
 [Back](../..)

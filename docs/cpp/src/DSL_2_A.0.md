@@ -1,9 +1,5 @@
 
 
-### Includes
-
-- [segment_tree.cpp](../include/structure/segment_tree)
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_A.0.cpp)
@@ -23,5 +19,9 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+### Includes
+
+- [segment_tree.cpp](../include/structure/segment_tree)
 
 [Back](..)

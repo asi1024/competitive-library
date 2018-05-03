@@ -10,10 +10,6 @@ ld area(const Polygon &g);
 int is_in_polygon(const Polygon &g, Point p);
 {% endhighlight %}
 
-### Includes
-
-- [intersect.cpp](intersect)
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/polygon.cpp)
@@ -43,5 +39,9 @@ int is_in_polygon(const Polygon &g, Point p) {
   return abs(sum) > 0.5 ? 1 : -1;
 }
 {% endhighlight %}
+
+### Includes
+
+- [intersect.cpp](intersect)
 
 [Back](../..)

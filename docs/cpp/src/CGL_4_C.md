@@ -1,10 +1,5 @@
 
 
-### Includes
-
-- [polygon.cpp](../include/geometry/polygon)
-- [convex.cpp](../include/geometry/convex)
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_4_C.cpp)
@@ -42,5 +37,10 @@ int main() {
   }
 }
 {% endhighlight %}
+
+### Includes
+
+- [polygon.cpp](../include/geometry/polygon)
+- [convex.cpp](../include/geometry/convex)
 
 [Back](..)

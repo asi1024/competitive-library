@@ -1,9 +1,5 @@
 
 
-### Includes
-
-- [starry_sky_tree.cpp](../include/structure/starry_sky_tree)
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_A.1.cpp)
@@ -27,5 +23,9 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+### Includes
+
+- [starry_sky_tree.cpp](../include/structure/starry_sky_tree)
 
 [Back](..)

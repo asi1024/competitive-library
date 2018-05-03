@@ -1,9 +1,5 @@
 
 
-### Includes
-
-- [articulation_points.cpp](../include/graph/articulation_points)
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_3_A.cpp)
@@ -24,5 +20,9 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+### Includes
+
+- [articulation_points.cpp](../include/graph/articulation_points)
 
 [Back](..)

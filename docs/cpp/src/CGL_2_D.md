@@ -1,9 +1,5 @@
 
 
-### Includes
-
-- [distance.cpp](../include/geometry/distance)
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_2_D.cpp)
@@ -28,5 +24,9 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+### Includes
+
+- [distance.cpp](../include/geometry/distance)
 
 [Back](..)

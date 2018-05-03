@@ -16,12 +16,6 @@ vector<Point> is_cl(Circle c, Line l);
 vector<Point> is_cs(Circle c, Segment s);
 {% endhighlight %}
 
-### Includes
-
-- [Geometry.hpp](Geometry)
-- [intersect.cpp](intersect)
-- [distance.cpp](distance)
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/circle_intersect.cpp)
@@ -64,5 +58,11 @@ vector<Point> is_cs(Circle c, Segment s){
   return res;
 }
 {% endhighlight %}
+
+### Includes
+
+- [Geometry.hpp](Geometry)
+- [intersect.cpp](intersect)
+- [distance.cpp](distance)
 
 [Back](../..)
