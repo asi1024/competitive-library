@@ -42,29 +42,30 @@ def page(path, fname):
     includes = [s.split('"')[1] for s in code_lines if s.find('#include') != -1
                 and s.find('util.h') == -1 and s.find('"') != -1]
 
-    res = []
+    res = ''
 
-    res += ['## {}\n'.format(fname)]
-    res += ['- [GitHub]({})\n'.format(repo_path)]
+    res += '## {}\n\n'.format(fname)
+    res += '- [GitHub]({})\n\n'.format(repo_path)
     if includes:
-        res += ['### Includes\n']
-        res += [''.join('- [{}]({})\n'.format(filename(name), basename(name))
-                        for name in includes)]
+        res += '### Includes\n\n'
+        res += ''.join('- [{}]({})\n'.format(filename(name), basename(name))
+                       for name in includes)
+        res += '\n'
 
-    res += ['{% highlight cpp %}']
-    res += [code]
-    res += ['{% endhighlight %}\n']
+    res += '{% highlight cpp %}\n'
+    res += code + '\n'
+    res += '{% endhighlight %}\n\n'
 
     doc_path = path.replace('cpp/', 'cpp/docs/') + '/' + basename(fname) + '.md'
     if os.path.exists(doc_path):
         docf = open(doc_path)
-        res += [''.join(docf.readlines())]
+        res += ''.join(docf.readlines()) + '\n'
         docf.close()
 
-    res += ['[Back]({})'.format(os.path.relpath('cpp/', path))]
+    res += '[Back]({})\n'.format(os.path.relpath('cpp/', path))
 
     f = mkdir_open_write('docs/' + path + '/' + basename(fname) + '.md')
-    f.write('\n'.join(res) + '\n')
+    f.write(res)
     f.close()
 
 
