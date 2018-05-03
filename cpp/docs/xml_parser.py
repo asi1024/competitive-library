@@ -26,8 +26,9 @@ def function(node):
     res = ''
     res += '## {}\n\n'.format(node.find('name').text)
 
-    res += '```\n{}{}\n```\n\n'.format(
-        node.find('definition').text, node.find('argsstring').text)
+    res += '{% highlight cpp %}\n'
+    res += node.find('definition').text + node.find('argsstring').text + ';'
+    res += '{% endhighlight %}\n\n'
 
     if node.find('briefdescription/para') is not None:
         res += node.find('briefdescription/para').text + '\n\n'
@@ -39,9 +40,10 @@ def function(node):
 
     params_list = description_node.findall('parameterlist/parameteritem')
     if len(params_list) > 0:
+        res += '### Parameters\n\n'
         res += '|:--:|:--|\n'
         for elem in params_list:
-            params = ', '.join(_.find('parametername').text
+            params = ', '.join('`' + _.find('parametername').text + '`'
                                for _ in elem.findall('parameternamelist'))
             description = elem.find('parameterdescription/para').text.strip()
             res += '|{}|{}|\n'.format(params, description)
@@ -64,10 +66,14 @@ def function(node):
 
 
 def main(filepath):
-    root = ET.fromstring(''.join(_ for _ in open(filepath)))
-
-    for elem in get_function(root):
-        print(function(elem))
+    try:
+        res = ''
+        root = ET.fromstring(''.join(_ for _ in open(filepath)))
+        for elem in get_function(root):
+            res += function(elem) + '\n\n'
+        return res.strip()
+    except FileNotFoundError:
+        return ''
 
 
 if __name__ == '__main__':

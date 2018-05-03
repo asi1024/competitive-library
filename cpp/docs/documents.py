@@ -2,6 +2,8 @@
 
 import os
 
+import xml_parser
+
 
 def basename(fname):
     return '.'.join(fname.split('.')[:-1])
@@ -42,10 +44,8 @@ def page(path, fname):
     includes = [s.split('"')[1] for s in code_lines if s.find('#include') != -1
                 and s.find('util.h') == -1 and s.find('"') != -1]
 
-    res = ''
+    res = xml_parser.main('cpp/docs/xml/' + basename(fname) + '_8cpp.xml')
 
-    res += '## {}\n\n'.format(fname)
-    res += '- [GitHub]({})\n\n'.format(repo_path)
     if includes:
         res += '### Includes\n\n'
         res += ''.join('- [{}]({})\n'.format(filename(name), basename(name))
@@ -55,6 +55,8 @@ def page(path, fname):
     res += '{% highlight cpp %}\n'
     res += code + '\n'
     res += '{% endhighlight %}\n\n'
+
+    res += '- [GitHub]({})\n\n'.format(repo_path)
 
     doc_path = path.replace('cpp/', 'cpp/docs/') + '/' + basename(fname) + '.md'
     if os.path.exists(doc_path):
