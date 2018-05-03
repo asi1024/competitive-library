@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import os
+from string import Template
 
 
 def basename(fname):
@@ -34,42 +35,42 @@ def mkdir_open_write(path):
 def page(path, fname):
     filepath = path + "/" + fname
     f = open(filepath, 'r')
-    code = f.readlines()
+    code_lines = f.readlines()
+    code = ''.join([s for s in code_lines if not ignored_line(s)]).strip()
     f.close()
 
     repo_path = "{{ site.github.repository_url }}/blob/master/%s" % filepath
-    includes = [s.split('"')[1] for s in code if s.find('#include') != -1
+    includes = [s.split('"')[1] for s in code_lines if s.find('#include') != -1
                 and s.find('util.h') == -1 and s.find('"') != -1]
 
     f = mkdir_open_write("docs/" + path + "/" + basename(fname) + ".md")
     writeln = lambda s: f.write(s + "\n")
 
-    writeln("## " + fname)
-    writeln("")
-    writeln("- [GitHub](%s)" % repo_path)
-    writeln("")
+    res = []
+    res += ['## {}'.format(fname)]
+    res += ['']
+    res += ['- [GitHub]({})'.format(repo_path)]
+    res += ['']
     if includes:
-        writeln("### Includes")
-        writeln("")
+        res += ['### Includes']
+        res += ['']
         for name in includes:
-            writeln("- [%s](%s)" % (filename(name), basename(name)))
-        writeln("")
-    writeln("{% highlight cpp %}")
+            res += ['- [{}]({})'.format(filename(name), basename(name))]
+        res += ['']
 
-    f2 = open(path + "/" + fname)
-    writeln(''.join([s for s in f2.readlines() if not ignored_line(s)]).strip())
-    f2.close()
-
-    writeln("{% endhighlight %}")
-    writeln("")
+    res += ['{% highlight cpp %}']
+    res += [code]
+    res += ['{% endhighlight %}']
+    res += ['']
 
     doc_path = path.replace('cpp/', 'cpp/docs/') + "/" + basename(fname) + ".md"
     if os.path.exists(doc_path):
         docf = open(doc_path)
-        writeln("".join(docf.readlines()))
+        res += ["".join(docf.readlines())]
         docf.close()
 
-    writeln("[Back](%s)" % os.path.relpath("cpp/", path))
+    res += ['[Back]({})'.format(os.path.relpath("cpp/", path))]
+    writeln('\n'.join(res))
     f.close()
 
 
