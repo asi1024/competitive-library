@@ -29,6 +29,8 @@ int main() {
 }
 {% endhighlight %}
 
+## Implementation
+
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_7_D.cpp)
 
 [Back](..)

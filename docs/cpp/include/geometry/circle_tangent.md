@@ -41,6 +41,8 @@ vector<Line> tangent_cc(Circle c1, Circle c2) {
 }
 {% endhighlight %}
 
+## Implementation
+
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/circle_tangent.cpp)
 
 [Back](../..)

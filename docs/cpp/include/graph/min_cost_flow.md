@@ -72,6 +72,8 @@ void add_edge(Graph &g, int from, int to, Edge::Flow cap, Edge::Cost cost) {
 }
 {% endhighlight %}
 
+## Implementation
+
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/min_cost_flow.cpp)
 
 [Back](../..)

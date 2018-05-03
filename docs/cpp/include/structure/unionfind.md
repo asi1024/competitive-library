@@ -20,6 +20,8 @@ public:
 };
 {% endhighlight %}
 
+## Implementation
+
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/unionfind.cpp)
 
 {% include mathjax.html %}

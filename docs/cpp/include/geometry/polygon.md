@@ -36,6 +36,8 @@ int is_in_polygon(const Polygon &g, Point p) {
 }
 {% endhighlight %}
 
+## Implementation
+
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/polygon.cpp)
 
 [Back](../..)

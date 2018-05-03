@@ -57,6 +57,8 @@ ld dist_ss(Segment s, Segment t) {
 }
 {% endhighlight %}
 
+## Implementation
+
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/distance.cpp)
 
 [Back](../..)

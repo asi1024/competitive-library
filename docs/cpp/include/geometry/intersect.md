@@ -81,6 +81,8 @@ Point is_ll(Line s, Line t) {
 }
 {% endhighlight %}
 
+## Implementation
+
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/intersect.cpp)
 
 [Back](../..)

@@ -53,6 +53,8 @@ vector<ll> convolution(const vector<ll> &lhs, const vector<ll> &rhs) {
 }
 {% endhighlight %}
 
+## Implementation
+
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/fft.cpp)
 
 [Back](../..)

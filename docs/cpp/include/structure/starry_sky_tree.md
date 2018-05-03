@@ -37,6 +37,8 @@ public:
 };
 {% endhighlight %}
 
+## Implementation
+
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/starry_sky_tree.cpp)
 
 {% include mathjax.html %}

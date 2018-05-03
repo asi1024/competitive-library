@@ -160,6 +160,8 @@ private:
 };
 {% endhighlight %}
 
+## Implementation
+
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/heavy_light_decomposition.cpp)
 
 [Back](../..)

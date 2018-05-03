@@ -43,6 +43,8 @@ vector<Point> is_cs(Circle c, Segment s){
 }
 {% endhighlight %}
 
+## Implementation
+
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/circle_intersect.cpp)
 
 [Back](../..)

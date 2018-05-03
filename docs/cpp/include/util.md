@@ -29,6 +29,8 @@ template<> constexpr ll inf<ll> = 1e18;
 template<> constexpr ld inf<ld> = 1e30;
 {% endhighlight %}
 
+## Implementation
+
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/util.hpp)
 
 [Back](..)

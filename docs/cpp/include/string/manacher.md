@@ -19,6 +19,8 @@ vector<int> manacher(const string_t &s) {
 }
 {% endhighlight %}
 
+## Implementation
+
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/manacher.cpp)
 
 [Back](../..)

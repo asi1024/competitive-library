@@ -24,6 +24,8 @@ struct KMP {
 };
 {% endhighlight %}
 
+## Implementation
+
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/kmp.cpp)
 
 [Back](../..)

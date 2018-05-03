@@ -25,6 +25,8 @@ vector<int> primes() {
 }
 {% endhighlight %}
 
+## Implementation
+
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/eratosthenes.cpp)
 
 [Back](../..)

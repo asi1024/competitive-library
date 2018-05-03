@@ -21,6 +21,8 @@ template<typename Key>
 using indexed_set = tree<Key,null_type,less<Key>,rb_tree_tag,tree_order_statistics_node_update>;
 {% endhighlight %}
 
+## Implementation
+
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/others/ext.cpp)
 
 [Back](../..)

@@ -52,6 +52,8 @@ vector<Point> unique(vector<Point> ps) {
 }
 {% endhighlight %}
 
+## Implementation
+
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/Geometry.hpp)
 
 [Back](../..)

@@ -23,6 +23,8 @@ int main() {
 }
 {% endhighlight %}
 
+## Implementation
+
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_3_C.cpp)
 
 [Back](..)

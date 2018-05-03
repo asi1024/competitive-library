@@ -71,6 +71,8 @@ struct RangeUpdate {
 };
 {% endhighlight %}
 
+## Implementation
+
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/segment_tree_lazy.cpp)
 
 [Back](../..)

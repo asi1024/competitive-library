@@ -19,6 +19,8 @@ struct SlideMin {
 };
 {% endhighlight %}
 
+## Implementation
+
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/slide_min.cpp)
 
 [Back](../..)

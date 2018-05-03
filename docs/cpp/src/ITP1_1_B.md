@@ -8,6 +8,8 @@
 struct Init { Init() { int x; cin >> x; cout << x * x * x << endl; } } init;
 {% endhighlight %}
 
+## Implementation
+
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/ITP1_1_B.cpp)
 
 [Back](..)

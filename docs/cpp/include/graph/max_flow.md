@@ -56,6 +56,8 @@ void add_edge(Graph &g, int from, int to, Edge::Flow cap) {
 }
 {% endhighlight %}
 
+## Implementation
+
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/max_flow.cpp)
 
 [Back](../..)

@@ -41,6 +41,8 @@ public:
 fast_istream fcin;
 {% endhighlight %}
 
+## Implementation
+
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/others/cin.cpp)
 
 [Back](../..)
