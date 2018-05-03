@@ -16,8 +16,10 @@ def dirname(fname):
 
 
 def ignored_line(s):
-    return (s.find('#pragma') != -1 or
-            (s.find("#include") != -1 and s.find("util.h") != -1))
+    s = s.strip()
+    return (s.startswith('#pragma') or
+            (s.startswith("#include") and s.find("util.h") != -1) or
+            s.startswith('///'))
 
 
 def mkdir_open_write(path):
@@ -73,8 +75,8 @@ def page(path, fname):
 
 def directory(path):
     for fname in os.listdir(path):
-        if os.path.isdir(path + "/" + fname):
-            directory(path + "/" + fname)
+        if os.path.isdir(path + '/'+ fname):
+            directory(path + '/' + fname)
         else:
             page(path, fname)
 
