@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import argparse
+import os
 import re
 import xml.etree.ElementTree as ET
 
@@ -14,6 +15,15 @@ def tostring(node):
 
 def filter_kind(nodes, tag):
     return [node for node in nodes if node.attrib['kind'] == tag][0]
+
+
+def class_doc(node):
+    res = ''
+    res += '## {}\n\n'.format(node.find('compoundname').text)
+
+    # print(res)
+    return ''
+
 
 def function_doc(node):
     res = ''
@@ -59,16 +69,22 @@ def function_doc(node):
 
 
 def main(filepath):
+    dirname = os.path.dirname(__file__)
     try:
         root = ET.fromstring(''.join(_ for _ in open(filepath)))
         functions = [node for node in root.findall('./*/*/memberdef')
                      if node.attrib['kind'] == 'function']
-        classes = [node for node in root.findall('./*/*/innerclass')]
+        classes = [node for node in root.findall('./*/innerclass')]
 
         res = ''
         for node in functions:
             res += function_doc(node) + '\n\n'
+        for node in classes:
+            path = dirname + '/xml/' + node.attrib['refid'] + '.xml'
+            root = ET.fromstring(''.join(_ for _ in open(path)))
+            res += class_doc(root.find('compounddef'))
 
+        # print(res.strip())
         return res.strip()
 
     except FileNotFoundError:
