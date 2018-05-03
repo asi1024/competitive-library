@@ -1,8 +1,27 @@
-## distance.cpp
+## dist_lp
 
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/distance.cpp)
+{% highlight cpp %}
+ld dist_lp(Line l, Point p);{% endhighlight %}
 
-### Includes
+## dist_ll
+
+{% highlight cpp %}
+ld dist_ll(Line l, Line m);{% endhighlight %}
+
+## dist_ls
+
+{% highlight cpp %}
+ld dist_ls(Line l, Segment s);{% endhighlight %}
+
+## dist_sp
+
+{% highlight cpp %}
+ld dist_sp(Segment s, Point p);{% endhighlight %}
+
+## dist_ss
+
+{% highlight cpp %}
+ld dist_ss(Segment s, Segment t);{% endhighlight %}### Includes
 
 - [Geometry.hpp](Geometry)
 - [intersect.cpp](intersect)
@@ -37,5 +56,7 @@ ld dist_ss(Segment s, Segment t) {
   return min(a, b);
 }
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/distance.cpp)
 
 [Back](../..)

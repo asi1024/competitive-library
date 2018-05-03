@@ -1,7 +1,3 @@
-## retrograde_weighted.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/retrograde_weighted.cpp)
-
 {% highlight cpp %}
 enum Game { WIN, LOSE, DRAW };
 
@@ -77,6 +73,8 @@ void add_edge(Graph &g, int from, int to, Edge::Cost cost) {
   g[from].emplace_back(to, cost);
 }
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/retrograde_weighted.cpp)
 
 {% include mathjax.html %}
 

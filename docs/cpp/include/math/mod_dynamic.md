@@ -1,7 +1,3 @@
-## mod_dynamic.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/mod_dynamic.cpp)
-
 {% highlight cpp %}
 /* -------------------------------- Template -------------------------------- */
 
@@ -242,5 +238,7 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/mod_dynamic.cpp)
 
 [Back](../..)

@@ -1,7 +1,3 @@
-## CGL_2_C.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_2_C.cpp)
-
 ### Includes
 
 - [intersect.cpp](../include/geometry/intersect)
@@ -27,5 +23,7 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_2_C.cpp)
 
 [Back](..)

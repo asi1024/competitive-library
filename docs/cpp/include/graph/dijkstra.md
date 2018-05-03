@@ -1,8 +1,33 @@
-## dijkstra.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/dijkstra.cpp)
+## dijkstra
 
 {% highlight cpp %}
+vector<Cost> dijkstra(const vector< vector< Edge >> &g, int s, Cost zero=0);{% endhighlight %}
+
+負辺のない重み付きグラフの単一始点全点間最短距離を求める． 
+
+### Parameters
+
+|:--:|:--|
+|`g`|負辺のない重み付きグラフ|
+|`s`|始点の頂点番号|
+|`zero`|型 Cost のゼロ値|
+
+### Return value
+
+始点から各頂点までの距離が入った型 Cost の列 
+
+### Precondition
+
+入力グラフに不辺があってはならない 
+
+### Time Complexity
+
+$O(E \log V)$
+
+## add_edge
+
+{% highlight cpp %}
+void add_edge(Graph &g, int from, int to, Edge::Cost cost);{% endhighlight %}{% highlight cpp %}
 template <typename Edge, typename Cost = typename Edge::Cost>
 vector<Cost> dijkstra(const vector<vector<Edge>> &g, int s, Cost zero = 0) {
   vector<Cost> d(g.size(), inf<Cost>);
@@ -37,6 +62,8 @@ void add_edge(Graph &g, int from, int to, Edge::Cost cost) {
   g[from].emplace_back(to, cost);
 }
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/dijkstra.cpp)
 
 {% include mathjax.html %}
 

@@ -1,7 +1,3 @@
-## GRL_6_B.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_6_B.cpp)
-
 ### Includes
 
 - [min_cost_flow.cpp](../include/graph/min_cost_flow)
@@ -22,5 +18,7 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_6_B.cpp)
 
 [Back](..)

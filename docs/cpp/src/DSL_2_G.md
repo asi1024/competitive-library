@@ -1,7 +1,3 @@
-## DSL_2_G.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_G.cpp)
-
 ### Includes
 
 - [rars.cpp](../include/structure/rars)
@@ -24,5 +20,7 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_G.cpp)
 
 [Back](..)

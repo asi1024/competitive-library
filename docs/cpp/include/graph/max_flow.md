@@ -1,7 +1,3 @@
-## max_flow.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/max_flow.cpp)
-
 {% highlight cpp %}
 template <typename Edge, typename Flow = typename Edge::Flow>
 Flow augment(vector<vector<Edge>> &g, vector<int> &d, vector<int> &iter,
@@ -59,5 +55,7 @@ void add_edge(Graph &g, int from, int to, Edge::Flow cap) {
   g[to].emplace_back(from, 0, (int)g[from].size() - 1);
 }
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/max_flow.cpp)
 
 [Back](../..)

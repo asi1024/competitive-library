@@ -1,7 +1,3 @@
-## CGL_3_C.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_3_C.cpp)
-
 ### Includes
 
 - [polygon.cpp](../include/geometry/polygon)
@@ -28,5 +24,7 @@ int main() {
   }
 }
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_3_C.cpp)
 
 [Back](..)

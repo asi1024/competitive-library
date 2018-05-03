@@ -1,7 +1,3 @@
-## segment_tree_lazy.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/segment_tree_lazy.cpp)
-
 {% highlight cpp %}
 template<typename Update>
 class SegmentTreeLazy {
@@ -74,5 +70,7 @@ struct RangeUpdate {
   RangeUpdate operator()(const RangeUpdate &) const { return *this; }
 };
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/segment_tree_lazy.cpp)
 
 [Back](../..)

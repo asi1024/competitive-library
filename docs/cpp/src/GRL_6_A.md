@@ -1,7 +1,3 @@
-## GRL_6_A.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_6_A.cpp)
-
 ### Includes
 
 - [max_flow.cpp](../include/graph/max_flow)
@@ -21,5 +17,7 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_6_A.cpp)
 
 [Back](..)

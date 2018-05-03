@@ -1,8 +1,7 @@
-## manacher.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/manacher.cpp)
+## manacher
 
 {% highlight cpp %}
+vector<int> manacher(const string_t &s);{% endhighlight %}{% highlight cpp %}
 template<typename string_t>
 vector<int> manacher(const string_t &s) {
   const int n = s.size();
@@ -19,5 +18,7 @@ vector<int> manacher(const string_t &s) {
   return rad;
 }
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/manacher.cpp)
 
 [Back](../..)

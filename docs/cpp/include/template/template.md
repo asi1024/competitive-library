@@ -1,8 +1,17 @@
-## template.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/template.cpp)
+## chmin
 
 {% highlight cpp %}
+T& chmin(T &a, const T &b);{% endhighlight %}
+
+## chmax
+
+{% highlight cpp %}
+T& chmax(T &a, const T &b);{% endhighlight %}
+
+## main
+
+{% highlight cpp %}
+int main();{% endhighlight %}{% highlight cpp %}
 #include <algorithm>
 #include <cassert>
 #include <climits>
@@ -52,5 +61,7 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/template.cpp)
 
 [Back](../..)

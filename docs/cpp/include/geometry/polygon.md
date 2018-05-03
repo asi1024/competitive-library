@@ -1,8 +1,12 @@
-## polygon.cpp
+## area
 
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/polygon.cpp)
+{% highlight cpp %}
+ld area(const Polygon &g);{% endhighlight %}
 
-### Includes
+## is_in_polygon
+
+{% highlight cpp %}
+int is_in_polygon(const Polygon &g, Point p);{% endhighlight %}### Includes
 
 - [intersect.cpp](intersect)
 
@@ -31,5 +35,7 @@ int is_in_polygon(const Polygon &g, Point p) {
   return abs(sum) > 0.5 ? 1 : -1;
 }
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/polygon.cpp)
 
 [Back](../..)

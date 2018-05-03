@@ -1,7 +1,3 @@
-## CGL_1_C.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_1_C.cpp)
-
 ### Includes
 
 - [Geometry.hpp](../include/geometry/Geometry)
@@ -34,5 +30,7 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_1_C.cpp)
 
 [Back](..)

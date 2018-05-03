@@ -1,7 +1,3 @@
-## rars.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/rars.cpp)
-
 ### Includes
 
 - [fenwick_tree.cpp](fenwick_tree)
@@ -28,6 +24,8 @@ public:
   using update_type = T;
 };
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/rars.cpp)
 
 {% include mathjax.html %}
 

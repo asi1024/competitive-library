@@ -1,7 +1,3 @@
-## kmp.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/kmp.cpp)
-
 {% highlight cpp %}
 struct KMP {
   const int n;
@@ -27,5 +23,7 @@ struct KMP {
   }
 };
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/kmp.cpp)
 
 [Back](../..)

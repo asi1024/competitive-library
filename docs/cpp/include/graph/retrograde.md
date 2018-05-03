@@ -1,8 +1,12 @@
-## retrograde.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/retrograde.cpp)
+## retrograde
 
 {% highlight cpp %}
+vector<Game> retrograde(const vector< vector< Edge >> &g);{% endhighlight %}
+
+## add_edge
+
+{% highlight cpp %}
+void add_edge(Graph &g, int from, int to);{% endhighlight %}{% highlight cpp %}
 enum Game { WIN, LOSE, DRAW };
 
 template<typename Edge>
@@ -58,5 +62,7 @@ void add_edge(Graph &g, int from, int to) {
   g[from].emplace_back(to);
 }
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/retrograde.cpp)
 
 [Back](../..)

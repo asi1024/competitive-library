@@ -1,7 +1,3 @@
-## cin.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/others/cin.cpp)
-
 {% highlight cpp %}
 class fast_istream {
   bool is_space(char c) { return c < 0x21 || c > 0x7E; }
@@ -44,5 +40,7 @@ public:
 
 fast_istream fcin;
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/others/cin.cpp)
 
 [Back](../..)

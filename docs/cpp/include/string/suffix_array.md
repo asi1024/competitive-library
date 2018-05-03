@@ -1,7 +1,3 @@
-## suffix_array.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/suffix_array.cpp)
-
 ### Includes
 
 - [segment_tree.cpp](../structure/segment_tree)
@@ -92,5 +88,7 @@ public:
   }
 };
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/suffix_array.cpp)
 
 [Back](../..)

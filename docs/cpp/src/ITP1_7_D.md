@@ -1,7 +1,3 @@
-## ITP1_7_D.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/ITP1_7_D.cpp)
-
 ### Includes
 
 - [matrix.cpp](../include/math/matrix)
@@ -22,5 +18,7 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/ITP1_7_D.cpp)
 
 [Back](..)

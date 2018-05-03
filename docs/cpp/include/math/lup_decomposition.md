@@ -1,7 +1,3 @@
-## lup_decomposition.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/lup_decomposition.cpp)
-
 ### Includes
 
 - [matrix.cpp](matrix)
@@ -58,5 +54,7 @@ Vec<T> LUPBackSubstitution(const LUP<T> &lup, Vec<T> a) {
   return a;
 }
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/lup_decomposition.cpp)
 
 [Back](../..)

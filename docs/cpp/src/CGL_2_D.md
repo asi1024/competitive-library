@@ -1,7 +1,3 @@
-## CGL_2_D.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_2_D.cpp)
-
 ### Includes
 
 - [distance.cpp](../include/geometry/distance)
@@ -26,5 +22,7 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_2_D.cpp)
 
 [Back](..)

@@ -1,7 +1,3 @@
-## GRL_7_A.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_7_A.cpp)
-
 ### Includes
 
 - [bipartite_matching.cpp](../include/graph/bipartite_matching)
@@ -21,5 +17,7 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_7_A.cpp)
 
 [Back](..)

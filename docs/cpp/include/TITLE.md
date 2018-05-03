@@ -1,7 +1,3 @@
-## TITLE.json
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/TITLE.json)
-
 {% highlight cpp %}
 {
     "template":  "Templates",
@@ -13,5 +9,7 @@
     "others":    "Others"
 }
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/TITLE.json)
 
 [Back](..)

@@ -1,7 +1,3 @@
-## matrix.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/matrix.cpp)
-
 {% highlight cpp %}
 template<typename T>
 class Vec {
@@ -176,5 +172,7 @@ public:
   }
 };
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/matrix.cpp)
 
 [Back](../..)

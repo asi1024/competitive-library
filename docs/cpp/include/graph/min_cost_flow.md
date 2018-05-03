@@ -1,7 +1,3 @@
-## min_cost_flow.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/min_cost_flow.cpp)
-
 {% highlight cpp %}
 template <typename Edge,
           typename Flow = typename Edge::Flow,
@@ -75,5 +71,7 @@ void add_edge(Graph &g, int from, int to, Edge::Flow cap, Edge::Cost cost) {
   g[to].emplace_back(from, 0, (int)g[from].size() - 1, -cost);
 }
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/min_cost_flow.cpp)
 
 [Back](../..)

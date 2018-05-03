@@ -1,8 +1,22 @@
-## mod.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/mod.cpp)
+## is_zero
 
 {% highlight cpp %}
+bool is_zero(Modulo< M, IsPrime > x);{% endhighlight %}
+
+## abs
+
+{% highlight cpp %}
+int abs(Modulo< M, IsPrime > x);{% endhighlight %}
+
+## fact
+
+{% highlight cpp %}
+Modulo<M, true> fact(int n, bool sw=true);{% endhighlight %}
+
+## comb
+
+{% highlight cpp %}
+Modulo<M, true> comb(int a, int b);{% endhighlight %}{% highlight cpp %}
 template<int M, bool IsPrime = false>
 class Modulo {
   using ll = long long;
@@ -72,5 +86,7 @@ template<int M = mod> Modulo<M, true> comb(int a, int b) {
 
 using Mod = Modulo<mod, true>;
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/mod.cpp)
 
 [Back](../..)

@@ -1,7 +1,3 @@
-## aho_corasick.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/aho_corasick.cpp)
-
 {% highlight cpp %}
 template<typename State>
 struct AhoCorasick {
@@ -84,5 +80,7 @@ struct State {
   bool is_set(char_t c) { return edge[c - 'a'] >= 0; }
 };
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/aho_corasick.cpp)
 
 [Back](../..)

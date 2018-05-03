@@ -1,7 +1,3 @@
-## circle_intersect.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/circle_intersect.cpp)
-
 ### Includes
 
 - [Geometry.hpp](Geometry)
@@ -46,5 +42,7 @@ vector<Point> is_cs(Circle c, Segment s){
   return res;
 }
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/circle_intersect.cpp)
 
 [Back](../..)

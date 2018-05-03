@@ -1,7 +1,3 @@
-## GRL_3_C.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_3_C.cpp)
-
 ### Includes
 
 - [scc.cpp](../include/graph/scc)
@@ -26,5 +22,7 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_3_C.cpp)
 
 [Back](..)

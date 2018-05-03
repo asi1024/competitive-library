@@ -1,7 +1,3 @@
-## CGL_7_F.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_7_F.cpp)
-
 ### Includes
 
 - [circle_intersect.cpp](../include/geometry/circle_intersect)
@@ -33,5 +29,7 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_7_F.cpp)
 
 [Back](..)

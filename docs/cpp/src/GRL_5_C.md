@@ -1,7 +1,3 @@
-## GRL_5_C.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_5_C.cpp)
-
 ### Includes
 
 - [lca.cpp](../include/graph/lca)
@@ -31,5 +27,7 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_5_C.cpp)
 
 [Back](..)

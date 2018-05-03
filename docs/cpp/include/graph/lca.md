@@ -1,8 +1,7 @@
-## lca.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/lca.cpp)
+## add_edge
 
 {% highlight cpp %}
+void add_edge(Graph &g, int from, int to);{% endhighlight %}{% highlight cpp %}
 class LCA {
   int size, log_size;
   vector<vector<int>> parent;
@@ -53,5 +52,7 @@ void add_edge(Graph &g, int from, int to) {
   g[from].push_back(to);
 }
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/lca.cpp)
 
 [Back](../..)

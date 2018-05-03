@@ -1,7 +1,3 @@
-## rolling_hash.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/rolling_hash.cpp)
-
 {% highlight cpp %}
 class RollingHash {
   using ll = long long;
@@ -27,5 +23,7 @@ public:
   }
 };
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/rolling_hash.cpp)
 
 [Back](../..)

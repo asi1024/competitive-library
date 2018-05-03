@@ -1,7 +1,3 @@
-## DSL_2_B.cpp
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_B.cpp)
-
 ### Includes
 
 - [fenwick_tree.cpp](../include/structure/fenwick_tree)
@@ -21,5 +17,7 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_B.cpp)
 
 [Back](..)
