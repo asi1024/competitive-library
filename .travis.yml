@@ -64,6 +64,7 @@ matrix:
 
     - os: linux
       language: python
+      python: '3.5'
       env:
         ENV="Docs"
       addons:
