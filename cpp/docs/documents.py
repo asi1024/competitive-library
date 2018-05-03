@@ -56,6 +56,7 @@ def page(path, fname):
     res += code + '\n'
     res += '{% endhighlight %}\n\n'
 
+    res += '## Implementation\n\n'
     res += '- [GitHub]({})\n\n'.format(repo_path)
 
     doc_path = path.replace('cpp/', 'cpp/docs/') + '/' + basename(fname) + '.md'
