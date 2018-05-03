@@ -16,6 +16,8 @@ skew_heap<T>* push(skew_heap< T > *h, T v);
 skew_heap<T>* pop(skew_heap< T > *h);
 {% endhighlight %}
 
+## skew_heap
+
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/skew_heap.cpp)

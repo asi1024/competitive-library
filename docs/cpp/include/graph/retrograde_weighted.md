@@ -10,6 +10,10 @@ vector<Game_with_Cost<Cost> > retrograde(const vector< vector< Edge >> &g);
 void add_edge(Graph &g, int from, int to, Edge::Cost cost);
 {% endhighlight %}
 
+## Game_with_Cost
+
+## Edge
+
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/retrograde_weighted.cpp)

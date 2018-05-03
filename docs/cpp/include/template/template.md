@@ -16,6 +16,8 @@ T& chmax(T &a, const T &b);
 int main();
 {% endhighlight %}
 
+## yes_no
+
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/template.cpp)

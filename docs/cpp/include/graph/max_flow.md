@@ -16,6 +16,8 @@ Flow max_flow(vector< vector< Edge >> &g, int s, int t, Flow zero=0);
 void add_edge(Graph &g, int from, int to, Edge::Flow cap);
 {% endhighlight %}
 
+## Edge
+
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/max_flow.cpp)

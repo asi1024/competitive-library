@@ -22,6 +22,8 @@ Modulo<M, true> fact(int n, bool sw=true);
 Modulo<M, true> comb(int a, int b);
 {% endhighlight %}
 
+## Modulo
+
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/mod.cpp)

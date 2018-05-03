@@ -52,6 +52,12 @@ vector<T> convolution(const vector< T > &lhs, const vector< T > &rhs);
 int main();
 {% endhighlight %}
 
+## yes_no
+
+## Modulo
+
+## Mod
+
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/mod_dynamic.cpp)
