@@ -44,7 +44,9 @@ def page(path, fname):
     includes = [s.split('"')[1] for s in code_lines if s.find('#include') != -1
                 and s.find('util.h') == -1 and s.find('"') != -1]
 
-    res = xml_parser.main('cpp/docs/xml/' + basename(fname) + '_8cpp.xml')
+    dirname = os.path.dirname(__file__)
+    xmlname = basename(fname).replace('_', '__')
+    res = xml_parser.main(dirname + '/xml/' + xmlname + '_8cpp.xml')
     res += '\n\n'
 
     if includes:
