@@ -1,4 +1,14 @@
+## retrograde
 
+{% highlight cpp %}
+vector<Game_with_Cost<Cost> > retrograde(const vector< vector< Edge >> &g);
+{% endhighlight %}
+
+## add_edge
+
+{% highlight cpp %}
+void add_edge(Graph &g, int from, int to, Edge::Cost cost);
+{% endhighlight %}
 
 ## Implementation
 

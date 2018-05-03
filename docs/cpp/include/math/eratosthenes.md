@@ -1,7 +1,8 @@
 ## primes
 
 {% highlight cpp %}
-vector<int> primes();{% endhighlight %}
+vector<int> primes();
+{% endhighlight %}
 
 ## Implementation
 

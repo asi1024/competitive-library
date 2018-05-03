@@ -1,4 +1,20 @@
+## augment
 
+{% highlight cpp %}
+Flow augment(vector< vector< Edge >> &g, vector< int > &d, vector< int > &iter, int v, int t, const Flow &f);
+{% endhighlight %}
+
+## max_flow
+
+{% highlight cpp %}
+Flow max_flow(vector< vector< Edge >> &g, int s, int t, Flow zero=0);
+{% endhighlight %}
+
+## add_edge
+
+{% highlight cpp %}
+void add_edge(Graph &g, int from, int to, Edge::Flow cap);
+{% endhighlight %}
 
 ## Implementation
 

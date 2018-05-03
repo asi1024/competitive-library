@@ -1,42 +1,50 @@
 ## isis_ll
 
 {% highlight cpp %}
-bool isis_ll(Line l, Line m);{% endhighlight %}
+bool isis_ll(Line l, Line m);
+{% endhighlight %}
 
 ## isis_ls
 
 {% highlight cpp %}
-bool isis_ls(Line l, Segment s);{% endhighlight %}
+bool isis_ls(Line l, Segment s);
+{% endhighlight %}
 
 ## isis_lp
 
 {% highlight cpp %}
-bool isis_lp(Line l, Point p);{% endhighlight %}
+bool isis_lp(Line l, Point p);
+{% endhighlight %}
 
 ## isis_ss
 
 {% highlight cpp %}
-bool isis_ss(Segment s, Segment t);{% endhighlight %}
+bool isis_ss(Segment s, Segment t);
+{% endhighlight %}
 
 ## isis_sp
 
 {% highlight cpp %}
-bool isis_sp(Segment s, Point p);{% endhighlight %}
+bool isis_sp(Segment s, Point p);
+{% endhighlight %}
 
 ## proj
 
 {% highlight cpp %}
-Point proj(Line l, Point p);{% endhighlight %}
+Point proj(Line l, Point p);
+{% endhighlight %}
 
 ## mirror
 
 {% highlight cpp %}
-Point mirror(Line l, Point p);{% endhighlight %}
+Point mirror(Line l, Point p);
+{% endhighlight %}
 
 ## is_ll
 
 {% highlight cpp %}
-Point is_ll(Line s, Line t);{% endhighlight %}
+Point is_ll(Line s, Line t);
+{% endhighlight %}
 
 ### Includes
 

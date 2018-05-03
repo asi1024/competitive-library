@@ -1,4 +1,20 @@
+## chmin
 
+{% highlight cpp %}
+T& chmin(T &a, const T &b);
+{% endhighlight %}
+
+## chmax
+
+{% highlight cpp %}
+T& chmax(T &a, const T &b);
+{% endhighlight %}
+
+## main
+
+{% highlight cpp %}
+int main();
+{% endhighlight %}
 
 ## Implementation
 

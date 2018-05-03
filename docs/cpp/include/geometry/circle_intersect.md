@@ -1,4 +1,20 @@
+## is_cc
 
+{% highlight cpp %}
+vector<Point> is_cc(Circle c1, Circle c2);
+{% endhighlight %}
+
+## is_cl
+
+{% highlight cpp %}
+vector<Point> is_cl(Circle c, Line l);
+{% endhighlight %}
+
+## is_cs
+
+{% highlight cpp %}
+vector<Point> is_cs(Circle c, Segment s);
+{% endhighlight %}
 
 ### Includes
 

@@ -1,12 +1,14 @@
 ## retrograde
 
 {% highlight cpp %}
-vector<Game> retrograde(const vector< vector< Edge >> &g);{% endhighlight %}
+vector<Game> retrograde(const vector< vector< Edge >> &g);
+{% endhighlight %}
 
 ## add_edge
 
 {% highlight cpp %}
-void add_edge(Graph &g, int from, int to);{% endhighlight %}
+void add_edge(Graph &g, int from, int to);
+{% endhighlight %}
 
 ## Implementation
 

@@ -1,4 +1,14 @@
+## tangent_cp
 
+{% highlight cpp %}
+vector<Line> tangent_cp(Circle c, Point p);
+{% endhighlight %}
+
+## tangent_cc
+
+{% highlight cpp %}
+vector<Line> tangent_cc(Circle c1, Circle c2);
+{% endhighlight %}
 
 ### Includes
 

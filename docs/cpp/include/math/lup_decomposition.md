@@ -1,4 +1,14 @@
+## LUPDecomposition
 
+{% highlight cpp %}
+LUP<T> LUPDecomposition(Matrix< T > A);
+{% endhighlight %}
+
+## LUPBackSubstitution
+
+{% highlight cpp %}
+Vec<T> LUPBackSubstitution(const LUP< T > &lup, Vec< T > a);
+{% endhighlight %}
 
 ### Includes
 

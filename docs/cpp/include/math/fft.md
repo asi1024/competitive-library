@@ -1,12 +1,14 @@
 ## FFT
 
 {% highlight cpp %}
-vector<P> FFT(const vector< P > &a, int m);{% endhighlight %}
+vector<P> FFT(const vector< P > &a, int m);
+{% endhighlight %}
 
 ## convolution
 
 {% highlight cpp %}
-vector<ll> convolution(const vector< ll > &lhs, const vector< ll > &rhs);{% endhighlight %}
+vector<ll> convolution(const vector< ll > &lhs, const vector< ll > &rhs);
+{% endhighlight %}
 
 ## Implementation
 

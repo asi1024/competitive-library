@@ -1,12 +1,14 @@
 ## scc
 
 {% highlight cpp %}
-vector<int> scc(const vector< vector< Edge >> &g);{% endhighlight %}
+vector<int> scc(const vector< vector< Edge >> &g);
+{% endhighlight %}
 
 ## add_edge
 
 {% highlight cpp %}
-void add_edge(Graph &g, int from, int to);{% endhighlight %}
+void add_edge(Graph &g, int from, int to);
+{% endhighlight %}
 
 ## Implementation
 

@@ -1,27 +1,32 @@
 ## dist_lp
 
 {% highlight cpp %}
-ld dist_lp(Line l, Point p);{% endhighlight %}
+ld dist_lp(Line l, Point p);
+{% endhighlight %}
 
 ## dist_ll
 
 {% highlight cpp %}
-ld dist_ll(Line l, Line m);{% endhighlight %}
+ld dist_ll(Line l, Line m);
+{% endhighlight %}
 
 ## dist_ls
 
 {% highlight cpp %}
-ld dist_ls(Line l, Segment s);{% endhighlight %}
+ld dist_ls(Line l, Segment s);
+{% endhighlight %}
 
 ## dist_sp
 
 {% highlight cpp %}
-ld dist_sp(Segment s, Point p);{% endhighlight %}
+ld dist_sp(Segment s, Point p);
+{% endhighlight %}
 
 ## dist_ss
 
 {% highlight cpp %}
-ld dist_ss(Segment s, Segment t);{% endhighlight %}
+ld dist_ss(Segment s, Segment t);
+{% endhighlight %}
 
 ### Includes
 

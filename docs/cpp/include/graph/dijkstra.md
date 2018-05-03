@@ -1,7 +1,8 @@
 ## dijkstra
 
 {% highlight cpp %}
-vector<Cost> dijkstra(const vector< vector< Edge >> &g, int s, Cost zero=0);{% endhighlight %}
+vector<Cost> dijkstra(const vector< vector< Edge >> &g, int s, Cost zero=0);
+{% endhighlight %}
 
 負辺のない重み付きグラフの単一始点全点間最短距離を求める． 
 
@@ -27,7 +28,8 @@ $O(E \log V)$
 ## add_edge
 
 {% highlight cpp %}
-void add_edge(Graph &g, int from, int to, Edge::Cost cost);{% endhighlight %}
+void add_edge(Graph &g, int from, int to, Edge::Cost cost);
+{% endhighlight %}
 
 ## Implementation
 

@@ -1,4 +1,14 @@
+## articulation_points
 
+{% highlight cpp %}
+pair<set<int>, vector<vector<Edge> > > articulation_points(const vector< vector< Edge >> &g);
+{% endhighlight %}
+
+## add_edge
+
+{% highlight cpp %}
+void add_edge(Graph &g, int from, int to);
+{% endhighlight %}
 
 ## Implementation
 

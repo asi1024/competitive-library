@@ -1,22 +1,26 @@
 ## is_zero
 
 {% highlight cpp %}
-bool is_zero(Modulo< M, IsPrime > x);{% endhighlight %}
+bool is_zero(Modulo< M, IsPrime > x);
+{% endhighlight %}
 
 ## abs
 
 {% highlight cpp %}
-int abs(Modulo< M, IsPrime > x);{% endhighlight %}
+int abs(Modulo< M, IsPrime > x);
+{% endhighlight %}
 
 ## fact
 
 {% highlight cpp %}
-Modulo<M, true> fact(int n, bool sw=true);{% endhighlight %}
+Modulo<M, true> fact(int n, bool sw=true);
+{% endhighlight %}
 
 ## comb
 
 {% highlight cpp %}
-Modulo<M, true> comb(int a, int b);{% endhighlight %}
+Modulo<M, true> comb(int a, int b);
+{% endhighlight %}
 
 ## Implementation
 

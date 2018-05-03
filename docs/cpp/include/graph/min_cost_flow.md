@@ -1,4 +1,14 @@
+## min_cost_flow
 
+{% highlight cpp %}
+Cost min_cost_flow(vector< vector< Edge >> &g, int s, int t, Flow f, bool init=true);
+{% endhighlight %}
+
+## add_edge
+
+{% highlight cpp %}
+void add_edge(Graph &g, int from, int to, Edge::Flow cap, Edge::Cost cost);
+{% endhighlight %}
 
 ## Implementation
 

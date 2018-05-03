@@ -1,7 +1,8 @@
 ## operator<<
 
 {% highlight cpp %}
-ostream& operator<<(ostream &os, const vector< T > &v);{% endhighlight %}
+ostream& operator<<(ostream &os, const vector< T > &v);
+{% endhighlight %}
 
 ## Implementation
 

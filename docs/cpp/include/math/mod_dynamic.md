@@ -1,4 +1,56 @@
+## chmin
 
+{% highlight cpp %}
+T& chmin(T &a, const T &b);
+{% endhighlight %}
+
+## chmax
+
+{% highlight cpp %}
+T& chmax(T &a, const T &b);
+{% endhighlight %}
+
+## prime_factorization
+
+{% highlight cpp %}
+vector<pair<ll,int> > prime_factorization(ll n);
+{% endhighlight %}
+
+## init
+
+{% highlight cpp %}
+void init();
+{% endhighlight %}
+
+## comb
+
+{% highlight cpp %}
+Mod comb(int a, int b);
+{% endhighlight %}
+
+## FFT
+
+{% highlight cpp %}
+vector<P> FFT(ld theta, const vector< P > &a);
+{% endhighlight %}
+
+## convolution
+
+{% highlight cpp %}
+vector<ll> convolution(const vector< ll > &lhs, const vector< ll > &rhs);
+{% endhighlight %}
+
+## convolution
+
+{% highlight cpp %}
+vector<T> convolution(const vector< T > &lhs, const vector< T > &rhs);
+{% endhighlight %}
+
+## main
+
+{% highlight cpp %}
+int main();
+{% endhighlight %}
 
 ## Implementation
 

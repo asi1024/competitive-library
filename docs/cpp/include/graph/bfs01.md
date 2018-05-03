@@ -1,12 +1,14 @@
 ## bfs01
 
 {% highlight cpp %}
-vector<Cost> bfs01(const vector< vector< Edge >> &g, int s);{% endhighlight %}
+vector<Cost> bfs01(const vector< vector< Edge >> &g, int s);
+{% endhighlight %}
 
 ## add_edge
 
 {% highlight cpp %}
-void add_edge(Graph &g, int from, int to, Edge::Cost cost);{% endhighlight %}
+void add_edge(Graph &g, int from, int to, Edge::Cost cost);
+{% endhighlight %}
 
 ## Implementation
 

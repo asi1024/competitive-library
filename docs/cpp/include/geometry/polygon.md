@@ -1,12 +1,14 @@
 ## area
 
 {% highlight cpp %}
-ld area(const Polygon &g);{% endhighlight %}
+ld area(const Polygon &g);
+{% endhighlight %}
 
 ## is_in_polygon
 
 {% highlight cpp %}
-int is_in_polygon(const Polygon &g, Point p);{% endhighlight %}
+int is_in_polygon(const Polygon &g, Point p);
+{% endhighlight %}
 
 ### Includes
 

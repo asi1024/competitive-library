@@ -1,7 +1,8 @@
 ## manacher
 
 {% highlight cpp %}
-vector<int> manacher(const string_t &s);{% endhighlight %}
+vector<int> manacher(const string_t &s);
+{% endhighlight %}
 
 ## Implementation
 
