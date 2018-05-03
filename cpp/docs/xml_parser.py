@@ -14,15 +14,35 @@ def tostring(node):
     return re.sub('<.*?>', '', ET.tostring(node).decode('utf-8').strip())
 
 def filter_kind(nodes, tag):
-    return [node for node in nodes if node.attrib['kind'] == tag][0]
+    x = [node for node in nodes if node.attrib['kind'] == tag]
+    return x[0] if x else None
 
 
 def class_doc(node):
-    res = ''
-    res += '## {}\n\n'.format(node.find('compoundname').text)
+    name = node.find('compoundname').text
 
-    # print(res)
-    return ''
+    res = ''
+    res += '## {}\n\n'.format(name)
+
+    sections = node.findall('sectiondef')
+    public_funcs = filter_kind(sections, 'public-func')
+
+    if public_funcs:
+        public_funcs = public_funcs.findall('memberdef')
+        fnames = set()
+
+        for elem in public_funcs:
+            fname = elem.find('name').text
+            if fname == name:
+                fname = '(constructor)'
+            fnames.add(fname)
+
+        for fname in fnames:
+            nodes = [_ for _ in public_funcs if _.find('name').text == fname]
+            for elem in nodes:
+                elem
+
+    return res
 
 
 def function_doc(node):
@@ -31,7 +51,7 @@ def function_doc(node):
 
     res += '{% highlight cpp %}\n'
     res += node.find('definition').text + node.find('argsstring').text + ';'
-    res += '{% endhighlight %}\n\n'
+    res += '\n{% endhighlight %}\n\n'
 
     if node.find('briefdescription/para') is not None:
         res += node.find('briefdescription/para').text + '\n\n'
@@ -84,7 +104,6 @@ def main(filepath):
             root = ET.fromstring(''.join(_ for _ in open(path)))
             res += class_doc(root.find('compounddef'))
 
-        # print(res.strip())
         return res.strip()
 
     except FileNotFoundError:
