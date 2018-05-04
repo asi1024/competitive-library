@@ -6,7 +6,16 @@ void add_edge(Graph &g, int from, int to);
 
 ## LCA
 
+### Member functions
+
+- (constructor)
+- query
+
 ## Edge
+
+### Member functions
+
+- (constructor)
 
 ## Implementation
 

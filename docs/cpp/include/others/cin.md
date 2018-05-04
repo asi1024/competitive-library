@@ -1,5 +1,9 @@
 ## fast_istream
 
+### Member functions
+
+- operator>>
+
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/others/cin.cpp)

@@ -33,6 +33,10 @@ void add_edge(Graph &g, int from, int to, Edge::Cost cost);
 
 ## Edge
 
+### Member functions
+
+- (constructor)
+
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/dijkstra.cpp)

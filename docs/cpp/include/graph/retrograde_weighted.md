@@ -12,7 +12,15 @@ void add_edge(Graph &g, int from, int to, Edge::Cost cost);
 
 ## Game_with_Cost
 
+### Member functions
+
+- (constructor)
+
 ## Edge
+
+### Member functions
+
+- (constructor)
 
 ## Implementation
 

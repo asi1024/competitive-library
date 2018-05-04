@@ -1,6 +1,36 @@
 ## Vec
 
+### Member functions
+
+- (constructor)
+- begin
+- concat
+- dot
+- end
+- norm
+- operator+
+- operator+=
+- operator-
+- operator-=
+- operator[]
+- push_back
+- size
+
 ## Matrix
+
+### Member functions
+
+- (constructor)
+- X
+- Y
+- concat_below
+- concat_right
+- det
+- operator*
+- operator*=
+- operator^
+- rank
+- transpose
 
 ## Implementation
 

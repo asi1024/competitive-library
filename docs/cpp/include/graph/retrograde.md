@@ -12,6 +12,10 @@ void add_edge(Graph &g, int from, int to);
 
 ## Edge
 
+### Member functions
+
+- (constructor)
+
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/retrograde.cpp)

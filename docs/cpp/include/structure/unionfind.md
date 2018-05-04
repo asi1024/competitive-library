@@ -1,5 +1,12 @@
 ## UnionFind
 
+### Member functions
+
+- (constructor)
+- root
+- same
+- unite
+
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/unionfind.cpp)

@@ -1,6 +1,18 @@
 ## HeavyLightDecomposition
 
+### Member functions
+
+- (constructor)
+- depth
+- query
+- root
+- update
+
 ## HeavyLightDecomposition::Chain
+
+### Member functions
+
+- Chain
 
 ## Implementation
 

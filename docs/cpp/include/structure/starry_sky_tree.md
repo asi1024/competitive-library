@@ -1,5 +1,11 @@
 ## StarrySkyTree
 
+### Member functions
+
+- (constructor)
+- query
+- update
+
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/starry_sky_tree.cpp)

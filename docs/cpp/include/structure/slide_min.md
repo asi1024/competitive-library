@@ -1,5 +1,13 @@
 ## SlideMin
 
+### Member functions
+
+- (constructor)
+- minimum
+- pop
+- push
+- size
+
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/slide_min.cpp)

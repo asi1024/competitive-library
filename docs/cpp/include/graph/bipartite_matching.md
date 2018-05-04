@@ -1,5 +1,11 @@
 ## BipartiteMatching
 
+### Member functions
+
+- (constructor)
+- add_edge
+- maximum_matching
+
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/bipartite_matching.cpp)

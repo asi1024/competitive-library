@@ -1,8 +1,26 @@
 ## SuffixArray
 
+### Member functions
+
+- (constructor)
+- binary_search
+- find
+- lower_bound
+- upper_bound
+
 ## SuffixArray::SAComp
 
+### Member functions
+
+- SAComp
+- operator()
+
 ## LCP
+
+### Member functions
+
+- (constructor)
+- query
 
 ## Implementation
 

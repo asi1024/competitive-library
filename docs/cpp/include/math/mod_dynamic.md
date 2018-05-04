@@ -54,9 +54,42 @@ int main();
 
 ## yes_no
 
+### Member functions
+
+- do_falsename
+- do_truename
+
 ## Modulo
 
+### Member functions
+
+- (constructor)
+- operator int
+- operator ll
+- operator*
+- operator*=
+- operator+
+- operator+=
+- operator-
+- operator-=
+- operator/
+- operator/=
+- operator==
+- operator^
+
 ## Mod
+
+### Member functions
+
+- (constructor)
+- operator Modulo
+- operator ll
+- operator*
+- operator*=
+- operator/
+- operator/=
+- operator^
+- powi
 
 ## Implementation
 

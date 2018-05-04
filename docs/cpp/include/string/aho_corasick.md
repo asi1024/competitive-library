@@ -1,6 +1,18 @@
 ## AhoCorasick
 
+### Member functions
+
+- (constructor)
+- next
+- query
+
 ## State
+
+### Member functions
+
+- (constructor)
+- is_set
+- operator[]
 
 ## Implementation
 

@@ -18,6 +18,10 @@ skew_heap<T>* pop(skew_heap< T > *h);
 
 ## skew_heap
 
+### Member functions
+
+- (constructor)
+
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/skew_heap.cpp)

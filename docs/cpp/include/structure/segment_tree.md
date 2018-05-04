@@ -1,5 +1,12 @@
 ## SegmentTree
 
+### Member functions
+
+- (constructor)
+- query
+- size
+- update
+
 ## RMQ
 
 ## Implementation

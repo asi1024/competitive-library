@@ -24,6 +24,22 @@ Modulo<M, true> comb(int a, int b);
 
 ## Modulo
 
+### Member functions
+
+- (constructor)
+- operator int
+- operator ll
+- operator*
+- operator*=
+- operator+
+- operator+=
+- operator-
+- operator-=
+- operator/
+- operator/=
+- operator==
+- operator^
+
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/mod.cpp)

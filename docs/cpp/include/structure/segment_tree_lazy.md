@@ -1,8 +1,19 @@
 ## SegmentTreeLazy
 
+### Member functions
+
+- (constructor)
+- query
+- update
+
 ## RMQ
 
 ## RangeUpdate
+
+### Member functions
+
+- (constructor)
+- operator()
 
 ## Implementation
 

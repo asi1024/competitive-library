@@ -1,5 +1,11 @@
 ## FenwickTree
 
+### Member functions
+
+- (constructor)
+- add
+- sum
+
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/fenwick_tree.cpp)

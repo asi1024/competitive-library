@@ -18,6 +18,11 @@ int main();
 
 ## yes_no
 
+### Member functions
+
+- do_falsename
+- do_truename
+
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/template.cpp)

@@ -18,11 +18,32 @@ int main();
 
 ## yes_no
 
+### Member functions
+
+- do_falsename
+- do_truename
+
 ## UnionFind
+
+### Member functions
+
+- (constructor)
+- root
+- same
+- unite
 
 ## Algebra
 
 ## TreeDP
+
+### Member functions
+
+- (constructor)
+- dfsl
+- dfsr
+- dfsv
+- init
+- query
 
 ## Implementation
 

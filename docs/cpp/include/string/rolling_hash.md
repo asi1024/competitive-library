@@ -1,5 +1,10 @@
 ## RollingHash
 
+### Member functions
+
+- (constructor)
+- query
+
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/rolling_hash.cpp)
