@@ -94,10 +94,8 @@ public:
     }
   }
 
-
   SegmentTree(const int count, const T &value = Monoid::id()) :
     SegmentTree(std::vector<T>(count, value)) {}
-
 
   int size() const { return size_; }
 

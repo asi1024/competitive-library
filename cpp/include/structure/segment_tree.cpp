@@ -21,7 +21,6 @@ public:
     }
   }
 
-
   /// @complexity $O(n)$
   /// @param count: 構築するセグメント木の長さ
   /// @param value: 各要素の初期値
@@ -29,7 +28,6 @@ public:
   /// 長さ count のセグメント木を作り，全ての要素を value で初期化する．
   SegmentTree(const int count, const T &value = Monoid::id()) :
     SegmentTree(std::vector<T>(count, value)) {}
-
 
   /// @complexity $O(1)$
   /// @return セグメント木のサイズを返す．
