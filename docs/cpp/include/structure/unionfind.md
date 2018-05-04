@@ -2,10 +2,44 @@
 
 ### Member functions
 
-- (constructor)
-- root
-- same
-- unite
+#### (constructor)
+{% highlight cpp %}
+UnionFind(int n);
+{% endhighlight %}
+
+{% highlight cpp %}
+UnionFind(int n);
+{% endhighlight %}
+
+
+#### root
+{% highlight cpp %}
+int root(int x);
+{% endhighlight %}
+
+{% highlight cpp %}
+int root(int x);
+{% endhighlight %}
+
+
+#### same
+{% highlight cpp %}
+bool same(int x, int y);
+{% endhighlight %}
+
+{% highlight cpp %}
+bool same(int x, int y);
+{% endhighlight %}
+
+
+#### unite
+{% highlight cpp %}
+bool unite(int x, int y);
+{% endhighlight %}
+
+{% highlight cpp %}
+bool unite(int x, int y);
+{% endhighlight %}
 
 ## Implementation
 

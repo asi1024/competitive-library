@@ -20,7 +20,10 @@ skew_heap<T>* pop(skew_heap< T > *h);
 
 ### Member functions
 
-- (constructor)
+#### (constructor)
+{% highlight cpp %}
+skew_heap(T v);
+{% endhighlight %}
 
 ## Implementation
 

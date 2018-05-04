@@ -2,8 +2,16 @@
 
 ### Member functions
 
-- (constructor)
-- query
+#### (constructor)
+{% highlight cpp %}
+RollingHash(const string &str);
+{% endhighlight %}
+
+
+#### query
+{% highlight cpp %}
+pair< ll, ll > query(int l, int r);
+{% endhighlight %}
 
 ## Implementation
 

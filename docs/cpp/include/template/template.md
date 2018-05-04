@@ -20,8 +20,32 @@ int main();
 
 ### Member functions
 
-- do_falsename
-- do_truename
+#### do_falsename
+{% highlight cpp %}
+string_type do_falsename() const;
+{% endhighlight %}
+
+{% highlight cpp %}
+string_type do_falsename() const;
+{% endhighlight %}
+
+{% highlight cpp %}
+string_type do_falsename() const;
+{% endhighlight %}
+
+
+#### do_truename
+{% highlight cpp %}
+string_type do_truename() const;
+{% endhighlight %}
+
+{% highlight cpp %}
+string_type do_truename() const;
+{% endhighlight %}
+
+{% highlight cpp %}
+string_type do_truename() const;
+{% endhighlight %}
 
 ## Implementation
 

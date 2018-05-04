@@ -2,35 +2,188 @@
 
 ### Member functions
 
-- (constructor)
-- begin
-- concat
-- dot
-- end
-- norm
-- operator+
-- operator+=
-- operator-
-- operator-=
-- operator[]
-- push_back
-- size
+#### (constructor)
+{% highlight cpp %}
+Vec(int n);
+{% endhighlight %}
+
+{% highlight cpp %}
+Vec(int n, const T &val);
+{% endhighlight %}
+
+{% highlight cpp %}
+Vec(const vector< T > &w);
+{% endhighlight %}
+
+
+#### begin
+{% highlight cpp %}
+begin() const noexcept;
+{% endhighlight %}
+
+{% highlight cpp %}
+begin() noexcept;
+{% endhighlight %}
+
+
+#### concat
+{% highlight cpp %}
+void concat(const Vec< T > &r);
+{% endhighlight %}
+
+
+#### dot
+{% highlight cpp %}
+T dot(const Vec< T > &r) const;
+{% endhighlight %}
+
+
+#### end
+{% highlight cpp %}
+end() const noexcept;
+{% endhighlight %}
+
+{% highlight cpp %}
+end() noexcept;
+{% endhighlight %}
+
+
+#### norm
+{% highlight cpp %}
+T norm() const;
+{% endhighlight %}
+
+
+#### operator+
+{% highlight cpp %}
+operator+(const Vec< T > &r) const;
+{% endhighlight %}
+
+
+#### operator+=
+{% highlight cpp %}
+operator+=(const Vec< T > &r);
+{% endhighlight %}
+
+
+#### operator-
+{% highlight cpp %}
+operator-() const;
+{% endhighlight %}
+
+{% highlight cpp %}
+operator-(const Vec< T > &r) const;
+{% endhighlight %}
+
+
+#### operator-=
+{% highlight cpp %}
+operator-=(const Vec< T > &r);
+{% endhighlight %}
+
+
+#### operator[]
+{% highlight cpp %}
+operator[](int i);
+{% endhighlight %}
+
+{% highlight cpp %}
+operator[](int i) const;
+{% endhighlight %}
+
+
+#### push_back
+{% highlight cpp %}
+void push_back(const T &r);
+{% endhighlight %}
+
+
+#### size
+{% highlight cpp %}
+int size() const noexcept;
+{% endhighlight %}
+
 
 ## Matrix
 
 ### Member functions
 
-- (constructor)
-- X
-- Y
-- concat_below
-- concat_right
-- det
-- operator*
-- operator*=
-- operator^
-- rank
-- transpose
+#### (constructor)
+{% highlight cpp %}
+Matrix(int n, int m, const T &val);
+{% endhighlight %}
+
+
+#### X
+{% highlight cpp %}
+int X() const;
+{% endhighlight %}
+
+
+#### Y
+{% highlight cpp %}
+int Y() const;
+{% endhighlight %}
+
+
+#### concat_below
+{% highlight cpp %}
+void concat_below(const Vec< T > &r);
+{% endhighlight %}
+
+{% highlight cpp %}
+void concat_below(const Matrix< T > &r);
+{% endhighlight %}
+
+
+#### concat_right
+{% highlight cpp %}
+void concat_right(const Vec< T > &r);
+{% endhighlight %}
+
+{% highlight cpp %}
+void concat_right(const Matrix< T > &r);
+{% endhighlight %}
+
+
+#### det
+{% highlight cpp %}
+T det() const;
+{% endhighlight %}
+
+
+#### operator*
+{% highlight cpp %}
+operator*(const Matrix< T > &r) const;
+{% endhighlight %}
+
+{% highlight cpp %}
+operator*(const Vec< T > &r) const;
+{% endhighlight %}
+
+
+#### operator*=
+{% highlight cpp %}
+operator*=(const Matrix< T > &r);
+{% endhighlight %}
+
+
+#### operator^
+{% highlight cpp %}
+operator^(ll n) const;
+{% endhighlight %}
+
+
+#### rank
+{% highlight cpp %}
+int rank() const;
+{% endhighlight %}
+
+
+#### transpose
+{% highlight cpp %}
+transpose() const;
+{% endhighlight %}
 
 ## Implementation
 

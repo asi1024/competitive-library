@@ -26,19 +26,142 @@ Modulo<M, true> comb(int a, int b);
 
 ### Member functions
 
-- (constructor)
-- operator int
-- operator ll
-- operator*
-- operator*=
-- operator+
-- operator+=
-- operator-
-- operator-=
-- operator/
-- operator/=
-- operator==
-- operator^
+#### (constructor)
+{% highlight cpp %}
+Modulo();
+{% endhighlight %}
+
+{% highlight cpp %}
+Modulo(int m);
+{% endhighlight %}
+
+{% highlight cpp %}
+Modulo(ll m);
+{% endhighlight %}
+
+{% highlight cpp %}
+Modulo();
+{% endhighlight %}
+
+{% highlight cpp %}
+Modulo(int m);
+{% endhighlight %}
+
+{% highlight cpp %}
+Modulo(ll m);
+{% endhighlight %}
+
+
+#### operator int
+{% highlight cpp %}
+operator int() const;
+{% endhighlight %}
+
+{% highlight cpp %}
+operator int() const;
+{% endhighlight %}
+
+
+#### operator ll
+{% highlight cpp %}
+operator ll() const;
+{% endhighlight %}
+
+{% highlight cpp %}
+operator ll() const;
+{% endhighlight %}
+
+
+#### operator*
+{% highlight cpp %}
+operator*(const Modulo &a) const;
+{% endhighlight %}
+
+{% highlight cpp %}
+operator*(const Modulo &a) const;
+{% endhighlight %}
+
+
+#### operator*=
+{% highlight cpp %}
+operator*=(const Modulo &a);
+{% endhighlight %}
+
+{% highlight cpp %}
+operator*=(const Modulo &a);
+{% endhighlight %}
+
+
+#### operator+
+{% highlight cpp %}
+operator+(const Modulo &a) const;
+{% endhighlight %}
+
+{% highlight cpp %}
+operator+(const Modulo &a) const;
+{% endhighlight %}
+
+
+#### operator+=
+{% highlight cpp %}
+operator+=(const Modulo &a);
+{% endhighlight %}
+
+{% highlight cpp %}
+operator+=(const Modulo &a);
+{% endhighlight %}
+
+
+#### operator-
+{% highlight cpp %}
+operator-(const Modulo &a) const;
+{% endhighlight %}
+
+{% highlight cpp %}
+operator-(const Modulo &a) const;
+{% endhighlight %}
+
+
+#### operator-=
+{% highlight cpp %}
+operator-=(const Modulo &a);
+{% endhighlight %}
+
+{% highlight cpp %}
+operator-=(const Modulo &a);
+{% endhighlight %}
+
+
+#### operator/
+{% highlight cpp %}
+enable_if_t< IsPrime,  operator/(const Modulo &a) const;
+{% endhighlight %}
+
+
+#### operator/=
+{% highlight cpp %}
+enable_if_t< IsPrime,  operator/=(const Modulo &a);
+{% endhighlight %}
+
+
+#### operator==
+{% highlight cpp %}
+bool operator==(const Modulo &a) const;
+{% endhighlight %}
+
+{% highlight cpp %}
+bool operator==(const Modulo &a) const;
+{% endhighlight %}
+
+
+#### operator^
+{% highlight cpp %}
+operator^(int m) const;
+{% endhighlight %}
+
+{% highlight cpp %}
+operator^(int n) const;
+{% endhighlight %}
 
 ## Implementation
 

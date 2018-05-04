@@ -2,9 +2,22 @@
 
 ### Member functions
 
-- (constructor)
-- query
-- update
+#### (constructor)
+{% highlight cpp %}
+StarrySkyTree(int count);
+{% endhighlight %}
+
+
+#### query
+{% highlight cpp %}
+T query(int l, int r) const;
+{% endhighlight %}
+
+
+#### update
+{% highlight cpp %}
+void update(int l, int r, const T &val);
+{% endhighlight %}
 
 ## Implementation
 

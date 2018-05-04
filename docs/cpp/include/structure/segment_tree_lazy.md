@@ -2,9 +2,23 @@
 
 ### Member functions
 
-- (constructor)
-- query
-- update
+#### (constructor)
+{% highlight cpp %}
+SegmentTreeLazy(int count, const T &init=Monoid::id());
+{% endhighlight %}
+
+
+#### query
+{% highlight cpp %}
+T query(int l, int r);
+{% endhighlight %}
+
+
+#### update
+{% highlight cpp %}
+void update(int l, int r, const Update &f);
+{% endhighlight %}
+
 
 ## RMQ
 
@@ -12,8 +26,24 @@
 
 ### Member functions
 
-- (constructor)
-- operator()
+#### (constructor)
+{% highlight cpp %}
+RangeUpdate();
+{% endhighlight %}
+
+{% highlight cpp %}
+RangeUpdate(int v);
+{% endhighlight %}
+
+
+#### operator()
+{% highlight cpp %}
+operator()(const type &) const;
+{% endhighlight %}
+
+{% highlight cpp %}
+operator()(const RangeUpdate &) const;
+{% endhighlight %}
 
 ## Implementation
 

@@ -20,17 +20,77 @@ int main();
 
 ### Member functions
 
-- do_falsename
-- do_truename
+#### do_falsename
+{% highlight cpp %}
+string_type do_falsename() const;
+{% endhighlight %}
+
+{% highlight cpp %}
+string_type do_falsename() const;
+{% endhighlight %}
+
+{% highlight cpp %}
+string_type do_falsename() const;
+{% endhighlight %}
+
+
+#### do_truename
+{% highlight cpp %}
+string_type do_truename() const;
+{% endhighlight %}
+
+{% highlight cpp %}
+string_type do_truename() const;
+{% endhighlight %}
+
+{% highlight cpp %}
+string_type do_truename() const;
+{% endhighlight %}
+
 
 ## UnionFind
 
 ### Member functions
 
-- (constructor)
-- root
-- same
-- unite
+#### (constructor)
+{% highlight cpp %}
+UnionFind(int n);
+{% endhighlight %}
+
+{% highlight cpp %}
+UnionFind(int n);
+{% endhighlight %}
+
+
+#### root
+{% highlight cpp %}
+int root(int x);
+{% endhighlight %}
+
+{% highlight cpp %}
+int root(int x);
+{% endhighlight %}
+
+
+#### same
+{% highlight cpp %}
+bool same(int x, int y);
+{% endhighlight %}
+
+{% highlight cpp %}
+bool same(int x, int y);
+{% endhighlight %}
+
+
+#### unite
+{% highlight cpp %}
+bool unite(int x, int y);
+{% endhighlight %}
+
+{% highlight cpp %}
+bool unite(int x, int y);
+{% endhighlight %}
+
 
 ## Algebra
 
@@ -38,12 +98,40 @@ int main();
 
 ### Member functions
 
-- (constructor)
-- dfsl
-- dfsr
-- dfsv
-- init
-- query
+#### (constructor)
+{% highlight cpp %}
+TreeDP(const Graph &g);
+{% endhighlight %}
+
+
+#### dfsl
+{% highlight cpp %}
+dfsl(int v, int pos);
+{% endhighlight %}
+
+
+#### dfsr
+{% highlight cpp %}
+dfsr(int v, int pos);
+{% endhighlight %}
+
+
+#### dfsv
+{% highlight cpp %}
+dfsv(int v, int p);
+{% endhighlight %}
+
+
+#### init
+{% highlight cpp %}
+init(Graph g);
+{% endhighlight %}
+
+
+#### query
+{% highlight cpp %}
+query(int v);
+{% endhighlight %}
 
 ## Implementation
 

@@ -2,9 +2,22 @@
 
 ### Member functions
 
-- (constructor)
-- add_edge
-- maximum_matching
+#### (constructor)
+{% highlight cpp %}
+BipartiteMatching(int v);
+{% endhighlight %}
+
+
+#### add_edge
+{% highlight cpp %}
+void add_edge(int u, int v);
+{% endhighlight %}
+
+
+#### maximum_matching
+{% highlight cpp %}
+int maximum_matching(void);
+{% endhighlight %}
 
 ## Implementation
 

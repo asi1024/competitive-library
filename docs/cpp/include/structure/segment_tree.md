@@ -2,10 +2,43 @@
 
 ### Member functions
 
-- (constructor)
-- query
-- size
-- update
+#### (constructor)
+{% highlight cpp %}
+SegmentTree(const std::vector< T > &vec);
+{% endhighlight %}
+
+- vector 型の列 vec を表現するセグメント木を作る． 
+- Complexity: $O(n)$ 
+{% highlight cpp %}
+SegmentTree(const int count, const T &value=Monoid::id());
+{% endhighlight %}
+
+- 長さ count のセグメント木を作り，全ての要素を value で初期化する． 
+- Complexity: $O(n)$ 
+
+#### query
+{% highlight cpp %}
+T query(int l, int r) const;
+{% endhighlight %}
+
+- セグメント木の区間 [l, r) を演算 Monoid::op ($\cdot$) で畳み込んだ値を返す． すなわち，$a_l \cdot a_{l+1} \cdot \ldots \cdot a_{r-1}$ を返す． $l = r$ の場合は Monoid::id() を返す． 
+- Complexity: $O(\log n)$ 
+
+#### size
+{% highlight cpp %}
+int size() const;
+{% endhighlight %}
+
+- セグメント木のサイズを返す． 
+- Complexity: $O(1)$ 
+
+#### update
+{% highlight cpp %}
+void update(int pos, const T &value);
+{% endhighlight %}
+
+- pos 番目の要素を value に更新する． その範囲を超えた場合は例外を送出する． 
+- Complexity: $O(\log n)$ 
 
 ## RMQ
 
@@ -28,9 +61,14 @@ public:
       data[i] = Monoid::op(data[i * 2 + 0], data[i * 2 + 1]);
     }
   }
+
+
   SegmentTree(const int count, const T &value = Monoid::id()) :
     SegmentTree(std::vector<T>(count, value)) {}
+
+
   int size() const { return size_; }
+
   void update(int pos, const T &value) {
     assert (0 <= pos && pos < size_); // assertion
     data[pos += n] = value;
@@ -38,6 +76,7 @@ public:
       data[pos] = Monoid::op(data[pos * 2], data[pos * 2 + 1]);
     }
   }
+
   T query(int l, int r) const {
     assert (0 <= l && l <= r && r <= size_); // assertion
     l += n; r += n;

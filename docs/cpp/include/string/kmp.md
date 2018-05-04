@@ -2,8 +2,16 @@
 
 ### Member functions
 
-- (constructor)
-- query
+#### (constructor)
+{% highlight cpp %}
+KMP(const string &str);
+{% endhighlight %}
+
+
+#### query
+{% highlight cpp %}
+vector< int > query(const string &t);
+{% endhighlight %}
 
 ## Implementation
 

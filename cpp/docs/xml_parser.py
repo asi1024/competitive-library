@@ -35,18 +35,37 @@ def class_doc(node):
             fname = elem.find('name').text
             if fname == name:
                 fname = '(constructor)'
+            elif fname == '~' + name:
+                fname = '(destructor)'
             fnames.add(fname)
 
         fnames = sorted(list(fnames))
         res += '### Member functions\n\n'
-        for fname in fnames:
-            res += '- {}\n'.format(fname)
-        res += '\n'
 
         for fname in fnames:
+            res += '#### {}\n'.format(fname)
+            if fname == '(constructor)':
+                fname = name
+            elif fname == '(destructor)':
+                fname = '~' + name
             nodes = [_ for _ in public_funcs if _.find('name').text == fname]
             for elem in nodes:
-                elem
+                res += '{% highlight cpp %}\n'
+                typestr = elem.find('type').text
+                res += typestr + ' ' if typestr else ''
+                res += elem.find('name').text
+                res += elem.find('argsstring').text + ';\n'
+                res += '{% endhighlight %}\n\n'
+
+                brief = elem.find('briefdescription/para')
+                if brief is not None:
+                    res += '- {}\n'.format(brief.text)
+                sects = elem.findall('detaileddescription/para/simplesect')
+                complexity = filter_kind(sects, 'post')
+                if complexity is not None:
+                    complexity_text = complexity.find('para').text
+                    res += '- Complexity: {}\n'.format(complexity_text)
+            res += '\n'
 
     return res
 
@@ -62,7 +81,7 @@ def function_doc(node):
     if node.find('briefdescription/para') is not None:
         res += node.find('briefdescription/para').text + '\n\n'
 
-    description_node = node.find('inbodydescription/para')
+    description_node = node.find('detaileddescription/para')
 
     if description_node is None:
         return res.strip()
@@ -121,4 +140,4 @@ if __name__ == '__main__':
     parser.add_argument('filepath', nargs=1, help='cpp file')
     args = parser.parse_args()
     filepath = args.filepath[0]
-    main(filepath)
+    print(main(filepath))

@@ -2,17 +2,48 @@
 
 ### Member functions
 
-- (constructor)
-- next
-- query
+#### (constructor)
+{% highlight cpp %}
+AhoCorasick(const vector< string_t > &str);
+{% endhighlight %}
+
+
+#### next
+{% highlight cpp %}
+int next(int index, char_t c);
+{% endhighlight %}
+
+
+#### query
+{% highlight cpp %}
+vector< int > query(string_t &t);
+{% endhighlight %}
+
 
 ## State
 
 ### Member functions
 
-- (constructor)
-- is_set
-- operator[]
+#### (constructor)
+{% highlight cpp %}
+State();
+{% endhighlight %}
+
+
+#### is_set
+{% highlight cpp %}
+bool is_set(char_t c);
+{% endhighlight %}
+
+
+#### operator[]
+{% highlight cpp %}
+int & operator[](char_t c);
+{% endhighlight %}
+
+{% highlight cpp %}
+const int & operator[](char_t c) const;
+{% endhighlight %}
 
 ## Implementation
 

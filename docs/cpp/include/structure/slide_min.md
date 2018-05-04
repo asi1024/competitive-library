@@ -2,11 +2,34 @@
 
 ### Member functions
 
-- (constructor)
-- minimum
-- pop
-- push
-- size
+#### (constructor)
+{% highlight cpp %}
+SlideMin();
+{% endhighlight %}
+
+
+#### minimum
+{% highlight cpp %}
+T minimum() const;
+{% endhighlight %}
+
+
+#### pop
+{% highlight cpp %}
+void pop();
+{% endhighlight %}
+
+
+#### push
+{% highlight cpp %}
+void push(T val);
+{% endhighlight %}
+
+
+#### size
+{% highlight cpp %}
+int size() const;
+{% endhighlight %}
 
 ## Implementation
 

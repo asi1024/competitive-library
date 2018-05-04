@@ -2,25 +2,66 @@
 
 ### Member functions
 
-- (constructor)
-- binary_search
-- find
-- lower_bound
-- upper_bound
+#### (constructor)
+{% highlight cpp %}
+SuffixArray(const string_t &t);
+{% endhighlight %}
+
+
+#### binary_search
+{% highlight cpp %}
+int binary_search(const string_t &t) const;
+{% endhighlight %}
+
+
+#### find
+{% highlight cpp %}
+int find(const string_t &t) const;
+{% endhighlight %}
+
+
+#### lower_bound
+{% highlight cpp %}
+int lower_bound(const string_t &t) const;
+{% endhighlight %}
+
+
+#### upper_bound
+{% highlight cpp %}
+int upper_bound(const string_t &t) const;
+{% endhighlight %}
+
 
 ## SuffixArray::SAComp
 
 ### Member functions
 
-- SAComp
-- operator()
+#### SAComp
+{% highlight cpp %}
+SAComp(int h_, vector< int > &g_);
+{% endhighlight %}
+
+
+#### operator()
+{% highlight cpp %}
+bool operator()(int a, int b);
+{% endhighlight %}
+
 
 ## LCP
 
 ### Member functions
 
-- (constructor)
-- query
+#### (constructor)
+{% highlight cpp %}
+LCP(const string &str);
+{% endhighlight %}
+
+
+#### query
+{% highlight cpp %}
+int query(int i, int j);
+{% endhighlight %}
 
 ## Implementation
 

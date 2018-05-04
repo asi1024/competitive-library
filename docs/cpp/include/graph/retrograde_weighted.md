@@ -14,13 +14,60 @@ void add_edge(Graph &g, int from, int to, Edge::Cost cost);
 
 ### Member functions
 
-- (constructor)
+#### (constructor)
+{% highlight cpp %}
+Game_with_Cost();
+{% endhighlight %}
+
+{% highlight cpp %}
+Game_with_Cost(Game w, T c);
+{% endhighlight %}
+
 
 ## Edge
 
 ### Member functions
 
-- (constructor)
+#### (constructor)
+{% highlight cpp %}
+Edge(int s, int t);
+{% endhighlight %}
+
+{% highlight cpp %}
+Edge(int t, Cost c);
+{% endhighlight %}
+
+{% highlight cpp %}
+Edge(int t, Cost c);
+{% endhighlight %}
+
+{% highlight cpp %}
+Edge(int t);
+{% endhighlight %}
+
+{% highlight cpp %}
+Edge(int t, Flow f, int r);
+{% endhighlight %}
+
+{% highlight cpp %}
+Edge(int t, Flow f, int r, Cost c);
+{% endhighlight %}
+
+{% highlight cpp %}
+Edge(int t);
+{% endhighlight %}
+
+{% highlight cpp %}
+Edge(int t, Cost c);
+{% endhighlight %}
+
+{% highlight cpp %}
+Edge(int t);
+{% endhighlight %}
+
+{% highlight cpp %}
+Edge(int t, Cost c);
+{% endhighlight %}
 
 ## Implementation
 
