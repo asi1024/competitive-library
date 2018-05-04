@@ -1,189 +1,207 @@
-## Vec
+## Member functions
 
-### Member functions
-
-#### (constructor)
+### [1] (constructor)
 {% highlight cpp %}
 Vec(int n);
-{% endhighlight %}
-
-{% highlight cpp %}
 Vec(int n, const T &val);
-{% endhighlight %}
-
-{% highlight cpp %}
 Vec(const vector< T > &w);
 {% endhighlight %}
 
 
-#### begin
+---------------------------------------
+
+### [2] begin
 {% highlight cpp %}
 begin() const noexcept;
-{% endhighlight %}
-
-{% highlight cpp %}
 begin() noexcept;
 {% endhighlight %}
 
 
-#### concat
+---------------------------------------
+
+### [3] concat
 {% highlight cpp %}
 void concat(const Vec< T > &r);
 {% endhighlight %}
 
 
-#### dot
+---------------------------------------
+
+### [4] dot
 {% highlight cpp %}
 T dot(const Vec< T > &r) const;
 {% endhighlight %}
 
 
-#### end
+---------------------------------------
+
+### [5] end
 {% highlight cpp %}
 end() const noexcept;
-{% endhighlight %}
-
-{% highlight cpp %}
 end() noexcept;
 {% endhighlight %}
 
 
-#### norm
+---------------------------------------
+
+### [6] norm
 {% highlight cpp %}
 T norm() const;
 {% endhighlight %}
 
 
-#### operator+
+---------------------------------------
+
+### [7] operator+
 {% highlight cpp %}
 operator+(const Vec< T > &r) const;
 {% endhighlight %}
 
 
-#### operator+=
+---------------------------------------
+
+### [8] operator+=
 {% highlight cpp %}
 operator+=(const Vec< T > &r);
 {% endhighlight %}
 
 
-#### operator-
+---------------------------------------
+
+### [9] operator-
 {% highlight cpp %}
 operator-() const;
-{% endhighlight %}
-
-{% highlight cpp %}
 operator-(const Vec< T > &r) const;
 {% endhighlight %}
 
 
-#### operator-=
+---------------------------------------
+
+### [10] operator-=
 {% highlight cpp %}
 operator-=(const Vec< T > &r);
 {% endhighlight %}
 
 
-#### operator[]
+---------------------------------------
+
+### [11] operator[]
 {% highlight cpp %}
 operator[](int i);
-{% endhighlight %}
-
-{% highlight cpp %}
 operator[](int i) const;
 {% endhighlight %}
 
 
-#### push_back
+---------------------------------------
+
+### [12] push_back
 {% highlight cpp %}
 void push_back(const T &r);
 {% endhighlight %}
 
 
-#### size
+---------------------------------------
+
+### [13] size
 {% highlight cpp %}
 int size() const noexcept;
 {% endhighlight %}
 
 
-## Matrix
+---------------------------------------
 
-### Member functions
+## Member functions
 
-#### (constructor)
+### [1] (constructor)
 {% highlight cpp %}
 Matrix(int n, int m, const T &val);
 {% endhighlight %}
 
 
-#### X
+---------------------------------------
+
+### [2] X
 {% highlight cpp %}
 int X() const;
 {% endhighlight %}
 
 
-#### Y
+---------------------------------------
+
+### [3] Y
 {% highlight cpp %}
 int Y() const;
 {% endhighlight %}
 
 
-#### concat_below
+---------------------------------------
+
+### [4] concat_below
 {% highlight cpp %}
 void concat_below(const Vec< T > &r);
-{% endhighlight %}
-
-{% highlight cpp %}
 void concat_below(const Matrix< T > &r);
 {% endhighlight %}
 
 
-#### concat_right
+---------------------------------------
+
+### [5] concat_right
 {% highlight cpp %}
 void concat_right(const Vec< T > &r);
-{% endhighlight %}
-
-{% highlight cpp %}
 void concat_right(const Matrix< T > &r);
 {% endhighlight %}
 
 
-#### det
+---------------------------------------
+
+### [6] det
 {% highlight cpp %}
 T det() const;
 {% endhighlight %}
 
 
-#### operator*
+---------------------------------------
+
+### [7] operator*
 {% highlight cpp %}
 operator*(const Matrix< T > &r) const;
-{% endhighlight %}
-
-{% highlight cpp %}
 operator*(const Vec< T > &r) const;
 {% endhighlight %}
 
 
-#### operator*=
+---------------------------------------
+
+### [8] operator*=
 {% highlight cpp %}
 operator*=(const Matrix< T > &r);
 {% endhighlight %}
 
 
-#### operator^
+---------------------------------------
+
+### [9] operator^
 {% highlight cpp %}
 operator^(ll n) const;
 {% endhighlight %}
 
 
-#### rank
+---------------------------------------
+
+### [10] rank
 {% highlight cpp %}
 int rank() const;
 {% endhighlight %}
 
 
-#### transpose
+---------------------------------------
+
+### [11] transpose
 {% highlight cpp %}
 transpose() const;
 {% endhighlight %}
+
+
+---------------------------------------
 
 ## Implementation
 

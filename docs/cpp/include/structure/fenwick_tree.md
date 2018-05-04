@@ -1,27 +1,29 @@
-## FenwickTree
+## Member functions
 
-### Member functions
-
-#### (constructor)
+### [1] (constructor)
 {% highlight cpp %}
 FenwickTree(int count);
 {% endhighlight %}
 
 
-#### add
+---------------------------------------
+
+### [2] add
 {% highlight cpp %}
 void add(int pos, const T &value);
 {% endhighlight %}
 
 
-#### sum
+---------------------------------------
+
+### [3] sum
 {% highlight cpp %}
 T sum(int pos) const;
-{% endhighlight %}
-
-{% highlight cpp %}
 T sum(int l, int r) const;
 {% endhighlight %}
+
+
+---------------------------------------
 
 ## Implementation
 

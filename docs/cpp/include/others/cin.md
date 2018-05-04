@@ -1,19 +1,14 @@
-## fast_istream
+## Member functions
 
-### Member functions
-
-#### operator>>
+### [1] operator>>
 {% highlight cpp %}
 operator>>(int &var);
-{% endhighlight %}
-
-{% highlight cpp %}
 operator>>(long long &var);
-{% endhighlight %}
-
-{% highlight cpp %}
 operator>>(string &var);
 {% endhighlight %}
+
+
+---------------------------------------
 
 ## Implementation
 

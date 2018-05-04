@@ -31,50 +31,24 @@ $O(E \log V)$
 void add_edge(Graph &g, int from, int to, Edge::Cost cost);
 {% endhighlight %}
 
-## Edge
+## Member functions
 
-### Member functions
-
-#### (constructor)
+### [1] (constructor)
 {% highlight cpp %}
 Edge(int s, int t);
-{% endhighlight %}
-
-{% highlight cpp %}
 Edge(int t, Cost c);
-{% endhighlight %}
-
-{% highlight cpp %}
 Edge(int t, Cost c);
-{% endhighlight %}
-
-{% highlight cpp %}
 Edge(int t);
-{% endhighlight %}
-
-{% highlight cpp %}
 Edge(int t, Flow f, int r);
-{% endhighlight %}
-
-{% highlight cpp %}
 Edge(int t, Flow f, int r, Cost c);
-{% endhighlight %}
-
-{% highlight cpp %}
 Edge(int t);
-{% endhighlight %}
-
-{% highlight cpp %}
+Edge(int t, Cost c);
+Edge(int t);
 Edge(int t, Cost c);
 {% endhighlight %}
 
-{% highlight cpp %}
-Edge(int t);
-{% endhighlight %}
 
-{% highlight cpp %}
-Edge(int t, Cost c);
-{% endhighlight %}
+---------------------------------------
 
 ## Implementation
 

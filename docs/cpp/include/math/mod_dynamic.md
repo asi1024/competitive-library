@@ -52,236 +52,222 @@ vector<T> convolution(const vector< T > &lhs, const vector< T > &rhs);
 int main();
 {% endhighlight %}
 
-## yes_no
+## Member functions
 
-### Member functions
-
-#### do_falsename
+### [1] do_falsename
 {% highlight cpp %}
 string_type do_falsename() const;
-{% endhighlight %}
-
-{% highlight cpp %}
 string_type do_falsename() const;
-{% endhighlight %}
-
-{% highlight cpp %}
 string_type do_falsename() const;
 {% endhighlight %}
 
 
-#### do_truename
+---------------------------------------
+
+### [2] do_truename
 {% highlight cpp %}
 string_type do_truename() const;
-{% endhighlight %}
-
-{% highlight cpp %}
 string_type do_truename() const;
-{% endhighlight %}
-
-{% highlight cpp %}
 string_type do_truename() const;
 {% endhighlight %}
 
 
-## Modulo
+---------------------------------------
 
-### Member functions
+## Member functions
 
-#### (constructor)
+### [1] (constructor)
 {% highlight cpp %}
 Modulo();
-{% endhighlight %}
-
-{% highlight cpp %}
 Modulo(int m);
-{% endhighlight %}
-
-{% highlight cpp %}
 Modulo(ll m);
-{% endhighlight %}
-
-{% highlight cpp %}
 Modulo();
-{% endhighlight %}
-
-{% highlight cpp %}
 Modulo(int m);
-{% endhighlight %}
-
-{% highlight cpp %}
 Modulo(ll m);
 {% endhighlight %}
 
 
-#### operator int
+---------------------------------------
+
+### [2] operator int
 {% highlight cpp %}
+operator int() const;
 operator int() const;
 {% endhighlight %}
 
-{% highlight cpp %}
-operator int() const;
-{% endhighlight %}
 
+---------------------------------------
 
-#### operator ll
+### [3] operator ll
 {% highlight cpp %}
 operator ll() const;
-{% endhighlight %}
-
-{% highlight cpp %}
 operator ll() const;
 {% endhighlight %}
 
 
-#### operator*
+---------------------------------------
+
+### [4] operator*
 {% highlight cpp %}
+operator*(const Modulo &a) const;
 operator*(const Modulo &a) const;
 {% endhighlight %}
 
-{% highlight cpp %}
-operator*(const Modulo &a) const;
-{% endhighlight %}
 
+---------------------------------------
 
-#### operator*=
+### [5] operator*=
 {% highlight cpp %}
 operator*=(const Modulo &a);
-{% endhighlight %}
-
-{% highlight cpp %}
 operator*=(const Modulo &a);
 {% endhighlight %}
 
 
-#### operator+
+---------------------------------------
+
+### [6] operator+
 {% highlight cpp %}
+operator+(const Modulo &a) const;
 operator+(const Modulo &a) const;
 {% endhighlight %}
 
-{% highlight cpp %}
-operator+(const Modulo &a) const;
-{% endhighlight %}
 
+---------------------------------------
 
-#### operator+=
+### [7] operator+=
 {% highlight cpp %}
 operator+=(const Modulo &a);
-{% endhighlight %}
-
-{% highlight cpp %}
 operator+=(const Modulo &a);
 {% endhighlight %}
 
 
-#### operator-
+---------------------------------------
+
+### [8] operator-
 {% highlight cpp %}
+operator-(const Modulo &a) const;
 operator-(const Modulo &a) const;
 {% endhighlight %}
 
-{% highlight cpp %}
-operator-(const Modulo &a) const;
-{% endhighlight %}
 
+---------------------------------------
 
-#### operator-=
+### [9] operator-=
 {% highlight cpp %}
 operator-=(const Modulo &a);
-{% endhighlight %}
-
-{% highlight cpp %}
 operator-=(const Modulo &a);
 {% endhighlight %}
 
 
-#### operator/
+---------------------------------------
+
+### [10] operator/
 {% highlight cpp %}
 enable_if_t< IsPrime,  operator/(const Modulo &a) const;
 {% endhighlight %}
 
 
-#### operator/=
+---------------------------------------
+
+### [11] operator/=
 {% highlight cpp %}
 enable_if_t< IsPrime,  operator/=(const Modulo &a);
 {% endhighlight %}
 
 
-#### operator==
+---------------------------------------
+
+### [12] operator==
 {% highlight cpp %}
+bool operator==(const Modulo &a) const;
 bool operator==(const Modulo &a) const;
 {% endhighlight %}
 
-{% highlight cpp %}
-bool operator==(const Modulo &a) const;
-{% endhighlight %}
 
+---------------------------------------
 
-#### operator^
+### [13] operator^
 {% highlight cpp %}
 operator^(int m) const;
-{% endhighlight %}
-
-{% highlight cpp %}
 operator^(int n) const;
 {% endhighlight %}
 
 
-## Mod
+---------------------------------------
 
-### Member functions
+## Member functions
 
-#### (constructor)
+### [1] (constructor)
 {% highlight cpp %}
 Mod(ll m);
 {% endhighlight %}
 
 
-#### operator Modulo
+---------------------------------------
+
+### [2] operator Modulo
 {% highlight cpp %}
 operator Modulo() const;
 {% endhighlight %}
 
 
-#### operator ll
+---------------------------------------
+
+### [3] operator ll
 {% highlight cpp %}
 operator ll() const;
 {% endhighlight %}
 
 
-#### operator*
+---------------------------------------
+
+### [4] operator*
 {% highlight cpp %}
 operator*(const Mod &a) const;
 {% endhighlight %}
 
 
-#### operator*=
+---------------------------------------
+
+### [5] operator*=
 {% highlight cpp %}
 operator*=(const Mod &a);
 {% endhighlight %}
 
 
-#### operator/
+---------------------------------------
+
+### [6] operator/
 {% highlight cpp %}
 operator/(const Mod &a) const;
 {% endhighlight %}
 
 
-#### operator/=
+---------------------------------------
+
+### [7] operator/=
 {% highlight cpp %}
 operator/=(const Mod &a);
 {% endhighlight %}
 
 
-#### operator^
+---------------------------------------
+
+### [8] operator^
 {% highlight cpp %}
 operator^(const int n) const;
 {% endhighlight %}
 
 
-#### powi
+---------------------------------------
+
+### [9] powi
 {% highlight cpp %}
 powi(int m);
 {% endhighlight %}
+
+
+---------------------------------------
 
 ## Implementation
 

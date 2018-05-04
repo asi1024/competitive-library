@@ -1,49 +1,55 @@
-## HeavyLightDecomposition
+## Member functions
 
-### Member functions
-
-#### (constructor)
+### [1] (constructor)
 {% highlight cpp %}
 HeavyLightDecomposition(const Graph &g, const T &init=Monoid::id());
 {% endhighlight %}
 
 
-#### depth
+---------------------------------------
+
+### [2] depth
 {% highlight cpp %}
 int depth(int t) const;
 {% endhighlight %}
 
 
-#### query
+---------------------------------------
+
+### [3] query
 {% highlight cpp %}
 query(int s, int t);
 {% endhighlight %}
 
 
-#### root
+---------------------------------------
+
+### [4] root
 {% highlight cpp %}
 int root() const;
 {% endhighlight %}
 
 
-#### update
+---------------------------------------
+
+### [5] update
 {% highlight cpp %}
 void update(int i, const Update &val);
-{% endhighlight %}
-
-{% highlight cpp %}
 void update(int s, int t, const Update &update);
 {% endhighlight %}
 
 
-## HeavyLightDecomposition::Chain
+---------------------------------------
 
-### Member functions
+## Member functions
 
-#### Chain
+### [1] Chain
 {% highlight cpp %}
 Chain(int n, const T &init);
 {% endhighlight %}
+
+
+---------------------------------------
 
 ## Implementation
 

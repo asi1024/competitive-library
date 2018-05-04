@@ -22,146 +22,126 @@ Modulo<M, true> fact(int n, bool sw=true);
 Modulo<M, true> comb(int a, int b);
 {% endhighlight %}
 
-## Modulo
+## Member functions
 
-### Member functions
-
-#### (constructor)
+### [1] (constructor)
 {% highlight cpp %}
 Modulo();
-{% endhighlight %}
-
-{% highlight cpp %}
 Modulo(int m);
-{% endhighlight %}
-
-{% highlight cpp %}
 Modulo(ll m);
-{% endhighlight %}
-
-{% highlight cpp %}
 Modulo();
-{% endhighlight %}
-
-{% highlight cpp %}
 Modulo(int m);
-{% endhighlight %}
-
-{% highlight cpp %}
 Modulo(ll m);
 {% endhighlight %}
 
 
-#### operator int
+---------------------------------------
+
+### [2] operator int
 {% highlight cpp %}
+operator int() const;
 operator int() const;
 {% endhighlight %}
 
-{% highlight cpp %}
-operator int() const;
-{% endhighlight %}
 
+---------------------------------------
 
-#### operator ll
+### [3] operator ll
 {% highlight cpp %}
 operator ll() const;
-{% endhighlight %}
-
-{% highlight cpp %}
 operator ll() const;
 {% endhighlight %}
 
 
-#### operator*
+---------------------------------------
+
+### [4] operator*
 {% highlight cpp %}
+operator*(const Modulo &a) const;
 operator*(const Modulo &a) const;
 {% endhighlight %}
 
-{% highlight cpp %}
-operator*(const Modulo &a) const;
-{% endhighlight %}
 
+---------------------------------------
 
-#### operator*=
+### [5] operator*=
 {% highlight cpp %}
 operator*=(const Modulo &a);
-{% endhighlight %}
-
-{% highlight cpp %}
 operator*=(const Modulo &a);
 {% endhighlight %}
 
 
-#### operator+
+---------------------------------------
+
+### [6] operator+
 {% highlight cpp %}
+operator+(const Modulo &a) const;
 operator+(const Modulo &a) const;
 {% endhighlight %}
 
-{% highlight cpp %}
-operator+(const Modulo &a) const;
-{% endhighlight %}
 
+---------------------------------------
 
-#### operator+=
+### [7] operator+=
 {% highlight cpp %}
 operator+=(const Modulo &a);
-{% endhighlight %}
-
-{% highlight cpp %}
 operator+=(const Modulo &a);
 {% endhighlight %}
 
 
-#### operator-
+---------------------------------------
+
+### [8] operator-
 {% highlight cpp %}
+operator-(const Modulo &a) const;
 operator-(const Modulo &a) const;
 {% endhighlight %}
 
-{% highlight cpp %}
-operator-(const Modulo &a) const;
-{% endhighlight %}
 
+---------------------------------------
 
-#### operator-=
+### [9] operator-=
 {% highlight cpp %}
 operator-=(const Modulo &a);
-{% endhighlight %}
-
-{% highlight cpp %}
 operator-=(const Modulo &a);
 {% endhighlight %}
 
 
-#### operator/
+---------------------------------------
+
+### [10] operator/
 {% highlight cpp %}
 enable_if_t< IsPrime,  operator/(const Modulo &a) const;
 {% endhighlight %}
 
 
-#### operator/=
+---------------------------------------
+
+### [11] operator/=
 {% highlight cpp %}
 enable_if_t< IsPrime,  operator/=(const Modulo &a);
 {% endhighlight %}
 
 
-#### operator==
+---------------------------------------
+
+### [12] operator==
 {% highlight cpp %}
+bool operator==(const Modulo &a) const;
 bool operator==(const Modulo &a) const;
 {% endhighlight %}
 
-{% highlight cpp %}
-bool operator==(const Modulo &a) const;
-{% endhighlight %}
 
+---------------------------------------
 
-#### operator^
+### [13] operator^
 {% highlight cpp %}
 operator^(int m) const;
-{% endhighlight %}
-
-{% highlight cpp %}
 operator^(int n) const;
 {% endhighlight %}
+
+
+---------------------------------------
 
 ## Implementation
 

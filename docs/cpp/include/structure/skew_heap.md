@@ -16,14 +16,15 @@ skew_heap<T>* push(skew_heap< T > *h, T v);
 skew_heap<T>* pop(skew_heap< T > *h);
 {% endhighlight %}
 
-## skew_heap
+## Member functions
 
-### Member functions
-
-#### (constructor)
+### [1] (constructor)
 {% highlight cpp %}
 skew_heap(T v);
 {% endhighlight %}
+
+
+---------------------------------------
 
 ## Implementation
 

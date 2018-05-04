@@ -4,66 +4,42 @@
 void add_edge(Graph &g, int from, int to);
 {% endhighlight %}
 
-## LCA
+## Member functions
 
-### Member functions
-
-#### (constructor)
+### [1] (constructor)
 {% highlight cpp %}
 LCA(const vector< vector< Edge >> &g, int root);
 {% endhighlight %}
 
 
-#### query
+---------------------------------------
+
+### [2] query
 {% highlight cpp %}
 int query(int u, int v);
 {% endhighlight %}
 
 
-## Edge
+---------------------------------------
 
-### Member functions
+## Member functions
 
-#### (constructor)
+### [1] (constructor)
 {% highlight cpp %}
 Edge(int s, int t);
-{% endhighlight %}
-
-{% highlight cpp %}
 Edge(int t, Cost c);
-{% endhighlight %}
-
-{% highlight cpp %}
 Edge(int t, Cost c);
-{% endhighlight %}
-
-{% highlight cpp %}
 Edge(int t);
-{% endhighlight %}
-
-{% highlight cpp %}
 Edge(int t, Flow f, int r);
-{% endhighlight %}
-
-{% highlight cpp %}
 Edge(int t, Flow f, int r, Cost c);
-{% endhighlight %}
-
-{% highlight cpp %}
 Edge(int t);
-{% endhighlight %}
-
-{% highlight cpp %}
+Edge(int t, Cost c);
+Edge(int t);
 Edge(int t, Cost c);
 {% endhighlight %}
 
-{% highlight cpp %}
-Edge(int t);
-{% endhighlight %}
 
-{% highlight cpp %}
-Edge(int t, Cost c);
-{% endhighlight %}
+---------------------------------------
 
 ## Implementation
 

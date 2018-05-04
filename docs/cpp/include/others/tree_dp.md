@@ -16,122 +16,115 @@ T& chmax(T &a, const T &b);
 int main();
 {% endhighlight %}
 
-## yes_no
+## Member functions
 
-### Member functions
-
-#### do_falsename
+### [1] do_falsename
 {% highlight cpp %}
 string_type do_falsename() const;
-{% endhighlight %}
-
-{% highlight cpp %}
 string_type do_falsename() const;
-{% endhighlight %}
-
-{% highlight cpp %}
 string_type do_falsename() const;
 {% endhighlight %}
 
 
-#### do_truename
+---------------------------------------
+
+### [2] do_truename
 {% highlight cpp %}
 string_type do_truename() const;
-{% endhighlight %}
-
-{% highlight cpp %}
 string_type do_truename() const;
-{% endhighlight %}
-
-{% highlight cpp %}
 string_type do_truename() const;
 {% endhighlight %}
 
 
-## UnionFind
+---------------------------------------
 
-### Member functions
+## Member functions
 
-#### (constructor)
+### [1] (constructor)
 {% highlight cpp %}
 UnionFind(int n);
-{% endhighlight %}
-
-{% highlight cpp %}
 UnionFind(int n);
 {% endhighlight %}
 
 
-#### root
+---------------------------------------
+
+### [2] root
 {% highlight cpp %}
+int root(int x);
 int root(int x);
 {% endhighlight %}
 
-{% highlight cpp %}
-int root(int x);
-{% endhighlight %}
 
+---------------------------------------
 
-#### same
+### [3] same
 {% highlight cpp %}
 bool same(int x, int y);
-{% endhighlight %}
-
-{% highlight cpp %}
 bool same(int x, int y);
 {% endhighlight %}
 
 
-#### unite
+---------------------------------------
+
+### [4] unite
 {% highlight cpp %}
+bool unite(int x, int y);
 bool unite(int x, int y);
 {% endhighlight %}
 
-{% highlight cpp %}
-bool unite(int x, int y);
-{% endhighlight %}
 
+---------------------------------------
 
-## Algebra
+## Member functions
 
-## TreeDP
-
-### Member functions
-
-#### (constructor)
+### [1] (constructor)
 {% highlight cpp %}
 TreeDP(const Graph &g);
 {% endhighlight %}
 
 
-#### dfsl
+---------------------------------------
+
+### [2] dfsl
 {% highlight cpp %}
 dfsl(int v, int pos);
 {% endhighlight %}
 
 
-#### dfsr
+---------------------------------------
+
+### [3] dfsr
 {% highlight cpp %}
 dfsr(int v, int pos);
 {% endhighlight %}
 
 
-#### dfsv
+---------------------------------------
+
+### [4] dfsv
 {% highlight cpp %}
 dfsv(int v, int p);
 {% endhighlight %}
 
 
-#### init
+---------------------------------------
+
+### [5] init
 {% highlight cpp %}
 init(Graph g);
 {% endhighlight %}
 
 
-#### query
+---------------------------------------
+
+### [6] query
 {% highlight cpp %}
 query(int v);
 {% endhighlight %}
+
+
+---------------------------------------
 
 ## Implementation
 

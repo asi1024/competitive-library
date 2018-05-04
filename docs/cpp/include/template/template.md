@@ -16,36 +16,27 @@ T& chmax(T &a, const T &b);
 int main();
 {% endhighlight %}
 
-## yes_no
+## Member functions
 
-### Member functions
-
-#### do_falsename
+### [1] do_falsename
 {% highlight cpp %}
 string_type do_falsename() const;
-{% endhighlight %}
-
-{% highlight cpp %}
 string_type do_falsename() const;
-{% endhighlight %}
-
-{% highlight cpp %}
 string_type do_falsename() const;
 {% endhighlight %}
 
 
-#### do_truename
+---------------------------------------
+
+### [2] do_truename
 {% highlight cpp %}
+string_type do_truename() const;
+string_type do_truename() const;
 string_type do_truename() const;
 {% endhighlight %}
 
-{% highlight cpp %}
-string_type do_truename() const;
-{% endhighlight %}
 
-{% highlight cpp %}
-string_type do_truename() const;
-{% endhighlight %}
+---------------------------------------
 
 ## Implementation
 

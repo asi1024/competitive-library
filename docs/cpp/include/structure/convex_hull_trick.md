@@ -1,35 +1,44 @@
-## ConvexHullTrick
+## Member functions
 
-### Member functions
-
-#### add
+### [1] add
 {% highlight cpp %}
 void add(Data a, Data b);
 {% endhighlight %}
 
 
-#### check
+---------------------------------------
+
+### [2] check
 {% highlight cpp %}
 bool check(pair< Data, Data > l3);
 {% endhighlight %}
 
 
-#### empty
+---------------------------------------
+
+### [3] empty
 {% highlight cpp %}
 bool empty() const;
 {% endhighlight %}
 
 
-#### f
+---------------------------------------
+
+### [4] f
 {% highlight cpp %}
 Data f(int k, Data x);
 {% endhighlight %}
 
 
-#### minimum
+---------------------------------------
+
+### [5] minimum
 {% highlight cpp %}
 Data minimum(Data x);
 {% endhighlight %}
+
+
+---------------------------------------
 
 ## Implementation
 

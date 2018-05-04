@@ -1,60 +1,78 @@
-## SegmentTree
+## Member functions
 
-### Member functions
-
-#### (constructor)
+### [1] (constructor)
 {% highlight cpp %}
 SegmentTree(const std::vector< T > &vec);
-{% endhighlight %}
-
-- vector 型の列 vec を表現するセグメント木を作る． 
-
-|:--:|:--|
-|vec|ベクトル |
-
-- Complexity: $O(n)$ 
-{% highlight cpp %}
 SegmentTree(const int count, const T &value=Monoid::id());
 {% endhighlight %}
 
+- vector 型の列 vec を表現するセグメント木を作る． 
 - 長さ count のセグメント木を作り，全ての要素を value で初期化する． 
 
+#### Parameters
+
 |:--:|:--|
+|vec|ベクトル |
 |count|構築するセグメント木の長さ |
 |value|各要素の初期値 |
 
-- Complexity: $O(n)$ 
+#### Time complexity
 
-#### query
+- $O(n)$ 
+
+---------------------------------------
+
+### [2] query
 {% highlight cpp %}
 T query(int l, int r) const;
 {% endhighlight %}
 
 - セグメント木の区間 [l, r) を演算 Monoid::op ($\cdot$) で畳み込んだ値を返す． すなわち，$a_l \cdot a_{l+1} \cdot \ldots \cdot a_{r-1}$ を返す． $l = r$ の場合は Monoid::id() を返す． 
 
-- Complexity: $O(\log n)$ 
+#### Time complexity
 
-#### size
+- $O(\log n)$ 
+
+---------------------------------------
+
+### [3] size
 {% highlight cpp %}
 int size() const;
 {% endhighlight %}
 
-- Complexity: $O(1)$ 
 
-#### update
+#### Return value
+
+- セグメント木のサイズを返す． 
+
+#### Time complexity
+
+- $O(1)$ 
+
+---------------------------------------
+
+### [4] update
 {% highlight cpp %}
 void update(int pos, const T &value);
 {% endhighlight %}
 
 - pos 番目の要素を value に更新する． その範囲を超えた場合は例外を送出する． 
 
+#### Parameters
+
 |:--:|:--|
 |pos|pos |
 |value|value |
 
-- Complexity: $O(\log n)$ 
+#### Precondition
 
-## RMQ
+- pos はセグメント木のサイズ未満の非負整数である必要がある． 
+
+#### Time complexity
+
+- $O(\log n)$ 
+
+---------------------------------------
 
 ## Implementation
 

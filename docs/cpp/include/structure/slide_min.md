@@ -1,35 +1,44 @@
-## SlideMin
+## Member functions
 
-### Member functions
-
-#### (constructor)
+### [1] (constructor)
 {% highlight cpp %}
 SlideMin();
 {% endhighlight %}
 
 
-#### minimum
+---------------------------------------
+
+### [2] minimum
 {% highlight cpp %}
 T minimum() const;
 {% endhighlight %}
 
 
-#### pop
+---------------------------------------
+
+### [3] pop
 {% highlight cpp %}
 void pop();
 {% endhighlight %}
 
 
-#### push
+---------------------------------------
+
+### [4] push
 {% highlight cpp %}
 void push(T val);
 {% endhighlight %}
 
 
-#### size
+---------------------------------------
+
+### [5] size
 {% highlight cpp %}
 int size() const;
 {% endhighlight %}
+
+
+---------------------------------------
 
 ## Implementation
 

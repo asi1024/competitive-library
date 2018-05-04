@@ -1,17 +1,20 @@
-## RollingHash
+## Member functions
 
-### Member functions
-
-#### (constructor)
+### [1] (constructor)
 {% highlight cpp %}
 RollingHash(const string &str);
 {% endhighlight %}
 
 
-#### query
+---------------------------------------
+
+### [2] query
 {% highlight cpp %}
 pair< ll, ll > query(int l, int r);
 {% endhighlight %}
+
+
+---------------------------------------
 
 ## Implementation
 
