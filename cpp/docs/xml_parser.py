@@ -59,7 +59,19 @@ def class_doc(node):
 
                 brief = elem.find('briefdescription/para')
                 if brief is not None:
-                    res += '- {}\n'.format(brief.text)
+                    res += '- {}\n\n'.format(brief.text)
+
+                detail = elem.find('detaileddescription/para')
+                if detail is not None:
+                    params = detail.findall('parameterlist/parameteritem')
+                    if params:
+                        res += '|:--:|:--|\n'
+                        for param in params:
+                            pnames = ', '.join(_.text for _ in param.findall('parameternamelist/parametername'))
+                            descrip = param.find('parameterdescription/para').text
+                            res += '|{}|{}|\n'.format(pnames, descrip)
+                        res += '\n'
+
                 sects = elem.findall('detaileddescription/para/simplesect')
                 complexity = filter_kind(sects, 'post')
                 if complexity is not None:

@@ -10,6 +10,7 @@ class SegmentTree {
   int expand(int m) const { return m == 1 ? m : expand((m + 1) / 2) * 2; }
 public:
   /// @complexity $O(n)$
+  /// @param vec: ベクトル
   /// @brief
   /// vector 型の列 vec を表現するセグメント木を作る．
   SegmentTree(const std::vector<T> &vec) :
@@ -22,6 +23,8 @@ public:
 
 
   /// @complexity $O(n)$
+  /// @param count: 構築するセグメント木の長さ
+  /// @param value: 各要素の初期値
   /// @brief
   /// 長さ count のセグメント木を作り，全ての要素を value で初期化する．
   SegmentTree(const int count, const T &value = Monoid::id()) :
@@ -29,11 +32,12 @@ public:
 
 
   /// @complexity $O(1)$
-  /// @brief
-  /// セグメント木のサイズを返す．
+  /// @return セグメント木のサイズを返す．
   int size() const { return size_; }
 
   /// @complexity $O(\\log n)$
+  /// @param pos: pos
+  /// @param value: value
   /// @brief
   /// pos 番目の要素を value に更新する．
   /// その範囲を超えた場合は例外を送出する．
