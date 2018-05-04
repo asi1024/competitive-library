@@ -10,8 +10,10 @@ def get_typedef(node):
     return [elem for elem in node.findall('./*/*/memberdef')
             if elem.attrib['kind'] == 'typedef']
 
+
 def tostring(node):
     return re.sub('<.*?>', '', ET.tostring(node).decode('utf-8').strip())
+
 
 def filter_kind(nodes, tag):
     x = [node for node in nodes if node.attrib['kind'] == tag]
@@ -66,14 +68,14 @@ def class_doc(node):
             # Parameters
             paramstr = ''
             for elem in nodes:
-                detail = elem.find('detaileddescription/para')
-                if detail is not None:
-                    params = detail.findall('parameterlist/parameteritem')
-                    if params:
-                        for param in params:
-                            pnames = ', '.join(_.text for _ in param.findall('parameternamelist/parametername'))
-                            descrip = param.find('parameterdescription/para').text
-                            paramstr += '|{}|{}|\n'.format(pnames, descrip)
+                params = elem.findall(
+                    'detaileddescription/para/parameterlist/parameteritem')
+                if params:
+                    for param in params:
+                        pl = param.findall('parameternamelist/parametername')
+                        pnames = ', '.join(_.text for _ in pl)
+                        descrip = param.find('parameterdescription/para').text
+                        paramstr += '|{}|{}|\n'.format(pnames, descrip)
 
             if paramstr:
                 res += '#### Parameters\n\n'
