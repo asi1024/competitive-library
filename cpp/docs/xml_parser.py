@@ -125,7 +125,7 @@ def function_doc(node):
     res += '\n{% endhighlight %}\n\n'
 
     if node.find('briefdescription/para') is not None:
-        res += node.find('briefdescription/para').text + '\n\n'
+        res += '- {}\n\n'.format(node.find('briefdescription/para').text)
 
     description_node = node.find('detaileddescription/para')
 
@@ -148,13 +148,15 @@ def function_doc(node):
     simplesect = description_node.findall('simplesect')
 
     res += '### Return value\n\n'
-    res += filter_kind(simplesect, 'return').find('para').text + '\n\n'
+    res += '- {}\n\n'.format(filter_kind(simplesect, 'return').find('para').text)
 
     res += '### Precondition\n\n'
-    res += filter_kind(simplesect, 'pre').find('para').text + '\n\n'
+    res += '- {}\n\n'.format(filter_kind(simplesect, 'pre').find('para').text)
 
     res += '### Time Complexity\n\n'
-    res += filter_kind(simplesect, 'post').find('para').text + '\n\n'
+    res += '- {}\n\n'.format(filter_kind(simplesect, 'post').find('para').text)
+
+    res += '---------------------------------------\n\n'
 
     return res.strip()
 
