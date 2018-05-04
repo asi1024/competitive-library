@@ -37,6 +37,12 @@ def class_doc(node):
                 fname = '(constructor)'
             fnames.add(fname)
 
+        fnames = sorted(list(fnames))
+        res += '### Member functions\n\n'
+        for fname in fnames:
+            res += '- {}\n'.format(fname)
+        res += '\n'
+
         for fname in fnames:
             nodes = [_ for _ in public_funcs if _.find('name').text == fname]
             for elem in nodes:
