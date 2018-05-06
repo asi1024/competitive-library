@@ -1,3 +1,5 @@
+{% include mathjax.html %}
+
 ## operator<<
 
 {% highlight cpp %}

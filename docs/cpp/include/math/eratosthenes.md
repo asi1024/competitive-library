@@ -1,3 +1,5 @@
+{% include mathjax.html %}
+
 ## primes
 
 {% highlight cpp %}

@@ -1,3 +1,5 @@
+{% include mathjax.html %}
+
 ## add_edge
 
 {% highlight cpp %}

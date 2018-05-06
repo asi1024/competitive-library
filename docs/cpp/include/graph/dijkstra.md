@@ -1,3 +1,5 @@
+{% include mathjax.html %}
+
 ## dijkstra
 
 {% highlight cpp %}

@@ -1,3 +1,5 @@
+{% include mathjax.html %}
+
 ## convex_hull
 
 {% highlight cpp %}

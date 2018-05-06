@@ -1,3 +1,5 @@
+{% include mathjax.html %}
+
 ## is_cc
 
 {% highlight cpp %}

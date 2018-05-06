@@ -1,3 +1,5 @@
+{% include mathjax.html %}
+
 ## min_cost_flow
 
 {% highlight cpp %}

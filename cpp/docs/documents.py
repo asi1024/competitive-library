@@ -46,7 +46,9 @@ def page(path, fname):
 
     dirname = os.path.dirname(__file__)
     xmlname = basename(fname).replace('_', '__')
-    res = xml_parser.main(dirname + '/xml/' + xmlname + '_8cpp.xml')
+
+    res = '{% include mathjax.html %}\n\n'
+    res += xml_parser.main(dirname + '/xml/' + xmlname + '_8cpp.xml')
     res += '\n\n'
 
     res += '## Implementation\n\n'

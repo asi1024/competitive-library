@@ -1,3 +1,5 @@
+{% include mathjax.html %}
+
 ## FMT
 
 {% highlight cpp %}

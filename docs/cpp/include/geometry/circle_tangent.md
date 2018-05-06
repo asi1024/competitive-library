@@ -1,3 +1,5 @@
+{% include mathjax.html %}
+
 ## tangent_cp
 
 {% highlight cpp %}

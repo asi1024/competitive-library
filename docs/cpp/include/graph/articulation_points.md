@@ -1,3 +1,5 @@
+{% include mathjax.html %}
+
 ## articulation_points
 
 {% highlight cpp %}

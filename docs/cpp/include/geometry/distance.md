@@ -1,3 +1,5 @@
+{% include mathjax.html %}
+
 ## dist_lp
 
 {% highlight cpp %}

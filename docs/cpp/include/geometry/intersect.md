@@ -1,3 +1,5 @@
+{% include mathjax.html %}
+
 ## isis_ll
 
 {% highlight cpp %}

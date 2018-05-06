@@ -1,3 +1,5 @@
+{% include mathjax.html %}
+
 ## bfs01
 
 {% highlight cpp %}

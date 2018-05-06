@@ -1,3 +1,5 @@
+{% include mathjax.html %}
+
 ## Member functions
 
 ### [1] add

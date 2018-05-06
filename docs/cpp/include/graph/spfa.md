@@ -1,3 +1,5 @@
+{% include mathjax.html %}
+
 ## spfa
 
 {% highlight cpp %}
