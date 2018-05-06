@@ -56,7 +56,7 @@ def class_doc(node):
                 typestr = elem.find('type').text
                 res += typestr + ' ' if typestr else ''
                 res += elem.find('name').text
-                res += elem.find('argsstring').text + ';\n'
+                res += elem.find('argsstring').text.strip() + ';\n'
             res += '{% endhighlight %}\n\n'
 
             for elem in nodes:
@@ -121,7 +121,7 @@ def function_doc(node):
     res += '## {}\n\n'.format(node.find('name').text)
 
     res += '{% highlight cpp %}\n'
-    res += node.find('definition').text + node.find('argsstring').text + ';'
+    res += node.find('definition').text + node.find('argsstring').text.strip() + ';'
     res += '\n{% endhighlight %}\n\n'
 
     if node.find('briefdescription/para') is not None:
