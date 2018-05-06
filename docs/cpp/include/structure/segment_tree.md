@@ -14,13 +14,13 @@ SegmentTree(const int count, const T &value=Monoid::id());
 #### Parameters
 
 |:--:|:--|
-|vec|ベクトル |
-|count|構築するセグメント木の長さ |
-|value|各要素の初期値 |
+|vec|ベクトル|
+|count|構築するセグメント木の長さ|
+|value|各要素の初期値|
 
 #### Time complexity
 
-- $O(n)$ 
+- $O(n)$
 
 ---------------------------------------
 
@@ -33,7 +33,7 @@ T query(int l, int r) const;
 
 #### Time complexity
 
-- $O(\log n)$ 
+- $O(\log n)$
 
 ---------------------------------------
 
@@ -45,11 +45,11 @@ int size() const;
 
 #### Return value
 
-- セグメント木のサイズを返す． 
+- セグメント木のサイズを返す．
 
 #### Time complexity
 
-- $O(1)$ 
+- $O(1)$
 
 ---------------------------------------
 
@@ -63,16 +63,16 @@ void update(int pos, const T &value);
 #### Parameters
 
 |:--:|:--|
-|pos|pos |
-|value|value |
+|pos|pos|
+|value|value|
 
 #### Precondition
 
-- pos はセグメント木のサイズ未満の非負整数である必要がある． 
+- pos はセグメント木のサイズ未満の非負整数である必要がある．
 
 #### Time complexity
 
-- $O(\log n)$ 
+- $O(\log n)$
 
 ---------------------------------------
 

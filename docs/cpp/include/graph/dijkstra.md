@@ -6,7 +6,7 @@
 vector<Cost> dijkstra(const vector< vector< Edge >> &g, int s, Cost zero=0);
 {% endhighlight %}
 
-- 負辺のない重み付きグラフの単一始点全点間最短距離を求める． 
+- 負辺のない重み付きグラフの単一始点全点間最短距離を求める．
 
 ### Parameters
 
@@ -17,15 +17,15 @@ vector<Cost> dijkstra(const vector< vector< Edge >> &g, int s, Cost zero=0);
 
 ### Return value
 
-- 始点から各頂点までの距離が入った型 Cost の列 
+- 始点から各頂点までの距離が入った型 Cost の列
 
 ### Precondition
 
-- 入力グラフに不辺があってはならない 
+- 入力グラフに不辺があってはならない
 
 ### Time Complexity
 
-- $O(E \log V)$ 
+- $O(E \log V)$
 
 ---------------------------------------
 

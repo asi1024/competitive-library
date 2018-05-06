@@ -11,7 +11,7 @@ FenwickTree(int count);
 
 #### Time complexity
 
-- $O(n)$ 
+- $O(n)$
 
 ---------------------------------------
 
@@ -24,7 +24,7 @@ void add(int pos, const T &value);
 
 #### Time complexity
 
-- $O(\log(n))$ 
+- $O(\log(n))$
 
 ---------------------------------------
 
@@ -39,7 +39,7 @@ T sum(int l, int r) const;
 
 #### Time complexity
 
-- $O(\log(n))$ 
+- $O(\log(n))$
 
 ---------------------------------------
 

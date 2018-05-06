@@ -21,7 +21,7 @@ def filter_kind(nodes, tag):
 
 
 def class_doc(node):
-    name = node.find('compoundname').text
+    name = node.find('compoundname').text.strip()
 
     res = ''
 
@@ -33,7 +33,7 @@ def class_doc(node):
         fnames = set()
 
         for elem in public_funcs:
-            fname = elem.find('name').text
+            fname = elem.find('name').text.strip()
             if fname == name:
                 fname = '(constructor)'
             elif fname == '~' + name:
@@ -49,13 +49,13 @@ def class_doc(node):
                 fname = name
             elif fname == '(destructor)':
                 fname = '~' + name
-            nodes = [_ for _ in public_funcs if _.find('name').text == fname]
+            nodes = [_ for _ in public_funcs if _.find('name').text.strip() == fname]
 
             res += '{% highlight cpp %}\n'
             for elem in nodes:
                 typestr = elem.find('type').text
-                res += typestr + ' ' if typestr else ''
-                res += elem.find('name').text
+                res += typestr.strip() + ' ' if typestr else ''
+                res += elem.find('name').text.strip()
                 res += elem.find('argsstring').text.strip() + ';\n'
             res += '{% endhighlight %}\n\n'
 
@@ -73,8 +73,8 @@ def class_doc(node):
                 if params:
                     for param in params:
                         pl = param.findall('parameternamelist/parametername')
-                        pnames = ', '.join(_.text for _ in pl)
-                        descrip = param.find('parameterdescription/para').text
+                        pnames = ', '.join(_.text.strip() for _ in pl)
+                        descrip = param.find('parameterdescription/para').text.strip()
                         paramstr += '|{}|{}|\n'.format(pnames, descrip)
 
             if paramstr:
@@ -88,7 +88,7 @@ def class_doc(node):
             for elem in nodes:
                 ret = filter_kind(sects, 'return')
                 if ret is not None:
-                    ret_text = ret.find('para').text
+                    ret_text = ret.find('para').text.strip()
                     res += '#### Return value\n\n'
                     res += '- {}\n\n'.format(ret_text)
                     break
@@ -97,7 +97,7 @@ def class_doc(node):
             for elem in nodes:
                 pre = filter_kind(sects, 'pre')
                 if pre is not None:
-                    pre_text = pre.find('para').text
+                    pre_text = pre.find('para').text.strip()
                     res += '#### Precondition\n\n'
                     res += '- {}\n\n'.format(pre_text)
                     break
@@ -106,7 +106,7 @@ def class_doc(node):
             for elem in nodes:
                 complexity = filter_kind(sects, 'post')
                 if complexity is not None:
-                    complexity_text = complexity.find('para').text
+                    complexity_text = complexity.find('para').text.strip()
                     res += '#### Time complexity\n\n'
                     res += '- {}\n\n'.format(complexity_text)
                     break
@@ -118,14 +118,14 @@ def class_doc(node):
 
 def function_doc(node):
     res = ''
-    res += '## {}\n\n'.format(node.find('name').text)
+    res += '## {}\n\n'.format(node.find('name').text.strip())
 
     res += '{% highlight cpp %}\n'
-    res += node.find('definition').text + node.find('argsstring').text.strip() + ';'
+    res += node.find('definition').text.strip() + node.find('argsstring').text.strip() + ';'
     res += '\n{% endhighlight %}\n\n'
 
     if node.find('briefdescription/para') is not None:
-        res += '- {}\n\n'.format(node.find('briefdescription/para').text)
+        res += '- {}\n\n'.format(node.find('briefdescription/para').text.strip())
 
     description_node = node.find('detaileddescription/para')
 
@@ -137,7 +137,7 @@ def function_doc(node):
         res += '### Parameters\n\n'
         res += '|:--:|:--|\n'
         for elem in params_list:
-            params = ', '.join('`' + _.find('parametername').text + '`'
+            params = ', '.join('`' + _.find('parametername').text.strip() + '`'
                                for _ in elem.findall('parameternamelist'))
             description = elem.find('parameterdescription/para').text.strip()
             res += '|{}|{}|\n'.format(params, description)
@@ -148,13 +148,13 @@ def function_doc(node):
     simplesect = description_node.findall('simplesect')
 
     res += '### Return value\n\n'
-    res += '- {}\n\n'.format(filter_kind(simplesect, 'return').find('para').text)
+    res += '- {}\n\n'.format(filter_kind(simplesect, 'return').find('para').text.strip())
 
     res += '### Precondition\n\n'
-    res += '- {}\n\n'.format(filter_kind(simplesect, 'pre').find('para').text)
+    res += '- {}\n\n'.format(filter_kind(simplesect, 'pre').find('para').text.strip())
 
     res += '### Time Complexity\n\n'
-    res += '- {}\n\n'.format(filter_kind(simplesect, 'post').find('para').text)
+    res += '- {}\n\n'.format(filter_kind(simplesect, 'post').find('para').text.strip())
 
     res += '---------------------------------------\n\n'
 
