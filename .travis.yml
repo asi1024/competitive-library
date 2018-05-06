@@ -72,6 +72,7 @@ matrix:
           sources: ['ubuntu-toolchain-r-test']
           packages: ['doxygen']
       script:
+        - doxygen --version
         - cp -r docs docs-spec
         - rm -rf docs/cpp
         - python --version
