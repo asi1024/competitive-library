@@ -7,6 +7,11 @@
 StarrySkyTree(int count);
 {% endhighlight %}
 
+- 長さ count の列を作り，全ての要素を 0 で初期化する． 
+
+#### Time complexity
+
+- $O(n)$
 
 ---------------------------------------
 
@@ -15,6 +20,11 @@ StarrySkyTree(int count);
 T query(int l, int r) const;
 {% endhighlight %}
 
+- 区間 [l, r) 番目の範囲の最小値を求める． 
+
+#### Time complexity
+
+- $O(\log(n))$
 
 ---------------------------------------
 
@@ -23,27 +33,13 @@ T query(int l, int r) const;
 void update(int l, int r, const T &val);
 {% endhighlight %}
 
+- 区間 [l, r) 番目の要素に値 value を加える． 
+
+#### Time complexity
+
+- $O(\log(n))$
 
 ---------------------------------------
-
-{% include mathjax.html %}
-
-### Usage
-
-{% highlight cpp %}
-(1) StarrySkyTree<typename T>(int count);
-(2) T update(int l, int r, const T& value);
-(3) T query(int l, int r) const;
-{% endhighlight %}
-
-- (1): 長さ count の列を作り，全ての要素を 0 で初期化する．
-- (2): 区間 [l, r) 番目の要素に値 value を加える．
-- (3): 区間 [l, r) 番目の範囲の最小値を求める．
-
-### Time Complexity
-- (1): $O(n)$
-- (2): $O(\log(n))$
-- (3): $O(\log(n))$
 
 ## Implementation
 
@@ -59,6 +55,7 @@ class StarrySkyTree {
   int expand(int m) const { return m == 1 ? m : expand((m + 1) / 2) * 2; }
 public:
   StarrySkyTree(int count) : n(expand(count)), data(n * 2, 0), lazy(n * 2, 0) {}
+
   void update(int l, int r, const T &val) {
     l += n; r += n;
     const int left = l, right = r;
@@ -73,6 +70,7 @@ public:
       data[r] = min(data[r * 2], data[r * 2 + 1]) + lazy[r];
     }
   }
+
   T query(int l, int r) const {
     l += n; r += n;
     T res1 = inf<T>, res2 = inf<T>;
