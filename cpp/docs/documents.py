@@ -51,6 +51,12 @@ def page(path, fname):
     res += xml_parser.main(dirname + '/xml/' + xmlname + '_8cpp.xml')
     res += '\n\n'
 
+    doc_path = path.replace('cpp/', 'cpp/docs/') + '/' + basename(fname) + '.md'
+    if os.path.exists(doc_path):
+        docf = open(doc_path)
+        res += ''.join(docf.readlines()) + '\n'
+        docf.close()
+
     res += '## Implementation\n\n'
     res += '- [GitHub]({})\n\n'.format(repo_path)
 
@@ -63,12 +69,6 @@ def page(path, fname):
         res += ''.join('- [{}]({})\n'.format(filename(name), basename(name))
                        for name in includes)
         res += '\n'
-
-    doc_path = path.replace('cpp/', 'cpp/docs/') + '/' + basename(fname) + '.md'
-    if os.path.exists(doc_path):
-        docf = open(doc_path)
-        res += ''.join(docf.readlines()) + '\n'
-        docf.close()
 
     res += '[Back]({})\n'.format(os.path.relpath('cpp/', path))
 

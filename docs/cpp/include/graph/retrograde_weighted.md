@@ -42,6 +42,14 @@ Edge(int t, Cost c);
 
 ---------------------------------------
 
+{% include mathjax.html %}
+
+### Memo
+
+- 二人ゲーム．グラフ上を交互に移動していき，移動できなくなった方が負け．
+- 勝者はパスのコストがなるべく小さくなるように，敗者は長くなるように選ぶ．
+- 各ノードから始めたときの先手の勝敗とコストを返す．
+
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/retrograde_weighted.cpp)
@@ -121,13 +129,5 @@ void add_edge(Graph &g, int from, int to, Edge::Cost cost) {
   g[from].emplace_back(to, cost);
 }
 {% endhighlight %}
-
-{% include mathjax.html %}
-
-### Memo
-
-- 二人ゲーム．グラフ上を交互に移動していき，移動できなくなった方が負け．
-- 勝者はパスのコストがなるべく小さくなるように，敗者は長くなるように選ぶ．
-- 各ノードから始めたときの先手の勝敗とコストを返す．
 
 [Back](../..)
