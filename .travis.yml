@@ -70,7 +70,7 @@ matrix:
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['doxygen']
+          packages: ['doxygen=1.8.13']
       script:
         - doxygen --version
         - cp -r docs docs-spec
