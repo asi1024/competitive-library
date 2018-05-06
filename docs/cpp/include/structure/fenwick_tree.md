@@ -7,7 +7,7 @@
 FenwickTree(int count);
 {% endhighlight %}
 
-- 長さ count の Fenwick Tree を作り，全ての要素を 0 で初期化する． 
+- 長さ count の Fenwick Tree を作り，全ての要素を 0 で初期化する．
 
 #### Time complexity
 
@@ -20,7 +20,7 @@ FenwickTree(int count);
 void add(int pos, const T &value);
 {% endhighlight %}
 
-- pos 番目の要素に値 value を加える． 
+- pos 番目の要素に値 value を加える．
 
 #### Time complexity
 
@@ -34,8 +34,8 @@ T sum(int pos) const;
 T sum(int l, int r) const;
 {% endhighlight %}
 
-- 区間 [0, pos) 番目の範囲の和を求める．(pos = 0 のときは 0 を返す．) 
-- 区間 [l, r) 番目の範囲の和を求める．(l = r のときは 0 を返す．) 
+- 区間 [0, pos) 番目の範囲の和を求める．(pos = 0 のときは 0 を返す．)
+- 区間 [l, r) 番目の範囲の和を求める．(l = r のときは 0 を返す．)
 
 #### Time complexity
 

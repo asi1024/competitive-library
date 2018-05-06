@@ -62,7 +62,7 @@ def class_doc(node):
             for elem in nodes:
                 brief = elem.find('briefdescription/para')
                 if brief is not None:
-                    res += '- {}\n'.format(brief.text)
+                    res += '- {}\n'.format(brief.text.strip())
             res += '\n'
 
             # Parameters

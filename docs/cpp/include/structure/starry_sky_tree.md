@@ -7,7 +7,7 @@
 StarrySkyTree(int count);
 {% endhighlight %}
 
-- 長さ count の列を作り，全ての要素を 0 で初期化する． 
+- 長さ count の列を作り，全ての要素を 0 で初期化する．
 
 #### Time complexity
 
@@ -20,7 +20,7 @@ StarrySkyTree(int count);
 T query(int l, int r) const;
 {% endhighlight %}
 
-- 区間 [l, r) 番目の範囲の最小値を求める． 
+- 区間 [l, r) 番目の範囲の最小値を求める．
 
 #### Time complexity
 
@@ -33,7 +33,7 @@ T query(int l, int r) const;
 void update(int l, int r, const T &val);
 {% endhighlight %}
 
-- 区間 [l, r) 番目の要素に値 value を加える． 
+- 区間 [l, r) 番目の要素に値 value を加える．
 
 #### Time complexity
 
