@@ -54,6 +54,8 @@ T sum(int l, int r) const;
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/fenwick_tree.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 template <typename T>
 class FenwickTree {
   const int n;
@@ -80,5 +82,9 @@ public:
   using update_type = T;
 };
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

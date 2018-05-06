@@ -68,6 +68,8 @@ pair<bool,vector<Cost>> spfa(const vector<vector<Edge>> &g, int s, Cost zero = 0
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/spfa.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 template <typename Edge, typename Cost = typename Edge::Cost>
 pair<bool,vector<Cost>> spfa(const vector<vector<Edge>> &g, int s, Cost zero = 0) {
   const int n = g.size();
@@ -109,5 +111,9 @@ void add_edge(Graph &g, int from, int to, Edge::Cost cost) {
   g[from].emplace_back(to, cost);
 }
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

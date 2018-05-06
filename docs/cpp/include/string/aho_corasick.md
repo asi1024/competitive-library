@@ -58,6 +58,8 @@ const int & operator[](char_t c) const;
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/aho_corasick.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 template<typename State>
 struct AhoCorasick {
   using string_t = typename State::string_t;
@@ -139,5 +141,9 @@ struct State {
   bool is_set(char_t c) { return edge[c - 'a'] >= 0; }
 };
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

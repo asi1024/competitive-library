@@ -51,6 +51,8 @@ operator()(const RangeUpdate &) const;
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/segment_tree_lazy.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 template<typename Update>
 class SegmentTreeLazy {
   const int n;
@@ -122,5 +124,9 @@ struct RangeUpdate {
   RangeUpdate operator()(const RangeUpdate &) const { return *this; }
 };
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

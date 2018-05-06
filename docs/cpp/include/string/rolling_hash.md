@@ -23,6 +23,8 @@ pair< ll, ll > query(int l, int r);
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/rolling_hash.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 class RollingHash {
   using ll = long long;
   const int n;
@@ -47,5 +49,9 @@ public:
   }
 };
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

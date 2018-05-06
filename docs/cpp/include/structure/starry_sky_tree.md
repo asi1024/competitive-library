@@ -50,6 +50,8 @@ void update(int l, int r, const T &val);
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/starry_sky_tree.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 template <typename T>
 class StarrySkyTree {
   const int n;
@@ -87,5 +89,9 @@ public:
   using update_type = T;
 };
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

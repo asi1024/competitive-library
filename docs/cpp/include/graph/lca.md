@@ -48,6 +48,8 @@ Edge(int t, Cost c);
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/lca.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 class LCA {
   int size, log_size;
   vector<vector<int>> parent;
@@ -98,5 +100,9 @@ void add_edge(Graph &g, int from, int to) {
   g[from].push_back(to);
 }
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

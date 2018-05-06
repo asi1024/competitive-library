@@ -58,6 +58,8 @@ Chain(int n, const T &init);
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/heavy_light_decomposition.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 template <typename DataStructure>
 struct HeavyLightDecomposition {
   using T = typename DataStructure::value_type;
@@ -218,5 +220,9 @@ private:
   }
 };
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

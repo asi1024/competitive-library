@@ -47,6 +47,8 @@ Data minimum(Data x);
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/convex_hull_trick.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 template<class Data>
 struct ConvexHullTrick {
   deque<pair<Data, Data>> l;
@@ -72,5 +74,9 @@ struct ConvexHullTrick {
   }
 };
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

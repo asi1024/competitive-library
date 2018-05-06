@@ -210,6 +210,8 @@ transpose() const;
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/matrix.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 template<typename T>
 class Vec {
 protected:
@@ -383,5 +385,9 @@ public:
   }
 };
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

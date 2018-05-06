@@ -96,6 +96,8 @@ class Monoid
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/segment_tree.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 template <class Monoid>
 class SegmentTree {
   using T = typename Monoid::type;
@@ -145,5 +147,9 @@ struct RMQ {
   static type op(const type &l, const type &r) { return min(l, r); }
 };
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

@@ -31,6 +31,8 @@ int maximum_matching(void);
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/bipartite_matching.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 class BipartiteMatching {
   int size;
   vector<vector<int>> g;
@@ -66,5 +68,9 @@ public:
   }
 };
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

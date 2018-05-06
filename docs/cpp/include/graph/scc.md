@@ -36,6 +36,8 @@ Edge(int t, Cost c);
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/scc.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 template<typename Edge>
 vector<int> scc(const vector<vector<Edge>> &g) {
   const int n = g.size();
@@ -77,5 +79,9 @@ void add_edge(Graph &g, int from, int to) {
   g[from].emplace_back(to);
 }
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

@@ -83,6 +83,7 @@ int query(int i, int j);
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/suffix_array.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
 #include "../structure/segment_tree.cpp"
 
 template<typename string_t>
@@ -171,6 +172,7 @@ public:
 
 ### Includes
 
+- [util.hpp](../util)
 - [segment_tree.cpp](../structure/segment_tree)
 
 [Back](../..)

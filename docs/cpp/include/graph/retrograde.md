@@ -36,6 +36,8 @@ Edge(int t, Cost c);
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/retrograde.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 enum Game { WIN, LOSE, DRAW };
 
 template<typename Edge>
@@ -91,5 +93,9 @@ void add_edge(Graph &g, int from, int to) {
   g[from].emplace_back(to);
 }
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

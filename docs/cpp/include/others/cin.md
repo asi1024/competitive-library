@@ -17,6 +17,8 @@ operator>>(string &var);
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/others/cin.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 class fast_istream {
   bool is_space(char c) { return c < 0x21 || c > 0x7E; }
   template<typename T> void get_integer(T &var) {
@@ -58,5 +60,9 @@ public:
 
 fast_istream fcin;
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

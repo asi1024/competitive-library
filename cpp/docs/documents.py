@@ -20,7 +20,6 @@ def dirname(fname):
 def ignored_line(s):
     s = s.strip()
     return (s.startswith('#pragma') or
-            (s.startswith('#include') and s.find('util.h') != -1) or
             s.startswith('///'))
 
 
@@ -41,8 +40,8 @@ def page(path, fname):
     f.close()
 
     repo_path = '{{ site.github.repository_url }}/blob/master/%s' % filepath
-    includes = [s.split('"')[1] for s in code_lines if s.find('#include') != -1
-                and s.find('util.h') == -1 and s.find('"') != -1]
+    includes = [s.split('"')[1] for s in code_lines
+                if s.strip().startswith('#include') and s.find('"') != -1]
 
     dirname = os.path.dirname(__file__)
     xmlname = basename(fname).replace('_', '__')

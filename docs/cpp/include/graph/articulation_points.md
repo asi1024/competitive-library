@@ -36,6 +36,8 @@ Edge(int t, Cost c);
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/articulation_points.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 template <typename Edge>
 pair<set<int>, vector<vector<Edge>>> articulation_points(const vector<vector<Edge>> &g) {
   const int n = g.size();
@@ -88,5 +90,9 @@ void add_edge(Graph &g, int from, int to) {
   g[to].push_back(Edge(to, from));
 }
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)
