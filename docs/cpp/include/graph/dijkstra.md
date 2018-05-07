@@ -19,7 +19,7 @@ vector<Cost> dijkstra(const vector< vector< Edge >> &g, int s, Cost zero=0);
 
 - 始点から各頂点までの距離が入った型 Cost の列
 
-### Precondition
+### Notes
 
 - 入力グラフに不辺があってはならない
 

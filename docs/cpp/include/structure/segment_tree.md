@@ -66,7 +66,7 @@ void update(int pos, const T &value);
 |pos|pos|
 |value|value|
 
-#### Precondition
+#### Notes
 
 - pos はセグメント木のサイズ未満の非負整数である必要がある．
 
