@@ -39,7 +39,7 @@ public:
   /// @brief
   /// pos 番目の要素を value に更新する．
   /// その範囲を超えた場合は例外を送出する．
-  /// @pre pos はセグメント木のサイズ未満の非負整数である必要がある．
+  /// @note pos はセグメント木のサイズ未満の非負整数である必要がある．
   void update(int pos, const T &value) {
     assert (0 <= pos && pos < size_); // assertion
     data[pos += n] = value;

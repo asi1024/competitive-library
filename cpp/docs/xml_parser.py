@@ -95,11 +95,11 @@ def class_doc(node):
 
             # Return value
             for elem in nodes:
-                pre = filter_kind(sects, 'pre')
-                if pre is not None:
-                    pre_text = pre.find('para').text.strip()
-                    res += '#### Precondition\n\n'
-                    res += '- {}\n\n'.format(pre_text)
+                note = filter_kind(sects, 'note')
+                if note is not None:
+                    note_text = note.find('para').text.strip()
+                    res += '#### Notes\n\n'
+                    res += '- {}\n\n'.format(note_text)
                     break
 
             # Time complexity
@@ -150,8 +150,8 @@ def function_doc(node):
     res += '### Return value\n\n'
     res += '- {}\n\n'.format(filter_kind(simplesect, 'return').find('para').text.strip())
 
-    res += '### Precondition\n\n'
-    res += '- {}\n\n'.format(filter_kind(simplesect, 'pre').find('para').text.strip())
+    res += '### Notes\n\n'
+    res += '- {}\n\n'.format(filter_kind(simplesect, 'note').find('para').text.strip())
 
     res += '### Time Complexity\n\n'
     res += '- {}\n\n'.format(filter_kind(simplesect, 'post').find('para').text.strip())
