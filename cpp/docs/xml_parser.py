@@ -84,6 +84,15 @@ def class_doc(node):
 
             sects = elem.findall('detaileddescription/para/simplesect')
 
+            # Type requirements
+            for elem in nodes:
+                pre = filter_kind(sects, 'pre')
+                if pre is not None:
+                    pre_text = pre.find('para').text.strip()
+                    res += '#### Type requirements\n\n'
+                    res += '- {}\n\n'.format(pre_text)
+                    break
+
             # Return value
             for elem in nodes:
                 ret = filter_kind(sects, 'return')
@@ -93,7 +102,7 @@ def class_doc(node):
                     res += '- {}\n\n'.format(ret_text)
                     break
 
-            # Return value
+            # Notes
             for elem in nodes:
                 note = filter_kind(sects, 'note')
                 if note is not None:
@@ -146,6 +155,12 @@ def function_doc(node):
     ## Type requirements (TODO)
     
     simplesect = description_node.findall('simplesect')
+
+    type_reqs = ['- ' + node.find('para').text.strip() + '\n'
+                 for node in simplesect if node.attrib['kind'] == 'pre']
+    if type_reqs:
+        res += '#### Type requirements\n\n'
+        res += ''.join(type_reqs) + '\n'
 
     res += '### Return value\n\n'
     res += '- {}\n\n'.format(filter_kind(simplesect, 'return').find('para').text.strip())

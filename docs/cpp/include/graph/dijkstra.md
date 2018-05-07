@@ -15,6 +15,12 @@ vector<Cost> dijkstra(const vector< vector< Edge >> &g, int s, Cost zero=0);
 |`s`|始点の頂点番号|
 |`zero`|型 Cost のゼロ値|
 
+#### Type requirements
+
+- Graph は vector<vector< dge >> 型である．
+- int edge::to が定義されている
+- typename edge::Cost が定義されていて，Cost の全順序と加算が定義されている．
+
 ### Return value
 
 - 始点から各頂点までの距離が入った型 Cost の列

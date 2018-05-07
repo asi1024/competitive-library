@@ -5,6 +5,9 @@
 /// @param g: 負辺のない重み付きグラフ
 /// @param s: 始点の頂点番号
 /// @param zero: 型 Cost のゼロ値
+/// @typereq Graph は vector&lt;vector&lt; dge &gt;&gt; 型である．
+/// @typereq int edge::to が定義されている
+/// @typereq typename edge::Cost が定義されていて，Cost の全順序と加算が定義されている．
 /// @return 始点から各頂点までの距離が入った型 Cost の列
 /// @note 入力グラフに不辺があってはならない
 /// @complexity $O(E \\log V)$
