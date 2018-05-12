@@ -17,9 +17,6 @@ vector<Cost> dijkstra(const vector< vector< Edge >> &g, int s, Cost zero=0);
 
 #### Type requirements
 
-- Graph は vector<vector< dge >> 型である．
-- int edge::to が定義されている
-- typename edge::Cost が定義されていて，Cost の全順序と加算が定義されている．
 
 ### Return value
 
