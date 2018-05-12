@@ -130,18 +130,20 @@ def function_doc(node):
     res += '## {}\n\n'.format(node.find('name').text.strip())
 
     res += '{% highlight cpp %}\n'
-    res += node.find('definition').text.strip() + node.find('argsstring').text.strip() + ';'
-    res += '\n{% endhighlight %}\n\n'
+    res += '{}{};\n'.format(node.find('definition').text.strip(),
+                            node.find('argsstring').text.strip())
+    res += '{% endhighlight %}\n\n'
 
-    if node.find('briefdescription/para') is not None:
-        res += '- {}\n\n'.format(node.find('briefdescription/para').text.strip())
+    brief_node = node.find('briefdescription/para')
+    detail_node = node.find('detaileddescription/para')
 
-    description_node = node.find('detaileddescription/para')
+    if brief_node is not None:
+        res += '- {}\n\n'.format(brief_node.text.strip())
 
-    if description_node is None:
+    if detail_node is None:
         return res.strip()
 
-    params_list = description_node.findall('parameterlist/parameteritem')
+    params_list = detail_node.findall('parameterlist/parameteritem')
     if len(params_list) > 0:
         res += '### Parameters\n\n'
         res += '|:--:|:--|\n'
@@ -152,24 +154,20 @@ def function_doc(node):
             res += '|{}|{}|\n'.format(params, description)
         res += '\n'
 
-    ## Type requirements (TODO)
-    
-    simplesect = description_node.findall('simplesect')
+    simplesect = detail_node.findall('simplesect')
 
-    type_reqs = ['- ' + node.find('para').text.strip() + '\n'
-                 for node in simplesect if node.attrib['kind'] == 'pre']
-    if type_reqs:
-        res += '#### Type requirements\n\n'
-        res += ''.join(type_reqs) + '\n'
+    def simplesect_func(attr, title):
+        nonlocal res
+        text_list = [node.find('para').text
+                     for node in simplesect if node.attrib['kind'] == attr]
+        if text_list:
+            text = ''.join('- ' + s.strip() + '\n' for s in text_list if s)
+            res += title + '\n\n' + text + '\n'
 
-    res += '### Return value\n\n'
-    res += '- {}\n\n'.format(filter_kind(simplesect, 'return').find('para').text.strip())
-
-    res += '### Notes\n\n'
-    res += '- {}\n\n'.format(filter_kind(simplesect, 'note').find('para').text.strip())
-
-    res += '### Time Complexity\n\n'
-    res += '- {}\n\n'.format(filter_kind(simplesect, 'post').find('para').text.strip())
+    simplesect_func('pre', '#### Type requirements')
+    simplesect_func('return', '### Return value')
+    simplesect_func('note', '### Notes')
+    simplesect_func('post', '### Time Complexity')
 
     res += '---------------------------------------\n\n'
 
