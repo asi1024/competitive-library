@@ -82,43 +82,25 @@ def class_doc(node):
                 res += '|:--:|:--|\n'
                 res += paramstr + '\n'
 
-            sects = elem.findall('detaileddescription/para/simplesect')
+            simplesect = elem.findall('detaileddescription/para/simplesect')
 
-            # Type requirements
-            for elem in nodes:
-                pre = filter_kind(sects, 'pre')
-                if pre is not None:
-                    pre_text = pre.find('para').text.strip()
-                    res += '#### Type requirements\n\n'
-                    res += '- {}\n\n'.format(pre_text)
-                    break
+            def simplesect_func(attr, title, limit=None):
+                nonlocal res
+                text_list = []
+                for elem in nodes:
+                    pre = filter_kind(simplesect, attr)
+                    if pre is not None:
+                        text = '- {}\n'.format(pre.find('para').text.strip())
+                        text_list.append(text)
+                if limit is not None:
+                    text_list = text_list[:limit]
+                if text_list:
+                    res += title + '\n\n' + ''.join(text_list) + '\n'
 
-            # Return value
-            for elem in nodes:
-                ret = filter_kind(sects, 'return')
-                if ret is not None:
-                    ret_text = ret.find('para').text.strip()
-                    res += '#### Return value\n\n'
-                    res += '- {}\n\n'.format(ret_text)
-                    break
-
-            # Notes
-            for elem in nodes:
-                note = filter_kind(sects, 'note')
-                if note is not None:
-                    note_text = note.find('para').text.strip()
-                    res += '#### Notes\n\n'
-                    res += '- {}\n\n'.format(note_text)
-                    break
-
-            # Time complexity
-            for elem in nodes:
-                complexity = filter_kind(sects, 'post')
-                if complexity is not None:
-                    complexity_text = complexity.find('para').text.strip()
-                    res += '#### Time complexity\n\n'
-                    res += '- {}\n\n'.format(complexity_text)
-                    break
+            simplesect_func('pre', '#### Type requirements')
+            simplesect_func('return', '#### Return value')
+            simplesect_func('note', '#### Notes')
+            simplesect_func('post', '#### Time complexity', 1)
 
             res += '---------------------------------------\n\n'
 
@@ -158,8 +140,8 @@ def function_doc(node):
 
     def simplesect_func(attr, title):
         nonlocal res
-        text_list = [node.find('para').text
-                     for node in simplesect if node.attrib['kind'] == attr]
+        text_list = [node.find('para').text for node in simplesect
+                     if node.attrib['kind'] == attr]
         if text_list:
             text = ''.join('- ' + s.strip() + '\n' for s in text_list if s)
             res += title + '\n\n' + text + '\n'
