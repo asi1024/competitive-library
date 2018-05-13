@@ -7,7 +7,7 @@
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_1_A.cpp)
 
 {% highlight cpp %}
-#include "../include/graph/weighted_graph.cpp"
+#include "../include/graph/weighted_graph.hpp"
 #include "../include/graph/dijkstra.cpp"
 
 int main() {
@@ -29,7 +29,7 @@ int main() {
 
 ### Includes
 
-- [weighted_graph.cpp](../include/graph/weighted_graph)
+- [weighted_graph.hpp](../include/graph/weighted_graph)
 - [dijkstra.cpp](../include/graph/dijkstra)
 
 [Back](..)

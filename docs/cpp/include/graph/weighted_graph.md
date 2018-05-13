@@ -12,10 +12,10 @@ WeightedEdge(int, int t, cost_type c);
 
 ## Implementation
 
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/weighted_graph.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/weighted_graph.hpp)
 
 {% highlight cpp %}
-#include "graph.hpp"
+#include "definition.hpp"
 
 template<typename Cost>
 class WeightedEdge {
@@ -32,6 +32,6 @@ using WeightedGraph = graph_t<WeightedEdge<Cost>>;
 
 ### Includes
 
-- [graph.hpp](graph)
+- [definition.hpp](definition)
 
 [Back](../..)
