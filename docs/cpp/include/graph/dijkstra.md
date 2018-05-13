@@ -37,11 +37,6 @@ std::vector<cost_type> dijkstra(const graph_t< edge_t > &g, int s);
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/dijkstra.cpp)
 
 {% highlight cpp %}
-#include <functional>
-#include <queue>
-#include <utility>
-#include <vector>
-
 #include "../template/const_value.hpp"
 #include "definition.hpp"
 

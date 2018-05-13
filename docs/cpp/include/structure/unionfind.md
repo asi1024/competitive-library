@@ -59,7 +59,7 @@ bool unite(int x, int y);
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/unionfind.cpp)
 
 {% highlight cpp %}
-#include <vector>
+#include "../template/includes.hpp"
 
 class UnionFind {
   std::vector<int> p;
@@ -84,5 +84,9 @@ public:
   }
 };
 {% endhighlight %}
+
+### Includes
+
+- [includes.hpp](../template/includes)
 
 [Back](../..)

@@ -7,7 +7,7 @@
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/definition.hpp)
 
 {% highlight cpp %}
-#include <vector>
+#include "../template/includes.hpp"
 
 template<class edge_t>
 class graph_t {
@@ -35,5 +35,9 @@ public:
   iterator &end() { return end(g); }
 };
 {% endhighlight %}
+
+### Includes
+
+- [includes.hpp](../template/includes)
 
 [Back](../..)

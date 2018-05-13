@@ -34,10 +34,6 @@ std::pair<bool,std::vector<cost_type> > spfa(const graph_t< edge_t > &g, int s);
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/spfa.cpp)
 
 {% highlight cpp %}
-#include <vector>
-#include <queue>
-#include <utility>
-
 #include "../template/const_value.hpp"
 #include "definition.hpp"
 
