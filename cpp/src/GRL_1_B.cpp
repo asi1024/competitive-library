@@ -1,16 +1,22 @@
+#include <cstdio>
+#include <tuple>
+
 #include "../include/graph/spfa.cpp"
+#include "../include/graph/weighted_graph.hpp"
+
+using namespace std;
 
 int main() {
   int V, E, r, s, t, d;
   scanf("%d%d%d", &V, &E, &r);
-  Graph g(V);
+  WeightedGraph<int> g(V);
   while (E--) {
     scanf("%d%d%d", &s, &t, &d);
-    add_edge(g, s, t, d);
+    g.add(s, t, d);
   }
   bool flag;
   vector<int> res;
-  tie(flag, res) = spfa(g, r);
+  std::tie(flag, res) = spfa(g, r);
   if (flag) {
     for (int i = 0; i < V; ++i) {
       if (res[i] == inf<int>) puts("INF");

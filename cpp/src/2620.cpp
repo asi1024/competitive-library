@@ -1,7 +1,11 @@
+#include <cstring>
+
 #include "../include/graph/weighted_graph.hpp"
 #include "../include/graph/dijkstra.cpp"
 
 #define REP(i,n) for(int i=0;i<(n);++i)
+
+using namespace std;
 
 int ri[512][512], dw[512][512];
 char str[1024];

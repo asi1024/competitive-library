@@ -9,8 +9,8 @@
 {% highlight cpp %}
 #include <cstdio>
 
-#include "../include/graph/weighted_graph.hpp"
 #include "../include/graph/dijkstra.cpp"
+#include "../include/graph/weighted_graph.hpp"
 
 int main() {
   int V, E, r, s, t, d;
@@ -31,7 +31,7 @@ int main() {
 
 ### Includes
 
-- [weighted_graph.hpp](../include/graph/weighted_graph)
 - [dijkstra.cpp](../include/graph/dijkstra)
+- [weighted_graph.hpp](../include/graph/weighted_graph)
 
 [Back](..)

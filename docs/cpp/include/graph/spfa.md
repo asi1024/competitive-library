@@ -3,32 +3,8 @@
 ## spfa
 
 {% highlight cpp %}
-pair<bool,vector<Cost> > spfa(const vector< vector< Edge >> &g, int s, Cost zero=0);
+std::pair<bool,std::vector<cost_type> > spfa(const graph_t< edge_t > &g, int s);
 {% endhighlight %}
-
-## add_edge
-
-{% highlight cpp %}
-void add_edge(Graph &g, int from, int to, Edge::Cost cost);
-{% endhighlight %}
-
-## Member functions
-
-### [1] (constructor)
-{% highlight cpp %}
-Edge(int s, int t);
-Edge(int t, Cost c);
-Edge(int t);
-Edge(int t, Flow f, int r);
-Edge(int t, Flow f, int r, Cost c);
-Edge(int t);
-Edge(int t, Cost c);
-Edge(int t);
-Edge(int t, Cost c);
-{% endhighlight %}
-
-
----------------------------------------
 
 {% include mathjax.html %}
 
@@ -67,15 +43,20 @@ pair<bool,vector<Cost>> spfa(const vector<vector<Edge>> &g, int s, Cost zero = 0
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/spfa.cpp)
 
 {% highlight cpp %}
-#include "../util.hpp"
+#include <vector>
+#include <queue>
+#include <utility>
 
-template <typename Edge, typename Cost = typename Edge::Cost>
-pair<bool,vector<Cost>> spfa(const vector<vector<Edge>> &g, int s, Cost zero = 0) {
+#include "../template/const_value.hpp"
+#include "definition.hpp"
+
+template <typename edge_t, typename cost_type = typename edge_t::cost_type>
+std::pair<bool,std::vector<cost_type>> spfa(const graph_t<edge_t> &g, int s) {
   const int n = g.size();
-  vector<Cost> d(n, inf<Cost>); d[s] = zero;
-  vector<int> updated(n, 0);
-  vector<bool> inque(n, false);
-  queue<int> que;
+  std::vector<cost_type> d(n, inf<cost_type>); d[s] = zero<cost_type>;
+  std::vector<int> updated(n, 0);
+  std::vector<bool> inque(n, false);
+  std::queue<int> que;
   que.push(s);
   while (!que.empty()) {
     int from = que.front();
@@ -84,7 +65,7 @@ pair<bool,vector<Cost>> spfa(const vector<vector<Edge>> &g, int s, Cost zero = 0
     ++updated[from];
     if (updated[from] == n + 1) return {false, d}; // negative cycle
     for (const auto &e: g[from]) {
-      Cost cost = d[from] + e.cost;
+      cost_type cost = d[from] + e.cost;
       if (cost < d[e.to]) {
         d[e.to] = cost;
         if (!inque[e.to]) {
@@ -96,23 +77,11 @@ pair<bool,vector<Cost>> spfa(const vector<vector<Edge>> &g, int s, Cost zero = 0
   }
   return {true, d};
 }
-
-struct Edge {
-  using Cost = int;
-  int to;
-  Cost cost;
-  Edge(int t, Cost c) : to(t), cost(c) {}
-};
-
-using Graph = vector<vector<Edge>>;
-
-void add_edge(Graph &g, int from, int to, Edge::Cost cost) {
-  g[from].emplace_back(to, cost);
-}
 {% endhighlight %}
 
 ### Includes
 
-- [util.hpp](../util)
+- [const_value.hpp](../template/const_value)
+- [definition.hpp](definition)
 
 [Back](../..)
