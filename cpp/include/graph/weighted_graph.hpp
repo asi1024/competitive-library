@@ -1,4 +1,4 @@
-#include "graph.hpp"
+#include "definition.hpp"
 
 template<typename Cost>
 class WeightedEdge {
