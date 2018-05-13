@@ -1,10 +1,10 @@
-## DSL_2_B.cpp
+{% include mathjax.html %}
+
+
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_B.cpp)
-
-### Includes
-
-- [fenwick_tree.cpp](../include/structure/fenwick_tree)
 
 {% highlight cpp %}
 #include "../include/structure/fenwick_tree.cpp"
@@ -21,5 +21,9 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+### Includes
+
+- [fenwick_tree.cpp](../include/structure/fenwick_tree)
 
 [Back](..)

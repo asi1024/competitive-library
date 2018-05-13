@@ -1,8 +1,65 @@
-## aho_corasick.cpp
+{% include mathjax.html %}
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+AhoCorasick(const vector< string_t > &str);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [2] next
+{% highlight cpp %}
+int next(int index, char_t c);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [3] query
+{% highlight cpp %}
+vector< int > query(string_t &t);
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+State();
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [2] is_set
+{% highlight cpp %}
+bool is_set(char_t c);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [3] operator[]
+{% highlight cpp %}
+int & operator[](char_t c);
+const int & operator[](char_t c) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/aho_corasick.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 template<typename State>
 struct AhoCorasick {
   using string_t = typename State::string_t;
@@ -84,5 +141,9 @@ struct State {
   bool is_set(char_t c) { return edge[c - 'a'] >= 0; }
 };
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

@@ -1,10 +1,10 @@
-## ITP1_7_D.cpp
+{% include mathjax.html %}
+
+
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/ITP1_7_D.cpp)
-
-### Includes
-
-- [matrix.cpp](../include/math/matrix)
 
 {% highlight cpp %}
 #include "../include/math/matrix.cpp"
@@ -22,5 +22,9 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+### Includes
+
+- [matrix.cpp](../include/math/matrix)
 
 [Back](..)

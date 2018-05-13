@@ -1,10 +1,10 @@
-## GRL_3_C.cpp
+{% include mathjax.html %}
+
+
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_3_C.cpp)
-
-### Includes
-
-- [scc.cpp](../include/graph/scc)
 
 {% highlight cpp %}
 #include "../include/graph/scc.cpp"
@@ -26,5 +26,9 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+### Includes
+
+- [scc.cpp](../include/graph/scc)
 
 [Back](..)

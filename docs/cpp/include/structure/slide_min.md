@@ -1,8 +1,54 @@
-## slide_min.cpp
+{% include mathjax.html %}
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+SlideMin();
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [2] minimum
+{% highlight cpp %}
+T minimum() const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [3] pop
+{% highlight cpp %}
+void pop();
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [4] push
+{% highlight cpp %}
+void push(T val);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [5] size
+{% highlight cpp %}
+int size() const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/slide_min.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 template <typename T>
 struct SlideMin {
   deque<pair<int,T>> deq;
@@ -22,5 +68,9 @@ struct SlideMin {
   T minimum() const { return deq.front().second; }
 };
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

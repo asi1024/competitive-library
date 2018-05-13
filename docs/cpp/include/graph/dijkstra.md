@@ -1,8 +1,96 @@
-## dijkstra.cpp
+{% include mathjax.html %}
+
+## dijkstra
+
+{% highlight cpp %}
+vector<Cost> dijkstra(const vector< vector< Edge >> &g, int s, Cost zero=0);
+{% endhighlight %}
+
+- 負辺のない重み付きグラフの単一始点全点間最短距離を求める．
+
+### Parameters
+
+|:--:|:--|
+|`g`|負辺のない重み付きグラフ|
+|`s`|始点の頂点番号|
+|`zero`|型 Cost のゼロ値|
+
+#### Type requirements
+
+
+### Return value
+
+- 始点から各頂点までの距離が入った型 Cost の列
+
+### Notes
+
+- 入力グラフに不辺があってはならない
+
+### Time Complexity
+
+- $O(E \log V)$
+
+---------------------------------------
+
+## add_edge
+
+{% highlight cpp %}
+void add_edge(Graph &g, int from, int to, Edge::Cost cost);
+{% endhighlight %}
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+Edge(int s, int t);
+Edge(int t, Cost c);
+Edge(int t, Cost c);
+Edge(int t);
+Edge(int t, Flow f, int r);
+Edge(int t, Flow f, int r, Cost c);
+Edge(int t);
+Edge(int t, Cost c);
+Edge(int t);
+Edge(int t, Cost c);
+{% endhighlight %}
+
+
+---------------------------------------
+
+{% include mathjax.html %}
+
+### Usage
+
+{% highlight cpp %}
+vector<Cost> dijkstra(const vector<vector<Edge>> &g, int s, Cost zero = 0);
+{% endhighlight %}
+
+負辺のない重み付きグラフの単一始点全点間最短距離を求める．
+
+### Parameters
+- `g` : 負辺のない重み付きグラフ
+- `s` : 始点の頂点番号
+- `zero` : 型 Cost のゼロ値
+
+### Type requirements
+- `Cost` 同士の加算と比較が定義されている必要がある．
+
+### Return value
+各頂点までの距離が入った型 `Cost` の列
+
+### Exceptions
+(none)
+
+### Time Complexity
+- $O(E \log V)$
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/dijkstra.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 template <typename Edge, typename Cost = typename Edge::Cost>
 vector<Cost> dijkstra(const vector<vector<Edge>> &g, int s, Cost zero = 0) {
   vector<Cost> d(g.size(), inf<Cost>);
@@ -38,31 +126,8 @@ void add_edge(Graph &g, int from, int to, Edge::Cost cost) {
 }
 {% endhighlight %}
 
-{% include mathjax.html %}
+### Includes
 
-### Usage
-
-{% highlight cpp %}
-vector<Cost> dijkstra(const vector<vector<Edge>> &g, int s, Cost zero = 0);
-{% endhighlight %}
-
-負辺のない重み付きグラフの単一始点全点間最短距離を求める．
-
-### Parameters
-- `g` : 負辺のない重み付きグラフ
-- `s` : 始点の頂点番号
-- `zero` : 型 Cost のゼロ値
-
-### Type requirements
-- `Cost` 同士の加算と比較が定義されている必要がある．
-
-### Return value
-各頂点までの距離が入った型 `Cost` の列
-
-### Exceptions
-(none)
-
-### Time Complexity
-- $O(E \log V)$
+- [util.hpp](../util)
 
 [Back](../..)

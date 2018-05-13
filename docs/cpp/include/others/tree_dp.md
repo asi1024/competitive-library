@@ -1,4 +1,156 @@
-## tree_dp.cpp
+{% include mathjax.html %}
+
+## chmin
+
+{% highlight cpp %}
+T& chmin(T &a, const T &b);
+{% endhighlight %}
+
+## chmax
+
+{% highlight cpp %}
+T& chmax(T &a, const T &b);
+{% endhighlight %}
+
+## main
+
+{% highlight cpp %}
+int main();
+{% endhighlight %}
+
+## Member functions
+
+### [1] do_falsename
+{% highlight cpp %}
+string_type do_falsename() const;
+string_type do_falsename() const;
+string_type do_falsename() const;
+string_type do_falsename() const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [2] do_truename
+{% highlight cpp %}
+string_type do_truename() const;
+string_type do_truename() const;
+string_type do_truename() const;
+string_type do_truename() const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+UnionFind(int n);
+UnionFind(int n);
+{% endhighlight %}
+
+- $0$ から $n - 1$ までそれぞれに対して，その要素だけを格納した集合を作る．
+
+#### Time complexity
+
+- $O(n)$
+
+---------------------------------------
+
+### [2] root
+{% highlight cpp %}
+int root(int x);
+int root(int x);
+{% endhighlight %}
+
+- $x$ を含む集合の代表元を返す．
+
+#### Time complexity
+
+- amortized $O((n))$
+
+---------------------------------------
+
+### [3] same
+{% highlight cpp %}
+bool same(int x, int y);
+bool same(int x, int y);
+{% endhighlight %}
+
+- $x$ と $y$ が同一の集合に属するかどうかを返す．
+
+#### Time complexity
+
+- amortized $O((n))$
+
+---------------------------------------
+
+### [4] unite
+{% highlight cpp %}
+bool unite(int x, int y);
+bool unite(int x, int y);
+{% endhighlight %}
+
+- $x$ を含む集合と $y$ を含む集合を併合する． 既に $x$ を含む集合と $y$ を含む集合が同じ集合である場合は false を返し， そうでない場合は true を返す．
+
+#### Time complexity
+
+- amortized $O((n))$
+
+---------------------------------------
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+TreeDP(const Graph &g);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [2] dfsl
+{% highlight cpp %}
+dfsl(int v, int pos);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [3] dfsr
+{% highlight cpp %}
+dfsr(int v, int pos);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [4] dfsv
+{% highlight cpp %}
+dfsv(int v, int p);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [5] init
+{% highlight cpp %}
+init(Graph g);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [6] query
+{% highlight cpp %}
+query(int v);
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/others/tree_dp.cpp)
 

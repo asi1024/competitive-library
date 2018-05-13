@@ -1,8 +1,49 @@
-## max_flow.cpp
+{% include mathjax.html %}
+
+## augment
+
+{% highlight cpp %}
+Flow augment(vector< vector< Edge >> &g, vector< int > &d, vector< int > &iter, int v, int t, const Flow &f);
+{% endhighlight %}
+
+## max_flow
+
+{% highlight cpp %}
+Flow max_flow(vector< vector< Edge >> &g, int s, int t, Flow zero=0);
+{% endhighlight %}
+
+## add_edge
+
+{% highlight cpp %}
+void add_edge(Graph &g, int from, int to, Edge::Flow cap);
+{% endhighlight %}
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+Edge(int s, int t);
+Edge(int t, Cost c);
+Edge(int t, Cost c);
+Edge(int t);
+Edge(int t, Flow f, int r);
+Edge(int t, Flow f, int r, Cost c);
+Edge(int t);
+Edge(int t, Cost c);
+Edge(int t);
+Edge(int t, Cost c);
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/max_flow.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 template <typename Edge, typename Flow = typename Edge::Flow>
 Flow augment(vector<vector<Edge>> &g, vector<int> &d, vector<int> &iter,
              int v, int t, const Flow &f) {
@@ -59,5 +100,9 @@ void add_edge(Graph &g, int from, int to, Edge::Flow cap) {
   g[to].emplace_back(from, 0, (int)g[from].size() - 1);
 }
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

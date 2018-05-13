@@ -1,12 +1,26 @@
-## circle_intersect.cpp
+{% include mathjax.html %}
+
+## is_cc
+
+{% highlight cpp %}
+vector<Point> is_cc(Circle c1, Circle c2);
+{% endhighlight %}
+
+## is_cl
+
+{% highlight cpp %}
+vector<Point> is_cl(Circle c, Line l);
+{% endhighlight %}
+
+## is_cs
+
+{% highlight cpp %}
+vector<Point> is_cs(Circle c, Segment s);
+{% endhighlight %}
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/circle_intersect.cpp)
-
-### Includes
-
-- [Geometry.hpp](Geometry)
-- [intersect.cpp](intersect)
-- [distance.cpp](distance)
 
 {% highlight cpp %}
 #include "Geometry.hpp"
@@ -46,5 +60,11 @@ vector<Point> is_cs(Circle c, Segment s){
   return res;
 }
 {% endhighlight %}
+
+### Includes
+
+- [Geometry.hpp](Geometry)
+- [intersect.cpp](intersect)
+- [distance.cpp](distance)
 
 [Back](../..)

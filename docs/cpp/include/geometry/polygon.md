@@ -1,10 +1,20 @@
-## polygon.cpp
+{% include mathjax.html %}
+
+## area
+
+{% highlight cpp %}
+ld area(const Polygon &g);
+{% endhighlight %}
+
+## is_in_polygon
+
+{% highlight cpp %}
+int is_in_polygon(const Polygon &g, Point p);
+{% endhighlight %}
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/polygon.cpp)
-
-### Includes
-
-- [intersect.cpp](intersect)
 
 {% highlight cpp %}
 #include "intersect.cpp"
@@ -31,5 +41,9 @@ int is_in_polygon(const Polygon &g, Point p) {
   return abs(sum) > 0.5 ? 1 : -1;
 }
 {% endhighlight %}
+
+### Includes
+
+- [intersect.cpp](intersect)
 
 [Back](../..)

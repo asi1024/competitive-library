@@ -1,8 +1,14 @@
-## Geometry.hpp
+{% include mathjax.html %}
+
+
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/Geometry.hpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 using Point = complex<ld>;
 using Polygon = vector<Point>;
 
@@ -55,5 +61,9 @@ vector<Point> unique(vector<Point> ps) {
   return res;
 }
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

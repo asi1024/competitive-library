@@ -1,4 +1,268 @@
-## solid_geometry.cpp
+{% include mathjax.html %}
+
+## chmin
+
+{% highlight cpp %}
+T& chmin(T &a, const T &b);
+{% endhighlight %}
+
+## chmax
+
+{% highlight cpp %}
+T& chmax(T &a, const T &b);
+{% endhighlight %}
+
+## main
+
+{% highlight cpp %}
+int main();
+{% endhighlight %}
+
+## dot
+
+{% highlight cpp %}
+ld dot(const PointND< D > &a, const PointND< D > &b);
+{% endhighlight %}
+
+## norm
+
+{% highlight cpp %}
+ld norm(const PointND< D > &a);
+{% endhighlight %}
+
+## abs
+
+{% highlight cpp %}
+ld abs(const PointND< D > &a);
+{% endhighlight %}
+
+## operator<<
+
+{% highlight cpp %}
+ostream& operator<<(ostream &os, PointND< D > p);
+{% endhighlight %}
+
+## cross
+
+{% highlight cpp %}
+Point3D cross(const Point3D &l, const Point3D &r);
+{% endhighlight %}
+
+## volume
+
+{% highlight cpp %}
+ld volume(const Point3D &a, const Point3D &b, const Point3D &c);
+{% endhighlight %}
+
+## is_in_segment
+
+{% highlight cpp %}
+bool is_in_segment(const Segment3D &s, const Point3D &p);
+{% endhighlight %}
+
+## project_lp
+
+{% highlight cpp %}
+Point3D project_lp(const Segment3D &s, Point3D &p);
+{% endhighlight %}
+
+## conj
+
+{% highlight cpp %}
+Quaternion conj(const Quaternion &x);
+{% endhighlight %}
+
+## operator*
+
+{% highlight cpp %}
+Quaternion operator*(const Quaternion &l, const Quaternion &r);
+{% endhighlight %}
+
+## operator*=
+
+{% highlight cpp %}
+Quaternion& operator*=(Quaternion &l, const Quaternion &r);
+{% endhighlight %}
+
+## inv
+
+{% highlight cpp %}
+Quaternion inv(const Quaternion &x);
+{% endhighlight %}
+
+## make_quaternion
+
+{% highlight cpp %}
+Quaternion make_quaternion(const Point3D &axis, const ld theta);
+{% endhighlight %}
+
+## rotate
+
+{% highlight cpp %}
+Point3D rotate(Quaternion rot, const Point3D &x);
+{% endhighlight %}
+
+## Member functions
+
+### [1] do_falsename
+{% highlight cpp %}
+string_type do_falsename() const;
+string_type do_falsename() const;
+string_type do_falsename() const;
+string_type do_falsename() const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [2] do_truename
+{% highlight cpp %}
+string_type do_truename() const;
+string_type do_truename() const;
+string_type do_truename() const;
+string_type do_truename() const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+GoogleCodeJam();
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [2] exec
+{% highlight cpp %}
+void exec() const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+PointND(array< ld, D > x);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [2] abs
+{% highlight cpp %}
+abs() const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [3] dot
+{% highlight cpp %}
+dot(const PointND &r) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [4] norm
+{% highlight cpp %}
+norm() const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [5] operator*
+{% highlight cpp %}
+operator*(const ld &r) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [6] operator*=
+{% highlight cpp %}
+operator*=(const ld &r);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [7] operator+
+{% highlight cpp %}
+operator+(const PointND &r) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [8] operator+=
+{% highlight cpp %}
+operator+=(const PointND &r);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [9] operator-
+{% highlight cpp %}
+operator-() const;
+operator-(const PointND &r) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [10] operator-=
+{% highlight cpp %}
+operator-=(const PointND &r);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [11] operator/
+{% highlight cpp %}
+operator/(const ld &r) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [12] operator/=
+{% highlight cpp %}
+operator/=(const ld &r);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [13] operator[]
+{% highlight cpp %}
+operator[](int i);
+const operator[](int i) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+Segment3D(const Point3D &a, const Point3D &b);
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/solid_geometry.cpp)
 

@@ -1,10 +1,10 @@
-## CGL_2_D.cpp
+{% include mathjax.html %}
+
+
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_2_D.cpp)
-
-### Includes
-
-- [distance.cpp](../include/geometry/distance)
 
 {% highlight cpp %}
 #include "../include/geometry/distance.cpp"
@@ -26,5 +26,9 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+### Includes
+
+- [distance.cpp](../include/geometry/distance)
 
 [Back](..)

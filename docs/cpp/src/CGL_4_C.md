@@ -1,11 +1,10 @@
-## CGL_4_C.cpp
+{% include mathjax.html %}
+
+
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_4_C.cpp)
-
-### Includes
-
-- [polygon.cpp](../include/geometry/polygon)
-- [convex.cpp](../include/geometry/convex)
 
 {% highlight cpp %}
 #include "../include/geometry/polygon.cpp"
@@ -40,5 +39,10 @@ int main() {
   }
 }
 {% endhighlight %}
+
+### Includes
+
+- [polygon.cpp](../include/geometry/polygon)
+- [convex.cpp](../include/geometry/convex)
 
 [Back](..)

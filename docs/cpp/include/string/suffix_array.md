@@ -1,12 +1,89 @@
-## suffix_array.cpp
+{% include mathjax.html %}
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+SuffixArray(const string_t &t);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [2] binary_search
+{% highlight cpp %}
+int binary_search(const string_t &t) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [3] find
+{% highlight cpp %}
+int find(const string_t &t) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [4] lower_bound
+{% highlight cpp %}
+int lower_bound(const string_t &t) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [5] upper_bound
+{% highlight cpp %}
+int upper_bound(const string_t &t) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Member functions
+
+### [1] SAComp
+{% highlight cpp %}
+SAComp(int h_, vector< int > &g_);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [2] operator()
+{% highlight cpp %}
+bool operator()(int a, int b);
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+LCP(const string &str);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [2] query
+{% highlight cpp %}
+int query(int i, int j);
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/suffix_array.cpp)
 
-### Includes
-
-- [segment_tree.cpp](../structure/segment_tree)
-
 {% highlight cpp %}
+#include "../util.hpp"
 #include "../structure/segment_tree.cpp"
 
 template<typename string_t>
@@ -92,5 +169,10 @@ public:
   }
 };
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
+- [segment_tree.cpp](../structure/segment_tree)
 
 [Back](../..)

@@ -1,10 +1,10 @@
-## CGL_3_A.cpp
+{% include mathjax.html %}
+
+
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_3_A.cpp)
-
-### Includes
-
-- [polygon.cpp](../include/geometry/polygon)
 
 {% highlight cpp %}
 #include "../include/geometry/polygon.cpp"
@@ -25,5 +25,9 @@ int main() {
   printf("%.10Lf\n", area(poly));
 }
 {% endhighlight %}
+
+### Includes
+
+- [polygon.cpp](../include/geometry/polygon)
 
 [Back](..)

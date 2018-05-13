@@ -1,8 +1,43 @@
-## bfs01.cpp
+{% include mathjax.html %}
+
+## bfs01
+
+{% highlight cpp %}
+vector<Cost> bfs01(const vector< vector< Edge >> &g, int s);
+{% endhighlight %}
+
+## add_edge
+
+{% highlight cpp %}
+void add_edge(Graph &g, int from, int to, Edge::Cost cost);
+{% endhighlight %}
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+Edge(int s, int t);
+Edge(int t, Cost c);
+Edge(int t, Cost c);
+Edge(int t);
+Edge(int t, Flow f, int r);
+Edge(int t, Flow f, int r, Cost c);
+Edge(int t);
+Edge(int t, Cost c);
+Edge(int t);
+Edge(int t, Cost c);
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/bfs01.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 template <typename Edge, typename Cost = typename Edge::Cost>
 vector<Cost> bfs01(const vector<vector<Edge>> &g, int s) {
   vector<Cost> d(g.size(), inf<Cost>);
@@ -39,5 +74,9 @@ void add_edge(Graph &g, int from, int to, Edge::Cost cost) {
   g[from].emplace_back(to, cost);
 }
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

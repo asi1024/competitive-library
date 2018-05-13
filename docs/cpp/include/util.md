@@ -1,4 +1,8 @@
-## util.hpp
+{% include mathjax.html %}
+
+
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/util.hpp)
 

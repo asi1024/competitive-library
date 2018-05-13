@@ -1,8 +1,62 @@
-## retrograde_weighted.cpp
+{% include mathjax.html %}
+
+## retrograde
+
+{% highlight cpp %}
+vector<Game_with_Cost<Cost> > retrograde(const vector< vector< Edge >> &g);
+{% endhighlight %}
+
+## add_edge
+
+{% highlight cpp %}
+void add_edge(Graph &g, int from, int to, Edge::Cost cost);
+{% endhighlight %}
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+Game_with_Cost();
+Game_with_Cost(Game w, T c);
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+Edge(int s, int t);
+Edge(int t, Cost c);
+Edge(int t, Cost c);
+Edge(int t);
+Edge(int t, Flow f, int r);
+Edge(int t, Flow f, int r, Cost c);
+Edge(int t);
+Edge(int t, Cost c);
+Edge(int t);
+Edge(int t, Cost c);
+{% endhighlight %}
+
+
+---------------------------------------
+
+{% include mathjax.html %}
+
+### Memo
+
+- 二人ゲーム．グラフ上を交互に移動していき，移動できなくなった方が負け．
+- 勝者はパスのコストがなるべく小さくなるように，敗者は長くなるように選ぶ．
+- 各ノードから始めたときの先手の勝敗とコストを返す．
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/retrograde_weighted.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 enum Game { WIN, LOSE, DRAW };
 
 template<typename T>
@@ -78,12 +132,8 @@ void add_edge(Graph &g, int from, int to, Edge::Cost cost) {
 }
 {% endhighlight %}
 
-{% include mathjax.html %}
+### Includes
 
-### Memo
-
-- 二人ゲーム．グラフ上を交互に移動していき，移動できなくなった方が負け．
-- 勝者はパスのコストがなるべく小さくなるように，敗者は長くなるように選ぶ．
-- 各ノードから始めたときの先手の勝敗とコストを返す．
+- [util.hpp](../util)
 
 [Back](../..)

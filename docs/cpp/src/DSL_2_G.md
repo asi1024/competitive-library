@@ -1,10 +1,10 @@
-## DSL_2_G.cpp
+{% include mathjax.html %}
+
+
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_G.cpp)
-
-### Includes
-
-- [rars.cpp](../include/structure/rars)
 
 {% highlight cpp %}
 #include "../include/structure/rars.cpp"
@@ -24,5 +24,9 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+### Includes
+
+- [rars.cpp](../include/structure/rars)
 
 [Back](..)

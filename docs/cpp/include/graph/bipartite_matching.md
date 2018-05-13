@@ -1,8 +1,38 @@
-## bipartite_matching.cpp
+{% include mathjax.html %}
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+BipartiteMatching(int v);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [2] add_edge
+{% highlight cpp %}
+void add_edge(int u, int v);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [3] maximum_matching
+{% highlight cpp %}
+int maximum_matching(void);
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/bipartite_matching.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 class BipartiteMatching {
   int size;
   vector<vector<int>> g;
@@ -38,5 +68,9 @@ public:
   }
 };
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

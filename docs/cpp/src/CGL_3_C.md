@@ -1,10 +1,10 @@
-## CGL_3_C.cpp
+{% include mathjax.html %}
+
+
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_3_C.cpp)
-
-### Includes
-
-- [polygon.cpp](../include/geometry/polygon)
 
 {% highlight cpp %}
 #include "../include/geometry/polygon.cpp"
@@ -28,5 +28,9 @@ int main() {
   }
 }
 {% endhighlight %}
+
+### Includes
+
+- [polygon.cpp](../include/geometry/polygon)
 
 [Back](..)

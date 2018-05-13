@@ -1,11 +1,10 @@
-## CGL_7_G.cpp
+{% include mathjax.html %}
+
+
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_7_G.cpp)
-
-### Includes
-
-- [circle_intersect.cpp](../include/geometry/circle_intersect)
-- [circle_tangent.cpp](../include/geometry/circle_tangent)
 
 {% highlight cpp %}
 #include "../include/geometry/circle_intersect.cpp"
@@ -36,5 +35,10 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+### Includes
+
+- [circle_intersect.cpp](../include/geometry/circle_intersect)
+- [circle_tangent.cpp](../include/geometry/circle_tangent)
 
 [Back](..)

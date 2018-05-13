@@ -1,8 +1,65 @@
-## heavy_light_decomposition.cpp
+{% include mathjax.html %}
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+HeavyLightDecomposition(const Graph &g, const T &init=Monoid::id());
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [2] depth
+{% highlight cpp %}
+int depth(int t) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [3] query
+{% highlight cpp %}
+query(int s, int t);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [4] root
+{% highlight cpp %}
+int root() const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [5] update
+{% highlight cpp %}
+void update(int i, const Update &val);
+void update(int s, int t, const Update &update);
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Member functions
+
+### [1] Chain
+{% highlight cpp %}
+Chain(int n, const T &init);
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/heavy_light_decomposition.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 template <typename DataStructure>
 struct HeavyLightDecomposition {
   using T = typename DataStructure::value_type;
@@ -163,5 +220,9 @@ private:
   }
 };
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

@@ -1,4 +1,34 @@
-## skew_heap.cpp
+{% include mathjax.html %}
+
+## meld
+
+{% highlight cpp %}
+skew_heap<T>* meld(skew_heap< T > *a, skew_heap< T > *b);
+{% endhighlight %}
+
+## push
+
+{% highlight cpp %}
+skew_heap<T>* push(skew_heap< T > *h, T v);
+{% endhighlight %}
+
+## pop
+
+{% highlight cpp %}
+skew_heap<T>* pop(skew_heap< T > *h);
+{% endhighlight %}
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+skew_heap(T v);
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/skew_heap.cpp)
 

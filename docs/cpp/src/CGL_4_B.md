@@ -1,10 +1,10 @@
-## CGL_4_B.cpp
+{% include mathjax.html %}
+
+
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_4_B.cpp)
-
-### Includes
-
-- [convex.cpp](../include/geometry/convex)
 
 {% highlight cpp %}
 #include "../include/geometry/convex.cpp"
@@ -25,5 +25,9 @@ int main() {
   printf("%.10Lf\n", max_distance(poly));
 }
 {% endhighlight %}
+
+### Includes
+
+- [convex.cpp](../include/geometry/convex)
 
 [Back](..)

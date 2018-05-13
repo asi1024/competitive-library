@@ -1,8 +1,18 @@
-## manacher.cpp
+{% include mathjax.html %}
+
+## manacher
+
+{% highlight cpp %}
+vector<int> manacher(const string_t &s);
+{% endhighlight %}
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/manacher.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 template<typename string_t>
 vector<int> manacher(const string_t &s) {
   const int n = s.size();
@@ -19,5 +29,9 @@ vector<int> manacher(const string_t &s) {
   return rad;
 }
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

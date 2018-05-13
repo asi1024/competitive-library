@@ -1,8 +1,18 @@
-## cout.cpp
+{% include mathjax.html %}
+
+## operator<<
+
+{% highlight cpp %}
+ostream& operator<<(ostream &os, const vector< T > &v);
+{% endhighlight %}
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/others/cout.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 template <class T>
 ostream &operator<<(ostream &os, const vector<T> &v) {
   for (auto it = v.begin(); it != v.end(); ++it) {
@@ -12,5 +22,9 @@ ostream &operator<<(ostream &os, const vector<T> &v) {
   return os;
 }
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

@@ -1,10 +1,10 @@
-## CGL_2_A.cpp
+{% include mathjax.html %}
+
+
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_2_A.cpp)
-
-### Includes
-
-- [intersect.cpp](../include/geometry/intersect)
 
 {% highlight cpp %}
 #include "../include/geometry/intersect.cpp"
@@ -28,5 +28,9 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+### Includes
+
+- [intersect.cpp](../include/geometry/intersect)
 
 [Back](..)

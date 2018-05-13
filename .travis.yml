@@ -64,9 +64,15 @@ matrix:
 
     - os: linux
       language: python
+      python: '3.5'
+      addons:
+        apt:
+          sources: ['ubuntu-toolchain-r-test']
+          packages: ['doxygen']
       env:
         ENV="Docs"
       script:
+        - doxygen --version
         - cp -r docs docs-spec
         - rm -rf docs/cpp
         - python --version

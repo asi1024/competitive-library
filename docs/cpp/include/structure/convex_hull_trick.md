@@ -1,8 +1,54 @@
-## convex_hull_trick.cpp
+{% include mathjax.html %}
+
+## Member functions
+
+### [1] add
+{% highlight cpp %}
+void add(Data a, Data b);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [2] check
+{% highlight cpp %}
+bool check(pair< Data, Data > l3);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [3] empty
+{% highlight cpp %}
+bool empty() const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [4] f
+{% highlight cpp %}
+Data f(int k, Data x);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [5] minimum
+{% highlight cpp %}
+Data minimum(Data x);
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/convex_hull_trick.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 template<class Data>
 struct ConvexHullTrick {
   deque<pair<Data, Data>> l;
@@ -28,5 +74,9 @@ struct ConvexHullTrick {
   }
 };
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

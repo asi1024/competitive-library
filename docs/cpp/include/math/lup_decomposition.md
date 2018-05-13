@@ -1,10 +1,20 @@
-## lup_decomposition.cpp
+{% include mathjax.html %}
+
+## LUPDecomposition
+
+{% highlight cpp %}
+LUP<T> LUPDecomposition(Matrix< T > A);
+{% endhighlight %}
+
+## LUPBackSubstitution
+
+{% highlight cpp %}
+Vec<T> LUPBackSubstitution(const LUP< T > &lup, Vec< T > a);
+{% endhighlight %}
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/lup_decomposition.cpp)
-
-### Includes
-
-- [matrix.cpp](matrix)
 
 {% highlight cpp %}
 #include "matrix.cpp"
@@ -58,5 +68,9 @@ Vec<T> LUPBackSubstitution(const LUP<T> &lup, Vec<T> a) {
   return a;
 }
 {% endhighlight %}
+
+### Includes
+
+- [matrix.cpp](matrix)
 
 [Back](../..)

@@ -1,10 +1,20 @@
-## circle_tangent.cpp
+{% include mathjax.html %}
+
+## tangent_cp
+
+{% highlight cpp %}
+vector<Line> tangent_cp(Circle c, Point p);
+{% endhighlight %}
+
+## tangent_cc
+
+{% highlight cpp %}
+vector<Line> tangent_cc(Circle c1, Circle c2);
+{% endhighlight %}
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/circle_tangent.cpp)
-
-### Includes
-
-- [Geometry.hpp](Geometry)
 
 {% highlight cpp %}
 #include "Geometry.hpp"
@@ -44,5 +54,9 @@ vector<Line> tangent_cc(Circle c1, Circle c2) {
   return res;
 }
 {% endhighlight %}
+
+### Includes
+
+- [Geometry.hpp](Geometry)
 
 [Back](../..)

@@ -1,10 +1,49 @@
-## rars.cpp
+{% include mathjax.html %}
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+RARS(int count);
+{% endhighlight %}
+
+- 長さ count の列を作り，全ての要素を 0 で初期化する．
+
+#### Time complexity
+
+- $O(n)$
+
+---------------------------------------
+
+### [2] query
+{% highlight cpp %}
+T query(int l, int r) const;
+{% endhighlight %}
+
+- 区間 [l, r) 番目の範囲の和を求める．
+
+#### Time complexity
+
+- $O(\log(n))$
+
+---------------------------------------
+
+### [3] update
+{% highlight cpp %}
+void update(int l, int r, const T &val);
+{% endhighlight %}
+
+- 区間 [l, r) 番目の要素に値 value を加える．
+
+#### Time complexity
+
+- $O(\log(n))$
+
+---------------------------------------
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/rars.cpp)
-
-### Includes
-
-- [fenwick_tree.cpp](fenwick_tree)
 
 {% highlight cpp %}
 #include "fenwick_tree.cpp"
@@ -29,23 +68,8 @@ public:
 };
 {% endhighlight %}
 
-{% include mathjax.html %}
+### Includes
 
-### Usage
-
-{% highlight cpp %}
-(1) RARS<typename T>(int count);
-(2) T update(int l, int r, const T& value);
-(3) T query(int l, int r) const;
-{% endhighlight %}
-
-- (1): 長さ count の列を作り，全ての要素を 0 で初期化する．
-- (2): 区間 [l, r) 番目の要素に値 value を加える．
-- (3): 区間 [l, r) 番目の範囲の和を求める．
-
-### Time Complexity
-- (1): $O(n)$
-- (2): $O(\log(n))$
-- (3): $O(\log(n))$
+- [fenwick_tree.cpp](fenwick_tree)
 
 [Back](../..)

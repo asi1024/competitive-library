@@ -1,10 +1,10 @@
-## GRL_6_A.cpp
+{% include mathjax.html %}
+
+
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_6_A.cpp)
-
-### Includes
-
-- [max_flow.cpp](../include/graph/max_flow)
 
 {% highlight cpp %}
 #include "../include/graph/max_flow.cpp"
@@ -21,5 +21,9 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+### Includes
+
+- [max_flow.cpp](../include/graph/max_flow)
 
 [Back](..)

@@ -1,4 +1,279 @@
-## mod_dynamic.cpp
+{% include mathjax.html %}
+
+## chmin
+
+{% highlight cpp %}
+T& chmin(T &a, const T &b);
+{% endhighlight %}
+
+## chmax
+
+{% highlight cpp %}
+T& chmax(T &a, const T &b);
+{% endhighlight %}
+
+## prime_factorization
+
+{% highlight cpp %}
+vector<pair<ll,int> > prime_factorization(ll n);
+{% endhighlight %}
+
+## init
+
+{% highlight cpp %}
+void init();
+{% endhighlight %}
+
+## comb
+
+{% highlight cpp %}
+Mod comb(int a, int b);
+{% endhighlight %}
+
+## FFT
+
+{% highlight cpp %}
+vector<P> FFT(ld theta, const vector< P > &a);
+{% endhighlight %}
+
+## convolution
+
+{% highlight cpp %}
+vector<ll> convolution(const vector< ll > &lhs, const vector< ll > &rhs);
+{% endhighlight %}
+
+## convolution
+
+{% highlight cpp %}
+vector<T> convolution(const vector< T > &lhs, const vector< T > &rhs);
+{% endhighlight %}
+
+## main
+
+{% highlight cpp %}
+int main();
+{% endhighlight %}
+
+## Member functions
+
+### [1] do_falsename
+{% highlight cpp %}
+string_type do_falsename() const;
+string_type do_falsename() const;
+string_type do_falsename() const;
+string_type do_falsename() const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [2] do_truename
+{% highlight cpp %}
+string_type do_truename() const;
+string_type do_truename() const;
+string_type do_truename() const;
+string_type do_truename() const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+Modulo();
+Modulo(int m);
+Modulo(ll m);
+Modulo();
+Modulo(int m);
+Modulo(ll m);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [2] operator int
+{% highlight cpp %}
+operator int() const;
+operator int() const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [3] operator ll
+{% highlight cpp %}
+operator ll() const;
+operator ll() const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [4] operator*
+{% highlight cpp %}
+operator*(const Modulo &a) const;
+operator*(const Modulo &a) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [5] operator*=
+{% highlight cpp %}
+operator*=(const Modulo &a);
+operator*=(const Modulo &a);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [6] operator+
+{% highlight cpp %}
+operator+(const Modulo &a) const;
+operator+(const Modulo &a) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [7] operator+=
+{% highlight cpp %}
+operator+=(const Modulo &a);
+operator+=(const Modulo &a);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [8] operator-
+{% highlight cpp %}
+operator-(const Modulo &a) const;
+operator-(const Modulo &a) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [9] operator-=
+{% highlight cpp %}
+operator-=(const Modulo &a);
+operator-=(const Modulo &a);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [10] operator/
+{% highlight cpp %}
+enable_if_t< IsPrime, operator/(const Modulo &a) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [11] operator/=
+{% highlight cpp %}
+enable_if_t< IsPrime, operator/=(const Modulo &a);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [12] operator==
+{% highlight cpp %}
+bool operator==(const Modulo &a) const;
+bool operator==(const Modulo &a) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [13] operator^
+{% highlight cpp %}
+operator^(int m) const;
+operator^(int n) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+Mod(ll m);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [2] operator Modulo
+{% highlight cpp %}
+operator Modulo() const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [3] operator ll
+{% highlight cpp %}
+operator ll() const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [4] operator*
+{% highlight cpp %}
+operator*(const Mod &a) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [5] operator*=
+{% highlight cpp %}
+operator*=(const Mod &a);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [6] operator/
+{% highlight cpp %}
+operator/(const Mod &a) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [7] operator/=
+{% highlight cpp %}
+operator/=(const Mod &a);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [8] operator^
+{% highlight cpp %}
+operator^(const int n) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [9] powi
+{% highlight cpp %}
+powi(int m);
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/mod_dynamic.cpp)
 

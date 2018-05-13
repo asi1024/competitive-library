@@ -1,4 +1,24 @@
-## kmp.cpp
+{% include mathjax.html %}
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+KMP(const string &str);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [2] query
+{% highlight cpp %}
+vector< int > query(const string &t);
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/kmp.cpp)
 

@@ -1,10 +1,10 @@
-## DSL_2_A.0.cpp
+{% include mathjax.html %}
+
+
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_A.0.cpp)
-
-### Includes
-
-- [segment_tree.cpp](../include/structure/segment_tree)
 
 {% highlight cpp %}
 #include "../include/structure/segment_tree.cpp"
@@ -21,5 +21,9 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+### Includes
+
+- [segment_tree.cpp](../include/structure/segment_tree)
 
 [Back](..)

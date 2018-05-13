@@ -1,8 +1,55 @@
-## lca.cpp
+{% include mathjax.html %}
+
+## add_edge
+
+{% highlight cpp %}
+void add_edge(Graph &g, int from, int to);
+{% endhighlight %}
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+LCA(const vector< vector< Edge >> &g, int root);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [2] query
+{% highlight cpp %}
+int query(int u, int v);
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+Edge(int s, int t);
+Edge(int t, Cost c);
+Edge(int t, Cost c);
+Edge(int t);
+Edge(int t, Flow f, int r);
+Edge(int t, Flow f, int r, Cost c);
+Edge(int t);
+Edge(int t, Cost c);
+Edge(int t);
+Edge(int t, Cost c);
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/lca.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 class LCA {
   int size, log_size;
   vector<vector<int>> parent;
@@ -53,5 +100,9 @@ void add_edge(Graph &g, int from, int to) {
   g[from].push_back(to);
 }
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

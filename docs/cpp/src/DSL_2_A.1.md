@@ -1,10 +1,10 @@
-## DSL_2_A.1.cpp
+{% include mathjax.html %}
+
+
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_A.1.cpp)
-
-### Includes
-
-- [starry_sky_tree.cpp](../include/structure/starry_sky_tree)
 
 {% highlight cpp %}
 #include "../include/structure/starry_sky_tree.cpp"
@@ -25,5 +25,9 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+### Includes
+
+- [starry_sky_tree.cpp](../include/structure/starry_sky_tree)
 
 [Back](..)

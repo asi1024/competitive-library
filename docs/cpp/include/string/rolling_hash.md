@@ -1,8 +1,30 @@
-## rolling_hash.cpp
+{% include mathjax.html %}
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+RollingHash(const string &str);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [2] query
+{% highlight cpp %}
+pair< ll, ll > query(int l, int r);
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/rolling_hash.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 class RollingHash {
   using ll = long long;
   const int n;
@@ -27,5 +49,9 @@ public:
   }
 };
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

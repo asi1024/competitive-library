@@ -1,8 +1,43 @@
-## retrograde.cpp
+{% include mathjax.html %}
+
+## retrograde
+
+{% highlight cpp %}
+vector<Game> retrograde(const vector< vector< Edge >> &g);
+{% endhighlight %}
+
+## add_edge
+
+{% highlight cpp %}
+void add_edge(Graph &g, int from, int to);
+{% endhighlight %}
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+Edge(int s, int t);
+Edge(int t, Cost c);
+Edge(int t, Cost c);
+Edge(int t);
+Edge(int t, Flow f, int r);
+Edge(int t, Flow f, int r, Cost c);
+Edge(int t);
+Edge(int t, Cost c);
+Edge(int t);
+Edge(int t, Cost c);
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/retrograde.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 enum Game { WIN, LOSE, DRAW };
 
 template<typename Edge>
@@ -58,5 +93,9 @@ void add_edge(Graph &g, int from, int to) {
   g[from].emplace_back(to);
 }
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

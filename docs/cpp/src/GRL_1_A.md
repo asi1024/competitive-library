@@ -1,10 +1,10 @@
-## GRL_1_A.cpp
+{% include mathjax.html %}
+
+
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_1_A.cpp)
-
-### Includes
-
-- [dijkstra.cpp](../include/graph/dijkstra)
 
 {% highlight cpp %}
 #include "../include/graph/dijkstra.cpp"
@@ -25,5 +25,9 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+### Includes
+
+- [dijkstra.cpp](../include/graph/dijkstra)
 
 [Back](..)

@@ -1,4 +1,48 @@
-## template.cpp
+{% include mathjax.html %}
+
+## chmin
+
+{% highlight cpp %}
+T& chmin(T &a, const T &b);
+{% endhighlight %}
+
+## chmax
+
+{% highlight cpp %}
+T& chmax(T &a, const T &b);
+{% endhighlight %}
+
+## main
+
+{% highlight cpp %}
+int main();
+{% endhighlight %}
+
+## Member functions
+
+### [1] do_falsename
+{% highlight cpp %}
+string_type do_falsename() const;
+string_type do_falsename() const;
+string_type do_falsename() const;
+string_type do_falsename() const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [2] do_truename
+{% highlight cpp %}
+string_type do_truename() const;
+string_type do_truename() const;
+string_type do_truename() const;
+string_type do_truename() const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/template.cpp)
 

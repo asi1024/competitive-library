@@ -1,10 +1,26 @@
-## convex.cpp
+{% include mathjax.html %}
+
+## convex_hull
+
+{% highlight cpp %}
+Polygon convex_hull(vector< Point > ps);
+{% endhighlight %}
+
+## max_distance
+
+{% highlight cpp %}
+ld max_distance(const vector< Point > &ps);
+{% endhighlight %}
+
+## convex_cut
+
+{% highlight cpp %}
+Polygon convex_cut(const Polygon &g, Line l);
+{% endhighlight %}
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/convex.cpp)
-
-### Includes
-
-- [intersect.cpp](intersect)
 
 {% highlight cpp %}
 #include "intersect.cpp"
@@ -46,5 +62,9 @@ Polygon convex_cut(const Polygon &g, Line l) {
   return res;
 }
 {% endhighlight %}
+
+### Includes
+
+- [intersect.cpp](intersect)
 
 [Back](../..)

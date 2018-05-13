@@ -1,8 +1,58 @@
-## segment_tree_lazy.cpp
+{% include mathjax.html %}
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+SegmentTreeLazy(int count, const T &init=Monoid::id());
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [2] query
+{% highlight cpp %}
+T query(int l, int r);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [3] update
+{% highlight cpp %}
+void update(int l, int r, const Update &f);
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+RangeUpdate();
+RangeUpdate(int v);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [2] operator()
+{% highlight cpp %}
+operator()(const type &) const;
+operator()(const RangeUpdate &) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/segment_tree_lazy.cpp)
 
 {% highlight cpp %}
+#include "../util.hpp"
+
 template<typename Update>
 class SegmentTreeLazy {
   const int n;
@@ -74,5 +124,9 @@ struct RangeUpdate {
   RangeUpdate operator()(const RangeUpdate &) const { return *this; }
 };
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
 
 [Back](../..)

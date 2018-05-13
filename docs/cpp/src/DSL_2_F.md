@@ -1,10 +1,10 @@
-## DSL_2_F.cpp
+{% include mathjax.html %}
+
+
+
+## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_F.cpp)
-
-### Includes
-
-- [segment_tree_lazy.cpp](../include/structure/segment_tree_lazy)
 
 {% highlight cpp %}
 #include "../include/structure/segment_tree_lazy.cpp"
@@ -27,5 +27,9 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+### Includes
+
+- [segment_tree_lazy.cpp](../include/structure/segment_tree_lazy)
 
 [Back](..)
