@@ -20,7 +20,8 @@ std::pair<bool,std::vector<cost_type> > spfa(const graph_t< edge_t > &g, int s);
 
 ### Return value
 
-- 始点から各頂点までの距離が入った型 cost_type の列
+- s から到達可能な負閉路が存在しない場合: (true, 各頂点までの距離が入った型
+- s から到達可能な負閉路が存在する場合: (false, 未定義)
 
 ### Time Complexity
 

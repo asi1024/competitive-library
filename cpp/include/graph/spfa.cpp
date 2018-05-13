@@ -10,7 +10,8 @@
 /// @param g: 重み付きグラフ
 /// @param s: 始点の頂点番号
 /// @typereq edge_t
-/// @return 始点から各頂点までの距離が入った型 cost_type の列
+/// @return s から到達可能な負閉路が存在しない場合: (true, 各頂点までの距離が入った型 `Cost` の列)
+/// @return s から到達可能な負閉路が存在する場合: (false, 未定義)
 /// @complexity $O(EV)$
 /// @brief
 /// 重み付きグラフの単一始点全点間最短距離を求める．
