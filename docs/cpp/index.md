@@ -86,6 +86,7 @@
 
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:------------:|
+| [a.out](./include/others/a) | <font color="Red">No</font> |  |
 | [cout.cpp](./include/others/cout) | <font color="Red">No</font> |  |
 | [ext.cpp](./include/others/ext) | <font color="Red">No</font> |  |
 | [tree_dp.cpp](./include/others/tree_dp) | <font color="Red">No</font> |  |
