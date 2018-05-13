@@ -10,9 +10,8 @@
 
 /// @param g: 負辺のない重み付きグラフ
 /// @param s: 始点の頂点番号
-/// @param zero: 型 Cost のゼロ値
 /// @typereq edge_t
-/// @return 始点から各頂点までの距離が入った型 Cost の列
+/// @return 始点から各頂点までの距離が入った型 cost_type の列
 /// @note 入力グラフに不辺があってはならない
 /// @complexity $O(E \\log V)$
 /// @brief
