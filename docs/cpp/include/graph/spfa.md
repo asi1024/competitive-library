@@ -6,6 +6,28 @@
 std::pair<bool,std::vector<cost_type> > spfa(const graph_t< edge_t > &g, int s);
 {% endhighlight %}
 
+- 重み付きグラフの単一始点全点間最短距離を求める．
+
+### Parameters
+
+|:--:|:--|
+|`g`|重み付きグラフ|
+|`s`|始点の頂点番号|
+
+#### Type requirements
+
+- edge_t
+
+### Return value
+
+- 始点から各頂点までの距離が入った型 cost_type の列
+
+### Time Complexity
+
+- $O(EV)$
+
+---------------------------------------
+
 {% include mathjax.html %}
 
 ### Usage

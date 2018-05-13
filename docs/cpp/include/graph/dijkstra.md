@@ -13,7 +13,6 @@ std::vector<cost_type> dijkstra(const graph_t< edge_t > &g, int s);
 |:--:|:--|
 |`g`|負辺のない重み付きグラフ|
 |`s`|始点の頂点番号|
-|`zero`|型 Cost のゼロ値|
 
 #### Type requirements
 
@@ -21,7 +20,7 @@ std::vector<cost_type> dijkstra(const graph_t< edge_t > &g, int s);
 
 ### Return value
 
-- 始点から各頂点までの距離が入った型 Cost の列
+- 始点から各頂点までの距離が入った型 cost_type の列
 
 ### Notes
 
