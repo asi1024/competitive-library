@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../util.hpp"
+#include <vector>
 
 template<class edge_t>
 class graph_t {
@@ -12,7 +12,7 @@ public:
   graph_t() : g(0) {;}
   graph_t(int n) : g(n) {;}
   int size() const { return g.size(); }
-  void push_back(const vector<edge_t> &es) { g.push_back(es); }
+  void push_back(const std::vector<edge_t> &es) { g.push_back(es); }
   template<class... Args>
   void add(int from, int to, Args... args) {
     g[from].emplace_back(from, to, args...);

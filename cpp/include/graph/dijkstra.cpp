@@ -1,6 +1,12 @@
 #pragma once
 
-// #include "../util.hpp"
+#include <functional>
+#include <queue>
+#include <utility>
+#include <vector>
+
+#include "../template/const_value.hpp"
+#include "definition.hpp"
 
 /// @param g: 負辺のない重み付きグラフ
 /// @param s: 始点の頂点番号
@@ -16,8 +22,8 @@ std::vector<cost_type> dijkstra(const graph_t<edge_t> &g, int s) {
   std::vector<cost_type> d(g.size(), inf<cost_type>);
   const cost_type zero = 0;
   d[s] = zero;
-  using P = pair<cost_type,int>;
-  std::priority_queue<P, std::vector<P>, greater<P>> que;
+  using P = std::pair<cost_type,int>;
+  std::priority_queue<P, std::vector<P>, std::greater<P>> que;
   que.push(P(zero, s));
   while (!que.empty()) {
     cost_type dist = que.top().first;

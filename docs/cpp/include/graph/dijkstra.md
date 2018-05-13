@@ -33,47 +33,26 @@ std::vector<cost_type> dijkstra(const graph_t< edge_t > &g, int s);
 
 ---------------------------------------
 
-{% include mathjax.html %}
-
-### Usage
-
-{% highlight cpp %}
-vector<Cost> dijkstra(const vector<vector<Edge>> &g, int s, Cost zero = 0);
-{% endhighlight %}
-
-負辺のない重み付きグラフの単一始点全点間最短距離を求める．
-
-### Parameters
-- `g` : 負辺のない重み付きグラフ
-- `s` : 始点の頂点番号
-- `zero` : 型 Cost のゼロ値
-
-### Type requirements
-- `Cost` 同士の加算と比較が定義されている必要がある．
-
-### Return value
-各頂点までの距離が入った型 `Cost` の列
-
-### Exceptions
-(none)
-
-### Time Complexity
-- $O(E \log V)$
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/dijkstra.cpp)
 
 {% highlight cpp %}
-// #include "../util.hpp"
+#include <functional>
+#include <queue>
+#include <utility>
+#include <vector>
+
+#include "../template/const_value.hpp"
+#include "definition.hpp"
 
 template <typename edge_t, typename cost_type = typename edge_t::cost_type>
 std::vector<cost_type> dijkstra(const graph_t<edge_t> &g, int s) {
   std::vector<cost_type> d(g.size(), inf<cost_type>);
   const cost_type zero = 0;
   d[s] = zero;
-  using P = pair<cost_type,int>;
-  std::priority_queue<P, std::vector<P>, greater<P>> que;
+  using P = std::pair<cost_type,int>;
+  std::priority_queue<P, std::vector<P>, std::greater<P>> que;
   que.push(P(zero, s));
   while (!que.empty()) {
     cost_type dist = que.top().first;
@@ -89,5 +68,10 @@ std::vector<cost_type> dijkstra(const graph_t<edge_t> &g, int s) {
   return d;
 }
 {% endhighlight %}
+
+### Includes
+
+- [const_value.hpp](../template/const_value)
+- [definition.hpp](definition)
 
 [Back](../..)

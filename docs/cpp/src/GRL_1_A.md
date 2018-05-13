@@ -7,6 +7,8 @@
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_1_A.cpp)
 
 {% highlight cpp %}
+#include <cstdio>
+
 #include "../include/graph/weighted_graph.hpp"
 #include "../include/graph/dijkstra.cpp"
 

@@ -1,3 +1,5 @@
+#include <cstdio>
+
 #include "../include/graph/weighted_graph.hpp"
 #include "../include/graph/dijkstra.cpp"
 
