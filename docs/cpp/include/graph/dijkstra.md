@@ -3,7 +3,7 @@
 ## dijkstra
 
 {% highlight cpp %}
-vector<Cost> dijkstra(const vector< vector< Edge >> &g, int s, Cost zero=0);
+std::vector<cost_type> dijkstra(const graph_t< edge_t > &g, int s);
 {% endhighlight %}
 
 - 負辺のない重み付きグラフの単一始点全点間最短距離を求める．
@@ -17,6 +17,7 @@ vector<Cost> dijkstra(const vector< vector< Edge >> &g, int s, Cost zero=0);
 
 #### Type requirements
 
+- edge_t
 
 ### Return value
 
@@ -29,31 +30,6 @@ vector<Cost> dijkstra(const vector< vector< Edge >> &g, int s, Cost zero=0);
 ### Time Complexity
 
 - $O(E \log V)$
-
----------------------------------------
-
-## add_edge
-
-{% highlight cpp %}
-void add_edge(Graph &g, int from, int to, Edge::Cost cost);
-{% endhighlight %}
-
-## Member functions
-
-### [1] (constructor)
-{% highlight cpp %}
-Edge(int s, int t);
-Edge(int t, Cost c);
-Edge(int t, Cost c);
-Edge(int t);
-Edge(int t, Flow f, int r);
-Edge(int t, Flow f, int r, Cost c);
-Edge(int t);
-Edge(int t, Cost c);
-Edge(int t);
-Edge(int t, Cost c);
-{% endhighlight %}
-
 
 ---------------------------------------
 
@@ -89,17 +65,18 @@ vector<Cost> dijkstra(const vector<vector<Edge>> &g, int s, Cost zero = 0);
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/dijkstra.cpp)
 
 {% highlight cpp %}
-#include "../util.hpp"
+// #include "../util.hpp"
 
-template <typename Edge, typename Cost = typename Edge::Cost>
-vector<Cost> dijkstra(const vector<vector<Edge>> &g, int s, Cost zero = 0) {
-  vector<Cost> d(g.size(), inf<Cost>);
+template <typename edge_t, typename cost_type = typename edge_t::cost_type>
+std::vector<cost_type> dijkstra(const graph_t<edge_t> &g, int s) {
+  std::vector<cost_type> d(g.size(), inf<cost_type>);
+  const cost_type zero = 0;
   d[s] = zero;
-  using P = pair<Cost,int>;
-  priority_queue<P, vector<P>, greater<P>> que;
+  using P = pair<cost_type,int>;
+  std::priority_queue<P, std::vector<P>, greater<P>> que;
   que.push(P(zero, s));
   while (!que.empty()) {
-    Cost dist = que.top().first;
+    cost_type dist = que.top().first;
     int v = que.top().second;
     que.pop();
     if (d[v] < dist) continue;
@@ -111,23 +88,6 @@ vector<Cost> dijkstra(const vector<vector<Edge>> &g, int s, Cost zero = 0) {
   }
   return d;
 }
-
-struct Edge {
-  using Cost = int;
-  int to;
-  Cost cost;
-  Edge(int t, Cost c) : to(t), cost(c) {}
-};
-
-using Graph = vector<vector<Edge>>;
-
-void add_edge(Graph &g, int from, int to, Edge::Cost cost) {
-  g[from].emplace_back(to, cost);
-}
 {% endhighlight %}
-
-### Includes
-
-- [util.hpp](../util)
 
 [Back](../..)

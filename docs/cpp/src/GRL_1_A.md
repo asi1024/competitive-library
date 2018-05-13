@@ -7,15 +7,16 @@
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_1_A.cpp)
 
 {% highlight cpp %}
+#include "../include/graph/weighted_graph.cpp"
 #include "../include/graph/dijkstra.cpp"
 
 int main() {
   int V, E, r, s, t, d;
   scanf("%d%d%d", &V ,&E, &r);
-  Graph g(V);
+  WeightedGraph<int> g(V);
   while (E--) {
     scanf("%d%d%d", &s ,&t, &d);
-    add_edge(g, s, t, d);
+    g.add(s, t, d);
   }
   auto res = dijkstra(g, r);
   for (int i = 0; i < V; ++i) {
@@ -28,6 +29,7 @@ int main() {
 
 ### Includes
 
+- [weighted_graph.cpp](../include/graph/weighted_graph)
 - [dijkstra.cpp](../include/graph/dijkstra)
 
 [Back](..)

@@ -26,6 +26,7 @@
 
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:------------:|
+| [Graph.hpp](./include/graph/Graph) | <font color="Red">No</font> |  |
 | [articulation_points.cpp](./include/graph/articulation_points) | <font color="ForestGreen">Yes</font> | [GRL_3_A.cpp](./src/GRL_3_A) |
 | [bfs01.cpp](./include/graph/bfs01) | <font color="ForestGreen">Yes</font> | [2342.cpp](./src/2342) |
 | [bipartite_matching.cpp](./include/graph/bipartite_matching) | <font color="ForestGreen">Yes</font> | [GRL_7_A.cpp](./src/GRL_7_A) |
@@ -37,6 +38,7 @@
 | [retrograde_weighted.cpp](./include/graph/retrograde_weighted) | <font color="ForestGreen">Yes</font> | [1358.cpp](./src/1358) |
 | [scc.cpp](./include/graph/scc) | <font color="ForestGreen">Yes</font> | [GRL_3_C.cpp](./src/GRL_3_C) |
 | [spfa.cpp](./include/graph/spfa) | <font color="ForestGreen">Yes</font> | [GRL_1_B.cpp](./src/GRL_1_B) |
+| [weighted_graph.cpp](./include/graph/weighted_graph) | <font color="ForestGreen">Yes</font> | [2620.cpp](./src/2620)<br>[GRL_1_A.cpp](./src/GRL_1_A) |
 
 ## Numerical Algorithms
 
