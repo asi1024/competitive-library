@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../util.hpp"
+#include "../structure/monoid.hpp"
 #include "../structure/segment_tree.cpp"
 
 template<typename string_t>

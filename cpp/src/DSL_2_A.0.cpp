@@ -1,3 +1,4 @@
+#include "../include/structure/monoid.hpp"
 #include "../include/structure/segment_tree.cpp"
 
 int main() {
