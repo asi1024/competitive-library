@@ -1,3 +1,4 @@
+#include <cstdio>
 #include <cstring>
 
 #include "../include/graph/weighted_graph.hpp"
