@@ -1,6 +1,5 @@
 #pragma once
 
-#include "weighted.cpp"
 // #include "../util.hpp"
 
 /// @param g: 負辺のない重み付きグラフ
@@ -13,12 +12,12 @@
 /// @brief
 /// 負辺のない重み付きグラフの単一始点全点間最短距離を求める．
 template <typename edge_t, typename cost_type = typename edge_t::cost_type>
-vector<cost_type> dijkstra(const graph_t<edge_t> &g, int s) {
-  vector<cost_type> d(g.size(), inf<cost_type>);
-  // d[s] = zero<int>;
-  d[s] = 0;
+std::vector<cost_type> dijkstra(const graph_t<edge_t> &g, int s) {
+  std::vector<cost_type> d(g.size(), inf<cost_type>);
+  const cost_type zero = 0;
+  d[s] = zero;
   using P = pair<cost_type,int>;
-  priority_queue<P, vector<P>, greater<P>> que;
+  std::priority_queue<P, std::vector<P>, greater<P>> que;
   que.push(P(zero, s));
   while (!que.empty()) {
     cost_type dist = que.top().first;
