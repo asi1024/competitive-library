@@ -1,3 +1,5 @@
+#include <cstdio>
+
 #include "../include/structure/unionfind.cpp"
 
 int main() {
