@@ -1,3 +1,5 @@
+#pragma once
+
 #include "definition.hpp"
 
 template<typename Cost>

@@ -1,3 +1,5 @@
+#pragma once
+
 #include "../util.hpp"
 
 template<class edge_t>
