@@ -12,20 +12,21 @@ def category(path, name, verifier):
 
     try:
         path = "include/%s" % path
-        files = os.listdir("cpp/" + path)
+        files = [f.strip() for f in os.listdir("cpp/" + path)]
         if not files:
             raise os.FileNotFoundError
     except os.FileNotFoundError:
         return
 
-    files.sort()
+    files_ext = [(0 if f.split('.')[-1] == 'hpp' else 1, f) for f in files]
+    files_ext.sort()
 
     print("## " + name)
     print("")
     print("| Algorithm | Verified | AOJ Problems |")
     print("|:---------:|:--------:|:------------:|")
 
-    for fname in files:
+    for _, fname in files_ext:
         algorithm = "[%s](./%s/%s)" % (fname, path, basename(fname))
         if fname in verifier:
             validated = '<font color="ForestGreen">Yes</font>'
