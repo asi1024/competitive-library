@@ -7,6 +7,7 @@
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_A.0.cpp)
 
 {% highlight cpp %}
+#include "../include/structure/monoid.hpp"
 #include "../include/structure/segment_tree.cpp"
 
 int main() {
@@ -24,6 +25,7 @@ int main() {
 
 ### Includes
 
+- [monoid.hpp](../include/structure/monoid)
 - [segment_tree.cpp](../include/structure/segment_tree)
 
 [Back](..)
