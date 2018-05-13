@@ -7,6 +7,13 @@
 #include "../template/const_value.hpp"
 #include "definition.hpp"
 
+/// @param g: 重み付きグラフ
+/// @param s: 始点の頂点番号
+/// @typereq edge_t
+/// @return 始点から各頂点までの距離が入った型 cost_type の列
+/// @complexity $O(EV)$
+/// @brief
+/// 重み付きグラフの単一始点全点間最短距離を求める．
 template <typename edge_t, typename cost_type = typename edge_t::cost_type>
 std::pair<bool,std::vector<cost_type>> spfa(const graph_t<edge_t> &g, int s) {
   const int n = g.size();
