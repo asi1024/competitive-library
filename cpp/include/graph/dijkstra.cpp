@@ -1,10 +1,5 @@
 #pragma once
 
-#include <functional>
-#include <queue>
-#include <utility>
-#include <vector>
-
 #include "../template/const_value.hpp"
 #include "definition.hpp"
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include <vector>
+#include "../template/includes.hpp"
 
 class UnionFind {
   std::vector<int> p;

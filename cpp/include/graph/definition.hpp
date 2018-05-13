@@ -1,6 +1,6 @@
 #pragma once
 
-#include <vector>
+#include "../template/includes.hpp"
 
 template<class edge_t>
 class graph_t {
