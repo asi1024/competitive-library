@@ -5,7 +5,6 @@
 ### [1] (constructor)
 {% highlight cpp %}
 UnionFind(int n);
-UnionFind(int n);
 {% endhighlight %}
 
 - $0$ から $n - 1$ までそれぞれに対して，その要素だけを格納した集合を作る．
@@ -18,7 +17,6 @@ UnionFind(int n);
 
 ### [2] root
 {% highlight cpp %}
-int root(int x);
 int root(int x);
 {% endhighlight %}
 
@@ -33,7 +31,6 @@ int root(int x);
 ### [3] same
 {% highlight cpp %}
 bool same(int x, int y);
-bool same(int x, int y);
 {% endhighlight %}
 
 - $x$ と $y$ が同一の集合に属するかどうかを返す．
@@ -46,7 +43,6 @@ bool same(int x, int y);
 
 ### [4] unite
 {% highlight cpp %}
-bool unite(int x, int y);
 bool unite(int x, int y);
 {% endhighlight %}
 
@@ -63,10 +59,10 @@ bool unite(int x, int y);
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/unionfind.cpp)
 
 {% highlight cpp %}
-#include "../util.hpp"
+#include "../template/includes.hpp"
 
 class UnionFind {
-  vector<int> p;
+  std::vector<int> p;
 public:
   UnionFind (int n) : p(n, -1) {}
 
@@ -81,7 +77,7 @@ public:
   bool unite(int x, int y) {
     x = root(x); y = root(y);
     if (x == y) return false;
-    if (p[y] < p[x]) swap(x, y);
+    if (p[y] < p[x]) std::swap(x, y);
     if (p[x] == p[y]) --p[x];
     p[y] = x;
     return true;
@@ -91,6 +87,6 @@ public:
 
 ### Includes
 
-- [util.hpp](../util)
+- [includes.hpp](../template/includes)
 
 [Back](../..)

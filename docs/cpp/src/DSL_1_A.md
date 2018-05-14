@@ -7,6 +7,8 @@
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_1_A.cpp)
 
 {% highlight cpp %}
+#include <cstdio>
+
 #include "../include/structure/unionfind.cpp"
 
 int main() {

@@ -6,7 +6,9 @@
 {% highlight cpp %}
 operator>>(int &var);
 operator>>(long long &var);
-operator>>(string &var);
+operator>>(double &var);
+operator>>(long double &var);
+operator>>(std::string &var);
 {% endhighlight %}
 
 
@@ -14,14 +16,16 @@ operator>>(string &var);
 
 ## Implementation
 
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/others/cin.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/cin.hpp)
 
 {% highlight cpp %}
-#include "../util.hpp"
+#include <cstdio>
+#include <string>
 
 class fast_istream {
   bool is_space(char c) { return c < 0x21 || c > 0x7E; }
-  template<typename T> void get_integer(T &var) {
+  template<typename T>
+  void get_integer(T &var) {
     var = 0;
     T sign = 1;
     int c = getchar_unlocked();
@@ -35,6 +39,30 @@ class fast_istream {
     }
     var *= sign;
   }
+  template<typename T>
+  void get_real(T &var) {
+    var = 0.0;
+    T sign = 1.0;
+    int c = getchar_unlocked();
+    while ((c < '0' || '9' < c) && c != '.') {
+      if (c == '-') sign = -1.0;
+      c = getchar_unlocked();
+    }
+    while ('0' <= c && c <= '9') {
+      var = var * 10.0 + c - '0';
+      c = getchar_unlocked();
+    }
+    if (c == '.') {
+      c = getchar_unlocked();
+      T base = 1.0;
+      while ('0' <= c && c <= '9') {
+        base /= 10.0;
+        var += base * (c - '0');
+        c = getchar_unlocked();
+      }
+    }
+    var *= sign;
+  }
 public:
   inline fast_istream& operator>>(int &var) {
     get_integer(var);
@@ -44,7 +72,15 @@ public:
     get_integer(var);
     return *this;
   }
-  inline fast_istream& operator>>(string &var) {
+  inline fast_istream& operator>>(double &var) {
+    get_real(var);
+    return *this;
+  }
+  inline fast_istream& operator>>(long double &var) {
+    get_real(var);
+    return *this;
+  }
+  inline fast_istream& operator>>(std::string &var) {
     char c = getchar_unlocked();
     while (is_space(c)) {
       c = getchar_unlocked();
@@ -60,9 +96,5 @@ public:
 
 fast_istream fcin;
 {% endhighlight %}
-
-### Includes
-
-- [util.hpp](../util)
 
 [Back](../..)

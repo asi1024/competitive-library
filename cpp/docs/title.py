@@ -7,25 +7,30 @@ import os
 
 def category(path, name, verifier):
 
+    def ext(fname):
+        return fname.split('.')[-1]
+
     def basename(fname):
         return '.'.join(fname.split('.')[:-1])
 
     try:
         path = "include/%s" % path
-        files = os.listdir("cpp/" + path)
+        files = [f.strip() for f in os.listdir("cpp/" + path)]
         if not files:
             raise os.FileNotFoundError
     except os.FileNotFoundError:
         return
 
-    files.sort()
+    files_ext = [(0 if ext(f) == 'hpp' else 1, f) for f in files
+                 if ext(f) in ('hpp', 'cpp')]
+    files_ext.sort()
 
     print("## " + name)
     print("")
     print("| Algorithm | Verified | AOJ Problems |")
     print("|:---------:|:--------:|:------------:|")
 
-    for fname in files:
+    for _, fname in files_ext:
         algorithm = "[%s](./%s/%s)" % (fname, path, basename(fname))
         if fname in verifier:
             validated = '<font color="ForestGreen">Yes</font>'

@@ -7,20 +7,24 @@
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_1_B.cpp)
 
 {% highlight cpp %}
+#include <cstdio>
+#include <tuple>
+
 #include "../include/graph/spfa.cpp"
+#include "../include/graph/weighted_graph.hpp"
+
+using namespace std;
 
 int main() {
   int V, E, r, s, t, d;
   scanf("%d%d%d", &V, &E, &r);
-  Graph g(V);
+  WeightedGraph<int> g(V);
   while (E--) {
     scanf("%d%d%d", &s, &t, &d);
-    add_edge(g, s, t, d);
+    g.add(s, t, d);
   }
-  bool flag;
-  vector<int> res;
-  tie(flag, res) = spfa(g, r);
-  if (flag) {
+  vector<int> res = spfa(g, r);
+  if (!res.empty()) {
     for (int i = 0; i < V; ++i) {
       if (res[i] == inf<int>) puts("INF");
       else printf("%d\n", res[i]);
@@ -36,5 +40,6 @@ int main() {
 ### Includes
 
 - [spfa.cpp](../include/graph/spfa)
+- [weighted_graph.hpp](../include/graph/weighted_graph)
 
 [Back](..)

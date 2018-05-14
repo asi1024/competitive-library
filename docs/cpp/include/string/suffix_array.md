@@ -84,6 +84,7 @@ int query(int i, int j);
 
 {% highlight cpp %}
 #include "../util.hpp"
+#include "../structure/monoid.hpp"
 #include "../structure/segment_tree.cpp"
 
 template<typename string_t>
@@ -155,7 +156,7 @@ struct SuffixArray {
 class LCP {
   int n;
   vector<int> mapsto;
-  SegmentTree<RMQ> seg;
+  SegmentTree<RMQ<int>> seg;
 public:
   LCP(const string &str) : n(str.size()), mapsto(n), seg(n) {
     SuffixArray<string> sa(str);
@@ -173,6 +174,7 @@ public:
 ### Includes
 
 - [util.hpp](../util)
+- [monoid.hpp](../structure/monoid)
 - [segment_tree.cpp](../structure/segment_tree)
 
 [Back](../..)

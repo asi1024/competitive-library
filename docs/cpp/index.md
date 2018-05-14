@@ -5,12 +5,21 @@
 
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:------------:|
+| [cin.hpp](./include/template/cin) | <font color="Red">No</font> |  |
+| [const_value.hpp](./include/template/const_value) | <font color="ForestGreen">Yes</font> | [2559.cpp](./src/2559) |
+| [cout.hpp](./include/template/cout) | <font color="Red">No</font> |  |
+| [includes.hpp](./include/template/includes) | <font color="Red">No</font> |  |
+| [macros.hpp](./include/template/macros) | <font color="Red">No</font> |  |
+| [misc.hpp](./include/template/misc) | <font color="Red">No</font> |  |
+| [range.hpp](./include/template/range) | <font color="Red">No</font> |  |
 | [template.cpp](./include/template/template) | <font color="ForestGreen">Yes</font> | [ITP1_1_B.cpp](./src/ITP1_1_B) |
 
 ## Data Structures
 
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:------------:|
+| [monoid.hpp](./include/structure/monoid) | <font color="Red">No</font> |  |
+| [semi_group.hpp](./include/structure/semi_group) | <font color="Red">No</font> |  |
 | [convex_hull_trick.cpp](./include/structure/convex_hull_trick) | <font color="ForestGreen">Yes</font> | [2725.cpp](./src/2725) |
 | [fenwick_tree.cpp](./include/structure/fenwick_tree) | <font color="ForestGreen">Yes</font> | [DSL_2_B.cpp](./src/DSL_2_B) |
 | [heavy_light_decomposition.cpp](./include/structure/heavy_light_decomposition) | <font color="ForestGreen">Yes</font> | [2450.cpp](./src/2450) |
@@ -26,6 +35,8 @@
 
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:------------:|
+| [definition.hpp](./include/graph/definition) | <font color="Red">No</font> |  |
+| [weighted_graph.hpp](./include/graph/weighted_graph) | <font color="ForestGreen">Yes</font> | [2620.cpp](./src/2620)<br>[GRL_1_A.cpp](./src/GRL_1_A)<br>[GRL_1_B.cpp](./src/GRL_1_B) |
 | [articulation_points.cpp](./include/graph/articulation_points) | <font color="ForestGreen">Yes</font> | [GRL_3_A.cpp](./src/GRL_3_A) |
 | [bfs01.cpp](./include/graph/bfs01) | <font color="ForestGreen">Yes</font> | [2342.cpp](./src/2342) |
 | [bipartite_matching.cpp](./include/graph/bipartite_matching) | <font color="ForestGreen">Yes</font> | [GRL_7_A.cpp](./src/GRL_7_A) |
@@ -77,7 +88,6 @@
 
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:------------:|
-| [cin.cpp](./include/others/cin) | <font color="Red">No</font> |  |
 | [cout.cpp](./include/others/cout) | <font color="Red">No</font> |  |
 | [ext.cpp](./include/others/ext) | <font color="Red">No</font> |  |
 | [tree_dp.cpp](./include/others/tree_dp) | <font color="Red">No</font> |  |

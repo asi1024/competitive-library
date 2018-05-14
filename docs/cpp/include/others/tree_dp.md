@@ -1,104 +1,10 @@
 {% include mathjax.html %}
 
-## chmin
-
-{% highlight cpp %}
-T& chmin(T &a, const T &b);
-{% endhighlight %}
-
-## chmax
-
-{% highlight cpp %}
-T& chmax(T &a, const T &b);
-{% endhighlight %}
-
 ## main
 
 {% highlight cpp %}
 int main();
 {% endhighlight %}
-
-## Member functions
-
-### [1] do_falsename
-{% highlight cpp %}
-string_type do_falsename() const;
-string_type do_falsename() const;
-string_type do_falsename() const;
-string_type do_falsename() const;
-{% endhighlight %}
-
-
----------------------------------------
-
-### [2] do_truename
-{% highlight cpp %}
-string_type do_truename() const;
-string_type do_truename() const;
-string_type do_truename() const;
-string_type do_truename() const;
-{% endhighlight %}
-
-
----------------------------------------
-
-## Member functions
-
-### [1] (constructor)
-{% highlight cpp %}
-UnionFind(int n);
-UnionFind(int n);
-{% endhighlight %}
-
-- $0$ から $n - 1$ までそれぞれに対して，その要素だけを格納した集合を作る．
-
-#### Time complexity
-
-- $O(n)$
-
----------------------------------------
-
-### [2] root
-{% highlight cpp %}
-int root(int x);
-int root(int x);
-{% endhighlight %}
-
-- $x$ を含む集合の代表元を返す．
-
-#### Time complexity
-
-- amortized $O((n))$
-
----------------------------------------
-
-### [3] same
-{% highlight cpp %}
-bool same(int x, int y);
-bool same(int x, int y);
-{% endhighlight %}
-
-- $x$ と $y$ が同一の集合に属するかどうかを返す．
-
-#### Time complexity
-
-- amortized $O((n))$
-
----------------------------------------
-
-### [4] unite
-{% highlight cpp %}
-bool unite(int x, int y);
-bool unite(int x, int y);
-{% endhighlight %}
-
-- $x$ を含む集合と $y$ を含む集合を併合する． 既に $x$ を含む集合と $y$ を含む集合が同じ集合である場合は false を返し， そうでない場合は true を返す．
-
-#### Time complexity
-
-- amortized $O((n))$
-
----------------------------------------
 
 ## Member functions
 
@@ -157,52 +63,13 @@ query(int v);
 {% highlight cpp %}
 // Verified: Codeforces 804D
 
-#include <bits/stdc++.h>
-
-/* -------------------------------- Template -------------------------------- */
+#include "../util.hpp"
+#include "../structure/unionfind.cpp"
 
 #define REP(i,n) for(int i=0;i<(int)(n);i++)
 #define ALL(x) (x).begin(),(x).end()
 
 using namespace std;
-
-using ll = long long;
-using ld = long double;
-
-template <typename T> T &chmin(T &a, const T &b) { return a = min(a, b); }
-template <typename T> T &chmax(T &a, const T &b) { return a = max(a, b); }
-
-template<typename T> T inf;
-template<> constexpr int inf<int> = 1e9;
-template<> constexpr ll inf<ll> = 1e18;
-template<> constexpr ld inf<ld> = 1e30;
-
-struct yes_no : numpunct<char> {
-  string_type do_truename()  const { return "Yes"; }
-  string_type do_falsename() const { return "No"; }
-};
-
-/* -------------------------------- Library -------------------------------- */
-
-class UnionFind {
-  vector<int> p;
-public:
-  UnionFind (int n) : p(n, -1) {}
-  int root(int x) {
-    return p[x] < 0 ? x : p[x] = root(p[x]);
-  }
-  bool same(int x, int y) {
-    return root(x) == root(y);
-  }
-  bool unite(int x, int y) {
-    x = root(x); y = root(y);
-    if (x == y) return false;
-    if (p[y] < p[x]) swap(x, y);
-    if (p[x] == p[y]) --p[x];
-    p[y] = x;
-    return true;
-  }
-};
 
 using Graph = vector<vector<int>>;
 
@@ -346,5 +213,10 @@ int main() {
   return 0;
 }
 {% endhighlight %}
+
+### Includes
+
+- [util.hpp](../util)
+- [unionfind.cpp](../structure/unionfind)
 
 [Back](../..)
