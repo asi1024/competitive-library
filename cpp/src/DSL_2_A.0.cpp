@@ -1,10 +1,17 @@
-#include "../include/structure/monoid.hpp"
 #include "../include/structure/segment_tree.cpp"
+
+struct RMQ {
+  using value_type = int;
+  static value_type id() { return INT_MAX; }
+  static value_type op(const value_type &l, const value_type &r) {
+    return std::min(l, r);
+  }
+};
 
 int main() {
   int n, q, com, x, y;
   scanf("%d%d", &n, &q);
-  SegmentTree<RMQ<int>> seg(n);
+  SegmentTree<RMQ> seg(n);
   while (q--) {
     scanf("%d%d%d", &com, &x, &y);
     if (com) printf("%d\n", seg.query(x, y + 1));
