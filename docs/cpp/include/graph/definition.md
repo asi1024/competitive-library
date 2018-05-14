@@ -1,6 +1,72 @@
 {% include mathjax.html %}
 
+## Member functions
 
+### [1] (constructor)
+{% highlight cpp %}
+graph_t();
+graph_t(int n);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [2] add
+{% highlight cpp %}
+void add(int from, int to, Args... args);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [3] begin
+{% highlight cpp %}
+begin();
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [4] biadd
+{% highlight cpp %}
+void biadd(int from, int to, Args... args);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [5] end
+{% highlight cpp %}
+end();
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [6] operator[]
+{% highlight cpp %}
+operator[](int x);
+operator[](int x) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [7] push_back
+{% highlight cpp %}
+void push_back(const std::vector< edge_t > &es);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [8] size
+{% highlight cpp %}
+int size() const;
+{% endhighlight %}
+
+
+---------------------------------------
 
 ## Implementation
 

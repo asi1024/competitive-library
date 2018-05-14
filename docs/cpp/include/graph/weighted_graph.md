@@ -1,6 +1,14 @@
 {% include mathjax.html %}
 
+## Member functions
 
+### [1] (constructor)
+{% highlight cpp %}
+WeightedEdge(int, int t, cost_type c);
+{% endhighlight %}
+
+
+---------------------------------------
 
 ## Implementation
 

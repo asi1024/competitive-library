@@ -1,10 +1,16 @@
 {% include mathjax.html %}
 
-## operator<<
+## Member functions
 
+### [1] operator<<
 {% highlight cpp %}
-ostream& operator<<(ostream &os, const vector< T > &v);
+operator<<(const int &var);
+operator<<(const long long &var);
+operator<<(const std::string &var);
 {% endhighlight %}
+
+
+---------------------------------------
 
 ## Implementation
 

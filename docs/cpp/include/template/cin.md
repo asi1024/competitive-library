@@ -1,6 +1,18 @@
 {% include mathjax.html %}
 
+## Member functions
 
+### [1] operator>>
+{% highlight cpp %}
+operator>>(int &var);
+operator>>(long long &var);
+operator>>(double &var);
+operator>>(long double &var);
+operator>>(std::string &var);
+{% endhighlight %}
+
+
+---------------------------------------
 
 ## Implementation
 
