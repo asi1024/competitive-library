@@ -7,6 +7,9 @@ import os
 
 def category(path, name, verifier):
 
+    def ext(fname):
+        return fname.split('.')[-1]
+
     def basename(fname):
         return '.'.join(fname.split('.')[:-1])
 
@@ -18,7 +21,8 @@ def category(path, name, verifier):
     except os.FileNotFoundError:
         return
 
-    files_ext = [(0 if f.split('.')[-1] == 'hpp' else 1, f) for f in files]
+    files_ext = [(0 if ext(f) == 'hpp' else 1, f) for f in files
+                 if ext(f) in ('hpp', 'cpp')]
     files_ext.sort()
 
     print("## " + name)
