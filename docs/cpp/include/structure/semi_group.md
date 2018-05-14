@@ -4,18 +4,16 @@
 
 ## Implementation
 
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/monoid.hpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/semi_group.hpp)
 
 {% highlight cpp %}
 #include "../template/includes.hpp"
-#include "../template/const_value.hpp"
 
 template<typename T>
-struct RMQ {
+struct RightHandSide {
   using value_type = T;
-  static value_type id() { return inf<value_type>; }
   static value_type op(const value_type &l, const value_type &r) {
-    return std::min(l, r);
+    return r;
   }
 };
 {% endhighlight %}
@@ -23,6 +21,5 @@ struct RMQ {
 ### Includes
 
 - [includes.hpp](../template/includes)
-- [const_value.hpp](../template/const_value)
 
 [Back](../..)
