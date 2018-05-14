@@ -73,7 +73,7 @@ struct SuffixArray {
 class LCP {
   int n;
   vector<int> mapsto;
-  SegmentTree<RMQ> seg;
+  SegmentTree<RMQ<int>> seg;
 public:
   LCP(const string &str) : n(str.size()), mapsto(n), seg(n) {
     SuffixArray<string> sa(str);
