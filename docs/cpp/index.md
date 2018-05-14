@@ -5,13 +5,13 @@
 
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:------------:|
-| [cin.hpp](./include/template/cin) | <font color="Red">No</font> |  |
 | [const_value.hpp](./include/template/const_value) | <font color="ForestGreen">Yes</font> | [2559.cpp](./src/2559) |
-| [cout.hpp](./include/template/cout) | <font color="Red">No</font> |  |
 | [includes.hpp](./include/template/includes) | <font color="Red">No</font> |  |
 | [macros.hpp](./include/template/macros) | <font color="Red">No</font> |  |
 | [misc.hpp](./include/template/misc) | <font color="Red">No</font> |  |
 | [range.hpp](./include/template/range) | <font color="Red">No</font> |  |
+| [cin.cpp](./include/template/cin) | <font color="Red">No</font> |  |
+| [cout.cpp](./include/template/cout) | <font color="Red">No</font> |  |
 | [template.cpp](./include/template/template) | <font color="ForestGreen">Yes</font> | [ITP1_1_B.cpp](./src/ITP1_1_B) |
 
 ## Data Structures
@@ -88,7 +88,8 @@
 
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:------------:|
-| [cout.cpp](./include/others/cout) | <font color="Red">No</font> |  |
 | [ext.cpp](./include/others/ext) | <font color="Red">No</font> |  |
+| [fast_cin.cpp](./include/others/fast_cin) | <font color="Red">No</font> |  |
+| [fast_cout.cpp](./include/others/fast_cout) | <font color="Red">No</font> |  |
 | [tree_dp.cpp](./include/others/tree_dp) | <font color="Red">No</font> |  |
 

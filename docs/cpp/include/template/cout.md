@@ -1,65 +1,69 @@
 {% include mathjax.html %}
 
-## Member functions
+## operator<<
 
-### [1] operator<<
 {% highlight cpp %}
-operator<<(const int &var);
-operator<<(const long long &var);
-operator<<(const std::string &var);
+std::ostream& operator<<(std::ostream &os, const std::tuple< Args... > &t);
 {% endhighlight %}
 
+## operator<<
 
----------------------------------------
+{% highlight cpp %}
+std::ostream& operator<<(std::ostream &os, const std::pair< T, U > &p);
+{% endhighlight %}
+
+## operator<<
+
+{% highlight cpp %}
+std::ostream& operator<<(std::ostream &os, const std::vector< T > &v);
+{% endhighlight %}
 
 ## Implementation
 
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/cout.hpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/cout.cpp)
 
 {% highlight cpp %}
-#include <cstdio>
-#include <string>
+#include "includes.hpp"
 
-class fast_ostream {
-  char ch[32];
-  template<typename T>
-  inline void put_integer(const T &var) {
-    int n = var;
-    if (n == 0) {
-      putchar_unlocked('0');
-      return;
-    }
-    else if (n < 0) {
-      putchar_unlocked('-');
-      n = -n;
-    }
-    int count = 0;
-    while (n != 0) {
-      ch[count++] = n % 10 + '0';
-      n /= 10;
-    }
-    while (count--) {
-      putchar_unlocked(ch[count]);
-    }
-  }
-public:
-  inline fast_ostream& operator<<(const int &var) {
-    put_integer(var);
-    return *this;
-  }
-  inline fast_ostream& operator<<(const long long &var) {
-    put_integer(var);
-    return *this;
-  }
-  inline fast_ostream& operator<<(const std::string &var) {
-    for (char c: var) putchar_unlocked(c);
-    return *this;
+template<typename T, int M, int N>
+struct tuple_printer {
+  static void print(std::ostream& os, const T& x) {
+    os << std::get<M>(x) << " ";
+    tuple_printer<T, M + 1, N>::print(os, x);
   }
 };
 
-fast_ostream fcout;
+template<typename T, int N>
+struct tuple_printer<T, N, N> {
+  static void print(std::ostream& os, const T& x) {
+    os << std::get<N>(x);
+  }
+};
 
-const std::string fendl = "\n";
+template<typename... Args>
+std::ostream& operator<<(std::ostream& os, const std::tuple<Args...>& t) {
+  tuple_printer<std::tuple<Args...>, 0, sizeof...(Args) - 1>::print(os, t);
+  return os;
+}
+
+template <typename T, typename U>
+std::ostream &operator<<(std::ostream &os, const std::pair<T, U> &p) {
+  os << p.first << " " << p.second;
+  return os;
+}
+
+template <typename T>
+std::ostream &operator<<(std::ostream &os, const std::vector<T> &v) {
+  for (auto it = v.begin(); it != v.end(); ++it) {
+    if (it != v.begin()) os << " ";
+    os << *it;
+  }
+  return os;
+}
 {% endhighlight %}
+
+### Includes
+
+- [includes.hpp](includes)
 
 [Back](../..)

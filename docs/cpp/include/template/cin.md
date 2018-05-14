@@ -1,100 +1,66 @@
 {% include mathjax.html %}
 
-## Member functions
+## operator>>
 
-### [1] operator>>
 {% highlight cpp %}
-operator>>(int &var);
-operator>>(long long &var);
-operator>>(double &var);
-operator>>(long double &var);
-operator>>(std::string &var);
+std::istream& operator>>(std::istream &is, std::tuple< Args... > &t);
 {% endhighlight %}
 
+## operator>>
 
----------------------------------------
+{% highlight cpp %}
+std::istream& operator>>(std::istream &is, std::pair< T, U > &p);
+{% endhighlight %}
+
+## operator>>
+
+{% highlight cpp %}
+std::istream& operator>>(std::istream &is, std::vector< T > &v);
+{% endhighlight %}
 
 ## Implementation
 
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/cin.hpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/cin.cpp)
 
 {% highlight cpp %}
-#include <cstdio>
-#include <string>
+#include "includes.hpp"
 
-class fast_istream {
-  bool is_space(char c) { return c < 0x21 || c > 0x7E; }
-  template<typename T>
-  void get_integer(T &var) {
-    var = 0;
-    T sign = 1;
-    int c = getchar_unlocked();
-    while (c < '0' || '9' < c) {
-      if (c == '-') sign = -1;
-      c = getchar_unlocked();
-    }
-    while ('0' <= c && c <= '9') {
-      var = var * 10 + c - '0';
-      c = getchar_unlocked();
-    }
-    var *= sign;
-  }
-  template<typename T>
-  void get_real(T &var) {
-    var = 0.0;
-    T sign = 1.0;
-    int c = getchar_unlocked();
-    while ((c < '0' || '9' < c) && c != '.') {
-      if (c == '-') sign = -1.0;
-      c = getchar_unlocked();
-    }
-    while ('0' <= c && c <= '9') {
-      var = var * 10.0 + c - '0';
-      c = getchar_unlocked();
-    }
-    if (c == '.') {
-      c = getchar_unlocked();
-      T base = 1.0;
-      while ('0' <= c && c <= '9') {
-        base /= 10.0;
-        var += base * (c - '0');
-        c = getchar_unlocked();
-      }
-    }
-    var *= sign;
-  }
-public:
-  inline fast_istream& operator>>(int &var) {
-    get_integer(var);
-    return *this;
-  }
-  inline fast_istream& operator>>(long long &var) {
-    get_integer(var);
-    return *this;
-  }
-  inline fast_istream& operator>>(double &var) {
-    get_real(var);
-    return *this;
-  }
-  inline fast_istream& operator>>(long double &var) {
-    get_real(var);
-    return *this;
-  }
-  inline fast_istream& operator>>(std::string &var) {
-    char c = getchar_unlocked();
-    while (is_space(c)) {
-      c = getchar_unlocked();
-    }
-    var = "";
-    while (is_space(c)) {
-      var.push_back(c);
-      c = getchar_unlocked();
-    }
-    return *this;
+template<typename T, int M, int N>
+struct tuple_getter {
+  static void get(std::istream& is, T& x) {
+    is >> std::get<M>(x);
+    tuple_getter<T, M + 1, N>::get(is, x);
   }
 };
 
-fast_istream fcin;
+template<typename T, int N>
+struct tuple_getter<T, N, N> {
+  static void get(std::istream& is, T& x) {
+    is >> std::get<N>(x);
+  }
+};
+
+template<typename... Args>
+std::istream& operator>>(std::istream& is, std::tuple<Args...>& t) {
+  tuple_getter<std::tuple<Args...>, 0, sizeof...(Args) - 1>::get(is, t);
+  return is;
+}
+
+template <typename T, typename U>
+std::istream &operator>>(std::istream &is, std::pair<T, U> &p) {
+  is >> p.first >> p.second;
+  return is;
+}
+
+template <typename T>
+std::istream &operator>>(std::istream &is, std::vector<T> &v) {
+  for (T &x: v) is >> x;
+  return is;
+}
 {% endhighlight %}
+
+### Includes
+
+- [includes.hpp](includes)
 
 [Back](../..)
