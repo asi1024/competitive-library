@@ -1,3 +1,5 @@
+#pragma once
+
 class range {
   class index_type {
     int x;
