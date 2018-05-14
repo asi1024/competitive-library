@@ -14,10 +14,8 @@ int main() {
     scanf("%d%d%d", &s, &t, &d);
     g.add(s, t, d);
   }
-  bool flag;
-  vector<int> res;
-  std::tie(flag, res) = spfa(g, r);
-  if (flag) {
+  vector<int> res = spfa(g, r);
+  if (!res.empty()) {
     for (int i = 0; i < V; ++i) {
       if (res[i] == inf<int>) puts("INF");
       else printf("%d\n", res[i]);

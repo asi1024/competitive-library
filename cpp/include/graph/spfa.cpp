@@ -6,13 +6,13 @@
 /// @param g: 重み付きグラフ
 /// @param s: 始点の頂点番号
 /// @typereq edge_t
-/// @return s から到達可能な負閉路が存在しない場合: (true, 各頂点までの距離が入った型 `Cost` の列)
-/// @return s から到達可能な負閉路が存在する場合: (false, 未定義)
+/// @return 始点から各頂点までの距離が入った型 cost_type の列
+/// @note 入力グラフ中に不閉路が存在する場合は空ベクトルを返す
 /// @complexity $O(EV)$
 /// @brief
 /// 重み付きグラフの単一始点全点間最短距離を求める．
 template <typename edge_t, typename cost_type = typename edge_t::cost_type>
-std::pair<bool,std::vector<cost_type>> spfa(const graph_t<edge_t> &g, int s) {
+std::vector<cost_type> spfa(const graph_t<edge_t> &g, int s) {
   const int n = g.size();
   std::vector<cost_type> d(n, inf<cost_type>); d[s] = zero<cost_type>;
   std::vector<int> updated(n, 0);
@@ -24,7 +24,10 @@ std::pair<bool,std::vector<cost_type>> spfa(const graph_t<edge_t> &g, int s) {
     que.pop();
     inque[from] = false;
     ++updated[from];
-    if (updated[from] == n + 1) return {false, d}; // negative cycle
+    if (updated[from] == n + 1) {
+      // negative cycle
+      return std::vector<cost_type>();
+    }
     for (const auto &e: g[from]) {
       cost_type cost = d[from] + e.cost;
       if (cost < d[e.to]) {
@@ -36,5 +39,5 @@ std::pair<bool,std::vector<cost_type>> spfa(const graph_t<edge_t> &g, int s) {
       }
     }
   }
-  return {true, d};
+  return d;
 }
