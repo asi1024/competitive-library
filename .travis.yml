@@ -69,7 +69,7 @@ matrix:
         apt:
           sources: ['ubuntu-toolchain-r-test']
       env:
-        ENV="Docs"
+        ENV="Doxygen 1.8.13"
       install:
         - wget https://github.com/doxygen/doxygen/archive/Release_1_8_13.tar.gz
         - tar xpvf Release_1_8_13.tar.gz
