@@ -1,28 +1,5 @@
-{% include mathjax.html %}
+#pragma once
 
-## operator<<
-
-{% highlight cpp %}
-std::ostream& operator<<(std::ostream &os, const std::tuple< Args... > &t);
-{% endhighlight %}
-
-## operator<<
-
-{% highlight cpp %}
-std::ostream& operator<<(std::ostream &os, const std::pair< T, U > &p);
-{% endhighlight %}
-
-## operator<<
-
-{% highlight cpp %}
-std::ostream& operator<<(std::ostream &os, const std::vector< T > &v);
-{% endhighlight %}
-
-## Implementation
-
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/cout.cpp)
-
-{% highlight cpp %}
 #include "includes.hpp"
 
 template<typename T, int M, int N>
@@ -60,10 +37,3 @@ std::ostream &operator<<(std::ostream &os, const std::vector<T> &v) {
   }
   return os;
 }
-{% endhighlight %}
-
-### Includes
-
-- [includes.hpp](includes)
-
-[Back](../..)

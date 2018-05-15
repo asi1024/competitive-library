@@ -24,7 +24,7 @@ int root(int x);
 
 #### Time complexity
 
-- amortized $O((n))$
+- amortized $O(\alpha(n))$
 
 ---------------------------------------
 
@@ -37,7 +37,7 @@ bool same(int x, int y);
 
 #### Time complexity
 
-- amortized $O((n))$
+- amortized $O(\alpha(n))$
 
 ---------------------------------------
 
@@ -50,7 +50,7 @@ bool unite(int x, int y);
 
 #### Time complexity
 
-- amortized $O((n))$
+- amortized $O(\alpha(n))$
 
 ---------------------------------------
 
