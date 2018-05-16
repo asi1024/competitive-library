@@ -1,6 +1,9 @@
+#include "../include/graph/weighted_graph.hpp"
 #include "../include/graph/bfs01.cpp"
 
 #define REP(i,n) for(int i=0;i<(n);++i)
+
+using namespace std;
 
 int H, W, A;
 string str[128];
@@ -16,32 +19,32 @@ int main() {
     if (str[i][j] == 'S') starty = i, startx = j;
     if (str[i][j] == 'G') goaly = i, goalx = j;
   }
-  Graph g(H*W*(A+1)*(A+1)*4);
+  WeightedGraph<int> g(H*W*(A+1)*(A+1)*4);
   REP(i,H-1) REP(j,W) REP(a,A+1) REP(b,A+1) {
     if (str[i+1][j] != '#')
-      add_edge(g, getId(i,j,a,b,3), getId(i+1,j,a,b,3), 0);
+      g.add(getId(i,j,a,b,3), getId(i+1,j,a,b,3), 0);
     if (str[i+1][j] == '.') {
-      if (a>0) add_edge(g, getId(i,j,a,b,3), getId(i+1,j,a-1,b,0), 1);
-      if (b>0) add_edge(g, getId(i,j,a,b,3), getId(i+1,j,a,b-1,2), 1);
+      if (a>0) g.add(getId(i,j,a,b,3), getId(i+1,j,a-1,b,0), 1);
+      if (b>0) g.add(getId(i,j,a,b,3), getId(i+1,j,a,b-1,2), 1);
     }
     if (str[i][j] == '.' || str[i][j] == 'G') {
-      add_edge(g, getId(i+1,j,a,b,1), getId(i,j,a,b,1), 0);
-      if (a>0) add_edge(g, getId(i+1,j,a,b,1), getId(i,j,a-1,b,2), 1);
-      if (b>0) add_edge(g, getId(i+1,j,a,b,1), getId(i,j,a,b-1,0), 1);
+      g.add(getId(i+1,j,a,b,1), getId(i,j,a,b,1), 0);
+      if (a>0) g.add(getId(i+1,j,a,b,1), getId(i,j,a-1,b,2), 1);
+      if (b>0) g.add(getId(i+1,j,a,b,1), getId(i,j,a,b-1,0), 1);
     }
   }
   REP(i,H) REP(j,W-1) REP(a,A+1) REP(b,A+1) {
     if (str[i][j+1] != '#')
-      add_edge(g, getId(i,j,a,b,0), getId(i,j+1,a,b,0), 0);
+      g.add(getId(i,j,a,b,0), getId(i,j+1,a,b,0), 0);
     if (str[i][j+1] == '.') {
-      if (a>0) add_edge(g, getId(i,j,a,b,0), getId(i,j+1,a-1,b,3), 1);
-      if (b>0) add_edge(g, getId(i,j,a,b,0), getId(i,j+1,a,b-1,1), 1);
+      if (a>0) g.add(getId(i,j,a,b,0), getId(i,j+1,a-1,b,3), 1);
+      if (b>0) g.add(getId(i,j,a,b,0), getId(i,j+1,a,b-1,1), 1);
     }
     if (str[i][j] != '#')
-      add_edge(g, getId(i,j+1,a,b,2), getId(i,j,a,b,2), 0);
+      g.add(getId(i,j+1,a,b,2), getId(i,j,a,b,2), 0);
     if (str[i][j] == '.') {
-      if (a>0) add_edge(g, getId(i,j+1,a,b,2), getId(i,j,a-1,b,1), 1);
-      if (b>0) add_edge(g, getId(i,j+1,a,b,2), getId(i,j,a,b-1,3), 1);
+      if (a>0) g.add(getId(i,j+1,a,b,2), getId(i,j,a-1,b,1), 1);
+      if (b>0) g.add(getId(i,j+1,a,b,2), getId(i,j,a,b-1,3), 1);
     }
   }
   vector<int> d = bfs01(g, getId(starty,startx,A,A,3));
