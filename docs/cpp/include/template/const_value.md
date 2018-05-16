@@ -1,11 +1,5 @@
 {% include mathjax.html %}
 
-## inf
-
-{% highlight cpp %}
-T inf();
-{% endhighlight %}
-
 ## inf< int >
 
 {% highlight cpp %}
@@ -24,10 +18,10 @@ constexpr long long inf< long long >();
 constexpr long double inf< long double >();
 {% endhighlight %}
 
-## zero
+## inf
 
 {% highlight cpp %}
-T zero();
+T inf();
 {% endhighlight %}
 
 ## zero< int >
@@ -48,20 +42,26 @@ constexpr long long zero< long long >();
 constexpr long double zero< long double >();
 {% endhighlight %}
 
+## zero
+
+{% highlight cpp %}
+T zero();
+{% endhighlight %}
+
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/const_value.hpp)
 
 {% highlight cpp %}
-template<typename T> T inf();
 template<> constexpr int inf<int>() { return 1e9; }
 template<> constexpr long long inf<long long>() { return 1e18; }
 template<> constexpr long double inf<long double>() { return 1e30; }
+template<typename T> T inf();
 
-template<typename T> T zero();
 template<> constexpr int zero<int>() { return 0; }
 template<> constexpr long long zero<long long>() { return 0; }
 template<> constexpr long double zero<long double>() { return 0; }
+template<typename T> T zero();
 {% endhighlight %}
 
 [Back](../..)
