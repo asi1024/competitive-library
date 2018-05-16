@@ -79,7 +79,7 @@ Flow max_flow(vector<vector<Edge>> &g, int s, int t, Flow zero = 0) {
     if (d[t] < zero) return flow;
     vector<int> iter(V, 0);
     Flow f;
-    while ((f = augment(g, d, iter, s, t, inf<Flow>)) > 0) flow += f;
+    while ((f = augment(g, d, iter, s, t, inf<Flow>())) > 0) flow += f;
   }
 }
 

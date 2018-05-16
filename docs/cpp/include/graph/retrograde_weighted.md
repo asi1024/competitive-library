@@ -60,7 +60,7 @@ template<typename T>
 struct Game_with_Cost {
   Game win;
   T cost;
-  Game_with_Cost() : win(DRAW), cost(inf<T>) {;}
+  Game_with_Cost() : win(DRAW), cost(inf<T>()) {;}
   Game_with_Cost(Game w, T c) : win(w), cost(c) {;}
 };
 
