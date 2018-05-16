@@ -5,11 +5,12 @@
 
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:------------:|
-| [const_value.hpp](./include/template/const_value) | <font color="ForestGreen">Yes</font> | [2559.cpp](./src/2559) |
+| [const_value.hpp](./include/template/const_value) | <font color="Red">No</font> |  |
 | [includes.hpp](./include/template/includes) | <font color="Red">No</font> |  |
 | [macros.hpp](./include/template/macros) | <font color="Red">No</font> |  |
 | [misc.hpp](./include/template/misc) | <font color="Red">No</font> |  |
 | [range.hpp](./include/template/range) | <font color="Red">No</font> |  |
+| [typedef.hpp](./include/template/typedef) | <font color="ForestGreen">Yes</font> | [2559.cpp](./src/2559) |
 | [cin.cpp](./include/template/cin) | <font color="Red">No</font> |  |
 | [cout.cpp](./include/template/cout) | <font color="Red">No</font> |  |
 | [template.cpp](./include/template/template) | <font color="ForestGreen">Yes</font> | [ITP1_1_B.cpp](./src/ITP1_1_B) |
