@@ -1,11 +1,11 @@
 #pragma once
 
-template<typename T> T inf;
-template<> constexpr int inf<int> = 1e9;
-template<> constexpr long long inf<long long> = 1e18;
-template<> constexpr long double inf<long double> = 1e30;
+template<typename T> T inf();
+template<> constexpr int inf<int>() { return 1e9; }
+template<> constexpr long long inf<long long>() { return 1e18; }
+template<> constexpr long double inf<long double>() { return 1e30; }
 
-template<typename T> T zero;
-template<> constexpr int zero<int> = 0;
-template<> constexpr long long zero<long long> = 0;
-template<> constexpr long double zero<long double> = 0;
+template<typename T> T zero();
+template<> constexpr int zero<int>() { return 0; }
+template<> constexpr long long zero<long long>() { return 0; }
+template<> constexpr long double zero<long double>() { return 0; }
