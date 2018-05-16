@@ -12,12 +12,12 @@
 /// @brief
 /// コストが 0 か 1 のみの重み付きグラフの単一始点全点間最短距離を求める．
 template <typename edge_t, typename cost_type = typename edge_t::cost_type>
-std::vector<std::enable_if_t<std::is_integral<cost_type>::value, cost_type>>
+std::vector<typename std::enable_if<std::is_integral<cost_type>::value, cost_type>::type>
 bfs01(const graph_t<edge_t> &g, int s) {
   std::vector<cost_type> d(g.size(), inf<cost_type>());
   d[s] = cost_type(0);
   std::deque<std::pair<cost_type,int>> que;
-  que.emplace_back(zero<cost_type>, s);
+  que.emplace_back(zero<cost_type>(), s);
   while (!que.empty()) {
     auto top = que.front();
     que.pop_front();
