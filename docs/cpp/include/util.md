@@ -8,6 +8,7 @@
 
 {% highlight cpp %}
 #include "template/includes.hpp"
+#include "template/typedef.hpp"
 #include "template/const_value.hpp"
 
 using namespace std;
@@ -16,6 +17,7 @@ using namespace std;
 ### Includes
 
 - [includes.hpp](template/includes)
+- [typedef.hpp](template/typedef)
 - [const_value.hpp](template/const_value)
 
 [Back](..)
