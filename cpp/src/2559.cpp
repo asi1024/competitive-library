@@ -1,4 +1,4 @@
-#include "../include/template/const_value.hpp"
+#include "../include/template/typedef.hpp"
 #include "../include/structure/unionfind.cpp"
 #include "../include/structure/skew_heap.cpp"
 
