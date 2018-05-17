@@ -30,7 +30,8 @@ vector<int> primes() {
   }
   vector<int> res;
   for (int i = 2; i < Prime_N; ++i) {
-    if (is_prime[i]) res.push_back(i);
+    if (is_prime[i])
+      res.push_back(i);
   }
   return res;
 }

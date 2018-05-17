@@ -15,7 +15,7 @@ T& chmax(T &a, const T &b);
 ## prime_factorization
 
 {% highlight cpp %}
-vector<pair<ll,int> > prime_factorization(ll n);
+vector<pair<ll, int> > prime_factorization(ll n);
 {% endhighlight %}
 
 ## init
@@ -289,8 +289,8 @@ powi(int m);
 #include <deque>
 #include <functional>
 #include <iomanip>
-#include <locale>
 #include <iostream>
+#include <locale>
 #include <map>
 #include <new>
 #include <numeric>
@@ -305,8 +305,8 @@ powi(int m);
 #include <utility>
 #include <vector>
 
-#define REP(i,n) for(int i=0;i<(int)(n);i++)
-#define ALL(x) (x).begin(),(x).end()
+#define REP(i, n) for (int i = 0; i < (int)(n); i++)
+#define ALL(x) (x).begin(), (x).end()
 
 using namespace std;
 
@@ -320,18 +320,22 @@ template <typename T> T &chmin(T &a, const T &b) { return a = min(a, b); }
 template <typename T> T &chmax(T &a, const T &b) { return a = max(a, b); }
 
 struct yes_no : numpunct<char> {
-  string_type do_truename()  const { return "YES"; }
+  string_type do_truename() const { return "YES"; }
   string_type do_falsename() const { return "NO"; }
 };
 
 /* -------------------------------- Library -------------------------------- */
 
-vector<pair<ll,int>> prime_factorization(ll n) {
-  vector<pair<ll,int>> res;
+vector<pair<ll, int>> prime_factorization(ll n) {
+  vector<pair<ll, int>> res;
   for (int i = 2; i * i <= n; ++i) {
     if (n % i == 0) {
-      res.emplace_back(i, 1); n /= i;
-      while (n % i == 0) { ++res.back().second; n /= i; }
+      res.emplace_back(i, 1);
+      n /= i;
+      while (n % i == 0) {
+        ++res.back().second;
+        n /= i;
+      }
     }
   }
   res.emplace_back(n, 1);
@@ -342,28 +346,56 @@ int mod;
 
 class Modulo {
   int n;
+
 public:
-  Modulo () : n(0) {;}
-  Modulo (int m) : n(m) {
-    if (n >= mod) n %= mod;
-    else if (n < 0) n = (n % mod + mod) % mod;
+  Modulo() : n(0) { ; }
+  Modulo(int m) : n(m) {
+    if (n >= mod)
+      n %= mod;
+    else if (n < 0)
+      n = (n % mod + mod) % mod;
   }
-  Modulo (ll m) {
-    if (m >= mod) m %= mod;
-    else if (m < 0) m = (m % mod + mod) % mod;
+  Modulo(ll m) {
+    if (m >= mod)
+      m %= mod;
+    else if (m < 0)
+      m = (m % mod + mod) % mod;
     n = m;
   }
   explicit operator int() const { return n; }
   explicit operator ll() const { return n; }
   bool operator==(const Modulo &a) const { return n == a.n; }
-  Modulo operator+=(const Modulo &a) { n += a.n; if (n >= mod) n -= mod; return *this; }
-  Modulo operator-=(const Modulo &a) { n -= a.n; if (n < 0) n += mod; return *this; }
-  Modulo operator*=(const Modulo &a) { n = (ll(n) * a.n) % mod; return *this; }
-  Modulo operator+(const Modulo &a) const { Modulo res = *this; return res += a; }
-  Modulo operator-(const Modulo &a) const { Modulo res = *this; return res -= a; }
-  Modulo operator*(const Modulo &a) const { Modulo res = *this; return res *= a; }
+  Modulo operator+=(const Modulo &a) {
+    n += a.n;
+    if (n >= mod)
+      n -= mod;
+    return *this;
+  }
+  Modulo operator-=(const Modulo &a) {
+    n -= a.n;
+    if (n < 0)
+      n += mod;
+    return *this;
+  }
+  Modulo operator*=(const Modulo &a) {
+    n = (ll(n) * a.n) % mod;
+    return *this;
+  }
+  Modulo operator+(const Modulo &a) const {
+    Modulo res = *this;
+    return res += a;
+  }
+  Modulo operator-(const Modulo &a) const {
+    Modulo res = *this;
+    return res -= a;
+  }
+  Modulo operator*(const Modulo &a) const {
+    Modulo res = *this;
+    return res *= a;
+  }
   Modulo operator^(int n) const {
-    if (n == 0) return Modulo(1);
+    if (n == 0)
+      return Modulo(1);
     const Modulo a = *this;
     Modulo res = (a * a) ^ (n / 2);
     return n % 2 ? res * a : res;
@@ -376,12 +408,11 @@ vector<ll> factor;
 class Mod {
   Modulo n;
   vector<int> f;
-  ll inv(ll a, ll p) {
-    return (a == 1 ? 1 : (1 - p * inv(p%a, a)) / a + p);
-  }
+  ll inv(ll a, ll p) { return (a == 1 ? 1 : (1 - p * inv(p % a, a)) / a + p); }
+
 public:
-  Mod (ll m) {
-    assert (!factor.empty()); // assert
+  Mod(ll m) {
+    assert(!factor.empty()); // assert
     f.assign(len, 0);
     for (int i = 0; i < len; ++i) {
       while (m % i == 0) {
@@ -401,22 +432,34 @@ public:
   explicit operator ll() const { return ll(Modulo(*this)); }
   Mod operator*=(const Mod &a) {
     n *= a.n;
-    for (int i = 0; i < len; ++i) f[i] += a.f[i];
+    for (int i = 0; i < len; ++i)
+      f[i] += a.f[i];
     return *this;
   }
   Mod operator/=(const Mod &a) {
     n *= inv(ll(a.n), mod);
-    for (int i = 0; i < len; ++i) f[i] -= a.f[i];
+    for (int i = 0; i < len; ++i)
+      f[i] -= a.f[i];
     return *this;
   }
   Mod powi(int m) {
     n = n ^ m;
-    for (int &i: f) i *= m;
+    for (int &i : f)
+      i *= m;
     return *this;
   }
-  Mod operator*(const Mod &a) const { Mod res = *this; return res *= a; }
-  Mod operator/(const Mod &a) const { Mod res = *this; return res /= a; }
-  Mod operator^(const int n) const { Mod res = *this; return res.powi(n); }
+  Mod operator*(const Mod &a) const {
+    Mod res = *this;
+    return res *= a;
+  }
+  Mod operator/(const Mod &a) const {
+    Mod res = *this;
+    return res /= a;
+  }
+  Mod operator^(const int n) const {
+    Mod res = *this;
+    return res.powi(n);
+  }
 };
 
 const int MAX_LEN = 1024000;
@@ -424,8 +467,8 @@ const int MAX_LEN = 1024000;
 vector<Mod> fact;
 
 void init() {
-  assert (mod >= 2 && factor.empty());
-  for (auto i: prime_factorization(mod)) {
+  assert(mod >= 2 && factor.empty());
+  for (auto i : prime_factorization(mod)) {
     factor.push_back(i.first);
   }
   fact[0] = Mod(1);
@@ -435,8 +478,9 @@ void init() {
 }
 
 Mod comb(int a, int b) {
-  if (b < 0 || b > a) return Mod(0);
-  return fact[a] / (fact[b] * fact[a-b]);
+  if (b < 0 || b > a)
+    return Mod(0);
+  return fact[a] / (fact[b] * fact[a - b]);
 }
 
 // FFT
@@ -444,7 +488,7 @@ vector<P> FFT(ld theta, const vector<P> &a) {
   const int n = a.size();
   vector<P> ret = a;
   for (int m = n; m >= 2; m >>= 1, theta *= 2) {
-    REP(i,m/2) {
+    REP(i, m / 2) {
       for (int j = i; j < n; j += m) {
         int k = j + m / 2;
         P x = ret[j] - ret[k];
@@ -454,26 +498,32 @@ vector<P> FFT(ld theta, const vector<P> &a) {
     }
   }
   for (int i = 0, j = 1; j < n - 1; j++) {
-    for (int k = n >> 1; k > (i ^= k); k >>= 1) {;}
-    if (j < i) swap(ret[i], ret[j]);
+    for (int k = n >> 1; k > (i ^= k); k >>= 1) {
+      ;
+    }
+    if (j < i)
+      swap(ret[i], ret[j]);
   }
   return ret;
 }
 
 vector<ll> convolution(const vector<ll> &lhs, const vector<ll> &rhs) {
   int n = 1, a = lhs.size(), b = rhs.size();
-  while (n < max(a, b) * 2) n <<= 1;
+  while (n < max(a, b) * 2)
+    n <<= 1;
   vector<P> temp1(n), temp2(n);
-  REP(i,n/2) {
-    if (i < a) temp1[i] = P(lhs[i], 0);
-    if (i < b) temp2[i] = P(rhs[i], 0);
+  REP(i, n / 2) {
+    if (i < a)
+      temp1[i] = P(lhs[i], 0);
+    if (i < b)
+      temp2[i] = P(rhs[i], 0);
   }
   temp1 = FFT(2.0 * pi / n, temp1);
   temp2 = FFT(2.0 * pi / n, temp2);
-  REP(i,n) temp1[i] *= temp2[i];
+  REP(i, n) temp1[i] *= temp2[i];
   temp1 = FFT(-2.0 * pi / n, temp1);
   vector<ll> ret(n);
-  REP(i,n) ret[i] = temp1[i].real() / n + 0.5;
+  REP(i, n) ret[i] = temp1[i].real() / n + 0.5;
   return ret;
 }
 
@@ -498,8 +548,8 @@ vector<T> convolution(const vector<T> &lhs, const vector<T> &rhs) {
   const int size = a.size();
   vector<T> res(size);
   for (int i = 0; i < size; ++i) {
-    res[i] = T(a[i]) * T(base * base - base) -
-      T(b[i]) * T(base - 1) + T(c[i]) * T(base);
+    res[i] = T(a[i]) * T(base * base - base) - T(b[i]) * T(base - 1) +
+             T(c[i]) * T(base);
   }
   return res;
 }

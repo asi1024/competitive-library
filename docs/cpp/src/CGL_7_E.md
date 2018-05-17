@@ -22,9 +22,10 @@ int main() {
   vector<Point> res = is_cc(c1, c2);
   Point pa = res[0], pb = (res.size() == 2 ? res[1] : res[0]);
   if (real(pa) > real(pb) + eps ||
-      (real(pa) > real(pb) - eps && imag(pa) > imag(pb))) swap(pa, pb);
-  printf("%.10Lf %.10Lf %.10Lf %.10Lf\n",
-         real(pa), imag(pa), real(pb), imag(pb));
+      (real(pa) > real(pb) - eps && imag(pa) > imag(pb)))
+    swap(pa, pb);
+  printf("%.10Lf %.10Lf %.10Lf %.10Lf\n", real(pa), imag(pa), real(pb),
+         imag(pb));
   return 0;
 }
 {% endhighlight %}

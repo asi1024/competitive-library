@@ -4,16 +4,16 @@
 
 template <typename T> using LUP = pair<Matrix<T>, vector<int>>;
 
-template <typename T>
-LUP<T> LUPDecomposition(Matrix<T> A) {
-  assert (A.Y() == A.X());
+template <typename T> LUP<T> LUPDecomposition(Matrix<T> A) {
+  assert(A.Y() == A.X());
   int n = A.Y();
   vector<int> perm(n);
   iota(begin(perm), end(perm), 0);
   for (int i = 0; i < n; ++i) {
     int pivot = i;
     for (int j = i + 1; j < n; ++j) {
-      if (abs(A[j][i]) > abs(A[pivot][i])) pivot = j;
+      if (abs(A[j][i]) > abs(A[pivot][i]))
+        pivot = j;
     }
     swap(A[pivot], A[i]);
     swap(perm[pivot], perm[i]);
@@ -27,8 +27,7 @@ LUP<T> LUPDecomposition(Matrix<T> A) {
   return make_pair(A, perm);
 }
 
-template <typename T>
-Vec<T> LUPBackSubstitution(const LUP<T> &lup, Vec<T> a) {
+template <typename T> Vec<T> LUPBackSubstitution(const LUP<T> &lup, Vec<T> a) {
   const Matrix<T> &LU = lup.first;
   const vector<int> &perm = lup.second;
   const int n = LU.Y();
@@ -37,7 +36,7 @@ Vec<T> LUPBackSubstitution(const LUP<T> &lup, Vec<T> a) {
     tmp[i] = a[perm[i]];
   }
   swap(tmp, a);
-  for (int i = 0; i < n ;++i) {
+  for (int i = 0; i < n; ++i) {
     for (int j = 0; j < i; ++j) {
       a[i] -= a[j] * LU[i][j];
     }

@@ -35,10 +35,10 @@ Edge(int t);
 {% highlight cpp %}
 #include "../util.hpp"
 
-template <typename Edge,
-          typename Flow = typename Edge::Flow,
+template <typename Edge, typename Flow = typename Edge::Flow,
           typename Cost = typename Edge::Cost>
-Cost min_cost_flow(vector<vector<Edge>> &g, int s, int t, Flow f, bool init = true) {
+Cost min_cost_flow(vector<vector<Edge>> &g, int s, int t, Flow f,
+                   bool init = true) {
   const int V = g.size();
   // const Cost eps = 1e-8;
   static vector<Cost> h(V, 0), dist(V, 0);
@@ -57,12 +57,15 @@ Cost min_cost_flow(vector<vector<Edge>> &g, int s, int t, Flow f, bool init = tr
     dist[s] = 0;
     que.push(P(0, s));
     while (!que.empty()) {
-      P p = que.top(); que.pop();
+      P p = que.top();
+      que.pop();
       int v = p.second;
-      if (dist[v] < p.first) continue;
+      if (dist[v] < p.first)
+        continue;
       for (int i = 0; i < (int)g[v].size(); ++i) {
         const auto &e = g[v][i];
-        if (e.cap <= 0) continue;
+        if (e.cap <= 0)
+          continue;
         if (dist[e.to] > dist[v] + e.cost + h[v] - h[e.to] /* + eps */) {
           dist[e.to] = dist[v] + e.cost + h[v] - h[e.to];
           prevv[e.to] = v;
@@ -71,7 +74,8 @@ Cost min_cost_flow(vector<vector<Edge>> &g, int s, int t, Flow f, bool init = tr
         }
       }
     }
-    if (dist[t] == inf<Cost>()) return -1;
+    if (dist[t] == inf<Cost>())
+      return -1;
     for (int i = 0; i < V; ++i) {
       h[i] += dist[i];
     }

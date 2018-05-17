@@ -3,6 +3,7 @@
 class range {
   class index_type {
     int x;
+
   public:
     index_type(int x_) : x(x_) {}
     int operator*() const { return x; }
@@ -10,6 +11,7 @@ class range {
     void operator++() { ++x; }
   };
   index_type i, n;
+
 public:
   range(int n_) : i(0), n(n_) {}
   range(int i_, int n_) : i(i_), n(n_) {}

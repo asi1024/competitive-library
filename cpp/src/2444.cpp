@@ -8,7 +8,7 @@ int main() {
   scanf("%d%d%s", &n, &m, str);
   RollingHash rh(string(str, n));
   int l = 0, r = 1;
-  vector<pair<ll,ll>> vec;
+  vector<pair<ll, ll>> vec;
   while (m--) {
     scanf("%s", op);
     *(op[0] == 'L' ? &l : &r) += (op[1] == '+' ? 1 : -1);

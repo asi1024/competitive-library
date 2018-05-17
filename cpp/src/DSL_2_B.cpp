@@ -6,8 +6,10 @@ int main() {
   FenwickTree<int> bit(n + 1);
   while (q--) {
     scanf("%d%d%d", &com, &x, &y);
-    if (com) printf("%d\n", bit.sum(x, y + 1));
-    else bit.add(x, y);
+    if (com)
+      printf("%d\n", bit.sum(x, y + 1));
+    else
+      bit.add(x, y);
   }
   return 0;
 }

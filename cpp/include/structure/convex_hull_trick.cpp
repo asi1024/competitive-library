@@ -2,8 +2,7 @@
 
 #include "../util.hpp"
 
-template<class Data>
-struct ConvexHullTrick {
+template <class Data> struct ConvexHullTrick {
   deque<pair<Data, Data>> l;
   bool check(pair<Data, Data> l3) {
     const auto l1 = *prev(end(l), 2);
@@ -14,15 +13,18 @@ struct ConvexHullTrick {
   }
   bool empty() const { return l.empty(); }
   void add(Data a, Data b) {
-    if (!empty()) assert (l.back().first >= a);
+    if (!empty())
+      assert(l.back().first >= a);
     pair<Data, Data> n(a, b);
-    while ((int)l.size() >= 2 && check(n)) l.pop_back();
+    while ((int)l.size() >= 2 && check(n))
+      l.pop_back();
     l.emplace_back(n);
   }
   Data f(int k, Data x) { return l[k].first * x + l[k].second; }
   Data minimum(Data x) {
-    assert (!empty());
-    while ((int)l.size() >= 2 && f(0, x) >= f(1, x)) l.pop_front();
+    assert(!empty());
+    while ((int)l.size() >= 2 && f(0, x) >= f(1, x))
+      l.pop_front();
     return f(0, x);
   }
 };

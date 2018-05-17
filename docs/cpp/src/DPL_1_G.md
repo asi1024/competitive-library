@@ -21,7 +21,8 @@ int main() {
     for (int j = 0; j <= W; ++j) {
       SlideMin<int> &s = slide_min[j % w];
       s.push(-(dp[j] - j / w * v));
-      if (s.size() > m + 1) s.pop();
+      if (s.size() > m + 1)
+        s.pop();
       dp_next[j] = -s.minimum() + j / w * v;
     }
     dp.swap(dp_next);

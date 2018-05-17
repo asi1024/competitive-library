@@ -68,8 +68,9 @@ matrix:
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test']
+          packages: ['clang-format-3.9']
       env:
-        ENV="Doxygen 1.8.13"
+        ENV="Doxygen 1.8.13, ClangFormat"
       install:
         - wget https://github.com/doxygen/doxygen/archive/Release_1_8_13.tar.gz
         - tar xpvf Release_1_8_13.tar.gz
@@ -79,11 +80,9 @@ matrix:
         - popd
       script:
         - doxygen --version
-        - cp -r docs docs-spec
-        - rm -rf docs/cpp
         - python --version
-        - ./gendoc.sh
-        - diff -r docs docs-spec
+        - ./build.sh
+        - git diff --exit-code
 
     - os: linux
       language: cpp

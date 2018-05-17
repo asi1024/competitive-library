@@ -14,12 +14,22 @@ int main() {
   while (q--) {
     Point p2 = input();
     int c = ccw(p0, p1, p2);
-    switch(c) {
-    case 1:  puts("COUNTER_CLOCKWISE"); break;
-    case -1: puts("CLOCKWISE"); break;
-    case 2:  puts("ONLINE_BACK"); break;
-    case -2: puts("ONLINE_FRONT"); break;
-    case 0:  puts("ON_SEGMENT"); break;
+    switch (c) {
+    case 1:
+      puts("COUNTER_CLOCKWISE");
+      break;
+    case -1:
+      puts("CLOCKWISE");
+      break;
+    case 2:
+      puts("ONLINE_BACK");
+      break;
+    case -2:
+      puts("ONLINE_FRONT");
+      break;
+    case 0:
+      puts("ON_SEGMENT");
+      break;
     }
   }
   return 0;
