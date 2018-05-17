@@ -6,7 +6,7 @@ template<int M, bool IsPrime = false>
 class Modulo {
   using ll = long long;
   int n;
-  static enable_if_t<IsPrime, ll> inv(ll a, ll p) {
+  static typename enable_if<IsPrime, ll>::type inv(ll a, ll p) {
     return (a == 1 ? 1 : (1 - p * inv(p%a, a)) / a + p);
   }
 public:
@@ -35,10 +35,10 @@ public:
     Modulo res = (a * a) ^ (m / 2);
     return m % 2 ? res * a : res;
   }
-  enable_if_t<IsPrime, Modulo> operator/(const Modulo &a) const {
+  typename enable_if<IsPrime, Modulo>::type operator/(const Modulo &a) const {
     return *this * inv(ll(a), M);
   }
-  enable_if_t<IsPrime, Modulo> operator/=(const Modulo &a) {
+  typename enable_if<IsPrime, Modulo>::type operator/=(const Modulo &a) {
     return *this *= inv(ll(a), M);
   }
 };

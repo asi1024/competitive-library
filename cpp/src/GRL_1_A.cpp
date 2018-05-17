@@ -13,7 +13,7 @@ int main() {
   }
   auto res = dijkstra(g, r);
   for (int i = 0; i < V; ++i) {
-    if (res[i] == inf<int>) puts("INF");
+    if (res[i] == inf<int>()) puts("INF");
     else printf("%d\n", res[i]);
   }
   return 0;

@@ -43,7 +43,7 @@ std::vector<cost_type> spfa(const graph_t< edge_t > &g, int s);
 template <typename edge_t, typename cost_type = typename edge_t::cost_type>
 std::vector<cost_type> spfa(const graph_t<edge_t> &g, int s) {
   const int n = g.size();
-  std::vector<cost_type> d(n, inf<cost_type>); d[s] = zero<cost_type>;
+  std::vector<cost_type> d(n, inf<cost_type>()); d[s] = zero<cost_type>();
   std::vector<int> updated(n, 0);
   std::vector<bool> inque(n, false);
   std::queue<int> que;

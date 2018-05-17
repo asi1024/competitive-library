@@ -20,7 +20,7 @@ Cost min_cost_flow(vector<vector<Edge>> &g, int s, int t, Flow f, bool init = tr
   Cost res = 0;
   while (f > 0) {
     priority_queue<P, vector<P>, greater<P>> que;
-    fill(begin(dist), end(dist), inf<Cost>);
+    fill(begin(dist), end(dist), inf<Cost>());
     dist[s] = 0;
     que.push(P(0, s));
     while (!que.empty()) {
@@ -38,7 +38,7 @@ Cost min_cost_flow(vector<vector<Edge>> &g, int s, int t, Flow f, bool init = tr
         }
       }
     }
-    if (dist[t] == inf<Cost>) return -1;
+    if (dist[t] == inf<Cost>()) return -1;
     for (int i = 0; i < V; ++i) {
       h[i] += dist[i];
     }

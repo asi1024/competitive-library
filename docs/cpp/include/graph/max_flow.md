@@ -23,7 +23,6 @@ void add_edge(Graph &g, int from, int to, Edge::Flow cap);
 ### [1] (constructor)
 {% highlight cpp %}
 Edge(int s, int t);
-Edge(int t, Cost c);
 Edge(int t);
 Edge(int t, Flow f, int r);
 Edge(int t, Flow f, int r, Cost c);
@@ -80,7 +79,7 @@ Flow max_flow(vector<vector<Edge>> &g, int s, int t, Flow zero = 0) {
     if (d[t] < zero) return flow;
     vector<int> iter(V, 0);
     Flow f;
-    while ((f = augment(g, d, iter, s, t, inf<Flow>)) > 0) flow += f;
+    while ((f = augment(g, d, iter, s, t, inf<Flow>())) > 0) flow += f;
   }
 }
 

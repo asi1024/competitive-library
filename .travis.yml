@@ -6,11 +6,11 @@ matrix:
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-5', 'bc']
+          packages: ['g++-4.8', 'bc']
       env:
-        ENV="GCC 5"
-        COMPILER=g++-5
-        FLAGS="-std=c++14 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror"
+        ENV="GCC 4.8"
+        COMPILER=g++-4.8
+        FLAGS="-std=c++11 -O2 -Wall -Wextra -Wno-unused-result -Werror"
       script:
         - ulimit -s unlimited
         - CXX=$COMPILER CXXFLAGS=$FLAGS ./cpp/spec.sh --all

@@ -165,7 +165,7 @@ operator-=(const Modulo &a);
 
 ### [10] operator/
 {% highlight cpp %}
-enable_if_t< IsPrime, operator/(const Modulo &a) const;
+enable_if< IsPrime, operator/(const Modulo &a) const;
 {% endhighlight %}
 
 
@@ -173,7 +173,7 @@ enable_if_t< IsPrime, operator/(const Modulo &a) const;
 
 ### [11] operator/=
 {% highlight cpp %}
-enable_if_t< IsPrime, operator/=(const Modulo &a);
+enable_if< IsPrime, operator/=(const Modulo &a);
 {% endhighlight %}
 
 

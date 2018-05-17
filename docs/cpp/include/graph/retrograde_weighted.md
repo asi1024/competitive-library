@@ -28,7 +28,6 @@ Game_with_Cost(Game w, T c);
 ### [1] (constructor)
 {% highlight cpp %}
 Edge(int s, int t);
-Edge(int t, Cost c);
 Edge(int t);
 Edge(int t, Flow f, int r);
 Edge(int t, Flow f, int r, Cost c);
@@ -61,7 +60,7 @@ template<typename T>
 struct Game_with_Cost {
   Game win;
   T cost;
-  Game_with_Cost() : win(DRAW), cost(inf<T>) {;}
+  Game_with_Cost() : win(DRAW), cost(inf<T>()) {;}
   Game_with_Cost(Game w, T c) : win(w), cost(c) {;}
 };
 

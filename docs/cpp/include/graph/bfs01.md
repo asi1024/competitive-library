@@ -3,29 +3,32 @@
 ## bfs01
 
 {% highlight cpp %}
-vector<Cost> bfs01(const vector< vector< Edge >> &g, int s);
+std::vector<typename std::enable_if<std::is_integral<cost_type>::value, cost_type>::type> bfs01(const graph_t< edge_t > &g, int s);
 {% endhighlight %}
 
-## add_edge
+- コストが 0 か 1 のみの重み付きグラフの単一始点全点間最短距離を求める．
 
-{% highlight cpp %}
-void add_edge(Graph &g, int from, int to, Edge::Cost cost);
-{% endhighlight %}
+### Parameters
 
-## Member functions
+|:--:|:--|
+|`g`|負辺のない重み付きグラフ|
+|`s`|始点の頂点番号|
 
-### [1] (constructor)
-{% highlight cpp %}
-Edge(int s, int t);
-Edge(int t, Cost c);
-Edge(int t);
-Edge(int t, Flow f, int r);
-Edge(int t, Flow f, int r, Cost c);
-Edge(int t);
-Edge(int t, Cost c);
-Edge(int t);
-{% endhighlight %}
+#### Type requirements
 
+- edge_t
+
+### Return value
+
+- 始点から各頂点までの距離が入った型 cost_type の列
+
+### Notes
+
+- 入力グラフの辺のコストは全て 0 か 1 である
+
+### Time Complexity
+
+- $O(E)$
 
 ---------------------------------------
 
@@ -34,47 +37,44 @@ Edge(int t);
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/bfs01.cpp)
 
 {% highlight cpp %}
-#include "../util.hpp"
+#include "../template/const_value.hpp"
+#include "definition.hpp"
 
-template <typename Edge, typename Cost = typename Edge::Cost>
-vector<Cost> bfs01(const vector<vector<Edge>> &g, int s) {
-  vector<Cost> d(g.size(), inf<Cost>);
-  d[s] = 0;
-  deque<pair<Cost,int>> que;
-  que.emplace_back(0, s);
+template <typename edge_t, typename cost_type = typename edge_t::cost_type>
+std::vector<typename std::enable_if<std::is_integral<cost_type>::value, cost_type>::type>
+bfs01(const graph_t<edge_t> &g, int s) {
+  std::vector<cost_type> d(g.size(), inf<cost_type>());
+  d[s] = cost_type(0);
+  std::deque<std::pair<cost_type,int>> que;
+  que.emplace_back(zero<cost_type>(), s);
   while (!que.empty()) {
     auto top = que.front();
     que.pop_front();
-    Cost dist = top.first; int v = top.second;
+    cost_type dist = top.first;
+    int v = top.second;
     if (d[v] < dist) continue;
     for (const auto &e: g[v]) {
       if (d[e.to] > d[v] + e.cost) {
         d[e.to] = d[v] + e.cost;
-        if (e.cost == 1) que.emplace_back(d[e.to], e.to);
-        else if (e.cost == 0) que.emplace_front(d[e.to], e.to);
-        else assert(false);
+        if (e.cost == cost_type(1)) {
+          que.emplace_back(d[e.to], e.to);
+        }
+        else if (e.cost == cost_type(0)) {
+          que.emplace_front(d[e.to], e.to);
+        }
+        else {
+          assert(false);
+        }
       }
     }
   }
   return d;
 }
-
-struct Edge {
-  using Cost = int;
-  int to;
-  Cost cost;
-  Edge(int t, Cost c) : to(t), cost(c) {}
-};
-
-using Graph = vector<vector<Edge>>;
-
-void add_edge(Graph &g, int from, int to, Edge::Cost cost) {
-  g[from].emplace_back(to, cost);
-}
 {% endhighlight %}
 
 ### Includes
 
-- [util.hpp](../util)
+- [const_value.hpp](../template/const_value)
+- [definition.hpp](definition)
 
 [Back](../..)

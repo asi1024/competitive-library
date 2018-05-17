@@ -1,21 +1,55 @@
 {% include mathjax.html %}
 
+## inf
 
+{% highlight cpp %}
+constexpr T inf();
+{% endhighlight %}
+
+## inf< int >
+
+{% highlight cpp %}
+constexpr int inf< int >();
+{% endhighlight %}
+
+## inf< long long >
+
+{% highlight cpp %}
+constexpr long long inf< long long >();
+{% endhighlight %}
+
+## inf< long double >
+
+{% highlight cpp %}
+constexpr long double inf< long double >();
+{% endhighlight %}
+
+## zero
+
+{% highlight cpp %}
+constexpr std::enable_if<std::is_integral<T>::value, T>::type zero();
+{% endhighlight %}
 
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/const_value.hpp)
 
 {% highlight cpp %}
-template<typename T> T inf;
-template<> constexpr int inf<int> = 1e9;
-template<> constexpr long long inf<long long> = 1e18;
-template<> constexpr long double inf<long double> = 1e30;
+#include "includes.hpp"
 
-template<typename T> T zero;
-template<> constexpr int zero<int> = 0;
-template<> constexpr long long zero<long long> = 0;
-template<> constexpr long double zero<long double> = 0;
+
+template<typename T> constexpr T inf();
+template<> constexpr int inf<int>() { return 1e9; }
+template<> constexpr long long inf<long long>() { return 1e18; }
+template<> constexpr long double inf<long double>() { return 1e30; }
+
+template<typename T> constexpr
+typename std::enable_if<std::is_integral<T>::value, T>::type
+zero() { return T(0); }
 {% endhighlight %}
+
+### Includes
+
+- [includes.hpp](includes)
 
 [Back](../..)
