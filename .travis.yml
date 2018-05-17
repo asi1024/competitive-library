@@ -81,8 +81,7 @@ matrix:
       script:
         - doxygen --version
         - python --version
-        - clang-format -style=llvm -i cpp/include/*/*.?pp cpp/src/*.?pp
-        - ./gendoc.sh
+        - ./build.sh
         - git diff --exit-code
 
     - os: linux
