@@ -1,4 +1,7 @@
 #include "../include/graph/scc.cpp"
+#include "../include/graph/unweighted_graph.hpp"
+
+using namespace std;
 
 int main() {
   int V, E, Q, s, t, u, v;
@@ -6,7 +9,7 @@ int main() {
   Graph g(V);
   while (E--) {
     scanf("%d%d", &s, &t);
-    add_edge(g, s, t);
+    g.add(s, t);
   }
   scanf("%d", &Q);
   vector<int> cmp = scc(g);
