@@ -41,6 +41,7 @@ void rdfs(int v, int k);
 #include "definition.hpp"
 
 template <typename edge_t> struct scc_struct {
+  const int n;
   const graph_t<edge_t> g;
   std::vector<std::vector<int>> rg;
   std::vector<int> cmp, vs;
@@ -60,8 +61,7 @@ template <typename edge_t> struct scc_struct {
         rdfs(i, k);
   };
   scc_struct(const graph_t<edge_t> &g_)
-      : g(g_), cmp(g.size()), vs(0), used(g.size(), false) {
-    const int n = g.size();
+      : n(g_.size()), g(g_), rg(n), cmp(n), vs(0), used(n, false) {
     for (int i = 0; i < n; ++i) {
       for (edge_t e : g[i]) {
         rg[e.to].push_back(i);
