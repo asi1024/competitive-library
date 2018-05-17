@@ -13,5 +13,5 @@ $ ./competitive-library/cpp/preprocess/preprocess.py [FILE]
 
 ## Supported versions
 - C++11 (gcc-4.8)
-- C++14 (gcc-6)
+- C++17 (gcc-7)
 - C++14 (clang-3.8)
