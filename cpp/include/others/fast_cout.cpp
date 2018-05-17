@@ -5,14 +5,12 @@
 
 class fast_ostream {
   char ch[32];
-  template<typename T>
-  inline void put_integer(const T &var) {
+  template <typename T> inline void put_integer(const T &var) {
     int n = var;
     if (n == 0) {
       putchar_unlocked('0');
       return;
-    }
-    else if (n < 0) {
+    } else if (n < 0) {
       putchar_unlocked('-');
       n = -n;
     }
@@ -25,17 +23,19 @@ class fast_ostream {
       putchar_unlocked(ch[count]);
     }
   }
+
 public:
-  inline fast_ostream& operator<<(const int &var) {
+  inline fast_ostream &operator<<(const int &var) {
     put_integer(var);
     return *this;
   }
-  inline fast_ostream& operator<<(const long long &var) {
+  inline fast_ostream &operator<<(const long long &var) {
     put_integer(var);
     return *this;
   }
-  inline fast_ostream& operator<<(const std::string &var) {
-    for (char c: var) putchar_unlocked(c);
+  inline fast_ostream &operator<<(const std::string &var) {
+    for (char c : var)
+      putchar_unlocked(c);
     return *this;
   }
 };

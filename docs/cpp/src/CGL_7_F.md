@@ -23,12 +23,14 @@ int main() {
   Circle c(Point(cx, cy), r);
   vector<Line> ls = tangent_cp(c, p);
   vector<Point> res;
-  for (Line l: ls) res.push_back(proj(l, c.p));
+  for (Line l : ls)
+    res.push_back(proj(l, c.p));
   Point pa = res[0], pb = res[1];
   if (real(pa) > real(pb) + eps ||
-      (real(pa) > real(pb) - eps && imag(pa) > imag(pb))) swap(pa, pb);
-  printf("%.10Lf %.10Lf\n%.10Lf %.10Lf\n",
-         real(pa), imag(pa), real(pb), imag(pb));
+      (real(pa) > real(pb) - eps && imag(pa) > imag(pb)))
+    swap(pa, pb);
+  printf("%.10Lf %.10Lf\n%.10Lf %.10Lf\n", real(pa), imag(pa), real(pb),
+         imag(pb));
   return 0;
 }
 {% endhighlight %}

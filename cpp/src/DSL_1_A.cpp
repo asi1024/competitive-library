@@ -8,8 +8,10 @@ int main() {
   UnionFind uf(n);
   while (q--) {
     scanf("%d%d%d", &com, &x, &y);
-    if (com) printf("%d\n", uf.same(x, y));
-    else uf.unite(x, y);
+    if (com)
+      printf("%d\n", uf.same(x, y));
+    else
+      uf.unite(x, y);
   }
   return 0;
 }

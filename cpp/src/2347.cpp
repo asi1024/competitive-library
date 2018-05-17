@@ -1,35 +1,37 @@
-#include "../include/math/mod.cpp"
 #include "../include/math/matrix.cpp"
+#include "../include/math/mod.cpp"
 
-#define REP(i,n) for(int i=0;i<(n);++i)
+#define REP(i, n) for (int i = 0; i < (n); ++i)
 
 mt19937 mt(0);
 uniform_int_distribution<int> rnd(0, 123456789);
- 
+
 void add_edge(Matrix<Mod> &X, int src, int dest) {
   int r = rnd(mt);
   X[src][dest] = r;
   X[dest][src] = Mod(0) - r;
 }
- 
+
 int main() {
   int N, M;
   cin >> N >> M;
-  Matrix<Mod> A(N-1, N-1), B(N+1, N+1);
-  REP(i,M) {
+  Matrix<Mod> A(N - 1, N - 1), B(N + 1, N + 1);
+  REP(i, M) {
     int src, dest;
     cin >> src >> dest;
-    if (src > dest) swap(src, dest);
+    if (src > dest)
+      swap(src, dest);
     if (src == 1) {
-      add_edge(B, N-1, dest-2);
-      add_edge(B, N, dest-2);
-    }
-    else {
-      add_edge(A, src-2, dest-2);
-      add_edge(B, src-2, dest-2);
+      add_edge(B, N - 1, dest - 2);
+      add_edge(B, N, dest - 2);
+    } else {
+      add_edge(A, src - 2, dest - 2);
+      add_edge(B, src - 2, dest - 2);
     }
   }
-  if (int(A.det()) > 0 && int(B.det()) > 0) cout << "Yes" << endl;
-  else cout << "No" << endl;
+  if (int(A.det()) > 0 && int(B.det()) > 0)
+    cout << "Yes" << endl;
+  else
+    cout << "No" << endl;
   return 0;
 }

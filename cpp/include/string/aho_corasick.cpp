@@ -2,8 +2,7 @@
 
 #include "../util.hpp"
 
-template<typename State>
-struct AhoCorasick {
+template <typename State> struct AhoCorasick {
   using string_t = typename State::string_t;
   using char_t = typename State::char_t;
   vector<State> pma;
@@ -11,9 +10,9 @@ struct AhoCorasick {
 
   AhoCorasick(const vector<string_t> &str) : pma(0), lens(0) {
     pma.push_back(State());
-    for (const string_t &s: str) {
+    for (const string_t &s : str) {
       int t = 0;
-      for (char_t c: s) {
+      for (char_t c : s) {
         if (!pma[t].is_set(c)) {
           pma[t][c] = pma.size();
           pma.push_back(State());
@@ -28,8 +27,7 @@ struct AhoCorasick {
       if (pma[0].is_set(c)) {
         pma[pma[0][c]].fail = 0;
         que.push(pma[0][c]);
-      }
-      else {
+      } else {
         pma[0][c] = 0;
       }
     }
@@ -40,7 +38,8 @@ struct AhoCorasick {
         if (pma[t].is_set(c)) {
           que.push(pma[t][c]);
           int r = pma[t].fail;
-          while (!pma[r].is_set(c)) r = pma[r].fail;
+          while (!pma[r].is_set(c))
+            r = pma[r].fail;
           pma[pma[t][c]].fail = pma[r][c];
           for (int i : pma[pma[r][c]].accept) {
             pma[pma[t][c]].accept.push_back(i);
@@ -50,9 +49,8 @@ struct AhoCorasick {
     }
   }
   int next(int index, char_t c) {
-    return pma[index].is_set(c) ?
-      pma[index][c] :
-      pma[index][c] = next(pma[index].fail, c);
+    return pma[index].is_set(c) ? pma[index][c]
+                                : pma[index][c] = next(pma[index].fail, c);
   }
   vector<int> query(string_t &t) {
     int index = 0;
@@ -61,7 +59,8 @@ struct AhoCorasick {
       char_t c = t[i];
       index = next(index, c);
       for (int j : pma[index].accept) {
-        if (ret[j] != -1) continue;
+        if (ret[j] != -1)
+          continue;
         ret[j] = i - lens[j] + 1;
       }
     }
@@ -78,7 +77,7 @@ struct State {
   int fail;
   vector<int> accept;
   State() : fail(0), accept(0) { fill(begin(edge), end(edge), -1); }
-  int& operator[] (char_t c) { return edge[c - 'a']; }
-  const int& operator[] (char_t c) const { return edge[c - 'a']; }
+  int &operator[](char_t c) { return edge[c - 'a']; }
+  const int &operator[](char_t c) const { return edge[c - 'a']; }
   bool is_set(char_t c) { return edge[c - 'a'] >= 0; }
 };

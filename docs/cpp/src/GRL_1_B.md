@@ -26,11 +26,12 @@ int main() {
   vector<int> res = spfa(g, r);
   if (!res.empty()) {
     for (int i = 0; i < V; ++i) {
-      if (res[i] == inf<int>()) puts("INF");
-      else printf("%d\n", res[i]);
+      if (res[i] == inf<int>())
+        puts("INF");
+      else
+        printf("%d\n", res[i]);
     }
-  }
-  else {
+  } else {
     puts("NEGATIVE CYCLE");
   }
   return 0;

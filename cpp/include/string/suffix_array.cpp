@@ -1,16 +1,15 @@
 #pragma once
 
-#include "../util.hpp"
 #include "../structure/monoid.hpp"
 #include "../structure/segment_tree.cpp"
+#include "../util.hpp"
 
-template<typename string_t>
-struct SuffixArray {
+template <typename string_t> struct SuffixArray {
   struct SAComp {
     const int h;
     const vector<int> &g;
-    SAComp(int h_, vector<int> &g_) : h(h_), g(g_) {;}
-    bool operator() (int a, int b) {
+    SAComp(int h_, vector<int> &g_) : h(h_), g(g_) { ; }
+    bool operator()(int a, int b) {
       return a != b && (g[a] != g[b] ? g[a] < g[b] : g[a + h] < g[b + h]);
     }
   };
@@ -22,38 +21,46 @@ struct SuffixArray {
   SuffixArray(const string_t &t) : n(t.size()), str(t), sa(n + 1), lcp(n + 1) {
     // build SA
     vector<int> g(n + 1, 0), b(n + 1, 0);
-    for (int i = 0; i <= n; ++i) { sa[i] = i; g[i] = str[i]; }
+    for (int i = 0; i <= n; ++i) {
+      sa[i] = i;
+      g[i] = str[i];
+    }
     sort(begin(sa), end(sa), SAComp(0, g));
     for (int h = 1; b[n] != n; h *= 2) {
       SAComp comp(h, g);
       sort(sa.begin(), sa.end(), comp);
-      for (int i = 0; i < n; ++i) b[i+1] = b[i] + comp(sa[i], sa[i+1]);
-      for (int i = 0; i <= n; ++i) g[sa[i]] = b[i];
+      for (int i = 0; i < n; ++i)
+        b[i + 1] = b[i] + comp(sa[i], sa[i + 1]);
+      for (int i = 0; i <= n; ++i)
+        g[sa[i]] = b[i];
     }
     // build LCP
     int h = 0;
-    for (int i = 0; i <= n; ++i) b[sa[i]] = i;
+    for (int i = 0; i <= n; ++i)
+      b[sa[i]] = i;
     for (int i = 0; i <= n; ++i) {
       if (b[i]) {
         int j = sa[b[i] - 1];
-        while (j + h < n && i + h < n && str[j+h] == str[i+h]) ++h;
+        while (j + h < n && i + h < n && str[j + h] == str[i + h])
+          ++h;
         lcp[b[i]] = h;
-      }
-      else {
+      } else {
         lcp[b[i]] = -1;
       }
-      if (h > 0) --h;
+      if (h > 0)
+        --h;
     }
   }
 
-  template<class Compare>
-  int binary_search(const string_t &t) const {
+  template <class Compare> int binary_search(const string_t &t) const {
     int m = t.size();
     int lb = -1, ub = n + 1;
     while (lb + 1 < ub) {
       int mid = (lb + ub) / 2;
-      if (Compare()(strncmp(str.c_str() + sa[mid], t.c_str(), m), 0)) lb = mid;
-      else ub = mid;
+      if (Compare()(strncmp(str.c_str() + sa[mid], t.c_str(), m), 0))
+        lb = mid;
+      else
+        ub = mid;
     }
     return ub;
   }
@@ -74,15 +81,20 @@ class LCP {
   int n;
   vector<int> mapsto;
   SegmentTree<RMQ<int>> seg;
+
 public:
   LCP(const string &str) : n(str.size()), mapsto(n), seg(n) {
     SuffixArray<string> sa(str);
-    for (int i = 0; i < n; ++i) mapsto[sa.sa[i+1]] = i;
-    for (int i = 0; i < n-1; ++i) seg.update(i, sa.lcp[i+2]);
+    for (int i = 0; i < n; ++i)
+      mapsto[sa.sa[i + 1]] = i;
+    for (int i = 0; i < n - 1; ++i)
+      seg.update(i, sa.lcp[i + 2]);
   }
   int query(int i, int j) {
-    if (i == j) return n - i;
-    i = mapsto[i]; j = mapsto[j];
+    if (i == j)
+      return n - i;
+    i = mapsto[i];
+    j = mapsto[j];
     return seg.query(min(i, j), max(i, j));
   }
 };

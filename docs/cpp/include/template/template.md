@@ -33,16 +33,16 @@ string_type do_truename() const;
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/template.cpp)
 
 {% highlight cpp %}
+#include "const_value.hpp"
 #include "includes.hpp"
 #include "macros.hpp"
-#include "range.hpp"
-#include "const_value.hpp"
 #include "misc.hpp"
+#include "range.hpp"
 
 using namespace std;
 
 struct yes_no : numpunct<char> {
-  string_type do_truename()  const { return "Yes"; }
+  string_type do_truename() const { return "Yes"; }
   string_type do_falsename() const { return "No"; }
 };
 
@@ -57,10 +57,10 @@ int main() {
 
 ### Includes
 
+- [const_value.hpp](const_value)
 - [includes.hpp](includes)
 - [macros.hpp](macros)
-- [range.hpp](range)
-- [const_value.hpp](const_value)
 - [misc.hpp](misc)
+- [range.hpp](range)
 
 [Back](../..)
