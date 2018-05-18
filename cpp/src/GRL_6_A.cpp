@@ -1,5 +1,5 @@
-#include "../include/graph/max_flow.cpp"
 #include "../include/graph/capacity_graph.hpp"
+#include "../include/graph/max_flow.cpp"
 
 using namespace std;
 
