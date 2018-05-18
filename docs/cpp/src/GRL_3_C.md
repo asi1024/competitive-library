@@ -18,7 +18,7 @@ int main() {
   Graph g(V);
   while (E--) {
     scanf("%d%d", &s, &t);
-    g.add(s, t);
+    add_edge(g, s, t);
   }
   scanf("%d", &Q);
   vector<int> cmp = scc(g);
