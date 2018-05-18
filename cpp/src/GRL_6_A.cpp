@@ -1,9 +1,12 @@
 #include "../include/graph/max_flow.cpp"
+#include "../include/graph/capacity_graph.hpp"
+
+using namespace std;
 
 int main() {
   int V, E, u, v, c;
   scanf("%d%d", &V, &E);
-  Graph g(V);
+  CapacityGraph<int> g(V);
   while (E--) {
     scanf("%d%d%d", &u, &v, &c);
     add_edge(g, u, v, c);
