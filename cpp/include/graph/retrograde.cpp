@@ -31,7 +31,8 @@ vector<Game> retrograde(const vector<vector<Edge>> &g) {
           que.emplace(e.to);
         }
       }
-    } else {
+    }
+    else {
       for (Edge e : rg[v]) {
         if (res[e.to] != WIN) {
           res[e.to] = WIN;

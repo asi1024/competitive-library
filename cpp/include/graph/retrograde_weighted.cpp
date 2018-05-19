@@ -42,7 +42,8 @@ vector<Game_with_Cost<Cost>> retrograde(const vector<vector<Edge>> &g) {
           que.emplace(Cost(0), e.to);
         }
       }
-    } else {
+    }
+    else {
       for (Edge e : g[v]) {
         cost = max(cost, res[e.to].cost + e.cost);
       }

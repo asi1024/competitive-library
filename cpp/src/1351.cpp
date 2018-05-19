@@ -10,7 +10,8 @@ int main() {
   for (int i = 0; i < N; ++i) {
     if (s[i] == '(') {
       seg.update(i, N, 1);
-    } else {
+    }
+    else {
       seg.update(i, N, -1);
       right.insert(i);
     }
@@ -24,7 +25,8 @@ int main() {
       seg.update(l, p, 2);
       right.erase(l);
       cout << l + 1 << endl;
-    } else {
+    }
+    else {
       right.erase(p);
       seg.update(p, N, 2);
       int lb = -1, ub = N;

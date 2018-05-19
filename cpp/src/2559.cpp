@@ -82,7 +82,8 @@ int main() {
       t[u].emplace_back(v, c, i);
       t[v].emplace_back(u, c, i);
       ++cnt;
-    } else {
+    }
+    else {
       g[u].emplace_back(v, c);
       g[v].emplace_back(u, c);
     }
