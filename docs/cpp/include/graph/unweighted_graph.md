@@ -4,11 +4,10 @@
 
 ### [1] (constructor)
 {% highlight cpp %}
-Edge(int s, int t);
 Edge(int t);
 Edge(int t);
 Edge(int t, Cost c);
-Edge(int, int t);
+Edge(int s, int t);
 {% endhighlight %}
 
 
@@ -24,9 +23,9 @@ Edge(int, int t);
 class Edge {
 public:
   using cost_type = int;
-  int to;
+  int from, to;
   cost_type cost = 1;
-  Edge(int, int t) : to(t) { ; }
+  Edge(int s, int t) : from(s), to(t) { ; }
 };
 
 using Graph = graph_t<Edge>;

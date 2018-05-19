@@ -28,11 +28,10 @@ int query(int u, int v);
 
 ### [1] (constructor)
 {% highlight cpp %}
-Edge(int s, int t);
 Edge(int t);
 Edge(int t);
 Edge(int t, Cost c);
-Edge(int, int t);
+Edge(int s, int t);
 {% endhighlight %}
 
 

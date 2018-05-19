@@ -8,6 +8,9 @@
 
 {% highlight cpp %}
 #include "../include/graph/articulation_points.cpp"
+#include "../include/graph/unweighted_graph.hpp"
+
+using namespace std;
 
 int main() {
   int V, E, s, t;
@@ -26,5 +29,6 @@ int main() {
 ### Includes
 
 - [articulation_points.cpp](../include/graph/articulation_points)
+- [unweighted_graph.hpp](../include/graph/unweighted_graph)
 
 [Back](..)
