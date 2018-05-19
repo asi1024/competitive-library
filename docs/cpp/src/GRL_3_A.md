@@ -18,8 +18,7 @@ int main() {
     add_edge(g, s, t);
   }
   set<int> art = articulation_points(g).first;
-  for (int i : art)
-    printf("%d\n", i);
+  for (int i : art) printf("%d\n", i);
   return 0;
 }
 {% endhighlight %}

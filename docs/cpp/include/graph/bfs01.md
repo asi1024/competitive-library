@@ -3,7 +3,7 @@
 ## bfs01
 
 {% highlight cpp %}
-std::vector<typename std::enable_if<std::is_integral<cost_type>::value, cost_type>::type> bfs01(const graph_t< edge_t > &g, int s);
+std::vector< typename std::enable_if<std::is_integral<cost_type>::value, cost_type>::type> bfs01(const graph_t< edge_t > &g, int s);
 {% endhighlight %}
 
 - コストが 0 か 1 のみの重み付きグラフの単一始点全点間最短距離を求める．
@@ -41,8 +41,8 @@ std::vector<typename std::enable_if<std::is_integral<cost_type>::value, cost_typ
 #include "definition.hpp"
 
 template <typename edge_t, typename cost_type = typename edge_t::cost_type>
-std::vector<typename std::enable_if<std::is_integral<cost_type>::value,
-                                    cost_type>::type>
+std::vector<
+  typename std::enable_if<std::is_integral<cost_type>::value, cost_type>::type>
 bfs01(const graph_t<edge_t> &g, int s) {
   std::vector<cost_type> d(g.size(), inf<cost_type>());
   d[s] = cost_type(0);
@@ -53,8 +53,7 @@ bfs01(const graph_t<edge_t> &g, int s) {
     que.pop_front();
     cost_type dist = top.first;
     int v = top.second;
-    if (d[v] < dist)
-      continue;
+    if (d[v] < dist) continue;
     for (const auto &e : g[v]) {
       if (d[e.to] > d[v] + e.cost) {
         d[e.to] = d[v] + e.cost;

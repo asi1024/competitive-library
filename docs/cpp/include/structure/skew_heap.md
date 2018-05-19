@@ -40,12 +40,9 @@ template <typename T> struct skew_heap {
 };
 
 template <typename T> skew_heap<T> *meld(skew_heap<T> *a, skew_heap<T> *b) {
-  if (!a)
-    return b;
-  if (!b)
-    return a;
-  if (a->val > b->val)
-    swap(a, b);
+  if (!a) return b;
+  if (!b) return a;
+  if (a->val > b->val) swap(a, b);
   a->r = meld(a->r, b);
   swap(a->l, a->r);
   return a;

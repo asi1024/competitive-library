@@ -30,11 +30,9 @@ Polygon convex_hull(vector<Point> ps) {
   sort(begin(ps), end(ps), comp);
   Polygon res(2 * n);
   for (int i = 0; i < n; res[k++] = ps[i++])
-    while (k >= 2 && ccw(res[k - 2], res[k - 1], ps[i]) <= 0)
-      --k;
+    while (k >= 2 && ccw(res[k - 2], res[k - 1], ps[i]) <= 0) --k;
   for (int i = n - 2, t = k + 1; i >= 0; res[k++] = ps[i--])
-    while (k >= t && ccw(res[k - 2], res[k - 1], ps[i]) <= 0)
-      --k;
+    while (k >= t && ccw(res[k - 2], res[k - 1], ps[i]) <= 0) --k;
   res.resize(k - 1);
   return res;
 }
@@ -59,8 +57,7 @@ Polygon convex_cut(const Polygon &g, Line l) {
   Polygon res;
   for (int i = 0; i < n; i++) {
     Point p = at(g, i), q = at(g, i + 1);
-    if (ccw(l.a, l.b, p) != -1)
-      res.push_back(p);
+    if (ccw(l.a, l.b, p) != -1) res.push_back(p);
     if (ccw(l.a, l.b, p) * ccw(l.a, l.b, q) < 0) {
       res.push_back(is_ll(Line(p, q), l));
     }

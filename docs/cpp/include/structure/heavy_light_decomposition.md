@@ -66,16 +66,16 @@ template <typename DataStructure> struct HeavyLightDecomposition {
   using Monoid = typename DataStructure::monoid_type;
   struct Chain {
     int depth;
-    pair<int, int> parent;        // chain number, index
-    vector<pair<int, int>> child; // child chain number, parent index
+    pair<int, int> parent;         // chain number, index
+    vector<pair<int, int>> child;  // child chain number, parent index
     vector<int> mapfrom;
     DataStructure up, down;
     Chain(int n, const T &init) : up(n, init), down(n, init) { ; }
   };
 
   vector<Chain> chains;
-  vector<pair<int, int>> mapto; // raw index -> chain number & index
-  vector<vector<int>> mapfrom;  // chain number & index -> raw index
+  vector<pair<int, int>> mapto;  // raw index -> chain number & index
+  vector<vector<int>> mapfrom;   // chain number & index -> raw index
 
   int root() const { return mapfrom[0][0]; }
 
@@ -172,8 +172,7 @@ private:
     mapfrom.push_back(chains[c].mapfrom);
     for (int i = 0; i < int(seq.size()); i++) {
       for (auto e : g[seq[i]]) {
-        if (mapto[e.to].first != -1)
-          continue;
+        if (mapto[e.to].first != -1) continue;
         int nc = decomposition(g, e.to, seq[i], depth + 1, c, i, size, init);
         chains[c].child.push_back(make_pair(nc, i));
       }
@@ -193,8 +192,7 @@ private:
       que.pop();
       order[cnt++] = from;
       for (auto e : g[from]) {
-        if (e.to == parent)
-          continue;
+        if (e.to == parent) continue;
         que.push(make_pair(e.to, from));
       }
     }
@@ -203,8 +201,7 @@ private:
     for (int i = 0; i < n; i++) {
       int from = order[i];
       size[from] = 1;
-      for (auto e : g[from])
-        size[from] += size[e.to];
+      for (auto e : g[from]) size[from] += size[e.to];
     }
   }
   template <typename Graph>
@@ -214,15 +211,13 @@ private:
       seq.push_back(from);
       int best = -1, next = -1;
       for (auto e : g[from]) {
-        if (e.to == parent)
-          continue;
+        if (e.to == parent) continue;
         if (best < size[e.to]) {
           best = size[e.to];
           next = e.to;
         }
       }
-      if (next == -1)
-        break;
+      if (next == -1) break;
       parent = from;
       from = next;
     }

@@ -29,8 +29,7 @@ class fast_istream {
     T sign = 1;
     int c = getchar_unlocked();
     while (c < '0' || '9' < c) {
-      if (c == '-')
-        sign = -1;
+      if (c == '-') sign = -1;
       c = getchar_unlocked();
     }
     while ('0' <= c && c <= '9') {
@@ -44,8 +43,7 @@ class fast_istream {
     T sign = 1.0;
     int c = getchar_unlocked();
     while ((c < '0' || '9' < c) && c != '.') {
-      if (c == '-')
-        sign = -1.0;
+      if (c == '-') sign = -1.0;
       c = getchar_unlocked();
     }
     while ('0' <= c && c <= '9') {

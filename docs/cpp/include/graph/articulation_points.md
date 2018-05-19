@@ -42,15 +42,13 @@ articulation_points(const vector<vector<Edge>> &g) {
   vector<Edge> st;
   vector<int> order(n, -1), low(n, -1);
   for (int i = 0; i < n; i++) {
-    if (order[i] != -1)
-      continue;
+    if (order[i] != -1) continue;
     int cnt = 0;
     function<void(int, int)> dfs = [&](int from, int parent) {
       low[from] = order[from] = cnt++;
       for (Edge e : g[from]) {
         const int to = e.to;
-        if (to != parent && order[to] < order[from])
-          st.push_back(e);
+        if (to != parent && order[to] < order[from]) st.push_back(e);
         if (order[to] == -1) {
           dfs(to, from);
           low[from] = min(low[from], low[to]);
@@ -63,8 +61,7 @@ articulation_points(const vector<vector<Edge>> &g) {
               Edge edge = st.back();
               st.pop_back();
               connect.back().push_back(edge);
-              if (edge.from == from && edge.to == to)
-                break;
+              if (edge.from == from && edge.to == to) break;
             }
           }
         } else {
