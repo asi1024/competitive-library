@@ -5,42 +5,44 @@ import os
 
 
 def preprocess(path):
-    includes = set()
-    res = []
+    includes_set = set()
+    includes_list = []
 
-    def preprocess_line(path, line):
-        if line.strip().startswith('//'):
-            return ''
-        elif line.strip().startswith('#'):
+    def get_includes_list(path):
+        if path in includes_set:
+            return
+        includes_set.add(path)
+        for line in open(path):
             line = line.strip()
             if line.startswith('#include') and len(line.split('"')) >= 3:
-                lx = line.split('"')
-                relpath = ''.join(lx[1:len(lx) - 1])
+                relpath = ''.join(line.split('"')[1:-1])
                 target_path = os.path.dirname(path) + '/' + relpath
                 if target_path.startswith('/'):
                     target_path = target_path[1:]
-                preprocess_path(os.path.normpath(target_path))
-                return '\n'
-            elif line.startswith('#pragma'):
-                if ''.join(line.split(' ')[1:]).strip() == 'once':
-                    return ''
-        return line
+                get_includes_list(os.path.normpath(target_path))
+        includes_list.append(path)
 
-    def preprocess_path(path):
-        if path not in includes:
-            has_not_started = True
-            includes.add(path)
+    def ignore_line(line):
+        line = line.strip()
+        return (line.startswith('//') or
+                (line.startswith('#include') and len(line.split('"')) >= 3) or
+                line.split(' ') == ['#pragma', 'once'])
 
-            for line in open(path):
-                s = preprocess_line(path, line)
-                if has_not_started and s.strip() is not "":
-                    prefix = '// ===== {} =====\n\n'.format(os.path.basename(path))
-                    res.append(prefix)
-                    has_not_started = False
-                res.append(s.rstrip())
+    def print_includes_list():
+        code_list = []
+        for path in includes_list:
+            code_list.append('')
+            code_list.append('// ===== {} ====='.format(os.path.basename(path)))
+            code_list.append('')
+            code_list += [_ for _ in open(path) if not ignore_line(_)]
+        res = ''
+        for s, prev in zip(code_list, [''] + code_list):
+            if s.strip() != '' or prev.strip() != '':
+                res += s.rstrip() + '\n'
+        return res
 
-    preprocess_path(path)
-    print('\n'.join(res))
+    get_includes_list(path)
+    return print_includes_list()
 
 
 if __name__ == '__main__':
@@ -48,4 +50,4 @@ if __name__ == '__main__':
     parser.add_argument('filepath', nargs=1, help='cpp file')
     args = parser.parse_args()
     filepath = args.filepath[0]
-    preprocess(filepath)
+    print(preprocess(filepath))
