@@ -3,26 +3,30 @@
 ## scc
 
 {% highlight cpp %}
-vector<int> scc(const vector< vector< Edge >> &g);
-{% endhighlight %}
-
-## add_edge
-
-{% highlight cpp %}
-void add_edge(Graph &g, int from, int to);
+std::vector<int> scc(const graph_t< edge_t > &g);
 {% endhighlight %}
 
 ## Member functions
 
 ### [1] (constructor)
 {% highlight cpp %}
-Edge(int s, int t);
-Edge(int t);
-Edge(int t, Flow f, int r);
-Edge(int t, Flow f, int r, Cost c);
-Edge(int t);
-Edge(int t, Cost c);
-Edge(int t);
+scc_struct(const graph_t< edge_t > &g_);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [2] dfs
+{% highlight cpp %}
+void dfs(int v);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [3] rdfs
+{% highlight cpp %}
+void rdfs(int v, int k);
 {% endhighlight %}
 
 
@@ -33,57 +37,58 @@ Edge(int t);
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/scc.cpp)
 
 {% highlight cpp %}
-#include "../util.hpp"
+#include "../template/includes.hpp"
+#include "definition.hpp"
 
-template <typename Edge> vector<int> scc(const vector<vector<Edge>> &g) {
-  const int n = g.size();
-  vector<vector<int>> rg(n);
-  vector<int> cmp(n), vs;
-  vector<bool> used(n, false);
-  for (int i = 0; i < n; ++i) {
-    for (Edge e : g[i]) {
-      rg[e.to].push_back(i);
-    }
-  }
-  function<void(int)> dfs = [&](int v) {
+template <typename edge_t> struct scc_struct {
+  const int n;
+  const graph_t<edge_t> g;
+  std::vector<std::vector<int>> rg;
+  std::vector<int> cmp, vs;
+  std::vector<bool> used;
+  void dfs(int v) {
     used[v] = true;
-    for (Edge e : g[v])
+    for (edge_t e : g[v])
       if (!used[e.to])
         dfs(e.to);
     vs.push_back(v);
   };
-  function<void(int, int)> rdfs = [&](int v, int k) {
+  void rdfs(int v, int k) {
     used[v] = true;
     cmp[v] = k;
     for (int i : rg[v])
       if (!used[i])
         rdfs(i, k);
   };
-  for (int v = 0; v < n; ++v) {
-    if (!used[v])
-      dfs(v);
+  scc_struct(const graph_t<edge_t> &g_)
+      : n(g_.size()), g(g_), rg(n), cmp(n), vs(0), used(n, false) {
+    for (int i = 0; i < n; ++i) {
+      for (edge_t e : g[i]) {
+        rg[e.to].push_back(i);
+      }
+    }
+    for (int v = 0; v < n; ++v) {
+      if (!used[v])
+        dfs(v);
+    }
+    std::fill(begin(used), end(used), false);
+    std::reverse(begin(vs), end(vs));
+    int k = 0;
+    for (int i : vs)
+      if (!used[i])
+        rdfs(i, k++);
   }
-  used = vector<bool>(n, false);
-  reverse(begin(vs), end(vs));
-  int k = 0;
-  for (int i : vs)
-    if (!used[i])
-      rdfs(i, k++);
-  return cmp;
-}
-
-struct Edge {
-  int to;
-  Edge(int t) : to(t) {}
 };
 
-using Graph = vector<vector<Edge>>;
-
-void add_edge(Graph &g, int from, int to) { g[from].emplace_back(to); }
+template <typename edge_t> std::vector<int> scc(const graph_t<edge_t> &g) {
+  scc_struct<edge_t> s(g);
+  return s.cmp;
+}
 {% endhighlight %}
 
 ### Includes
 
-- [util.hpp](../util)
+- [includes.hpp](../template/includes)
+- [definition.hpp](definition)
 
 [Back](../..)

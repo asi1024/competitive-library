@@ -30,11 +30,9 @@ int query(int u, int v);
 {% highlight cpp %}
 Edge(int s, int t);
 Edge(int t);
-Edge(int t, Flow f, int r);
-Edge(int t, Flow f, int r, Cost c);
 Edge(int t);
 Edge(int t, Cost c);
-Edge(int t);
+Edge(int, int t);
 {% endhighlight %}
 
 

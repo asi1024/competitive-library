@@ -7,12 +7,15 @@
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_6_B.cpp)
 
 {% highlight cpp %}
+#include "../include/graph/capacity_weighted_graph.hpp"
 #include "../include/graph/min_cost_flow.cpp"
+
+using namespace std;
 
 int main() {
   int V, E, F;
   scanf("%d%d%d", &V, &E, &F);
-  Graph g(V);
+  CapacityWeightedGraph<int, int> g(V);
   while (E--) {
     int u, v, c, d;
     scanf("%d%d%d%d", &u, &v, &c, &d);
@@ -25,6 +28,7 @@ int main() {
 
 ### Includes
 
+- [capacity_weighted_graph.hpp](../include/graph/capacity_weighted_graph)
 - [min_cost_flow.cpp](../include/graph/min_cost_flow)
 
 [Back](..)

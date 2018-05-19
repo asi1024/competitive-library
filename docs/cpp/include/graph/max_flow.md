@@ -3,108 +3,75 @@
 ## augment
 
 {% highlight cpp %}
-Flow augment(vector< vector< Edge >> &g, vector< int > &d, vector< int > &iter, int v, int t, const Flow &f);
+cap_type augment(graph_t< edge_t > &g, std::vector< int > &d, std::vector< int > &iter, int v, int t, const cap_type &f);
 {% endhighlight %}
 
 ## max_flow
 
 {% highlight cpp %}
-Flow max_flow(vector< vector< Edge >> &g, int s, int t, Flow zero=0);
+cap_type max_flow(graph_t< edge_t > &g, int s, int t);
 {% endhighlight %}
-
-## add_edge
-
-{% highlight cpp %}
-void add_edge(Graph &g, int from, int to, Edge::Flow cap);
-{% endhighlight %}
-
-## Member functions
-
-### [1] (constructor)
-{% highlight cpp %}
-Edge(int s, int t);
-Edge(int t);
-Edge(int t, Flow f, int r);
-Edge(int t, Flow f, int r, Cost c);
-Edge(int t);
-Edge(int t, Cost c);
-Edge(int t);
-{% endhighlight %}
-
-
----------------------------------------
 
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/max_flow.cpp)
 
 {% highlight cpp %}
-#include "../util.hpp"
+#include "../template/const_value.hpp"
+#include "definition.hpp"
 
-template <typename Edge, typename Flow = typename Edge::Flow>
-Flow augment(vector<vector<Edge>> &g, vector<int> &d, vector<int> &iter, int v,
-             int t, const Flow &f) {
-  if (v == t)
+template <typename edge_t, typename cap_type = typename edge_t::capacity_type>
+cap_type augment(graph_t<edge_t> &g, std::vector<int> &d,
+                 std::vector<int> &iter, int v, int t, const cap_type &f) {
+  if (v == t) {
     return f;
+  }
   for (int &i = iter[v]; i < (int)g[v].size(); i++) {
     auto &e = g[v][i];
-    if (e.cap > 0 && d[v] < d[e.to]) {
-      Flow ff = augment(g, d, iter, e.to, t, min(f, e.cap));
-      if (ff > 0) {
+    if (e.cap > zero<cap_type>() && d[v] < d[e.to]) {
+      cap_type ff = augment(g, d, iter, e.to, t, std::min(f, e.cap));
+      if (ff > zero<cap_type>()) {
         e.cap -= ff;
         g[e.to][e.rev].cap += ff;
         return ff;
       }
     }
   }
-  return 0;
+  return zero<cap_type>();
 }
 
-template <typename Edge, typename Flow = typename Edge::Flow>
-Flow max_flow(vector<vector<Edge>> &g, int s, int t, Flow zero = 0) {
+template <typename edge_t, typename cap_type = typename edge_t::capacity_type>
+cap_type max_flow(graph_t<edge_t> &g, int s, int t) {
   const int V = g.size();
-  Flow flow = zero;
+  cap_type flow = zero<cap_type>();
   for (;;) {
-    vector<int> d(V, -1);
-    queue<int> que;
-    d[s] = zero;
+    std::vector<int> d(V, -1);
+    std::queue<int> que;
+    d[s] = 0;
     que.push(s);
     while (!que.empty()) {
       int v = que.front();
       que.pop();
       for (const auto &e : g[v]) {
-        if (e.cap <= zero || d[e.to] >= zero)
+        if (e.cap <= zero<cap_type>() || d[e.to] >= 0)
           continue;
         d[e.to] = d[v] + 1;
         que.push(e.to);
       }
     }
-    if (d[t] < zero)
+    if (d[t] < 0)
       return flow;
-    vector<int> iter(V, 0);
-    Flow f;
-    while ((f = augment(g, d, iter, s, t, inf<Flow>())) > 0)
+    std::vector<int> iter(V, 0);
+    cap_type f;
+    while ((f = augment(g, d, iter, s, t, inf<cap_type>())) > 0)
       flow += f;
   }
-}
-
-struct Edge {
-  using Flow = int;
-  int to, rev;
-  Flow cap;
-  Edge(int t, Flow f, int r) : to(t), rev(r), cap(f) {}
-};
-
-using Graph = vector<vector<Edge>>;
-
-void add_edge(Graph &g, int from, int to, Edge::Flow cap) {
-  g[from].emplace_back(to, cap, (int)g[to].size());
-  g[to].emplace_back(from, 0, (int)g[from].size() - 1);
 }
 {% endhighlight %}
 
 ### Includes
 
-- [util.hpp](../util)
+- [const_value.hpp](../template/const_value)
+- [definition.hpp](definition)
 
 [Back](../..)

@@ -21,7 +21,7 @@ int main() {
   WeightedGraph<int> g(V);
   while (E--) {
     scanf("%d%d%d", &s, &t, &d);
-    g.add(s, t, d);
+    add_edge(g, s, t, d);
   }
   vector<int> res = spfa(g, r);
   if (!res.empty()) {

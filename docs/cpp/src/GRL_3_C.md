@@ -8,6 +8,9 @@
 
 {% highlight cpp %}
 #include "../include/graph/scc.cpp"
+#include "../include/graph/unweighted_graph.hpp"
+
+using namespace std;
 
 int main() {
   int V, E, Q, s, t, u, v;
@@ -30,5 +33,6 @@ int main() {
 ### Includes
 
 - [scc.cpp](../include/graph/scc)
+- [unweighted_graph.hpp](../include/graph/unweighted_graph)
 
 [Back](..)
