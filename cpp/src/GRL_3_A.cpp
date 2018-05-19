@@ -1,4 +1,7 @@
 #include "../include/graph/articulation_points.cpp"
+#include "../include/graph/unweighted_graph.hpp"
+
+using namespace std;
 
 int main() {
   int V, E, s, t;
