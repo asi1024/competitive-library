@@ -15,8 +15,8 @@ void add_edge(Graph &g, int s, int t) {
 
 struct Data {
   ll res, left, right, sum, max, cnt;
-  Data(ll re, ll l, ll r, ll s, ll m, ll c)
-      : res(re), left(l), right(r), sum(s), max(m), cnt(c) {
+  Data(ll re, ll l, ll r, ll s, ll m, ll c) :
+    res(re), left(l), right(r), sum(s), max(m), cnt(c) {
     ;
   }
   Data() : res(0), left(0), right(0), sum(0), max(0), cnt(1) { ; }
@@ -26,7 +26,7 @@ struct RangeMinSegment {
   using type = Data;
   static type id() { return Data(0, 0, 0, 0, -1e18, 0); }
   static type op(const type &l, const type &r) {
-    return Data(max({l.res, r.res, l.right + r.left}),
+    return Data(max({ l.res, r.res, l.right + r.left }),
                 max(l.left, l.sum + r.left), max(r.right, r.sum + l.right),
                 l.sum + r.sum, max(l.max, r.max), l.cnt + r.cnt);
   }
@@ -52,8 +52,7 @@ int main() {
   int n, q;
   scanf("%d%d", &n, &q);
   vector<ll> w(n);
-  for (int i = 0; i < n; i++)
-    scanf("%lld", &w[i]);
+  for (int i = 0; i < n; i++) scanf("%lld", &w[i]);
   Graph g(n);
   for (int i = 0; i < n - 1; i++) {
     int s, t;
@@ -63,8 +62,7 @@ int main() {
     add_edge(g, s, t);
   }
   HeavyLightDecomposition<SegmentTreeLazy<Update>> HLD(g, Data());
-  for (int i = 0; i < n; i++)
-    HLD.update(i, i, Update(w[i]));
+  for (int i = 0; i < n; i++) HLD.update(i, i, Update(w[i]));
   for (int i = 0; i < q; i++) {
     int com, s, t, c;
     scanf("%d%d%d%d", &com, &s, &t, &c);

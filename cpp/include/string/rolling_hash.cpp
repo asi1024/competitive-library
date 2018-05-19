@@ -12,8 +12,8 @@ class RollingHash {
   vector<ll> a, b, p, q;
 
 public:
-  RollingHash(const string &str)
-      : n(str.size()), a(n + 1, 0), b(n + 1, 0), p(n + 1, 1), q(n + 1, 1) {
+  RollingHash(const string &str) :
+    n(str.size()), a(n + 1, 0), b(n + 1, 0), p(n + 1, 1), q(n + 1, 1) {
     for (int i = 0; i < n; ++i) {
       a[i + 1] = (a[i] * pa + str[i]) % moda;
       b[i + 1] = (b[i] * pb + str[i]) % modb;

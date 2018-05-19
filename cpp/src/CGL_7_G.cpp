@@ -18,8 +18,7 @@ int main() {
   Circle c1(Point(x1, y1), r1), c2(Point(x2, y2), r2);
   vector<Line> ls = tangent_cc(c1, c2);
   vector<Point> res;
-  for (Line l : ls)
-    res.push_back(proj(l, c1.p));
+  for (Line l : ls) res.push_back(proj(l, c1.p));
   sort(begin(res), end(res), compare);
   for (Point p : res) {
     printf("%.10Lf %.10Lf\n", real(p), imag(p));

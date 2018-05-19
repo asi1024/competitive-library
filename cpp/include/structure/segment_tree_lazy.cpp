@@ -21,8 +21,7 @@ template <typename Update> class SegmentTreeLazy {
     data[node] = f(data[node]);
   }
   void evaluate(int node) {
-    if (!flag[node])
-      return;
+    if (!flag[node]) return;
     flag[node] = false;
     lazyset(node * 2 + 0, lazy[node]);
     lazyset(node * 2 + 1, lazy[node]);
@@ -42,8 +41,7 @@ template <typename Update> class SegmentTreeLazy {
     data[node] = Monoid::op(data[node * 2 + 0], data[node * 2 + 1]);
   }
   T query_sub(int l, int r, int node, int lb, int ub) {
-    if (ub <= l || r <= lb)
-      return Monoid::id();
+    if (ub <= l || r <= lb) return Monoid::id();
     if (l <= lb && ub <= r) {
       return data[node];
     }
@@ -56,8 +54,8 @@ template <typename Update> class SegmentTreeLazy {
   int expand(int m) const { return m == 1 ? m : expand((m + 1) / 2) * 2; }
 
 public:
-  SegmentTreeLazy(int count, const T &init = Monoid::id())
-      : n(expand(count)), data(n * 2), lazy(n), flag(n, false) {
+  SegmentTreeLazy(int count, const T &init = Monoid::id()) :
+    n(expand(count)), data(n * 2), lazy(n), flag(n, false) {
     fill(begin(data) + n, end(data), init);
     for (int i = n - 1; i >= 1; i--) {
       data[i] = Monoid::op(data[i * 2 + 0], data[i * 2 + 1]);

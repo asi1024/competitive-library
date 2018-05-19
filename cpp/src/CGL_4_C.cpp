@@ -21,10 +21,8 @@ int main() {
     bool is_zero = true, is_one = true;
     for (int j = 0; j < n; ++j) {
       int c = ccw(p1, p2, at(poly, j));
-      if (c == 1)
-        is_zero = false;
-      if (c == -1)
-        is_one = false;
+      if (c == 1) is_zero = false;
+      if (c == -1) is_one = false;
     }
     Polygon g = convex_cut(poly, Line(p1, p2));
     ld res = is_zero ? 0.0L : (is_one ? area(poly) : area(g));

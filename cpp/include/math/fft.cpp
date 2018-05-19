@@ -26,30 +26,24 @@ vector<P> FFT(const vector<P> &a, int m) {
   for (int i = 0, j = 1; j < n - 1; ++j) {
     for (int k = n / 2; k > (i ^= k); k /= 2)
       ;
-    if (j < i)
-      swap(res[i], res[j]);
+    if (j < i) swap(res[i], res[j]);
   }
   return res;
 }
 
 vector<ll> convolution(const vector<ll> &lhs, const vector<ll> &rhs) {
   int n = 1, a = lhs.size(), b = rhs.size();
-  while (n < max(a, b) * 2)
-    n <<= 1;
+  while (n < max(a, b) * 2) n <<= 1;
   vector<P> ra(n), rb(n);
   for (int i = 0; i < n / 2; ++i) {
-    if (i < a)
-      ra[i] = P(lhs[i], 0);
-    if (i < b)
-      rb[i] = P(rhs[i], 0);
+    if (i < a) ra[i] = P(lhs[i], 0);
+    if (i < b) rb[i] = P(rhs[i], 0);
   }
   ra = FFT(ra, n);
   rb = FFT(rb, n);
-  for (int i = 0; i < n; ++i)
-    ra[i] *= rb[i];
+  for (int i = 0; i < n; ++i) ra[i] *= rb[i];
   ra = FFT(ra, -n);
   vector<ll> res(n);
-  for (int i = 0; i < n; ++i)
-    res[i] = ra[i].real() / n + 0.5;
+  for (int i = 0; i < n; ++i) res[i] = ra[i].real() / n + 0.5;
   return res;
 }
