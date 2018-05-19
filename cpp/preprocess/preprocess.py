@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import argparse
+from datetime import datetime
 import os
 
 
@@ -28,21 +29,27 @@ def preprocess(path):
                 (line.startswith('#include') and len(line.split('"')) >= 3) or
                 line.split(' ') == ['#pragma', 'once'])
 
-    def print_includes_list():
-        code_list = []
-        for path in includes_list:
-            code_list.append('')
-            code_list.append('// ===== {} ====='.format(os.path.basename(path)))
-            code_list.append('')
-            code_list += [_ for _ in open(path) if not ignore_line(_)]
-        res = ''
-        for s, prev in zip(code_list, [''] + code_list):
-            if s.strip() != '' or prev.strip() != '':
-                res += s.rstrip() + '\n'
-        return res
-
     get_includes_list(path)
-    return print_includes_list()
+    time = datetime.now().strftime("%Y/%m/%d %H:%M:%S")
+
+    code_list = []
+
+    code_list.append('// ===== {} ====='.format(time))
+
+    for path in includes_list:
+        code_list.append('')
+        code_list.append('// {}'.format(path))
+        code_list.append('')
+        code_list += [_ for _ in open(path) if not ignore_line(_)]
+
+    code_list.append('// ===== {} ====='.format(time))
+
+    res = ''
+    for s, prev in zip(code_list, [''] + code_list):
+        if s.strip() != '' or prev.strip() != '':
+            res += s.rstrip() + '\n'
+
+    return res
 
 
 if __name__ == '__main__':
