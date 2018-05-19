@@ -3,17 +3,6 @@
 #include "../template/const_value.hpp"
 #include "../template/includes.hpp"
 
-template <class T> class has_capacity {
-  template <class U> static constexpr bool check(typename U::capacity_type *) {
-    return true;
-  }
-
-  template <class U> static constexpr bool check(...) { return false; }
-
-public:
-  static constexpr bool value = check<T>(nullptr);
-};
-
 template <class edge_t> class graph_t {
   std::vector<std::vector<edge_t>> g;
 
@@ -37,8 +26,7 @@ void add_edge(graph_t<edge_t> &g, int from, int to, Args... args) {
 }
 
 template <typename edge_t, class... Args>
-typename std::enable_if<has_capacity<edge_t>::value, void>::type
-add_edge(graph_t<edge_t> &g, int from, int to,
+void add_edge(graph_t<edge_t> &g, int from, int to,
          typename edge_t::capacity_type cap, Args... args) {
   g[from].emplace_back(from, to, (int)g[to].size(), cap, args...);
   g[to].emplace_back(to, from, (int)g[from].size() - 1,
