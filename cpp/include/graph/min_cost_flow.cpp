@@ -15,8 +15,8 @@ min_cost_flow(graph_t<edge_t> &g, int s, int t, cap_type f, bool init = true) {
   if (init) {
     std::fill(begin(h), end(h), zero<cost_type>());
     std::fill(begin(dist), end(dist), zero<cost_type>());
-    std::fill(begin(prevv), end(prevv), zero<cap_type>());
-    std::fill(begin(preve), end(preve), zero<cap_type>());
+    std::fill(begin(prevv), end(prevv), 0);
+    std::fill(begin(preve), end(preve), 0);
   }
   using P = std::pair<cost_type, int>;
   cost_type res = zero<cost_type>();
