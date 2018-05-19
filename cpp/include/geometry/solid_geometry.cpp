@@ -112,8 +112,7 @@ template <int D> ld abs(const PointND<D> &a) { return a.abs(); }
 template <int D> ostream &operator<<(ostream &os, PointND<D> p) {
   os << "(";
   for (int i = 0; i < D; i++) {
-    if (i > 0)
-      os << ", ";
+    if (i > 0) os << ", ";
     os << p[i];
   }
   os << ")";
@@ -128,7 +127,7 @@ Point3D cross(const Point3D &l, const Point3D &r) {
   const ld x = l[1] * r[2] - l[2] * r[1];
   const ld y = l[2] * r[0] - l[0] * r[2];
   const ld z = l[0] * r[1] - l[1] * r[0];
-  return Point3D({x, y, z});
+  return Point3D({ x, y, z });
 }
 ld volume(const Point3D &a, const Point3D &b, const Point3D &c) {
   return abs(dot(cross(a, b), c));
@@ -154,7 +153,7 @@ Point3D project_lp(const Segment3D &s, Point3D &p) {
 using Quaternion = PointND<4>;
 
 Quaternion conj(const Quaternion &x) {
-  return Quaternion({x[0], -x[1], -x[2], -x[3]});
+  return Quaternion({ x[0], -x[1], -x[2], -x[3] });
 }
 
 Quaternion operator*(const Quaternion &l, const Quaternion &r) {
@@ -162,7 +161,7 @@ Quaternion operator*(const Quaternion &l, const Quaternion &r) {
   ld b = l[0] * r[1] + l[1] * r[0] + l[2] * r[3] - l[3] * r[2];
   ld c = l[0] * r[2] + l[2] * r[0] + l[3] * r[1] - l[1] * r[3];
   ld d = l[0] * r[3] + l[3] * r[0] + l[1] * r[2] - l[2] * r[1];
-  return Quaternion({a, b, c, d});
+  return Quaternion({ a, b, c, d });
 }
 
 Quaternion &operator*=(Quaternion &l, const Quaternion &r) { return l = l * r; }
@@ -171,30 +170,30 @@ Quaternion inv(const Quaternion &x) { return conj(x) / norm(x); }
 
 Quaternion make_quaternion(const Point3D &axis, const ld theta) {
   const ld k = sin(theta / 2) / abs(axis);
-  return Quaternion({cos(theta / 2), axis[0] * k, axis[1] * k, axis[2] * k});
+  return Quaternion({ cos(theta / 2), axis[0] * k, axis[1] * k, axis[2] * k });
 }
 
 Point3D rotate(Quaternion rot, const Point3D &x) {
-  Quaternion a({0, x[0], x[1], x[2]});
+  Quaternion a({ 0, x[0], x[1], x[2] });
   Quaternion b = rot * a * conj(rot);
-  return Point3D({b[1], b[2], b[3]});
+  return Point3D({ b[1], b[2], b[3] });
 }
 
 void GoogleCodeJam::exec() const {
   ld X;
   cin >> X;
   const ld max_theta = atan(sqrt(2.0L));
-  const Point3D axis({1, 0, 1});
+  const Point3D axis({ 1, 0, 1 });
   ld lb = 0, ub = max_theta;
   REP(i, 300) {
     ld mid = (lb + ub) / 2;
     const auto rot = make_quaternion(axis, mid);
-    const Point3D vec({0, 1, 0});
-    Point3D p1({1, 0, 0});
+    const Point3D vec({ 0, 1, 0 });
+    Point3D p1({ 1, 0, 0 });
     p1 = rotate(rot, p1);
-    Point3D p2({0, 1, 0});
+    Point3D p2({ 0, 1, 0 });
     p2 = rotate(rot, p2);
-    Point3D p3({0, 0, 1});
+    Point3D p3({ 0, 0, 1 });
     p3 = rotate(rot, p3);
     const ld area = abs(dot(p1, vec)) + abs(dot(p2, vec)) + abs(dot(p3, vec));
     if (area < X)
@@ -203,11 +202,11 @@ void GoogleCodeJam::exec() const {
       ub = mid;
   }
   const auto rot = make_quaternion(axis, lb);
-  Point3D p1({0.5, 0, 0});
+  Point3D p1({ 0.5, 0, 0 });
   p1 = rotate(rot, p1);
-  Point3D p2({0, 0.5, 0});
+  Point3D p2({ 0, 0.5, 0 });
   p2 = rotate(rot, p2);
-  Point3D p3({0, 0, 0.5});
+  Point3D p3({ 0, 0, 0.5 });
   p3 = rotate(rot, p3);
   cout << p1[0] << " " << p1[1] << " " << p1[2] << endl;
   cout << p2[0] << " " << p2[1] << " " << p2[2] << endl;

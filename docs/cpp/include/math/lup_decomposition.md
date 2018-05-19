@@ -29,8 +29,7 @@ template <typename T> LUP<T> LUPDecomposition(Matrix<T> A) {
   for (int i = 0; i < n; ++i) {
     int pivot = i;
     for (int j = i + 1; j < n; ++j) {
-      if (abs(A[j][i]) > abs(A[pivot][i]))
-        pivot = j;
+      if (abs(A[j][i]) > abs(A[pivot][i])) pivot = j;
     }
     swap(A[pivot], A[i]);
     swap(perm[pivot], perm[i]);

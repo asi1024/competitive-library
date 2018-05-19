@@ -8,10 +8,8 @@ int main() {
   cin >> str;
   SuffixArray<string> sa(str);
   SegmentTree<RMQ<int>> seg1(sa.n + 1), seg2(sa.n + 1);
-  for (int i = 0; i <= sa.n; ++i)
-    seg1.update(i, sa.sa[i]);
-  for (int i = 0; i <= sa.n; ++i)
-    seg2.update(i, -sa.sa[i]);
+  for (int i = 0; i <= sa.n; ++i) seg1.update(i, sa.sa[i]);
+  for (int i = 0; i <= sa.n; ++i) seg2.update(i, -sa.sa[i]);
   cin >> N;
   for (int i = 0; i < N; ++i) {
     cin >> a >> b;

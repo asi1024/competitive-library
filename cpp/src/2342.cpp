@@ -17,10 +17,8 @@ int main() {
   REP(i, H) cin >> str[i];
   int starty = -1, startx = -1, goaly = -1, goalx = -1;
   REP(i, H) REP(j, W) {
-    if (str[i][j] == 'S')
-      starty = i, startx = j;
-    if (str[i][j] == 'G')
-      goaly = i, goalx = j;
+    if (str[i][j] == 'S') starty = i, startx = j;
+    if (str[i][j] == 'G') goaly = i, goalx = j;
   }
   WeightedGraph<int> g(H * W * (A + 1) * (A + 1) * 4);
   REP(i, H - 1) REP(j, W) REP(a, A + 1) REP(b, A + 1) {

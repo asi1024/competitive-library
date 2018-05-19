@@ -112,26 +112,21 @@ template <typename string_t> struct SuffixArray {
     for (int h = 1; b[n] != n; h *= 2) {
       SAComp comp(h, g);
       sort(sa.begin(), sa.end(), comp);
-      for (int i = 0; i < n; ++i)
-        b[i + 1] = b[i] + comp(sa[i], sa[i + 1]);
-      for (int i = 0; i <= n; ++i)
-        g[sa[i]] = b[i];
+      for (int i = 0; i < n; ++i) b[i + 1] = b[i] + comp(sa[i], sa[i + 1]);
+      for (int i = 0; i <= n; ++i) g[sa[i]] = b[i];
     }
     // build LCP
     int h = 0;
-    for (int i = 0; i <= n; ++i)
-      b[sa[i]] = i;
+    for (int i = 0; i <= n; ++i) b[sa[i]] = i;
     for (int i = 0; i <= n; ++i) {
       if (b[i]) {
         int j = sa[b[i] - 1];
-        while (j + h < n && i + h < n && str[j + h] == str[i + h])
-          ++h;
+        while (j + h < n && i + h < n && str[j + h] == str[i + h]) ++h;
         lcp[b[i]] = h;
       } else {
         lcp[b[i]] = -1;
       }
-      if (h > 0)
-        --h;
+      if (h > 0) --h;
     }
   }
 
@@ -168,14 +163,11 @@ class LCP {
 public:
   LCP(const string &str) : n(str.size()), mapsto(n), seg(n) {
     SuffixArray<string> sa(str);
-    for (int i = 0; i < n; ++i)
-      mapsto[sa.sa[i + 1]] = i;
-    for (int i = 0; i < n - 1; ++i)
-      seg.update(i, sa.lcp[i + 2]);
+    for (int i = 0; i < n; ++i) mapsto[sa.sa[i + 1]] = i;
+    for (int i = 0; i < n - 1; ++i) seg.update(i, sa.lcp[i + 2]);
   }
   int query(int i, int j) {
-    if (i == j)
-      return n - i;
+    if (i == j) return n - i;
     i = mapsto[i];
     j = mapsto[j];
     return seg.query(min(i, j), max(i, j));

@@ -48,10 +48,8 @@ public:
     r += n;
     T res1 = inf<T>(), res2 = inf<T>();
     while (l != r) {
-      if (l % 2)
-        res1 = min(res1, data[l++]);
-      if (r % 2)
-        res2 = min(res2, data[--r]);
+      if (l % 2) res1 = min(res1, data[l++]);
+      if (r % 2) res2 = min(res2, data[--r]);
       l /= 2;
       r /= 2;
       res1 += lazy[l - 1];

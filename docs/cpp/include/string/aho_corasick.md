@@ -96,8 +96,7 @@ template <typename State> struct AhoCorasick {
         if (pma[t].is_set(c)) {
           que.push(pma[t][c]);
           int r = pma[t].fail;
-          while (!pma[r].is_set(c))
-            r = pma[r].fail;
+          while (!pma[r].is_set(c)) r = pma[r].fail;
           pma[pma[t][c]].fail = pma[r][c];
           for (int i : pma[pma[r][c]].accept) {
             pma[pma[t][c]].accept.push_back(i);
@@ -117,8 +116,7 @@ template <typename State> struct AhoCorasick {
       char_t c = t[i];
       index = next(index, c);
       for (int j : pma[index].accept) {
-        if (ret[j] != -1)
-          continue;
+        if (ret[j] != -1) continue;
         ret[j] = i - lens[j] + 1;
       }
     }

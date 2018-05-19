@@ -179,14 +179,12 @@ public:
   bool operator==(const Modulo &a) const { return n == a.n; }
   Modulo &operator+=(const Modulo &a) {
     n += a.n;
-    if (n >= M)
-      n -= M;
+    if (n >= M) n -= M;
     return *this;
   }
   Modulo &operator-=(const Modulo &a) {
     n -= a.n;
-    if (n < 0)
-      n += M;
+    if (n < 0) n += M;
     return *this;
   }
   Modulo &operator*=(const Modulo &a) {
@@ -206,8 +204,7 @@ public:
     return res *= a;
   }
   Modulo operator^(int m) const {
-    if (m == 0)
-      return Modulo(1);
+    if (m == 0) return Modulo(1);
     const Modulo a = *this;
     Modulo res = (a * a) ^ (m / 2);
     return m % 2 ? res * a : res;
@@ -230,7 +227,7 @@ template <int M, bool IsPrime = false> int abs(Modulo<M, IsPrime> x) {
 const int mod = 1000000007;
 
 template <int M = mod> Modulo<M, true> fact(int n, bool sw = true) {
-  static vector<Modulo<M, true>> v1 = {1}, v2 = {1};
+  static vector<Modulo<M, true>> v1 = { 1 }, v2 = { 1 };
   if (n >= (int)v1.size()) {
     const int from = v1.size(), to = n + 1024;
     v1.reserve(to);
@@ -244,8 +241,7 @@ template <int M = mod> Modulo<M, true> fact(int n, bool sw = true) {
 }
 
 template <int M = mod> Modulo<M, true> comb(int a, int b) {
-  if (b < 0 || b > a)
-    return 0;
+  if (b < 0 || b > a) return 0;
   return fact<M>(a, true) * fact<M>(b, false) * fact<M>(a - b, false);
 }
 

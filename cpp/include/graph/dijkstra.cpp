@@ -22,11 +22,9 @@ std::vector<cost_type> dijkstra(const graph_t<edge_t> &g, int s) {
     cost_type dist = que.top().first;
     int v = que.top().second;
     que.pop();
-    if (d[v] < dist)
-      continue;
+    if (d[v] < dist) continue;
     for (const auto &e : g[v]) {
-      if (d[e.to] <= d[v] + e.cost)
-        continue;
+      if (d[e.to] <= d[v] + e.cost) continue;
       d[e.to] = d[v] + e.cost;
       que.push(P(d[e.to], e.to));
     }

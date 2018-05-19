@@ -51,8 +51,7 @@ public:
     return *this;
   }
   inline fast_ostream &operator<<(const std::string &var) {
-    for (char c : var)
-      putchar_unlocked(c);
+    for (char c : var) putchar_unlocked(c);
     return *this;
   }
 };

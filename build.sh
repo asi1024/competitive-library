@@ -5,7 +5,7 @@ set -eu
 DIR=`dirname $0`
 
 cd ${DIR}
-clang-format -style=llvm -i cpp/include/*/*.?pp cpp/src/*.?pp
+clang-format -i cpp/include/*/*.?pp cpp/src/*.?pp
 
 cd cpp/docs
 doxygen

@@ -90,14 +90,12 @@ public:
   bool operator==(const Modulo &a) const { return n == a.n; }
   Modulo operator+=(const Modulo &a) {
     n += a.n;
-    if (n >= mod)
-      n -= mod;
+    if (n >= mod) n -= mod;
     return *this;
   }
   Modulo operator-=(const Modulo &a) {
     n -= a.n;
-    if (n < 0)
-      n += mod;
+    if (n < 0) n += mod;
     return *this;
   }
   Modulo operator*=(const Modulo &a) {
@@ -117,8 +115,7 @@ public:
     return res *= a;
   }
   Modulo operator^(int n) const {
-    if (n == 0)
-      return Modulo(1);
+    if (n == 0) return Modulo(1);
     const Modulo a = *this;
     Modulo res = (a * a) ^ (n / 2);
     return n % 2 ? res * a : res;
@@ -135,7 +132,7 @@ class Mod {
 
 public:
   Mod(ll m) {
-    assert(!factor.empty()); // assert
+    assert(!factor.empty());  // assert
     f.assign(len, 0);
     for (int i = 0; i < len; ++i) {
       while (m % i == 0) {
@@ -155,20 +152,17 @@ public:
   explicit operator ll() const { return ll(Modulo(*this)); }
   Mod operator*=(const Mod &a) {
     n *= a.n;
-    for (int i = 0; i < len; ++i)
-      f[i] += a.f[i];
+    for (int i = 0; i < len; ++i) f[i] += a.f[i];
     return *this;
   }
   Mod operator/=(const Mod &a) {
     n *= inv(ll(a.n), mod);
-    for (int i = 0; i < len; ++i)
-      f[i] -= a.f[i];
+    for (int i = 0; i < len; ++i) f[i] -= a.f[i];
     return *this;
   }
   Mod powi(int m) {
     n = n ^ m;
-    for (int &i : f)
-      i *= m;
+    for (int &i : f) i *= m;
     return *this;
   }
   Mod operator*(const Mod &a) const {
@@ -201,8 +195,7 @@ void init() {
 }
 
 Mod comb(int a, int b) {
-  if (b < 0 || b > a)
-    return Mod(0);
+  if (b < 0 || b > a) return Mod(0);
   return fact[a] / (fact[b] * fact[a - b]);
 }
 
@@ -224,22 +217,18 @@ vector<P> FFT(ld theta, const vector<P> &a) {
     for (int k = n >> 1; k > (i ^= k); k >>= 1) {
       ;
     }
-    if (j < i)
-      swap(ret[i], ret[j]);
+    if (j < i) swap(ret[i], ret[j]);
   }
   return ret;
 }
 
 vector<ll> convolution(const vector<ll> &lhs, const vector<ll> &rhs) {
   int n = 1, a = lhs.size(), b = rhs.size();
-  while (n < max(a, b) * 2)
-    n <<= 1;
+  while (n < max(a, b) * 2) n <<= 1;
   vector<P> temp1(n), temp2(n);
   REP(i, n / 2) {
-    if (i < a)
-      temp1[i] = P(lhs[i], 0);
-    if (i < b)
-      temp2[i] = P(rhs[i], 0);
+    if (i < a) temp1[i] = P(lhs[i], 0);
+    if (i < b) temp2[i] = P(rhs[i], 0);
   }
   temp1 = FFT(2.0 * pi / n, temp1);
   temp2 = FFT(2.0 * pi / n, temp2);

@@ -66,12 +66,10 @@ vector<Game_with_Cost<Cost>> retrograde(const vector<vector<Edge>> &g) {
   const int n = g.size();
   vector<vector<Edge>> rg(n);
   for (int i = 0; i < n; ++i) {
-    for (auto e : g[i])
-      rg[e.to].push_back(Edge(i, e.cost));
+    for (auto e : g[i]) rg[e.to].push_back(Edge(i, e.cost));
   }
   vector<int> cnt(n);
-  for (int i = 0; i < n; ++i)
-    cnt[i] = g[i].size();
+  for (int i = 0; i < n; ++i) cnt[i] = g[i].size();
   using P = pair<Cost, int>;
   priority_queue<P, vector<P>, greater<P>> que;
   vector<Game_with_Cost<Cost>> res(n);
@@ -87,11 +85,9 @@ vector<Game_with_Cost<Cost>> retrograde(const vector<vector<Edge>> &g) {
     tie(cost, v) = que.top();
     que.pop();
     if (res[v].win == WIN) {
-      if (res[v].cost != cost)
-        continue;
+      if (res[v].cost != cost) continue;
       for (Edge e : rg[v]) {
-        if (res[e.to].win == WIN)
-          continue;
+        if (res[e.to].win == WIN) continue;
         cnt[e.to]--;
         if (cnt[e.to] == 0) {
           res[e.to].win = LOSE;

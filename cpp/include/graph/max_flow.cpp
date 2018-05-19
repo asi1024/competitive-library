@@ -36,17 +36,14 @@ cap_type max_flow(graph_t<edge_t> &g, int s, int t) {
       int v = que.front();
       que.pop();
       for (const auto &e : g[v]) {
-        if (e.cap <= zero<cap_type>() || d[e.to] >= 0)
-          continue;
+        if (e.cap <= zero<cap_type>() || d[e.to] >= 0) continue;
         d[e.to] = d[v] + 1;
         que.push(e.to);
       }
     }
-    if (d[t] < 0)
-      return flow;
+    if (d[t] < 0) return flow;
     std::vector<int> iter(V, 0);
     cap_type f;
-    while ((f = augment(g, d, iter, s, t, inf<cap_type>())) > 0)
-      flow += f;
+    while ((f = augment(g, d, iter, s, t, inf<cap_type>())) > 0) flow += f;
   }
 }

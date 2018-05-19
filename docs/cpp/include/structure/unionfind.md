@@ -74,12 +74,9 @@ public:
   bool unite(int x, int y) {
     x = root(x);
     y = root(y);
-    if (x == y)
-      return false;
-    if (p[y] < p[x])
-      std::swap(x, y);
-    if (p[x] == p[y])
-      --p[x];
+    if (x == y) return false;
+    if (p[y] < p[x]) std::swap(x, y);
+    if (p[x] == p[y]) --p[x];
     p[y] = x;
     return true;
   }

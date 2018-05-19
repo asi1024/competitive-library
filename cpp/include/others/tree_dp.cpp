@@ -24,20 +24,16 @@ template <typename ComMonoid> struct TreeDP {
   vector<vector<bool>> visitedl, visitedr;
   vector<vector<T>> memol, memor;
   T dfsl(int v, int pos) {
-    if (pos == 0)
-      return 0;
-    if (visitedl[v][pos])
-      return memol[v][pos];
+    if (pos == 0) return 0;
+    if (visitedl[v][pos]) return memol[v][pos];
     visitedl[v][pos] = true;
     const T l = dfsl(v, pos - 1);
     const T r = dfsv(g[v][pos - 1], v);
     return memol[v][pos] = ComMonoid::op2(l, r);
   }
   T dfsr(int v, int pos) {
-    if (pos == int(g[v].size()))
-      return 0;
-    if (visitedr[v][pos])
-      return memor[v][pos];
+    if (pos == int(g[v].size())) return 0;
+    if (visitedr[v][pos]) return memor[v][pos];
     visitedr[v][pos] = true;
     const T l = dfsv(g[v][pos], v);
     const T r = dfsr(v, pos + 1);
@@ -50,13 +46,12 @@ template <typename ComMonoid> struct TreeDP {
     return ComMonoid::op1(ComMonoid::op2(l, r));
   }
   Graph init(Graph g) {
-    for (int i = 0; i < int(g.size()); ++i)
-      sort(begin(g[i]), end(g[i]));
+    for (int i = 0; i < int(g.size()); ++i) sort(begin(g[i]), end(g[i]));
     return g;
   }
-  TreeDP(const Graph &g)
-      : n(g.size()), g(init(g)), visitedl(n + 1), visitedr(n + 1), memol(n + 1),
-        memor(n + 1) {
+  TreeDP(const Graph &g) :
+    n(g.size()), g(init(g)), visitedl(n + 1), visitedr(n + 1), memol(n + 1),
+    memor(n + 1) {
     for (int i = 0; i < n; ++i) {
       visitedl[i].assign(g[i].size() + 1, false);
       visitedr[i].assign(g[i].size() + 1, false);
@@ -94,15 +89,13 @@ int main() {
     g[s].push_back(t);
     g[t].push_back(s);
     bool tr = is_tree[uf.root(s)] && is_tree[uf.root(t)];
-    if (!uf.unite(s, t) || !tr)
-      is_tree[uf.root(s)] = 0;
+    if (!uf.unite(s, t) || !tr) is_tree[uf.root(s)] = 0;
   }
   REP(i, n) sort(ALL(g[i]));
   REP(i, n) cc[uf.root(i)].push_back(i);
   TreeDP<Algebra> dp(g);
   REP(i, n) {
-    if (cc[i].empty())
-      continue;
+    if (cc[i].empty()) continue;
     const int m = cc[i].size();
     cnt[i].assign(m, 0);
     sum[i].assign(m + 1, 0);
@@ -129,8 +122,7 @@ int main() {
     } else {
       s = uf.root(s);
       t = uf.root(t);
-      if (cc[s].size() > cc[t].size())
-        swap(s, t);
+      if (cc[s].size() > cc[t].size()) swap(s, t);
       if (memoize.count(make_pair(s, t))) {
         cout << memoize[make_pair(s, t)] << endl;
         continue;

@@ -16,8 +16,7 @@ int is_in_polygon(const Polygon &g, Point p) {
   int n = g.size();
   ld sum = 0;
   for (int i = 0; i < n; i++) {
-    if (isis_sp(Segment(at(g, i), at(g, i + 1)), p))
-      return 0; // on
+    if (isis_sp(Segment(at(g, i), at(g, i + 1)), p)) return 0;  // on
     sum += arg((at(g, i + 1) - p) / (at(g, i) - p));
   }
   return abs(sum) > 0.5 ? 1 : -1;

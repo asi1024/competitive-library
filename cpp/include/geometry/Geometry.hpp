@@ -38,22 +38,17 @@ struct Circle {
 int ccw(Point a, Point b, Point c) {
   b -= a;
   c -= a;
-  if (cross(b, c) > eps)
-    return 1; // counter clockwise
-  if (cross(b, c) < -eps)
-    return -1; // clockwise
-  if (dot(b, c) < 0)
-    return 2; // c--a--b on line
-  if (norm(b) < norm(c))
-    return -2; // a--b--c on line
-  return 0;    // a--c--b on line
+  if (cross(b, c) > eps) return 1;    // counter clockwise
+  if (cross(b, c) < -eps) return -1;  // clockwise
+  if (dot(b, c) < 0) return 2;        // c--a--b on line
+  if (norm(b) < norm(c)) return -2;   // a--b--c on line
+  return 0;                           // a--c--b on line
 }
 
 vector<Point> unique(vector<Point> ps) {
   sort(begin(ps), end(ps), comp);
   vector<Point> res;
   for (Point p : ps)
-    if (res.empty() || abs(res.back() - p) > eps)
-      res.push_back(p);
+    if (res.empty() || abs(res.back() - p) > eps) res.push_back(p);
   return res;
 }

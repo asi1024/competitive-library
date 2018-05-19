@@ -9,8 +9,8 @@ public:
   int to, rev;
   capacity_type cap;
   cost_type cost;
-  CapacityWeightedEdge(int, int t, int r, capacity_type f, cost_type c)
-      : to(t), rev(r), cap(f), cost(c) {
+  CapacityWeightedEdge(int, int t, int r, capacity_type f, cost_type c) :
+    to(t), rev(r), cap(f), cost(c) {
     ;
   }
 };

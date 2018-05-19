@@ -10,8 +10,7 @@ vector<Line> tangent_cp(Circle c, Point p) {
   Point v1 = v * Point(len / d, c.r / d);
   Point v2 = v * Point(len / d, -c.r / d);
   res.push_back(Line(p, p + v1));
-  if (len < eps)
-    return res;
+  if (len < eps) return res;
   res.push_back(Line(p, p + v2));
   return res;
 }

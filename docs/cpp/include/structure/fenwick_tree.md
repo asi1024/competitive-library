@@ -59,8 +59,7 @@ public:
 
   void add(int pos, const T &value) {
     assert(0 <= pos && pos < n);
-    for (int i = pos; i < n; i |= i + 1)
-      data[i] += value;
+    for (int i = pos; i < n; i |= i + 1) data[i] += value;
   }
 
   T sum(int pos) const {

@@ -21,7 +21,7 @@ min_cost_flow(graph_t<edge_t> &g, int s, int t, cap_type f, bool init = true) {
   const int V = g.size();
   // const cost_type eps = 1e-8;
   static std::vector<cost_type> h(V, zero<cost_type>()),
-      dist(V, zero<cost_type>());
+    dist(V, zero<cost_type>());
   static std::vector<int> prevv(V), preve(V);
   if (init) {
     std::fill(begin(h), end(h), zero<cost_type>());
@@ -40,12 +40,10 @@ min_cost_flow(graph_t<edge_t> &g, int s, int t, cap_type f, bool init = true) {
       P p = que.top();
       que.pop();
       int v = p.second;
-      if (dist[v] < p.first)
-        continue;
+      if (dist[v] < p.first) continue;
       for (int i = 0; i < (int)g[v].size(); ++i) {
         const auto &e = g[v][i];
-        if (e.cap <= zero<cap_type>())
-          continue;
+        if (e.cap <= zero<cap_type>()) continue;
         if (dist[e.to] > dist[v] + e.cost + h[v] - h[e.to] /* + eps */) {
           dist[e.to] = dist[v] + e.cost + h[v] - h[e.to];
           prevv[e.to] = v;
@@ -54,8 +52,7 @@ min_cost_flow(graph_t<edge_t> &g, int s, int t, cap_type f, bool init = true) {
         }
       }
     }
-    if (dist[t] == inf<cost_type>())
-      return -1;
+    if (dist[t] == inf<cost_type>()) return -1;
     for (int i = 0; i < V; ++i) {
       h[i] += dist[i];
     }

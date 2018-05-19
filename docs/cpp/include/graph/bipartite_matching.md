@@ -61,11 +61,9 @@ public:
     int res = 0;
     fill(begin(match), end(match), -1);
     for (int v = 0; v < size; ++v) {
-      if (match[v] >= 0)
-        continue;
+      if (match[v] >= 0) continue;
       fill(begin(used), end(used), 0);
-      if (dfs(v))
-        ++res;
+      if (dfs(v)) ++res;
     }
     return res;
   }

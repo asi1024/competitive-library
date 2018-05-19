@@ -100,11 +100,9 @@ public:
     const int m = Y();
     assert(m == X());
     Matrix<T> A = *this, res(m, m, 0);
-    for (int i = 0; i < m; ++i)
-      res[i][i] = 1;
+    for (int i = 0; i < m; ++i) res[i][i] = 1;
     while (n > 0) {
-      if (n % 2)
-        res *= A;
+      if (n % 2) res *= A;
       A = A * A;
       n /= 2;
     }
@@ -130,26 +128,21 @@ public:
   }
   void concat_below(const Matrix<T> &r) {
     assert(Y() == 0 || X() == r.X());
-    for (Vec<T> i : r)
-      (*this).push_back(i);
+    for (Vec<T> i : r) (*this).push_back(i);
   }
   int rank() const {
     Matrix<T> A = *this;
-    if (Y() == 0)
-      return 0;
+    if (Y() == 0) return 0;
     const int n = Y(), m = X();
     int r = 0;
     for (int i = 0; r < n && i < m; ++i) {
       int pivot = r;
       for (int j = r + 1; j < n; ++j) {
-        if (abs(A[j][i]) > abs(A[pivot][i]))
-          pivot = j;
+        if (abs(A[j][i]) > abs(A[pivot][i])) pivot = j;
       }
       swap(A[pivot], A[r]);
-      if (is_zero(A[r][i]))
-        continue;
-      for (int k = m - 1; k >= i; --k)
-        A[r][k] = A[r][k] / A[r][i];
+      if (is_zero(A[r][i])) continue;
+      for (int k = m - 1; k >= i; --k) A[r][k] = A[r][k] / A[r][i];
       for (int j = r + 1; j < n; ++j) {
         for (int k = m - 1; k >= i; --k) {
           A[j][k] -= A[r][k] * A[j][i];
@@ -161,21 +154,18 @@ public:
   }
   T det() const {
     const int n = Y();
-    if (n == 0)
-      return 1;
+    if (n == 0) return 1;
     assert(Y() == X());
     Matrix<T> A = *this;
     T D = 1;
     for (int i = 0; i < n; ++i) {
       int pivot = i;
       for (int j = i + 1; j < n; ++j) {
-        if (abs(A[j][i]) > abs(A[pivot][i]))
-          pivot = j;
+        if (abs(A[j][i]) > abs(A[pivot][i])) pivot = j;
       }
       swap(A[pivot], A[i]);
       D = D * A[i][i] * T(i != pivot ? -1 : 1);
-      if (is_zero(A[i][i]))
-        break;
+      if (is_zero(A[i][i])) break;
       for (int j = i + 1; j < n; ++j) {
         for (int k = n - 1; k >= i; --k) {
           A[j][k] -= A[i][k] * A[j][i] / A[i][i];
