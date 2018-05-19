@@ -44,7 +44,8 @@ articulation_points(const graph_t<edge_t> &g) {
               if (edge.from == from && edge.to == to) break;
             }
           }
-        } else {
+        }
+        else {
           low[from] = std::min(low[from], order[to]);
         }
       }

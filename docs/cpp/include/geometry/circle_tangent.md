@@ -44,7 +44,8 @@ vector<Line> tangent_cc(Circle c1, Circle c2) {
     Point out = (-c1.p * c2.r + c2.p * c1.r) / (c1.r - c2.r);
     vector<Line> nres = tangent_cp(c1, out);
     res.insert(res.end(), begin(nres), end(nres));
-  } else {
+  }
+  else {
     Point v = c2.p - c1.p;
     v /= abs(v);
     Point q1 = c1.p + v * Point(0, 1) * c1.r;
