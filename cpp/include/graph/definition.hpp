@@ -27,7 +27,7 @@ void add_edge(graph_t<edge_t> &g, int from, int to, Args... args) {
 
 template <typename edge_t, class... Args>
 void add_edge(graph_t<edge_t> &g, int from, int to,
-         typename edge_t::capacity_type cap, Args... args) {
+              typename edge_t::capacity_type cap, Args... args) {
   g[from].emplace_back(from, to, (int)g[to].size(), cap, args...);
   g[to].emplace_back(to, from, (int)g[from].size() - 1,
                      zero<typename edge_t::capacity_type>(), args...);
