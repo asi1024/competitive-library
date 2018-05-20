@@ -1,5 +1,11 @@
 {% include mathjax.html %}
 
+## add_edge
+
+{% highlight cpp %}
+void add_edge(CapacityGraph< Capacity > &g, int from, int to, Capacity cap);
+{% endhighlight %}
+
 ## Member functions
 
 ### [1] (constructor)
@@ -27,6 +33,12 @@ public:
 
 template <typename Capacity>
 using CapacityGraph = graph_t<CapacityEdge<Capacity>>;
+
+template <typename Capacity>
+void add_edge(CapacityGraph<Capacity> &g, int from, int to, Capacity cap) {
+  g[from].emplace_back(from, to, (int)g[to].size(), cap);
+  g[to].emplace_back(to, from, (int)g[from].size() - 1, zero<Capacity>());
+}
 {% endhighlight %}
 
 ### Includes

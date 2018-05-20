@@ -1,6 +1,9 @@
 #include "../include/graph/retrograde_weighted.cpp"
+#include "../include/graph/weighted_graph.hpp"
 
 #define REP(i, n) for (int i = 0; i < (int)(n); i++)
+
+using namespace std;
 
 bool edge[64][64];
 bool dp[128][64][64];
@@ -17,7 +20,7 @@ int main() {
   REP(i, 101) REP(j, n) REP(k, n) REP(l, n) {
     if (dp[i][j][k] && edge[k][l]) dp[i + 1][j][l] = true;
   }
-  Graph g(4 * n + 1);
+  WeightedGraph<int> g(4 * n + 1);
   const int start = 4 * n;
   add_edge(g, start, 0, 0);
   REP(i, n - 1) REP(j, 3) add_edge(g, 4 * i, 4 * i + j + 1, 0);

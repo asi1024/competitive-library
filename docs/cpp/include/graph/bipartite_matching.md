@@ -4,15 +4,15 @@
 
 ### [1] (constructor)
 {% highlight cpp %}
-BipartiteMatching(int v);
+BipartiteMatching(int v1, int v2);
 {% endhighlight %}
 
 
 ---------------------------------------
 
-### [2] add_edge
+### [2] add
 {% highlight cpp %}
-void add_edge(int u, int v);
+void add(int u, int v);
 {% endhighlight %}
 
 
@@ -20,7 +20,7 @@ void add_edge(int u, int v);
 
 ### [3] maximum_matching
 {% highlight cpp %}
-int maximum_matching(void);
+int maximum_matching();
 {% endhighlight %}
 
 
@@ -31,39 +31,68 @@ int maximum_matching(void);
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/bipartite_matching.cpp)
 
 {% highlight cpp %}
-#include "../util.hpp"
+#include "../template/includes.hpp"
 
 class BipartiteMatching {
-  int size;
-  vector<vector<int>> g;
-  vector<int> match;
-  vector<bool> used;
-  bool dfs(int v) {
-    used[v] = true;
-    for (int u : g[v]) {
-      int w = match[u];
-      if (w < 0 || (!used[w] && dfs(w))) {
-        match[v] = u;
-        match[u] = v;
-        return true;
+  const int INF = 1000000000;
+  const int n1, n;
+  std::vector<std::vector<int>> g;
+  std::vector<int> match, dist;
+  bool bfs() {
+    std::queue<int> que;
+    std::fill(std::begin(dist), std::begin(dist) + n1, INF);
+    for (int i = 0; i < n1; ++i) {
+      if (match[i] == n) {
+        dist[i] = 0;
+        que.push(i);
       }
     }
-    return false;
+    dist[n] = INF;
+    while (!que.empty()) {
+      int u = que.front();
+      que.pop();
+      if (dist[u] < dist[n]) {
+        for (int v : g[u]) {
+          if (dist[match[v]] == INF) {
+            dist[match[v]] = dist[u] + 1;
+            que.push(match[v]);
+          }
+        }
+      }
+    }
+    return (dist[n] != INF);
+  }
+  bool dfs(int u) {
+    if (u != n) {
+      for (int v : g[u]) {
+        if (dist[match[v]] == dist[u] + 1 && dfs(match[v])) {
+          match[v] = u;
+          match[u] = v;
+          return true;
+        }
+      }
+      dist[u] = INF;
+      return false;
+    }
+    return true;
   }
 
 public:
-  BipartiteMatching(int v) : size(v), g(v), match(v), used(v) {}
-  void add_edge(int u, int v) {
-    g[u].push_back(v);
-    g[v].push_back(u);
+  BipartiteMatching(int v1, int v2) :
+    n1(v1), n(v1 + v2), g(n + 1), match(n + 1), dist(n + 1) {
+    ;
   }
-  int maximum_matching(void) {
+  void add(int u, int v) {
+    g[u].push_back(v + n1);
+    g[v + n1].push_back(u);
+  }
+  int maximum_matching() {
     int res = 0;
-    fill(begin(match), end(match), -1);
-    for (int v = 0; v < size; ++v) {
-      if (match[v] >= 0) continue;
-      fill(begin(used), end(used), 0);
-      if (dfs(v)) ++res;
+    std::fill(std::begin(match), std::begin(match) + n, n);
+    while (bfs()) {
+      for (int i = 0; i < n1; ++i) {
+        if (match[i] == n && dfs(i)) ++res;
+      }
     }
     return res;
   }
@@ -72,6 +101,6 @@ public:
 
 ### Includes
 
-- [util.hpp](../util)
+- [includes.hpp](../template/includes)
 
 [Back](../..)

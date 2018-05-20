@@ -3,49 +3,29 @@
 ## retrograde
 
 {% highlight cpp %}
-vector<Game> retrograde(const vector< vector< Edge >> &g);
+std::vector<Game> retrograde(const graph_t< edge_t > &g);
 {% endhighlight %}
-
-## add_edge
-
-{% highlight cpp %}
-void add_edge(Graph &g, int from, int to);
-{% endhighlight %}
-
-## Member functions
-
-### [1] (constructor)
-{% highlight cpp %}
-Edge(int s, int t);
-Edge(int t);
-Edge(int t);
-Edge(int t, Cost c);
-Edge(int, int t);
-{% endhighlight %}
-
-
----------------------------------------
 
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/retrograde.cpp)
 
 {% highlight cpp %}
-#include "../util.hpp"
+#include "definition.hpp"
 
 enum Game { WIN, LOSE, DRAW };
 
-template <typename Edge>
-vector<Game> retrograde(const vector<vector<Edge>> &g) {
+template <typename edge_t>
+std::vector<Game> retrograde(const graph_t<edge_t> &g) {
   const int n = g.size();
-  vector<vector<int>> rg(n);
+  std::vector<std::vector<int>> rg(n);
   for (int i = 0; i < n; ++i) {
-    for (auto e : g[i]) rg[e.to].push_back(i);
+    for (const auto &e : g[i]) rg[e.to].push_back(i);
   }
-  vector<int> cnt(n);
+  std::vector<int> cnt(n);
   for (int i = 0; i < n; ++i) cnt[i] = g[i].size();
-  queue<int> que;
-  vector<Game> res(n, DRAW);
+  std::queue<int> que;
+  std::vector<Game> res(n, DRAW);
   for (int i = 0; i < n; ++i) {
     if (cnt[i] == 0) {
       res[i] = LOSE;
@@ -56,38 +36,30 @@ vector<Game> retrograde(const vector<vector<Edge>> &g) {
     int v = que.front();
     que.pop();
     if (res[v] == WIN) {
-      for (Edge e : rg[v]) {
-        if (res[e.to] == WIN) continue;
-        cnt[e.to]--;
-        if (cnt[e.to] == 0) {
-          res[e.to] = LOSE;
-          que.emplace(e.to);
+      for (int w : rg[v]) {
+        if (res[w] == WIN) continue;
+        cnt[w]--;
+        if (cnt[w] == 0) {
+          res[w] = LOSE;
+          que.emplace(w);
         }
       }
-    } else {
-      for (Edge e : rg[v]) {
-        if (res[e.to] != WIN) {
-          res[e.to] = WIN;
-          que.emplace(e.to);
+    }
+    else {
+      for (int w : rg[v]) {
+        if (res[w] != WIN) {
+          res[w] = WIN;
+          que.emplace(w);
         }
       }
     }
   }
   return res;
 }
-
-struct Edge {
-  int to;
-  Edge(int t) : to(t) {}
-};
-
-using Graph = vector<vector<Edge>>;
-
-void add_edge(Graph &g, int from, int to) { g[from].emplace_back(to); }
 {% endhighlight %}
 
 ### Includes
 
-- [util.hpp](../util)
+- [definition.hpp](definition)
 
 [Back](../..)

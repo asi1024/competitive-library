@@ -3,13 +3,7 @@
 ## retrograde
 
 {% highlight cpp %}
-vector<Game_with_Cost<Cost> > retrograde(const vector< vector< Edge >> &g);
-{% endhighlight %}
-
-## add_edge
-
-{% highlight cpp %}
-void add_edge(Graph &g, int from, int to, Edge::Cost cost);
+std::vector<Game_with_Cost<Cost> > retrograde(const graph_t< edge_t > &g);
 {% endhighlight %}
 
 ## Member functions
@@ -17,21 +11,7 @@ void add_edge(Graph &g, int from, int to, Edge::Cost cost);
 ### [1] (constructor)
 {% highlight cpp %}
 Game_with_Cost();
-Game_with_Cost(Game w, T c);
-{% endhighlight %}
-
-
----------------------------------------
-
-## Member functions
-
-### [1] (constructor)
-{% highlight cpp %}
-Edge(int s, int t);
-Edge(int t);
-Edge(int t);
-Edge(int t, Cost c);
-Edge(int, int t);
+Game_with_Cost(Game w, Cost c);
 {% endhighlight %}
 
 
@@ -50,29 +30,29 @@ Edge(int, int t);
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/retrograde_weighted.cpp)
 
 {% highlight cpp %}
-#include "../util.hpp"
+#include "definition.hpp"
 
 enum Game { WIN, LOSE, DRAW };
 
-template <typename T> struct Game_with_Cost {
+template <typename Cost> struct Game_with_Cost {
   Game win;
-  T cost;
-  Game_with_Cost() : win(DRAW), cost(inf<T>()) { ; }
-  Game_with_Cost(Game w, T c) : win(w), cost(c) { ; }
+  Cost cost;
+  Game_with_Cost() : win(DRAW), cost(inf<Cost>()) { ; }
+  Game_with_Cost(Game w, Cost c) : win(w), cost(c) { ; }
 };
 
-template <typename Edge, typename Cost = typename Edge::Cost>
-vector<Game_with_Cost<Cost>> retrograde(const vector<vector<Edge>> &g) {
+template <typename edge_t, typename Cost = typename edge_t::cost_type>
+std::vector<Game_with_Cost<Cost>> retrograde(const graph_t<edge_t> &g) {
+  using P = std::pair<Cost, int>;
   const int n = g.size();
-  vector<vector<Edge>> rg(n);
+  std::vector<std::vector<P>> rg(n);
   for (int i = 0; i < n; ++i) {
-    for (auto e : g[i]) rg[e.to].push_back(Edge(i, e.cost));
+    for (const auto &e : g[i]) rg[e.to].emplace_back(e.cost, i);
   }
-  vector<int> cnt(n);
+  std::vector<int> cnt(n);
   for (int i = 0; i < n; ++i) cnt[i] = g[i].size();
-  using P = pair<Cost, int>;
-  priority_queue<P, vector<P>, greater<P>> que;
-  vector<Game_with_Cost<Cost>> res(n);
+  std::priority_queue<P, std::vector<P>, std::greater<P>> que;
+  std::vector<Game_with_Cost<Cost>> res(n);
   for (int i = 0; i < n; ++i) {
     if (cnt[i] == 0) {
       res[i] = Game_with_Cost<Cost>(LOSE, 0);
@@ -82,51 +62,39 @@ vector<Game_with_Cost<Cost>> retrograde(const vector<vector<Edge>> &g) {
   while (!que.empty()) {
     Cost cost;
     int v;
-    tie(cost, v) = que.top();
+    std::tie(cost, v) = que.top();
     que.pop();
     if (res[v].win == WIN) {
       if (res[v].cost != cost) continue;
-      for (Edge e : rg[v]) {
-        if (res[e.to].win == WIN) continue;
-        cnt[e.to]--;
-        if (cnt[e.to] == 0) {
-          res[e.to].win = LOSE;
-          que.emplace(Cost(0), e.to);
+      for (const P &e : rg[v]) {
+        if (res[e.second].win == WIN) continue;
+        cnt[e.second]--;
+        if (cnt[e.second] == 0) {
+          res[e.second].win = LOSE;
+          que.emplace(Cost(0), e.second);
         }
       }
-    } else {
-      for (Edge e : g[v]) {
-        cost = max(cost, res[e.to].cost + e.cost);
+    }
+    else {
+      for (const edge_t &e : g[v]) {
+        cost = std::max(cost, res[e.to].cost + e.cost);
       }
       res[v].cost = cost;
-      for (Edge e : rg[v]) {
-        res[e.to].win = WIN;
-        if (cost + e.cost < res[e.to].cost) {
-          res[e.to].cost = cost + e.cost;
-          que.emplace(res[e.to].cost, e.to);
+      for (const P &e : rg[v]) {
+        res[e.second].win = WIN;
+        if (cost + e.first < res[e.second].cost) {
+          res[e.second].cost = cost + e.first;
+          que.emplace(res[e.second].cost, e.second);
         }
       }
     }
   }
   return res;
 }
-
-struct Edge {
-  using Cost = int;
-  int to;
-  Cost cost;
-  Edge(int t, Cost c) : to(t), cost(c) {}
-};
-
-using Graph = vector<vector<Edge>>;
-
-void add_edge(Graph &g, int from, int to, Edge::Cost cost) {
-  g[from].emplace_back(to, cost);
-}
 {% endhighlight %}
 
 ### Includes
 
-- [util.hpp](../util)
+- [definition.hpp](definition)
 
 [Back](../..)

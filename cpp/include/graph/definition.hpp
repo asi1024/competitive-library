@@ -19,25 +19,3 @@ public:
   iterator &begin() { return begin(g); }
   iterator &end() { return end(g); }
 };
-
-template <typename edge_t, class... Args>
-void add_edge(graph_t<edge_t> &g, int from, int to, Args... args) {
-  g[from].emplace_back(from, to, args...);
-}
-
-template <typename edge_t, class... Args>
-void add_edge(graph_t<edge_t> &g, int from, int to,
-              typename edge_t::capacity_type cap) {
-  g[from].emplace_back(from, to, (int)g[to].size(), cap);
-  g[to].emplace_back(to, from, (int)g[from].size() - 1,
-                     zero<typename edge_t::capacity_type>());
-}
-
-template <typename edge_t, class... Args>
-void add_edge(graph_t<edge_t> &g, int from, int to,
-              typename edge_t::capacity_type cap,
-              typename edge_t::cost_type cost) {
-  g[from].emplace_back(from, to, (int)g[to].size(), cap, cost);
-  g[to].emplace_back(to, from, (int)g[from].size() - 1,
-                     zero<typename edge_t::capacity_type>(), -cost);
-}

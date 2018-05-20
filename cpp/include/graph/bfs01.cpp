@@ -30,9 +30,11 @@ bfs01(const graph_t<edge_t> &g, int s) {
         d[e.to] = d[v] + e.cost;
         if (e.cost == cost_type(1)) {
           que.emplace_back(d[e.to], e.to);
-        } else if (e.cost == cost_type(0)) {
+        }
+        else if (e.cost == cost_type(0)) {
           que.emplace_front(d[e.to], e.to);
-        } else {
+        }
+        else {
           assert(false);
         }
       }

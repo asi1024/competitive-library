@@ -85,7 +85,8 @@ template <typename State> struct AhoCorasick {
       if (pma[0].is_set(c)) {
         pma[pma[0][c]].fail = 0;
         que.push(pma[0][c]);
-      } else {
+      }
+      else {
         pma[0][c] = 0;
       }
     }

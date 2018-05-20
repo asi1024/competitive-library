@@ -40,7 +40,8 @@ template <typename string_t> struct SuffixArray {
         int j = sa[b[i] - 1];
         while (j + h < n && i + h < n && str[j + h] == str[i + h]) ++h;
         lcp[b[i]] = h;
-      } else {
+      }
+      else {
         lcp[b[i]] = -1;
       }
       if (h > 0) --h;

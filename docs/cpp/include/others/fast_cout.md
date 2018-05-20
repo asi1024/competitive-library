@@ -27,7 +27,8 @@ class fast_ostream {
     if (n == 0) {
       putchar_unlocked('0');
       return;
-    } else if (n < 0) {
+    }
+    else if (n < 0) {
       putchar_unlocked('-');
       n = -n;
     }
