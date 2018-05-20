@@ -6,7 +6,7 @@ class Edge {
 public:
   using cost_type = int;
   int from, to;
-  cost_type cost = 1;
+  static const cost_type cost = 1;
   Edge(int s, int t) : from(s), to(t) { ; }
 };
 
