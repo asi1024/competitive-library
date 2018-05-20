@@ -3,7 +3,7 @@
 #include "../template/includes.hpp"
 
 class BipartiteMatching {
-  static const int INF = 1000000000;
+  const int INF = 1000000000;
   const int n1, n;
   std::vector<std::vector<int>> g;
   std::vector<int> match, dist;
