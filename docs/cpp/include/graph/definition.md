@@ -3,7 +3,13 @@
 ## add_edge
 
 {% highlight cpp %}
-void add_edge(graph_t< edge_t > &g, int from, int to, Args... args);
+std::enable_if<!is_bidirectional<edge_t>::value, void>::type add_edge(graph_t< edge_t > &g, int from, int to, Args... args);
+{% endhighlight %}
+
+## add_edge
+
+{% highlight cpp %}
+std::enable_if<is_bidirectional<edge_t>::value, void>::type add_edge(graph_t< edge_t > &g, int from, int to, Args... args);
 {% endhighlight %}
 
 ## add_edge
@@ -95,12 +101,40 @@ public:
   iterator &end() { return end(g); }
 };
 
+template <typename T> struct is_bidirectional {
+  struct Fallback {
+    int from;
+  };
+  struct Derived : T, Fallback {};
+  template <typename C, C> struct ChT;
+  template <typename C> static char (&f(ChT<int Fallback::*, &C::from> *))[1];
+  template <typename C> static char (&f(...))[2];
+  static bool const value = sizeof(f<Derived>(0)) == 2;
+};
+
+// template <class T> class has_capacity {
+//   template <class U>
+//   static constexpr bool check(typename U::capacity_type *) { return true; }
+//   template <class U>
+//   static constexpr bool check(...) { return false; }
+// public:
+//   static constexpr bool value = check<T>(nullptr);
+// };
+
 template <typename edge_t, class... Args>
-void add_edge(graph_t<edge_t> &g, int from, int to, Args... args) {
+typename std::enable_if<!is_bidirectional<edge_t>::value, void>::type
+add_edge(graph_t<edge_t> &g, int from, int to, Args... args) {
   g[from].emplace_back(from, to, args...);
 }
 
 template <typename edge_t, class... Args>
+typename std::enable_if<is_bidirectional<edge_t>::value, void>::type
+add_edge(graph_t<edge_t> &g, int from, int to, Args... args) {
+  g[from].emplace_back(from, to, args...);
+  g[to].emplace_back(to, from, args...);
+}
+
+template <typename edge_t>
 void add_edge(graph_t<edge_t> &g, int from, int to,
               typename edge_t::capacity_type cap) {
   g[from].emplace_back(from, to, (int)g[to].size(), cap);
@@ -108,7 +142,7 @@ void add_edge(graph_t<edge_t> &g, int from, int to,
                      zero<typename edge_t::capacity_type>());
 }
 
-template <typename edge_t, class... Args>
+template <typename edge_t>
 void add_edge(graph_t<edge_t> &g, int from, int to,
               typename edge_t::capacity_type cap,
               typename edge_t::cost_type cost) {
