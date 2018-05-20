@@ -1,26 +1,27 @@
 #pragma once
 
-#include "../util.hpp"
+#include "definition.hpp"
 
 class LCA {
-  int size, log_size;
-  vector<vector<int>> parent;
-  vector<int> depth;
-  template <typename Edge>
-  void dfs(const vector<vector<Edge>> &g, int v, int p, int d) {
+  const int size;
+  int log_size;
+  std::vector<std::vector<int>> parent;
+  std::vector<int> depth;
+  template <typename edge_t>
+  void dfs(const graph_t<edge_t> &g, int v, int p, int d) {
     parent[0][v] = p;
     depth[v] = d;
-    for (const Edge &e : g[v]) {
+    for (const edge_t &e : g[v]) {
       if (e.to != p) dfs(g, e.to, v, d + 1);
     }
   }
 
 public:
-  template <typename Edge>
-  LCA(const vector<vector<Edge>> &g, int root) :
+  template <typename edge_t>
+  LCA(const graph_t<edge_t> &g, const int root) :
     size(g.size()), log_size(0), depth(size, 0) {
     for (int v = size; v > 0; v /= 2) ++log_size;
-    parent.assign(log_size, vector<int>(size, 0));
+    parent.assign(log_size, std::vector<int>(size, 0));
     dfs(g, root, -1, 0);
     for (int k = 0; k < log_size - 1; ++k) {
       for (int v = 0; v < size; ++v) {
@@ -32,7 +33,7 @@ public:
     }
   }
   int query(int u, int v) {
-    if (depth[u] > depth[v]) swap(u, v);
+    if (depth[u] > depth[v]) std::swap(u, v);
     for (int k = 0; k < log_size; ++k)
       if (((depth[v] - depth[u]) >> k) & 1) v = parent[k][v];
     if (u == v) return u;
@@ -45,12 +46,3 @@ public:
     return parent[0][u];
   }
 };
-
-struct Edge {
-  int to;
-  Edge(int t) : to(t) {}
-};
-
-using Graph = vector<vector<Edge>>;
-
-void add_edge(Graph &g, int from, int to) { g[from].push_back(to); }
