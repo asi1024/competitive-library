@@ -1,6 +1,9 @@
+#include "../include/graph/directed_graph.hpp"
 #include "../include/graph/retrograde.cpp"
 
 #define REP(i, n) for (int i = 0; i < (int)(n); i++)
+
+using namespace std;
 
 int main() {
   int H, W, R, C;
@@ -13,7 +16,7 @@ int main() {
       if (i > 0) REP(j, W + 1) scanf("%d", &vert[i - 1][j]);
       REP(j, W) scanf("%d", &horz[i][j]);
     }
-    Graph g(3 * H * W + 1);
+    DirectedGraph g(3 * H * W + 1);
     const int goal = 3 * H * W;
     const int start = ((R - 1) * W + (C - 1)) * 3;
     REP(i, H) add_edge(g, i * W * 3 + vert[i][0], goal);
