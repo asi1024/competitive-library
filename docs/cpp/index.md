@@ -36,7 +36,7 @@
 
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:------------:|
-| [bidirected_graph.hpp](./include/graph/bidirected_graph) | <font color="ForestGreen">Yes</font> | [GRL_3_A.cpp](./src/GRL_3_A) |
+| [bidirected_graph.hpp](./include/graph/bidirected_graph) | <font color="ForestGreen">Yes</font> | [GRL_3_A.cpp](./src/GRL_3_A)<br>[GRL_5_C.cpp](./src/GRL_5_C) |
 | [capacity_graph.hpp](./include/graph/capacity_graph) | <font color="ForestGreen">Yes</font> | [GRL_6_A.cpp](./src/GRL_6_A) |
 | [capacity_weighted_graph.hpp](./include/graph/capacity_weighted_graph) | <font color="ForestGreen">Yes</font> | [GRL_6_B.cpp](./src/GRL_6_B) |
 | [definition.hpp](./include/graph/definition) | <font color="Red">No</font> |  |

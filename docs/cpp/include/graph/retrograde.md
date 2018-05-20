@@ -17,7 +17,6 @@ void add_edge(Graph &g, int from, int to);
 ### [1] (constructor)
 {% highlight cpp %}
 Edge(int t);
-Edge(int t);
 Edge(int t, Cost c);
 {% endhighlight %}
 

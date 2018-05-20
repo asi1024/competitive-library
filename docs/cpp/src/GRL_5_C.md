@@ -7,12 +7,13 @@
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_5_C.cpp)
 
 {% highlight cpp %}
+#include "../include/graph/bidirected_graph.hpp"
 #include "../include/graph/lca.cpp"
 
 int main() {
   int n, q;
   scanf("%d", &n);
-  Graph g(n);
+  BidirectedGraph g(n);
   for (int i = 0; i < n; ++i) {
     int k, c;
     scanf("%d", &k);
@@ -34,6 +35,7 @@ int main() {
 
 ### Includes
 
+- [bidirected_graph.hpp](../include/graph/bidirected_graph)
 - [lca.cpp](../include/graph/lca)
 
 [Back](..)
