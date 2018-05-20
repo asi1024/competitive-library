@@ -2,17 +2,17 @@
 
 #include "definition.hpp"
 
-class Edge {
+class BidirectedEdge {
 public:
   using cost_type = int;
   int from, to;
   static const cost_type cost = 1;
-  Edge(int s, int t) : from(s), to(t) { ; }
+  BidirectedEdge(int s, int t) : from(s), to(t) { ; }
 };
 
-using Graph = graph_t<Edge>;
+using BidirectedGraph = graph_t<BidirectedEdge>;
 
-void add_edge(Graph &g, int from, int to) {
+void add_edge(BidirectedGraph &g, int from, int to) {
   g[from].emplace_back(from, to);
   g[to].emplace_back(to, from);
 }
