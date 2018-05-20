@@ -1,5 +1,11 @@
 {% include mathjax.html %}
 
+## add_edge
+
+{% highlight cpp %}
+void add_edge(Graph &g, int from, int to);
+{% endhighlight %}
+
 ## Member functions
 
 ### [1] (constructor)
@@ -29,6 +35,11 @@ public:
 };
 
 using Graph = graph_t<Edge>;
+
+void add_edge(Graph &g, int from, int to) {
+  g[from].emplace_back(from, to);
+  g[to].emplace_back(to, from);
+}
 {% endhighlight %}
 
 ### Includes
