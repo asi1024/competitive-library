@@ -30,7 +30,6 @@ Game_with_Cost(Game w, T c);
 Edge(int t);
 Edge(int t);
 Edge(int t, Cost c);
-Edge(int s, int t);
 {% endhighlight %}
 
 

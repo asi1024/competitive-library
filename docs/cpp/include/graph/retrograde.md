@@ -19,7 +19,6 @@ void add_edge(Graph &g, int from, int to);
 Edge(int t);
 Edge(int t);
 Edge(int t, Cost c);
-Edge(int s, int t);
 {% endhighlight %}
 
 

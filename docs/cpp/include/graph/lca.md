@@ -31,7 +31,6 @@ int query(int u, int v);
 Edge(int t);
 Edge(int t);
 Edge(int t, Cost c);
-Edge(int s, int t);
 {% endhighlight %}
 
 
