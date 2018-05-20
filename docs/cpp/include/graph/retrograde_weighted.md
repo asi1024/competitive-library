@@ -27,7 +27,6 @@ Game_with_Cost(Game w, T c);
 
 ### [1] (constructor)
 {% highlight cpp %}
-Edge(int t);
 Edge(int t, Cost c);
 {% endhighlight %}
 

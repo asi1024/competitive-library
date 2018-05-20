@@ -40,7 +40,7 @@
 | [capacity_graph.hpp](./include/graph/capacity_graph) | <font color="ForestGreen">Yes</font> | [GRL_6_A.cpp](./src/GRL_6_A) |
 | [capacity_weighted_graph.hpp](./include/graph/capacity_weighted_graph) | <font color="ForestGreen">Yes</font> | [GRL_6_B.cpp](./src/GRL_6_B) |
 | [definition.hpp](./include/graph/definition) | <font color="Red">No</font> |  |
-| [directed_graph.hpp](./include/graph/directed_graph) | <font color="ForestGreen">Yes</font> | [GRL_3_C.cpp](./src/GRL_3_C) |
+| [directed_graph.hpp](./include/graph/directed_graph) | <font color="ForestGreen">Yes</font> | [2702.cpp](./src/2702)<br>[GRL_3_C.cpp](./src/GRL_3_C) |
 | [weighted_graph.hpp](./include/graph/weighted_graph) | <font color="ForestGreen">Yes</font> | [2342.cpp](./src/2342)<br>[2620.cpp](./src/2620)<br>[GRL_1_A.cpp](./src/GRL_1_A)<br>[GRL_1_B.cpp](./src/GRL_1_B) |
 | [articulation_points.cpp](./include/graph/articulation_points) | <font color="ForestGreen">Yes</font> | [GRL_3_A.cpp](./src/GRL_3_A) |
 | [bfs01.cpp](./include/graph/bfs01) | <font color="ForestGreen">Yes</font> | [2342.cpp](./src/2342) |
