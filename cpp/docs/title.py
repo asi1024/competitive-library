@@ -14,8 +14,8 @@ def category(path, name, verifier):
         return '.'.join(fname.split('.')[:-1])
 
     try:
-        path = "include/%s" % path
-        files = [f.strip() for f in os.listdir("cpp/" + path)]
+        path = 'include/{}'.format(path)
+        files = [f.strip() for f in os.listdir('cpp/' + path)]
         if not files:
             raise os.FileNotFoundError
     except os.FileNotFoundError:
@@ -25,35 +25,35 @@ def category(path, name, verifier):
                  if ext(f) in ('hpp', 'cpp')]
     files_ext.sort()
 
-    print("## " + name)
-    print("")
-    print("| Algorithm | Verified | AOJ Problems |")
-    print("|:---------:|:--------:|:------------:|")
+    print('## ' + name)
+    print('')
+    print('| Algorithm | Verified | AOJ Problems |')
+    print('|:---------:|:--------:|:------------:|')
 
     for _, fname in files_ext:
-        algorithm = "[%s](./%s/%s)" % (fname, path, basename(fname))
+        algorithm = '[{}](./{}/{})'.format(fname, path, basename(fname))
         if fname in verifier:
             validated = '<font color="ForestGreen">Yes</font>'
-            aojlist = ["[%s](./src/%s)" % (vname, basename(vname))
+            aojlist = ['[{}](./src/{})'.format(vname, basename(vname))
                        for vname in verifier[fname]]
             aojlist = '<br>'.join(aojlist)
         else:
             validated = '<font color="Red">No</font>'
             aojlist = ''
-        print("| %s | %s | %s |" % (algorithm, validated, aojlist))
+        print('| {} | {} | {} |'.format(algorithm, validated, aojlist))
 
-    print("")
+    print('')
 
 
 def verifier_dict():
-    path = "cpp/src"
+    path = 'cpp/src'
     files = os.listdir(path)
     res = {}
 
     files.sort()
 
     for fname in files:
-        f = open(path + "/" + fname)
+        f = open(path + '/' + fname)
         includes = [s for s in f.readlines()
                     if s.find('#include') != -1 and s.find('"') != -1]
         f.close()
@@ -68,8 +68,8 @@ def verifier_dict():
 
 
 if __name__ == '__main__':
-    f = open("cpp/include/TITLE.json", 'r')
-    print("\n# C++\n")
+    f = open('cpp/include/TITLE.json', 'r')
+    print('\n# C++\n')
     decoder = json.JSONDecoder(object_pairs_hook=collections.OrderedDict)
     json = decoder.decode(''.join(f.readlines()))
     f.close()
