@@ -1,9 +1,10 @@
+#include "../include/graph/bidirected_graph.hpp"
 #include "../include/graph/lca.cpp"
 
 int main() {
   int n, q;
   scanf("%d", &n);
-  Graph g(n);
+  BidirectedGraph g(n);
   for (int i = 0; i < n; ++i) {
     int k, c;
     scanf("%d", &k);

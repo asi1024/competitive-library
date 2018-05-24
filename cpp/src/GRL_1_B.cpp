@@ -22,7 +22,8 @@ int main() {
       else
         printf("%d\n", res[i]);
     }
-  } else {
+  }
+  else {
     puts("NEGATIVE CYCLE");
   }
   return 0;

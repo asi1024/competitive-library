@@ -18,7 +18,8 @@ int main() {
     if (com) {
       scanf("%d%d", &s, &t);
       printf("%d\n", seg.query(s, t + 1));
-    } else {
+    }
+    else {
       scanf("%d%d%d", &s, &t, &x);
       seg.update(s, t + 1, x);
     }

@@ -8,11 +8,14 @@
 
 {% highlight cpp %}
 #include "../include/graph/articulation_points.cpp"
+#include "../include/graph/bidirected_graph.hpp"
+
+using namespace std;
 
 int main() {
   int V, E, s, t;
   scanf("%d%d", &V, &E);
-  Graph g(V);
+  BidirectedGraph g(V);
   while (E--) {
     scanf("%d%d", &s, &t);
     add_edge(g, s, t);
@@ -26,5 +29,6 @@ int main() {
 ### Includes
 
 - [articulation_points.cpp](../include/graph/articulation_points)
+- [bidirected_graph.hpp](../include/graph/bidirected_graph)
 
 [Back](..)

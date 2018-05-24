@@ -64,7 +64,8 @@ template <typename Update> class SegmentTreeLazy {
     if (node < n) {
       if (flag[node]) {
         lazy[node] = f(lazy[node]);
-      } else {
+      }
+      else {
         lazy[node] = f;
         flag[node] = true;
       }

@@ -6,7 +6,7 @@
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:------------:|
 | [const_value.hpp](./include/template/const_value) | <font color="ForestGreen">Yes</font> | [bfs01.cpp](./include/graph/bfs01)<br>[dijkstra.cpp](./include/graph/dijkstra)<br>[max_flow.cpp](./include/graph/max_flow) etc... |
-| [includes.hpp](./include/template/includes) | <font color="ForestGreen">Yes</font> | [scc.cpp](./include/graph/scc)<br>[segment_tree.cpp](./include/structure/segment_tree)<br>[unionfind.cpp](./include/structure/unionfind) etc... |
+| [includes.hpp](./include/template/includes) | <font color="ForestGreen">Yes</font> | [bipartite_matching.cpp](./include/graph/bipartite_matching)<br>[scc.cpp](./include/graph/scc)<br>[segment_tree.cpp](./include/structure/segment_tree) etc... |
 | [macros.hpp](./include/template/macros) | <font color="ForestGreen">Yes</font> | [template.cpp](./include/template/template) |
 | [misc.hpp](./include/template/misc) | <font color="ForestGreen">Yes</font> | [template.cpp](./include/template/template) |
 | [range.hpp](./include/template/range) | <font color="ForestGreen">Yes</font> | [template.cpp](./include/template/template) |
@@ -36,11 +36,12 @@
 
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:------------:|
+| [bidirected_graph.hpp](./include/graph/bidirected_graph) | <font color="ForestGreen">Yes</font> | [GRL_3_A.cpp](./src/GRL_3_A)<br>[GRL_5_C.cpp](./src/GRL_5_C) |
 | [capacity_graph.hpp](./include/graph/capacity_graph) | <font color="ForestGreen">Yes</font> | [GRL_6_A.cpp](./src/GRL_6_A) |
 | [capacity_weighted_graph.hpp](./include/graph/capacity_weighted_graph) | <font color="ForestGreen">Yes</font> | [GRL_6_B.cpp](./src/GRL_6_B) |
-| [definition.hpp](./include/graph/definition) | <font color="ForestGreen">Yes</font> | [bfs01.cpp](./include/graph/bfs01)<br>[dijkstra.cpp](./include/graph/dijkstra)<br>[max_flow.cpp](./include/graph/max_flow) etc... |
-| [unweighted_graph.hpp](./include/graph/unweighted_graph) | <font color="ForestGreen">Yes</font> | [GRL_3_C.cpp](./src/GRL_3_C) |
-| [weighted_graph.hpp](./include/graph/weighted_graph) | <font color="ForestGreen">Yes</font> | [2342.cpp](./src/2342)<br>[2620.cpp](./src/2620)<br>[GRL_1_A.cpp](./src/GRL_1_A) etc... |
+| [definition.hpp](./include/graph/definition) | <font color="ForestGreen">Yes</font> | [articulation_points.cpp](./include/graph/articulation_points)<br>[bfs01.cpp](./include/graph/bfs01)<br>[dijkstra.cpp](./include/graph/dijkstra) etc... |
+| [directed_graph.hpp](./include/graph/directed_graph) | <font color="ForestGreen">Yes</font> | [2702.cpp](./src/2702)<br>[GRL_3_C.cpp](./src/GRL_3_C) |
+| [weighted_graph.hpp](./include/graph/weighted_graph) | <font color="ForestGreen">Yes</font> | [1358.cpp](./src/1358)<br>[2342.cpp](./src/2342)<br>[2620.cpp](./src/2620) etc... |
 | [articulation_points.cpp](./include/graph/articulation_points) | <font color="ForestGreen">Yes</font> | [GRL_3_A.cpp](./src/GRL_3_A) |
 | [bfs01.cpp](./include/graph/bfs01) | <font color="ForestGreen">Yes</font> | [2342.cpp](./src/2342) |
 | [bipartite_matching.cpp](./include/graph/bipartite_matching) | <font color="ForestGreen">Yes</font> | [GRL_7_A.cpp](./src/GRL_7_A) |

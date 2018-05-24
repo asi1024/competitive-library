@@ -55,7 +55,8 @@ template <typename DataStructure> struct HeavyLightDecomposition {
         chains[chain_s.first].up.update(n - num, n, update);
         chains[chain_s.first].down.update(0, num, update);
         chain_s = chains[chain_s.first].parent;
-      } else {
+      }
+      else {
         const int num = chain_t.second + 1;
         const int n = chains[chain_t.first].mapfrom.size();
         chains[chain_t.first].up.update(n - num, n, update);
@@ -80,7 +81,8 @@ template <typename DataStructure> struct HeavyLightDecomposition {
         T val = chains[chain_s.first].up.query(n - num, n);
         res1 = Monoid::op(res1, val);
         chain_s = chains[chain_s.first].parent;
-      } else {
+      }
+      else {
         const int num = chain_t.second + 1;
         T val = chains[chain_t.first].down.query(0, num);
         res2 = Monoid::op(val, res2);

@@ -182,7 +182,8 @@ int main() {
     if (uf.root(s) == uf.root(t) || !is_tree[uf.root(s)] ||
         !is_tree[uf.root(t)]) {
       cout << -1 << endl;
-    } else {
+    }
+    else {
       s = uf.root(s);
       t = uf.root(t);
       if (cc[s].size() > cc[t].size()) swap(s, t);
@@ -196,9 +197,11 @@ int main() {
         int p = least - i - 1;
         if (p < 0) {
           res += ((i + 1) * sum[t].back() + sump[t].back()) * cnt[s][i];
-        } else if (p > int(cc[t].size())) {
+        }
+        else if (p > int(cc[t].size())) {
           res += (least * sum[t].back()) * cnt[s][i];
-        } else {
+        }
+        else {
           res += (least * sum[t][p] + (i + 1) * (sum[t].back() - sum[t][p]) +
                   sump[t].back() - sump[t][p]) *
                  cnt[s][i];
