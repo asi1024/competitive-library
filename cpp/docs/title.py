@@ -61,7 +61,7 @@ def category(path, name, verifier):
             if len(src_list) > max_src_len:
                 src_str = '<br>'.join(src_list[:max_src_len]) + ' etc...'
             else:
-                src_str = '<br>'.join(_ + '      ' for _ in src_list)
+                src_str = '<br>'.join(src_list)
         else:
             validated = '<font color="Red">No</font>'
             src_str = ''
