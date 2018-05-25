@@ -46,7 +46,7 @@ def category(path, name, verifier):
     print('## ' + name)
     print('')
     print('| Algorithm | Verified | AOJ Problems |')
-    print('|:---------:|:--------:|:------------:|')
+    print('|:---------:|:--------:|:-------------|')
 
     for _, fname in files_ext:
         algorithm = '[{}](./{}/{})'.format(
