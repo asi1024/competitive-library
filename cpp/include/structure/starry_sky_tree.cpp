@@ -2,7 +2,6 @@
 
 #include "../template/includes.hpp"
 #include "../template/const_value.hpp"
-#include "../template/typedef.hpp"
 
 template <typename T> class StarrySkyTree {
   const int n;

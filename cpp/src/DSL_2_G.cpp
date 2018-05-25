@@ -1,4 +1,5 @@
 #include "../include/structure/rars.cpp"
+#include "../include/template/typedef.hpp"
 
 int main() {
   int n, q, com, s, t, x;
