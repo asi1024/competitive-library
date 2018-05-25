@@ -27,7 +27,7 @@ constexpr long double inf< long double >();
 ## zero
 
 {% highlight cpp %}
-constexpr std::enable_if<std::is_integral<T>::value, T>::type zero();
+constexpr std::enable_if<std::is_arithmetic<T>::value, T>::type zero();
 {% endhighlight %}
 
 ## Implementation
@@ -44,7 +44,8 @@ template <> constexpr long long inf<long long>() { return 1e18; }
 template <> constexpr long double inf<long double>() { return 1e30; }
 
 template <typename T>
-constexpr typename std::enable_if<std::is_integral<T>::value, T>::type zero() {
+constexpr typename std::enable_if<std::is_arithmetic<T>::value, T>::type
+zero() {
   return T(0);
 }
 {% endhighlight %}

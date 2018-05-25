@@ -7,13 +7,13 @@
 |:---------:|:--------:|:-------------|
 | [const_value.hpp](./include/template/const_value) | <font color="ForestGreen">Yes</font> | [bfs01.cpp](./include/graph/bfs01)<br>[dijkstra.cpp](./include/graph/dijkstra)<br>[max_flow.cpp](./include/graph/max_flow) etc... |
 | [includes.hpp](./include/template/includes) | <font color="ForestGreen">Yes</font> | [bipartite_matching.cpp](./include/graph/bipartite_matching)<br>[scc.cpp](./include/graph/scc)<br>[segment_tree.cpp](./include/structure/segment_tree) etc... |
-| [macros.hpp](./include/template/macros) | <font color="ForestGreen">Yes</font> | [template.cpp](./include/template/template) |
-| [misc.hpp](./include/template/misc) | <font color="ForestGreen">Yes</font> | [template.cpp](./include/template/template) |
-| [range.hpp](./include/template/range) | <font color="ForestGreen">Yes</font> | [template.cpp](./include/template/template) |
+| [macros.hpp](./include/template/macros) | <font color="Red">No</font> |  |
+| [misc.hpp](./include/template/misc) | <font color="Red">No</font> |  |
+| [range.hpp](./include/template/range) | <font color="ForestGreen">Yes</font> | [1351.cpp](./src/1351) |
 | [typedef.hpp](./include/template/typedef) | <font color="ForestGreen">Yes</font> | [2559.cpp](./src/2559)<br>[util.hpp](./include/util) |
 | [cin.cpp](./include/template/cin) | <font color="Red">No</font> |  |
 | [cout.cpp](./include/template/cout) | <font color="Red">No</font> |  |
-| [template.cpp](./include/template/template) | <font color="ForestGreen">Yes</font> | [ITP1_1_B.cpp](./src/ITP1_1_B) |
+| [template.cpp](./include/template/template) | <font color="Red">No</font> |  |
 
 ## Data Structures
 
