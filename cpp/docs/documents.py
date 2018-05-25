@@ -49,7 +49,7 @@ def page(path, fname):
 
     dirname = os.path.dirname(__file__)
     xmlname = basename(fname).replace('_', '__')
-    xmlpath = dirname + '/xml/' + xmlname + '_8' + ext(fname)+ '.xml'
+    xmlpath = dirname + '/xml/' + xmlname + '_8' + ext(fname) + '.xml'
 
     res = '{% include mathjax.html %}\n\n'
     res += xml_parser.main(xmlpath)
@@ -83,7 +83,7 @@ def page(path, fname):
 
 def directory(path):
     for fname in os.listdir(path):
-        if os.path.isdir(path + '/'+ fname):
+        if os.path.isdir(path + '/' + fname):
             directory(path + '/' + fname)
         elif fname.endswith('.cpp') or fname.endswith('.hpp'):
             page(path, fname)

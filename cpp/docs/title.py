@@ -5,17 +5,35 @@ import json
 import os
 
 
+max_src_len = 3
+
+
 def category(path, name, verifier):
 
     def ext(fname):
         return fname.split('.')[-1]
 
-    def basename(fname):
+    def extract_ext(fname):
         return '.'.join(fname.split('.')[:-1])
 
+    def get_relpath(path, start):
+        return os.path.normpath(os.path.relpath(path, start))
+
+    def sort_rank(src_name):
+        if os.path.dirname(src_name).find('src') != -1:
+            return 0
+        elif ext(src_name) == 'cpp':
+            return 1
+        else:
+            return 2
+
+    def sort_src(src_list):
+        src_with_rank = [(sort_rank(_), _) for _ in src_list]
+        src_with_rank.sort()
+        return [name for _, name in src_with_rank]
+
     try:
-        path = "include/%s" % path
-        files = [f.strip() for f in os.listdir("cpp/" + path)]
+        files = [f.strip() for f in os.listdir(path)]
         if not files:
             raise os.FileNotFoundError
     except os.FileNotFoundError:
@@ -25,53 +43,68 @@ def category(path, name, verifier):
                  if ext(f) in ('hpp', 'cpp')]
     files_ext.sort()
 
-    print("## " + name)
-    print("")
-    print("| Algorithm | Verified | AOJ Problems |")
-    print("|:---------:|:--------:|:------------:|")
+    print('## ' + name)
+    print('')
+    print('| Algorithm | Verified | AOJ Problems |')
+    print('|:---------:|:--------:|:-------------|')
 
     for _, fname in files_ext:
-        algorithm = "[%s](./%s/%s)" % (fname, path, basename(fname))
-        if fname in verifier:
+        algorithm = '[{}](./{}/{})'.format(
+            fname, get_relpath(path, 'cpp'), extract_ext(fname))
+        fpath = path + '/' + fname
+        if fpath in verifier:
             validated = '<font color="ForestGreen">Yes</font>'
-            aojlist = ["[%s](./src/%s)" % (vname, basename(vname))
-                       for vname in verifier[fname]]
-            aojlist = '<br>'.join(aojlist)
+            src_list = ['[{}](./{})'.format(
+                os.path.basename(src_path),
+                extract_ext(get_relpath(src_path, 'cpp')))
+                        for src_path in sort_src(verifier[fpath])]
+            if len(src_list) > max_src_len:
+                src_str = '<br>'.join(src_list[:max_src_len]) + ' etc...'
+            else:
+                src_str = '<br>'.join(src_list)
         else:
             validated = '<font color="Red">No</font>'
-            aojlist = ''
-        print("| %s | %s | %s |" % (algorithm, validated, aojlist))
+            src_str = ''
+        print('| {} | {} | {} |'.format(algorithm, validated, src_str))
 
-    print("")
+    print('')
 
 
-def verifier_dict():
-    path = "cpp/src"
-    files = os.listdir(path)
+def get_verifier_dict():
+    memo_set = set()
     res = {}
 
-    files.sort()
+    def page(path):
+        if path in memo_set:
+            return
+        memo_set.add(path)
+        for s in open(path):
+            s = s.strip()
+            if s.startswith('#include') and s.find('"') != -1:
+                relpath = s.split('"')[1]
+                key = os.path.normpath(os.path.dirname(path) + '/' + relpath)
+                if key not in res:
+                    res[key] = []
+                res[key].append(path)
+                page(key)
 
-    for fname in files:
-        f = open(path + "/" + fname)
-        includes = [s for s in f.readlines()
-                    if s.find('#include') != -1 and s.find('"') != -1]
-        f.close()
-        for s in includes:
-            key = s.split('"')[1].split('/')[-1]
-            if key not in res:
-                res[key] = [fname]
-            else:
-                res[key].append(fname)
+    def directory(path):
+        for fname in os.listdir(path):
+            if os.path.isdir(path + '/' + fname):
+                directory(path + '/' + fname)
+            elif fname.endswith('.cpp') or fname.endswith('.hpp'):
+                page(path + '/' + fname)
 
+    directory('cpp/src')
     return res
 
 
 if __name__ == '__main__':
-    f = open("cpp/include/TITLE.json", 'r')
-    print("\n# C++\n")
+    f = open('cpp/include/TITLE.json', 'r')
+    print('\n# C++\n')
     decoder = json.JSONDecoder(object_pairs_hook=collections.OrderedDict)
     json = decoder.decode(''.join(f.readlines()))
+    verifier_dict = get_verifier_dict()
     f.close()
     for key, value in json.items():
-        category(key, value, verifier_dict())
+        category('cpp/include/{}'.format(key), value, verifier_dict)
