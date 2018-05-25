@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../util.hpp"
+#include "../template/includes.hpp"
 
 template <typename DataStructure> struct HeavyLightDecomposition {
   using T = typename DataStructure::value_type;
@@ -8,25 +8,25 @@ template <typename DataStructure> struct HeavyLightDecomposition {
   using Monoid = typename DataStructure::monoid_type;
   struct Chain {
     int depth;
-    pair<int, int> parent;         // chain number, index
-    vector<pair<int, int>> child;  // child chain number, parent index
-    vector<int> mapfrom;
+    std::pair<int, int> parent;              // chain number, index
+    std::vector<std::pair<int, int>> child;  // child chain number, parent index
+    std::vector<int> mapfrom;
     DataStructure up, down;
     Chain(int n, const T &init) : up(n, init), down(n, init) { ; }
   };
 
-  vector<Chain> chains;
-  vector<pair<int, int>> mapto;  // raw index -> chain number & index
-  vector<vector<int>> mapfrom;   // chain number & index -> raw index
+  std::vector<Chain> chains;
+  std::vector<std::pair<int, int>> mapto;  // raw index -> chain number & index
+  std::vector<std::vector<int>> mapfrom;   // chain number & index -> raw index
 
   int root() const { return mapfrom[0][0]; }
 
   template <typename Graph>
   HeavyLightDecomposition(const Graph &g, const T &init = Monoid::id()) {
     const int n = g.size();
-    mapto = vector<pair<int, int>>(n, make_pair(-1, -1));
+    mapto = std::vector<std::pair<int, int>>(n, std::make_pair(-1, -1));
     mapfrom.clear();
-    vector<int> size(n, 0);
+    std::vector<int> size(n, 0);
     int start = -1;
     for (int i = 0; i < n; i++) {
       if (g[i].size() <= 1) {
@@ -40,14 +40,14 @@ template <typename DataStructure> struct HeavyLightDecomposition {
   }
 
   void update(int i, const Update &val) {
-    pair<int, int> chain_id = mapto[i];
+    std::pair<int, int> chain_id = mapto[i];
     const int n = chains[chain_id.first].mapfrom.size();
     chains[chain_id.first].up.update(n - i - 1, val);
     chains[chain_id.first].down.update(i, val);
   }
 
   void update(int s, int t, const Update &update) {
-    pair<int, int> chain_s = mapto[s], chain_t = mapto[t];
+    std::pair<int, int> chain_s = mapto[s], chain_t = mapto[t];
     while (chain_s.first != chain_t.first) {
       if (chains[chain_s.first].depth > chains[chain_t.first].depth) {
         const int num = chain_s.second + 1;
@@ -65,15 +65,15 @@ template <typename DataStructure> struct HeavyLightDecomposition {
       }
     }
     const int n = chains[chain_s.first].mapfrom.size();
-    const int l = min(chain_s.second, chain_t.second);
-    const int r = max(chain_s.second, chain_t.second);
+    const int l = std::min(chain_s.second, chain_t.second);
+    const int r = std::max(chain_s.second, chain_t.second);
     chains[chain_s.first].up.update(n - r - 1, n - l, update);
     chains[chain_s.first].down.update(l, r + 1, update);
   }
 
   T query(int s, int t) {
     T res1 = Monoid::id(), res2 = Monoid::id();
-    pair<int, int> chain_s = mapto[s], chain_t = mapto[t];
+    std::pair<int, int> chain_s = mapto[s], chain_t = mapto[t];
     while (chain_s.first != chain_t.first) {
       if (chains[chain_s.first].depth > chains[chain_t.first].depth) {
         const int num = chain_s.second + 1;
@@ -102,15 +102,15 @@ template <typename DataStructure> struct HeavyLightDecomposition {
 private:
   template <typename Graph>
   int decomposition(Graph &g, int from, int parent, int depth, int pnumber,
-                    int pindex, const vector<int> &size, const T &init) {
-    vector<int> seq;
+                    int pindex, const std::vector<int> &size, const T &init) {
+    std::vector<int> seq;
     bfs(g, from, parent, seq, size);
     const int c = chains.size();
     chains.push_back(Chain(int(seq.size()), init));
     chains[c].depth = depth;
-    chains[c].parent = make_pair(pnumber, pindex);
+    chains[c].parent = std::make_pair(pnumber, pindex);
     for (int i = 0; i < int(seq.size()); i++) {
-      mapto[seq[i]] = make_pair(c, i);
+      mapto[seq[i]] = std::make_pair(c, i);
       chains[c].mapfrom.push_back(seq[i]);
     }
     mapfrom.push_back(chains[c].mapfrom);
@@ -118,26 +118,26 @@ private:
       for (auto e : g[seq[i]]) {
         if (mapto[e.to].first != -1) continue;
         int nc = decomposition(g, e.to, seq[i], depth + 1, c, i, size, init);
-        chains[c].child.push_back(make_pair(nc, i));
+        chains[c].child.push_back(std::make_pair(nc, i));
       }
     }
     return c;
   }
   template <typename Graph>
-  void size_check_bfs(const Graph &g, int start, vector<int> &size) {
+  void size_check_bfs(const Graph &g, int start, std::vector<int> &size) {
     const int n = g.size();
-    queue<pair<int, int>> que;
-    que.push(make_pair(start, start));
+    std::queue<std::pair<int, int>> que;
+    que.push(std::make_pair(start, start));
     int cnt = 0;
-    vector<int> order(n, -1);
+    std::vector<int> order(n, -1);
     while (!que.empty()) {
       int from, parent;
-      tie(from, parent) = que.front();
+      std::tie(from, parent) = que.front();
       que.pop();
       order[cnt++] = from;
       for (auto e : g[from]) {
         if (e.to == parent) continue;
-        que.push(make_pair(e.to, from));
+        que.push(std::make_pair(e.to, from));
       }
     }
     assert(cnt == n);
@@ -149,8 +149,8 @@ private:
     }
   }
   template <typename Graph>
-  void bfs(const Graph &g, int from, int parent, vector<int> &seq,
-           const vector<int> &size) {
+  void bfs(const Graph &g, int from, int parent, std::vector<int> &seq,
+           const std::vector<int> &size) {
     for (;;) {
       seq.push_back(from);
       int best = -1, next = -1;

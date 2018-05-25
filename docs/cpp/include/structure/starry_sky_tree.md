@@ -46,11 +46,12 @@ void update(int l, int r, const T &val);
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/starry_sky_tree.cpp)
 
 {% highlight cpp %}
-#include "../util.hpp"
+#include "../template/const_value.hpp"
+#include "../template/includes.hpp"
 
 template <typename T> class StarrySkyTree {
   const int n;
-  vector<T> data, lazy;
+  std::vector<T> data, lazy;
   int expand(int m) const { return m == 1 ? m : expand((m + 1) / 2) * 2; }
 
 public:
@@ -75,8 +76,8 @@ public:
     l = left;
     r = right - 1;
     while (l /= 2, r /= 2) {
-      data[l] = min(data[l * 2], data[l * 2 + 1]) + lazy[l];
-      data[r] = min(data[r * 2], data[r * 2 + 1]) + lazy[r];
+      data[l] = std::min(data[l * 2], data[l * 2 + 1]) + lazy[l];
+      data[r] = std::min(data[r * 2], data[r * 2 + 1]) + lazy[r];
     }
   }
 
@@ -85,8 +86,8 @@ public:
     r += n;
     T res1 = inf<T>(), res2 = inf<T>();
     while (l != r) {
-      if (l % 2) res1 = min(res1, data[l++]);
-      if (r % 2) res2 = min(res2, data[--r]);
+      if (l % 2) res1 = std::min(res1, data[l++]);
+      if (r % 2) res2 = std::min(res2, data[--r]);
       l /= 2;
       r /= 2;
       res1 += lazy[l - 1];
@@ -97,7 +98,7 @@ public:
       res1 += lazy[l];
       res2 += lazy[r];
     }
-    return min(min(res1, res2), inf<T>());
+    return std::min(std::min(res1, res2), inf<T>());
   }
   using value_type = T;
   using update_type = T;
@@ -106,6 +107,7 @@ public:
 
 ### Includes
 
-- [util.hpp](../util)
+- [const_value.hpp](../template/const_value)
+- [includes.hpp](../template/includes)
 
 [Back](../..)

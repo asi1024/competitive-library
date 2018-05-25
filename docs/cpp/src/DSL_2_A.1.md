@@ -8,6 +8,7 @@
 
 {% highlight cpp %}
 #include "../include/structure/starry_sky_tree.cpp"
+#include "../include/template/typedef.hpp"
 
 int main() {
   int n, q, com, x, y;
@@ -30,5 +31,6 @@ int main() {
 ### Includes
 
 - [starry_sky_tree.cpp](../include/structure/starry_sky_tree)
+- [typedef.hpp](../include/template/typedef)
 
 [Back](..)

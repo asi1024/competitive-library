@@ -1,6 +1,8 @@
 #include "../include/structure/starry_sky_tree.cpp"
 #include "../include/template/range.hpp"
 
+using namespace std;
+
 char s[301000];
 
 int main() {

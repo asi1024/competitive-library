@@ -12,7 +12,7 @@ void add(Data a, Data b);
 
 ### [2] check
 {% highlight cpp %}
-bool check(pair< Data, Data > l3);
+bool check(std::pair< Data, Data > l3);
 {% endhighlight %}
 
 
@@ -47,11 +47,11 @@ Data minimum(Data x);
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/convex_hull_trick.cpp)
 
 {% highlight cpp %}
-#include "../util.hpp"
+#include "../template/includes.hpp"
 
 template <class Data> struct ConvexHullTrick {
-  deque<pair<Data, Data>> l;
-  bool check(pair<Data, Data> l3) {
+  std::deque<std::pair<Data, Data>> l;
+  bool check(std::pair<Data, Data> l3) {
     const auto l1 = *prev(end(l), 2);
     const auto l2 = *prev(end(l), 1);
     Data a = (l2.first - l1.first) * (l3.second - l2.second);
@@ -61,7 +61,7 @@ template <class Data> struct ConvexHullTrick {
   bool empty() const { return l.empty(); }
   void add(Data a, Data b) {
     if (!empty()) assert(l.back().first >= a);
-    pair<Data, Data> n(a, b);
+    std::pair<Data, Data> n(a, b);
     while ((int)l.size() >= 2 && check(n)) l.pop_back();
     l.emplace_back(n);
   }
@@ -76,6 +76,6 @@ template <class Data> struct ConvexHullTrick {
 
 ### Includes
 
-- [util.hpp](../util)
+- [includes.hpp](../template/includes)
 
 [Back](../..)

@@ -1,10 +1,10 @@
 #pragma once
 
-#include "../util.hpp"
+#include "../template/includes.hpp"
 
 template <typename T> class FenwickTree {
   const int n;
-  vector<T> data;
+  std::vector<T> data;
 
 public:
   /// @brief
