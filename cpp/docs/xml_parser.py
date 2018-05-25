@@ -44,7 +44,8 @@ def class_doc(node):
         res += '## Member functions\n\n'
 
         for num, fname in enumerate(fnames):
-            res += '### [{}] {}\n'.format(num + 1, fname)
+            fname_formatted = fname.replace('<', '&lt;').replace('>', '&gt;')
+            res += '### [{}] {}\n'.format(num + 1, fname_formatted)
             if fname == '(constructor)':
                 fname = name
             elif fname == '(destructor)':
@@ -109,7 +110,8 @@ def class_doc(node):
 
 def function_doc(node):
     res = ''
-    res += '## {}\n\n'.format(node.find('name').text.strip())
+    fname = node.find('name').text.replace('<', '&lt;').replace('>', '&gt;')
+    res += '## {}\n\n'.format(fname.strip())
 
     res += '{% highlight cpp %}\n'
     res += '{}{};\n'.format(node.find('definition').text.strip(),

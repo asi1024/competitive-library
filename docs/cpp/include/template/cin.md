@@ -1,18 +1,18 @@
 {% include mathjax.html %}
 
-## operator>>
+## operator&gt;&gt;
 
 {% highlight cpp %}
 std::istream& operator>>(std::istream &is, std::tuple< Args... > &t);
 {% endhighlight %}
 
-## operator>>
+## operator&gt;&gt;
 
 {% highlight cpp %}
 std::istream& operator>>(std::istream &is, std::pair< T, U > &p);
 {% endhighlight %}
 
-## operator>>
+## operator&gt;&gt;
 
 {% highlight cpp %}
 std::istream& operator>>(std::istream &is, std::vector< T > &v);

@@ -36,7 +36,7 @@ ld norm(const PointND< D > &a);
 ld abs(const PointND< D > &a);
 {% endhighlight %}
 
-## operator<<
+## operator&lt;&lt;
 
 {% highlight cpp %}
 ostream& operator<<(ostream &os, PointND< D > p);
