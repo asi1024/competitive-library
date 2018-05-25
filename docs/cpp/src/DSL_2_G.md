@@ -8,6 +8,7 @@
 
 {% highlight cpp %}
 #include "../include/structure/rars.cpp"
+#include "../include/template/typedef.hpp"
 
 int main() {
   int n, q, com, s, t, x;
@@ -29,5 +30,6 @@ int main() {
 ### Includes
 
 - [rars.cpp](../include/structure/rars)
+- [typedef.hpp](../include/template/typedef)
 
 [Back](..)

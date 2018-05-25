@@ -8,7 +8,7 @@ template <typename DataStructure> struct HeavyLightDecomposition {
   using Monoid = typename DataStructure::monoid_type;
   struct Chain {
     int depth;
-    std::pair<int, int> parent;         // chain number, index
+    std::pair<int, int> parent;              // chain number, index
     std::vector<std::pair<int, int>> child;  // child chain number, parent index
     std::vector<int> mapfrom;
     DataStructure up, down;
