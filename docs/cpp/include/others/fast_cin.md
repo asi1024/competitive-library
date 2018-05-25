@@ -2,7 +2,7 @@
 
 ## Member functions
 
-### [1] operator>>
+### [1] operator&gt;&gt;
 {% highlight cpp %}
 operator>>(int &var);
 operator>>(long long &var);

@@ -6,19 +6,19 @@
 constexpr T inf();
 {% endhighlight %}
 
-## inf< int >
+## inf&lt; int &gt;
 
 {% highlight cpp %}
 constexpr int inf< int >();
 {% endhighlight %}
 
-## inf< long long >
+## inf&lt; long long &gt;
 
 {% highlight cpp %}
 constexpr long long inf< long long >();
 {% endhighlight %}
 
-## inf< long double >
+## inf&lt; long double &gt;
 
 {% highlight cpp %}
 constexpr long double inf< long double >();

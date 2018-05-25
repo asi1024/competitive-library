@@ -1,18 +1,18 @@
 {% include mathjax.html %}
 
-## operator<<
+## operator&lt;&lt;
 
 {% highlight cpp %}
 std::ostream& operator<<(std::ostream &os, const std::tuple< Args... > &t);
 {% endhighlight %}
 
-## operator<<
+## operator&lt;&lt;
 
 {% highlight cpp %}
 std::ostream& operator<<(std::ostream &os, const std::pair< T, U > &p);
 {% endhighlight %}
 
-## operator<<
+## operator&lt;&lt;
 
 {% highlight cpp %}
 std::ostream& operator<<(std::ostream &os, const std::vector< T > &v);
