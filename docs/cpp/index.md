@@ -4,7 +4,7 @@
 ## Templates
 
 | Algorithm | Verified | AOJ Problems |
-|:---------:|:--------:|:------------:|
+|:---------:|:--------:|:-------------|
 | [const_value.hpp](./include/template/const_value) | <font color="ForestGreen">Yes</font> | [bfs01.cpp](./include/graph/bfs01)<br>[dijkstra.cpp](./include/graph/dijkstra)<br>[max_flow.cpp](./include/graph/max_flow) etc... |
 | [includes.hpp](./include/template/includes) | <font color="ForestGreen">Yes</font> | [bipartite_matching.cpp](./include/graph/bipartite_matching)<br>[scc.cpp](./include/graph/scc)<br>[segment_tree.cpp](./include/structure/segment_tree) etc... |
 | [macros.hpp](./include/template/macros) | <font color="ForestGreen">Yes</font> | [template.cpp](./include/template/template) |
@@ -18,7 +18,7 @@
 ## Data Structures
 
 | Algorithm | Verified | AOJ Problems |
-|:---------:|:--------:|:------------:|
+|:---------:|:--------:|:-------------|
 | [monoid.hpp](./include/structure/monoid) | <font color="ForestGreen">Yes</font> | [suffix_array.cpp](./include/string/suffix_array) |
 | [semi_group.hpp](./include/structure/semi_group) | <font color="Red">No</font> |  |
 | [convex_hull_trick.cpp](./include/structure/convex_hull_trick) | <font color="ForestGreen">Yes</font> | [2725.cpp](./src/2725) |
@@ -35,7 +35,7 @@
 ## Graph Algorithms
 
 | Algorithm | Verified | AOJ Problems |
-|:---------:|:--------:|:------------:|
+|:---------:|:--------:|:-------------|
 | [bidirected_graph.hpp](./include/graph/bidirected_graph) | <font color="ForestGreen">Yes</font> | [GRL_3_A.cpp](./src/GRL_3_A)<br>[GRL_5_C.cpp](./src/GRL_5_C) |
 | [capacity_graph.hpp](./include/graph/capacity_graph) | <font color="ForestGreen">Yes</font> | [GRL_6_A.cpp](./src/GRL_6_A) |
 | [capacity_weighted_graph.hpp](./include/graph/capacity_weighted_graph) | <font color="ForestGreen">Yes</font> | [GRL_6_B.cpp](./src/GRL_6_B) |
@@ -57,7 +57,7 @@
 ## Numerical Algorithms
 
 | Algorithm | Verified | AOJ Problems |
-|:---------:|:--------:|:------------:|
+|:---------:|:--------:|:-------------|
 | [eratosthenes.cpp](./include/math/eratosthenes) | <font color="Red">No</font> |  |
 | [fft.cpp](./include/math/fft) | <font color="Red">No</font> |  |
 | [fmt.cpp](./include/math/fmt) | <font color="ForestGreen">Yes</font> | [2560.cpp](./src/2560) |
@@ -69,7 +69,7 @@
 ## String Algorithms
 
 | Algorithm | Verified | AOJ Problems |
-|:---------:|:--------:|:------------:|
+|:---------:|:--------:|:-------------|
 | [aho_corasick.cpp](./include/string/aho_corasick) | <font color="ForestGreen">Yes</font> | [2257.cpp](./src/2257) |
 | [kmp.cpp](./include/string/kmp) | <font color="Red">No</font> |  |
 | [manacher.cpp](./include/string/manacher) | <font color="ForestGreen">Yes</font> | [2292.cpp](./src/2292) |
@@ -79,7 +79,7 @@
 ## Geometric Algorithms
 
 | Algorithm | Verified | AOJ Problems |
-|:---------:|:--------:|:------------:|
+|:---------:|:--------:|:-------------|
 | [Geometry.hpp](./include/geometry/Geometry) | <font color="ForestGreen">Yes</font> | [CGL_1_C.cpp](./src/CGL_1_C)<br>[circle_intersect.cpp](./include/geometry/circle_intersect)<br>[circle_tangent.cpp](./include/geometry/circle_tangent) etc... |
 | [circle_intersect.cpp](./include/geometry/circle_intersect) | <font color="ForestGreen">Yes</font> | [CGL_7_D.cpp](./src/CGL_7_D)<br>[CGL_7_E.cpp](./src/CGL_7_E)<br>[CGL_7_F.cpp](./src/CGL_7_F) etc... |
 | [circle_tangent.cpp](./include/geometry/circle_tangent) | <font color="ForestGreen">Yes</font> | [CGL_7_F.cpp](./src/CGL_7_F)<br>[CGL_7_G.cpp](./src/CGL_7_G) |
@@ -92,7 +92,7 @@
 ## Others
 
 | Algorithm | Verified | AOJ Problems |
-|:---------:|:--------:|:------------:|
+|:---------:|:--------:|:-------------|
 | [ext.cpp](./include/others/ext) | <font color="Red">No</font> |  |
 | [fast_cin.cpp](./include/others/fast_cin) | <font color="Red">No</font> |  |
 | [fast_cout.cpp](./include/others/fast_cout) | <font color="Red">No</font> |  |
