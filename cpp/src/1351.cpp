@@ -1,4 +1,5 @@
 #include "../include/structure/starry_sky_tree.cpp"
+#include "../include/template/range.hpp"
 
 char s[301000];
 
@@ -7,7 +8,7 @@ int main() {
   scanf("%d%d%s", &N, &Q, s);
   StarrySkyTree<int> seg(N);
   set<int> right;
-  for (int i = 0; i < N; ++i) {
+  for (int i : range(N)) {
     if (s[i] == '(') {
       seg.update(i, N, 1);
     }
@@ -16,7 +17,7 @@ int main() {
       right.insert(i);
     }
   }
-  for (int i = 0; i < Q; ++i) {
+  while (Q--) {
     scanf("%d", &p);
     --p;
     if (right.find(p) == end(right)) {
