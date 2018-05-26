@@ -6,6 +6,7 @@
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:-------------|
 | [const_value.hpp](./include/template/const_value) | <font color="ForestGreen">Yes</font> | [bfs01.cpp](./include/graph/bfs01)<br>[dijkstra.cpp](./include/graph/dijkstra)<br>[max_flow.cpp](./include/graph/max_flow) etc... |
+| [double.hpp](./include/template/double) | <font color="Red">No</font> |  |
 | [includes.hpp](./include/template/includes) | <font color="ForestGreen">Yes</font> | [bipartite_matching.cpp](./include/graph/bipartite_matching)<br>[scc.cpp](./include/graph/scc)<br>[eratosthenes.cpp](./include/math/eratosthenes) etc... |
 | [macros.hpp](./include/template/macros) | <font color="Red">No</font> |  |
 | [misc.hpp](./include/template/misc) | <font color="Red">No</font> |  |
