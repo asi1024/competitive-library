@@ -46,7 +46,7 @@ int upper_bound(const string_t &t) const;
 
 ### [1] SAComp
 {% highlight cpp %}
-SAComp(int h_, vector< int > &g_);
+SAComp(int h_, std::vector< int > &g_);
 {% endhighlight %}
 
 
@@ -64,7 +64,7 @@ bool operator()(int a, int b);
 
 ### [1] (constructor)
 {% highlight cpp %}
-LCP(const string &str);
+LCP(const std::string &str);
 {% endhighlight %}
 
 
@@ -85,13 +85,12 @@ int query(int i, int j);
 {% highlight cpp %}
 #include "../structure/monoid.hpp"
 #include "../structure/segment_tree.cpp"
-#include "../util.hpp"
 
 template <typename string_t> struct SuffixArray {
   struct SAComp {
     const int h;
-    const vector<int> &g;
-    SAComp(int h_, vector<int> &g_) : h(h_), g(g_) { ; }
+    const std::vector<int> &g;
+    SAComp(int h_, std::vector<int> &g_) : h(h_), g(g_) { ; }
     bool operator()(int a, int b) {
       return a != b && (g[a] != g[b] ? g[a] < g[b] : g[a + h] < g[b + h]);
     }
@@ -99,19 +98,19 @@ template <typename string_t> struct SuffixArray {
 
   int n;
   string_t str;
-  vector<int> sa, lcp;
+  std::vector<int> sa, lcp;
 
   SuffixArray(const string_t &t) : n(t.size()), str(t), sa(n + 1), lcp(n + 1) {
     // build SA
-    vector<int> g(n + 1, 0), b(n + 1, 0);
+    std::vector<int> g(n + 1, 0), b(n + 1, 0);
     for (int i = 0; i <= n; ++i) {
       sa[i] = i;
       g[i] = str[i];
     }
-    sort(begin(sa), end(sa), SAComp(0, g));
+    std::sort(begin(sa), end(sa), SAComp(0, g));
     for (int h = 1; b[n] != n; h *= 2) {
       SAComp comp(h, g);
-      sort(sa.begin(), sa.end(), comp);
+      std::sort(sa.begin(), sa.end(), comp);
       for (int i = 0; i < n; ++i) b[i + 1] = b[i] + comp(sa[i], sa[i + 1]);
       for (int i = 0; i <= n; ++i) g[sa[i]] = b[i];
     }
@@ -144,10 +143,10 @@ template <typename string_t> struct SuffixArray {
     return ub;
   }
   int lower_bound(const string_t &t) const {
-    return binary_search<less<int>>(t);
+    return binary_search<std::less<int>>(t);
   }
   int upper_bound(const string_t &t) const {
-    return binary_search<less_equal<int>>(t);
+    return binary_search<std::less_equal<int>>(t);
   }
   int find(const string_t &t) const {
     const int m = t.size();
@@ -158,12 +157,12 @@ template <typename string_t> struct SuffixArray {
 
 class LCP {
   int n;
-  vector<int> mapsto;
+  std::vector<int> mapsto;
   SegmentTree<RMQ<int>> seg;
 
 public:
-  LCP(const string &str) : n(str.size()), mapsto(n), seg(n) {
-    SuffixArray<string> sa(str);
+  LCP(const std::string &str) : n(str.size()), mapsto(n), seg(n) {
+    SuffixArray<std::string> sa(str);
     for (int i = 0; i < n; ++i) mapsto[sa.sa[i + 1]] = i;
     for (int i = 0; i < n - 1; ++i) seg.update(i, sa.lcp[i + 2]);
   }
@@ -171,7 +170,7 @@ public:
     if (i == j) return n - i;
     i = mapsto[i];
     j = mapsto[j];
-    return seg.query(min(i, j), max(i, j));
+    return seg.query(std::min(i, j), std::max(i, j));
   }
 };
 {% endhighlight %}
@@ -180,6 +179,5 @@ public:
 
 - [monoid.hpp](../structure/monoid)
 - [segment_tree.cpp](../structure/segment_tree)
-- [util.hpp](../util)
 
 [Back](../..)
