@@ -1,14 +1,15 @@
 #pragma once
 
-#include "../util.hpp"
+#include "../template/includes.hpp"
+#include "../template/typedef.hpp"
 
 template <typename T> class Vec {
 protected:
-  using iterator = typename vector<T>::iterator;
-  using const_iterator = typename vector<T>::const_iterator;
+  using iterator = typename std::vector<T>::iterator;
+  using const_iterator = typename std::vector<T>::const_iterator;
   using reference = T &;
   using const_reference = const T &;
-  vector<T> v;
+  std::vector<T> v;
   template <typename Unop> Vec<T> unop_new(Unop op) const {
     Vec<T> res(v.size());
     transform(begin(v), end(v), res.begin(), op);
@@ -27,7 +28,7 @@ protected:
 public:
   Vec(int n) : v(n) {}
   Vec(int n, const T &val) : v(n, val) {}
-  Vec(const vector<T> &w) : v(w) {}
+  Vec(const std::vector<T> &w) : v(w) {}
   int size() const noexcept { return v.size(); }
   const_iterator begin() const noexcept { return v.begin(); }
   const_iterator end() const noexcept { return v.end(); }
@@ -140,7 +141,7 @@ public:
       for (int j = r + 1; j < n; ++j) {
         if (abs(A[j][i]) > abs(A[pivot][i])) pivot = j;
       }
-      swap(A[pivot], A[r]);
+      std::swap(A[pivot], A[r]);
       if (is_zero(A[r][i])) continue;
       for (int k = m - 1; k >= i; --k) A[r][k] = A[r][k] / A[r][i];
       for (int j = r + 1; j < n; ++j) {
@@ -163,7 +164,7 @@ public:
       for (int j = i + 1; j < n; ++j) {
         if (abs(A[j][i]) > abs(A[pivot][i])) pivot = j;
       }
-      swap(A[pivot], A[i]);
+      std::swap(A[pivot], A[i]);
       D = D * A[i][i] * T(i != pivot ? -1 : 1);
       if (is_zero(A[i][i])) break;
       for (int j = i + 1; j < n; ++j) {
