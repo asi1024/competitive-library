@@ -1,5 +1,7 @@
 #include "../include/string/rolling_hash.cpp"
 
+using namespace std;
+
 char str[512000];
 char op[8];
 
