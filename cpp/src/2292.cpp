@@ -1,6 +1,8 @@
 #include "../include/string/manacher.cpp"
 #include "../include/string/rolling_hash.cpp"
 
+using namespace std;
+
 using hash_t = pair<ll, ll>;
 
 struct Ret {
