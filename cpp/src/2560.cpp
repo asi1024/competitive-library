@@ -1,5 +1,6 @@
 #include "../include/math/fmt.cpp"
-#include "../include/math/mod.cpp"
+
+using namespace std;
 
 using Vec = vector<Modulo<998244353, true>>;
 
