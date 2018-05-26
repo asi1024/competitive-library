@@ -1,7 +1,8 @@
 #include "../include/math/lup_decomposition.cpp"
-#include "../include/math/matrix.cpp"
 
 #define REP(i, n) for (int i = 0; i < (n); ++i)
+
+using namespace std;
 
 struct Bool {
   int n;

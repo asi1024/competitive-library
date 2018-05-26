@@ -1,9 +1,9 @@
 {% include mathjax.html %}
 
-## primes
+## eratosthenes
 
 {% highlight cpp %}
-vector<int> primes();
+std::vector<int> eratosthenes(int M);
 {% endhighlight %}
 
 ## Implementation
@@ -11,26 +11,18 @@ vector<int> primes();
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/eratosthenes.cpp)
 
 {% highlight cpp %}
-#include "../util.hpp"
+#include "../template/includes.hpp"
 
-const int Prime_N = 1024000;
-
-bitset<Prime_N> is_prime;
-
-vector<int> primes() {
-  is_prime.set();
-  is_prime[0] = false;
-  is_prime[1] = false;
-  for (int i = 2; i * i < Prime_N; ++i) {
-    if (is_prime[i]) {
-      for (int j = i * i; j < Prime_N; j += i) {
-        is_prime[j] = false;
+std::vector<int> eratosthenes(int M) {
+  std::vector<int> res(M, 0);
+  res[0] = -1;
+  res[1] = -1;
+  for (int i = 2; i * i < M; ++i) {
+    if (res[i] == 0) {
+      for (int j = i * i; j < M; j += i) {
+        if (res[j] == 0) res[j] = i;
       }
     }
-  }
-  vector<int> res;
-  for (int i = 2; i < Prime_N; ++i) {
-    if (is_prime[i]) res.push_back(i);
   }
   return res;
 }
@@ -38,6 +30,6 @@ vector<int> primes() {
 
 ### Includes
 
-- [util.hpp](../util)
+- [includes.hpp](../template/includes)
 
 [Back](../..)

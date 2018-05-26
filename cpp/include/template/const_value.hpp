@@ -12,3 +12,5 @@ constexpr typename std::enable_if<std::is_arithmetic<T>::value, T>::type
 zero() {
   return T(0);
 }
+
+const long double pi = acos(-1.0);

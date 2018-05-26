@@ -1,10 +1,9 @@
 #pragma once
 
-#include "../util.hpp"
 #include "mod.cpp"
 
 template <int prim_root, int mod, int sign>
-void FMT(vector<Modulo<mod, true>> &a) {
+void FMT(std::vector<Modulo<mod, true>> &a) {
   using mod_t = Modulo<mod, true>;
   const int n = a.size();
   mod_t h = mod_t(prim_root) ^ ((mod - 1) / n);
@@ -13,7 +12,7 @@ void FMT(vector<Modulo<mod, true>> &a) {
   for (int i = 1; i < n - 1; ++i) {
     for (int j = n / 2; j > (x ^= j); j /= 2)
       ;
-    if (i < x) swap(a[x], a[i]);
+    if (i < x) std::swap(a[x], a[i]);
   }
   for (int m = 1; m < n; m *= 2) {
     const int m2 = 2 * m;
@@ -31,8 +30,8 @@ void FMT(vector<Modulo<mod, true>> &a) {
 }
 
 template <int prim_root, int mod>
-vector<Modulo<mod, true>> convolution(vector<Modulo<mod, true>> a,
-                                      vector<Modulo<mod, true>> b) {
+std::vector<Modulo<mod, true>> convolution(std::vector<Modulo<mod, true>> a,
+                                           std::vector<Modulo<mod, true>> b) {
   using mod_t = Modulo<mod, true>;
   int size = a.size() + b.size();
   while ((size & -size) != size) size += (size & -size);

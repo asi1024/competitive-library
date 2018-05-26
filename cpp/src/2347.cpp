@@ -3,6 +3,8 @@
 
 #define REP(i, n) for (int i = 0; i < (n); ++i)
 
+using namespace std;
+
 mt19937 mt(0);
 uniform_int_distribution<int> rnd(0, 123456789);
 
