@@ -3,7 +3,7 @@
 ## manacher
 
 {% highlight cpp %}
-vector<int> manacher(const string_t &s);
+std::vector<int> manacher(const string_t &s);
 {% endhighlight %}
 
 ## Implementation
@@ -11,11 +11,11 @@ vector<int> manacher(const string_t &s);
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/manacher.cpp)
 
 {% highlight cpp %}
-#include "../util.hpp"
+#include "../template/includes.hpp"
 
-template <typename string_t> vector<int> manacher(const string_t &s) {
+template <typename string_t> std::vector<int> manacher(const string_t &s) {
   const int n = s.size();
-  vector<int> rad(n);
+  std::vector<int> rad(n);
   int i = 0, j = 0, k = 0;
   while (i < n) {
     while (i - j >= 0 && i + j < n && s[i - j] == s[i + j]) ++j;
@@ -32,6 +32,6 @@ template <typename string_t> vector<int> manacher(const string_t &s) {
 
 ### Includes
 
-- [util.hpp](../util)
+- [includes.hpp](../template/includes)
 
 [Back](../..)

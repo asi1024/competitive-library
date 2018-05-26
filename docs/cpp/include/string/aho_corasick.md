@@ -4,7 +4,7 @@
 
 ### [1] (constructor)
 {% highlight cpp %}
-AhoCorasick(const vector< string_t > &str);
+AhoCorasick(const std::vector< string_t > &str);
 {% endhighlight %}
 
 
@@ -20,7 +20,7 @@ int next(int index, char_t c);
 
 ### [3] query
 {% highlight cpp %}
-vector< int > query(string_t &t);
+std::vector< int > query(string_t &t);
 {% endhighlight %}
 
 
@@ -63,10 +63,10 @@ const int & operator[](char_t c) const;
 template <typename State> struct AhoCorasick {
   using string_t = typename State::string_t;
   using char_t = typename State::char_t;
-  vector<State> pma;
-  vector<int> lens;
+  std::vector<State> pma;
+  std::vector<int> lens;
 
-  AhoCorasick(const vector<string_t> &str) : pma(0), lens(0) {
+  AhoCorasick(const std::vector<string_t> &str) : pma(0), lens(0) {
     pma.push_back(State());
     for (const string_t &s : str) {
       int t = 0;
@@ -110,9 +110,9 @@ template <typename State> struct AhoCorasick {
     return pma[index].is_set(c) ? pma[index][c]
                                 : pma[index][c] = next(pma[index].fail, c);
   }
-  vector<int> query(string_t &t) {
+  std::vector<int> query(string_t &t) {
     int index = 0;
-    vector<int> ret(lens.size(), -1);
+    std::vector<int> ret(lens.size(), -1);
     for (int i = 0; i < int(t.size()); ++i) {
       char_t c = t[i];
       index = next(index, c);
@@ -126,13 +126,13 @@ template <typename State> struct AhoCorasick {
 };
 
 struct State {
-  using string_t = string;
+  using string_t = std::string;
   using char_t = char;
   static const char_t min_char = 'a';
   static const char_t max_char = 'z';
-  array<int, max_char - min_char + 1> edge;
+  std::array<int, max_char - min_char + 1> edge;
   int fail;
-  vector<int> accept;
+  std::vector<int> accept;
   State() : fail(0), accept(0) { fill(begin(edge), end(edge), -1); }
   int &operator[](char_t c) { return edge[c - 'a']; }
   const int &operator[](char_t c) const { return edge[c - 'a']; }
