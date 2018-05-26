@@ -6,7 +6,7 @@
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:-------------|
 | [const_value.hpp](./include/template/const_value) | <font color="ForestGreen">Yes</font> | [bfs01.cpp](./include/graph/bfs01)<br>[dijkstra.cpp](./include/graph/dijkstra)<br>[max_flow.cpp](./include/graph/max_flow) etc... |
-| [includes.hpp](./include/template/includes) | <font color="ForestGreen">Yes</font> | [bipartite_matching.cpp](./include/graph/bipartite_matching)<br>[scc.cpp](./include/graph/scc)<br>[convex_hull_trick.cpp](./include/structure/convex_hull_trick) etc... |
+| [includes.hpp](./include/template/includes) | <font color="ForestGreen">Yes</font> | [bipartite_matching.cpp](./include/graph/bipartite_matching)<br>[scc.cpp](./include/graph/scc)<br>[eratosthenes.cpp](./include/math/eratosthenes) etc... |
 | [macros.hpp](./include/template/macros) | <font color="Red">No</font> |  |
 | [misc.hpp](./include/template/misc) | <font color="Red">No</font> |  |
 | [range.hpp](./include/template/range) | <font color="ForestGreen">Yes</font> | [1351.cpp](./src/1351) |
@@ -58,7 +58,7 @@
 
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:-------------|
-| [eratosthenes.cpp](./include/math/eratosthenes) | <font color="Red">No</font> |  |
+| [eratosthenes.cpp](./include/math/eratosthenes) | <font color="ForestGreen">Yes</font> | [1189.cpp](./src/1189) |
 | [fft.cpp](./include/math/fft) | <font color="Red">No</font> |  |
 | [fmt.cpp](./include/math/fmt) | <font color="ForestGreen">Yes</font> | [2560.cpp](./src/2560) |
 | [lup_decomposition.cpp](./include/math/lup_decomposition) | <font color="ForestGreen">Yes</font> | [2624.cpp](./src/2624) |
