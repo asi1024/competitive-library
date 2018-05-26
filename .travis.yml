@@ -90,6 +90,24 @@ matrix:
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test']
+          packages: ['g++-7', 'bc']
+      env:
+        ENV="Infer"
+      install:
+        - wget -O Dockerfile https://raw.githubusercontent.com/facebook/infer/master/docker/Dockerfile
+        - wget -O run.sh https://raw.githubusercontent.com/facebook/infer/master/docker/run.sh
+        - sh run.sh
+        - rm Dockerfile run.sh
+      script:
+        - infer run -- g++-7 -c cpp/include/*/*.?pp
+        - infer run -- g++-7 -c cpp/src/*.?pp
+
+    - os: linux
+      language: cpp
+      compiler: g++
+      addons:
+        apt:
+          sources: ['ubuntu-toolchain-r-test']
           packages: ['g++-6', 'bc']
       env:
         ENV="Preprocessor w/ GCC 6"
