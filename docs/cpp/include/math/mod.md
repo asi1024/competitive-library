@@ -31,9 +31,6 @@ Modulo<M, true> comb(int a, int b);
 Modulo();
 Modulo(int m);
 Modulo(ll m);
-Modulo();
-Modulo(int m);
-Modulo(ll m);
 {% endhighlight %}
 
 
@@ -41,7 +38,6 @@ Modulo(ll m);
 
 ### [2] operator int
 {% highlight cpp %}
-operator int() const;
 operator int() const;
 {% endhighlight %}
 
@@ -51,7 +47,6 @@ operator int() const;
 ### [3] operator ll
 {% highlight cpp %}
 operator ll() const;
-operator ll() const;
 {% endhighlight %}
 
 
@@ -59,7 +54,6 @@ operator ll() const;
 
 ### [4] operator*
 {% highlight cpp %}
-operator*(const Modulo &a) const;
 operator*(const Modulo &a) const;
 {% endhighlight %}
 
@@ -69,7 +63,6 @@ operator*(const Modulo &a) const;
 ### [5] operator*=
 {% highlight cpp %}
 operator*=(const Modulo &a);
-operator*=(const Modulo &a);
 {% endhighlight %}
 
 
@@ -77,7 +70,6 @@ operator*=(const Modulo &a);
 
 ### [6] operator+
 {% highlight cpp %}
-operator+(const Modulo &a) const;
 operator+(const Modulo &a) const;
 {% endhighlight %}
 
@@ -87,7 +79,6 @@ operator+(const Modulo &a) const;
 ### [7] operator+=
 {% highlight cpp %}
 operator+=(const Modulo &a);
-operator+=(const Modulo &a);
 {% endhighlight %}
 
 
@@ -95,7 +86,6 @@ operator+=(const Modulo &a);
 
 ### [8] operator-
 {% highlight cpp %}
-operator-(const Modulo &a) const;
 operator-(const Modulo &a) const;
 {% endhighlight %}
 
@@ -105,7 +95,6 @@ operator-(const Modulo &a) const;
 ### [9] operator-=
 {% highlight cpp %}
 operator-=(const Modulo &a);
-operator-=(const Modulo &a);
 {% endhighlight %}
 
 
@@ -113,7 +102,7 @@ operator-=(const Modulo &a);
 
 ### [10] operator/
 {% highlight cpp %}
-enable_if< IsPrime, operator/(const Modulo &a) const;
+std::enable_if< IsPrime, operator/(const Modulo &a) const;
 {% endhighlight %}
 
 
@@ -121,7 +110,7 @@ enable_if< IsPrime, operator/(const Modulo &a) const;
 
 ### [11] operator/=
 {% highlight cpp %}
-enable_if< IsPrime, operator/=(const Modulo &a);
+std::enable_if< IsPrime, operator/=(const Modulo &a);
 {% endhighlight %}
 
 
@@ -129,7 +118,6 @@ enable_if< IsPrime, operator/=(const Modulo &a);
 
 ### [12] operator==
 {% highlight cpp %}
-bool operator==(const Modulo &a) const;
 bool operator==(const Modulo &a) const;
 {% endhighlight %}
 
@@ -139,7 +127,6 @@ bool operator==(const Modulo &a) const;
 ### [13] operator^
 {% highlight cpp %}
 operator^(int m) const;
-operator^(int n) const;
 {% endhighlight %}
 
 
@@ -150,12 +137,12 @@ operator^(int n) const;
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/mod.cpp)
 
 {% highlight cpp %}
-#include "../util.hpp"
+#include "../template/includes.hpp"
+#include "../template/typedef.hpp"
 
 template <int M, bool IsPrime = false> class Modulo {
-  using ll = long long;
   int n;
-  static typename enable_if<IsPrime, ll>::type inv(ll a, ll p) {
+  static typename std::enable_if<IsPrime, ll>::type inv(ll a, ll p) {
     return (a == 1 ? 1 : (1 - p * inv(p % a, a)) / a + p);
   }
 
@@ -209,10 +196,11 @@ public:
     Modulo res = (a * a) ^ (m / 2);
     return m % 2 ? res * a : res;
   }
-  typename enable_if<IsPrime, Modulo>::type operator/(const Modulo &a) const {
+  typename std::enable_if<IsPrime, Modulo>::type
+  operator/(const Modulo &a) const {
     return *this * inv(ll(a), M);
   }
-  typename enable_if<IsPrime, Modulo>::type operator/=(const Modulo &a) {
+  typename std::enable_if<IsPrime, Modulo>::type operator/=(const Modulo &a) {
     return *this *= inv(ll(a), M);
   }
 };
@@ -227,7 +215,7 @@ template <int M, bool IsPrime = false> int abs(Modulo<M, IsPrime> x) {
 const int mod = 1000000007;
 
 template <int M = mod> Modulo<M, true> fact(int n, bool sw = true) {
-  static vector<Modulo<M, true>> v1 = { 1 }, v2 = { 1 };
+  static std::vector<Modulo<M, true>> v1 = { 1 }, v2 = { 1 };
   if (n >= (int)v1.size()) {
     const int from = v1.size(), to = n + 1024;
     v1.reserve(to);
@@ -250,6 +238,7 @@ using Mod = Modulo<mod, true>;
 
 ### Includes
 
-- [util.hpp](../util)
+- [includes.hpp](../template/includes)
+- [typedef.hpp](../template/typedef)
 
 [Back](../..)
