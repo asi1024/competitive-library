@@ -13,8 +13,10 @@ public:
   explicit Point(std::complex<real_t> p_) : p(p_) { ; }
   Point(real_t x, real_t y) : p(x, y) { ; }
   Vector<real_t> operator-(const Point &r) const { return p - r.p; }
-  Point operator+(const Vector<real_t> &r) const { return p + r.p; }
-  Point operator-(const Vector<real_t> &r) const { return p - r.p; }
+  Point operator+(const Vector<real_t> &r) const { return Point(p + r); }
+  Point operator-(const Vector<real_t> &r) const { return Point(p - r); }
+  real_t x() const { return p.real(); }
+  real_t y() const { return p.imag(); }
 };
 
 template <typename real_t>

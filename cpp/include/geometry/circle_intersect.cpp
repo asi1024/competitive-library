@@ -2,6 +2,12 @@
 #include "distance.cpp"
 #include "intersect.cpp"
 
+struct Circle {
+  Point p;
+  ld r;
+  Circle(Point a, ld b) : p(a), r(b) { ; }
+};
+
 vector<Point> is_cc(Circle c1, Circle c2) {
   vector<Point> res;
   ld d = abs(c1.p - c2.p);
