@@ -1,7 +1,5 @@
 #include "../include/geometry/intersect.cpp"
 
-#include <iomanip>
-
 using namespace std;
 
 using P = Point<float11>;

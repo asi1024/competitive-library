@@ -6,7 +6,7 @@ using P = Point<float11>;
 using S = Segment<float11>;
 
 int main() {
-  // cout << setprecision(11) << fixed;
+  cout << setprecision(11) << fixed;
   int q;
   cin >> q;
   while (q--) {
