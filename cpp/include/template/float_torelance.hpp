@@ -72,25 +72,28 @@ public:
 
 namespace std {
 template <typename float_type, const float_type &eps>
-float_torelance<float_type, eps> abs(float_torelance<float_type, eps> x) {
+float_torelance<float_type, eps> abs(float_torelance<float_type, eps> &x) {
   return float_torelance<float_type, eps>(std::abs(x.x));
 }
 
 template <typename float_type, const float_type &eps>
-float_torelance<float_type, eps> sqrt(float_torelance<float_type, eps> x) {
+float_torelance<float_type, eps>
+sqrt(const float_torelance<float_type, eps> &x) {
   return float_torelance<float_type, eps>(std::sqrt(x.x));
 }
 }
 
 template <typename float_type, const float_type &eps>
-std::istream &operator>>(std::istream &is, float_torelance<float_type, eps> x) {
-  is >> x.value();
+std::istream &operator>>(std::istream &is,
+                         float_torelance<float_type, eps> &x) {
+  is >> x.x;
   return is;
 }
 
 template <typename float_type, const float_type &eps>
-std::ostream &operator<<(std::ostream &os, float_torelance<float_type, eps> x) {
-  os << x;
+std::ostream &operator<<(std::ostream &os,
+                         const float_torelance<float_type, eps> &x) {
+  os << x.x;
   return os;
 }
 
