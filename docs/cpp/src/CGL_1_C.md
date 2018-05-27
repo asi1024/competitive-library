@@ -20,7 +20,7 @@ int main() {
   cin >> q;
   while (q--) {
     cin >> p2;
-    int c = ccw(p1 - p0, p2 - p0);
+    int c = ccw(p0, p1, p2);
     switch (c) {
     case 1: puts("COUNTER_CLOCKWISE"); break;
     case -1: puts("CLOCKWISE"); break;

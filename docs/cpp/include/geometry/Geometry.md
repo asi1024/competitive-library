@@ -56,14 +56,17 @@ std::ostream &operator<<(std::ostream &os, const Point<real_t> &p) {
 // };
 
 template <typename real_t> real_t dot(Vector<real_t> a, Vector<real_t> b) {
-  return real(conj(a) * b);
+  return std::real(std::conj(a) * b);
 }
 template <typename real_t> real_t cross(Vector<real_t> a, Vector<real_t> b) {
-  return imag(conj(a) * b);
+  return std::imag(std::conj(a) * b);
 }
 
 // counter clockwise
-template <typename real_t> int ccw(Vector<real_t> base, Vector<real_t> target) {
+template <typename real_t>
+int ccw(const Point<real_t> &a, const Point<real_t> &b,
+        const Point<real_t> &c) {
+  Vector<real_t> base = b - a, target = c - a;
   if (cross(base, target) > 0) return 1;     // counter clockwise
   if (cross(base, target) < 0) return -1;    // clockwise
   if (dot(base, target) < 0) return 2;       // c--a--b on line
