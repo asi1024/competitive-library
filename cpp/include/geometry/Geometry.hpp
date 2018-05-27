@@ -17,6 +17,19 @@ public:
   Point operator-(const Vector<real_t> &r) const { return Point(p - r); }
   real_t x() const { return p.real(); }
   real_t y() const { return p.imag(); }
+  bool operator==(const Point &r) { return abs(p == r.p) <= 0; }
+  bool operator<(const Point &r) const {
+    return x() < r.x() || (x() <= r.x() && y() < r.y());
+  }
+  bool operator<=(const Point &r) const {
+    return x() < r.x() || (x() <= r.x() && y() <= r.y());
+  }
+  bool operator>(const Point &r) const {
+    return x() > r.x() || (x() >= r.x() && y() > r.y());
+  }
+  bool operator>=(const Point &r) const {
+    return x() > r.x() || (x() >= r.x() && y() >= r.y());
+  }
 };
 
 template <typename real_t>
