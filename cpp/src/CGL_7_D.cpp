@@ -22,7 +22,5 @@ int main() {
         (real(pa) > real(pb) - eps && imag(pa) > imag(pb)))
       swap(pa, pb);
     cout << pa << " " << pb << endl;
-    // printf("%.10Lf %.10Lf %.10Lf %.10Lf\n", real(pa), imag(pa), real(pb),
-    //        imag(pb));
   }
 }
