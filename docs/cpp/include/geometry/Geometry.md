@@ -24,7 +24,26 @@ public:
   Point operator-(const Vector<real_t> &r) const { return Point(p - r); }
   real_t x() const { return p.real(); }
   real_t y() const { return p.imag(); }
+  bool operator==(const Point &r) { return abs(p == r.p) <= 0; }
+  bool operator<(const Point &r) const {
+    return x() < r.x() || (x() <= r.x() && y() < r.y());
+  }
+  bool operator<=(const Point &r) const {
+    return x() < r.x() || (x() <= r.x() && y() <= r.y());
+  }
+  bool operator>(const Point &r) const {
+    return x() > r.x() || (x() >= r.x() && y() > r.y());
+  }
+  bool operator>=(const Point &r) const {
+    return x() > r.x() || (x() >= r.x() && y() >= r.y());
+  }
 };
+
+template <typename real_t>
+Point<real_t> average(const Point<real_t> &p1, const Point<real_t> &p2,
+                      const real_t &ratio1 = 1.0, const real_t &ratio2 = 1.0) {
+  return (p1.p * ratio1 + p2.p * ratio2) / (ratio1 + ratio2);
+}
 
 template <typename real_t>
 std::istream &operator>>(std::istream &is, Point<real_t> &p) {
@@ -40,25 +59,12 @@ std::ostream &operator<<(std::ostream &os, const Point<real_t> &p) {
   return os;
 }
 
-// template <typename point_t> class Polygon {
-//   std::vector<point_t> g;
-//   Polygon() : g(0) { ; }
-//   Polygon(const int n) : g(n, point_t()) { ; }
-//   Polygon(const std::vector<point_t> &g_) : g(g_) { ; }
-//   void push_back(const point_t &p) { g.push_back(p); }
-//   point_t &front() { return g.front(); }
-//   point_t &back() { return g.back(); }
-//   int size() const { return g.size(); }
-//   point_t &operator[](int i) {
-//     i %= size();
-//     return g[i < 0 ? i + size() : i];
-//   }
-// };
-
-template <typename real_t> real_t dot(Vector<real_t> a, Vector<real_t> b) {
+template <typename real_t>
+real_t dot(const Vector<real_t> &a, const Vector<real_t> &b) {
   return std::real(std::conj(a) * b);
 }
-template <typename real_t> real_t cross(Vector<real_t> a, Vector<real_t> b) {
+template <typename real_t>
+real_t cross(const Vector<real_t> &a, const Vector<real_t> &b) {
   return std::imag(std::conj(a) * b);
 }
 

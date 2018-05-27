@@ -9,7 +9,7 @@ int main() {
   int n, q;
   cin >> n;
   G poly;
-    P p;
+  P p;
   for (int i = 0; i < n; ++i) {
     cin >> p;
     poly.push_back(p);

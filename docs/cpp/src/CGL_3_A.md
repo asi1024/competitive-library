@@ -9,20 +9,22 @@
 {% highlight cpp %}
 #include "../include/geometry/polygon.cpp"
 
-Point input() {
-  ld x, y;
-  scanf("%Lf%Lf", &x, &y);
-  return Point(x, y);
-}
+using namespace std;
+
+using P = Point<float11>;
+using G = Polygon<float11>;
 
 int main() {
+  cout << setprecision(12) << fixed;
   int n;
-  scanf("%d", &n);
-  Polygon poly;
+  cin >> n;
+  G poly;
   for (int i = 0; i < n; ++i) {
-    poly.push_back(input());
+    P p;
+    cin >> p;
+    poly.push_back(p);
   }
-  printf("%.10Lf\n", area(poly));
+  cout << area(poly) << endl;
 }
 {% endhighlight %}
 

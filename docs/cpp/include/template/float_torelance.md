@@ -1,5 +1,29 @@
 {% include mathjax.html %}
 
+## isnan
+
+{% highlight cpp %}
+bool isnan(float_torelance< float_type, eps > &x);
+{% endhighlight %}
+
+## abs
+
+{% highlight cpp %}
+float_torelance<float_type, eps> abs(float_torelance< float_type, eps > &x);
+{% endhighlight %}
+
+## sqrt
+
+{% highlight cpp %}
+float_torelance<float_type, eps> sqrt(const float_torelance< float_type, eps > &x);
+{% endhighlight %}
+
+## atan2
+
+{% highlight cpp %}
+float_torelance<float_type, eps> atan2(const float_torelance< float_type, eps > &x, const float_torelance< float_type, eps > &y);
+{% endhighlight %}
+
 ## operator&gt;&gt;
 
 {% highlight cpp %}
@@ -168,7 +192,7 @@ bool operator>=(const float_type &r) const;
 template <typename float_type, const float_type &eps> class float_torelance {
 public:
   float_type x;
-  float_torelance() { ; }
+  float_torelance() : x(0) { ; }
   float_torelance(float_type x_) : x(x_) { ; }
   explicit operator float_type() { return x; }
   float_torelance operator-() const { return -x; }
@@ -235,7 +259,11 @@ public:
   }
 };
 
-namespace std {
+template <typename float_type, const float_type &eps>
+bool isnan(float_torelance<float_type, eps> &x) {
+  return std::isnan(x.x);
+}
+
 template <typename float_type, const float_type &eps>
 float_torelance<float_type, eps> abs(float_torelance<float_type, eps> &x) {
   return float_torelance<float_type, eps>(std::abs(x.x));
@@ -246,6 +274,12 @@ float_torelance<float_type, eps>
 sqrt(const float_torelance<float_type, eps> &x) {
   return float_torelance<float_type, eps>(std::sqrt(x.x));
 }
+
+template <typename float_type, const float_type &eps>
+float_torelance<float_type, eps>
+atan2(const float_torelance<float_type, eps> &x,
+      const float_torelance<float_type, eps> &y) {
+  return float_torelance<float_type, eps>(std::atan2(x.x, y.x));
 }
 
 template <typename float_type, const float_type &eps>

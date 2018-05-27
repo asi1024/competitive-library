@@ -122,7 +122,7 @@ Point<real_t> proj(const Line<real_t> &l, const Point<real_t> &p) {
 template <typename real_t>
 Point<real_t> mirror(const Line<real_t> &l, const Point<real_t> &p) {
   Point<real_t> h = proj(l, p);
-  return h + (h - p);
+  return average(h, p, 2, -1);
 }
 
 template <typename real_t>

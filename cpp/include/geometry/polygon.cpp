@@ -2,6 +2,7 @@
 
 template <typename real_t> class Polygon {
   using point_t = Point<real_t>;
+
 public:
   std::vector<point_t> g;
   Polygon() : g(0) { ; }
@@ -21,8 +22,7 @@ public:
   }
 };
 
-template <typename real_t>
-real_t area(const Polygon<real_t> &g) {
+template <typename real_t> real_t area(const Polygon<real_t> &g) {
   real_t res = 0;
   int n = g.size();
   for (int i = 0; i < n; ++i) {

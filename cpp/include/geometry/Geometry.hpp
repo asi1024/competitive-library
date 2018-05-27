@@ -52,10 +52,12 @@ std::ostream &operator<<(std::ostream &os, const Point<real_t> &p) {
   return os;
 }
 
-template <typename real_t> real_t dot(const Vector<real_t> &a, const Vector<real_t> &b) {
+template <typename real_t>
+real_t dot(const Vector<real_t> &a, const Vector<real_t> &b) {
   return std::real(std::conj(a) * b);
 }
-template <typename real_t> real_t cross(const Vector<real_t> &a, const Vector<real_t> &b) {
+template <typename real_t>
+real_t cross(const Vector<real_t> &a, const Vector<real_t> &b) {
   return std::imag(std::conj(a) * b);
 }
 
