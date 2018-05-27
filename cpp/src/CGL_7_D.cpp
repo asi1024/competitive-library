@@ -19,8 +19,7 @@ int main() {
     L l(la, lb);
     vector<P> res = is_cl(c, l);
     P pa = res[0], pb = (res.size() == 2 ? res[1] : res[0]);
-    if (pa > pb)
-      swap(pa, pb);
+    if (pa > pb) swap(pa, pb);
     cout << pa << " " << pb << endl;
   }
 }
