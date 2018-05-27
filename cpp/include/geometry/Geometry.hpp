@@ -55,16 +55,11 @@ template <typename real_t> real_t cross(Vector<real_t> a, Vector<real_t> b) {
 
 // counter clockwise
 template <typename real_t> int ccw(Vector<real_t> base, Vector<real_t> target) {
-  if (cross(base, target) > 0)
-    return 1;  // counter clockwise
-  else if (cross(base, target) < 0)
-    return -1;  // clockwise
-  else if (dot(base, target) < 0)
-    return 2;  // c--a--b on line
-  else if (norm(base) < norm(target))
-    return -2;  // a--b--c on line
-  else
-    return 0;  // a--c--b on line
+  if (cross(base, target) > 0) return 1;     // counter clockwise
+  if (cross(base, target) < 0) return -1;    // clockwise
+  if (dot(base, target) < 0) return 2;       // c--a--b on line
+  if (norm(base) < norm(target)) return -2;  // a--b--c on line
+  return 0;                                  // a--c--b on line
 }
 
 // std::vector<Point> unique(std::vector<Point> ps) {
