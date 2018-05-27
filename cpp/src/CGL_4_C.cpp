@@ -1,31 +1,32 @@
 #include "../include/geometry/convex.cpp"
-#include "../include/geometry/polygon.cpp"
 
-Point input() {
-  ld x, y;
-  scanf("%Lf%Lf", &x, &y);
-  return Point(x, y);
-}
+using namespace std;
+
+using P = Point<float11>;
+using L = Line<float11>;
+using G = Polygon<float11>;
 
 int main() {
+  cout << setprecision(12) << fixed;
   int n, q;
-  scanf("%d", &n);
-  Polygon poly;
+  cin >> n;
+  G poly;
   for (int i = 0; i < n; ++i) {
-    poly.push_back(input());
+    P p;
+    cin >> p;
+    poly.push_back(p);
   }
-  scanf("%d", &q);
+  cin >> q;
   for (int i = 0; i < q; ++i) {
-    Point p1 = input();
-    Point p2 = input();
+    P p1, p2;
+    cin >> p1 >> p2;
     bool is_zero = true, is_one = true;
     for (int j = 0; j < n; ++j) {
-      int c = ccw(p1, p2, at(poly, j));
+      int c = ccw(p1, p2, poly[j]);
       if (c == 1) is_zero = false;
       if (c == -1) is_one = false;
     }
-    Polygon g = convex_cut(poly, Line(p1, p2));
-    ld res = is_zero ? 0.0L : (is_one ? area(poly) : area(g));
-    printf("%.10Lf\n", res);
+    G g = convex_cut(poly, L(p1, p2));
+    cout << (is_zero ? 0.0L : (is_one ? area(poly) : area(g))) << endl;
   }
 }

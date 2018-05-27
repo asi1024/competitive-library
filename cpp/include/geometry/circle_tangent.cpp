@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Geometry.hpp"
 
 template <typename real_t>

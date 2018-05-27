@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Geometry.hpp"
 #include "distance.cpp"
 #include "intersect.cpp"

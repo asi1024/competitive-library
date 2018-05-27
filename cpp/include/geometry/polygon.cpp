@@ -1,3 +1,5 @@
+#pragma once
+
 #include "intersect.cpp"
 
 template <typename real_t> class Polygon {
@@ -12,6 +14,7 @@ public:
   point_t &front() { return g.front(); }
   point_t &back() { return g.back(); }
   int size() const { return g.size(); }
+  void resize(int n) { g.resize(n); }
   point_t &operator[](int i) {
     i %= size();
     return g[i < 0 ? i + size() : i];
