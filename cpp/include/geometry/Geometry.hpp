@@ -49,10 +49,10 @@ std::ostream &operator<<(std::ostream &os, const Point<real_t> &p) {
 // };
 
 template <typename real_t> real_t dot(Vector<real_t> a, Vector<real_t> b) {
-  return real(conj(a) * b);
+  return std::real(std::conj(a) * b);
 }
 template <typename real_t> real_t cross(Vector<real_t> a, Vector<real_t> b) {
-  return imag(conj(a) * b);
+  return std::imag(std::conj(a) * b);
 }
 
 // counter clockwise

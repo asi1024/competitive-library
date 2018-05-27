@@ -15,7 +15,7 @@ template <typename real_t> struct Line {
 
 template <typename real_t>
 bool isis_ll(const Line<real_t> &l, const Line<real_t> &m) {
-  return std::abs(cross(l.b - l.a, m.b - m.a)) > 0;
+  return cross(l.b - l.a, m.b - m.a) != 0;
 }
 
 // bool isis_ls(Line l, Segment s) {
