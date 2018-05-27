@@ -7,62 +7,83 @@
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/Geometry.hpp)
 
 {% highlight cpp %}
-#include "../util.hpp"
+#include "../template/const_value.hpp"
+#include "../template/float_torelance.hpp"
+#include "../template/includes.hpp"
 
-using Point = complex<ld>;
-using Polygon = vector<Point>;
+template <typename real_t> using Vector = std::complex<real_t>;
 
-const ld eps = 1e-10;
+template <typename real_t> class Point {
+public:
+  std::complex<real_t> p;
+  Point() : p(0.0, 0.0) { ; }
+  explicit Point(std::complex<real_t> p_) : p(p_) { ; }
+  Point(real_t x, real_t y) : p(x, y) { ; }
+  Vector<real_t> operator-(const Point &r) const { return p - r.p; }
+  Point operator+(const Vector<real_t> &r) const { return Point(p + r); }
+  Point operator-(const Vector<real_t> &r) const { return Point(p - r); }
+  real_t x() const { return p.real(); }
+  real_t y() const { return p.imag(); }
+};
 
-Point at(const Polygon &g, int i) {
-  i %= (int)g.size();
-  return g[i < 0 ? i + g.size() : i];
+template <typename real_t>
+std::istream &operator>>(std::istream &is, Point<real_t> &p) {
+  real_t x, y;
+  is >> x >> y;
+  p = Point<real_t>(x, y);
+  return is;
 }
 
-bool comp(Point a, Point b) { return real(a - b) * 1.347589 + imag(a - b) > 0; }
+template <typename real_t>
+std::ostream &operator<<(std::ostream &os, const Point<real_t> &p) {
+  os << p.p.real() << " " << p.p.imag();
+  return os;
+}
 
-ld dot(Point a, Point b) { return real(conj(a) * b); }
-ld cross(Point a, Point b) { return imag(conj(a) * b); }
+// template <typename point_t> class Polygon {
+//   std::vector<point_t> g;
+//   Polygon() : g(0) { ; }
+//   Polygon(const int n) : g(n, point_t()) { ; }
+//   Polygon(const std::vector<point_t> &g_) : g(g_) { ; }
+//   void push_back(const point_t &p) { g.push_back(p); }
+//   point_t &front() { return g.front(); }
+//   point_t &back() { return g.back(); }
+//   int size() const { return g.size(); }
+//   point_t &operator[](int i) {
+//     i %= size();
+//     return g[i < 0 ? i + size() : i];
+//   }
+// };
 
-struct Segment {
-  Point a, b;
-  Segment(Point p, Point q) : a(p), b(q) { ; }
-};
-
-struct Line {
-  Point a, b;
-  Line(Point p, Point q) : a(p), b(q) { ; }
-  explicit Line(Segment s) : a(s.a), b(s.b) { ; }
-};
-
-struct Circle {
-  Point p;
-  ld r;
-  Circle(Point a, ld b) : p(a), r(b) { ; }
-};
+template <typename real_t> real_t dot(Vector<real_t> a, Vector<real_t> b) {
+  return real(conj(a) * b);
+}
+template <typename real_t> real_t cross(Vector<real_t> a, Vector<real_t> b) {
+  return imag(conj(a) * b);
+}
 
 // counter clockwise
-int ccw(Point a, Point b, Point c) {
-  b -= a;
-  c -= a;
-  if (cross(b, c) > eps) return 1;    // counter clockwise
-  if (cross(b, c) < -eps) return -1;  // clockwise
-  if (dot(b, c) < 0) return 2;        // c--a--b on line
-  if (norm(b) < norm(c)) return -2;   // a--b--c on line
-  return 0;                           // a--c--b on line
+template <typename real_t> int ccw(Vector<real_t> base, Vector<real_t> target) {
+  if (cross(base, target) > 0) return 1;     // counter clockwise
+  if (cross(base, target) < 0) return -1;    // clockwise
+  if (dot(base, target) < 0) return 2;       // c--a--b on line
+  if (norm(base) < norm(target)) return -2;  // a--b--c on line
+  return 0;                                  // a--c--b on line
 }
 
-vector<Point> unique(vector<Point> ps) {
-  sort(begin(ps), end(ps), comp);
-  vector<Point> res;
-  for (Point p : ps)
-    if (res.empty() || abs(res.back() - p) > eps) res.push_back(p);
-  return res;
-}
+// std::vector<Point> unique(std::vector<Point> ps) {
+//   std::sort(std::begin(ps), std::end(ps), comp);
+//   std::vector<Point> res;
+//   for (Point p : ps)
+//     if (res.empty() || std::abs(res.back() - p) != 0) res.push_back(p);
+//   return res;
+// }
 {% endhighlight %}
 
 ### Includes
 
-- [util.hpp](../util)
+- [const_value.hpp](../template/const_value)
+- [float_torelance.hpp](../template/float_torelance)
+- [includes.hpp](../template/includes)
 
 [Back](../..)
