@@ -33,6 +33,12 @@ public:
 };
 
 template <typename real_t>
+Point<real_t> average(const Point<real_t> &p1, const Point<real_t> &p2,
+                      const real_t &ratio1 = 1.0, const real_t &ratio2 = 1.0) {
+  return (p1.p * ratio1 + p2.p * ratio2) / (ratio1 + ratio2);
+}
+
+template <typename real_t>
 std::istream &operator>>(std::istream &is, Point<real_t> &p) {
   real_t x, y;
   is >> x >> y;

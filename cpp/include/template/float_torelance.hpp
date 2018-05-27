@@ -71,6 +71,11 @@ public:
 };
 
 template <typename float_type, const float_type &eps>
+bool isnan(float_torelance<float_type, eps> &x) {
+  return std::isnan(x.x);
+}
+
+template <typename float_type, const float_type &eps>
 float_torelance<float_type, eps> abs(float_torelance<float_type, eps> &x) {
   return float_torelance<float_type, eps>(std::abs(x.x));
 }
