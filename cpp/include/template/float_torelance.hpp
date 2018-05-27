@@ -1,27 +1,86 @@
 #include "includes.hpp"
 
 template <typename float_type, const float_type &eps> class float_torelance {
-  float_type x;
 public:
+  float_type x;
   float_torelance() { ; }
-  float_torelance(float_type value) : x(value) { ; }
-  float_type &value() { return x; }
-  float_torelance operator+(const float_torelance &r) { return x + r.x; }
-  float_torelance operator-(const float_torelance &r) { return x - r.x; }
-  float_torelance operator*(const float_torelance &r) { return x * r.x; }
-  float_torelance operator/(const float_torelance &r) { return x / r.x; }
-  float_torelance &operator+=(const float_torelance &r) { return x += r.x; }
-  float_torelance &operator-=(const float_torelance &r) { return x -= r.x; }
-  float_torelance &operator*=(const float_torelance &r) { return x *= r.x; }
-  float_torelance &operator/=(const float_torelance &r) { return x /= r.x; }
-  bool operator<=(const float_torelance &r) { return x <= r.x + eps; }
-  bool operator<(const float_torelance &r) { return x < r.x - eps; }
-  bool operator>=(const float_torelance &r) { return x >= r.x - eps; }
-  bool operator>(const float_torelance &r) { return x > r.x + eps; }
-  bool operator==(const float_torelance &r) {
+  float_torelance(float_type x_) : x(x_) { ; }
+  explicit operator float_type() { return x; }
+  float_torelance operator-() const { return -x; }
+  float_torelance operator+(const float_torelance &r) const { return x + r.x; }
+  float_torelance operator-(const float_torelance &r) const { return x - r.x; }
+  float_torelance operator*(const float_torelance &r) const { return x * r.x; }
+  float_torelance operator/(const float_torelance &r) const { return x / r.x; }
+  float_torelance &operator+=(const float_torelance &r) {
+    x += r.x;
+    return *this;
+  }
+  float_torelance &operator-=(const float_torelance &r) {
+    x -= r.x;
+    return *this;
+  }
+  float_torelance &operator*=(const float_torelance &r) {
+    x *= r.x;
+    return *this;
+  }
+  float_torelance &operator/=(const float_torelance &r) {
+    x /= r.x;
+    return *this;
+  }
+  bool operator<=(const float_torelance &r) const { return x <= r.x + eps; }
+  bool operator<(const float_torelance &r) const { return x < r.x - eps; }
+  bool operator>=(const float_torelance &r) const { return x >= r.x - eps; }
+  bool operator>(const float_torelance &r) const { return x > r.x + eps; }
+  bool operator==(const float_torelance &r) const {
     return x - r.x < eps && r.x - x < eps;
   }
+  bool operator!=(const float_torelance &r) const {
+    return x - r.x > eps || r.x - x > eps;
+  }
+
+  float_torelance operator+(const float_type &r) const { return x + r; }
+  float_torelance operator-(const float_type &r) const { return x - r; }
+  float_torelance operator*(const float_type &r) const { return x * r; }
+  float_torelance operator/(const float_type &r) const { return x / r; }
+  float_torelance &operator+=(const float_type &r) {
+    x += r;
+    return *this;
+  }
+  float_torelance &operator-=(const float_type &r) {
+    x -= r;
+    return *this;
+  }
+  float_torelance &operator*=(const float_type &r) {
+    x *= r;
+    return *this;
+  }
+  float_torelance &operator/=(const float_type &r) {
+    x /= r;
+    return *this;
+  }
+  bool operator<=(const float_type &r) const { return x <= r + eps; }
+  bool operator<(const float_type &r) const { return x < r - eps; }
+  bool operator>=(const float_type &r) const { return x >= r - eps; }
+  bool operator>(const float_type &r) const { return x > r + eps; }
+  bool operator==(const float_type &r) const {
+    return x - r < eps && r - x < eps;
+  }
+  bool operator!=(const float_type &r) const {
+    return x - r > eps || r - x > eps;
+  }
 };
+
+namespace std {
+template <typename float_type, const float_type &eps>
+float_torelance<float_type, eps> abs(float_torelance<float_type, eps> x) {
+  return float_torelance<float_type, eps>(std::abs(x.x));
+}
+
+template <typename float_type, const float_type &eps>
+float_torelance<float_type, eps> sqrt(float_torelance<float_type, eps> x) {
+  return float_torelance<float_type, eps>(std::sqrt(x.x));
+}
+}
 
 template <typename float_type, const float_type &eps>
 std::istream &operator>>(std::istream &is, float_torelance<float_type, eps> x) {
