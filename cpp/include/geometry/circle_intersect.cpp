@@ -2,43 +2,46 @@
 #include "distance.cpp"
 #include "intersect.cpp"
 
+template <typename real_t>
 struct Circle {
-  Point p;
-  ld r;
-  Circle(Point a, ld b) : p(a), r(b) { ; }
+  Point<real_t> p;
+  real_t r;
+  Circle(const Point<real_t> &p_, real_t r_) : p(p_), r(r_) { ; }
 };
 
-vector<Point> is_cc(Circle c1, Circle c2) {
-  vector<Point> res;
-  ld d = abs(c1.p - c2.p);
-  ld rc = (d * d + c1.r * c1.r - c2.r * c2.r) / (2 * d);
-  ld dfr = c1.r * c1.r - rc * rc;
+template <typename real_t>
+std::vector<Point<real_t>> is_cc(const Circle<real_t> &c1, const Circle<real_t> &c2) {
+  std::vector<Point<real_t>> res;
+  real_t d = abs(c1.p - c2.p);
+  real_t rc = (d * d + c1.r * c1.r - c2.r * c2.r) / (2 * d);
+  real_t dfr = c1.r * c1.r - rc * rc;
   if (abs(dfr) < eps)
     dfr = 0.0;
   else if (dfr < 0.0)
     return res;  // no intersection
-  ld rs = sqrt(dfr);
-  Point diff = (c2.p - c1.p) / d;
+  real_t rs = sqrt(dfr);
+  Vector<real_t> diff = (c2.p - c1.p) / d;
   res.push_back(c1.p + diff * Point(rc, rs));
   if (dfr != 0.0) res.push_back(c1.p + diff * Point(rc, -rs));
   return res;
 }
 
-vector<Point> is_cl(Circle c, Line l) {
-  vector<Point> res;
-  ld d = dist_lp(l, c.p);
+template <typename real_t>
+std::vector<Point<real_t>> is_cl(const Circle<real_t> &c, const Line<real_t> &l) {
+  std::vector<Point<real_t>> res;
+  real_t d = dist_lp(l, c.p);
   if (d < c.r + eps) {
-    ld len = (d > c.r) ? 0.0 : sqrt(c.r * c.r - d * d);  // safety;
-    Point nor = (l.a - l.b) / abs(l.a - l.b);
+    real_t len = (d > c.r) ? 0.0 : sqrt(c.r * c.r - d * d);  // safety;
+    Vector<real_t> nor = (l.a - l.b) / abs(l.a - l.b);
     res.push_back(proj(l, c.p) + len * nor);
     if (len != 0.0) res.push_back(proj(l, c.p) - len * nor);
   }
   return res;
 }
 
-vector<Point> is_cs(Circle c, Segment s) {
-  vector<Point> v = is_cl(c, Line(s)), res;
-  for (Point p : v)
+std::vector<Point<real_t>> is_cs(const Circle<real_t> &c, const Segment<real_t> &s) {
+  std::vector<Point<real_t>> v = is_cl(c, Line(s)), res;
+  for (Point<real_t> p : v)
     if (isis_sp(s, p)) res.push_back(p);
   return res;
 }
