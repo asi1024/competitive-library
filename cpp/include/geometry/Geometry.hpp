@@ -52,25 +52,10 @@ std::ostream &operator<<(std::ostream &os, const Point<real_t> &p) {
   return os;
 }
 
-// template <typename point_t> class Polygon {
-//   std::vector<point_t> g;
-//   Polygon() : g(0) { ; }
-//   Polygon(const int n) : g(n, point_t()) { ; }
-//   Polygon(const std::vector<point_t> &g_) : g(g_) { ; }
-//   void push_back(const point_t &p) { g.push_back(p); }
-//   point_t &front() { return g.front(); }
-//   point_t &back() { return g.back(); }
-//   int size() const { return g.size(); }
-//   point_t &operator[](int i) {
-//     i %= size();
-//     return g[i < 0 ? i + size() : i];
-//   }
-// };
-
-template <typename real_t> real_t dot(Vector<real_t> a, Vector<real_t> b) {
+template <typename real_t> real_t dot(const Vector<real_t> &a, const Vector<real_t> &b) {
   return std::real(std::conj(a) * b);
 }
-template <typename real_t> real_t cross(Vector<real_t> a, Vector<real_t> b) {
+template <typename real_t> real_t cross(const Vector<real_t> &a, const Vector<real_t> &b) {
   return std::imag(std::conj(a) * b);
 }
 

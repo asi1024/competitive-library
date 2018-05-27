@@ -87,6 +87,12 @@ sqrt(const float_torelance<float_type, eps> &x) {
 }
 
 template <typename float_type, const float_type &eps>
+float_torelance<float_type, eps>
+atan2(const float_torelance<float_type, eps> &x, const float_torelance<float_type, eps> &y) {
+  return float_torelance<float_type, eps>(std::atan2(x.x, y.x));
+}
+
+template <typename float_type, const float_type &eps>
 std::istream &operator>>(std::istream &is,
                          float_torelance<float_type, eps> &x) {
   is >> x.x;
