@@ -7,19 +7,19 @@ using L = Line<float11>;
 using C = Circle<float11>;
 
 int main() {
-  ld cx, cy, r;
+  cout << setprecision(12) << fixed;
+  float11 cx, cy, r;
   cin >> cx >> cy >> r;
-  C c(Point(cx, cy), r);
+  C c(P(cx, cy), r);
   int q;
   cin >> q;
   for (int i = 0; i < q; ++i) {
     P la, lb;
     cin >> la >> lb;
-    L l = Line(la, lb);
+    L l(la, lb);
     vector<P> res = is_cl(c, l);
     P pa = res[0], pb = (res.size() == 2 ? res[1] : res[0]);
-    if (real(pa) > real(pb) + eps ||
-        (real(pa) > real(pb) - eps && imag(pa) > imag(pb)))
+    if (pa > pb)
       swap(pa, pb);
     cout << pa << " " << pb << endl;
   }
