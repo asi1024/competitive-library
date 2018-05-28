@@ -75,7 +75,7 @@ public:
 
 template <typename float_type, const long long inv_eps>
 float_torelance<float_type, inv_eps>
-abs(float_torelance<float_type, inv_eps> &x) {
+abs(const float_torelance<float_type, inv_eps> &x) {
   return float_torelance<float_type, inv_eps>(std::abs(x.x));
 }
 
@@ -87,18 +87,18 @@ atan2(const float_torelance<float_type, inv_eps> &x,
 }
 
 template <typename float_type, const long long inv_eps>
-bool copysign(float_torelance<float_type, inv_eps> &x,
-              float_torelance<float_type, inv_eps> &y) {
+bool copysign(const float_torelance<float_type, inv_eps> &x,
+              const float_torelance<float_type, inv_eps> &y) {
   return std::copysign(x.x, y.x);
 }
 
 template <typename float_type, const long long inv_eps>
-bool isinf(float_torelance<float_type, inv_eps> &x) {
+bool isinf(const float_torelance<float_type, inv_eps> &x) {
   return std::isinf(x.x);
 }
 
 template <typename float_type, const long long inv_eps>
-bool isnan(float_torelance<float_type, inv_eps> &x) {
+bool isnan(const float_torelance<float_type, inv_eps> &x) {
   return std::isnan(x.x);
 }
 
