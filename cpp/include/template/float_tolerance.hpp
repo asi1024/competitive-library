@@ -8,6 +8,7 @@ template <typename float_type, const long long inv_eps> class float_tolerance {
                   "float_type must be real number");
     static_assert(inv_eps >= 1000, "Too large tolerance");
   }
+
 public:
   static constexpr float_type eps = float_type(1) / inv_eps;
   float_type x;
