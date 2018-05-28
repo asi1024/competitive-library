@@ -366,25 +366,25 @@ using if_arithmetic_t =
 template <typename lhs_type, typename float_type, const long long inv_eps>
 if_arithmetic_t<lhs_type, float_torelance<float_type, inv_eps>>
 operator+(const lhs_type &l, const float_torelance<float_type, inv_eps> &r) {
-  return l + r.x;
+  return static_cast<float_type>(l) + r.x;
 }
 
 template <typename lhs_type, typename float_type, const long long inv_eps>
 if_arithmetic_t<lhs_type, float_torelance<float_type, inv_eps>>
 operator-(const lhs_type &l, const float_torelance<float_type, inv_eps> &r) {
-  return l - r.x;
+  return static_cast<float_type>(l) - r.x;
 }
 
 template <typename lhs_type, typename float_type, const long long inv_eps>
 if_arithmetic_t<lhs_type, float_torelance<float_type, inv_eps>>
 operator*(const lhs_type &l, const float_torelance<float_type, inv_eps> &r) {
-  return l * r.x;
+  return static_cast<float_type>(l) * r.x;
 }
 
 template <typename lhs_type, typename float_type, const long long inv_eps>
 if_arithmetic_t<lhs_type, float_torelance<float_type, inv_eps>>
 operator/(const lhs_type &l, const float_torelance<float_type, inv_eps> &r) {
-  return l / r.x;
+  return static_cast<float_type>(l) / r.x;
 }
 
 template <typename lhs_type, typename float_type, const long long inv_eps>
