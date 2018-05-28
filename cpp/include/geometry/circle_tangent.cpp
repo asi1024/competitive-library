@@ -27,8 +27,8 @@ std::vector<Line<real_t>> tangent_cc(const Circle<real_t> &c1,
     Point<real_t> center = average(c1.p, c2.p, c2.r, c1.r);
     res = tangent_cp(c1, center);
   }
-  if (abs(c1.r - c2.r) > 0) {
-    const Point<real_t> out = average(c1.p, -c2.r, c2.p, c1.r);
+  if (c1.r - c2.r != 0) {
+    const Point<real_t> out = average(c1.p, c2.p, -c2.r, c1.r);
     const std::vector<Line<real_t>> nres = tangent_cp(c1, out);
     res.insert(res.end(), begin(nres), end(nres));
   }
