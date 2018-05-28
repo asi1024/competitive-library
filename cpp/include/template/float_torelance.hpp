@@ -79,6 +79,11 @@ bool isnan(float_torelance<float_type, inv_eps> &x) {
 }
 
 template <typename float_type, const long long inv_eps>
+bool isinf(float_torelance<float_type, inv_eps> &x) {
+  return std::isinf(x.x);
+}
+
+template <typename float_type, const long long inv_eps>
 float_torelance<float_type, inv_eps>
 abs(float_torelance<float_type, inv_eps> &x) {
   return float_torelance<float_type, inv_eps>(std::abs(x.x));
