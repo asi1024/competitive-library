@@ -74,6 +74,12 @@ public:
 };
 
 template <typename float_type, const long long inv_eps>
+bool copysign(float_torelance<float_type, inv_eps> &x,
+           float_torelance<float_type, inv_eps> &y) {
+  return std::copysign(x.x, y.x);
+}
+
+template <typename float_type, const long long inv_eps>
 bool isnan(float_torelance<float_type, inv_eps> &x) {
   return std::isnan(x.x);
 }
