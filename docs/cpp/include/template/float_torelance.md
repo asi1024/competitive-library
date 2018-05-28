@@ -3,37 +3,37 @@
 ## isnan
 
 {% highlight cpp %}
-bool isnan(float_torelance< float_type, log_eps > &x);
+bool isnan(float_torelance< float_type, inv_eps > &x);
 {% endhighlight %}
 
 ## abs
 
 {% highlight cpp %}
-float_torelance<float_type, log_eps> abs(float_torelance< float_type, log_eps > &x);
+float_torelance<float_type, inv_eps> abs(float_torelance< float_type, inv_eps > &x);
 {% endhighlight %}
 
 ## sqrt
 
 {% highlight cpp %}
-float_torelance<float_type, log_eps> sqrt(const float_torelance< float_type, log_eps > &x);
+float_torelance<float_type, inv_eps> sqrt(const float_torelance< float_type, inv_eps > &x);
 {% endhighlight %}
 
 ## atan2
 
 {% highlight cpp %}
-float_torelance<float_type, log_eps> atan2(const float_torelance< float_type, log_eps > &x, const float_torelance< float_type, log_eps > &y);
+float_torelance<float_type, inv_eps> atan2(const float_torelance< float_type, inv_eps > &x, const float_torelance< float_type, inv_eps > &y);
 {% endhighlight %}
 
 ## operator&gt;&gt;
 
 {% highlight cpp %}
-std::istream& operator>>(std::istream &is, float_torelance< float_type, log_eps > &x);
+std::istream& operator>>(std::istream &is, float_torelance< float_type, inv_eps > &x);
 {% endhighlight %}
 
 ## operator&lt;&lt;
 
 {% highlight cpp %}
-std::ostream& operator<<(std::ostream &os, const float_torelance< float_type, log_eps > &x);
+std::ostream& operator<<(std::ostream &os, const float_torelance< float_type, inv_eps > &x);
 {% endhighlight %}
 
 ## Member functions
@@ -189,9 +189,9 @@ bool operator>=(const float_type &r) const;
 {% highlight cpp %}
 #include "includes.hpp"
 
-template <typename float_type, const int log_eps> class float_torelance {
+template <typename float_type, const long long inv_eps> class float_torelance {
 public:
-  static constexpr float_type eps = std::pow(float_type(10), log_eps);
+  static constexpr float_type eps = float_type(1) / inv_eps;
   float_type x;
   float_torelance() : x(0) { ; }
   float_torelance(float_type x_) : x(x_) { ; }
@@ -260,45 +260,45 @@ public:
   }
 };
 
-template <typename float_type, const int log_eps>
-bool isnan(float_torelance<float_type, log_eps> &x) {
+template <typename float_type, const int inv_eps>
+bool isnan(float_torelance<float_type, inv_eps> &x) {
   return std::isnan(x.x);
 }
 
-template <typename float_type, const int log_eps>
-float_torelance<float_type, log_eps>
-abs(float_torelance<float_type, log_eps> &x) {
-  return float_torelance<float_type, log_eps>(std::abs(x.x));
+template <typename float_type, const int inv_eps>
+float_torelance<float_type, inv_eps>
+abs(float_torelance<float_type, inv_eps> &x) {
+  return float_torelance<float_type, inv_eps>(std::abs(x.x));
 }
 
-template <typename float_type, const int log_eps>
-float_torelance<float_type, log_eps>
-sqrt(const float_torelance<float_type, log_eps> &x) {
-  return float_torelance<float_type, log_eps>(std::sqrt(x.x));
+template <typename float_type, const int inv_eps>
+float_torelance<float_type, inv_eps>
+sqrt(const float_torelance<float_type, inv_eps> &x) {
+  return float_torelance<float_type, inv_eps>(std::sqrt(x.x));
 }
 
-template <typename float_type, const int log_eps>
-float_torelance<float_type, log_eps>
-atan2(const float_torelance<float_type, log_eps> &x,
-      const float_torelance<float_type, log_eps> &y) {
-  return float_torelance<float_type, log_eps>(std::atan2(x.x, y.x));
+template <typename float_type, const int inv_eps>
+float_torelance<float_type, inv_eps>
+atan2(const float_torelance<float_type, inv_eps> &x,
+      const float_torelance<float_type, inv_eps> &y) {
+  return float_torelance<float_type, inv_eps>(std::atan2(x.x, y.x));
 }
 
-template <typename float_type, const int log_eps>
+template <typename float_type, const int inv_eps>
 std::istream &operator>>(std::istream &is,
-                         float_torelance<float_type, log_eps> &x) {
+                         float_torelance<float_type, inv_eps> &x) {
   is >> x.x;
   return is;
 }
 
-template <typename float_type, const int log_eps>
+template <typename float_type, const int inv_eps>
 std::ostream &operator<<(std::ostream &os,
-                         const float_torelance<float_type, log_eps> &x) {
+                         const float_torelance<float_type, inv_eps> &x) {
   os << x.x;
   return os;
 }
 
-using float11 = float_torelance<long double, -11>;
+using float11 = float_torelance<long double, 100000000000LL>;
 {% endhighlight %}
 
 ### Includes
