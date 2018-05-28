@@ -3,11 +3,16 @@
 #include "includes.hpp"
 
 template <typename float_type, const long long inv_eps> class float_torelance {
+  void init() {
+    static_assert(std::is_floating_point<float_type>::value,
+                  "float_type must be real number");
+    static_assert(inv_eps >= 1000, "Too large torelance");
+  }
 public:
   static constexpr float_type eps = float_type(1) / inv_eps;
   float_type x;
-  float_torelance() : x(0) { ; }
-  float_torelance(float_type x_) : x(x_) { ; }
+  float_torelance() : x(0) { init(); }
+  float_torelance(float_type x_) : x(x_) { init(); }
   explicit operator float_type() { return x; }
   template <typename cast_to> explicit operator cast_to() { return cast_to(x); }
   float_torelance operator-() const { return -x; }
@@ -135,7 +140,7 @@ operator==(const lhs_type &l, const float_torelance<float_type, inv_eps> &r) {
 template <typename float_type, const long long inv_eps>
 float_torelance<float_type, inv_eps>
 abs(const float_torelance<float_type, inv_eps> &x) {
-  return float_torelance<float_type, inv_eps>(std::abs(x.x));
+  return std::abs(x.x);
 }
 
 template <typename float_type, const long long inv_eps>
