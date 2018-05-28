@@ -10,28 +10,23 @@
 #include "../include/geometry/circle_intersect.cpp"
 #include "../include/geometry/circle_tangent.cpp"
 
-Point input() {
-  ld x, y;
-  scanf("%Lf%Lf", &x, &y);
-  return Point(x, y);
-}
+using namespace std;
 
-bool compare(const Point &p, const Point &q) {
-  return real(p) < real(q) - eps ||
-         (real(p) < real(q) + eps && imag(p) < imag(q));
-}
+using P = Point<float11>;
+using L = Line<float11>;
+using C = Circle<float11>;
 
 int main() {
-  ld x1, y1, r1, x2, y2, r2;
-  scanf("%Lf%Lf%Lf%Lf%Lf%Lf", &x1, &y1, &r1, &x2, &y2, &r2);
-  Circle c1(Point(x1, y1), r1), c2(Point(x2, y2), r2);
-  vector<Line> ls = tangent_cc(c1, c2);
-  vector<Point> res;
-  for (Line l : ls) res.push_back(proj(l, c1.p));
-  sort(begin(res), end(res), compare);
-  for (Point p : res) {
-    printf("%.10Lf %.10Lf\n", real(p), imag(p));
-  }
+  cout << setprecision(12) << fixed;
+  P p1, p2;
+  float11 r1, r2;
+  cin >> p1 >> r1 >> p2 >> r2;
+  C c1(p1, r1), c2(p2, r2);
+  vector<L> ls = tangent_cc(c1, c2);
+  vector<P> res;
+  for (L l : ls) res.push_back(proj(l, c1.p));
+  sort(begin(res), end(res));
+  for (P p : res) cout << p << endl;
   return 0;
 }
 {% endhighlight %}
