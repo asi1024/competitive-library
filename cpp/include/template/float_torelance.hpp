@@ -88,7 +88,7 @@ atan2(const float_torelance<float_type, inv_eps> &x,
 
 template <typename float_type, const long long inv_eps>
 bool copysign(float_torelance<float_type, inv_eps> &x,
-           float_torelance<float_type, inv_eps> &y) {
+              float_torelance<float_type, inv_eps> &y) {
   return std::copysign(x.x, y.x);
 }
 
