@@ -74,6 +74,60 @@ public:
   }
 };
 
+template <typename lhs_type, typename float_type, const long long inv_eps>
+float_torelance<float_type, inv_eps>
+operator+(const lhs_type &l, const float_torelance<float_type, inv_eps> &r) {
+  return l + r.x;
+}
+
+template <typename lhs_type, typename float_type, const long long inv_eps>
+float_torelance<float_type, inv_eps>
+operator-(const lhs_type &l, const float_torelance<float_type, inv_eps> &r) {
+  return l - r.x;
+}
+
+template <typename lhs_type, typename float_type, const long long inv_eps>
+float_torelance<float_type, inv_eps>
+operator*(const lhs_type &l, const float_torelance<float_type, inv_eps> &r) {
+  return l * r.x;
+}
+
+template <typename lhs_type, typename float_type, const long long inv_eps>
+float_torelance<float_type, inv_eps>
+operator/(const lhs_type &l, const float_torelance<float_type, inv_eps> &r) {
+  return l / r.x;
+}
+
+template <typename float_type, const long long inv_eps>
+bool operator<=(const float_type &l,
+                const float_torelance<float_type, inv_eps> &r) {
+  return r >= l;
+}
+
+template <typename float_type, const long long inv_eps>
+bool operator<(const float_type &l,
+               const float_torelance<float_type, inv_eps> &r) {
+  return r > l;
+}
+
+template <typename float_type, const long long inv_eps>
+bool operator>=(const float_type &l,
+                const float_torelance<float_type, inv_eps> &r) {
+  return r <= l;
+}
+
+template <typename float_type, const long long inv_eps>
+bool operator>(const float_type &l,
+               const float_torelance<float_type, inv_eps> &r) {
+  return r < l;
+}
+
+template <typename float_type, const long long inv_eps>
+bool operator==(const float_type &l,
+                const float_torelance<float_type, inv_eps> &r) {
+  return r == l;
+}
+
 template <typename float_type, const long long inv_eps>
 float_torelance<float_type, inv_eps>
 abs(const float_torelance<float_type, inv_eps> &x) {
@@ -91,6 +145,11 @@ template <typename float_type, const long long inv_eps>
 bool copysign(const float_torelance<float_type, inv_eps> &x,
               const float_torelance<float_type, inv_eps> &y) {
   return std::copysign(x.x, y.x);
+}
+
+template <typename float_type, const long long inv_eps>
+bool isfinite(const float_torelance<float_type, inv_eps> &x) {
+  return std::isfinite(x.x);
 }
 
 template <typename float_type, const long long inv_eps>
