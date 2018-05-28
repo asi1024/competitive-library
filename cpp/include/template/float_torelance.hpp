@@ -74,57 +74,61 @@ public:
   }
 };
 
+template <typename U, typename T>
+using if_arithmetic_t =
+  typename std::enable_if<std::is_arithmetic<U>::value, T>::type;
+
 template <typename lhs_type, typename float_type, const long long inv_eps>
-float_torelance<float_type, inv_eps>
+if_arithmetic_t<lhs_type, float_torelance<float_type, inv_eps>>
 operator+(const lhs_type &l, const float_torelance<float_type, inv_eps> &r) {
   return l + r.x;
 }
 
 template <typename lhs_type, typename float_type, const long long inv_eps>
-float_torelance<float_type, inv_eps>
+if_arithmetic_t<lhs_type, float_torelance<float_type, inv_eps>>
 operator-(const lhs_type &l, const float_torelance<float_type, inv_eps> &r) {
   return l - r.x;
 }
 
 template <typename lhs_type, typename float_type, const long long inv_eps>
-float_torelance<float_type, inv_eps>
+if_arithmetic_t<lhs_type, float_torelance<float_type, inv_eps>>
 operator*(const lhs_type &l, const float_torelance<float_type, inv_eps> &r) {
   return l * r.x;
 }
 
 template <typename lhs_type, typename float_type, const long long inv_eps>
-float_torelance<float_type, inv_eps>
+if_arithmetic_t<lhs_type, float_torelance<float_type, inv_eps>>
 operator/(const lhs_type &l, const float_torelance<float_type, inv_eps> &r) {
   return l / r.x;
 }
 
-template <typename float_type, const long long inv_eps>
-bool operator<=(const float_type &l,
-                const float_torelance<float_type, inv_eps> &r) {
+template <typename lhs_type, typename float_type, const long long inv_eps>
+if_arithmetic_t<lhs_type, bool>
+operator<=(const lhs_type &l, const float_torelance<float_type, inv_eps> &r) {
   return r >= l;
 }
 
-template <typename float_type, const long long inv_eps>
-bool operator<(const float_type &l,
-               const float_torelance<float_type, inv_eps> &r) {
+template <typename lhs_type, typename float_type, const long long inv_eps>
+if_arithmetic_t<lhs_type, bool>
+operator<(const lhs_type &l, const float_torelance<float_type, inv_eps> &r) {
   return r > l;
 }
 
-template <typename float_type, const long long inv_eps>
-bool operator>=(const float_type &l,
-                const float_torelance<float_type, inv_eps> &r) {
+template <typename lhs_type, typename float_type, const long long inv_eps>
+if_arithmetic_t<lhs_type, bool>
+operator>=(const lhs_type &l, const float_torelance<float_type, inv_eps> &r) {
   return r <= l;
 }
 
-template <typename float_type, const long long inv_eps>
-bool operator>(const float_type &l,
-               const float_torelance<float_type, inv_eps> &r) {
+template <typename lhs_type, typename float_type, const long long inv_eps>
+if_arithmetic_t<lhs_type, bool>
+operator>(const lhs_type &l, const float_torelance<float_type, inv_eps> &r) {
   return r < l;
 }
 
-template <typename float_type, const long long inv_eps>
-bool operator==(const float_type &l,
-                const float_torelance<float_type, inv_eps> &r) {
+template <typename lhs_type, typename float_type, const long long inv_eps>
+if_arithmetic_t<lhs_type, bool>
+operator==(const lhs_type &l, const float_torelance<float_type, inv_eps> &r) {
   return r == l;
 }
 

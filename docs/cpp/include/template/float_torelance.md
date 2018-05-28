@@ -1,5 +1,59 @@
 {% include mathjax.html %}
 
+## operator+
+
+{% highlight cpp %}
+if_arithmetic_t<lhs_type, float_torelance<float_type, inv_eps> > operator+(const lhs_type &l, const float_torelance< float_type, inv_eps > &r);
+{% endhighlight %}
+
+## operator-
+
+{% highlight cpp %}
+if_arithmetic_t<lhs_type, float_torelance<float_type, inv_eps> > operator-(const lhs_type &l, const float_torelance< float_type, inv_eps > &r);
+{% endhighlight %}
+
+## operator*
+
+{% highlight cpp %}
+if_arithmetic_t<lhs_type, float_torelance<float_type, inv_eps> > operator*(const lhs_type &l, const float_torelance< float_type, inv_eps > &r);
+{% endhighlight %}
+
+## operator/
+
+{% highlight cpp %}
+if_arithmetic_t<lhs_type, float_torelance<float_type, inv_eps> > operator/(const lhs_type &l, const float_torelance< float_type, inv_eps > &r);
+{% endhighlight %}
+
+## operator&lt;=
+
+{% highlight cpp %}
+if_arithmetic_t<lhs_type, bool> operator<=(const lhs_type &l, const float_torelance< float_type, inv_eps > &r);
+{% endhighlight %}
+
+## operator&lt;
+
+{% highlight cpp %}
+if_arithmetic_t<lhs_type, bool> operator<(const lhs_type &l, const float_torelance< float_type, inv_eps > &r);
+{% endhighlight %}
+
+## operator&gt;=
+
+{% highlight cpp %}
+if_arithmetic_t<lhs_type, bool> operator>=(const lhs_type &l, const float_torelance< float_type, inv_eps > &r);
+{% endhighlight %}
+
+## operator&gt;
+
+{% highlight cpp %}
+if_arithmetic_t<lhs_type, bool> operator>(const lhs_type &l, const float_torelance< float_type, inv_eps > &r);
+{% endhighlight %}
+
+## operator==
+
+{% highlight cpp %}
+if_arithmetic_t<lhs_type, bool> operator==(const lhs_type &l, const float_torelance< float_type, inv_eps > &r);
+{% endhighlight %}
+
 ## abs
 
 {% highlight cpp %}
@@ -18,6 +72,12 @@ float_torelance<float_type, inv_eps> atan2(const float_torelance< float_type, in
 bool copysign(const float_torelance< float_type, inv_eps > &x, const float_torelance< float_type, inv_eps > &y);
 {% endhighlight %}
 
+## isfinite
+
+{% highlight cpp %}
+bool isfinite(const float_torelance< float_type, inv_eps > &x);
+{% endhighlight %}
+
 ## isinf
 
 {% highlight cpp %}
@@ -28,6 +88,24 @@ bool isinf(const float_torelance< float_type, inv_eps > &x);
 
 {% highlight cpp %}
 bool isnan(const float_torelance< float_type, inv_eps > &x);
+{% endhighlight %}
+
+## fabs
+
+{% highlight cpp %}
+bool fabs(const float_torelance< float_type, inv_eps > &x);
+{% endhighlight %}
+
+## hypot
+
+{% highlight cpp %}
+bool hypot(const float_torelance< float_type, inv_eps > &x, const float_torelance< float_type, inv_eps > &y);
+{% endhighlight %}
+
+## scalbn
+
+{% highlight cpp %}
+bool scalbn(const float_torelance< float_type, inv_eps > &x, const int exp);
 {% endhighlight %}
 
 ## sqrt
@@ -59,7 +137,15 @@ float_torelance(float_type x_);
 
 ---------------------------------------
 
-### [2] operator float_type
+### [2] operator cast_to
+{% highlight cpp %}
+operator cast_to();
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [3] operator float_type
 {% highlight cpp %}
 operator float_type();
 {% endhighlight %}
@@ -67,7 +153,7 @@ operator float_type();
 
 ---------------------------------------
 
-### [3] operator!=
+### [4] operator!=
 {% highlight cpp %}
 bool operator!=(const float_torelance &r) const;
 bool operator!=(const float_type &r) const;
@@ -76,7 +162,7 @@ bool operator!=(const float_type &r) const;
 
 ---------------------------------------
 
-### [4] operator*
+### [5] operator*
 {% highlight cpp %}
 operator*(const float_torelance &r) const;
 operator*(const float_type &r) const;
@@ -85,7 +171,7 @@ operator*(const float_type &r) const;
 
 ---------------------------------------
 
-### [5] operator*=
+### [6] operator*=
 {% highlight cpp %}
 operator*=(const float_torelance &r);
 operator*=(const float_type &r);
@@ -94,7 +180,7 @@ operator*=(const float_type &r);
 
 ---------------------------------------
 
-### [6] operator+
+### [7] operator+
 {% highlight cpp %}
 operator+(const float_torelance &r) const;
 operator+(const float_type &r) const;
@@ -103,7 +189,7 @@ operator+(const float_type &r) const;
 
 ---------------------------------------
 
-### [7] operator+=
+### [8] operator+=
 {% highlight cpp %}
 operator+=(const float_torelance &r);
 operator+=(const float_type &r);
@@ -112,7 +198,7 @@ operator+=(const float_type &r);
 
 ---------------------------------------
 
-### [8] operator-
+### [9] operator-
 {% highlight cpp %}
 operator-() const;
 operator-(const float_torelance &r) const;
@@ -122,7 +208,7 @@ operator-(const float_type &r) const;
 
 ---------------------------------------
 
-### [9] operator-=
+### [10] operator-=
 {% highlight cpp %}
 operator-=(const float_torelance &r);
 operator-=(const float_type &r);
@@ -131,7 +217,7 @@ operator-=(const float_type &r);
 
 ---------------------------------------
 
-### [10] operator/
+### [11] operator/
 {% highlight cpp %}
 operator/(const float_torelance &r) const;
 operator/(const float_type &r) const;
@@ -140,7 +226,7 @@ operator/(const float_type &r) const;
 
 ---------------------------------------
 
-### [11] operator/=
+### [12] operator/=
 {% highlight cpp %}
 operator/=(const float_torelance &r);
 operator/=(const float_type &r);
@@ -149,7 +235,7 @@ operator/=(const float_type &r);
 
 ---------------------------------------
 
-### [12] operator&lt;
+### [13] operator&lt;
 {% highlight cpp %}
 bool operator<(const float_torelance &r) const;
 bool operator<(const float_type &r) const;
@@ -158,7 +244,7 @@ bool operator<(const float_type &r) const;
 
 ---------------------------------------
 
-### [13] operator&lt;=
+### [14] operator&lt;=
 {% highlight cpp %}
 bool operator<=(const float_torelance &r) const;
 bool operator<=(const float_type &r) const;
@@ -167,7 +253,7 @@ bool operator<=(const float_type &r) const;
 
 ---------------------------------------
 
-### [14] operator==
+### [15] operator==
 {% highlight cpp %}
 bool operator==(const float_torelance &r) const;
 bool operator==(const float_type &r) const;
@@ -176,7 +262,7 @@ bool operator==(const float_type &r) const;
 
 ---------------------------------------
 
-### [15] operator&gt;
+### [16] operator&gt;
 {% highlight cpp %}
 bool operator>(const float_torelance &r) const;
 bool operator>(const float_type &r) const;
@@ -185,7 +271,7 @@ bool operator>(const float_type &r) const;
 
 ---------------------------------------
 
-### [16] operator&gt;=
+### [17] operator&gt;=
 {% highlight cpp %}
 bool operator>=(const float_torelance &r) const;
 bool operator>=(const float_type &r) const;
@@ -208,6 +294,7 @@ public:
   float_torelance() : x(0) { ; }
   float_torelance(float_type x_) : x(x_) { ; }
   explicit operator float_type() { return x; }
+  template <typename cast_to> explicit operator cast_to() { return cast_to(x); }
   float_torelance operator-() const { return -x; }
   float_torelance operator+(const float_torelance &r) const { return x + r.x; }
   float_torelance operator-(const float_torelance &r) const { return x - r.x; }
@@ -272,6 +359,64 @@ public:
   }
 };
 
+template <typename U, typename T>
+using if_arithmetic_t =
+  typename std::enable_if<std::is_arithmetic<U>::value, T>::type;
+
+template <typename lhs_type, typename float_type, const long long inv_eps>
+if_arithmetic_t<lhs_type, float_torelance<float_type, inv_eps>>
+operator+(const lhs_type &l, const float_torelance<float_type, inv_eps> &r) {
+  return l + r.x;
+}
+
+template <typename lhs_type, typename float_type, const long long inv_eps>
+if_arithmetic_t<lhs_type, float_torelance<float_type, inv_eps>>
+operator-(const lhs_type &l, const float_torelance<float_type, inv_eps> &r) {
+  return l - r.x;
+}
+
+template <typename lhs_type, typename float_type, const long long inv_eps>
+if_arithmetic_t<lhs_type, float_torelance<float_type, inv_eps>>
+operator*(const lhs_type &l, const float_torelance<float_type, inv_eps> &r) {
+  return l * r.x;
+}
+
+template <typename lhs_type, typename float_type, const long long inv_eps>
+if_arithmetic_t<lhs_type, float_torelance<float_type, inv_eps>>
+operator/(const lhs_type &l, const float_torelance<float_type, inv_eps> &r) {
+  return l / r.x;
+}
+
+template <typename lhs_type, typename float_type, const long long inv_eps>
+if_arithmetic_t<lhs_type, bool>
+operator<=(const lhs_type &l, const float_torelance<float_type, inv_eps> &r) {
+  return r >= l;
+}
+
+template <typename lhs_type, typename float_type, const long long inv_eps>
+if_arithmetic_t<lhs_type, bool>
+operator<(const lhs_type &l, const float_torelance<float_type, inv_eps> &r) {
+  return r > l;
+}
+
+template <typename lhs_type, typename float_type, const long long inv_eps>
+if_arithmetic_t<lhs_type, bool>
+operator>=(const lhs_type &l, const float_torelance<float_type, inv_eps> &r) {
+  return r <= l;
+}
+
+template <typename lhs_type, typename float_type, const long long inv_eps>
+if_arithmetic_t<lhs_type, bool>
+operator>(const lhs_type &l, const float_torelance<float_type, inv_eps> &r) {
+  return r < l;
+}
+
+template <typename lhs_type, typename float_type, const long long inv_eps>
+if_arithmetic_t<lhs_type, bool>
+operator==(const lhs_type &l, const float_torelance<float_type, inv_eps> &r) {
+  return r == l;
+}
+
 template <typename float_type, const long long inv_eps>
 float_torelance<float_type, inv_eps>
 abs(const float_torelance<float_type, inv_eps> &x) {
@@ -292,6 +437,11 @@ bool copysign(const float_torelance<float_type, inv_eps> &x,
 }
 
 template <typename float_type, const long long inv_eps>
+bool isfinite(const float_torelance<float_type, inv_eps> &x) {
+  return std::isfinite(x.x);
+}
+
+template <typename float_type, const long long inv_eps>
 bool isinf(const float_torelance<float_type, inv_eps> &x) {
   return std::isinf(x.x);
 }
@@ -299,6 +449,22 @@ bool isinf(const float_torelance<float_type, inv_eps> &x) {
 template <typename float_type, const long long inv_eps>
 bool isnan(const float_torelance<float_type, inv_eps> &x) {
   return std::isnan(x.x);
+}
+
+template <typename float_type, const long long inv_eps>
+bool fabs(const float_torelance<float_type, inv_eps> &x) {
+  return std::fabs(x.x);
+}
+
+template <typename float_type, const long long inv_eps>
+bool hypot(const float_torelance<float_type, inv_eps> &x,
+           const float_torelance<float_type, inv_eps> &y) {
+  return std::hypot(x.x, y.x);
+}
+
+template <typename float_type, const long long inv_eps>
+bool scalbn(const float_torelance<float_type, inv_eps> &x, const int exp) {
+  return std::scalbn(x.x, exp);
 }
 
 template <typename float_type, const long long inv_eps>
