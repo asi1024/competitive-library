@@ -3,50 +3,71 @@
 ## isis_ll
 
 {% highlight cpp %}
-bool isis_ll(Line l, Line m);
-{% endhighlight %}
-
-## isis_ls
-
-{% highlight cpp %}
-bool isis_ls(Line l, Segment s);
+bool isis_ll(const Line< real_t > &l, const Line< real_t > &m);
 {% endhighlight %}
 
 ## isis_lp
 
 {% highlight cpp %}
-bool isis_lp(Line l, Point p);
+bool isis_lp(const Line< real_t > &l, const Point< real_t > &p);
+{% endhighlight %}
+
+## isis_ls
+
+{% highlight cpp %}
+bool isis_ls(const Line< real_t > &l, const Segment< real_t > &s);
 {% endhighlight %}
 
 ## isis_ss
 
 {% highlight cpp %}
-bool isis_ss(Segment s, Segment t);
+bool isis_ss(const Segment< real_t > &s, const Segment< real_t > &t);
 {% endhighlight %}
 
 ## isis_sp
 
 {% highlight cpp %}
-bool isis_sp(Segment s, Point p);
+bool isis_sp(const Segment< real_t > &s, const Point< real_t > &p);
 {% endhighlight %}
 
 ## proj
 
 {% highlight cpp %}
-Point proj(Line l, Point p);
+Point<real_t> proj(const Line< real_t > &l, const Point< real_t > &p);
 {% endhighlight %}
 
 ## mirror
 
 {% highlight cpp %}
-Point mirror(Line l, Point p);
+Point<real_t> mirror(const Line< real_t > &l, const Point< real_t > &p);
 {% endhighlight %}
 
 ## is_ll
 
 {% highlight cpp %}
-Point is_ll(Line s, Line t);
+Point<real_t> is_ll(const Line< real_t > &s, const Line< real_t > &t);
 {% endhighlight %}
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+Segment(const Point< real_t > &p, const Point< real_t > &q);
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+Line(const Point< real_t > &p, const Point< real_t > &q);
+Line(const Segment< real_t > &s);
+{% endhighlight %}
+
+
+---------------------------------------
 
 ## Implementation
 
@@ -55,34 +76,58 @@ Point is_ll(Line s, Line t);
 {% highlight cpp %}
 #include "Geometry.hpp"
 
-bool isis_ll(Line l, Line m) { return abs(cross(l.b - l.a, m.b - m.a)) > eps; }
+template <typename real_t> struct Segment {
+  Point<real_t> a, b;
+  Segment(const Point<real_t> &p, const Point<real_t> &q) : a(p), b(q) { ; }
+};
 
-bool isis_ls(Line l, Segment s) {
-  ld a = cross(l.b - l.a, s.a - l.a);
-  ld b = cross(l.b - l.a, s.b - l.a);
-  return (a * b < eps);
+template <typename real_t> struct Line {
+  Point<real_t> a, b;
+  Line(const Point<real_t> &p, const Point<real_t> &q) : a(p), b(q) { ; }
+  explicit Line(const Segment<real_t> &s) : a(s.a), b(s.b) { ; }
+};
+
+template <typename real_t>
+bool isis_ll(const Line<real_t> &l, const Line<real_t> &m) {
+  return cross(l.b - l.a, m.b - m.a) != 0;
 }
 
-bool isis_lp(Line l, Point p) { return abs(cross(l.b - p, l.a - p)) < eps; }
+template <typename real_t>
+bool isis_lp(const Line<real_t> &l, const Point<real_t> &p) {
+  return cross(l.b - p, l.a - p) == 0;
+}
 
-bool isis_ss(Segment s, Segment t) {
+template <typename real_t>
+bool isis_ls(const Line<real_t> &l, const Segment<real_t> &s) {
+  return isis_lp(l, s.a) && isis_lp(l, s.b);
+}
+
+template <typename real_t>
+bool isis_ss(const Segment<real_t> &s, const Segment<real_t> &t) {
   return ccw(s.a, s.b, t.a) * ccw(s.a, s.b, t.b) <= 0 &&
          ccw(t.a, t.b, s.a) * ccw(t.a, t.b, s.b) <= 0;
 }
 
-bool isis_sp(Segment s, Point p) {
-  return abs(s.a - p) + abs(s.b - p) - abs(s.b - s.a) < eps;
+template <typename real_t>
+bool isis_sp(const Segment<real_t> &s, const Point<real_t> &p) {
+  return abs(s.a - p) + abs(s.b - p) - abs(s.b - s.a) <= 0;
 }
 
-Point proj(Line l, Point p) {
-  ld t = dot(p - l.a, l.a - l.b) / norm(l.a - l.b);
+template <typename real_t>
+Point<real_t> proj(const Line<real_t> &l, const Point<real_t> &p) {
+  real_t t = dot(p - l.a, l.a - l.b) / norm(l.a - l.b);
   return l.a + t * (l.a - l.b);
 }
 
-Point mirror(Line l, Point p) { return (ld)2 * proj(l, p) - p; }
+template <typename real_t>
+Point<real_t> mirror(const Line<real_t> &l, const Point<real_t> &p) {
+  Point<real_t> h = proj(l, p);
+  return average(h, p, 2, -1);
+}
 
-Point is_ll(Line s, Line t) {
-  Point sv = s.b - s.a, tv = t.b - t.a;
+template <typename real_t>
+Point<real_t> is_ll(const Line<real_t> &s, const Line<real_t> &t) {
+  Vector<real_t> sv = s.b - s.a, tv = t.b - t.a;
   return s.a + sv * cross(tv, t.a - s.a) / cross(tv, sv);
 }
 {% endhighlight %}

@@ -1,38 +1,44 @@
+#pragma once
+
 #include "Geometry.hpp"
 
-vector<Line> tangent_cp(Circle c, Point p) {
-  vector<Line> res;
-  Point v = c.p - p;
-  ld d = abs(v), len = sqrt(norm(v) - c.r * c.r);
+template <typename real_t>
+std::vector<Line<real_t>> tangent_cp(const Circle<real_t> &c,
+                                     const Point<real_t> &p) {
+  std::vector<Line<real_t>> res;
+  Vector<real_t> v = c.p - p;
+  real_t d = abs(v), len = sqrt(norm(v) - c.r * c.r);
   if (isnan(len)) {
     return res;
   }
-  Point v1 = v * Point(len / d, c.r / d);
-  Point v2 = v * Point(len / d, -c.r / d);
-  res.push_back(Line(p, p + v1));
-  if (len < eps) return res;
-  res.push_back(Line(p, p + v2));
+  const auto v1 = v * Vector<real_t>(len / d, c.r / d);
+  const auto v2 = v * Vector<real_t>(len / d, -c.r / d);
+  res.emplace_back(p, p + v1);
+  if (len <= 0) return res;
+  res.emplace_back(p, p + v2);
   return res;
 }
 
-vector<Line> tangent_cc(Circle c1, Circle c2) {
-  vector<Line> res;
-  if (abs(c1.p - c2.p) - (c1.r + c2.r) > -eps) {
-    Point center = (c1.p * c2.r + c2.p * c1.r) / (c1.r + c2.r);
+template <typename real_t>
+std::vector<Line<real_t>> tangent_cc(const Circle<real_t> &c1,
+                                     const Circle<real_t> &c2) {
+  std::vector<Line<real_t>> res;
+  if (abs(c1.p - c2.p) - (c1.r + c2.r) >= 0) {
+    Point<real_t> center = average(c1.p, c2.p, c2.r, c1.r);
     res = tangent_cp(c1, center);
   }
-  if (abs(c1.r - c2.r) > eps) {
-    Point out = (-c1.p * c2.r + c2.p * c1.r) / (c1.r - c2.r);
-    vector<Line> nres = tangent_cp(c1, out);
+  if (c1.r - c2.r != 0) {
+    const Point<real_t> out = average(c1.p, c2.p, -c2.r, c1.r);
+    const std::vector<Line<real_t>> nres = tangent_cp(c1, out);
     res.insert(res.end(), begin(nres), end(nres));
   }
   else {
-    Point v = c2.p - c1.p;
+    Vector<real_t> v = c2.p - c1.p;
     v /= abs(v);
-    Point q1 = c1.p + v * Point(0, 1) * c1.r;
-    Point q2 = c1.p + v * Point(0, -1) * c1.r;
-    res.push_back(Line(q1, q1 + v));
-    res.push_back(Line(q2, q2 + v));
+    Point<real_t> q1 = c1.p + v * Vector<real_t>(0, 1) * c1.r;
+    Point<real_t> q2 = c1.p + v * Vector<real_t>(0, -1) * c1.r;
+    res.emplace_back(q1, q1 + v);
+    res.emplace_back(q2, q2 + v);
   }
   return res;
 }

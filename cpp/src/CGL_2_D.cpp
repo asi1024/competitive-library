@@ -1,18 +1,19 @@
 #include "../include/geometry/distance.cpp"
 
-Point input() {
-  ld x, y;
-  scanf("%Lf%Lf", &x, &y);
-  return Point(x, y);
-}
+using namespace std;
+
+using P = Point<float11>;
+using S = Segment<float11>;
 
 int main() {
+  cout << setprecision(11) << fixed;
   int q;
-  scanf("%d", &q);
+  cin >> q;
   while (q--) {
-    Segment s1(input(), input());
-    Segment s2(input(), input());
-    printf("%.10Lf\n", dist_ss(s1, s2));
+    P a, b, c, d;
+    cin >> a >> b >> c >> d;
+    S s1(a, b), s2(c, d);
+    cout << dist_ss(s1, s2) << endl;
   }
   return 0;
 }

@@ -9,22 +9,24 @@
 {% highlight cpp %}
 #include "../include/geometry/polygon.cpp"
 
-Point input() {
-  ld x, y;
-  scanf("%Lf%Lf", &x, &y);
-  return Point(x, y);
-}
+using namespace std;
+
+using P = Point<float11>;
+using G = Polygon<float11>;
 
 int main() {
   int n, q;
-  scanf("%d", &n);
-  Polygon poly;
+  cin >> n;
+  G poly;
+  P p;
   for (int i = 0; i < n; ++i) {
-    poly.push_back(input());
+    cin >> p;
+    poly.push_back(p);
   }
-  scanf("%d", &q);
+  cin >> q;
   for (int i = 0; i < q; ++i) {
-    printf("%d\n", is_in_polygon(poly, input()) + 1);
+    cin >> p;
+    cout << is_in_polygon(poly, p) + 1 << endl;
   }
 }
 {% endhighlight %}

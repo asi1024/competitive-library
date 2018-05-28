@@ -6,6 +6,7 @@
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:-------------|
 | [const_value.hpp](./include/template/const_value) | <font color="ForestGreen">Yes</font> | [bfs01.cpp](./include/graph/bfs01)<br>[dijkstra.cpp](./include/graph/dijkstra)<br>[max_flow.cpp](./include/graph/max_flow) etc... |
+| [float_tolerance.hpp](./include/template/float_tolerance) | <font color="ForestGreen">Yes</font> | [Geometry.hpp](./include/geometry/Geometry) |
 | [includes.hpp](./include/template/includes) | <font color="ForestGreen">Yes</font> | [bipartite_matching.cpp](./include/graph/bipartite_matching)<br>[scc.cpp](./include/graph/scc)<br>[eratosthenes.cpp](./include/math/eratosthenes) etc... |
 | [macros.hpp](./include/template/macros) | <font color="Red">No</font> |  |
 | [misc.hpp](./include/template/misc) | <font color="Red">No</font> |  |
@@ -85,7 +86,7 @@
 | [convex.cpp](./include/geometry/convex) | <font color="ForestGreen">Yes</font> | [2159.cpp](./src/2159)<br>[CGL_4_B.cpp](./src/CGL_4_B)<br>[CGL_4_C.cpp](./src/CGL_4_C) |
 | [distance.cpp](./include/geometry/distance) | <font color="ForestGreen">Yes</font> | [CGL_2_D.cpp](./src/CGL_2_D)<br>[circle_intersect.cpp](./include/geometry/circle_intersect) |
 | [intersect.cpp](./include/geometry/intersect) | <font color="ForestGreen">Yes</font> | [CGL_1_A.cpp](./src/CGL_1_A)<br>[CGL_2_A.cpp](./src/CGL_2_A)<br>[CGL_2_B.cpp](./src/CGL_2_B) etc... |
-| [polygon.cpp](./include/geometry/polygon) | <font color="ForestGreen">Yes</font> | [CGL_3_A.cpp](./src/CGL_3_A)<br>[CGL_3_C.cpp](./src/CGL_3_C)<br>[CGL_4_C.cpp](./src/CGL_4_C) |
+| [polygon.cpp](./include/geometry/polygon) | <font color="ForestGreen">Yes</font> | [CGL_3_A.cpp](./src/CGL_3_A)<br>[CGL_3_C.cpp](./src/CGL_3_C)<br>[convex.cpp](./include/geometry/convex) |
 | [solid_geometry.cpp](./include/geometry/solid_geometry) | <font color="Red">No</font> |  |
 
 ## Others

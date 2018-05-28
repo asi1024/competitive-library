@@ -9,20 +9,21 @@
 {% highlight cpp %}
 #include "../include/geometry/intersect.cpp"
 
-Point input() {
-  ld x, y;
-  scanf("%Lf%Lf", &x, &y);
-  return Point(x, y);
-}
+using namespace std;
+
+using P = Point<float11>;
+using L = Line<float11>;
 
 int main() {
+  cout << setprecision(12) << fixed;
   int q;
-  scanf("%d", &q);
+  cin >> q;
   while (q--) {
-    Line l1(input(), input());
-    Line l2(input(), input());
-    Point res = is_ll(l1, l2);
-    printf("%.10Lf %.10Lf\n", real(res), imag(res));
+    P a, b, c, d;
+    cin >> a >> b >> c >> d;
+    L l1(a, b), l2(c, d);
+    P res = is_ll(l1, l2);
+    cout << res << endl;
   }
   return 0;
 }

@@ -1,44 +1,40 @@
 #include "../include/geometry/convex.cpp"
 
-Point input() {
-  ld x, y;
-  scanf("%Lf%Lf", &x, &y);
-  return Point(x, y);
-}
+using namespace std;
 
-ld f(Point x) { return real(x) + imag(x) * 1.2358132134; }
+using P = Point<float11>;
+using L = Line<float11>;
+using G = Polygon<float11>;
 
 int main() {
   int n;
-  scanf("%d", &n);
-  Polygon poly;
-  vector<ld> vec;
+  cin >> n;
+  vector<P> poly, sorted;
   for (int i = 0; i < n; ++i) {
-    Point p = input();
+    P p;
+    cin >> p;
     poly.push_back(p);
-    vec.push_back(f(p));
+    sorted.push_back(p);
   }
-  Polygon ch = convex_hull(poly);
+  G ch = convex_hull(poly);
   const int m = ch.size();
-  Polygon g;
+  G g;
   for (int i = 0; i < m; ++i) {
-    g.push_back(at(ch, i));
-    g.push_back((at(ch, i) + at(ch, i + 1)) / Point(2, 0));
+    g.push_back(ch[i]);
+    g.push_back(average(ch[i], ch[i + 1]));
   }
-
-  sort(begin(vec), end(vec));
+  sort(begin(sorted), end(sorted));
   bool res = false;
   for (int i = 0; i < m; ++i) {
     bool ok = true;
-    Line l = Line(at(g, i), at(g, i + m));
-    if (abs(l.a - l.b) < eps) continue;
+    L l(g[i], g[i + m]);
+    if (abs(l.a - l.b) <= 0) continue;
     int cnt = 0;
     for (int j = 0; j < n; ++j) {
-      Point p = at(poly, j);
-      ld x = f(proj(l, p) * Point(2, 0) - p);
-      ld y = *lower_bound(begin(vec), end(vec), x - eps);
-      if (abs(x - y) > eps) ok = false;
-      if (abs(x - f(p)) < eps) ++cnt;
+      const P p = poly[j];
+      const P x = average(proj(l, p), p, 2, -1);
+      if (!binary_search(begin(sorted), end(sorted), x)) ok = false;
+      if (x == p) ++cnt;
     }
     if (ok && cnt <= 2) res = true;
   }

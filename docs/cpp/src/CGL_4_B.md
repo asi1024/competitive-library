@@ -9,20 +9,21 @@
 {% highlight cpp %}
 #include "../include/geometry/convex.cpp"
 
-Point input() {
-  ld x, y;
-  scanf("%Lf%Lf", &x, &y);
-  return Point(x, y);
-}
+using namespace std;
+
+using P = Point<float11>;
 
 int main() {
+  cout << setprecision(12) << fixed;
   int n;
-  scanf("%d", &n);
-  Polygon poly;
+  cin >> n;
+  std::vector<P> ps;
   for (int i = 0; i < n; ++i) {
-    poly.push_back(input());
+    P p;
+    cin >> p;
+    ps.push_back(p);
   }
-  printf("%.10Lf\n", max_distance(poly));
+  cout << max_distance(ps) << endl;
 }
 {% endhighlight %}
 
