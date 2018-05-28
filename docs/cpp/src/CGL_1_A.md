@@ -24,7 +24,7 @@ int main() {
   while (q--) {
     cin >> p;
     P res = proj(l, p);
-    cout << res.x() << " " << res.y() << endl;
+    cout << res << endl;
   }
 }
 {% endhighlight %}

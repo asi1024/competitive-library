@@ -77,7 +77,8 @@ bool isnan(float_torelance<float_type, log_eps> &x) {
 }
 
 template <typename float_type, const int log_eps>
-float_torelance<float_type, log_eps> abs(float_torelance<float_type, log_eps> &x) {
+float_torelance<float_type, log_eps>
+abs(float_torelance<float_type, log_eps> &x) {
   return float_torelance<float_type, log_eps>(std::abs(x.x));
 }
 
