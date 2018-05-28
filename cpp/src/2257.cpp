@@ -1,6 +1,8 @@
 #include "../include/math/mod.cpp"
 #include "../include/string/aho_corasick.cpp"
 
+using namespace std;
+
 #define REP(i, n) for (int i = 0; i < (int)(n); i++)
 
 map<string, int> dict_memo;
