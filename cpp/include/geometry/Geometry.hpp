@@ -63,7 +63,6 @@ real_t cross(const Vector<real_t> &a, const Vector<real_t> &b) {
   return std::imag(std::conj(a) * b);
 }
 
-// counter clockwise
 template <typename real_t>
 int ccw(const Point<real_t> &a, const Point<real_t> &b,
         const Point<real_t> &c) {
@@ -74,11 +73,3 @@ int ccw(const Point<real_t> &a, const Point<real_t> &b,
   if (norm(base) < norm(target)) return -2;  // a--b--c on line
   return 0;                                  // a--c--b on line
 }
-
-// std::vector<Point> unique(std::vector<Point> ps) {
-//   std::sort(std::begin(ps), std::end(ps), comp);
-//   std::vector<Point> res;
-//   for (Point p : ps)
-//     if (res.empty() || std::abs(res.back() - p) != 0) res.push_back(p);
-//   return res;
-// }
