@@ -9,6 +9,7 @@ public:
   float_torelance() : x(0) { ; }
   float_torelance(float_type x_) : x(x_) { ; }
   explicit operator float_type() { return x; }
+  template <typename cast_to> explicit operator cast_to() { return cast_to(x); }
   float_torelance operator-() const { return -x; }
   float_torelance operator+(const float_torelance &r) const { return x + r.x; }
   float_torelance operator-(const float_torelance &r) const { return x - r.x; }
@@ -100,6 +101,22 @@ bool isinf(const float_torelance<float_type, inv_eps> &x) {
 template <typename float_type, const long long inv_eps>
 bool isnan(const float_torelance<float_type, inv_eps> &x) {
   return std::isnan(x.x);
+}
+
+template <typename float_type, const long long inv_eps>
+bool fabs(const float_torelance<float_type, inv_eps> &x) {
+  return std::fabs(x.x);
+}
+
+template <typename float_type, const long long inv_eps>
+bool hypot(const float_torelance<float_type, inv_eps> &x,
+           const float_torelance<float_type, inv_eps> &y) {
+  return std::hypot(x.x, y.x);
+}
+
+template <typename float_type, const long long inv_eps>
+bool scalbn(const float_torelance<float_type, inv_eps> &x, const int exp) {
+  return std::scalbn(x.x, exp);
 }
 
 template <typename float_type, const long long inv_eps>
