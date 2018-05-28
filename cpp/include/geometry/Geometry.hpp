@@ -32,10 +32,11 @@ public:
   }
 };
 
-template <typename real_t>
+template <typename real_t, typename ratio_t = real_t>
 Point<real_t> average(const Point<real_t> &p1, const Point<real_t> &p2,
-                      const real_t &ratio1 = 1.0, const real_t &ratio2 = 1.0) {
-  return (p1.p * ratio1 + p2.p * ratio2) / (ratio1 + ratio2);
+                      const ratio_t &r1 = 1, const ratio_t &r2 = 1) {
+  const real_t ratio1 = r1, ratio2 = r2;
+  return Point<real_t>((p1.p * ratio1 + p2.p * ratio2) / (ratio1 + ratio2));
 }
 
 template <typename real_t>
