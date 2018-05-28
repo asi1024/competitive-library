@@ -6,6 +6,12 @@
 
 template <typename real_t> using Vector = std::complex<real_t>;
 
+template <typename float_type, const long long inv_eps>
+float_tolerance<float_type, inv_eps>
+abs(const Vector<float_tolerance<float_type, inv_eps>> &x) {
+  return sqrt(std::norm(x));
+}
+
 template <typename real_t> class Point {
 public:
   std::complex<real_t> p;

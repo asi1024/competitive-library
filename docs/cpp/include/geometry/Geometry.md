@@ -8,10 +8,16 @@
 
 {% highlight cpp %}
 #include "../template/const_value.hpp"
-#include "../template/float_torelance.hpp"
+#include "../template/float_tolerance.hpp"
 #include "../template/includes.hpp"
 
 template <typename real_t> using Vector = std::complex<real_t>;
+
+template <typename float_type, const long long inv_eps>
+float_tolerance<float_type, inv_eps>
+abs(const Vector<float_tolerance<float_type, inv_eps>> &x) {
+  return sqrt(std::norm(x));
+}
 
 template <typename real_t> class Point {
 public:
@@ -85,7 +91,7 @@ int ccw(const Point<real_t> &a, const Point<real_t> &b,
 ### Includes
 
 - [const_value.hpp](../template/const_value)
-- [float_torelance.hpp](../template/float_torelance)
+- [float_tolerance.hpp](../template/float_tolerance)
 - [includes.hpp](../template/includes)
 
 [Back](../..)
