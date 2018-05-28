@@ -1,7 +1,8 @@
 #include "includes.hpp"
 
-template <typename float_type, const float_type &eps> class float_torelance {
+template <typename float_type, const int log_eps> class float_torelance {
 public:
+  static constexpr float_type eps = std::pow(float_type(10), log_eps);
   float_type x;
   float_torelance() : x(0) { ; }
   float_torelance(float_type x_) : x(x_) { ; }
@@ -70,42 +71,41 @@ public:
   }
 };
 
-template <typename float_type, const float_type &eps>
-bool isnan(float_torelance<float_type, eps> &x) {
+template <typename float_type, const int log_eps>
+bool isnan(float_torelance<float_type, log_eps> &x) {
   return std::isnan(x.x);
 }
 
-template <typename float_type, const float_type &eps>
-float_torelance<float_type, eps> abs(float_torelance<float_type, eps> &x) {
-  return float_torelance<float_type, eps>(std::abs(x.x));
+template <typename float_type, const int log_eps>
+float_torelance<float_type, log_eps> abs(float_torelance<float_type, log_eps> &x) {
+  return float_torelance<float_type, log_eps>(std::abs(x.x));
 }
 
-template <typename float_type, const float_type &eps>
-float_torelance<float_type, eps>
-sqrt(const float_torelance<float_type, eps> &x) {
-  return float_torelance<float_type, eps>(std::sqrt(x.x));
+template <typename float_type, const int log_eps>
+float_torelance<float_type, log_eps>
+sqrt(const float_torelance<float_type, log_eps> &x) {
+  return float_torelance<float_type, log_eps>(std::sqrt(x.x));
 }
 
-template <typename float_type, const float_type &eps>
-float_torelance<float_type, eps>
-atan2(const float_torelance<float_type, eps> &x,
-      const float_torelance<float_type, eps> &y) {
-  return float_torelance<float_type, eps>(std::atan2(x.x, y.x));
+template <typename float_type, const int log_eps>
+float_torelance<float_type, log_eps>
+atan2(const float_torelance<float_type, log_eps> &x,
+      const float_torelance<float_type, log_eps> &y) {
+  return float_torelance<float_type, log_eps>(std::atan2(x.x, y.x));
 }
 
-template <typename float_type, const float_type &eps>
+template <typename float_type, const int log_eps>
 std::istream &operator>>(std::istream &is,
-                         float_torelance<float_type, eps> &x) {
+                         float_torelance<float_type, log_eps> &x) {
   is >> x.x;
   return is;
 }
 
-template <typename float_type, const float_type &eps>
+template <typename float_type, const int log_eps>
 std::ostream &operator<<(std::ostream &os,
-                         const float_torelance<float_type, eps> &x) {
+                         const float_torelance<float_type, log_eps> &x) {
   os << x.x;
   return os;
 }
 
-constexpr long double epsilon11 = 1e-11;
-using float11 = float_torelance<long double, epsilon11>;
+using float11 = float_torelance<long double, -11>;
