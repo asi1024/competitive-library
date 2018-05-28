@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../util.hpp"
+#include "../template/includes.hpp"
 
 template <typename State> struct AhoCorasick {
   using string_t = typename State::string_t;
@@ -22,7 +22,7 @@ template <typename State> struct AhoCorasick {
       pma[t].accept.push_back(lens.size());
       lens.push_back(s.size());
     }
-    queue<int> que;
+    std::queue<int> que;
     for (char_t c = State::min_char; c <= State::max_char; c++) {
       if (pma[0].is_set(c)) {
         pma[pma[0][c]].fail = 0;
@@ -75,7 +75,7 @@ struct State {
   std::array<int, max_char - min_char + 1> edge;
   int fail;
   std::vector<int> accept;
-  State() : fail(0), accept(0) { fill(begin(edge), end(edge), -1); }
+  State() : fail(0), accept(0) { std::fill(begin(edge), end(edge), -1); }
   int &operator[](char_t c) { return edge[c - 'a']; }
   const int &operator[](char_t c) const { return edge[c - 'a']; }
   bool is_set(char_t c) { return edge[c - 'a'] >= 0; }
