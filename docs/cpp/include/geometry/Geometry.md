@@ -24,7 +24,8 @@ public:
   Point operator-(const Vector<real_t> &r) const { return Point(p - r); }
   real_t x() const { return p.real(); }
   real_t y() const { return p.imag(); }
-  bool operator==(const Point &r) { return abs(p == r.p) <= 0; }
+  bool operator==(const Point &r) const { return abs(p - r.p) <= 0; }
+  bool operator!=(const Point &r) const { return abs(p - r.p) > 0; }
   bool operator<(const Point &r) const {
     return x() < r.x() || (x() <= r.x() && y() < r.y());
   }
@@ -39,10 +40,11 @@ public:
   }
 };
 
-template <typename real_t>
+template <typename real_t, typename ratio_t = real_t>
 Point<real_t> average(const Point<real_t> &p1, const Point<real_t> &p2,
-                      const real_t &ratio1 = 1.0, const real_t &ratio2 = 1.0) {
-  return (p1.p * ratio1 + p2.p * ratio2) / (ratio1 + ratio2);
+                      const ratio_t &r1 = 1, const ratio_t &r2 = 1) {
+  const real_t ratio1 = r1, ratio2 = r2;
+  return Point<real_t>((p1.p * ratio1 + p2.p * ratio2) / (ratio1 + ratio2));
 }
 
 template <typename real_t>

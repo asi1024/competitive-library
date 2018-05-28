@@ -57,7 +57,15 @@ void push_back(const point_t &p);
 
 ---------------------------------------
 
-### [6] size
+### [6] resize
+{% highlight cpp %}
+void resize(int n);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [7] size
 {% highlight cpp %}
 int size() const;
 {% endhighlight %}
@@ -84,6 +92,7 @@ public:
   point_t &front() { return g.front(); }
   point_t &back() { return g.back(); }
   int size() const { return g.size(); }
+  void resize(int n) { g.resize(n); }
   point_t &operator[](int i) {
     i %= size();
     return g[i < 0 ? i + size() : i];

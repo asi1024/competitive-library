@@ -86,7 +86,7 @@
 | [convex.cpp](./include/geometry/convex) | <font color="ForestGreen">Yes</font> | [2159.cpp](./src/2159)<br>[CGL_4_B.cpp](./src/CGL_4_B)<br>[CGL_4_C.cpp](./src/CGL_4_C) |
 | [distance.cpp](./include/geometry/distance) | <font color="ForestGreen">Yes</font> | [CGL_2_D.cpp](./src/CGL_2_D)<br>[circle_intersect.cpp](./include/geometry/circle_intersect) |
 | [intersect.cpp](./include/geometry/intersect) | <font color="ForestGreen">Yes</font> | [CGL_1_A.cpp](./src/CGL_1_A)<br>[CGL_2_A.cpp](./src/CGL_2_A)<br>[CGL_2_B.cpp](./src/CGL_2_B) etc... |
-| [polygon.cpp](./include/geometry/polygon) | <font color="ForestGreen">Yes</font> | [CGL_3_A.cpp](./src/CGL_3_A)<br>[CGL_3_C.cpp](./src/CGL_3_C)<br>[CGL_4_C.cpp](./src/CGL_4_C) |
+| [polygon.cpp](./include/geometry/polygon) | <font color="ForestGreen">Yes</font> | [CGL_3_A.cpp](./src/CGL_3_A)<br>[CGL_3_C.cpp](./src/CGL_3_C)<br>[convex.cpp](./include/geometry/convex) |
 | [solid_geometry.cpp](./include/geometry/solid_geometry) | <font color="Red">No</font> |  |
 
 ## Others
