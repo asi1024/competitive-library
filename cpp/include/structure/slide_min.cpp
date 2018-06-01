@@ -1,7 +1,7 @@
-#include "../util.hpp"
+#include "../template/includes.hpp"
 
 template <typename T> struct SlideMin {
-  deque<pair<int, T>> deq;
+  std::deque<std::pair<int, T>> deq;
   int l, r;
   SlideMin() : l(0), r(0) { ; }
   void push(T val) {
