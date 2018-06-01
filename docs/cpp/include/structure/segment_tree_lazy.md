@@ -51,15 +51,15 @@ operator()(const RangeUpdate &) const;
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/segment_tree_lazy.cpp)
 
 {% highlight cpp %}
-#include "../util.hpp"
+#include "../template/includes.hpp"
 
 template <typename Update> class SegmentTreeLazy {
   const int n;
   using T = typename Update::type;
   using Monoid = typename Update::Monoid;
-  vector<T> data;
-  vector<Update> lazy;
-  vector<bool> flag;
+  std::vector<T> data;
+  std::vector<Update> lazy;
+  std::vector<bool> flag;
   void lazyset(int node, const Update &f) {
     if (node < n) {
       if (flag[node]) {
@@ -123,7 +123,7 @@ public:
 struct RMQ {
   using type = int;
   static type id() { return INT_MAX; }
-  static type op(const type &l, const type &r) { return min(l, r); }
+  static type op(const type &l, const type &r) { return std::min(l, r); }
 };
 
 struct RangeUpdate {
@@ -139,6 +139,6 @@ struct RangeUpdate {
 
 ### Includes
 
-- [util.hpp](../util)
+- [includes.hpp](../template/includes)
 
 [Back](../..)

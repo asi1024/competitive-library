@@ -1,5 +1,8 @@
 #include "../include/structure/heavy_light_decomposition.cpp"
 #include "../include/structure/segment_tree_lazy.cpp"
+#include "../include/template/typedef.hpp"
+
+using namespace std;
 
 struct Edge {
   int to;
