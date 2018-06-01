@@ -45,7 +45,7 @@ real_t max_distance(const std::vector<Point<real_t>> &ps) {
   int a = 0, b = 1;
   real_t res = abs(g[0] - g[1]);
   while (a < (int)g.size()) {
-    if (arg((g[a + 1] - g[a]) / (g[b] - g[b + 1])) > 0)
+    if (arg((g[a + 1] - g[a]) * std::conj(g[b] - g[b + 1])) > 0)
       ++b;
     else
       ++a;
