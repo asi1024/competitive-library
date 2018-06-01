@@ -4,8 +4,8 @@
 
 template <typename DataStructure> struct HeavyLightDecomposition {
   using T = typename DataStructure::value_type;
-  using Update = typename DataStructure::update_type;
-  using Monoid = typename DataStructure::monoid_type;
+  using update_type = typename DataStructure::update_type;
+  using Monoid = typename DataStructure::Monoid;
   struct Chain {
     int depth;
     std::pair<int, int> parent;              // chain number, index
@@ -39,14 +39,14 @@ template <typename DataStructure> struct HeavyLightDecomposition {
     decomposition(g, start, start, 0, 0, 0, size, init);
   }
 
-  void update(int i, const Update &val) {
+  void update(int i, const update_type &val) {
     std::pair<int, int> chain_id = mapto[i];
     const int n = chains[chain_id.first].mapfrom.size();
     chains[chain_id.first].up.update(n - i - 1, val);
     chains[chain_id.first].down.update(i, val);
   }
 
-  void update(int s, int t, const Update &update) {
+  void update(int s, int t, const update_type &update) {
     std::pair<int, int> chain_s = mapto[s], chain_t = mapto[t];
     while (chain_s.first != chain_t.first) {
       if (chains[chain_s.first].depth > chains[chain_t.first].depth) {

@@ -3,11 +3,14 @@
 #include "../template/includes.hpp"
 
 template <typename Struct> class SegmentTreeLazy {
-  const int n;
+public:
   using Monoid = typename Struct::Monoid;
   using Update = typename Struct::Update;
   using value_type = typename Struct::value_type;
   using update_type = typename Struct::update_type;
+
+private:
+  const int n;
   std::vector<value_type> data;
   std::vector<update_type> lazy;
   std::vector<bool> flag;
