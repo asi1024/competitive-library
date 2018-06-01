@@ -17,57 +17,14 @@ public:
   explicit operator float_type() { return x; }
   template <typename cast_to> explicit operator cast_to() { return cast_to(x); }
   float_tolerance operator-() const { return -x; }
-  float_tolerance operator+(const float_tolerance &r) const { return x + r.x; }
-  float_tolerance operator-(const float_tolerance &r) const { return x - r.x; }
-  float_tolerance operator*(const float_tolerance &r) const { return x * r.x; }
-  float_tolerance operator/(const float_tolerance &r) const { return x / r.x; }
-  float_tolerance &operator+=(const float_tolerance &r) {
-    x += r.x;
-    return *this;
-  }
-  float_tolerance &operator-=(const float_tolerance &r) {
-    x -= r.x;
-    return *this;
-  }
-  float_tolerance &operator*=(const float_tolerance &r) {
-    x *= r.x;
-    return *this;
-  }
-  float_tolerance &operator/=(const float_tolerance &r) {
-    x /= r.x;
-    return *this;
-  }
-  bool operator<=(const float_tolerance &r) const { return x <= r.x + eps; }
-  bool operator<(const float_tolerance &r) const { return x < r.x - eps; }
-  bool operator>=(const float_tolerance &r) const { return x >= r.x - eps; }
-  bool operator>(const float_tolerance &r) const { return x > r.x + eps; }
-  bool operator==(const float_tolerance &r) const {
-    return x - r.x < eps && r.x - x < eps;
-  }
-  bool operator!=(const float_tolerance &r) const {
-    return x - r.x > eps || r.x - x > eps;
-  }
-
   float_tolerance operator+(const float_type &r) const { return x + r; }
   float_tolerance operator-(const float_type &r) const { return x - r; }
   float_tolerance operator*(const float_type &r) const { return x * r; }
   float_tolerance operator/(const float_type &r) const { return x / r; }
-  float_tolerance &operator+=(const float_type &r) {
-    x += r;
-    return *this;
-  }
-  float_tolerance &operator-=(const float_type &r) {
-    x -= r;
-    return *this;
-  }
-  float_tolerance &operator*=(const float_type &r) {
-    x *= r;
-    return *this;
-  }
-  float_tolerance &operator/=(const float_type &r) {
-    x /= r;
-    return *this;
-  }
+  float_tolerance &operator+=(const float_type &r) { return x += r, *this; }
+  float_tolerance &operator-=(const float_type &r) { return x -= r, *this; }
+  float_tolerance &operator*=(const float_type &r) { return x *= r, *this; }
+  float_tolerance &operator/=(const float_type &r) { return x /= r, *this; }
   bool operator<=(const float_type &r) const { return x <= r + eps; }
   bool operator<(const float_type &r) const { return x < r - eps; }
   bool operator>=(const float_type &r) const { return x >= r - eps; }
@@ -78,6 +35,20 @@ public:
   bool operator!=(const float_type &r) const {
     return x - r > eps || r - x > eps;
   }
+  float_tolerance operator+(const float_tolerance &r) const { return x + r.x; }
+  float_tolerance operator-(const float_tolerance &r) const { return x - r.x; }
+  float_tolerance operator*(const float_tolerance &r) const { return x * r.x; }
+  float_tolerance operator/(const float_tolerance &r) const { return x / r.x; }
+  float_tolerance &operator+=(const float_tolerance &r) { return *this += r.x; }
+  float_tolerance &operator-=(const float_tolerance &r) { return *this -= r.x; }
+  float_tolerance &operator*=(const float_tolerance &r) { return *this *= r.x; }
+  float_tolerance &operator/=(const float_tolerance &r) { return *this /= r.x; }
+  bool operator<=(const float_tolerance &r) const { return *this <= r.x; }
+  bool operator<(const float_tolerance &r) const { return *this < r.x; }
+  bool operator>=(const float_tolerance &r) const { return *this >= r.x; }
+  bool operator>(const float_tolerance &r) const { return *this > r.x; }
+  bool operator==(const float_tolerance &r) const { return *this == r.x; }
+  bool operator!=(const float_tolerance &r) const { return *this != r.x; }
 };
 
 template <typename U, typename T>
