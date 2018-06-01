@@ -9,6 +9,7 @@
 {% highlight cpp %}
 #include "../include/geometry/circle_intersect.cpp"
 #include "../include/geometry/circle_tangent.cpp"
+#include "../include/template/initialize.cpp"
 
 using namespace std;
 
@@ -17,7 +18,6 @@ using L = Line<float11>;
 using C = Circle<float11>;
 
 int main() {
-  cout << setprecision(12) << fixed;
   P p, cp;
   float11 r;
   cin >> p >> cp >> r;
@@ -36,5 +36,6 @@ int main() {
 
 - [circle_intersect.cpp](../include/geometry/circle_intersect)
 - [circle_tangent.cpp](../include/geometry/circle_tangent)
+- [initialize.cpp](../include/template/initialize)
 
 [Back](..)

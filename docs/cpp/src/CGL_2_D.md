@@ -8,6 +8,7 @@
 
 {% highlight cpp %}
 #include "../include/geometry/distance.cpp"
+#include "../include/template/initialize.cpp"
 
 using namespace std;
 
@@ -15,7 +16,6 @@ using P = Point<float11>;
 using S = Segment<float11>;
 
 int main() {
-  cout << setprecision(11) << fixed;
   int q;
   cin >> q;
   while (q--) {
@@ -31,5 +31,6 @@ int main() {
 ### Includes
 
 - [distance.cpp](../include/geometry/distance)
+- [initialize.cpp](../include/template/initialize)
 
 [Back](..)

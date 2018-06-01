@@ -8,6 +8,7 @@
 
 {% highlight cpp %}
 #include "../include/geometry/convex.cpp"
+#include "../include/template/initialize.cpp"
 
 using namespace std;
 
@@ -16,7 +17,6 @@ using L = Line<float11>;
 using G = Polygon<float11>;
 
 int main() {
-  cout << setprecision(12) << fixed;
   int n, q;
   cin >> n;
   G poly;
@@ -44,5 +44,6 @@ int main() {
 ### Includes
 
 - [convex.cpp](../include/geometry/convex)
+- [initialize.cpp](../include/template/initialize)
 
 [Back](..)

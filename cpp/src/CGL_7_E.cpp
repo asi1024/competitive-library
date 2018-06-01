@@ -1,4 +1,5 @@
 #include "../include/geometry/circle_intersect.cpp"
+#include "../include/template/initialize.cpp"
 
 using namespace std;
 
@@ -6,7 +7,6 @@ using P = Point<float11>;
 using C = Circle<float11>;
 
 int main() {
-  cout << setprecision(12) << fixed;
   P p1, p2;
   float11 r1, r2;
   cin >> p1 >> r1 >> p2 >> r2;
