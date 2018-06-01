@@ -2,24 +2,26 @@
 
 #include "../template/includes.hpp"
 
-template <typename Update> class SegmentTreeLazy {
+template <typename Struct> class SegmentTreeLazy {
   const int n;
-  using T = typename Update::type;
-  using Monoid = typename Update::Monoid;
-  std::vector<T> data;
-  std::vector<Update> lazy;
+  using Monoid = typename Struct::Monoid;
+  using Update = typename Struct::Update;
+  using value_type = typename Struct::value_type;
+  using update_type = typename Struct::update_type;
+  std::vector<value_type> data;
+  std::vector<update_type> lazy;
   std::vector<bool> flag;
-  void lazyset(int node, const Update &f) {
+  void lazyset(int node, const update_type &update) {
     if (node < n) {
       if (flag[node]) {
-        lazy[node] = f(lazy[node]);
+        lazy[node] = Update::op(update, lazy[node]);
       }
       else {
-        lazy[node] = f;
+        lazy[node] = update;
         flag[node] = true;
       }
     }
-    data[node] = f(data[node]);
+    data[node] = Struct::evaluate(update, data[node]);
   }
   void evaluate(int node) {
     if (!flag[node]) return;
@@ -27,60 +29,44 @@ template <typename Update> class SegmentTreeLazy {
     lazyset(node * 2 + 0, lazy[node]);
     lazyset(node * 2 + 1, lazy[node]);
   }
-  void update_sub(int l, int r, int node, int lb, int ub, const Update &f) {
+  void update_sub(int l, int r, int node, int lb, int ub,
+                  const update_type &update) {
     if (ub <= l || r <= lb) {
       return;
     }
     if (l <= lb && ub <= r) {
-      lazyset(node, f);
+      lazyset(node, update);
       return;
     }
     evaluate(node);
     const int mid = (lb + ub) / 2;
-    update_sub(l, r, node * 2 + 0, lb, mid, f);
-    update_sub(l, r, node * 2 + 1, mid, ub, f);
+    update_sub(l, r, node * 2 + 0, lb, mid, update);
+    update_sub(l, r, node * 2 + 1, mid, ub, update);
     data[node] = Monoid::op(data[node * 2 + 0], data[node * 2 + 1]);
   }
-  T query_sub(int l, int r, int node, int lb, int ub) {
+  value_type query_sub(int l, int r, int node, int lb, int ub) {
     if (ub <= l || r <= lb) return Monoid::id();
     if (l <= lb && ub <= r) {
       return data[node];
     }
     evaluate(node);
     const int mid = (lb + ub) / 2;
-    T lval = query_sub(l, r, node * 2 + 0, lb, mid);
-    T rval = query_sub(l, r, node * 2 + 1, mid, ub);
+    value_type lval = query_sub(l, r, node * 2 + 0, lb, mid);
+    value_type rval = query_sub(l, r, node * 2 + 1, mid, ub);
     return Monoid::op(lval, rval);
   }
   int expand(int m) const { return m == 1 ? m : expand((m + 1) / 2) * 2; }
 
 public:
-  SegmentTreeLazy(int count, const T &init = Monoid::id()) :
+  SegmentTreeLazy(int count, const value_type &init = Monoid::id()) :
     n(expand(count)), data(n * 2), lazy(n), flag(n, false) {
     fill(begin(data) + n, end(data), init);
     for (int i = n - 1; i >= 1; i--) {
       data[i] = Monoid::op(data[i * 2 + 0], data[i * 2 + 1]);
     }
   };
-  void update(int l, int r, const Update &f) { update_sub(l, r, 1, 0, n, f); }
-  T query(int l, int r) { return query_sub(l, r, 1, 0, n); }
-  using value_type = T;
-  using monoid_type = Monoid;
-  using update_type = Update;
-};
-
-struct RMQ {
-  using type = int;
-  static type id() { return INT_MAX; }
-  static type op(const type &l, const type &r) { return std::min(l, r); }
-};
-
-struct RangeUpdate {
-  using Monoid = RMQ;
-  using type = RMQ::type;
-  int val;
-  RangeUpdate() : val(0) { ; }
-  RangeUpdate(int v) : val(v) { ; }
-  type operator()(const type &) const { return val; }
-  RangeUpdate operator()(const RangeUpdate &) const { return *this; }
+  void update(int l, int r, const update_type &f) {
+    update_sub(l, r, 1, 0, n, f);
+  }
+  value_type query(int l, int r) { return query_sub(l, r, 1, 0, n); }
 };
