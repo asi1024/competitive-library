@@ -1,4 +1,5 @@
 #include "../include/geometry/polygon.cpp"
+#include "../include/template/initialize.cpp"
 
 using namespace std;
 
@@ -6,7 +7,6 @@ using P = Point<float11>;
 using G = Polygon<float11>;
 
 int main() {
-  cout << setprecision(12) << fixed;
   int n;
   cin >> n;
   G poly;
