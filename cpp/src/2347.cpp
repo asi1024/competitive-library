@@ -1,5 +1,5 @@
 #include "../include/math/matrix.cpp"
-#include "../include/math/mod.cpp"
+#include "../include/types/mod.cpp"
 
 #define REP(i, n) for (int i = 0; i < (n); ++i)
 

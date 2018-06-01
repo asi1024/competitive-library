@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../template/const_value.hpp"
-#include "../template/float_tolerance.hpp"
 #include "../template/includes.hpp"
+#include "../types/float_tolerance.cpp"
 
 template <typename real_t> using Vector = std::complex<real_t>;
 

@@ -1,5 +1,5 @@
-#include "../include/math/mod.cpp"
 #include "../include/string/aho_corasick.cpp"
+#include "../include/types/mod.cpp"
 
 using namespace std;
 

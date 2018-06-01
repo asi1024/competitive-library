@@ -17,7 +17,7 @@ std::vector<Modulo<mod, true> > convolution(std::vector< Modulo< mod, true >> a,
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/fmt.cpp)
 
 {% highlight cpp %}
-#include "mod.cpp"
+#include "../types/mod.cpp"
 
 template <int prim_root, int mod, int sign>
 void FMT(std::vector<Modulo<mod, true>> &a) {
@@ -66,6 +66,6 @@ std::vector<Modulo<mod, true>> convolution(std::vector<Modulo<mod, true>> a,
 
 ### Includes
 
-- [mod.cpp](mod)
+- [mod.cpp](../types/mod)
 
 [Back](../..)

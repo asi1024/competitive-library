@@ -1,5 +1,6 @@
 {
     "template":  "Templates",
+    "types":     "Types",
     "structure": "Data Structures",
     "graph":     "Graph Algorithms",
     "math":      "Numerical Algorithms",

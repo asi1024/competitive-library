@@ -1,6 +1,6 @@
 #pragma once
 
-#include "mod.cpp"
+#include "../types/mod.cpp"
 
 template <int prim_root, int mod, int sign>
 void FMT(std::vector<Modulo<mod, true>> &a) {
