@@ -11,7 +11,7 @@
 | [macros.hpp](./include/template/macros) | <font color="Red">No</font> |  |
 | [misc.hpp](./include/template/misc) | <font color="Red">No</font> |  |
 | [range.hpp](./include/template/range) | <font color="ForestGreen">Yes</font> | [1351.cpp](./src/1351) |
-| [typedef.hpp](./include/template/typedef) | <font color="ForestGreen">Yes</font> | [2559.cpp](./src/2559)<br>[DSL_2_A.1.cpp](./src/DSL_2_A.1)<br>[DSL_2_G.cpp](./src/DSL_2_G) etc... |
+| [typedef.hpp](./include/template/typedef) | <font color="ForestGreen">Yes</font> | [2450.cpp](./src/2450)<br>[2559.cpp](./src/2559)<br>[DSL_2_A.1.cpp](./src/DSL_2_A.1) etc... |
 | [cin.cpp](./include/template/cin) | <font color="Red">No</font> |  |
 | [cout.cpp](./include/template/cout) | <font color="Red">No</font> |  |
 | [template.cpp](./include/template/template) | <font color="Red">No</font> |  |
@@ -20,8 +20,8 @@
 
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:-------------|
-| [monoid.hpp](./include/structure/monoid) | <font color="ForestGreen">Yes</font> | [suffix_array.cpp](./include/string/suffix_array) |
-| [semi_group.hpp](./include/structure/semi_group) | <font color="Red">No</font> |  |
+| [monoid.hpp](./include/structure/monoid) | <font color="ForestGreen">Yes</font> | [DSL_2_F.cpp](./src/DSL_2_F)<br>[suffix_array.cpp](./include/string/suffix_array) |
+| [semi_group.hpp](./include/structure/semi_group) | <font color="ForestGreen">Yes</font> | [2450.cpp](./src/2450)<br>[DSL_2_F.cpp](./src/DSL_2_F) |
 | [convex_hull_trick.cpp](./include/structure/convex_hull_trick) | <font color="ForestGreen">Yes</font> | [2725.cpp](./src/2725) |
 | [fenwick_tree.cpp](./include/structure/fenwick_tree) | <font color="ForestGreen">Yes</font> | [DSL_2_B.cpp](./src/DSL_2_B)<br>[rars.cpp](./include/structure/rars) |
 | [heavy_light_decomposition.cpp](./include/structure/heavy_light_decomposition) | <font color="ForestGreen">Yes</font> | [2450.cpp](./src/2450) |

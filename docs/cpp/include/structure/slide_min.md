@@ -47,10 +47,10 @@ int size() const;
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/slide_min.cpp)
 
 {% highlight cpp %}
-#include "../util.hpp"
+#include "../template/includes.hpp"
 
 template <typename T> struct SlideMin {
-  deque<pair<int, T>> deq;
+  std::deque<std::pair<int, T>> deq;
   int l, r;
   SlideMin() : l(0), r(0) { ; }
   void push(T val) {
@@ -70,6 +70,6 @@ template <typename T> struct SlideMin {
 
 ### Includes
 
-- [util.hpp](../util)
+- [includes.hpp](../template/includes)
 
 [Back](../..)

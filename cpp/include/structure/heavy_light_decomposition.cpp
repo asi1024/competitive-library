@@ -3,16 +3,16 @@
 #include "../template/includes.hpp"
 
 template <typename DataStructure> struct HeavyLightDecomposition {
-  using T = typename DataStructure::value_type;
-  using Update = typename DataStructure::update_type;
-  using Monoid = typename DataStructure::monoid_type;
+  using value_type = typename DataStructure::value_type;
+  using update_type = typename DataStructure::update_type;
+  using Monoid = typename DataStructure::Monoid;
   struct Chain {
     int depth;
     std::pair<int, int> parent;              // chain number, index
     std::vector<std::pair<int, int>> child;  // child chain number, parent index
     std::vector<int> mapfrom;
     DataStructure up, down;
-    Chain(int n, const T &init) : up(n, init), down(n, init) { ; }
+    Chain(int n, const value_type &init) : up(n, init), down(n, init) { ; }
   };
 
   std::vector<Chain> chains;
@@ -22,7 +22,8 @@ template <typename DataStructure> struct HeavyLightDecomposition {
   int root() const { return mapfrom[0][0]; }
 
   template <typename Graph>
-  HeavyLightDecomposition(const Graph &g, const T &init = Monoid::id()) {
+  HeavyLightDecomposition(const Graph &g,
+                          const value_type &init = Monoid::id()) {
     const int n = g.size();
     mapto = std::vector<std::pair<int, int>>(n, std::make_pair(-1, -1));
     mapfrom.clear();
@@ -39,14 +40,14 @@ template <typename DataStructure> struct HeavyLightDecomposition {
     decomposition(g, start, start, 0, 0, 0, size, init);
   }
 
-  void update(int i, const Update &val) {
-    std::pair<int, int> chain_id = mapto[i];
+  void update(int i, const update_type &val) {
+    const std::pair<int, int> chain_id = mapto[i];
     const int n = chains[chain_id.first].mapfrom.size();
     chains[chain_id.first].up.update(n - i - 1, val);
     chains[chain_id.first].down.update(i, val);
   }
 
-  void update(int s, int t, const Update &update) {
+  void update(int s, int t, const update_type &update) {
     std::pair<int, int> chain_s = mapto[s], chain_t = mapto[t];
     while (chain_s.first != chain_t.first) {
       if (chains[chain_s.first].depth > chains[chain_t.first].depth) {
@@ -71,20 +72,20 @@ template <typename DataStructure> struct HeavyLightDecomposition {
     chains[chain_s.first].down.update(l, r + 1, update);
   }
 
-  T query(int s, int t) {
-    T res1 = Monoid::id(), res2 = Monoid::id();
+  value_type query(int s, int t) {
+    value_type res1 = Monoid::id(), res2 = Monoid::id();
     std::pair<int, int> chain_s = mapto[s], chain_t = mapto[t];
     while (chain_s.first != chain_t.first) {
       if (chains[chain_s.first].depth > chains[chain_t.first].depth) {
         const int num = chain_s.second + 1;
         const int n = chains[chain_s.first].mapfrom.size();
-        T val = chains[chain_s.first].up.query(n - num, n);
+        const value_type val = chains[chain_s.first].up.query(n - num, n);
         res1 = Monoid::op(res1, val);
         chain_s = chains[chain_s.first].parent;
       }
       else {
         const int num = chain_t.second + 1;
-        T val = chains[chain_t.first].down.query(0, num);
+        const value_type val = chains[chain_t.first].down.query(0, num);
         res2 = Monoid::op(val, res2);
         chain_t = chains[chain_t.first].parent;
       }
@@ -92,8 +93,9 @@ template <typename DataStructure> struct HeavyLightDecomposition {
     const int n = chains[chain_s.first].mapfrom.size();
     const int l = chain_s.second;
     const int r = chain_t.second;
-    T val = l > r ? chains[chain_s.first].up.query(n - l - 1, n - r)
-                  : chains[chain_s.first].down.query(l, r + 1);
+    const value_type val = l > r
+                             ? chains[chain_s.first].up.query(n - l - 1, n - r)
+                             : chains[chain_s.first].down.query(l, r + 1);
     return Monoid::op(Monoid::op(res1, val), res2);
   }
 
@@ -102,7 +104,8 @@ template <typename DataStructure> struct HeavyLightDecomposition {
 private:
   template <typename Graph>
   int decomposition(Graph &g, int from, int parent, int depth, int pnumber,
-                    int pindex, const std::vector<int> &size, const T &init) {
+                    int pindex, const std::vector<int> &size,
+                    const value_type &init) {
     std::vector<int> seq;
     bfs(g, from, parent, seq, size);
     const int c = chains.size();
@@ -117,7 +120,8 @@ private:
     for (int i = 0; i < int(seq.size()); i++) {
       for (auto e : g[seq[i]]) {
         if (mapto[e.to].first != -1) continue;
-        int nc = decomposition(g, e.to, seq[i], depth + 1, c, i, size, init);
+        const int nc =
+          decomposition(g, e.to, seq[i], depth + 1, c, i, size, init);
         chains[c].child.push_back(std::make_pair(nc, i));
       }
     }
@@ -143,7 +147,7 @@ private:
     assert(cnt == n);
     reverse(begin(order), end(order));
     for (int i = 0; i < n; i++) {
-      int from = order[i];
+      const int from = order[i];
       size[from] = 1;
       for (auto e : g[from]) size[from] += size[e.to];
     }

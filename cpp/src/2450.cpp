@@ -1,5 +1,9 @@
 #include "../include/structure/heavy_light_decomposition.cpp"
 #include "../include/structure/segment_tree_lazy.cpp"
+#include "../include/structure/semi_group.hpp"
+#include "../include/template/typedef.hpp"
+
+using namespace std;
 
 struct Edge {
   int to;
@@ -23,29 +27,27 @@ struct Data {
 };
 
 struct RangeMinSegment {
-  using type = Data;
-  static type id() { return Data(0, 0, 0, 0, -1e18, 0); }
-  static type op(const type &l, const type &r) {
+  using value_type = Data;
+  static value_type id() { return Data(0, 0, 0, 0, -1e18, 0); }
+  static value_type op(const value_type &l, const value_type &r) {
     return Data(max({ l.res, r.res, l.right + r.left }),
                 max(l.left, l.sum + r.left), max(r.right, r.sum + l.right),
                 l.sum + r.sum, max(l.max, r.max), l.cnt + r.cnt);
   }
 };
 
-struct Update {
+struct Struct {
   using Monoid = RangeMinSegment;
-  using type = typename Monoid::type;
-  ll update;
-  Update() : update(0) { ; }
-  Update(ll v) : update(v) { ; }
-  type operator()(const type &val) const {
+  using Update = LeftHandSide<ll>;
+  using value_type = typename Monoid::value_type;
+  using update_type = typename Update::value_type;
+  static value_type evaluate(const update_type &update, const value_type &val) {
     ll sum = update * val.cnt;
     if (update < 0)
-      return type(0, 0, 0, sum, update, val.cnt);
+      return value_type(0, 0, 0, sum, update, val.cnt);
     else
-      return type(sum, sum, sum, sum, update, val.cnt);
+      return value_type(sum, sum, sum, sum, update, val.cnt);
   }
-  Update operator()(const Update &) const { return *this; }
 };
 
 int main() {
@@ -61,15 +63,15 @@ int main() {
     --t;
     add_edge(g, s, t);
   }
-  HeavyLightDecomposition<SegmentTreeLazy<Update>> HLD(g, Data());
-  for (int i = 0; i < n; i++) HLD.update(i, i, Update(w[i]));
+  HeavyLightDecomposition<SegmentTreeLazy<Struct>> HLD(g, Data());
+  for (int i = 0; i < n; i++) HLD.update(i, i, w[i]);
   for (int i = 0; i < q; i++) {
     int com, s, t, c;
     scanf("%d%d%d%d", &com, &s, &t, &c);
     --s;
     --t;
     if (com == 1) {
-      HLD.update(s, t, Update(c));
+      HLD.update(s, t, c);
     }
     else {
       Data val = HLD.query(s, t);

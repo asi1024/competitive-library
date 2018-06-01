@@ -1,5 +1,7 @@
 #include "../include/structure/slide_min.cpp"
 
+using namespace std;
+
 int main() {
   int n, W;
   scanf("%d%d", &n, &W);
