@@ -121,7 +121,7 @@ int is_in_polygon(const Polygon<real_t> &g, const Point<real_t> &p) {
   real_t sum = 0;
   for (int i = 0; i < n; i++) {
     if (isis_sp(Segment<real_t>(g[i], g[i + 1]), p)) return 0;  // on
-    sum += arg((g[i + 1] - p) / (g[i] - p));
+    sum += arg((g[i + 1] - p) * std::conj(g[i] - p));
   }
   return abs(sum) > 0.5 ? 1 : -1;
 }

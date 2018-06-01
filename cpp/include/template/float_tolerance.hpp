@@ -17,57 +17,14 @@ public:
   explicit operator float_type() { return x; }
   template <typename cast_to> explicit operator cast_to() { return cast_to(x); }
   float_tolerance operator-() const { return -x; }
-  float_tolerance operator+(const float_tolerance &r) const { return x + r.x; }
-  float_tolerance operator-(const float_tolerance &r) const { return x - r.x; }
-  float_tolerance operator*(const float_tolerance &r) const { return x * r.x; }
-  float_tolerance operator/(const float_tolerance &r) const { return x / r.x; }
-  float_tolerance &operator+=(const float_tolerance &r) {
-    x += r.x;
-    return *this;
-  }
-  float_tolerance &operator-=(const float_tolerance &r) {
-    x -= r.x;
-    return *this;
-  }
-  float_tolerance &operator*=(const float_tolerance &r) {
-    x *= r.x;
-    return *this;
-  }
-  float_tolerance &operator/=(const float_tolerance &r) {
-    x /= r.x;
-    return *this;
-  }
-  bool operator<=(const float_tolerance &r) const { return x <= r.x + eps; }
-  bool operator<(const float_tolerance &r) const { return x < r.x - eps; }
-  bool operator>=(const float_tolerance &r) const { return x >= r.x - eps; }
-  bool operator>(const float_tolerance &r) const { return x > r.x + eps; }
-  bool operator==(const float_tolerance &r) const {
-    return x - r.x < eps && r.x - x < eps;
-  }
-  bool operator!=(const float_tolerance &r) const {
-    return x - r.x > eps || r.x - x > eps;
-  }
-
   float_tolerance operator+(const float_type &r) const { return x + r; }
   float_tolerance operator-(const float_type &r) const { return x - r; }
   float_tolerance operator*(const float_type &r) const { return x * r; }
   float_tolerance operator/(const float_type &r) const { return x / r; }
-  float_tolerance &operator+=(const float_type &r) {
-    x += r;
-    return *this;
-  }
-  float_tolerance &operator-=(const float_type &r) {
-    x -= r;
-    return *this;
-  }
-  float_tolerance &operator*=(const float_type &r) {
-    x *= r;
-    return *this;
-  }
-  float_tolerance &operator/=(const float_type &r) {
-    x /= r;
-    return *this;
-  }
+  float_tolerance &operator+=(const float_type &r) { return x += r, *this; }
+  float_tolerance &operator-=(const float_type &r) { return x -= r, *this; }
+  float_tolerance &operator*=(const float_type &r) { return x *= r, *this; }
+  float_tolerance &operator/=(const float_type &r) { return x /= r, *this; }
   bool operator<=(const float_type &r) const { return x <= r + eps; }
   bool operator<(const float_type &r) const { return x < r - eps; }
   bool operator>=(const float_type &r) const { return x >= r - eps; }
@@ -78,6 +35,20 @@ public:
   bool operator!=(const float_type &r) const {
     return x - r > eps || r - x > eps;
   }
+  float_tolerance operator+(const float_tolerance &r) const { return x + r.x; }
+  float_tolerance operator-(const float_tolerance &r) const { return x - r.x; }
+  float_tolerance operator*(const float_tolerance &r) const { return x * r.x; }
+  float_tolerance operator/(const float_tolerance &r) const { return x / r.x; }
+  float_tolerance &operator+=(const float_tolerance &r) { return *this += r.x; }
+  float_tolerance &operator-=(const float_tolerance &r) { return *this -= r.x; }
+  float_tolerance &operator*=(const float_tolerance &r) { return *this *= r.x; }
+  float_tolerance &operator/=(const float_tolerance &r) { return *this /= r.x; }
+  bool operator<=(const float_tolerance &r) const { return *this <= r.x; }
+  bool operator<(const float_tolerance &r) const { return *this < r.x; }
+  bool operator>=(const float_tolerance &r) const { return *this >= r.x; }
+  bool operator>(const float_tolerance &r) const { return *this > r.x; }
+  bool operator==(const float_tolerance &r) const { return *this == r.x; }
+  bool operator!=(const float_tolerance &r) const { return *this != r.x; }
 };
 
 template <typename U, typename T>
@@ -151,11 +122,11 @@ atan2(const float_tolerance<float_type, inv_eps> &x,
   return std::atan2(x.x, y.x);
 }
 
-// template <typename float_type, const long long inv_eps>
-// bool copysign(const float_tolerance<float_type, inv_eps> &x,
-//               const float_tolerance<float_type, inv_eps> &y) {
-//   return std::copysign(x.x, y.x);
-// }
+template <typename float_type, const long long inv_eps>
+bool copysign(const float_tolerance<float_type, inv_eps> &x,
+              const float_tolerance<float_type, inv_eps> &y) {
+  return std::copysign(x.x, y.x);
+}
 
 template <typename float_type, const long long inv_eps>
 bool isfinite(const float_tolerance<float_type, inv_eps> &x) {
@@ -171,22 +142,6 @@ template <typename float_type, const long long inv_eps>
 bool isnan(const float_tolerance<float_type, inv_eps> &x) {
   return std::isnan(x.x);
 }
-
-// template <typename float_type, const long long inv_eps>
-// bool fabs(const float_tolerance<float_type, inv_eps> &x) {
-//   return std::fabs(x.x);
-// }
-
-// template <typename float_type, const long long inv_eps>
-// bool hypot(const float_tolerance<float_type, inv_eps> &x,
-//            const float_tolerance<float_type, inv_eps> &y) {
-//   return std::hypot(x.x, y.x);
-// }
-
-// template <typename float_type, const long long inv_eps>
-// bool scalbn(const float_tolerance<float_type, inv_eps> &x, const int exp) {
-//   return std::scalbn(x.x, exp);
-// }
 
 template <typename float_type, const long long inv_eps>
 float_tolerance<float_type, inv_eps>

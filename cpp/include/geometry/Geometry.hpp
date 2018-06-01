@@ -6,29 +6,16 @@
 
 template <typename real_t> using Vector = std::complex<real_t>;
 
-// TODO
 template <typename float_type, const long long inv_eps>
 Vector<float_tolerance<float_type, inv_eps>>
-operator*(const Vector<float_tolerance<float_type, inv_eps>> &x,
-          const Vector<float_tolerance<float_type, inv_eps>> &y) {
-  Vector<float_type> xx(x.real().x, x.imag().x);
-  Vector<float_type> yy(y.real().x, y.imag().x);
-  Vector<float_type> zz = xx * yy;
-  return Vector<float_tolerance<float_type, inv_eps>>(zz.real(), zz.imag());
+operator*(const float_tolerance<float_type, inv_eps> &a,
+          const float_tolerance<float_type, inv_eps> &b) {
+  using real_t = float_tolerance<float_type, inv_eps>;
+  real_t resx = a.real() * b.real() - a.imag() * b.imag();
+  real_t resy = a.real() * b.imag() + a.imag() * b.real();
+  return Vector<real_t>(resx, resy);
 }
 
-// TODO
-template <typename float_type, const long long inv_eps>
-Vector<float_tolerance<float_type, inv_eps>>
-operator/(const Vector<float_tolerance<float_type, inv_eps>> &x,
-          const Vector<float_tolerance<float_type, inv_eps>> &y) {
-  Vector<float_type> xx(x.real().x, x.imag().x);
-  Vector<float_type> yy(y.real().x, y.imag().x);
-  Vector<float_type> zz = xx / yy;
-  return Vector<float_tolerance<float_type, inv_eps>>(zz.real(), zz.imag());
-}
-
-// TODO
 template <typename float_type, const long long inv_eps>
 float_tolerance<float_type, inv_eps>
 abs(const Vector<float_tolerance<float_type, inv_eps>> &x) {
