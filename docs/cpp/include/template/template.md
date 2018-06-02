@@ -13,6 +13,7 @@
 #include "macros.hpp"
 #include "misc.hpp"
 #include "range.hpp"
+#include "typedef.hpp"
 
 using namespace std;
 {% endhighlight %}
@@ -25,5 +26,6 @@ using namespace std;
 - [macros.hpp](macros)
 - [misc.hpp](misc)
 - [range.hpp](range)
+- [typedef.hpp](typedef)
 
 [Back](../..)
