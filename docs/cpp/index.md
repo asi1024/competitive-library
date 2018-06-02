@@ -14,6 +14,7 @@
 | [typedef.hpp](./include/template/typedef) | <font color="ForestGreen">Yes</font> | [2450.cpp](./src/2450)<br>[2559.cpp](./src/2559)<br>[DSL_2_A.1.cpp](./src/DSL_2_A.1) etc... |
 | [cin.cpp](./include/template/cin) | <font color="Red">No</font> |  |
 | [cout.cpp](./include/template/cout) | <font color="Red">No</font> |  |
+| [google_code_jam.cpp](./include/template/google_code_jam) | <font color="Red">No</font> |  |
 | [initialize.cpp](./include/template/initialize) | <font color="ForestGreen">Yes</font> | [CGL_1_A.cpp](./src/CGL_1_A)<br>[CGL_2_C.cpp](./src/CGL_2_C)<br>[CGL_2_D.cpp](./src/CGL_2_D) etc... |
 | [template.cpp](./include/template/template) | <font color="Red">No</font> |  |
 
