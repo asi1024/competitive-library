@@ -134,7 +134,7 @@ operator^(int m) const;
 
 ## Implementation
 
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/mod.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/types/mod.cpp)
 
 {% highlight cpp %}
 #include "../template/includes.hpp"

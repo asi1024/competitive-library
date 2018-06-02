@@ -8,8 +8,8 @@
 
 {% highlight cpp %}
 #include "../template/const_value.hpp"
-#include "../template/float_tolerance.hpp"
 #include "../template/includes.hpp"
+#include "../types/float_tolerance.cpp"
 
 template <typename real_t> using Vector = std::complex<real_t>;
 
@@ -101,7 +101,7 @@ int ccw(const Point<real_t> &a, const Point<real_t> &b,
 ### Includes
 
 - [const_value.hpp](../template/const_value)
-- [float_tolerance.hpp](../template/float_tolerance)
 - [includes.hpp](../template/includes)
+- [float_tolerance.cpp](../types/float_tolerance)
 
 [Back](../..)

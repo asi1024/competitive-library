@@ -1,6 +1,273 @@
-#pragma once
+{% include mathjax.html %}
 
-#include "includes.hpp"
+## operator+
+
+{% highlight cpp %}
+if_arithmetic_t<lhs_type, float_tolerance<float_type, inv_eps> > operator+(const lhs_type &l, const float_tolerance< float_type, inv_eps > &r);
+{% endhighlight %}
+
+## operator-
+
+{% highlight cpp %}
+if_arithmetic_t<lhs_type, float_tolerance<float_type, inv_eps> > operator-(const lhs_type &l, const float_tolerance< float_type, inv_eps > &r);
+{% endhighlight %}
+
+## operator*
+
+{% highlight cpp %}
+if_arithmetic_t<lhs_type, float_tolerance<float_type, inv_eps> > operator*(const lhs_type &l, const float_tolerance< float_type, inv_eps > &r);
+{% endhighlight %}
+
+## operator/
+
+{% highlight cpp %}
+if_arithmetic_t<lhs_type, float_tolerance<float_type, inv_eps> > operator/(const lhs_type &l, const float_tolerance< float_type, inv_eps > &r);
+{% endhighlight %}
+
+## operator&lt;=
+
+{% highlight cpp %}
+if_arithmetic_t<lhs_type, bool> operator<=(const lhs_type &l, const float_tolerance< float_type, inv_eps > &r);
+{% endhighlight %}
+
+## operator&lt;
+
+{% highlight cpp %}
+if_arithmetic_t<lhs_type, bool> operator<(const lhs_type &l, const float_tolerance< float_type, inv_eps > &r);
+{% endhighlight %}
+
+## operator&gt;=
+
+{% highlight cpp %}
+if_arithmetic_t<lhs_type, bool> operator>=(const lhs_type &l, const float_tolerance< float_type, inv_eps > &r);
+{% endhighlight %}
+
+## operator&gt;
+
+{% highlight cpp %}
+if_arithmetic_t<lhs_type, bool> operator>(const lhs_type &l, const float_tolerance< float_type, inv_eps > &r);
+{% endhighlight %}
+
+## operator==
+
+{% highlight cpp %}
+if_arithmetic_t<lhs_type, bool> operator==(const lhs_type &l, const float_tolerance< float_type, inv_eps > &r);
+{% endhighlight %}
+
+## abs
+
+{% highlight cpp %}
+float_tolerance<float_type, inv_eps> abs(const float_tolerance< float_type, inv_eps > &x);
+{% endhighlight %}
+
+## atan2
+
+{% highlight cpp %}
+float_tolerance<float_type, inv_eps> atan2(const float_tolerance< float_type, inv_eps > &x, const float_tolerance< float_type, inv_eps > &y);
+{% endhighlight %}
+
+## copysign
+
+{% highlight cpp %}
+bool copysign(const float_tolerance< float_type, inv_eps > &x, const float_tolerance< float_type, inv_eps > &y);
+{% endhighlight %}
+
+## isfinite
+
+{% highlight cpp %}
+bool isfinite(const float_tolerance< float_type, inv_eps > &x);
+{% endhighlight %}
+
+## isinf
+
+{% highlight cpp %}
+bool isinf(const float_tolerance< float_type, inv_eps > &x);
+{% endhighlight %}
+
+## isnan
+
+{% highlight cpp %}
+bool isnan(const float_tolerance< float_type, inv_eps > &x);
+{% endhighlight %}
+
+## sqrt
+
+{% highlight cpp %}
+float_tolerance<float_type, inv_eps> sqrt(const float_tolerance< float_type, inv_eps > &x);
+{% endhighlight %}
+
+## operator&gt;&gt;
+
+{% highlight cpp %}
+std::istream& operator>>(std::istream &is, float_tolerance< float_type, inv_eps > &x);
+{% endhighlight %}
+
+## operator&lt;&lt;
+
+{% highlight cpp %}
+std::ostream& operator<<(std::ostream &os, const float_tolerance< float_type, inv_eps > &x);
+{% endhighlight %}
+
+## Member functions
+
+### [1] (constructor)
+{% highlight cpp %}
+float_tolerance();
+float_tolerance(float_type x_);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [2] operator cast_to
+{% highlight cpp %}
+operator cast_to();
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [3] operator float_type
+{% highlight cpp %}
+operator float_type();
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [4] operator!=
+{% highlight cpp %}
+bool operator!=(const float_type &r) const;
+bool operator!=(const float_tolerance &r) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [5] operator*
+{% highlight cpp %}
+operator*(const float_type &r) const;
+operator*(const float_tolerance &r) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [6] operator*=
+{% highlight cpp %}
+operator*=(const float_type &r);
+operator*=(const float_tolerance &r);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [7] operator+
+{% highlight cpp %}
+operator+(const float_type &r) const;
+operator+(const float_tolerance &r) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [8] operator+=
+{% highlight cpp %}
+operator+=(const float_type &r);
+operator+=(const float_tolerance &r);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [9] operator-
+{% highlight cpp %}
+operator-() const;
+operator-(const float_type &r) const;
+operator-(const float_tolerance &r) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [10] operator-=
+{% highlight cpp %}
+operator-=(const float_type &r);
+operator-=(const float_tolerance &r);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [11] operator/
+{% highlight cpp %}
+operator/(const float_type &r) const;
+operator/(const float_tolerance &r) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [12] operator/=
+{% highlight cpp %}
+operator/=(const float_type &r);
+operator/=(const float_tolerance &r);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [13] operator&lt;
+{% highlight cpp %}
+bool operator<(const float_type &r) const;
+bool operator<(const float_tolerance &r) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [14] operator&lt;=
+{% highlight cpp %}
+bool operator<=(const float_type &r) const;
+bool operator<=(const float_tolerance &r) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [15] operator==
+{% highlight cpp %}
+bool operator==(const float_type &r) const;
+bool operator==(const float_tolerance &r) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [16] operator&gt;
+{% highlight cpp %}
+bool operator>(const float_type &r) const;
+bool operator>(const float_tolerance &r) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [17] operator&gt;=
+{% highlight cpp %}
+bool operator>=(const float_type &r) const;
+bool operator>=(const float_tolerance &r) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+## Implementation
+
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/types/float_tolerance.cpp)
+
+{% highlight cpp %}
+#include "../template/includes.hpp"
 
 template <typename float_type, const long long inv_eps> class float_tolerance {
   void init() {
@@ -164,3 +431,10 @@ std::ostream &operator<<(std::ostream &os,
 }
 
 using float11 = float_tolerance<long double, 100000000000LL>;
+{% endhighlight %}
+
+### Includes
+
+- [includes.hpp](../template/includes)
+
+[Back](../..)

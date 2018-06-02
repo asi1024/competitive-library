@@ -1,4 +1,4 @@
-#include "../include/math/mod.cpp"
+#include "../include/types/mod.cpp"
 
 using namespace std;
 
