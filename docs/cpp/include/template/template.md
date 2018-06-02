@@ -9,7 +9,7 @@
 {% highlight cpp %}
 #include "const_value.hpp"
 #include "includes.hpp"
-#include "initialize.hpp"
+#include "initialize.cpp"
 #include "macros.hpp"
 #include "misc.hpp"
 #include "range.hpp"
@@ -21,7 +21,7 @@ using namespace std;
 
 - [const_value.hpp](const_value)
 - [includes.hpp](includes)
-- [initialize.hpp](initialize)
+- [initialize.cpp](initialize)
 - [macros.hpp](macros)
 - [misc.hpp](misc)
 - [range.hpp](range)
