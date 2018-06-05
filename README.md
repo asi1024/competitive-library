@@ -3,13 +3,14 @@
 
 # competitive-library
 
+## Quickstart
+```
+$ cd example
+$ python preprocess.py sample.cpp
+```
+
 ## Reference
 - [C++](https://asi1024.github.io/competitive-library/cpp/)
-
-## Usage
-```
-$ ./competitive-library/cpp/preprocess/preprocess.py [FILE]
-```
 
 ## Supported versions
 - C++11 (gcc-4.8)
