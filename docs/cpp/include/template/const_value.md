@@ -3,32 +3,46 @@
 ## inf
 
 {% highlight cpp %}
-constexpr T inf();
+constexpr std::enable_if<std::is_integral<T>::value, T>::type inf();
 {% endhighlight %}
 
-## inf&lt; int &gt;
+### Return value
+
+- Returns a large finite value representable by the numeric type T.
+
+### Notes
+
+- It is guaranteed that the return values is strictly less than std::numeric_limits<T>::max() / 2.
+
+---------------------------------------
+
+## inf
 
 {% highlight cpp %}
-constexpr int inf< int >();
+constexpr std::enable_if<std::is_floating_point<T>::value, T>::type inf();
 {% endhighlight %}
 
-## inf&lt; long long &gt;
+### Return value
 
-{% highlight cpp %}
-constexpr long long inf< long long >();
-{% endhighlight %}
+- Returns a large finite value representable by the numeric type T.
 
-## inf&lt; long double &gt;
+### Notes
 
-{% highlight cpp %}
-constexpr long double inf< long double >();
-{% endhighlight %}
+- It is guaranteed that the return values is strictly less than std::numeric_limits<T>::max() / 2.
+
+---------------------------------------
 
 ## zero
 
 {% highlight cpp %}
 constexpr std::enable_if<std::is_arithmetic<T>::value, T>::type zero();
 {% endhighlight %}
+
+### Return value
+
+- Returns the zero value representable by the numeric type T.
+
+---------------------------------------
 
 ## Implementation
 
@@ -38,10 +52,16 @@ constexpr std::enable_if<std::is_arithmetic<T>::value, T>::type zero();
 #include "includes.hpp"
 
 
-template <typename T> constexpr T inf();
-template <> constexpr int inf<int>() { return 1e9; }
-template <> constexpr long long inf<long long>() { return 1e18; }
-template <> constexpr long double inf<long double>() { return 1e30; }
+template <typename T>
+constexpr typename std::enable_if<std::is_integral<T>::value, T>::type inf() {
+  return std::numeric_limits<T>::max() / 2 - 1000;
+}
+
+template <typename T>
+constexpr typename std::enable_if<std::is_floating_point<T>::value, T>::type
+inf() {
+  return std::min(std::numeric_limits<T>::max() / 2 - 1000, T(1e50));
+}
 
 template <typename T>
 constexpr typename std::enable_if<std::is_arithmetic<T>::value, T>::type
