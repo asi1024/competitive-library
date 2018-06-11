@@ -19,13 +19,13 @@ namespace sub {
 /// @return Returns a large finite value representable by the numeric type T.
 /// @note It is guaranteed that the return values is strictly less than std::numeric_limits<T>::max() / 2.
 template <typename T> constexpr T inf() {
-  static_assert(std::is_arithmetic<T>::value);
+  static_assert(std::is_arithmetic<T>::value, "inf<T> is not defined");
   return sub::inf_sub<T>();
 }
 
 /// @return Returns the zero value representable by the numeric type T.
 template <typename T> constexpr T zero() {
-  static_assert(std::is_arithmetic<T>::value);
+  static_assert(std::is_arithmetic<T>::value, "zero<T> is not defined");
   return T(0);
 }
 

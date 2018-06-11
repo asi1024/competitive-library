@@ -51,12 +51,12 @@ namespace sub {
 }
 
 template <typename T> constexpr T inf() {
-  static_assert(std::is_arithmetic<T>::value);
+  static_assert(std::is_arithmetic<T>::value, "inf<T> is not defined");
   return sub::inf_sub<T>();
 }
 
 template <typename T> constexpr T zero() {
-  static_assert(std::is_arithmetic<T>::value);
+  static_assert(std::is_arithmetic<T>::value, "zero<T> is not defined");
   return T(0);
 }
 
