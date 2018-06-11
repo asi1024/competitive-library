@@ -43,7 +43,7 @@ ContinuationIndentWidth: 2
 IndentCaseLabels: false
 IndentWidth: 2
 IndentWrappedFunctionNames: false
-NamespaceIndentation: None
+NamespaceIndentation: All
 
 PointerAlignment: Right
 SortIncludes: true
