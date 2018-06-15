@@ -18,9 +18,11 @@ template <typename edge_t, typename cap_type = typename edge_t::capacity_type,
           typename cost_type = typename edge_t::cost_type>
 cost_type min_cost_flow(graph_t<edge_t> &g, int s, int t, cap_type f,
                         bool init = true) {
-  static_assert(std::is_integral<cap_type>::value, "capacity must be integer");
+  static_assert(std::is_integral<cap_type>::value,
+                "capacity must be of integer type");
+  static_assert(!std::is_floating_point<cap_type>::value,
+                "use float_tolerance<float_type, ...> instead of float_type");
   const int V = g.size();
-  // const cost_type eps = 1e-8;
   static std::vector<cost_type> h(V, zero<cost_type>()),
     dist(V, zero<cost_type>());
   static std::vector<int> prevv(V), preve(V);
@@ -45,7 +47,7 @@ cost_type min_cost_flow(graph_t<edge_t> &g, int s, int t, cap_type f,
       for (int i = 0; i < (int)g[v].size(); ++i) {
         const auto &e = g[v][i];
         if (e.cap <= zero<cap_type>()) continue;
-        if (dist[e.to] > dist[v] + e.cost + h[v] - h[e.to] /* + eps */) {
+        if (dist[e.to] > dist[v] + e.cost + h[v] - h[e.to]) {
           dist[e.to] = dist[v] + e.cost + h[v] - h[e.to];
           prevv[e.to] = v;
           preve[e.to] = i;
