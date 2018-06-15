@@ -3,7 +3,7 @@
 ## min_cost_flow
 
 {% highlight cpp %}
-std::enable_if<std::is_integral<cost_type>::value, cost_type>::type min_cost_flow(graph_t< edge_t > &g, int s, int t, cap_type f, bool init=true);
+cost_type min_cost_flow(graph_t< edge_t > &g, int s, int t, cap_type f, bool init=true);
 {% endhighlight %}
 
 ## Implementation
@@ -16,8 +16,9 @@ std::enable_if<std::is_integral<cost_type>::value, cost_type>::type min_cost_flo
 
 template <typename edge_t, typename cap_type = typename edge_t::capacity_type,
           typename cost_type = typename edge_t::cost_type>
-typename std::enable_if<std::is_integral<cost_type>::value, cost_type>::type
-min_cost_flow(graph_t<edge_t> &g, int s, int t, cap_type f, bool init = true) {
+typename cost_type min_cost_flow(graph_t<edge_t> &g, int s, int t, cap_type f,
+                                 bool init = true) {
+  static_assert(std::is_integral<cap_type>::value, "capacity must be integer");
   const int V = g.size();
   // const cost_type eps = 1e-8;
   static std::vector<cost_type> h(V, zero<cost_type>()),
