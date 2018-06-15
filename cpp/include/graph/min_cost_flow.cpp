@@ -5,8 +5,8 @@
 
 template <typename edge_t, typename cap_type = typename edge_t::capacity_type,
           typename cost_type = typename edge_t::cost_type>
-typename cost_type min_cost_flow(graph_t<edge_t> &g, int s, int t, cap_type f,
-                                 pbool init = true) {
+cost_type min_cost_flow(graph_t<edge_t> &g, int s, int t, cap_type f,
+                        bool init = true) {
   static_assert(std::is_integral<cap_type>::value, "capacity must be integer");
   const int V = g.size();
   // const cost_type eps = 1e-8;
