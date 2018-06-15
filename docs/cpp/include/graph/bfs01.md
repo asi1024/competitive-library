@@ -3,7 +3,7 @@
 ## bfs01
 
 {% highlight cpp %}
-std::vector< typename std::enable_if<std::is_integral<cost_type>::value, cost_type>::type> bfs01(const graph_t< edge_t > &g, int s);
+std::vector<cost_type> bfs01(const graph_t< edge_t > &g, int s);
 {% endhighlight %}
 
 - コストが 0 か 1 のみの重み付きグラフの単一始点全点間最短距離を求める．
@@ -41,9 +41,8 @@ std::vector< typename std::enable_if<std::is_integral<cost_type>::value, cost_ty
 #include "definition.hpp"
 
 template <typename edge_t, typename cost_type = typename edge_t::cost_type>
-std::vector<
-  typename std::enable_if<std::is_integral<cost_type>::value, cost_type>::type>
-bfs01(const graph_t<edge_t> &g, int s) {
+std::vector<cost_type> bfs01(const graph_t<edge_t> &g, int s) {
+  static_assert(std::is_integral<cost_type>::value, "cost must be integer");
   std::vector<cost_type> d(g.size(), inf<cost_type>());
   d[s] = cost_type(0);
   std::deque<std::pair<cost_type, int>> que;
