@@ -1,18 +1,19 @@
 #pragma once
 
+#include "../template/bit_operation.cpp"
 #include "../template/const_value.hpp"
 #include "../template/includes.hpp"
 
 template <typename T> class StarrySkyTree {
   const int n;
   std::vector<T> data, lazy;
-  int expand(int m) const { return m == 1 ? m : expand((m + 1) / 2) * 2; }
 
 public:
   /// @brief
   /// 長さ count の列を作り，全ての要素を 0 で初期化する．
   /// @complexity $O(n)$
-  StarrySkyTree(int count) : n(expand(count)), data(n * 2, 0), lazy(n * 2, 0) {}
+  StarrySkyTree(int count) :
+    n(log2ceil(count)), data(n * 2, 0), lazy(n * 2, 0) {}
 
   /// @brief
   /// 区間 [l, r) 番目の要素に値 value を加える．
