@@ -1,3 +1,5 @@
+#pragma once
+
 #include "includes.hpp"
 
 struct yes_no : std::numpunct<char> {
