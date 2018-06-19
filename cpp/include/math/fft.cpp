@@ -2,7 +2,7 @@
 
 #include "../template/const_value.hpp"
 #include "../template/includes.hpp"
-#include "../template/typedefs.hpp"
+#include "../template/typedef.hpp"
 
 std::vector<Point> FFT(const std::vector<Point> &a, int m) {
   ld theta = 2.0 * pi / m;
