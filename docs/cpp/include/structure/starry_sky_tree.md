@@ -46,16 +46,17 @@ void update(int l, int r, const T &val);
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/starry_sky_tree.cpp)
 
 {% highlight cpp %}
+#include "../template/bit_operation.cpp"
 #include "../template/const_value.hpp"
 #include "../template/includes.hpp"
 
 template <typename T> class StarrySkyTree {
   const int n;
   std::vector<T> data, lazy;
-  int expand(int m) const { return m == 1 ? m : expand((m + 1) / 2) * 2; }
 
 public:
-  StarrySkyTree(int count) : n(expand(count)), data(n * 2, 0), lazy(n * 2, 0) {}
+  StarrySkyTree(int count) :
+    n(log2ceil(count)), data(n * 2, 0), lazy(n * 2, 0) {}
 
   void update(int l, int r, const T &val) {
     l += n;
@@ -107,6 +108,7 @@ public:
 
 ### Includes
 
+- [bit_operation.cpp](../template/bit_operation)
 - [const_value.hpp](../template/const_value)
 - [includes.hpp](../template/includes)
 

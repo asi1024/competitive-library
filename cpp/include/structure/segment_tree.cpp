@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../template/bit_operation.cpp"
 #include "../template/includes.hpp"
 
 template <class Monoid> class SegmentTree {
@@ -10,7 +11,6 @@ public:
 private:
   const int size_, n;
   std::vector<value_type> data;
-  int expand(int m) const { return m == 1 ? m : expand((m + 1) / 2) * 2; }
 
 public:
   /// @complexity $O(n)$
@@ -18,7 +18,7 @@ public:
   /// @brief
   /// vector 型の列 vec を表現するセグメント木を作る．
   SegmentTree(const std::vector<value_type> &vec) :
-    size_(vec.size()), n(expand(size_)), data(n * 2, Monoid::id()) {
+    size_(vec.size()), n(log2ceil(size_)), data(n * 2, Monoid::id()) {
     std::copy(begin(vec), end(vec), begin(data) + n);
     for (int i = n - 1; i >= 0; --i) {
       data[i] = Monoid::op(data[i * 2 + 0], data[i * 2 + 1]);

@@ -31,6 +31,7 @@ void update(int l, int r, const update_type &f);
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/segment_tree_lazy.cpp)
 
 {% highlight cpp %}
+#include "../template/bit_operation.cpp"
 #include "../template/includes.hpp"
 
 template <typename Struct> class SegmentTreeLazy {
@@ -89,11 +90,10 @@ private:
     value_type rval = query_sub(l, r, node * 2 + 1, mid, ub);
     return Monoid::op(lval, rval);
   }
-  int expand(int m) const { return m == 1 ? m : expand((m + 1) / 2) * 2; }
 
 public:
   SegmentTreeLazy(int count, const value_type &init = Monoid::id()) :
-    n(expand(count)), data(n * 2), lazy(n), flag(n, false) {
+    n(log2ceil(count)), data(n * 2), lazy(n), flag(n, false) {
     fill(begin(data) + n, end(data), init);
     for (int i = n - 1; i >= 1; i--) {
       data[i] = Monoid::op(data[i * 2 + 0], data[i * 2 + 1]);
@@ -108,6 +108,7 @@ public:
 
 ### Includes
 
+- [bit_operation.cpp](../template/bit_operation)
 - [includes.hpp](../template/includes)
 
 [Back](../..)

@@ -12,6 +12,7 @@
 | [range.hpp](./include/template/range) | <font color="ForestGreen">Yes</font> | [1351.cpp](./src/1351) |
 | [table.hpp](./include/template/table) | <font color="Red">No</font> |  |
 | [typedef.hpp](./include/template/typedef) | <font color="ForestGreen">Yes</font> | [2450.cpp](./src/2450)<br>[2559.cpp](./src/2559)<br>[DSL_2_A.1.cpp](./src/DSL_2_A.1) etc... |
+| [bit_operation.cpp](./include/template/bit_operation) | <font color="ForestGreen">Yes</font> | [segment_tree.cpp](./include/structure/segment_tree)<br>[segment_tree_lazy.cpp](./include/structure/segment_tree_lazy)<br>[starry_sky_tree.cpp](./include/structure/starry_sky_tree) |
 | [cin.cpp](./include/template/cin) | <font color="Red">No</font> |  |
 | [cout.cpp](./include/template/cout) | <font color="Red">No</font> |  |
 | [google_code_jam.cpp](./include/template/google_code_jam) | <font color="Red">No</font> |  |
