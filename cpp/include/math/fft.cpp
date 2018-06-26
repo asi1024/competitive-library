@@ -1,20 +1,19 @@
 #pragma once
 
-#include "../template/const_value.hpp"
 #include "../template/includes.hpp"
 #include "../template/typedef.hpp"
 
-std::vector<Point> FFT(const std::vector<Point> &a, int m) {
+std::vector<std::complex<ld>> FFT(const std::vector<std::complex<ld>> &a, int m) {
   ld theta = 2.0 * pi / m;
   const int n = a.size();
-  std::vector<Point> res = a;
+  std::vector<std::complex<ld>> res = a;
   for (int m = n; m >= 2; m /= 2, theta *= 2) {
     for (int i = 0; i < m / 2; ++i) {
       for (int j = i; j < n; j += m) {
         int k = j + m / 2;
-        Point x = res[j] - res[k];
+        std::complex<ld> x = res[j] - res[k];
         res[j] += res[k];
-        res[k] = exp(i * theta * Point(0, 1)) * x;
+        res[k] = exp(i * theta * std::complex<ld>(0, 1)) * x;
       }
     }
   }
@@ -30,10 +29,10 @@ std::vector<ll> convolution(const std::vector<ll> &lhs,
                             const std::vector<ll> &rhs) {
   int n = 1, a = lhs.size(), b = rhs.size();
   while (n < std::max(a, b) * 2) n <<= 1;
-  std::vector<Point> ra(n), rb(n);
+  std::vector<std::complex<ld>> ra(n), rb(n);
   for (int i = 0; i < n / 2; ++i) {
-    if (i < a) ra[i] = Point(lhs[i], 0);
-    if (i < b) rb[i] = Point(rhs[i], 0);
+    if (i < a) ra[i] = std::complex<ld>(lhs[i], 0);
+    if (i < b) rb[i] = std::complex<ld>(rhs[i], 0);
   }
   ra = FFT(ra, n);
   rb = FFT(rb, n);
