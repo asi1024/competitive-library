@@ -58,6 +58,7 @@ int main();
 #include "../graph/max_flow.cpp"
 #include "../graph/min_cost_flow.cpp"
 #include "../graph/retrograde.cpp"
+#include "../graph/retrograde.hpp"
 #include "../graph/retrograde_weighted.cpp"
 #include "../graph/scc.cpp"
 #include "../graph/spfa.cpp"
@@ -138,6 +139,7 @@ int main() { return 0; }
 - [max_flow.cpp](../graph/max_flow)
 - [min_cost_flow.cpp](../graph/min_cost_flow)
 - [retrograde.cpp](../graph/retrograde)
+- [retrograde.hpp](../graph/retrograde)
 - [retrograde_weighted.cpp](../graph/retrograde_weighted)
 - [scc.cpp](../graph/scc)
 - [spfa.cpp](../graph/spfa)

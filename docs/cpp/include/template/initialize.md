@@ -5,7 +5,6 @@
 ### [1] do_falsename
 {% highlight cpp %}
 string_type do_falsename() const;
-string_type do_falsename() const;
 {% endhighlight %}
 
 
@@ -13,7 +12,6 @@ string_type do_falsename() const;
 
 ### [2] do_truename
 {% highlight cpp %}
-string_type do_truename() const;
 string_type do_truename() const;
 {% endhighlight %}
 

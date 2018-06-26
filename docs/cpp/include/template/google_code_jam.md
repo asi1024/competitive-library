@@ -5,7 +5,6 @@
 ### [1] (constructor)
 {% highlight cpp %}
 GoogleCodeJam();
-GoogleCodeJam();
 {% endhighlight %}
 
 
@@ -13,7 +12,6 @@ GoogleCodeJam();
 
 ### [2] exec
 {% highlight cpp %}
-void exec() const;
 void exec() const;
 {% endhighlight %}
 

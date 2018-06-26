@@ -11,9 +11,8 @@ std::vector<Game> retrograde(const graph_t< edge_t > &g);
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/retrograde.cpp)
 
 {% highlight cpp %}
+#include "retrograde.hpp"
 #include "definition.hpp"
-
-enum Game { WIN, LOSE, DRAW };
 
 template <typename edge_t>
 std::vector<Game> retrograde(const graph_t<edge_t> &g) {
@@ -60,6 +59,7 @@ std::vector<Game> retrograde(const graph_t<edge_t> &g) {
 
 ### Includes
 
+- [retrograde.hpp](retrograde)
 - [definition.hpp](definition)
 
 [Back](../..)
