@@ -48,7 +48,7 @@ struct Initialize {
   }
 };
 
-const Initialize init;
+const Initialize initialize;
 {% endhighlight %}
 
 ### Includes
