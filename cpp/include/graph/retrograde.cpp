@@ -1,6 +1,5 @@
 #include "definition.hpp"
-
-enum Game { WIN, LOSE, DRAW };
+#include "retrograde.hpp"
 
 template <typename edge_t>
 std::vector<Game> retrograde(const graph_t<edge_t> &g) {

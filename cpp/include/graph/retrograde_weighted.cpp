@@ -1,6 +1,5 @@
 #include "definition.hpp"
-
-enum Game { WIN, LOSE, DRAW };
+#include "retrograde.hpp"
 
 template <typename Cost> struct Game_with_Cost {
   Game win;
