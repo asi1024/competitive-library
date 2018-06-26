@@ -1,3 +1,5 @@
+#pragma once
+
 int log2ceil(int n) {
   --n;
   n |= n >> 16;

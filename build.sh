@@ -5,6 +5,7 @@ set -eu
 DIR=`dirname $0`
 
 cd ${DIR}
+python ./cpp/include/exec/make_main.py > ./cpp/include/exec/main.cpp
 clang-format -i cpp/include/*/*.?pp cpp/src/*.?pp
 
 cd cpp/docs

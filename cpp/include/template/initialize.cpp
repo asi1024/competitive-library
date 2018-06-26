@@ -1,3 +1,5 @@
+#pragma once
+
 #include "includes.hpp"
 
 struct yes_no : std::numpunct<char> {
@@ -13,4 +15,4 @@ struct Initialize {
   }
 };
 
-const Initialize init;
+const Initialize initialize;

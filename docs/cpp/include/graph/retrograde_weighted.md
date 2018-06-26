@@ -31,8 +31,7 @@ Game_with_Cost(Game w, Cost c);
 
 {% highlight cpp %}
 #include "definition.hpp"
-
-enum Game { WIN, LOSE, DRAW };
+#include "game.hpp"
 
 template <typename Cost> struct Game_with_Cost {
   Game win;
@@ -96,5 +95,6 @@ std::vector<Game_with_Cost<Cost>> retrograde(const graph_t<edge_t> &g) {
 ### Includes
 
 - [definition.hpp](definition)
+- [game.hpp](game)
 
 [Back](../..)

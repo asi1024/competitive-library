@@ -31,7 +31,7 @@ BreakBeforeTernaryOperators: true
 BreakConstructorInitializers: AfterColon
 BreakStringLiterals: true
 ColumnLimit: 80
-CompactNamespaces: true
+CompactNamespaces: false
 ConstructorInitializerAllOnOneLineOrOnePerLine: false
 ReflowComments: false
 
@@ -43,7 +43,7 @@ ContinuationIndentWidth: 2
 IndentCaseLabels: false
 IndentWidth: 2
 IndentWrappedFunctionNames: false
-NamespaceIndentation: All
+NamespaceIndentation: None
 
 PointerAlignment: Right
 SortIncludes: true
@@ -61,7 +61,7 @@ SpacesInSquareBrackets: false
 Standard: Cpp11
 Cpp11BracedListStyle: false
 
-FixNamespaceComments: false
+FixNamespaceComments: true
 KeepEmptyLinesAtTheStartOfBlocks: false
 MaxEmptyLinesToKeep: 1
 Language: Cpp
