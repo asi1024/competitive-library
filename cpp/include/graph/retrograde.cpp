@@ -1,5 +1,5 @@
-#include "retrograde.hpp"
 #include "definition.hpp"
+#include "game.hpp"
 
 template <typename edge_t>
 std::vector<Game> retrograde(const graph_t<edge_t> &g) {

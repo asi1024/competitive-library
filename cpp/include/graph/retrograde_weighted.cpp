@@ -1,5 +1,5 @@
 #include "definition.hpp"
-#include "retrograde.hpp"
+#include "game.hpp"
 
 template <typename Cost> struct Game_with_Cost {
   Game win;
