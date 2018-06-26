@@ -54,11 +54,11 @@ int main();
 #include "../graph/definition.hpp"
 #include "../graph/dijkstra.cpp"
 #include "../graph/directed_graph.hpp"
+#include "../graph/game.hpp"
 #include "../graph/lca.cpp"
 #include "../graph/max_flow.cpp"
 #include "../graph/min_cost_flow.cpp"
 #include "../graph/retrograde.cpp"
-#include "../graph/retrograde.hpp"
 #include "../graph/retrograde_weighted.cpp"
 #include "../graph/scc.cpp"
 #include "../graph/spfa.cpp"
@@ -135,11 +135,11 @@ int main() { return 0; }
 - [definition.hpp](../graph/definition)
 - [dijkstra.cpp](../graph/dijkstra)
 - [directed_graph.hpp](../graph/directed_graph)
+- [game.hpp](../graph/game)
 - [lca.cpp](../graph/lca)
 - [max_flow.cpp](../graph/max_flow)
 - [min_cost_flow.cpp](../graph/min_cost_flow)
 - [retrograde.cpp](../graph/retrograde)
-- [retrograde.hpp](../graph/retrograde)
 - [retrograde_weighted.cpp](../graph/retrograde_weighted)
 - [scc.cpp](../graph/scc)
 - [spfa.cpp](../graph/spfa)
