@@ -16,7 +16,8 @@ if __name__ == '__main__':
         path = 'cpp/include/{}'.format(key)
         res += '// {}\n'.format(value)
         for filename in os.listdir(path):
-            res += '#include "../{}/{}"\n'.format(key, filename)
+            if filename.endswith(('.cpp', '.hpp')):
+                res += '#include "../{}/{}"\n'.format(key, filename)
         res += '\n'
 
     res += 'int main() { return 0; }\n'

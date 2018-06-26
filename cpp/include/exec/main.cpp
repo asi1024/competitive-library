@@ -45,6 +45,7 @@
 #include "../graph/max_flow.cpp"
 #include "../graph/min_cost_flow.cpp"
 #include "../graph/retrograde.cpp"
+#include "../graph/retrograde.hpp"
 #include "../graph/retrograde_weighted.cpp"
 #include "../graph/scc.cpp"
 #include "../graph/spfa.cpp"
