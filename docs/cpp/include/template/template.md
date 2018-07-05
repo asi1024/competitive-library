@@ -7,7 +7,9 @@
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/template.cpp)
 
 {% highlight cpp %}
+#include "cin.cpp"
 #include "const_value.hpp"
+#include "cout.cpp"
 #include "includes.hpp"
 #include "initialize.cpp"
 #include "macros.hpp"
@@ -20,7 +22,9 @@ using namespace std;
 
 ### Includes
 
+- [cin.cpp](cin)
 - [const_value.hpp](const_value)
+- [cout.cpp](cout)
 - [includes.hpp](includes)
 - [initialize.cpp](initialize)
 - [macros.hpp](macros)

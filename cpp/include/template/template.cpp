@@ -1,5 +1,5 @@
-#include "const_value.hpp"
 #include "cin.cpp"
+#include "const_value.hpp"
 #include "cout.cpp"
 #include "includes.hpp"
 #include "initialize.cpp"
