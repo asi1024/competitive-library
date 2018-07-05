@@ -1,4 +1,6 @@
 #include "const_value.hpp"
+#include "cin.cpp"
+#include "cout.cpp"
 #include "includes.hpp"
 #include "initialize.cpp"
 #include "macros.hpp"
