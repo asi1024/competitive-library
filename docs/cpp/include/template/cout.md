@@ -18,6 +18,12 @@ std::ostream& operator<<(std::ostream &os, const std::pair< T, U > &p);
 std::ostream& operator<<(std::ostream &os, const std::vector< T > &v);
 {% endhighlight %}
 
+## operator&lt;&lt;
+
+{% highlight cpp %}
+std::ostream& operator<<(std::ostream &os, const std::set< T > &v);
+{% endhighlight %}
+
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/cout.cpp)
@@ -50,6 +56,15 @@ std::ostream &operator<<(std::ostream &os, const std::pair<T, U> &p) {
 
 template <typename T>
 std::ostream &operator<<(std::ostream &os, const std::vector<T> &v) {
+  for (auto it = v.begin(); it != v.end(); ++it) {
+    if (it != v.begin()) os << " ";
+    os << *it;
+  }
+  return os;
+}
+
+template <typename T>
+std::ostream &operator<<(std::ostream &os, const std::set<T> &v) {
   for (auto it = v.begin(); it != v.end(); ++it) {
     if (it != v.begin()) os << " ";
     os << *it;

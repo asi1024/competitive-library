@@ -87,6 +87,7 @@ operator+=(const Modulo &a);
 ### [8] operator-
 {% highlight cpp %}
 operator-(const Modulo &a) const;
+operator-() const;
 {% endhighlight %}
 
 
@@ -186,6 +187,7 @@ public:
     Modulo res = *this;
     return res -= a;
   }
+  Modulo operator-() const { return Modulo(0) - *this; }
   Modulo operator*(const Modulo &a) const {
     Modulo res = *this;
     return res *= a;

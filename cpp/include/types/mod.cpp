@@ -49,6 +49,7 @@ public:
     Modulo res = *this;
     return res -= a;
   }
+  Modulo operator-() const { return Modulo(0) - *this; }
   Modulo operator*(const Modulo &a) const {
     Modulo res = *this;
     return res *= a;
