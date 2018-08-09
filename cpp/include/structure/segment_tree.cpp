@@ -62,11 +62,11 @@ public:
     l += n;
     r += n;
     value_type res1 = Monoid::id(), res2 = Monoid::id();
-    while (l != r) {
-      if (l % 2) res1 = Monoid::op(res1, data[l++]);
-      if (r % 2) res2 = Monoid::op(data[--r], res2);
-      l /= 2;
-      r /= 2;
+    while (l < r) {
+      if (l & 1) res1 = Monoid::op(res1, data[l++]);
+      if (r & 1) res2 = Monoid::op(data[--r], res2);
+      l >>= 1;
+      r >>= 1;
     }
     return Monoid::op(res1, res2);
   }
