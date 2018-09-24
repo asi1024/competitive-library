@@ -67,8 +67,8 @@ matrix:
       python: '3.5'
       addons:
         apt:
-          sources: ['ubuntu-toolchain-r-test']
-          packages: ['clang-format-3.9']
+          sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-trusty-6.0']
+          packages: ['clang-format-6.0']
       env:
         ENV="Doxygen 1.8.13, ClangFormat"
       install:
