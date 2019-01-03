@@ -54,7 +54,7 @@ public:
     Modulo res = *this;
     return res *= a;
   }
-  Modulo operator^(int m) const {
+  Modulo operator^(ll m) const {
     if (m == 0) return Modulo(1);
     const Modulo a = *this;
     Modulo res = (a * a) ^ (m / 2);
@@ -92,7 +92,7 @@ template <int M = mod> Modulo<M, true> fact(int n, bool sw = true) {
   return sw ? v1[n] : v2[n];
 }
 
-template <int M = mod> Modulo<M, true> comb(int a, int b) {
+template <int M = mod> Modulo<M, true> comb(ll a, ll b) {
   if (b < 0 || b > a) return 0;
   return fact<M>(a, true) * fact<M>(b, false) * fact<M>(a - b, false);
 }
