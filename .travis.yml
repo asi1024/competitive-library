@@ -1,3 +1,5 @@
+dist: xenial
+
 matrix:
   include:
     - os: linux
@@ -5,45 +7,48 @@ matrix:
       compiler: g++
       addons:
         apt:
-          sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-4.8', 'bc']
+          packages:
+            - g++-4.8
       env:
         ENV="GCC 4.8"
-        COMPILER=g++-4.8
-        FLAGS="-std=c++11 -O2 -Wall -Wextra -Wno-unused-result -Werror"
+        CXX=g++-4.8
+        CXXFLAGS="-std=c++11 -O2 -Wall -Wextra -Wno-unused-result -Werror"
       script:
         - ulimit -s unlimited
-        - CXX=$COMPILER CXXFLAGS=$FLAGS ./cpp/spec.sh
+        - ./cpp/spec.sh
 
     - os: linux
       language: cpp
       compiler: g++
       addons:
         apt:
-          sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-7', 'bc']
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-7
       env:
         ENV="GCC 7"
-        COMPILER=g++-7
-        FLAGS="-std=c++17 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror"
+        CXX=g++-7
+        CXXFLAGS="-std=c++17 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror"
       script:
         - ulimit -s unlimited
-        - CXX=$COMPILER CXXFLAGS=$FLAGS ./cpp/spec.sh
+        - ./cpp/spec.sh
 
     - os: linux
       language: cpp
       compiler: clang++
       addons:
         apt:
-          sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.8', 'llvm-toolchain-precise']
-          packages: ['clang++-3.8', 'libc++-dev', 'bc']
+          packages:
+            - clang++-3.8
+            - libc++-dev
       env:
         ENV="Clang 3.8"
-        COMPILER=clang++-3.8
-        FLAGS="-std=c++14 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror -stdlib=libc++"
+        CXX=clang++-3.8
+        CXXFLAGS="-std=c++14 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror -stdlib=libc++"
       script:
         - ulimit -s unlimited
-        - CXX=$COMPILER CXXFLAGS=$FLAGS ./cpp/spec.sh
+        - ./cpp/spec.sh
 
     - os: linux
       language: ocaml
@@ -57,14 +62,13 @@ matrix:
         - opam install -y num batteries
       env:
         ENV="OCaml"
-        COMPILER=ocamlopt
       script:
         - ulimit -s unlimited
-        - CXX=$COMPILER CXXFLAGS=$FLAGS ./ocaml/spec.sh
+        - ./ocaml/spec.sh
 
     - os: linux
       language: python
-      python: '3.5'
+      python: '3.6'
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test']
@@ -99,10 +103,16 @@ matrix:
         - CXX=$COMPILER CXXFLAGS=$FLAGS ./cpp/preprocess/test.sh
 
 before_install:
-  - yes | pyenv install 3.6.3
-  - pyenv global 3.6.3
+  - pyenv versions
+  - pyenv global 3.6
   - pip install --upgrade pip
   - pip install git+https://github.com/asi1024/red-baron.git
+
+cache:
+  - apt
+  - pip
+  - directories:
+    - ~/.red-baron
 
 sudo: required
 
