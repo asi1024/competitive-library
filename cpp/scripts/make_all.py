@@ -20,5 +20,4 @@ if __name__ == '__main__':
                 res += '#include "../{}/{}"\n'.format(key, filename)
         res += '\n'
 
-    res += 'int main() { return 0; }\n'
     print(res.strip())

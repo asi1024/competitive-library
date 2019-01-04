@@ -80,5 +80,3 @@
 #include "../others/fast_cin.cpp"
 #include "../others/fast_cout.cpp"
 #include "../others/tree_dp.cpp"
-
-int main() { return 0; }

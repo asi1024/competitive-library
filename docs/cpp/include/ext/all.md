@@ -1,14 +1,10 @@
 {% include mathjax.html %}
 
-## main
 
-{% highlight cpp %}
-int main();
-{% endhighlight %}
 
 ## Implementation
 
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/exec/main.cpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/ext/all.cpp)
 
 {% highlight cpp %}
 // Templates
@@ -93,8 +89,6 @@ int main();
 #include "../others/fast_cin.cpp"
 #include "../others/fast_cout.cpp"
 #include "../others/tree_dp.cpp"
-
-int main() { return 0; }
 {% endhighlight %}
 
 ### Includes

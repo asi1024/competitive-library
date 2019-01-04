@@ -74,7 +74,7 @@
 | [fft.cpp](./include/math/fft) | <font color="Red">No</font> |  |
 | [fmt.cpp](./include/math/fmt) | <font color="ForestGreen">Yes</font> | [2560.cpp](./src/2560) |
 | [lup_decomposition.cpp](./include/math/lup_decomposition) | <font color="ForestGreen">Yes</font> | [2624.cpp](./src/2624) |
-| [matrix.cpp](./include/math/matrix) | <font color="ForestGreen">Yes</font> | [2347.cpp](./src/2347)<br>[ITP1_7_D.cpp](./src/ITP1_7_D)<br>[lup_decomposition.cpp](./include/math/lup_decomposition) |
+| [matrix.cpp](./include/math/matrix) | <font color="ForestGreen">Yes</font> | [2347.cpp](./src/2347)<br>[ITP1_1_A.cpp](./src/ITP1_1_A)<br>[ITP1_7_D.cpp](./src/ITP1_7_D) etc... |
 
 ## String Algorithms
 
