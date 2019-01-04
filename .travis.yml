@@ -2,23 +2,21 @@ dist: xenial
 
 matrix:
   include:
-    - os: linux
-      language: cpp
+    - language: cpp
       compiler: g++
       addons:
         apt:
           packages:
             - g++-4.8
       env:
-        ENV="GCC 4.8"
-        CXX=g++-4.8
-        CXXFLAGS="-std=c++11 -O2 -Wall -Wextra -Wno-unused-result -Werror"
+        - ENV="GCC 4.8"
       script:
+        - export CXX=g++-4.8
+        - export CXXFLAGS="-std=c++11 -O2 -Wall -Wextra -Wno-unused-result -Werror"
         - ulimit -s unlimited
         - ./cpp/spec.sh
 
-    - os: linux
-      language: cpp
+    - language: cpp
       compiler: g++
       addons:
         apt:
@@ -27,15 +25,14 @@ matrix:
           packages:
             - g++-7
       env:
-        ENV="GCC 7"
-        CXX=g++-7
-        CXXFLAGS="-std=c++17 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror"
+        - ENV="GCC 7"
       script:
+        - export CXX=g++-7
+        - export CXXFLAGS="-std=c++17 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror"
         - ulimit -s unlimited
         - ./cpp/spec.sh
 
-    - os: linux
-      language: cpp
+    - language: cpp
       compiler: clang++
       addons:
         apt:
@@ -43,15 +40,14 @@ matrix:
             - clang++-3.8
             - libc++-dev
       env:
-        ENV="Clang 3.8"
-        CXX=clang++-3.8
-        CXXFLAGS="-std=c++14 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror -stdlib=libc++"
+        - ENV="Clang 3.8"
       script:
+        - export CXX=clang++-3.8
+        - export CXXFLAGS="-std=c++14 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror -stdlib=libc++"
         - ulimit -s unlimited
         - ./cpp/spec.sh
 
-    - os: linux
-      language: ocaml
+    - language: ocaml
       install:
         - sudo add-apt-repository --yes ppa:avsm/ppa
         - sudo apt-get update
@@ -61,20 +57,19 @@ matrix:
         - opam config var root
         - opam install -y num batteries
       env:
-        ENV="OCaml"
+        - ENV="OCaml"
       script:
         - ulimit -s unlimited
         - ./ocaml/spec.sh
 
-    - os: linux
-      language: python
+    - language: python
       python: '3.6'
       addons:
         apt:
-          sources: ['ubuntu-toolchain-r-test']
-          packages: ['clang-format-3.9']
+          packages:
+            - 'clang-format-3.9'
       env:
-        ENV="Doxygen 1.8.13, ClangFormat"
+        - ENV="Doxygen 1.8.13, ClangFormat"
       install:
         - wget https://github.com/doxygen/doxygen/archive/Release_1_8_13.tar.gz
         - tar xpvf Release_1_8_13.tar.gz
@@ -88,19 +83,20 @@ matrix:
         - ./build.sh
         - git diff --exit-code
 
-    - os: linux
-      language: cpp
+    - language: ocaml
       compiler: g++
       addons:
         apt:
-          sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-6', 'bc']
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-6
       env:
-        ENV="Preprocessor w/ GCC 6"
-        COMPILER=g++-6
-        FLAGS="-std=c++14 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror"
+        - ENV="Preprocessor w/ GCC 6"
       script:
-        - CXX=$COMPILER CXXFLAGS=$FLAGS ./cpp/preprocess/test.sh
+        - export CXX=g++-6
+        - export CXXFLAGS="-std=c++14 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror"
+        - ./cpp/preprocess/test.sh
 
 before_install:
   - pyenv versions
