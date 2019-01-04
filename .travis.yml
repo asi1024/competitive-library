@@ -14,7 +14,7 @@ matrix:
         - export CXX=g++-4.8
         - export CXXFLAGS="-std=c++11 -O2 -Wall -Wextra -Wno-unused-result -Werror"
         - ulimit -s unlimited
-        - ./cpp/spec.sh
+        - red-baron cpp/src
 
     - language: cpp
       compiler: g++
@@ -30,7 +30,7 @@ matrix:
         - export CXX=g++-7
         - export CXXFLAGS="-std=c++17 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror"
         - ulimit -s unlimited
-        - ./cpp/spec.sh
+        - red-baron cpp/src
 
     - language: cpp
       compiler: clang++
@@ -45,7 +45,7 @@ matrix:
         - export CXX=clang++-3.8
         - export CXXFLAGS="-std=c++14 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror -stdlib=libc++"
         - ulimit -s unlimited
-        - ./cpp/spec.sh
+        - red-baron cpp/src
 
     - language: ocaml
       install:
@@ -60,7 +60,7 @@ matrix:
         - ENV="OCaml"
       script:
         - ulimit -s unlimited
-        - ./ocaml/spec.sh
+        - red-baron cpp/ocaml
 
     - language: python
       python: '3.6'
@@ -83,21 +83,6 @@ matrix:
         - ./build.sh
         - git diff --exit-code
 
-    - language: ocaml
-      compiler: g++
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - g++-6
-      env:
-        - ENV="Preprocessor w/ GCC 6"
-      script:
-        - export CXX=g++-6
-        - export CXXFLAGS="-std=c++14 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror"
-        - ./cpp/preprocess/test.sh
-
 before_install:
   - pyenv versions
   - pyenv global 3.6
@@ -108,7 +93,7 @@ cache:
   - apt
   - pip
   - directories:
-    - ~/.red-baron
+    - ${HOME}/.red_baron
 
 sudo: required
 
