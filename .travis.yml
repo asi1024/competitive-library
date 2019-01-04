@@ -13,7 +13,7 @@ matrix:
         FLAGS="-std=c++11 -O2 -Wall -Wextra -Wno-unused-result -Werror"
       script:
         - ulimit -s unlimited
-        - CXX=$COMPILER CXXFLAGS=$FLAGS ./cpp/spec.sh --all
+        - CXX=$COMPILER CXXFLAGS=$FLAGS ./cpp/spec.sh
 
     - os: linux
       language: cpp
@@ -28,7 +28,7 @@ matrix:
         FLAGS="-std=c++17 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror"
       script:
         - ulimit -s unlimited
-        - CXX=$COMPILER CXXFLAGS=$FLAGS ./cpp/spec.sh --all
+        - CXX=$COMPILER CXXFLAGS=$FLAGS ./cpp/spec.sh
 
     - os: linux
       language: cpp
@@ -43,7 +43,7 @@ matrix:
         FLAGS="-std=c++14 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror -stdlib=libc++"
       script:
         - ulimit -s unlimited
-        - CXX=$COMPILER CXXFLAGS=$FLAGS ./cpp/spec.sh --all
+        - CXX=$COMPILER CXXFLAGS=$FLAGS ./cpp/spec.sh
 
     - os: linux
       language: ocaml
@@ -60,7 +60,7 @@ matrix:
         COMPILER=ocamlopt
       script:
         - ulimit -s unlimited
-        - CXX=$COMPILER CXXFLAGS=$FLAGS ./ocaml/spec.sh --all
+        - CXX=$COMPILER CXXFLAGS=$FLAGS ./ocaml/spec.sh
 
     - os: linux
       language: python
@@ -97,6 +97,12 @@ matrix:
         FLAGS="-std=c++14 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror"
       script:
         - CXX=$COMPILER CXXFLAGS=$FLAGS ./cpp/preprocess/test.sh
+
+before_install:
+  - yes | pyenv install 3.6.3
+  - pyenv global 3.6.3
+  - pip install --upgrade pip
+  - pip install git+https://github.com/asi1024/red-baron.git
 
 sudo: required
 

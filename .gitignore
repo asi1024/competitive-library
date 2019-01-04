@@ -40,3 +40,6 @@ _site
 
 xml
 __pycache__
+
+# TODO: remove it
+.workspace
