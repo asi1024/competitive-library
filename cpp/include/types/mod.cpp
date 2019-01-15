@@ -54,6 +54,7 @@ public:
     Modulo res = *this;
     return res *= a;
   }
+
   Modulo operator^(ll m) const {
     if (m == 0) return Modulo(1);
     const Modulo a = *this;
@@ -67,34 +68,26 @@ public:
   typename std::enable_if<IsPrime, Modulo>::type operator/=(const Modulo &a) {
     return *this *= inv(ll(a), M);
   }
-};
 
-template <int M, bool IsPrime = false> bool is_zero(Modulo<M, IsPrime> x) {
-  return int(x) == 0;
-}
-template <int M, bool IsPrime = false> int abs(Modulo<M, IsPrime> x) {
-  return int(x);
-}
+  friend bool is_zero(const Modulo &x) { return int(x) == 0; }
+  friend int abs(const Modulo &x) { return int(x); }
 
-const int mod = 1000000007;
-
-template <int M = mod> Modulo<M, true> fact(int n, bool sw = true) {
-  static std::vector<Modulo<M, true>> v1 = { 1 }, v2 = { 1 };
-  if (n >= (int)v1.size()) {
-    const int from = v1.size(), to = n + 1024;
-    v1.reserve(to);
-    v2.reserve(to);
-    for (int i = from; i < to; ++i) {
-      v1.push_back(v1.back() * Modulo<M, true>(i));
-      v2.push_back(v2.back() / Modulo<M, true>(i));
+  static Modulo fact(int n, bool sw = true) {
+    static std::vector<Modulo> v1 = { 1 }, v2 = { 1 };
+    if (n >= (int)v1.size()) {
+      const int from = v1.size(), to = n + 1024;
+      v1.reserve(to);
+      v2.reserve(to);
+      for (int i = from; i < to; ++i) {
+        v1.push_back(v1.back() * Modulo<M, true>(i));
+        v2.push_back(v2.back() / Modulo<M, true>(i));
+      }
     }
+    return sw ? v1[n] : v2[n];
   }
-  return sw ? v1[n] : v2[n];
-}
-
-template <int M = mod> Modulo<M, true> comb(ll a, ll b) {
-  if (b < 0 || b > a) return 0;
-  return fact<M>(a, true) * fact<M>(b, false) * fact<M>(a - b, false);
-}
-
-using Mod = Modulo<mod, true>;
+  static Modulo comb(int a, int b) {
+    if (b < 0 || b > a) return 0;
+    return Modulo::fact(a, true) * Modulo::fact(b, false) *
+           Modulo::fact(a - b, false);
+  }
+};

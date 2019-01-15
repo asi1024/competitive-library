@@ -5,6 +5,8 @@
 
 using namespace std;
 
+using Mod = Modulo<1000000007, true>;
+
 mt19937 mt(0);
 uniform_int_distribution<int> rnd(0, 123456789);
 
