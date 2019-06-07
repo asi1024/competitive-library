@@ -12,7 +12,23 @@ Modulo(ll m);
 
 ---------------------------------------
 
-### [2] operator int
+### [2] operator *
+{% highlight cpp %}
+operator *(const Modulo &a) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [3] operator *=
+{% highlight cpp %}
+operator *=(const Modulo &a);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [4] operator int
 {% highlight cpp %}
 operator int() const;
 {% endhighlight %}
@@ -20,25 +36,9 @@ operator int() const;
 
 ---------------------------------------
 
-### [3] operator ll
+### [5] operator ll
 {% highlight cpp %}
 operator ll() const;
-{% endhighlight %}
-
-
----------------------------------------
-
-### [4] operator*
-{% highlight cpp %}
-operator*(const Modulo &a) const;
-{% endhighlight %}
-
-
----------------------------------------
-
-### [5] operator*=
-{% highlight cpp %}
-operator*=(const Modulo &a);
 {% endhighlight %}
 
 
