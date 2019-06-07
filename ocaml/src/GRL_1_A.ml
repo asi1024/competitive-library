@@ -1,5 +1,5 @@
-(*+ import include/template/template.ml +*)
-(*+ import include/graph/dijkstra.ml +*)
+(*+ import ../include/template/template.ml +*)
+(*+ import ../include/graph/dijkstra.ml +*)
 
 let () =
   let v = read_int () in

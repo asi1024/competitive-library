@@ -1,5 +1,5 @@
-(*+ import include/template/template.ml +*)
-(*+ import include/graph/max_flow.ml +*)
+(*+ import ../include/template/template.ml +*)
+(*+ import ../include/graph/max_flow.ml +*)
 
 let () =
   let v = read_int () in
