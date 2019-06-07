@@ -1,4 +1,4 @@
-(*+ import include/template/typeinfo.ml +*)
+(*+ import ../template/typeinfo.ml +*)
 
 type 'a edge = { s : int; t : int; cost : 'a }
 type 'a graph = 'a edge list array

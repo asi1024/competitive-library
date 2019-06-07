@@ -1,4 +1,4 @@
-(*+ import include/template/template.ml +*)
+(*+ import ../include/template/template.ml +*)
 
 let () =
   let x = read_int () in

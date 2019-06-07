@@ -1,4 +1,4 @@
-(*+ import include/template/typeinfo.ml +*)
+(*+ import ../template/typeinfo.ml +*)
 
 type 't edge = { s : int; t : int; cap : 't ref; rev : 't ref }
 type 't graph = 't edge list array

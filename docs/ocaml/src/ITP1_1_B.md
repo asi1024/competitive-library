@@ -4,7 +4,7 @@
 
 ### Includes
 
-- [template.ml](../include/template/template)
+- [template.ml](../../include/template/template)
 
 {% highlight ocaml %}
 let () =

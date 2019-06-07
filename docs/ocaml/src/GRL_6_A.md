@@ -4,8 +4,8 @@
 
 ### Includes
 
-- [template.ml](../include/template/template)
-- [max_flow.ml](../include/graph/max_flow)
+- [template.ml](../../include/template/template)
+- [max_flow.ml](../../include/graph/max_flow)
 
 {% highlight ocaml %}
 let () =

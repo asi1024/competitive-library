@@ -4,8 +4,8 @@
 
 ### Includes
 
-- [template.ml](../include/template/template)
-- [dijkstra.ml](../include/graph/dijkstra)
+- [template.ml](../../include/template/template)
+- [dijkstra.ml](../../include/graph/dijkstra)
 
 {% highlight ocaml %}
 let () =
