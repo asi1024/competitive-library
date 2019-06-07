@@ -4,7 +4,7 @@
 
 ### Includes
 
-- [typeinfo.ml](../template/typeinfo)
+- [typeinfo.ml](../../../template/typeinfo)
 
 {% highlight ocaml %}
 type 't edge = { s : int; t : int; cap : 't ref; rev : 't ref }
