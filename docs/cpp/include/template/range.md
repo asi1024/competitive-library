@@ -37,17 +37,17 @@ index_type(int x_);
 
 ---------------------------------------
 
-### [2] operator!=
+### [2] operator *
 {% highlight cpp %}
-bool operator!=(index_type &r);
+int operator *() const;
 {% endhighlight %}
 
 
 ---------------------------------------
 
-### [3] operator*
+### [3] operator!=
 {% highlight cpp %}
-int operator*() const;
+bool operator!=(index_type &r);
 {% endhighlight %}
 
 

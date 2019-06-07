@@ -12,10 +12,10 @@ if_arithmetic_t<lhs_type, float_tolerance<float_type, inv_eps> > operator+(const
 if_arithmetic_t<lhs_type, float_tolerance<float_type, inv_eps> > operator-(const lhs_type &l, const float_tolerance< float_type, inv_eps > &r);
 {% endhighlight %}
 
-## operator*
+## operator *
 
 {% highlight cpp %}
-if_arithmetic_t<lhs_type, float_tolerance<float_type, inv_eps> > operator*(const lhs_type &l, const float_tolerance< float_type, inv_eps > &r);
+if_arithmetic_t<lhs_type, float_tolerance<float_type, inv_eps> > operator *(const lhs_type &l, const float_tolerance< float_type, inv_eps > &r);
 {% endhighlight %}
 
 ## operator/
@@ -119,7 +119,25 @@ float_tolerance(float_type x_);
 
 ---------------------------------------
 
-### [2] operator cast_to
+### [2] operator *
+{% highlight cpp %}
+operator *(const float_type &r) const;
+operator *(const float_tolerance &r) const;
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [3] operator *=
+{% highlight cpp %}
+operator *=(const float_type &r);
+operator *=(const float_tolerance &r);
+{% endhighlight %}
+
+
+---------------------------------------
+
+### [4] operator cast_to
 {% highlight cpp %}
 operator cast_to();
 {% endhighlight %}
@@ -127,7 +145,7 @@ operator cast_to();
 
 ---------------------------------------
 
-### [3] operator float_type
+### [5] operator float_type
 {% highlight cpp %}
 operator float_type();
 {% endhighlight %}
@@ -135,28 +153,10 @@ operator float_type();
 
 ---------------------------------------
 
-### [4] operator!=
+### [6] operator!=
 {% highlight cpp %}
 bool operator!=(const float_type &r) const;
 bool operator!=(const float_tolerance &r) const;
-{% endhighlight %}
-
-
----------------------------------------
-
-### [5] operator*
-{% highlight cpp %}
-operator*(const float_type &r) const;
-operator*(const float_tolerance &r) const;
-{% endhighlight %}
-
-
----------------------------------------
-
-### [6] operator*=
-{% highlight cpp %}
-operator*=(const float_type &r);
-operator*=(const float_tolerance &r);
 {% endhighlight %}
 
 

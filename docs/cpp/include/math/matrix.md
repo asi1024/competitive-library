@@ -164,18 +164,18 @@ T det() const;
 
 ---------------------------------------
 
-### [7] operator*
+### [7] operator *
 {% highlight cpp %}
-operator*(const Matrix< T > &r) const;
-operator*(const Vec< T > &r) const;
+operator *(const Matrix< T > &r) const;
+operator *(const Vec< T > &r) const;
 {% endhighlight %}
 
 
 ---------------------------------------
 
-### [8] operator*=
+### [8] operator *=
 {% highlight cpp %}
-operator*=(const Matrix< T > &r);
+operator *=(const Matrix< T > &r);
 {% endhighlight %}
 
 
