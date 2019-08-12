@@ -24,7 +24,7 @@ std::vector<cost_type> dijkstra(const graph_t< edge_t > &g, int s);
 
 ### Notes
 
-- 入力グラフに不辺があってはならない
+- 入力グラフに負辺があってはならない
 
 ### Time Complexity
 
