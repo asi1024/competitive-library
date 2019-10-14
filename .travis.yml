@@ -75,15 +75,7 @@ matrix:
       env:
         - ENV="Doxygen 1.8.15, ClangFormat"
         - PYTHON_VERSION="3.7"
-      install:
-        - wget https://github.com/doxygen/doxygen/archive/Release_1_8_15.tar.gz
-        - tar xpvf Release_1_8_15.tar.gz
-        - pushd doxygen-Release_1_8_15
-        - cmake -DCMAKE_INSTALL_PREFIX=/usr .
-        - sudo make install
-        - popd
       script:
-        - doxygen --version
         - python --version
         - ./build.sh
         - git diff --exit-code

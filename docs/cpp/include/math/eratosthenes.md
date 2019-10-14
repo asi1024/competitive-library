@@ -1,11 +1,3 @@
-{% include mathjax.html %}
-
-## eratosthenes
-
-{% highlight cpp %}
-std::vector<int> eratosthenes(int M);
-{% endhighlight %}
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/eratosthenes.cpp)

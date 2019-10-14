@@ -1,23 +1,3 @@
-{% include mathjax.html %}
-
-## Member functions
-
-### [1] (constructor)
-{% highlight cpp %}
-GoogleCodeJam();
-{% endhighlight %}
-
-
----------------------------------------
-
-### [2] exec
-{% highlight cpp %}
-void exec() const;
-{% endhighlight %}
-
-
----------------------------------------
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/google_code_jam.cpp)

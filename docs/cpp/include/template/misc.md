@@ -1,29 +1,3 @@
-{% include mathjax.html %}
-
-## chmin
-
-{% highlight cpp %}
-T& chmin(T &a, const T &b);
-{% endhighlight %}
-
-### Notes
-
-- 型 T の比較が定義されている必要がある
-
----------------------------------------
-
-## chmax
-
-{% highlight cpp %}
-T& chmax(T &a, const T &b);
-{% endhighlight %}
-
-### Notes
-
-- 型 T の比較が定義されている必要がある
-
----------------------------------------
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/misc.hpp)

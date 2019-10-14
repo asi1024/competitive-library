@@ -1,17 +1,3 @@
-{% include mathjax.html %}
-
-## augment
-
-{% highlight cpp %}
-cap_type augment(graph_t< edge_t > &g, std::vector< int > &d, std::vector< int > &iter, int v, int t, const cap_type &f);
-{% endhighlight %}
-
-## max_flow
-
-{% highlight cpp %}
-cap_type max_flow(graph_t< edge_t > &g, int s, int t);
-{% endhighlight %}
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/max_flow.cpp)

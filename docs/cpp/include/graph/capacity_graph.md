@@ -1,21 +1,3 @@
-{% include mathjax.html %}
-
-## add_edge
-
-{% highlight cpp %}
-void add_edge(CapacityGraph< Capacity > &g, int from, int to, Capacity cap);
-{% endhighlight %}
-
-## Member functions
-
-### [1] (constructor)
-{% highlight cpp %}
-CapacityEdge(int, int t, int r, capacity_type f);
-{% endhighlight %}
-
-
----------------------------------------
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/capacity_graph.hpp)

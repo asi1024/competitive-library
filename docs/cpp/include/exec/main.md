@@ -1,11 +1,3 @@
-{% include mathjax.html %}
-
-## main
-
-{% highlight cpp %}
-int main();
-{% endhighlight %}
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/exec/main.cpp)

@@ -1,21 +1,3 @@
-{% include mathjax.html %}
-
-## add_edge
-
-{% highlight cpp %}
-void add_edge(WeightedGraph< Cost > &g, int from, int to, Cost cost);
-{% endhighlight %}
-
-## Member functions
-
-### [1] (constructor)
-{% highlight cpp %}
-WeightedEdge(int, int t, cost_type c);
-{% endhighlight %}
-
-
----------------------------------------
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/weighted_graph.hpp)

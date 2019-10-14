@@ -1,17 +1,3 @@
-{% include mathjax.html %}
-
-## FMT
-
-{% highlight cpp %}
-void FMT(std::vector< Modulo< mod, true >> &a);
-{% endhighlight %}
-
-## convolution
-
-{% highlight cpp %}
-std::vector<Modulo<mod, true> > convolution(std::vector< Modulo< mod, true >> a, std::vector< Modulo< mod, true >> b);
-{% endhighlight %}
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/fmt.cpp)

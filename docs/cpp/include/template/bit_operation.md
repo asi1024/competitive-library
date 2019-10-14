@@ -1,17 +1,3 @@
-{% include mathjax.html %}
-
-## log2ceil
-
-{% highlight cpp %}
-int log2ceil(int n);
-{% endhighlight %}
-
-## log2ceil
-
-{% highlight cpp %}
-int log2ceil(long long n);
-{% endhighlight %}
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/bit_operation.cpp)

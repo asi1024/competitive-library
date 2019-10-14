@@ -1,21 +1,3 @@
-{% include mathjax.html %}
-
-## add_edge
-
-{% highlight cpp %}
-void add_edge(CapacityWeightedGraph< Capacity, Cost > &g, int from, int to, Capacity cap, Cost cost);
-{% endhighlight %}
-
-## Member functions
-
-### [1] (constructor)
-{% highlight cpp %}
-CapacityWeightedEdge(int, int t, int r, capacity_type f, cost_type c);
-{% endhighlight %}
-
-
----------------------------------------
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/capacity_weighted_graph.hpp)

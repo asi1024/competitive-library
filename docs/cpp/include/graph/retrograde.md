@@ -1,11 +1,3 @@
-{% include mathjax.html %}
-
-## retrograde
-
-{% highlight cpp %}
-std::vector<Game> retrograde(const graph_t< edge_t > &g);
-{% endhighlight %}
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/retrograde.cpp)

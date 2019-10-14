@@ -1,23 +1,3 @@
-{% include mathjax.html %}
-
-## operator&gt;&gt;
-
-{% highlight cpp %}
-std::istream& operator>>(std::istream &is, std::tuple< Args... > &t);
-{% endhighlight %}
-
-## operator&gt;&gt;
-
-{% highlight cpp %}
-std::istream& operator>>(std::istream &is, std::pair< T, U > &p);
-{% endhighlight %}
-
-## operator&gt;&gt;
-
-{% highlight cpp %}
-std::istream& operator>>(std::istream &is, std::vector< T > &v);
-{% endhighlight %}
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/cin.cpp)

@@ -1,7 +1,3 @@
-{% include mathjax.html %}
-
-
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/solid_geometry.cpp)
