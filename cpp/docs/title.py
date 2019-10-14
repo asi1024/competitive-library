@@ -101,7 +101,9 @@ def get_verifier_dict():
 
 if __name__ == '__main__':
     f = open('cpp/include/TITLE.json', 'r')
-    print('\n# C++\n')
+    print('---')
+    print('title: C++')
+    print('---')
     decoder = json.JSONDecoder(object_pairs_hook=collections.OrderedDict)
     json = decoder.decode(''.join(f.readlines()))
     verifier_dict = get_verifier_dict()

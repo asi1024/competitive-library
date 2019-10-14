@@ -45,8 +45,9 @@ def page(path, fname):
     f = mkdir_open_write("docs/" + path + "/" + basename(fname) + ".md")
     writeln = lambda s: f.write(s + "\n")
 
-    writeln("## " + fname)
-    writeln("")
+    writeln('---')
+    writeln('title: "%s"' % fname)
+    writeln('---')
     writeln("- [GitHub](%s)" % repo_path)
     writeln("")
     if includes:
