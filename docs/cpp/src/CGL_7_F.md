@@ -1,7 +1,3 @@
-{% include mathjax.html %}
-
-
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_7_F.cpp)

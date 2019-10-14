@@ -1,11 +1,3 @@
-{% include mathjax.html %}
-
-## convolution
-
-{% highlight cpp %}
-std::vector<ll> convolution(const std::vector< ll > &lhs, const std::vector< ll > &rhs);
-{% endhighlight %}
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/fft.cpp)

@@ -1,17 +1,3 @@
-{% include mathjax.html %}
-
-## Member functions
-
-### [1] operator&lt;&lt;
-{% highlight cpp %}
-operator<<(const int &var);
-operator<<(const long long &var);
-operator<<(const std::string &var);
-{% endhighlight %}
-
-
----------------------------------------
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/others/fast_cout.cpp)

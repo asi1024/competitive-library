@@ -1,11 +1,3 @@
-{% include mathjax.html %}
-
-## min_cost_flow
-
-{% highlight cpp %}
-cost_type min_cost_flow(graph_t< edge_t > &g, int s, int t, cap_type f, bool init=true);
-{% endhighlight %}
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/min_cost_flow.cpp)

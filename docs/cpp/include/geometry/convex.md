@@ -1,23 +1,3 @@
-{% include mathjax.html %}
-
-## convex_hull
-
-{% highlight cpp %}
-Polygon<real_t> convex_hull(std::vector< Point< real_t >> ps);
-{% endhighlight %}
-
-## max_distance
-
-{% highlight cpp %}
-real_t max_distance(const std::vector< Point< real_t >> &ps);
-{% endhighlight %}
-
-## convex_cut
-
-{% highlight cpp %}
-Polygon<real_t> convex_cut(const Polygon< real_t > &g, const Line< real_t > &l);
-{% endhighlight %}
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/convex.cpp)

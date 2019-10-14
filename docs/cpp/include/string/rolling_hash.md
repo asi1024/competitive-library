@@ -1,23 +1,3 @@
-{% include mathjax.html %}
-
-## Member functions
-
-### [1] (constructor)
-{% highlight cpp %}
-RollingHash(const string_t &str);
-{% endhighlight %}
-
-
----------------------------------------
-
-### [2] query
-{% highlight cpp %}
-std::pair< query(int l, int r);
-{% endhighlight %}
-
-
----------------------------------------
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/rolling_hash.cpp)

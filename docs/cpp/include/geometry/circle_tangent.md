@@ -1,17 +1,3 @@
-{% include mathjax.html %}
-
-## tangent_cp
-
-{% highlight cpp %}
-std::vector<Line<real_t> > tangent_cp(const Circle< real_t > &c, const Point< real_t > &p);
-{% endhighlight %}
-
-## tangent_cc
-
-{% highlight cpp %}
-std::vector<Line<real_t> > tangent_cc(const Circle< real_t > &c1, const Circle< real_t > &c2);
-{% endhighlight %}
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/circle_tangent.cpp)

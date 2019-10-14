@@ -1,19 +1,3 @@
-{% include mathjax.html %}
-
-## Member functions
-
-### [1] operator&gt;&gt;
-{% highlight cpp %}
-operator>>(int &var);
-operator>>(long long &var);
-operator>>(double &var);
-operator>>(long double &var);
-operator>>(std::string &var);
-{% endhighlight %}
-
-
----------------------------------------
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/others/fast_cin.cpp)

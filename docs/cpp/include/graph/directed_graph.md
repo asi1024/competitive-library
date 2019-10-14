@@ -1,21 +1,3 @@
-{% include mathjax.html %}
-
-## add_edge
-
-{% highlight cpp %}
-void add_edge(DirectedGraph &g, int from, int to);
-{% endhighlight %}
-
-## Member functions
-
-### [1] (constructor)
-{% highlight cpp %}
-DirectedEdge(int, int t);
-{% endhighlight %}
-
-
----------------------------------------
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/directed_graph.hpp)

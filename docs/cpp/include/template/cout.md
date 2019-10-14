@@ -1,29 +1,3 @@
-{% include mathjax.html %}
-
-## operator&lt;&lt;
-
-{% highlight cpp %}
-std::ostream& operator<<(std::ostream &os, const std::tuple< Args... > &t);
-{% endhighlight %}
-
-## operator&lt;&lt;
-
-{% highlight cpp %}
-std::ostream& operator<<(std::ostream &os, const std::pair< T, U > &p);
-{% endhighlight %}
-
-## operator&lt;&lt;
-
-{% highlight cpp %}
-std::ostream& operator<<(std::ostream &os, const std::vector< T > &v);
-{% endhighlight %}
-
-## operator&lt;&lt;
-
-{% highlight cpp %}
-std::ostream& operator<<(std::ostream &os, const std::set< T > &v);
-{% endhighlight %}
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/cout.cpp)

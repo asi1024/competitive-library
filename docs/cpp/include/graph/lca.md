@@ -1,23 +1,3 @@
-{% include mathjax.html %}
-
-## Member functions
-
-### [1] (constructor)
-{% highlight cpp %}
-LCA(const graph_t< edge_t > &g, const int root);
-{% endhighlight %}
-
-
----------------------------------------
-
-### [2] query
-{% highlight cpp %}
-int query(int u, int v);
-{% endhighlight %}
-
-
----------------------------------------
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/lca.cpp)

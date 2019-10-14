@@ -1,11 +1,3 @@
-{% include mathjax.html %}
-
-## articulation_points
-
-{% highlight cpp %}
-std::pair<std::set<int>, std::vector<std::vector<edge_t> > > articulation_points(const graph_t< edge_t > &g);
-{% endhighlight %}
-
 ## Implementation
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/articulation_points.cpp)
