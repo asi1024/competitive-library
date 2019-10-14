@@ -1,3 +1,17 @@
-theme: jekyll-theme-midnight
+remote_theme: academicpages/academicpages.github.io
 show_downloads: true
 google_analytics: UA-96898804-1
+
+author:
+  name             : "asi1024"
+  avatar           : "https://avatars2.githubusercontent.com/u/5086403"
+  github           : "asi1024"
+  twitter          : "asi1024"
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
