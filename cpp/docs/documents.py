@@ -2,8 +2,6 @@
 
 import os
 
-import xml_parser
-
 
 def ext(fname):
     return fname.split('.')[-1]
@@ -51,17 +49,7 @@ def page(path, fname):
     xmlname = basename(fname).replace('_', '__')
     xmlpath = dirname + '/xml/' + xmlname + '_8' + ext(fname) + '.xml'
 
-    res = '{% include mathjax.html %}\n\n'
-    res += xml_parser.main(xmlpath)
-    res += '\n\n'
-
-    doc_path = path.replace('cpp/', 'cpp/docs/') + '/' + basename(fname) + '.md'
-    if os.path.exists(doc_path):
-        docf = open(doc_path)
-        res += ''.join(docf.readlines()) + '\n'
-        docf.close()
-
-    res += '## Implementation\n\n'
+    res = '## Implementation\n\n'
     res += '- [GitHub]({})\n\n'.format(repo_path)
 
     res += '{% highlight cpp %}\n'
