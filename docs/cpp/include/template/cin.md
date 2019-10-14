@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "cin.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/cin.cpp)
 

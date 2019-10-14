@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "directed_graph.hpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/directed_graph.hpp)
 

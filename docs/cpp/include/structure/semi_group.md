@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "semi_group.hpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/semi_group.hpp)
 

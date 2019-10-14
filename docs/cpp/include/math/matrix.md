@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "matrix.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/matrix.cpp)
 

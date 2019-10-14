@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "bit_operation.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/bit_operation.cpp)
 

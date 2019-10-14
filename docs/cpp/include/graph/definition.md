@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "definition.hpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/definition.hpp)
 

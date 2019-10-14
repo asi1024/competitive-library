@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "tree_dp.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/others/tree_dp.cpp)
 

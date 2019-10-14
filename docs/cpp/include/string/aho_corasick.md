@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "aho_corasick.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/aho_corasick.cpp)
 

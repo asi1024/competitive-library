@@ -1,5 +1,6 @@
-## max_flow.ml
-
+---
+title: "max_flow.ml"
+---
 - [GitHub]({{ site.github.repository_url }}/blob/master/ocaml/include/graph/max_flow.ml)
 
 ### Includes

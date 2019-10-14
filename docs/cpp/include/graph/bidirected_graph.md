@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "bidirected_graph.hpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/bidirected_graph.hpp)
 

@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "convex.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/convex.cpp)
 

@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "fast_cin.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/others/fast_cin.cpp)
 

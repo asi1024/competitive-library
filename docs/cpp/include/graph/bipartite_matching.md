@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "bipartite_matching.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/bipartite_matching.cpp)
 

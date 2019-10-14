@@ -1,5 +1,6 @@
-## dijkstra.ml
-
+---
+title: "dijkstra.ml"
+---
 - [GitHub]({{ site.github.repository_url }}/blob/master/ocaml/include/graph/dijkstra.ml)
 
 ### Includes

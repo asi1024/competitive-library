@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "ext.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/others/ext.cpp)
 

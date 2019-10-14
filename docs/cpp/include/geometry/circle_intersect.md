@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "circle_intersect.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/circle_intersect.cpp)
 

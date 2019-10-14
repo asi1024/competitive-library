@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "unionfind.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/unionfind.cpp)
 

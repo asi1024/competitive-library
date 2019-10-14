@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "initialize.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/initialize.cpp)
 

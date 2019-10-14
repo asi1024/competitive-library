@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "max_flow.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/max_flow.cpp)
 

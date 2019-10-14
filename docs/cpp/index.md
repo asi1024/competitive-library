@@ -1,6 +1,6 @@
-
-# C++
-
+---
+title: C++
+---
 ## Templates
 
 | Algorithm | Verified | AOJ Problems |

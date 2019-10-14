@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "GRL_5_C.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/GRL_5_C.cpp)
 

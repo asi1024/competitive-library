@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "capacity_weighted_graph.hpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/capacity_weighted_graph.hpp)
 

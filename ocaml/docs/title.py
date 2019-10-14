@@ -66,7 +66,9 @@ def verifier_dict():
 
 if __name__ == '__main__':
     f = open("ocaml/include/TITLE.json", 'r')
-    print("\n# OCaml\n")
+    print('---')
+    print('title: OCaml')
+    print('---')
     decoder = json.JSONDecoder(object_pairs_hook=collections.OrderedDict)
     json = decoder.decode(''.join(f.readlines()))
     f.close()

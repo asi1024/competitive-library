@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "table.hpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/table.hpp)
 

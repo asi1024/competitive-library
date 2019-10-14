@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "weighted_graph.hpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/weighted_graph.hpp)
 

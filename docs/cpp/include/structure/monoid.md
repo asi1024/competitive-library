@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "monoid.hpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/monoid.hpp)
 
