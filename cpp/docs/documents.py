@@ -49,7 +49,7 @@ def page(path, fname):
     xmlname = basename(fname).replace('_', '__')
     xmlpath = dirname + '/xml/' + xmlname + '_8' + ext(fname) + '.xml'
 
-    res = '## Implementation\n\n'
+    res = '## ' + filename(fname) + '\n\n'
     res += '- [GitHub]({})\n\n'.format(repo_path)
 
     res += '{% highlight cpp %}\n'
