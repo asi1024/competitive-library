@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "fast_cout.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/others/fast_cout.cpp)
 

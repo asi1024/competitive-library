@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "const_value.hpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/const_value.hpp)
 

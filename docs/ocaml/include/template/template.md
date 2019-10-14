@@ -1,5 +1,6 @@
-## template.ml
-
+---
+title: "template.ml"
+---
 - [GitHub]({{ site.github.repository_url }}/blob/master/ocaml/include/template/template.ml)
 
 {% highlight ocaml %}

@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "fmt.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/fmt.cpp)
 

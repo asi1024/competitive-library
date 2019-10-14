@@ -1,6 +1,6 @@
-
-# OCaml
-
+---
+title: OCaml
+---
 ## Templates
 
 | Algorithm | Verified | AOJ Problems |

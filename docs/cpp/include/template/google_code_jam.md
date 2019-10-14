@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "google_code_jam.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/google_code_jam.cpp)
 

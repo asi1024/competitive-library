@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "slide_min.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/slide_min.cpp)
 

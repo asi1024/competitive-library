@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "convex_hull_trick.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/convex_hull_trick.cpp)
 

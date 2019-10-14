@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "heavy_light_decomposition.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/heavy_light_decomposition.cpp)
 

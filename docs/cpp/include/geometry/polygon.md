@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "polygon.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/polygon.cpp)
 

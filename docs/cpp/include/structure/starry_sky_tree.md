@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "starry_sky_tree.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/starry_sky_tree.cpp)
 

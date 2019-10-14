@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "segment_tree_lazy.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/segment_tree_lazy.cpp)
 

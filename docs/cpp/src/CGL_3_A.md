@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "CGL_3_A.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/CGL_3_A.cpp)
 

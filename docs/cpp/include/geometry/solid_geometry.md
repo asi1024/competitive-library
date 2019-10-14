@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "solid_geometry.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/solid_geometry.cpp)
 

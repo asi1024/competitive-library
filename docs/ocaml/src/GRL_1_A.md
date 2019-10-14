@@ -1,5 +1,6 @@
-## GRL_1_A.ml
-
+---
+title: "GRL_1_A.ml"
+---
 - [GitHub]({{ site.github.repository_url }}/blob/master/ocaml/src/GRL_1_A.ml)
 
 ### Includes

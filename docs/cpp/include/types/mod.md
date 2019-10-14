@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "mod.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/types/mod.cpp)
 

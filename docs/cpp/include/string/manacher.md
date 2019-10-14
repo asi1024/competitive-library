@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "manacher.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/manacher.cpp)
 

@@ -1,5 +1,6 @@
-## ITP1_1_B.ml
-
+---
+title: "ITP1_1_B.ml"
+---
 - [GitHub]({{ site.github.repository_url }}/blob/master/ocaml/src/ITP1_1_B.ml)
 
 ### Includes

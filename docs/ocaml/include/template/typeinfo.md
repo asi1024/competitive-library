@@ -1,5 +1,6 @@
-## typeinfo.ml
-
+---
+title: "typeinfo.ml"
+---
 - [GitHub]({{ site.github.repository_url }}/blob/master/ocaml/include/template/typeinfo.ml)
 
 {% highlight ocaml %}

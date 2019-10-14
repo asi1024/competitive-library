@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "distance.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/distance.cpp)
 

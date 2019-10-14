@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "range.hpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/range.hpp)
 

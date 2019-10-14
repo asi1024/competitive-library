@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "lup_decomposition.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/lup_decomposition.cpp)
 

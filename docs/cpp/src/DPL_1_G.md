@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "DPL_1_G.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DPL_1_G.cpp)
 

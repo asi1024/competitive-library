@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "DSL_2_A.1.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/DSL_2_A.1.cpp)
 

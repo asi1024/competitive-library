@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "ITP1_7_D.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/src/ITP1_7_D.cpp)
 

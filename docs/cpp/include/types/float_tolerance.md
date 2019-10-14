@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "float_tolerance.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/types/float_tolerance.cpp)
 

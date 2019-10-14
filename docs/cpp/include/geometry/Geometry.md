@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "Geometry.hpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/Geometry.hpp)
 

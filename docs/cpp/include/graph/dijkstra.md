@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "dijkstra.cpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/dijkstra.cpp)
 

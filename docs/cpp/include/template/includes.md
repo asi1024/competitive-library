@@ -1,4 +1,6 @@
-## Implementation
+---
+title: "includes.hpp"
+---
 
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/includes.hpp)
 
