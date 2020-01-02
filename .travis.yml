@@ -21,6 +21,19 @@ matrix:
       compiler: g++
       addons:
         apt:
+          packages:
+            - g++-4.8
+      env:
+        - ENV="GCC 4.8 with OJ"
+        - PYTHON_VERSION="3.7"
+      script:
+        - ulimit -s unlimited
+        - ./scripts/test.sh cpp
+
+    - language: cpp
+      compiler: g++
+      addons:
+        apt:
           sources:
             - ubuntu-toolchain-r-test
           packages:
@@ -68,6 +81,7 @@ before_install:
   - pyenv versions
   - pyenv global ${PYTHON_VERSION}
   - pip install --upgrade pip
+  - pip install online-judge-tools
   - pip install git+https://github.com/asi1024/red-baron.git
 
 cache:
@@ -75,6 +89,7 @@ cache:
   - pip
   - directories:
     - ${HOME}/.red_baron
+    - ${HOME}/.workspace
 
 sudo: required
 

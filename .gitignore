@@ -40,6 +40,7 @@ _site
 
 xml
 __pycache__
+.mypy_cache
 
 # TODO: remove it
 .workspace
