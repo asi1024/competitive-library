@@ -50,22 +50,6 @@ matrix:
         - ulimit -s unlimited
         - red-baron cpp/src
 
-    - language: ocaml
-      install:
-        - sudo add-apt-repository --yes ppa:avsm/ppa
-        - sudo apt-get update
-        - sudo apt-get install opam
-        - opam init -y
-        - eval $(opam config env)
-        - opam config var root
-        - opam install -y num batteries
-      env:
-        - ENV="OCaml"
-        - PYTHON_VERSION="3.6"
-      script:
-        - ulimit -s unlimited
-        - red-baron ocaml/src
-
     - language: python
       python: '3.7'
       addons:
