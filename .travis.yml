@@ -64,6 +64,7 @@ matrix:
     - language: cpp
       compiler: g++
       script:
+        - pip install .
         - cd example
         - ./tutorial.sh
 
