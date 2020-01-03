@@ -2,6 +2,8 @@
 
 set -eux
 
+ulimit -s 32768
+
 DIR=${PWD}
 LANG=$1
 DIFF=${DIR}/scripts/diff.py
