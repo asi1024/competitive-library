@@ -104,7 +104,7 @@ title: C++
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:-------------|
 | [ext.cpp](./include/others/ext) | <font color="Red">No</font> |  |
-| [fast_cin.cpp](./include/others/fast_cin) | <font color="Red">No</font> |  |
-| [fast_cout.cpp](./include/others/fast_cout) | <font color="Red">No</font> |  |
+| [fast_cin.cpp](./include/others/fast_cin) | <font color="ForestGreen">Yes</font> | [yosupo-aplusb.cpp](./tests/yosupo-aplusb) |
+| [fast_cout.cpp](./include/others/fast_cout) | <font color="ForestGreen">Yes</font> | [yosupo-aplusb.cpp](./tests/yosupo-aplusb) |
 | [tree_dp.cpp](./include/others/tree_dp) | <font color="Red">No</font> |  |
 
