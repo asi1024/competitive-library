@@ -25,11 +25,10 @@ for TEST in `ls ${DIR}/${LANG}/src/*.cpp`
 do
     ID=`basename ${TEST} | sed 's/\..*$//'`
     download ${ID}
-    g++ --std=gnu++11 -O2 ${TEST} -o a.out
+    ${COMPILE} ${TEST} -o a.out
     oj test --mle 256 --tle 32 --judge-command ${DIFF} -d ${ID}
     echo ${ID}
 done
 
 popd
-
 popd
