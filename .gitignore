@@ -41,6 +41,7 @@ _site
 xml
 __pycache__
 .mypy_cache
+*.egg-info
 
 # TODO: remove it
 .workspace
