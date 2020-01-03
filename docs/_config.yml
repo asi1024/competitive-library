@@ -1,6 +1,7 @@
 remote_theme: academicpages/academicpages.github.io
 show_downloads: true
 google_analytics: UA-96898804-1
+github: [metadata]
 
 author:
   name             : "asi1024"

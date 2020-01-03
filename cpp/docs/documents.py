@@ -80,5 +80,5 @@ def directory(path):
 
 
 if __name__ == '__main__':
-    directory('cpp/src')
+    directory('cpp/tests')
     directory('cpp/include')

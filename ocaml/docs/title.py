@@ -30,7 +30,7 @@ def category(path, name, verifier):
         algorithm = "[%s](./%s/%s)" % (fname, path, basename(fname))
         if fname in verifier:
             validated = '<font color="ForestGreen">Yes</font>'
-            aojlist = ["[%s](./src/%s)" % (vname, basename(vname))
+            aojlist = ["[%s](./tests/%s)" % (vname, basename(vname))
                        for vname in verifier[fname]]
             aojlist = '<br>'.join(aojlist)
         else:
@@ -42,7 +42,7 @@ def category(path, name, verifier):
 
 
 def verifier_dict():
-    path = "ocaml/src"
+    path = "ocaml/tests"
     regex = re.compile('\(\*\+\s*import\s+([^\s]*)\s*\+\*\)\n')
     files = os.listdir(path)
     res = {}

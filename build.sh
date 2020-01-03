@@ -1,13 +1,13 @@
 #!/bin/bash
 
-set -eu
+set -eux
 
 DIR=`dirname $0`
 
 pushd ${DIR}
 
 python ./cpp/include/exec/make_main.py > ./cpp/include/exec/main.cpp
-clang-format -i cpp/include/*/*.?pp cpp/src/*.?pp
+clang-format -i cpp/include/*/*.?pp cpp/tests/*.?pp
 
 rm -rf docs/cpp docs/ocaml
 python cpp/docs/documents.py

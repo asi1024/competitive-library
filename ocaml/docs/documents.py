@@ -84,5 +84,5 @@ def directory(path):
 
 
 if __name__ == '__main__':
-    directory('ocaml/src')
+    directory('ocaml/tests')
     directory('ocaml/include')
