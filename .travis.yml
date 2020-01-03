@@ -10,12 +10,11 @@ matrix:
             - g++-4.8
       env:
         - ENV="GCC 4.8"
+        - COMPILE="g++-4.8 -std=gnu++11 -O2 -Wall -Wextra -Wno-unused-result -Werror"
         - PYTHON_VERSION="3.7"
       script:
-        - export CXX=g++-4.8
-        - export CXXFLAGS="-std=c++11 -O2 -Wall -Wextra -Wno-unused-result -Werror"
         - ulimit -s unlimited
-        - red-baron cpp/src
+        - ./scripts/test.sh cpp
 
     - language: cpp
       compiler: g++
@@ -27,12 +26,11 @@ matrix:
             - g++-7
       env:
         - ENV="GCC 7"
+        - COMPILE="g++-7 -std=gnu++17 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror"
         - PYTHON_VERSION="3.7"
       script:
-        - export CXX=g++-7
-        - export CXXFLAGS="-std=c++17 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror"
         - ulimit -s unlimited
-        - red-baron cpp/src
+        - ./scripts/test.sh cpp
 
     - language: cpp
       compiler: clang++
@@ -43,12 +41,11 @@ matrix:
             - libc++-dev
       env:
         - ENV="Clang 3.8"
+        - COMPILE="clang++-3.8 -std=c++14 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror -stdlib=libc++"
         - PYTHON_VERSION="3.7"
       script:
-        - export CXX=clang++-3.8
-        - export CXXFLAGS="-std=c++14 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror -stdlib=libc++"
         - ulimit -s unlimited
-        - red-baron cpp/src
+        - ./scripts/test.sh cpp
 
     - language: python
       python: '3.7'
@@ -68,13 +65,13 @@ before_install:
   - pyenv versions
   - pyenv global ${PYTHON_VERSION}
   - pip install --upgrade pip
-  - pip install git+https://github.com/asi1024/red-baron.git
+  - pip install online-judge-tools
 
 cache:
   - apt
   - pip
   - directories:
-    - ${HOME}/.red_baron
+    - ${HOME}/.workspace
 
 sudo: required
 
