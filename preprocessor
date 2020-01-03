@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+
+import argparse
+from pathlib import Path
+import sys
+
+import scripts
+
+if __name__ == '__main__':
+    if sys.version_info[:3] < (3, 5, 0):
+        Exception('Use Python 3.5 or later')
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('filepath', nargs=1, help='source')
+    args = parser.parse_args()
+    filepath = Path(args.filepath[0])
+    result = scripts.preprocess_file(filepath)
+    print(result)
