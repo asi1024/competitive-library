@@ -4,10 +4,7 @@
 # competitive-library
 
 ## Quickstart
-```
-$ cd example
-$ python preprocess.py sample.cpp
-```
+See [example/tutorial.sh](https://github.com/asi1024/competitive-library/blob/master/example/tutorial.sh).
 
 ## Reference
 - [C++](https://asi1024.github.io/competitive-library/cpp/)

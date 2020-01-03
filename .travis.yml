@@ -11,7 +11,6 @@ matrix:
       env:
         - ENV="GCC 4.8"
         - COMPILE="g++-4.8 -std=gnu++11 -O2 -Wall -Wextra -Wno-unused-result -Werror"
-        - PYTHON_VERSION="3.7"
       script:
         - ulimit -s unlimited
         - ./scripts/test.sh cpp
@@ -27,7 +26,6 @@ matrix:
       env:
         - ENV="GCC 7"
         - COMPILE="g++-7 -std=gnu++17 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror"
-        - PYTHON_VERSION="3.7"
       script:
         - ulimit -s unlimited
         - ./scripts/test.sh cpp
@@ -42,7 +40,6 @@ matrix:
       env:
         - ENV="Clang 3.8"
         - COMPILE="clang++-3.8 -std=c++14 -O2 -Wall -Wextra -Wshadow -Wno-unused-result -Werror -stdlib=libc++"
-        - PYTHON_VERSION="3.7"
       script:
         - ulimit -s unlimited
         - ./scripts/test.sh cpp
@@ -55,15 +52,21 @@ matrix:
             - 'clang-format-3.9'
       env:
         - ENV="Doxygen 1.8.15, ClangFormat"
-        - PYTHON_VERSION="3.7"
       script:
         - python --version
         - ./build.sh
         - git diff --exit-code
 
+    - language: cpp
+      compiler: g++
+      script:
+        - pip install .
+        - cd example
+        - ./tutorial.sh
+
 before_install:
   - pyenv versions
-  - pyenv global ${PYTHON_VERSION}
+  - pyenv global 3.7
   - pip install --upgrade pip
   - pip install online-judge-tools
 
