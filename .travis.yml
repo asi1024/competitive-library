@@ -61,6 +61,12 @@ matrix:
         - ./build.sh
         - git diff --exit-code
 
+    - language: cpp
+      compiler: g++
+      script:
+        - cd example
+        - ./tutorial.sh
+
 before_install:
   - pyenv versions
   - pyenv global ${PYTHON_VERSION}
