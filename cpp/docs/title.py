@@ -20,7 +20,7 @@ def category(path, name, verifier):
         return os.path.normpath(os.path.relpath(path, start))
 
     def sort_rank(src_name):
-        if os.path.dirname(src_name).find('src') != -1:
+        if os.path.dirname(src_name).find('tests') != -1:
             return 0
         elif ext(src_name) == 'cpp':
             return 1
@@ -95,7 +95,7 @@ def get_verifier_dict():
             elif fname.endswith('.cpp') or fname.endswith('.hpp'):
                 page(path + '/' + fname)
 
-    directory('cpp/src')
+    directory('cpp/tests')
     return res
 
 
