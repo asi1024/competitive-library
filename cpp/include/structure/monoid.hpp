@@ -10,3 +10,11 @@ template <typename T> struct RMQ {
     return std::min(l, r);
   }
 };
+
+template <typename T> struct Linear {
+  using value_type = std::pair<T, T>;
+  static value_type id() { return value_type(1, 0); }
+  static value_type op(const value_type &l, const value_type &r) {
+    return value_type(l.first * r.first, l.second * r.first + r.second);
+  }
+};

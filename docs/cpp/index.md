@@ -30,18 +30,18 @@ title: C++
 
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:-------------|
-| [monoid.hpp](./include/structure/monoid) | <font color="ForestGreen">Yes</font> | [aoj-DSL_2_F.cpp](./tests/aoj-DSL_2_F)<br>[suffix_array.cpp](./include/string/suffix_array) |
+| [monoid.hpp](./include/structure/monoid) | <font color="ForestGreen">Yes</font> | [aoj-DSL_2_F.cpp](./tests/aoj-DSL_2_F)<br>[yosupo-point_set_range_composite.cpp](./tests/yosupo-point_set_range_composite)<br>[yosupo-staticrmq.cpp](./tests/yosupo-staticrmq) etc... |
 | [semi_group.hpp](./include/structure/semi_group) | <font color="ForestGreen">Yes</font> | [aoj-2450.cpp](./tests/aoj-2450)<br>[aoj-DSL_2_F.cpp](./tests/aoj-DSL_2_F) |
 | [convex_hull_trick.cpp](./include/structure/convex_hull_trick) | <font color="ForestGreen">Yes</font> | [aoj-2725.cpp](./tests/aoj-2725) |
-| [fenwick_tree.cpp](./include/structure/fenwick_tree) | <font color="ForestGreen">Yes</font> | [aoj-DSL_2_B.cpp](./tests/aoj-DSL_2_B)<br>[rars.cpp](./include/structure/rars) |
+| [fenwick_tree.cpp](./include/structure/fenwick_tree) | <font color="ForestGreen">Yes</font> | [aoj-DSL_2_B.cpp](./tests/aoj-DSL_2_B)<br>[yosupo-point_add_range_sum.cpp](./tests/yosupo-point_add_range_sum)<br>[rars.cpp](./include/structure/rars) |
 | [heavy_light_decomposition.cpp](./include/structure/heavy_light_decomposition) | <font color="ForestGreen">Yes</font> | [aoj-2450.cpp](./tests/aoj-2450) |
 | [rars.cpp](./include/structure/rars) | <font color="ForestGreen">Yes</font> | [aoj-DSL_2_G.cpp](./tests/aoj-DSL_2_G) |
-| [segment_tree.cpp](./include/structure/segment_tree) | <font color="ForestGreen">Yes</font> | [aoj-DSL_2_A.0.cpp](./tests/aoj-DSL_2_A.0)<br>[suffix_array.cpp](./include/string/suffix_array) |
+| [segment_tree.cpp](./include/structure/segment_tree) | <font color="ForestGreen">Yes</font> | [aoj-DSL_2_A.0.cpp](./tests/aoj-DSL_2_A.0)<br>[yosupo-point_set_range_composite.cpp](./tests/yosupo-point_set_range_composite)<br>[yosupo-staticrmq.cpp](./tests/yosupo-staticrmq) etc... |
 | [segment_tree_lazy.cpp](./include/structure/segment_tree_lazy) | <font color="ForestGreen">Yes</font> | [aoj-2450.cpp](./tests/aoj-2450)<br>[aoj-DSL_2_F.cpp](./tests/aoj-DSL_2_F) |
 | [skew_heap.cpp](./include/structure/skew_heap) | <font color="ForestGreen">Yes</font> | [aoj-2559.cpp](./tests/aoj-2559) |
 | [slide_min.cpp](./include/structure/slide_min) | <font color="ForestGreen">Yes</font> | [aoj-DPL_1_G.cpp](./tests/aoj-DPL_1_G) |
 | [starry_sky_tree.cpp](./include/structure/starry_sky_tree) | <font color="ForestGreen">Yes</font> | [aoj-1351.cpp](./tests/aoj-1351)<br>[aoj-DSL_2_A.1.cpp](./tests/aoj-DSL_2_A.1) |
-| [unionfind.cpp](./include/structure/unionfind) | <font color="ForestGreen">Yes</font> | [aoj-2559.cpp](./tests/aoj-2559)<br>[aoj-DSL_1_A.cpp](./tests/aoj-DSL_1_A) |
+| [unionfind.cpp](./include/structure/unionfind) | <font color="ForestGreen">Yes</font> | [aoj-2559.cpp](./tests/aoj-2559)<br>[aoj-DSL_1_A.cpp](./tests/aoj-DSL_1_A)<br>[yosupo-unionfind.cpp](./tests/yosupo-unionfind) |
 
 ## Graph Algorithms
 
@@ -104,7 +104,7 @@ title: C++
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:-------------|
 | [ext.cpp](./include/others/ext) | <font color="Red">No</font> |  |
-| [fast_cin.cpp](./include/others/fast_cin) | <font color="ForestGreen">Yes</font> | [yosupo-aplusb.cpp](./tests/yosupo-aplusb) |
-| [fast_cout.cpp](./include/others/fast_cout) | <font color="ForestGreen">Yes</font> | [yosupo-aplusb.cpp](./tests/yosupo-aplusb) |
+| [fast_cin.cpp](./include/others/fast_cin) | <font color="ForestGreen">Yes</font> | [yosupo-aplusb.cpp](./tests/yosupo-aplusb)<br>[yosupo-point_add_range_sum.cpp](./tests/yosupo-point_add_range_sum)<br>[yosupo-point_set_range_composite.cpp](./tests/yosupo-point_set_range_composite) etc... |
+| [fast_cout.cpp](./include/others/fast_cout) | <font color="ForestGreen">Yes</font> | [yosupo-aplusb.cpp](./tests/yosupo-aplusb)<br>[yosupo-point_add_range_sum.cpp](./tests/yosupo-point_add_range_sum)<br>[yosupo-point_set_range_composite.cpp](./tests/yosupo-point_set_range_composite) etc... |
 | [tree_dp.cpp](./include/others/tree_dp) | <font color="Red">No</font> |  |
 

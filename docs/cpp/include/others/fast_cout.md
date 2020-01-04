@@ -11,7 +11,7 @@ title: "fast_cout.cpp"
 class fast_ostream {
   char ch[32];
   template <typename T> inline void put_integer(const T &var) {
-    int n = var;
+    T n = var;
     if (n == 0) {
       putchar_unlocked('0');
       return;
