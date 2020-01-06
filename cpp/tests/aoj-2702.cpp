@@ -1,4 +1,4 @@
-#include "../include/graph/directed_graph.hpp"
+#include "../include/graph/directed_graph.cpp"
 #include "../include/graph/retrograde.cpp"
 
 #define REP(i, n) for (int i = 0; i < (int)(n); i++)

@@ -1,5 +1,5 @@
-#include "definition.hpp"
-#include "game.hpp"
+#include "definition.cpp"
+#include "game.cpp"
 
 template <typename Cost> struct Game_with_Cost {
   Game win;

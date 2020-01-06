@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../template/includes.hpp"
+#include "../template/includes.cpp"
 
 template <typename State> struct AhoCorasick {
   using string_t = typename State::string_t;

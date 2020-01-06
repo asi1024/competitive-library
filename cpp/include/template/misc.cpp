@@ -1,6 +1,6 @@
 #pragma once
 
-#include "includes.hpp"
+#include "includes.cpp"
 
 /// @note 型 T の比較が定義されている必要がある
 template <typename T> T &chmin(T &a, const T &b) { return a = std::min(a, b); }

@@ -1,7 +1,7 @@
 #include <cstdio>
 
 #include "../include/graph/dijkstra.cpp"
-#include "../include/graph/weighted_graph.hpp"
+#include "../include/graph/weighted_graph.cpp"
 
 int main() {
   int V, E, r, s, t, d;

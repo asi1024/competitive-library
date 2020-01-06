@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Geometry.hpp"
+#include "Geometry.cpp"
 
 template <typename real_t> struct Segment {
   Point<real_t> a, b;

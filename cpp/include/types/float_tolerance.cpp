@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../template/includes.hpp"
+#include "../template/includes.cpp"
 
 template <typename float_type, const long long inv_eps> class float_tolerance {
   void init() {

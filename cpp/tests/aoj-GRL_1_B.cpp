@@ -2,7 +2,7 @@
 #include <tuple>
 
 #include "../include/graph/spfa.cpp"
-#include "../include/graph/weighted_graph.hpp"
+#include "../include/graph/weighted_graph.cpp"
 
 using namespace std;
 

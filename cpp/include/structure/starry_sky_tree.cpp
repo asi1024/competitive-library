@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../template/bit_operation.cpp"
-#include "../template/const_value.hpp"
-#include "../template/includes.hpp"
+#include "../template/const_value.cpp"
+#include "../template/includes.cpp"
 
 template <typename T> class StarrySkyTree {
   const int n;

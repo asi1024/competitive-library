@@ -1,6 +1,6 @@
 #include "../include/structure/skew_heap.cpp"
 #include "../include/structure/unionfind.cpp"
-#include "../include/template/typedef.hpp"
+#include "../include/template/typedef.cpp"
 
 // #define BEGIN_STACK_EXTEND(size) void * stack_extend_memory_ =
 // malloc(size);void * stack_extend_origin_memory_;char *

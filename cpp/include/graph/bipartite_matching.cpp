@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../template/includes.hpp"
+#include "../template/includes.cpp"
 
 class BipartiteMatching {
   const int INF = 1000000000;

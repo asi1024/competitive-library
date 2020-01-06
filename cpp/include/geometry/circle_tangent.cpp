@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Geometry.hpp"
+#include "Geometry.cpp"
 
 template <typename real_t>
 std::vector<Line<real_t>> tangent_cp(const Circle<real_t> &c,

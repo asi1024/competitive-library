@@ -1,4 +1,4 @@
-#include "../include/graph/capacity_weighted_graph.hpp"
+#include "../include/graph/capacity_weighted_graph.cpp"
 #include "../include/graph/min_cost_flow.cpp"
 
 using namespace std;

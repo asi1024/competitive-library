@@ -1,6 +1,6 @@
-#include "../include/structure/monoid.hpp"
+#include "../include/structure/monoid.cpp"
 #include "../include/structure/segment_tree_lazy.cpp"
-#include "../include/structure/semi_group.hpp"
+#include "../include/structure/semi_group.cpp"
 
 struct RangeUpdateRMQ {
   using Monoid = RMQ<long long>;

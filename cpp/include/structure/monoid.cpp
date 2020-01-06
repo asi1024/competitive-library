@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../template/const_value.hpp"
-#include "../template/includes.hpp"
+#include "../template/const_value.cpp"
+#include "../template/includes.cpp"
 
 template <typename T> struct RMQ {
   using value_type = T;

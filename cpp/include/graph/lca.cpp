@@ -1,6 +1,6 @@
 #pragma once
 
-#include "definition.hpp"
+#include "definition.cpp"
 
 class LCA {
   const int size;

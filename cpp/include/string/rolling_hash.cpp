@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../template/includes.hpp"
-#include "../template/typedef.hpp"
+#include "../template/includes.cpp"
+#include "../template/typedef.cpp"
 
 class RollingHash {
   const int n;

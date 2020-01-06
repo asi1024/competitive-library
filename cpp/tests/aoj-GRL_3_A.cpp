@@ -1,5 +1,5 @@
 #include "../include/graph/articulation_points.cpp"
-#include "../include/graph/bidirected_graph.hpp"
+#include "../include/graph/bidirected_graph.cpp"
 
 using namespace std;
 

@@ -1,4 +1,4 @@
-#include "../template/includes.hpp"
+#include "../template/includes.cpp"
 
 template <typename string_t> std::vector<int> manacher(const string_t &s) {
   const int n = s.size();

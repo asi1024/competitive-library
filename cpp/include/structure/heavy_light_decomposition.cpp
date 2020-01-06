@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../template/includes.hpp"
+#include "../template/includes.cpp"
 
 template <typename DataStructure> struct HeavyLightDecomposition {
   using value_type = typename DataStructure::value_type;

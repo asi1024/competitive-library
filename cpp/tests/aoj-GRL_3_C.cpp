@@ -1,4 +1,4 @@
-#include "../include/graph/directed_graph.hpp"
+#include "../include/graph/directed_graph.cpp"
 #include "../include/graph/scc.cpp"
 
 using namespace std;

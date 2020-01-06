@@ -2,7 +2,7 @@
 #include <cstring>
 
 #include "../include/graph/dijkstra.cpp"
-#include "../include/graph/weighted_graph.hpp"
+#include "../include/graph/weighted_graph.cpp"
 
 #define REP(i, n) for (int i = 0; i < (n); ++i)
 

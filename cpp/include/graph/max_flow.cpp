@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../template/const_value.hpp"
-#include "definition.hpp"
+#include "../template/const_value.cpp"
+#include "definition.cpp"
 
 template <typename edge_t, typename cap_type = typename edge_t::capacity_type>
 cap_type augment(graph_t<edge_t> &g, std::vector<int> &d,

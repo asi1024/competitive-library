@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../template/bit_operation.cpp"
-#include "../template/includes.hpp"
+#include "../template/includes.cpp"
 
 template <typename Struct> class SegmentTreeLazy {
 public:
