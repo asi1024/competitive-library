@@ -7,7 +7,7 @@ title: "yosupo-staticrmq.cpp"
 {% highlight cpp %}
 #include "../include/others/fast_cin.cpp"
 #include "../include/others/fast_cout.cpp"
-#include "../include/structure/monoid.hpp"
+#include "../include/structure/monoid.cpp"
 #include "../include/structure/segment_tree.cpp"
 
 int main() {
@@ -28,7 +28,7 @@ int main() {
 
 - [fast_cin.cpp](../include/others/fast_cin)
 - [fast_cout.cpp](../include/others/fast_cout)
-- [monoid.hpp](../include/structure/monoid)
+- [monoid.cpp](../include/structure/monoid)
 - [segment_tree.cpp](../include/structure/segment_tree)
 
 [Back](..)

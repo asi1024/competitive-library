@@ -5,7 +5,7 @@ title: "aoj-GRL_6_B.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/tests/aoj-GRL_6_B.cpp)
 
 {% highlight cpp %}
-#include "../include/graph/capacity_weighted_graph.hpp"
+#include "../include/graph/capacity_weighted_graph.cpp"
 #include "../include/graph/min_cost_flow.cpp"
 
 using namespace std;
@@ -26,7 +26,7 @@ int main() {
 
 ### Includes
 
-- [capacity_weighted_graph.hpp](../include/graph/capacity_weighted_graph)
+- [capacity_weighted_graph.cpp](../include/graph/capacity_weighted_graph)
 - [min_cost_flow.cpp](../include/graph/min_cost_flow)
 
 [Back](..)

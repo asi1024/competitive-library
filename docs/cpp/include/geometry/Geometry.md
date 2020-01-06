@@ -1,12 +1,12 @@
 ---
-title: "Geometry.hpp"
+title: "Geometry.cpp"
 ---
 
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/Geometry.hpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/Geometry.cpp)
 
 {% highlight cpp %}
-#include "../template/const_value.hpp"
-#include "../template/includes.hpp"
+#include "../template/const_value.cpp"
+#include "../template/includes.cpp"
 #include "../types/float_tolerance.cpp"
 
 template <typename real_t> using Vector = std::complex<real_t>;
@@ -98,8 +98,8 @@ int ccw(const Point<real_t> &a, const Point<real_t> &b,
 
 ### Includes
 
-- [const_value.hpp](../template/const_value)
-- [includes.hpp](../template/includes)
+- [const_value.cpp](../template/const_value)
+- [includes.cpp](../template/includes)
 - [float_tolerance.cpp](../types/float_tolerance)
 
 [Back](../..)

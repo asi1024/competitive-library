@@ -8,7 +8,7 @@ title: "aoj-GRL_1_A.cpp"
 #include <cstdio>
 
 #include "../include/graph/dijkstra.cpp"
-#include "../include/graph/weighted_graph.hpp"
+#include "../include/graph/weighted_graph.cpp"
 
 int main() {
   int V, E, r, s, t, d;
@@ -32,6 +32,6 @@ int main() {
 ### Includes
 
 - [dijkstra.cpp](../include/graph/dijkstra)
-- [weighted_graph.hpp](../include/graph/weighted_graph)
+- [weighted_graph.cpp](../include/graph/weighted_graph)
 
 [Back](..)

@@ -5,7 +5,7 @@ title: "intersect.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/intersect.cpp)
 
 {% highlight cpp %}
-#include "Geometry.hpp"
+#include "Geometry.cpp"
 
 template <typename real_t> struct Segment {
   Point<real_t> a, b;
@@ -65,6 +65,6 @@ Point<real_t> is_ll(const Line<real_t> &s, const Line<real_t> &t) {
 
 ### Includes
 
-- [Geometry.hpp](Geometry)
+- [Geometry.cpp](Geometry)
 
 [Back](../..)

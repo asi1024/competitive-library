@@ -5,7 +5,7 @@ title: "aoj-GRL_5_C.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/tests/aoj-GRL_5_C.cpp)
 
 {% highlight cpp %}
-#include "../include/graph/bidirected_graph.hpp"
+#include "../include/graph/bidirected_graph.cpp"
 #include "../include/graph/lca.cpp"
 
 int main() {
@@ -33,7 +33,7 @@ int main() {
 
 ### Includes
 
-- [bidirected_graph.hpp](../include/graph/bidirected_graph)
+- [bidirected_graph.cpp](../include/graph/bidirected_graph)
 - [lca.cpp](../include/graph/lca)
 
 [Back](..)

@@ -1,11 +1,11 @@
 ---
-title: "misc.hpp"
+title: "misc.cpp"
 ---
 
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/misc.hpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/misc.cpp)
 
 {% highlight cpp %}
-#include "includes.hpp"
+#include "includes.cpp"
 
 template <typename T> T &chmin(T &a, const T &b) { return a = std::min(a, b); }
 
@@ -14,6 +14,6 @@ template <typename T> T &chmax(T &a, const T &b) { return a = std::max(a, b); }
 
 ### Includes
 
-- [includes.hpp](includes)
+- [includes.cpp](includes)
 
 [Back](../..)

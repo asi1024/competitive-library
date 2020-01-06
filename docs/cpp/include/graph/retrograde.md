@@ -5,8 +5,8 @@ title: "retrograde.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/retrograde.cpp)
 
 {% highlight cpp %}
-#include "definition.hpp"
-#include "game.hpp"
+#include "definition.cpp"
+#include "game.cpp"
 
 template <typename edge_t>
 std::vector<Game> retrograde(const graph_t<edge_t> &g) {
@@ -53,7 +53,7 @@ std::vector<Game> retrograde(const graph_t<edge_t> &g) {
 
 ### Includes
 
-- [definition.hpp](definition)
-- [game.hpp](game)
+- [definition.cpp](definition)
+- [game.cpp](game)
 
 [Back](../..)

@@ -6,8 +6,8 @@ title: "starry_sky_tree.cpp"
 
 {% highlight cpp %}
 #include "../template/bit_operation.cpp"
-#include "../template/const_value.hpp"
-#include "../template/includes.hpp"
+#include "../template/const_value.cpp"
+#include "../template/includes.cpp"
 
 template <typename T> class StarrySkyTree {
   const int n;
@@ -68,7 +68,7 @@ public:
 ### Includes
 
 - [bit_operation.cpp](../template/bit_operation)
-- [const_value.hpp](../template/const_value)
-- [includes.hpp](../template/includes)
+- [const_value.cpp](../template/const_value)
+- [includes.cpp](../template/includes)
 
 [Back](../..)

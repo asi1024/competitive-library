@@ -5,7 +5,7 @@ title: "fenwick_tree.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/fenwick_tree.cpp)
 
 {% highlight cpp %}
-#include "../template/includes.hpp"
+#include "../template/includes.cpp"
 
 template <typename T> class FenwickTree {
   const int n;
@@ -39,6 +39,6 @@ public:
 
 ### Includes
 
-- [includes.hpp](../template/includes)
+- [includes.cpp](../template/includes)
 
 [Back](../..)

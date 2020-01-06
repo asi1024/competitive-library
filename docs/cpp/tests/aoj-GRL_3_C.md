@@ -5,7 +5,7 @@ title: "aoj-GRL_3_C.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/tests/aoj-GRL_3_C.cpp)
 
 {% highlight cpp %}
-#include "../include/graph/directed_graph.hpp"
+#include "../include/graph/directed_graph.cpp"
 #include "../include/graph/scc.cpp"
 
 using namespace std;
@@ -30,7 +30,7 @@ int main() {
 
 ### Includes
 
-- [directed_graph.hpp](../include/graph/directed_graph)
+- [directed_graph.cpp](../include/graph/directed_graph)
 - [scc.cpp](../include/graph/scc)
 
 [Back](..)

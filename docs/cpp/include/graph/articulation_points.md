@@ -5,7 +5,7 @@ title: "articulation_points.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/articulation_points.cpp)
 
 {% highlight cpp %}
-#include "definition.hpp"
+#include "definition.cpp"
 
 template <typename edge_t>
 std::pair<std::set<int>, std::vector<std::vector<edge_t>>>
@@ -52,6 +52,6 @@ articulation_points(const graph_t<edge_t> &g) {
 
 ### Includes
 
-- [definition.hpp](definition)
+- [definition.cpp](definition)
 
 [Back](../..)

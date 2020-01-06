@@ -9,7 +9,7 @@ title: "aoj-GRL_1_B.cpp"
 #include <tuple>
 
 #include "../include/graph/spfa.cpp"
-#include "../include/graph/weighted_graph.hpp"
+#include "../include/graph/weighted_graph.cpp"
 
 using namespace std;
 
@@ -40,6 +40,6 @@ int main() {
 ### Includes
 
 - [spfa.cpp](../include/graph/spfa)
-- [weighted_graph.hpp](../include/graph/weighted_graph)
+- [weighted_graph.cpp](../include/graph/weighted_graph)
 
 [Back](..)

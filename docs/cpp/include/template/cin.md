@@ -5,7 +5,7 @@ title: "cin.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/cin.cpp)
 
 {% highlight cpp %}
-#include "includes.hpp"
+#include "includes.cpp"
 
 template <typename T, int M, int N> struct tuple_getter {
   static void get(std::istream &is, T &x) {
@@ -39,6 +39,6 @@ std::istream &operator>>(std::istream &is, std::vector<T> &v) {
 
 ### Includes
 
-- [includes.hpp](includes)
+- [includes.cpp](includes)
 
 [Back](../..)

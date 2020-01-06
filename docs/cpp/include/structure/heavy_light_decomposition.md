@@ -5,7 +5,7 @@ title: "heavy_light_decomposition.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/heavy_light_decomposition.cpp)
 
 {% highlight cpp %}
-#include "../template/includes.hpp"
+#include "../template/includes.cpp"
 
 template <typename DataStructure> struct HeavyLightDecomposition {
   using value_type = typename DataStructure::value_type;
@@ -180,6 +180,6 @@ private:
 
 ### Includes
 
-- [includes.hpp](../template/includes)
+- [includes.cpp](../template/includes)
 
 [Back](../..)

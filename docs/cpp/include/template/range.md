@@ -1,8 +1,8 @@
 ---
-title: "range.hpp"
+title: "range.cpp"
 ---
 
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/range.hpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/range.cpp)
 
 {% highlight cpp %}
 class range {

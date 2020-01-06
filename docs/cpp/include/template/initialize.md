@@ -5,7 +5,7 @@ title: "initialize.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/initialize.cpp)
 
 {% highlight cpp %}
-#include "includes.hpp"
+#include "includes.cpp"
 
 struct yes_no : std::numpunct<char> {
   string_type do_truename() const { return "Yes"; }
@@ -25,6 +25,6 @@ const Initialize initialize;
 
 ### Includes
 
-- [includes.hpp](includes)
+- [includes.cpp](includes)
 
 [Back](../..)

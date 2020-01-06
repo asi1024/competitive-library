@@ -5,8 +5,8 @@ title: "bfs01.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/bfs01.cpp)
 
 {% highlight cpp %}
-#include "../template/const_value.hpp"
-#include "definition.hpp"
+#include "../template/const_value.cpp"
+#include "definition.cpp"
 
 template <typename edge_t, typename cost_type = typename edge_t::cost_type>
 std::vector<cost_type> bfs01(const graph_t<edge_t> &g, int s) {
@@ -42,7 +42,7 @@ std::vector<cost_type> bfs01(const graph_t<edge_t> &g, int s) {
 
 ### Includes
 
-- [const_value.hpp](../template/const_value)
-- [definition.hpp](definition)
+- [const_value.cpp](../template/const_value)
+- [definition.cpp](definition)
 
 [Back](../..)

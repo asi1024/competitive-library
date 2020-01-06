@@ -5,7 +5,7 @@ title: "bipartite_matching.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/bipartite_matching.cpp)
 
 {% highlight cpp %}
-#include "../template/includes.hpp"
+#include "../template/includes.cpp"
 
 class BipartiteMatching {
   const int INF = 1000000000;
@@ -75,6 +75,6 @@ public:
 
 ### Includes
 
-- [includes.hpp](../template/includes)
+- [includes.cpp](../template/includes)
 
 [Back](../..)

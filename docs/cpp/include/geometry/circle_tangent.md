@@ -5,7 +5,7 @@ title: "circle_tangent.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/circle_tangent.cpp)
 
 {% highlight cpp %}
-#include "Geometry.hpp"
+#include "Geometry.cpp"
 
 template <typename real_t>
 std::vector<Line<real_t>> tangent_cp(const Circle<real_t> &c,
@@ -51,6 +51,6 @@ std::vector<Line<real_t>> tangent_cc(const Circle<real_t> &c1,
 
 ### Includes
 
-- [Geometry.hpp](Geometry)
+- [Geometry.cpp](Geometry)
 
 [Back](../..)

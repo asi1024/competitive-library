@@ -1,11 +1,11 @@
 ---
-title: "table.hpp"
+title: "table.cpp"
 ---
 
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/table.hpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/table.cpp)
 
 {% highlight cpp %}
-#include "includes.hpp"
+#include "includes.cpp"
 
 template <typename T> std::vector<T> table(int n, T v) {
   return std::vector<T>(n, v);
@@ -19,6 +19,6 @@ template <class... Args> auto table(int n, Args... args) {
 
 ### Includes
 
-- [includes.hpp](includes)
+- [includes.cpp](includes)
 
 [Back](../..)

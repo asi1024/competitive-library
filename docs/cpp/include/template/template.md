@@ -6,13 +6,13 @@ title: "template.cpp"
 
 {% highlight cpp %}
 #include "cin.cpp"
-#include "const_value.hpp"
+#include "const_value.cpp"
 #include "cout.cpp"
-#include "includes.hpp"
-#include "macros.hpp"
-#include "misc.hpp"
-#include "range.hpp"
-#include "typedef.hpp"
+#include "includes.cpp"
+#include "macros.cpp"
+#include "misc.cpp"
+#include "range.cpp"
+#include "typedef.cpp"
 
 using namespace std;
 {% endhighlight %}
@@ -20,12 +20,12 @@ using namespace std;
 ### Includes
 
 - [cin.cpp](cin)
-- [const_value.hpp](const_value)
+- [const_value.cpp](const_value)
 - [cout.cpp](cout)
-- [includes.hpp](includes)
-- [macros.hpp](macros)
-- [misc.hpp](misc)
-- [range.hpp](range)
-- [typedef.hpp](typedef)
+- [includes.cpp](includes)
+- [macros.cpp](macros)
+- [misc.cpp](misc)
+- [range.cpp](range)
+- [typedef.cpp](typedef)
 
 [Back](../..)

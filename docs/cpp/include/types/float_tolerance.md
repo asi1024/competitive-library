@@ -5,7 +5,7 @@ title: "float_tolerance.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/types/float_tolerance.cpp)
 
 {% highlight cpp %}
-#include "../template/includes.hpp"
+#include "../template/includes.cpp"
 
 template <typename float_type, const long long inv_eps> class float_tolerance {
   void init() {
@@ -173,6 +173,6 @@ using float11 = float_tolerance<long double, 100000000000LL>;
 
 ### Includes
 
-- [includes.hpp](../template/includes)
+- [includes.cpp](../template/includes)
 
 [Back](../..)

@@ -5,8 +5,8 @@ title: "mod.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/types/mod.cpp)
 
 {% highlight cpp %}
-#include "../template/includes.hpp"
-#include "../template/typedef.hpp"
+#include "../template/includes.cpp"
+#include "../template/typedef.cpp"
 
 template <int M, bool IsPrime = false> class Modulo {
   int n;
@@ -100,7 +100,7 @@ public:
 
 ### Includes
 
-- [includes.hpp](../template/includes)
-- [typedef.hpp](../template/typedef)
+- [includes.cpp](../template/includes)
+- [typedef.cpp](../template/typedef)
 
 [Back](../..)

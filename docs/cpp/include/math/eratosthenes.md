@@ -5,7 +5,7 @@ title: "eratosthenes.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/eratosthenes.cpp)
 
 {% highlight cpp %}
-#include "../template/includes.hpp"
+#include "../template/includes.cpp"
 
 std::vector<int> eratosthenes(int M) {
   std::vector<int> res(M, 0);
@@ -24,6 +24,6 @@ std::vector<int> eratosthenes(int M) {
 
 ### Includes
 
-- [includes.hpp](../template/includes)
+- [includes.cpp](../template/includes)
 
 [Back](../..)

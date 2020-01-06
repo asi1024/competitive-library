@@ -5,7 +5,7 @@ title: "lca.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/lca.cpp)
 
 {% highlight cpp %}
-#include "definition.hpp"
+#include "definition.cpp"
 
 class LCA {
   const int size;
@@ -55,6 +55,6 @@ public:
 
 ### Includes
 
-- [definition.hpp](definition)
+- [definition.cpp](definition)
 
 [Back](../..)

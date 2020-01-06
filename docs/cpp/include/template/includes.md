@@ -1,8 +1,8 @@
 ---
-title: "includes.hpp"
+title: "includes.cpp"
 ---
 
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/includes.hpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/includes.cpp)
 
 {% highlight cpp %}
 #include <algorithm>

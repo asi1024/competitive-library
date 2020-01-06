@@ -9,10 +9,10 @@ title: "ext.cpp"
 
 using namespace std;
 
-#include <ext/pb_ds/assoc_container.hpp>
-#include <ext/pb_ds/priority_queue.hpp>
-#include <ext/pb_ds/tag_and_trait.hpp>
-#include <ext/pb_ds/tree_policy.hpp>
+#include <ext/pb_ds/assoc_container.cpp>
+#include <ext/pb_ds/priority_queue.cpp>
+#include <ext/pb_ds/tag_and_trait.cpp>
+#include <ext/pb_ds/tree_policy.cpp>
 #include <ext/pool_allocator.h>
 
 using namespace __gnu_cxx;

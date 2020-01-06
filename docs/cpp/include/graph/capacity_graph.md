@@ -1,11 +1,11 @@
 ---
-title: "capacity_graph.hpp"
+title: "capacity_graph.cpp"
 ---
 
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/capacity_graph.hpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/capacity_graph.cpp)
 
 {% highlight cpp %}
-#include "definition.hpp"
+#include "definition.cpp"
 
 template <typename Capacity> class CapacityEdge {
 public:
@@ -27,6 +27,6 @@ void add_edge(CapacityGraph<Capacity> &g, int from, int to, Capacity cap) {
 
 ### Includes
 
-- [definition.hpp](definition)
+- [definition.cpp](definition)
 
 [Back](../..)

@@ -5,7 +5,7 @@ title: "aoj-CGL_1_C.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/tests/aoj-CGL_1_C.cpp)
 
 {% highlight cpp %}
-#include "../include/geometry/Geometry.hpp"
+#include "../include/geometry/Geometry.cpp"
 
 using namespace std;
 
@@ -33,6 +33,6 @@ int main() {
 
 ### Includes
 
-- [Geometry.hpp](../include/geometry/Geometry)
+- [Geometry.cpp](../include/geometry/Geometry)
 
 [Back](..)
