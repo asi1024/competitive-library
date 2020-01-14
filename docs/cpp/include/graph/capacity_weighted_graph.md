@@ -1,11 +1,11 @@
 ---
-title: "capacity_weighted_graph.hpp"
+title: "capacity_weighted_graph.cpp"
 ---
 
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/capacity_weighted_graph.hpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/capacity_weighted_graph.cpp)
 
 {% highlight cpp %}
-#include "definition.hpp"
+#include "definition.cpp"
 
 template <typename Capacity, typename Cost> class CapacityWeightedEdge {
 public:
@@ -34,6 +34,6 @@ void add_edge(CapacityWeightedGraph<Capacity, Cost> &g, int from, int to,
 
 ### Includes
 
-- [definition.hpp](definition)
+- [definition.cpp](definition)
 
 [Back](../..)

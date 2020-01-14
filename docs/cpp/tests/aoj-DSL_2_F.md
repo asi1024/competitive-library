@@ -5,9 +5,9 @@ title: "aoj-DSL_2_F.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/tests/aoj-DSL_2_F.cpp)
 
 {% highlight cpp %}
-#include "../include/structure/monoid.hpp"
+#include "../include/structure/monoid.cpp"
 #include "../include/structure/segment_tree_lazy.cpp"
-#include "../include/structure/semi_group.hpp"
+#include "../include/structure/semi_group.cpp"
 
 struct RangeUpdateRMQ {
   using Monoid = RMQ<long long>;
@@ -40,8 +40,8 @@ int main() {
 
 ### Includes
 
-- [monoid.hpp](../include/structure/monoid)
+- [monoid.cpp](../include/structure/monoid)
 - [segment_tree_lazy.cpp](../include/structure/segment_tree_lazy)
-- [semi_group.hpp](../include/structure/semi_group)
+- [semi_group.cpp](../include/structure/semi_group)
 
 [Back](..)

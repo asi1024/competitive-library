@@ -1,11 +1,11 @@
 ---
-title: "typedef.hpp"
+title: "typedef.cpp"
 ---
 
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/typedef.hpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/typedef.cpp)
 
 {% highlight cpp %}
-#include "includes.hpp"
+#include "includes.cpp"
 
 using ll = long long;
 using ld = long double;
@@ -13,6 +13,6 @@ using ld = long double;
 
 ### Includes
 
-- [includes.hpp](includes)
+- [includes.cpp](includes)
 
 [Back](../..)

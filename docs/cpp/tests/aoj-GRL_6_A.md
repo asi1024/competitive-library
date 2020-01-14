@@ -5,7 +5,7 @@ title: "aoj-GRL_6_A.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/tests/aoj-GRL_6_A.cpp)
 
 {% highlight cpp %}
-#include "../include/graph/capacity_graph.hpp"
+#include "../include/graph/capacity_graph.cpp"
 #include "../include/graph/max_flow.cpp"
 
 using namespace std;
@@ -25,7 +25,7 @@ int main() {
 
 ### Includes
 
-- [capacity_graph.hpp](../include/graph/capacity_graph)
+- [capacity_graph.cpp](../include/graph/capacity_graph)
 - [max_flow.cpp](../include/graph/max_flow)
 
 [Back](..)

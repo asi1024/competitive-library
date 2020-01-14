@@ -1,11 +1,11 @@
 ---
-title: "const_value.hpp"
+title: "const_value.cpp"
 ---
 
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/const_value.hpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/const_value.cpp)
 
 {% highlight cpp %}
-#include "includes.hpp"
+#include "includes.cpp"
 
 
 namespace sub {
@@ -37,6 +37,6 @@ const long double pi = acos(-1.0);
 
 ### Includes
 
-- [includes.hpp](includes)
+- [includes.cpp](includes)
 
 [Back](../..)

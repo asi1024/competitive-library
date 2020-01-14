@@ -5,7 +5,7 @@ title: "manacher.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/manacher.cpp)
 
 {% highlight cpp %}
-#include "../template/includes.hpp"
+#include "../template/includes.cpp"
 
 template <typename string_t> std::vector<int> manacher(const string_t &s) {
   const int n = s.size();
@@ -26,6 +26,6 @@ template <typename string_t> std::vector<int> manacher(const string_t &s) {
 
 ### Includes
 
-- [includes.hpp](../template/includes)
+- [includes.cpp](../template/includes)
 
 [Back](../..)

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../template/includes.hpp"
+#include "../template/includes.cpp"
 
 template <class Data> struct ConvexHullTrick {
   std::deque<std::pair<Data, Data>> l;

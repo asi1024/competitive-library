@@ -5,8 +5,8 @@ title: "scc.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/scc.cpp)
 
 {% highlight cpp %}
-#include "../template/includes.hpp"
-#include "definition.hpp"
+#include "../template/includes.cpp"
+#include "definition.cpp"
 
 template <typename edge_t> struct scc_struct {
   const int n;
@@ -52,7 +52,7 @@ template <typename edge_t> std::vector<int> scc(const graph_t<edge_t> &g) {
 
 ### Includes
 
-- [includes.hpp](../template/includes)
-- [definition.hpp](definition)
+- [includes.cpp](../template/includes)
+- [definition.cpp](definition)
 
 [Back](../..)

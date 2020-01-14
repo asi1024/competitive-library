@@ -6,7 +6,7 @@ title: "segment_tree.cpp"
 
 {% highlight cpp %}
 #include "../template/bit_operation.cpp"
-#include "../template/includes.hpp"
+#include "../template/includes.cpp"
 
 template <class Monoid> class SegmentTree {
 public:
@@ -58,6 +58,6 @@ public:
 ### Includes
 
 - [bit_operation.cpp](../template/bit_operation)
-- [includes.hpp](../template/includes)
+- [includes.cpp](../template/includes)
 
 [Back](../..)

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "definition.hpp"
+#include "definition.cpp"
 
 template <typename edge_t>
 std::pair<std::set<int>, std::vector<std::vector<edge_t>>>

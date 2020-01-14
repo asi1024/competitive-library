@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../template/includes.hpp"
+#include "../template/includes.cpp"
 
 std::vector<int> eratosthenes(int M) {
   std::vector<int> res(M, 0);

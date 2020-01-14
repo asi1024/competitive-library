@@ -1,5 +1,5 @@
 #include "../include/structure/starry_sky_tree.cpp"
-#include "../include/template/typedef.hpp"
+#include "../include/template/typedef.cpp"
 
 int main() {
   int n, q, com, x, y;

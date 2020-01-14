@@ -1,12 +1,12 @@
 ---
-title: "definition.hpp"
+title: "definition.cpp"
 ---
 
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/definition.hpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/definition.cpp)
 
 {% highlight cpp %}
-#include "../template/const_value.hpp"
-#include "../template/includes.hpp"
+#include "../template/const_value.cpp"
+#include "../template/includes.cpp"
 
 template <class edge_t> class graph_t {
   std::vector<std::vector<edge_t>> g;
@@ -28,7 +28,7 @@ public:
 
 ### Includes
 
-- [const_value.hpp](../template/const_value)
-- [includes.hpp](../template/includes)
+- [const_value.cpp](../template/const_value)
+- [includes.cpp](../template/includes)
 
 [Back](../..)

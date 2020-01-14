@@ -1,4 +1,4 @@
-#include "../include/graph/bidirected_graph.hpp"
+#include "../include/graph/bidirected_graph.cpp"
 #include "../include/graph/lca.cpp"
 
 int main() {

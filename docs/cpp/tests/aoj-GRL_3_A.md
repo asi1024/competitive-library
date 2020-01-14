@@ -6,7 +6,7 @@ title: "aoj-GRL_3_A.cpp"
 
 {% highlight cpp %}
 #include "../include/graph/articulation_points.cpp"
-#include "../include/graph/bidirected_graph.hpp"
+#include "../include/graph/bidirected_graph.cpp"
 
 using namespace std;
 
@@ -27,6 +27,6 @@ int main() {
 ### Includes
 
 - [articulation_points.cpp](../include/graph/articulation_points)
-- [bidirected_graph.hpp](../include/graph/bidirected_graph)
+- [bidirected_graph.cpp](../include/graph/bidirected_graph)
 
 [Back](..)

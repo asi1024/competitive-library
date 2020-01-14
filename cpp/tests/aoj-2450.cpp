@@ -1,7 +1,7 @@
 #include "../include/structure/heavy_light_decomposition.cpp"
 #include "../include/structure/segment_tree_lazy.cpp"
-#include "../include/structure/semi_group.hpp"
-#include "../include/template/typedef.hpp"
+#include "../include/structure/semi_group.cpp"
+#include "../include/template/typedef.cpp"
 
 using namespace std;
 

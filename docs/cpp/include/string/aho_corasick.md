@@ -5,7 +5,7 @@ title: "aho_corasick.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/aho_corasick.cpp)
 
 {% highlight cpp %}
-#include "../template/includes.hpp"
+#include "../template/includes.cpp"
 
 template <typename State> struct AhoCorasick {
   using string_t = typename State::string_t;
@@ -89,6 +89,6 @@ struct State {
 
 ### Includes
 
-- [includes.hpp](../template/includes)
+- [includes.cpp](../template/includes)
 
 [Back](../..)

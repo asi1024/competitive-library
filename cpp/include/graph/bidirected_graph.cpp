@@ -1,6 +1,6 @@
 #pragma once
 
-#include "definition.hpp"
+#include "definition.cpp"
 
 class BidirectedEdge {
 public:

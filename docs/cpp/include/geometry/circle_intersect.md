@@ -5,7 +5,7 @@ title: "circle_intersect.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/geometry/circle_intersect.cpp)
 
 {% highlight cpp %}
-#include "Geometry.hpp"
+#include "Geometry.cpp"
 #include "distance.cpp"
 #include "intersect.cpp"
 
@@ -59,7 +59,7 @@ std::vector<Point<real_t>> is_cs(const Circle<real_t> &c,
 
 ### Includes
 
-- [Geometry.hpp](Geometry)
+- [Geometry.cpp](Geometry)
 - [distance.cpp](distance)
 - [intersect.cpp](intersect)
 

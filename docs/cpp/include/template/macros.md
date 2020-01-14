@@ -1,8 +1,8 @@
 ---
-title: "macros.hpp"
+title: "macros.cpp"
 ---
 
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/macros.hpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/macros.cpp)
 
 {% highlight cpp %}
 #define REP(i, n) for (int i = 0; i < (int)(n); i++)

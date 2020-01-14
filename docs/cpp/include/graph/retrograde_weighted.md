@@ -5,8 +5,8 @@ title: "retrograde_weighted.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/retrograde_weighted.cpp)
 
 {% highlight cpp %}
-#include "definition.hpp"
-#include "game.hpp"
+#include "definition.cpp"
+#include "game.cpp"
 
 template <typename Cost> struct Game_with_Cost {
   Game win;
@@ -69,7 +69,7 @@ std::vector<Game_with_Cost<Cost>> retrograde(const graph_t<edge_t> &g) {
 
 ### Includes
 
-- [definition.hpp](definition)
-- [game.hpp](game)
+- [definition.cpp](definition)
+- [game.cpp](game)
 
 [Back](../..)

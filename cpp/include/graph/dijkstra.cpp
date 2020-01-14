@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../template/const_value.hpp"
-#include "definition.hpp"
+#include "../template/const_value.cpp"
+#include "definition.cpp"
 
 /// @param g: 負辺のない重み付きグラフ
 /// @param s: 始点の頂点番号

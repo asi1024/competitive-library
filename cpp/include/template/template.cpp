@@ -1,10 +1,10 @@
 #include "cin.cpp"
-#include "const_value.hpp"
+#include "const_value.cpp"
 #include "cout.cpp"
-#include "includes.hpp"
-#include "macros.hpp"
-#include "misc.hpp"
-#include "range.hpp"
-#include "typedef.hpp"
+#include "includes.cpp"
+#include "macros.cpp"
+#include "misc.cpp"
+#include "range.cpp"
+#include "typedef.cpp"
 
 using namespace std;

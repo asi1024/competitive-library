@@ -1,6 +1,6 @@
 #include "../include/others/fast_cin.cpp"
 #include "../include/others/fast_cout.cpp"
-#include "../include/structure/monoid.hpp"
+#include "../include/structure/monoid.cpp"
 #include "../include/structure/segment_tree.cpp"
 
 int main() {

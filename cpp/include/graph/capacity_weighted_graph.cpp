@@ -1,6 +1,6 @@
 #pragma once
 
-#include "definition.hpp"
+#include "definition.cpp"
 
 template <typename Capacity, typename Cost> class CapacityWeightedEdge {
 public:

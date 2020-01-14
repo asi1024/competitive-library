@@ -5,8 +5,8 @@ title: "min_cost_flow.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/min_cost_flow.cpp)
 
 {% highlight cpp %}
-#include "../template/const_value.hpp"
-#include "definition.hpp"
+#include "../template/const_value.cpp"
+#include "definition.cpp"
 
 template <typename edge_t, typename cap_type = typename edge_t::capacity_type,
           typename cost_type = typename edge_t::cost_type>
@@ -71,7 +71,7 @@ cost_type min_cost_flow(graph_t<edge_t> &g, int s, int t, cap_type f,
 
 ### Includes
 
-- [const_value.hpp](../template/const_value)
-- [definition.hpp](definition)
+- [const_value.cpp](../template/const_value)
+- [definition.cpp](definition)
 
 [Back](../..)

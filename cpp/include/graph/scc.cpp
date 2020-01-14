@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../template/includes.hpp"
-#include "definition.hpp"
+#include "../template/includes.cpp"
+#include "definition.cpp"
 
 template <typename edge_t> struct scc_struct {
   const int n;

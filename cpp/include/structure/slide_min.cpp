@@ -1,4 +1,4 @@
-#include "../template/includes.hpp"
+#include "../template/includes.cpp"
 
 template <typename T> struct SlideMin {
   std::deque<std::pair<int, T>> deq;

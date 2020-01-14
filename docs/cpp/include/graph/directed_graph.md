@@ -1,11 +1,11 @@
 ---
-title: "directed_graph.hpp"
+title: "directed_graph.cpp"
 ---
 
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/directed_graph.hpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/directed_graph.cpp)
 
 {% highlight cpp %}
-#include "definition.hpp"
+#include "definition.cpp"
 
 class DirectedEdge {
 public:
@@ -24,6 +24,6 @@ void add_edge(DirectedGraph &g, int from, int to) {
 
 ### Includes
 
-- [definition.hpp](definition)
+- [definition.cpp](definition)
 
 [Back](../..)

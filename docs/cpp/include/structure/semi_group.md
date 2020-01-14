@@ -1,11 +1,11 @@
 ---
-title: "semi_group.hpp"
+title: "semi_group.cpp"
 ---
 
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/semi_group.hpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/semi_group.cpp)
 
 {% highlight cpp %}
-#include "../template/includes.hpp"
+#include "../template/includes.cpp"
 
 template <typename T> struct LeftHandSide {
   using value_type = T;
@@ -15,6 +15,6 @@ template <typename T> struct LeftHandSide {
 
 ### Includes
 
-- [includes.hpp](../template/includes)
+- [includes.cpp](../template/includes)
 
 [Back](../..)

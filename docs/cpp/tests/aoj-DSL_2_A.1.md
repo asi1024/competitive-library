@@ -6,7 +6,7 @@ title: "aoj-DSL_2_A.1.cpp"
 
 {% highlight cpp %}
 #include "../include/structure/starry_sky_tree.cpp"
-#include "../include/template/typedef.hpp"
+#include "../include/template/typedef.cpp"
 
 int main() {
   int n, q, com, x, y;
@@ -29,6 +29,6 @@ int main() {
 ### Includes
 
 - [starry_sky_tree.cpp](../include/structure/starry_sky_tree)
-- [typedef.hpp](../include/template/typedef)
+- [typedef.cpp](../include/template/typedef)
 
 [Back](..)

@@ -5,7 +5,7 @@ title: "convex_hull_trick.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/convex_hull_trick.cpp)
 
 {% highlight cpp %}
-#include "../template/includes.hpp"
+#include "../template/includes.cpp"
 
 template <class Data> struct ConvexHullTrick {
   std::deque<std::pair<Data, Data>> l;
@@ -34,6 +34,6 @@ template <class Data> struct ConvexHullTrick {
 
 ### Includes
 
-- [includes.hpp](../template/includes)
+- [includes.cpp](../template/includes)
 
 [Back](../..)

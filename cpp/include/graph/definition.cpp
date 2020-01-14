@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../template/const_value.hpp"
-#include "../template/includes.hpp"
+#include "../template/const_value.cpp"
+#include "../template/includes.cpp"
 
 template <class edge_t> class graph_t {
   std::vector<std::vector<edge_t>> g;

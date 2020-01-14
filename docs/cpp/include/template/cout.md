@@ -5,7 +5,7 @@ title: "cout.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/template/cout.cpp)
 
 {% highlight cpp %}
-#include "includes.hpp"
+#include "includes.cpp"
 
 template <typename T, int M, int N> struct tuple_printer {
   static void print(std::ostream &os, const T &x) {
@@ -51,6 +51,6 @@ std::ostream &operator<<(std::ostream &os, const std::set<T> &v) {
 
 ### Includes
 
-- [includes.hpp](includes)
+- [includes.cpp](includes)
 
 [Back](../..)

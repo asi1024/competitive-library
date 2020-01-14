@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../structure/monoid.hpp"
+#include "../structure/monoid.cpp"
 #include "../structure/segment_tree.cpp"
 
 template <typename string_t> struct SuffixArray {

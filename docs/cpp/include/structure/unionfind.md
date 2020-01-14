@@ -5,7 +5,7 @@ title: "unionfind.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/unionfind.cpp)
 
 {% highlight cpp %}
-#include "../template/includes.hpp"
+#include "../template/includes.cpp"
 
 class UnionFind {
   std::vector<int> p;
@@ -31,6 +31,6 @@ public:
 
 ### Includes
 
-- [includes.hpp](../template/includes)
+- [includes.cpp](../template/includes)
 
 [Back](../..)

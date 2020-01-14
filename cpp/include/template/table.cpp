@@ -1,4 +1,4 @@
-#include "includes.hpp"
+#include "includes.cpp"
 
 template <typename T> std::vector<T> table(int n, T v) {
   return std::vector<T>(n, v);

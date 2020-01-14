@@ -6,7 +6,7 @@ title: "segment_tree_lazy.cpp"
 
 {% highlight cpp %}
 #include "../template/bit_operation.cpp"
-#include "../template/includes.hpp"
+#include "../template/includes.cpp"
 
 template <typename Struct> class SegmentTreeLazy {
 public:
@@ -83,6 +83,6 @@ public:
 ### Includes
 
 - [bit_operation.cpp](../template/bit_operation)
-- [includes.hpp](../template/includes)
+- [includes.cpp](../template/includes)
 
 [Back](../..)

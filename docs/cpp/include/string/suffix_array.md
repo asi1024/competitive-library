@@ -5,7 +5,7 @@ title: "suffix_array.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/string/suffix_array.cpp)
 
 {% highlight cpp %}
-#include "../structure/monoid.hpp"
+#include "../structure/monoid.cpp"
 #include "../structure/segment_tree.cpp"
 
 template <typename string_t> struct SuffixArray {
@@ -99,7 +99,7 @@ public:
 
 ### Includes
 
-- [monoid.hpp](../structure/monoid)
+- [monoid.cpp](../structure/monoid)
 - [segment_tree.cpp](../structure/segment_tree)
 
 [Back](../..)

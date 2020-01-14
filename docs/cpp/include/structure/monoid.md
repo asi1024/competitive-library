@@ -1,12 +1,12 @@
 ---
-title: "monoid.hpp"
+title: "monoid.cpp"
 ---
 
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/monoid.hpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/monoid.cpp)
 
 {% highlight cpp %}
-#include "../template/const_value.hpp"
-#include "../template/includes.hpp"
+#include "../template/const_value.cpp"
+#include "../template/includes.cpp"
 
 template <typename T> struct RMQ {
   using value_type = T;
@@ -27,7 +27,7 @@ template <typename T> struct Linear {
 
 ### Includes
 
-- [const_value.hpp](../template/const_value)
-- [includes.hpp](../template/includes)
+- [const_value.cpp](../template/const_value)
+- [includes.cpp](../template/includes)
 
 [Back](../..)

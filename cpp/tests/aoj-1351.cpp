@@ -1,5 +1,5 @@
 #include "../include/structure/starry_sky_tree.cpp"
-#include "../include/template/range.hpp"
+#include "../include/template/range.cpp"
 
 using namespace std;
 

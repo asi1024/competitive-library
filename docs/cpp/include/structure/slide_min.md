@@ -5,7 +5,7 @@ title: "slide_min.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/structure/slide_min.cpp)
 
 {% highlight cpp %}
-#include "../template/includes.hpp"
+#include "../template/includes.cpp"
 
 template <typename T> struct SlideMin {
   std::deque<std::pair<int, T>> deq;
@@ -28,6 +28,6 @@ template <typename T> struct SlideMin {
 
 ### Includes
 
-- [includes.hpp](../template/includes)
+- [includes.cpp](../template/includes)
 
 [Back](../..)

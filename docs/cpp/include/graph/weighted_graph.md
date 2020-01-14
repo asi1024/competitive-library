@@ -1,11 +1,11 @@
 ---
-title: "weighted_graph.hpp"
+title: "weighted_graph.cpp"
 ---
 
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/weighted_graph.hpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/weighted_graph.cpp)
 
 {% highlight cpp %}
-#include "definition.hpp"
+#include "definition.cpp"
 
 template <typename Cost> class WeightedEdge {
 public:
@@ -25,6 +25,6 @@ void add_edge(WeightedGraph<Cost> &g, int from, int to, Cost cost) {
 
 ### Includes
 
-- [definition.hpp](definition)
+- [definition.cpp](definition)
 
 [Back](../..)

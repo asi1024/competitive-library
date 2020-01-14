@@ -5,8 +5,8 @@ title: "fft.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/math/fft.cpp)
 
 {% highlight cpp %}
-#include "../template/includes.hpp"
-#include "../template/typedef.hpp"
+#include "../template/includes.cpp"
+#include "../template/typedef.cpp"
 
 namespace {
 using complex = std::complex<ld>;
@@ -54,7 +54,7 @@ std::vector<ll> convolution(const std::vector<ll> &lhs,
 
 ### Includes
 
-- [includes.hpp](../template/includes)
-- [typedef.hpp](../template/typedef)
+- [includes.cpp](../template/includes)
+- [typedef.cpp](../template/typedef)
 
 [Back](../..)

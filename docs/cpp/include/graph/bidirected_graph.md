@@ -1,11 +1,11 @@
 ---
-title: "bidirected_graph.hpp"
+title: "bidirected_graph.cpp"
 ---
 
-- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/bidirected_graph.hpp)
+- [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/graph/bidirected_graph.cpp)
 
 {% highlight cpp %}
-#include "definition.hpp"
+#include "definition.cpp"
 
 class BidirectedEdge {
 public:
@@ -25,6 +25,6 @@ void add_edge(BidirectedGraph &g, int from, int to) {
 
 ### Includes
 
-- [definition.hpp](definition)
+- [definition.cpp](definition)
 
 [Back](../..)
