@@ -104,7 +104,7 @@ title: C++
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:-------------|
 | [ext.cpp](./include/others/ext) | <font color="Red">No</font> |  |
-| [fast_cin.cpp](./include/others/fast_cin) | <font color="ForestGreen">Yes</font> | [yosupo-aplusb.cpp](./tests/yosupo-aplusb)<br>[yosupo-many_aplusb.cpp](./tests/yosupo-many_aplusb)<br>[yosupo-point_add_range_sum.cpp](./tests/yosupo-point_add_range_sum) etc... |
-| [fast_cout.cpp](./include/others/fast_cout) | <font color="ForestGreen">Yes</font> | [yosupo-aplusb.cpp](./tests/yosupo-aplusb)<br>[yosupo-many_aplusb.cpp](./tests/yosupo-many_aplusb)<br>[yosupo-point_add_range_sum.cpp](./tests/yosupo-point_add_range_sum) etc... |
+| [fast_cin.cpp](./include/others/fast_cin) | <font color="ForestGreen">Yes</font> | [yosupo-aplusb.cpp](./tests/yosupo-aplusb)<br>[yosupo-associative_array.cpp](./tests/yosupo-associative_array)<br>[yosupo-many_aplusb.cpp](./tests/yosupo-many_aplusb) etc... |
+| [fast_cout.cpp](./include/others/fast_cout) | <font color="ForestGreen">Yes</font> | [yosupo-aplusb.cpp](./tests/yosupo-aplusb)<br>[yosupo-associative_array.cpp](./tests/yosupo-associative_array)<br>[yosupo-many_aplusb.cpp](./tests/yosupo-many_aplusb) etc... |
 | [tree_dp.cpp](./include/others/tree_dp) | <font color="Red">No</font> |  |
 
