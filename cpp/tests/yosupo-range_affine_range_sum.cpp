@@ -14,21 +14,12 @@ struct RangeSum {
   }
 };
 
-// TODO: Change interface later.
-template <typename T> struct MyLinear {
-  using value_type = std::pair<T, T>;
-  static value_type id() { return value_type(1, 0); }
-  static value_type op(const value_type &l, const value_type &r) {
-    return value_type(l.first * r.first, r.second * l.first + l.second);
-  }
-};
-
 struct RangeAffineRangeSum {
   using Monoid = RangeSum;
-  using Update = MyLinear<Mod>;
+  using Update = Linear<Mod>;
   using value_type = typename Monoid::value_type;
   using update_type = typename Update::value_type;
-  static value_type evaluate(const update_type &update, const value_type &x) {
+  static value_type evaluate(const value_type &x, const update_type &update) {
     return { update.first * x.first + update.second * x.second, x.second };
   }
 };
