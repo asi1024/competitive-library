@@ -11,7 +11,7 @@ public:
   using update_type = typename Struct::update_type;
 
 private:
-  const int n;
+  const int size_, n;
   std::vector<value_type> data;
   std::vector<update_type> lazy;
   std::vector<bool> flag;
@@ -61,15 +61,23 @@ private:
   }
 
 public:
-  SegmentTreeLazy(int count, const value_type &init = Monoid::id()) :
-    n(log2ceil(count)), data(n * 2), lazy(n), flag(n, false) {
-    fill(begin(data) + n, end(data), init);
+  SegmentTreeLazy(const std::vector<value_type> &vec) :
+    size_(vec.size()), n(log2ceil(size_)), data(n * 2, Monoid::id()), lazy(n),
+    flag(n, false) {
+    std::copy(begin(vec), end(vec), begin(data) + n);
     for (int i = n - 1; i >= 1; i--) {
       data[i] = Monoid::op(data[i * 2 + 0], data[i * 2 + 1]);
     }
   };
+
+  SegmentTreeLazy(int count, const value_type &value = Monoid::id()) :
+    SegmentTreeLazy(std::vector<value_type>(count, value)) {}
+
+  int size() const { return size_; }
+
   void update(int l, int r, const update_type &f) {
     update_sub(l, r, 1, 0, n, f);
   }
+
   value_type query(int l, int r) { return query_sub(l, r, 1, 0, n); }
 };
