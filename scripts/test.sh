@@ -7,6 +7,7 @@ ulimit -s 32768
 DIR=${PWD}
 LANG=$1
 DIFF=${DIR}/scripts/diff.py
+COMPILE='g++-9 --std=gnu++14 -O2 -Wall'
 
 download-aoj () {
     local ID=${1}
@@ -29,7 +30,9 @@ download-yosupo () {
 mkdir -p ${HOME}/.workspace
 pushd ${HOME}/.workspace
 
-for TEST in `ls ${DIR}/${LANG}/tests/*.cpp`
+# for TEST in `ls ${DIR}/${LANG}/tests/yosupo-range_aff*.cpp`
+# for TEST in `ls ${DIR}/${LANG}/tests/aoj-DSL_2_F.cpp`
+for TEST in `ls ${DIR}/${LANG}/tests/aoj-2450.cpp`
 do
     LABEL=`basename ${TEST} | sed 's/-.*$//'`
     ID=`basename ${TEST} | sed 's/^.*-//' | sed 's/\..*$//'`
@@ -37,7 +40,7 @@ do
     pushd ${LABEL}
     download-${LABEL} ${ID}
     ${COMPILE} ${TEST} -o a.out
-    oj test --mle 256 --tle 32 --judge-command ${DIFF} -d ${ID}
+    oj test --mle 256 --tle 32 --judge-command ${DIFF} -d ${ID} --gnu-time gtime
     echo ${ID}
     popd
 done
