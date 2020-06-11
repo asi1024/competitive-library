@@ -11,10 +11,10 @@ title: "aoj-DSL_2_F.cpp"
 
 struct RangeUpdateRMQ {
   using Monoid = RMQ<long long>;
-  using Update = LeftHandSide<long long>;
+  using Update = RightHandSide<long long>;
   using value_type = typename Monoid::value_type;
   using update_type = typename Update::value_type;
-  static value_type evaluate(const update_type &update, const value_type &) {
+  static value_type evaluate(const value_type &, const update_type &update) {
     return update;
   }
 };

@@ -36,12 +36,12 @@ struct RangeMinSegment {
   }
 };
 
-struct Struct {
+struct UpdateStruct {
   using Monoid = RangeMinSegment;
-  using Update = LeftHandSide<ll>;
+  using Update = RightHandSide<ll>;
   using value_type = typename Monoid::value_type;
   using update_type = typename Update::value_type;
-  static value_type evaluate(const update_type &update, const value_type &val) {
+  static value_type evaluate(const value_type &val, const update_type &update) {
     ll sum = update * val.cnt;
     if (update < 0)
       return value_type(0, 0, 0, sum, update, val.cnt);
@@ -63,7 +63,7 @@ int main() {
     --t;
     add_edge(g, s, t);
   }
-  HeavyLightDecomposition<SegmentTreeLazy<Struct>> HLD(g, Data());
+  HeavyLightDecomposition<SegmentTreeLazy<UpdateStruct>> HLD(g, Data());
   for (int i = 0; i < n; i++) HLD.update(i, i, w[i]);
   for (int i = 0; i < q; i++) {
     int com, s, t, c;

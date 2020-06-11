@@ -7,9 +7,9 @@ title: "semi_group.cpp"
 {% highlight cpp %}
 #include "../template/includes.cpp"
 
-template <typename T> struct LeftHandSide {
+template <typename T> struct RightHandSide {
   using value_type = T;
-  static value_type op(const value_type &l, const value_type &) { return l; }
+  static value_type op(const value_type &, const value_type &r) { return r; }
 };
 {% endhighlight %}
 

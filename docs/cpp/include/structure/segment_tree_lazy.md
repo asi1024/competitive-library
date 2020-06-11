@@ -23,14 +23,14 @@ private:
   void lazyset(int node, const update_type &update) {
     if (node < n) {
       if (flag[node]) {
-        lazy[node] = Update::op(update, lazy[node]);
+        lazy[node] = Update::op(lazy[node], update);
       }
       else {
         lazy[node] = update;
         flag[node] = true;
       }
     }
-    data[node] = Struct::evaluate(update, data[node]);
+    data[node] = Struct::evaluate(data[node], update);
   }
   void evaluate(int node) {
     if (!flag[node]) return;
