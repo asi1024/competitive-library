@@ -18,3 +18,11 @@ template <typename T> struct Linear {
     return value_type(l.first * r.first, l.second * r.first + r.second);
   }
 };
+
+template <typename T> struct RightHandSide {
+  using value_type = std::pair<bool, T>;
+  static value_type id() { return value_type(false, T()); }
+  static value_type op(const value_type &l, const value_type &r) {
+    return r.first ? r : l;
+  }
+};

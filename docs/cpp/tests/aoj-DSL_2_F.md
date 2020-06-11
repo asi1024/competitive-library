@@ -7,15 +7,14 @@ title: "aoj-DSL_2_F.cpp"
 {% highlight cpp %}
 #include "../include/structure/monoid.cpp"
 #include "../include/structure/segment_tree_lazy.cpp"
-#include "../include/structure/semi_group.cpp"
 
 struct RangeUpdateRMQ {
   using Monoid = RMQ<long long>;
   using Update = RightHandSide<long long>;
   using value_type = typename Monoid::value_type;
   using update_type = typename Update::value_type;
-  static value_type evaluate(const value_type &, const update_type &update) {
-    return update;
+  static value_type evaluate(const value_type &x, const update_type &update) {
+    return update.first ? update.second : x;
   }
 };
 
@@ -31,7 +30,7 @@ int main() {
     }
     else {
       scanf("%d%d%d", &s, &t, &x);
-      seg.update(s, t + 1, x);
+      seg.update(s, t + 1, std::make_pair(true, x));
     }
   }
   return 0;
@@ -42,6 +41,5 @@ int main() {
 
 - [monoid.cpp](../include/structure/monoid)
 - [segment_tree_lazy.cpp](../include/structure/segment_tree_lazy)
-- [semi_group.cpp](../include/structure/semi_group)
 
 [Back](..)

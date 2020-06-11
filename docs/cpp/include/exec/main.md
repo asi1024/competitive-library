@@ -32,7 +32,6 @@ title: "main.cpp"
 #include "../structure/rars.cpp"
 #include "../structure/segment_tree.cpp"
 #include "../structure/segment_tree_lazy.cpp"
-#include "../structure/semi_group.cpp"
 #include "../structure/skew_heap.cpp"
 #include "../structure/slide_min.cpp"
 #include "../structure/starry_sky_tree.cpp"
@@ -115,7 +114,6 @@ int main() { return 0; }
 - [rars.cpp](../structure/rars)
 - [segment_tree.cpp](../structure/segment_tree)
 - [segment_tree_lazy.cpp](../structure/segment_tree_lazy)
-- [semi_group.cpp](../structure/semi_group)
 - [skew_heap.cpp](../structure/skew_heap)
 - [slide_min.cpp](../structure/slide_min)
 - [starry_sky_tree.cpp](../structure/starry_sky_tree)
