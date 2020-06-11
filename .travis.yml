@@ -63,8 +63,8 @@ matrix:
 before_install:
   - pyenv versions
   - pyenv global 3.7
-  - pip install --upgrade pip
-  - pip install online-judge-tools
+  - pip install -U pip
+  - pip install -U online-judge-tools
 
 cache:
   - apt
