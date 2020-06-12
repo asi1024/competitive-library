@@ -1,6 +1,6 @@
 #include "../include/structure/heavy_light_decomposition.cpp"
+#include "../include/structure/monoid.cpp"
 #include "../include/structure/segment_tree_lazy.cpp"
-#include "../include/structure/semi_group.cpp"
 #include "../include/template/typedef.cpp"
 
 using namespace std;
@@ -42,11 +42,11 @@ struct UpdateStruct {
   using value_type = typename Monoid::value_type;
   using update_type = typename Update::value_type;
   static value_type evaluate(const value_type &val, const update_type &update) {
-    ll sum = update * val.cnt;
-    if (update < 0)
-      return value_type(0, 0, 0, sum, update, val.cnt);
-    else
-      return value_type(sum, sum, sum, sum, update, val.cnt);
+    if (!update.first) return val;
+    ll sum = update.second * val.cnt;
+    return update.second < 0
+             ? value_type(0, 0, 0, sum, update.second, val.cnt)
+             : value_type(sum, sum, sum, sum, update.second, val.cnt);
   }
 };
 
@@ -64,14 +64,14 @@ int main() {
     add_edge(g, s, t);
   }
   HeavyLightDecomposition<SegmentTreeLazy<UpdateStruct>> HLD(g, Data());
-  for (int i = 0; i < n; i++) HLD.update(i, i, w[i]);
+  for (int i = 0; i < n; i++) HLD.update(i, i, std::make_pair(true, w[i]));
   for (int i = 0; i < q; i++) {
     int com, s, t, c;
     scanf("%d%d%d%d", &com, &s, &t, &c);
     --s;
     --t;
     if (com == 1) {
-      HLD.update(s, t, c);
+      HLD.update(s, t, make_pair(true, c));
     }
     else {
       Data val = HLD.query(s, t);
