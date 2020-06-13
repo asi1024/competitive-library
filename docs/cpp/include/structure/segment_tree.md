@@ -16,6 +16,7 @@ public:
 private:
   const int size_, n;
   std::vector<value_type> data;
+  using iterator = typename std::vector<value_type>::iterator;
 
 public:
   SegmentTree(const std::vector<value_type> &vec) :
@@ -51,6 +52,20 @@ public:
       r >>= 1;
     }
     return Monoid::op(res1, res2);
+  }
+
+  std::deque<iterator> range_iterators(int l, int r) {
+    assert(0 <= l && l <= r && r <= size_);  // assertion
+    l += n;
+    r += n;
+    std::deque<iterator> res;
+    while (l < r) {
+      if (l & 1) res.push_front(data.begin() + l++);
+      if (r & 1) res.push_back(data.begin() + --r);
+      l >>= 1;
+      r >>= 1;
+    }
+    return res;
   }
 };
 {% endhighlight %}
