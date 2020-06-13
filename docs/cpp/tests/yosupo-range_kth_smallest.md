@@ -41,10 +41,7 @@ int main() {
       for (auto &&it : itrs) {
         cnt_less += std::lower_bound(it->begin(), it->end(), mid) - it->begin();
       }
-      if (cnt_less > k)
-        ub = mid;
-      else
-        lb = mid;
+      *(cnt_less > k ? &ub : &lb) = mid;
     }
     fcout << lb << fendl;
   }

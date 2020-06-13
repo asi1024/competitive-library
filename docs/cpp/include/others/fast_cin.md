@@ -5,8 +5,7 @@ title: "fast_cin.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/others/fast_cin.cpp)
 
 {% highlight cpp %}
-#include <cstdio>
-#include <string>
+#include "../template/includes.cpp"
 
 class fast_istream {
   bool is_space(char c) { return c < 0x21 || c > 0x7E; }
@@ -81,5 +80,9 @@ public:
 
 fast_istream fcin;
 {% endhighlight %}
+
+### Includes
+
+- [includes.cpp](../template/includes)
 
 [Back](../..)
