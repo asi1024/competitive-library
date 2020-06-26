@@ -20,6 +20,7 @@
 
 // Data Structures
 #include "../structure/convex_hull_trick.cpp"
+#include "../structure/euler_tour.cpp"
 #include "../structure/fenwick_tree.cpp"
 #include "../structure/heavy_light_decomposition.cpp"
 #include "../structure/monoid.cpp"
@@ -49,6 +50,7 @@
 #include "../graph/retrograde_weighted.cpp"
 #include "../graph/scc.cpp"
 #include "../graph/spfa.cpp"
+#include "../graph/traversal.cpp"
 #include "../graph/weighted_graph.cpp"
 
 // Numerical Algorithms
