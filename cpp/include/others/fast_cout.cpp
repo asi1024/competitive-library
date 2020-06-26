@@ -1,7 +1,6 @@
 #pragma once
 
-#include <cstdio>
-#include <string>
+#include "../template/includes.cpp"
 
 class fast_ostream {
   char ch[32];

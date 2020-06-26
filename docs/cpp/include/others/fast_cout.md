@@ -5,8 +5,7 @@ title: "fast_cout.cpp"
 - [GitHub]({{ site.github.repository_url }}/blob/master/cpp/include/others/fast_cout.cpp)
 
 {% highlight cpp %}
-#include <cstdio>
-#include <string>
+#include "../template/includes.cpp"
 
 class fast_ostream {
   char ch[32];
@@ -49,5 +48,9 @@ fast_ostream fcout;
 
 const std::string fendl = "\n";
 {% endhighlight %}
+
+### Includes
+
+- [includes.cpp](../template/includes)
 
 [Back](../..)

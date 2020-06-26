@@ -35,7 +35,7 @@ title: C++
 | [heavy_light_decomposition.cpp](./include/structure/heavy_light_decomposition) | <font color="ForestGreen">Yes</font> | [aoj-2450.cpp](./tests/aoj-2450) |
 | [monoid.cpp](./include/structure/monoid) | <font color="ForestGreen">Yes</font> | [aoj-2450.cpp](./tests/aoj-2450)<br>[aoj-DSL_2_F.cpp](./tests/aoj-DSL_2_F)<br>[yosupo-point_set_range_composite.cpp](./tests/yosupo-point_set_range_composite) etc... |
 | [rars.cpp](./include/structure/rars) | <font color="ForestGreen">Yes</font> | [aoj-DSL_2_G.cpp](./tests/aoj-DSL_2_G) |
-| [segment_tree.cpp](./include/structure/segment_tree) | <font color="ForestGreen">Yes</font> | [aoj-DSL_2_A.0.cpp](./tests/aoj-DSL_2_A.0)<br>[yosupo-point_set_range_composite.cpp](./tests/yosupo-point_set_range_composite)<br>[yosupo-staticrmq.cpp](./tests/yosupo-staticrmq) etc... |
+| [segment_tree.cpp](./include/structure/segment_tree) | <font color="ForestGreen">Yes</font> | [aoj-DSL_2_A.0.cpp](./tests/aoj-DSL_2_A.0)<br>[yosupo-point_set_range_composite.cpp](./tests/yosupo-point_set_range_composite)<br>[yosupo-range_kth_smallest.cpp](./tests/yosupo-range_kth_smallest) etc... |
 | [segment_tree_lazy.cpp](./include/structure/segment_tree_lazy) | <font color="ForestGreen">Yes</font> | [aoj-2450.cpp](./tests/aoj-2450)<br>[aoj-DSL_2_F.cpp](./tests/aoj-DSL_2_F)<br>[yosupo-range_affine_range_sum.cpp](./tests/yosupo-range_affine_range_sum) |
 | [skew_heap.cpp](./include/structure/skew_heap) | <font color="ForestGreen">Yes</font> | [aoj-2559.cpp](./tests/aoj-2559) |
 | [slide_min.cpp](./include/structure/slide_min) | <font color="ForestGreen">Yes</font> | [aoj-DPL_1_G.cpp](./tests/aoj-DPL_1_G) |

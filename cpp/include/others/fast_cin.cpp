@@ -1,7 +1,6 @@
 #pragma once
 
-#include <cstdio>
-#include <string>
+#include "../template/includes.cpp"
 
 class fast_istream {
   bool is_space(char c) { return c < 0x21 || c > 0x7E; }
