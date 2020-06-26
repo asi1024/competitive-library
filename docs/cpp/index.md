@@ -25,6 +25,7 @@ title: C++
 |:---------:|:--------:|:-------------|
 | [float_tolerance.cpp](./include/types/float_tolerance) | <font color="ForestGreen">Yes</font> | [Geometry.cpp](./include/geometry/Geometry) |
 | [mod.cpp](./include/types/mod) | <font color="ForestGreen">Yes</font> | [aoj-2257.cpp](./tests/aoj-2257)<br>[aoj-2335.cpp](./tests/aoj-2335)<br>[aoj-2347.cpp](./tests/aoj-2347) etc... |
+| [serial.cpp](./include/types/serial) | <font color="ForestGreen">Yes</font> | [aoj-2620.cpp](./tests/aoj-2620) |
 
 ## Data Structures
 
