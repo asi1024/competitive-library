@@ -32,7 +32,7 @@ title: C++
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:-------------|
 | [convex_hull_trick.cpp](./include/structure/convex_hull_trick) | <font color="ForestGreen">Yes</font> | [aoj-2725.cpp](./tests/aoj-2725) |
-| [euler_tour.cpp](./include/structure/euler_tour) | <font color="ForestGreen">Yes</font> | [yosupo-vertex_add_path_sum.cpp](./tests/yosupo-vertex_add_path_sum) |
+| [euler_tour.cpp](./include/structure/euler_tour) | <font color="ForestGreen">Yes</font> | [yosupo-vertex_add_path_sum.cpp](./tests/yosupo-vertex_add_path_sum)<br>[yosupo-vertex_set_path_composite.cpp](./tests/yosupo-vertex_set_path_composite) |
 | [fenwick_tree.cpp](./include/structure/fenwick_tree) | <font color="ForestGreen">Yes</font> | [aoj-DSL_2_B.cpp](./tests/aoj-DSL_2_B)<br>[yosupo-point_add_range_sum.cpp](./tests/yosupo-point_add_range_sum)<br>[rars.cpp](./include/structure/rars) |
 | [heavy_light_decomposition.cpp](./include/structure/heavy_light_decomposition) | <font color="ForestGreen">Yes</font> | [aoj-2450.cpp](./tests/aoj-2450) |
 | [monoid.cpp](./include/structure/monoid) | <font color="ForestGreen">Yes</font> | [aoj-2450.cpp](./tests/aoj-2450)<br>[aoj-DSL_2_F.cpp](./tests/aoj-DSL_2_F)<br>[yosupo-point_set_range_composite.cpp](./tests/yosupo-point_set_range_composite) etc... |
@@ -50,7 +50,7 @@ title: C++
 |:---------:|:--------:|:-------------|
 | [articulation_points.cpp](./include/graph/articulation_points) | <font color="ForestGreen">Yes</font> | [aoj-GRL_3_A.cpp](./tests/aoj-GRL_3_A) |
 | [bfs01.cpp](./include/graph/bfs01) | <font color="ForestGreen">Yes</font> | [aoj-2342.cpp](./tests/aoj-2342) |
-| [bidirected_graph.cpp](./include/graph/bidirected_graph) | <font color="ForestGreen">Yes</font> | [aoj-GRL_3_A.cpp](./tests/aoj-GRL_3_A)<br>[aoj-GRL_5_C.cpp](./tests/aoj-GRL_5_C)<br>[yosupo-vertex_add_path_sum.cpp](./tests/yosupo-vertex_add_path_sum) |
+| [bidirected_graph.cpp](./include/graph/bidirected_graph) | <font color="ForestGreen">Yes</font> | [aoj-GRL_3_A.cpp](./tests/aoj-GRL_3_A)<br>[aoj-GRL_5_C.cpp](./tests/aoj-GRL_5_C)<br>[yosupo-vertex_add_path_sum.cpp](./tests/yosupo-vertex_add_path_sum) etc... |
 | [bipartite_matching.cpp](./include/graph/bipartite_matching) | <font color="ForestGreen">Yes</font> | [aoj-GRL_7_A.cpp](./tests/aoj-GRL_7_A) |
 | [capacity_graph.cpp](./include/graph/capacity_graph) | <font color="ForestGreen">Yes</font> | [aoj-GRL_6_A.cpp](./tests/aoj-GRL_6_A) |
 | [capacity_weighted_graph.cpp](./include/graph/capacity_weighted_graph) | <font color="ForestGreen">Yes</font> | [aoj-GRL_6_B.cpp](./tests/aoj-GRL_6_B) |
