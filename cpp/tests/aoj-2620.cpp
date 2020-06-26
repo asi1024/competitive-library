@@ -3,6 +3,7 @@
 
 #include "../include/graph/dijkstra.cpp"
 #include "../include/graph/weighted_graph.cpp"
+#include "../include/types/serial.cpp"
 
 #define REP(i, n) for (int i = 0; i < (n); ++i)
 
@@ -42,15 +43,19 @@ int main() {
     }
   }
   WeightedGraph<int> g((H + 1) * (W + 1));
-  REP(i, H + 1)
-  REP(j, W) add_edge(g, i * (W + 1) + j, i * (W + 1) + j + 1, ri[i][j]);
-  REP(i, H)
-  REP(j, W + 1) add_edge(g, i * (W + 1) + j, (i + 1) * (W + 1) + j, dw[i][j]);
-  REP(i, H + 1)
-  REP(j, W) add_edge(g, i * (W + 1) + j + 1, i * (W + 1) + j, ri[i][j]);
-  REP(i, H)
-  REP(j, W + 1) add_edge(g, (i + 1) * (W + 1) + j, i * (W + 1) + j, dw[i][j]);
-  vector<int> d = dijkstra(g, sy * (W + 1) + sx);
-  printf("%d\n", d[gy * (W + 1) + gx]);
+  Serial::reset();
+  vector<vector<Serial>> node;
+  REP(i, H + 1) node.emplace_back(W + 1);
+  assert(Serial::size() == (H + 1) * (W + 1));
+  REP(i, H + 1) REP(j, W) {
+    add_edge(g, node[i][j], node[i][j + 1], ri[i][j]);
+    add_edge(g, node[i][j + 1], node[i][j], ri[i][j]);
+  }
+  REP(i, H) REP(j, W + 1) {
+    add_edge(g, node[i][j], node[i + 1][j], dw[i][j]);
+    add_edge(g, node[i + 1][j], node[i][j], dw[i][j]);
+  }
+  vector<int> d = dijkstra(g, node[sy][sx]);
+  printf("%d\n", d[node[gy][gx]]);
   return 0;
 }

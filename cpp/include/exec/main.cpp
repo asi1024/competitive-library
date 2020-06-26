@@ -16,6 +16,7 @@
 // Types
 #include "../types/float_tolerance.cpp"
 #include "../types/mod.cpp"
+#include "../types/serial.cpp"
 
 // Data Structures
 #include "../structure/convex_hull_trick.cpp"
