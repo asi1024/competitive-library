@@ -1,10 +1,10 @@
 #pragma once
 
+#include "../template/bit_operation.cpp"
 #include "definition.cpp"
 
 class LCA {
-  const int size;
-  int log_size;
+  const int size, log_size;
   std::vector<std::vector<int>> parent;
   std::vector<int> depth;
   template <typename edge_t>
@@ -17,10 +17,10 @@ class LCA {
   }
 
 public:
+  const int root;
   template <typename edge_t>
-  LCA(const graph_t<edge_t> &g, const int root) :
-    size(g.size()), log_size(0), depth(size, 0) {
-    for (int v = size; v > 0; v /= 2) ++log_size;
+  LCA(const graph_t<edge_t> &g, const int root_) :
+    size(g.size()), log_size(lg(size)), depth(size, 0), root(root_) {
     parent.assign(log_size, std::vector<int>(size, 0));
     dfs(g, root, -1, 0);
     for (int k = 0; k < log_size - 1; ++k) {
@@ -32,7 +32,7 @@ public:
       }
     }
   }
-  int query(int u, int v) {
+  int query(int u, int v) const {
     if (depth[u] > depth[v]) std::swap(u, v);
     for (int k = 0; k < log_size; ++k)
       if (((depth[v] - depth[u]) >> k) & 1) v = parent[k][v];

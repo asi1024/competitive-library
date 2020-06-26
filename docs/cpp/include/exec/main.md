@@ -27,6 +27,7 @@ title: "main.cpp"
 
 // Data Structures
 #include "../structure/convex_hull_trick.cpp"
+#include "../structure/euler_tour.cpp"
 #include "../structure/fenwick_tree.cpp"
 #include "../structure/heavy_light_decomposition.cpp"
 #include "../structure/monoid.cpp"
@@ -56,6 +57,7 @@ title: "main.cpp"
 #include "../graph/retrograde_weighted.cpp"
 #include "../graph/scc.cpp"
 #include "../graph/spfa.cpp"
+#include "../graph/traversal.cpp"
 #include "../graph/weighted_graph.cpp"
 
 // Numerical Algorithms
@@ -110,6 +112,7 @@ int main() { return 0; }
 - [mod.cpp](../types/mod)
 - [serial.cpp](../types/serial)
 - [convex_hull_trick.cpp](../structure/convex_hull_trick)
+- [euler_tour.cpp](../structure/euler_tour)
 - [fenwick_tree.cpp](../structure/fenwick_tree)
 - [heavy_light_decomposition.cpp](../structure/heavy_light_decomposition)
 - [monoid.cpp](../structure/monoid)
@@ -137,6 +140,7 @@ int main() { return 0; }
 - [retrograde_weighted.cpp](../graph/retrograde_weighted)
 - [scc.cpp](../graph/scc)
 - [spfa.cpp](../graph/spfa)
+- [traversal.cpp](../graph/traversal)
 - [weighted_graph.cpp](../graph/weighted_graph)
 - [eratosthenes.cpp](../math/eratosthenes)
 - [fft.cpp](../math/fft)
