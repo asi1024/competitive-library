@@ -23,6 +23,7 @@ title: "main.cpp"
 // Types
 #include "../types/float_tolerance.cpp"
 #include "../types/mod.cpp"
+#include "../types/serial.cpp"
 
 // Data Structures
 #include "../structure/convex_hull_trick.cpp"
@@ -107,6 +108,7 @@ int main() { return 0; }
 - [typedef.cpp](../template/typedef)
 - [float_tolerance.cpp](../types/float_tolerance)
 - [mod.cpp](../types/mod)
+- [serial.cpp](../types/serial)
 - [convex_hull_trick.cpp](../structure/convex_hull_trick)
 - [fenwick_tree.cpp](../structure/fenwick_tree)
 - [heavy_light_decomposition.cpp](../structure/heavy_light_decomposition)
