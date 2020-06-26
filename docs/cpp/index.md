@@ -5,7 +5,7 @@ title: C++
 
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:-------------|
-| [bit_operation.cpp](./include/template/bit_operation) | <font color="ForestGreen">Yes</font> | [segment_tree.cpp](./include/structure/segment_tree)<br>[segment_tree_lazy.cpp](./include/structure/segment_tree_lazy)<br>[starry_sky_tree.cpp](./include/structure/starry_sky_tree) |
+| [bit_operation.cpp](./include/template/bit_operation) | <font color="ForestGreen">Yes</font> | [lca.cpp](./include/graph/lca)<br>[segment_tree.cpp](./include/structure/segment_tree)<br>[segment_tree_lazy.cpp](./include/structure/segment_tree_lazy) etc... |
 | [cin.cpp](./include/template/cin) | <font color="Red">No</font> |  |
 | [const_value.cpp](./include/template/const_value) | <font color="ForestGreen">Yes</font> | [Geometry.cpp](./include/geometry/Geometry)<br>[bfs01.cpp](./include/graph/bfs01)<br>[definition.cpp](./include/graph/definition) etc... |
 | [cout.cpp](./include/template/cout) | <font color="Red">No</font> |  |
@@ -32,6 +32,7 @@ title: C++
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:-------------|
 | [convex_hull_trick.cpp](./include/structure/convex_hull_trick) | <font color="ForestGreen">Yes</font> | [aoj-2725.cpp](./tests/aoj-2725) |
+| [euler_tour.cpp](./include/structure/euler_tour) | <font color="ForestGreen">Yes</font> | [yosupo-vertex_add_path_sum.cpp](./tests/yosupo-vertex_add_path_sum) |
 | [fenwick_tree.cpp](./include/structure/fenwick_tree) | <font color="ForestGreen">Yes</font> | [aoj-DSL_2_B.cpp](./tests/aoj-DSL_2_B)<br>[yosupo-point_add_range_sum.cpp](./tests/yosupo-point_add_range_sum)<br>[rars.cpp](./include/structure/rars) |
 | [heavy_light_decomposition.cpp](./include/structure/heavy_light_decomposition) | <font color="ForestGreen">Yes</font> | [aoj-2450.cpp](./tests/aoj-2450) |
 | [monoid.cpp](./include/structure/monoid) | <font color="ForestGreen">Yes</font> | [aoj-2450.cpp](./tests/aoj-2450)<br>[aoj-DSL_2_F.cpp](./tests/aoj-DSL_2_F)<br>[yosupo-point_set_range_composite.cpp](./tests/yosupo-point_set_range_composite) etc... |
@@ -49,7 +50,7 @@ title: C++
 |:---------:|:--------:|:-------------|
 | [articulation_points.cpp](./include/graph/articulation_points) | <font color="ForestGreen">Yes</font> | [aoj-GRL_3_A.cpp](./tests/aoj-GRL_3_A) |
 | [bfs01.cpp](./include/graph/bfs01) | <font color="ForestGreen">Yes</font> | [aoj-2342.cpp](./tests/aoj-2342) |
-| [bidirected_graph.cpp](./include/graph/bidirected_graph) | <font color="ForestGreen">Yes</font> | [aoj-GRL_3_A.cpp](./tests/aoj-GRL_3_A)<br>[aoj-GRL_5_C.cpp](./tests/aoj-GRL_5_C) |
+| [bidirected_graph.cpp](./include/graph/bidirected_graph) | <font color="ForestGreen">Yes</font> | [aoj-GRL_3_A.cpp](./tests/aoj-GRL_3_A)<br>[aoj-GRL_5_C.cpp](./tests/aoj-GRL_5_C)<br>[yosupo-vertex_add_path_sum.cpp](./tests/yosupo-vertex_add_path_sum) |
 | [bipartite_matching.cpp](./include/graph/bipartite_matching) | <font color="ForestGreen">Yes</font> | [aoj-GRL_7_A.cpp](./tests/aoj-GRL_7_A) |
 | [capacity_graph.cpp](./include/graph/capacity_graph) | <font color="ForestGreen">Yes</font> | [aoj-GRL_6_A.cpp](./tests/aoj-GRL_6_A) |
 | [capacity_weighted_graph.cpp](./include/graph/capacity_weighted_graph) | <font color="ForestGreen">Yes</font> | [aoj-GRL_6_B.cpp](./tests/aoj-GRL_6_B) |
@@ -57,13 +58,14 @@ title: C++
 | [dijkstra.cpp](./include/graph/dijkstra) | <font color="ForestGreen">Yes</font> | [aoj-2620.cpp](./tests/aoj-2620)<br>[aoj-GRL_1_A.cpp](./tests/aoj-GRL_1_A) |
 | [directed_graph.cpp](./include/graph/directed_graph) | <font color="ForestGreen">Yes</font> | [aoj-2702.cpp](./tests/aoj-2702)<br>[aoj-GRL_3_C.cpp](./tests/aoj-GRL_3_C) |
 | [game.cpp](./include/graph/game) | <font color="ForestGreen">Yes</font> | [retrograde.cpp](./include/graph/retrograde)<br>[retrograde_weighted.cpp](./include/graph/retrograde_weighted) |
-| [lca.cpp](./include/graph/lca) | <font color="ForestGreen">Yes</font> | [aoj-GRL_5_C.cpp](./tests/aoj-GRL_5_C) |
+| [lca.cpp](./include/graph/lca) | <font color="ForestGreen">Yes</font> | [aoj-GRL_5_C.cpp](./tests/aoj-GRL_5_C)<br>[euler_tour.cpp](./include/structure/euler_tour) |
 | [max_flow.cpp](./include/graph/max_flow) | <font color="ForestGreen">Yes</font> | [aoj-GRL_6_A.cpp](./tests/aoj-GRL_6_A) |
 | [min_cost_flow.cpp](./include/graph/min_cost_flow) | <font color="ForestGreen">Yes</font> | [aoj-GRL_6_B.cpp](./tests/aoj-GRL_6_B) |
 | [retrograde.cpp](./include/graph/retrograde) | <font color="ForestGreen">Yes</font> | [aoj-2702.cpp](./tests/aoj-2702) |
 | [retrograde_weighted.cpp](./include/graph/retrograde_weighted) | <font color="ForestGreen">Yes</font> | [aoj-1358.cpp](./tests/aoj-1358) |
 | [scc.cpp](./include/graph/scc) | <font color="ForestGreen">Yes</font> | [aoj-GRL_3_C.cpp](./tests/aoj-GRL_3_C) |
 | [spfa.cpp](./include/graph/spfa) | <font color="ForestGreen">Yes</font> | [aoj-GRL_1_B.cpp](./tests/aoj-GRL_1_B) |
+| [traversal.cpp](./include/graph/traversal) | <font color="ForestGreen">Yes</font> | [euler_tour.cpp](./include/structure/euler_tour) |
 | [weighted_graph.cpp](./include/graph/weighted_graph) | <font color="ForestGreen">Yes</font> | [aoj-1358.cpp](./tests/aoj-1358)<br>[aoj-2342.cpp](./tests/aoj-2342)<br>[aoj-2620.cpp](./tests/aoj-2620) etc... |
 
 ## Numerical Algorithms
