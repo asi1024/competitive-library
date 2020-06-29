@@ -32,10 +32,10 @@ title: C++
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:-------------|
 | [convex_hull_trick.cpp](./include/structure/convex_hull_trick) | <font color="ForestGreen">Yes</font> | [aoj-2725.cpp](./tests/aoj-2725) |
-| [euler_tour.cpp](./include/structure/euler_tour) | <font color="ForestGreen">Yes</font> | [yosupo-vertex_add_path_sum.cpp](./tests/yosupo-vertex_add_path_sum)<br>[yosupo-vertex_set_path_composite.cpp](./tests/yosupo-vertex_set_path_composite) |
+| [euler_tour.cpp](./include/structure/euler_tour) | <font color="ForestGreen">Yes</font> | [yosupo-lca.cpp](./tests/yosupo-lca)<br>[yosupo-vertex_add_path_sum.cpp](./tests/yosupo-vertex_add_path_sum)<br>[yosupo-vertex_set_path_composite.cpp](./tests/yosupo-vertex_set_path_composite) |
 | [fenwick_tree.cpp](./include/structure/fenwick_tree) | <font color="ForestGreen">Yes</font> | [aoj-DSL_2_B.cpp](./tests/aoj-DSL_2_B)<br>[yosupo-point_add_range_sum.cpp](./tests/yosupo-point_add_range_sum)<br>[rars.cpp](./include/structure/rars) |
 | [heavy_light_decomposition.cpp](./include/structure/heavy_light_decomposition) | <font color="ForestGreen">Yes</font> | [aoj-2450.cpp](./tests/aoj-2450) |
-| [monoid.cpp](./include/structure/monoid) | <font color="ForestGreen">Yes</font> | [aoj-2450.cpp](./tests/aoj-2450)<br>[aoj-DSL_2_F.cpp](./tests/aoj-DSL_2_F)<br>[yosupo-point_set_range_composite.cpp](./tests/yosupo-point_set_range_composite) etc... |
+| [monoid.cpp](./include/structure/monoid) | <font color="ForestGreen">Yes</font> | [aoj-2450.cpp](./tests/aoj-2450)<br>[aoj-DSL_2_F.cpp](./tests/aoj-DSL_2_F)<br>[yosupo-lca.cpp](./tests/yosupo-lca) etc... |
 | [rars.cpp](./include/structure/rars) | <font color="ForestGreen">Yes</font> | [aoj-DSL_2_G.cpp](./tests/aoj-DSL_2_G) |
 | [segment_tree.cpp](./include/structure/segment_tree) | <font color="ForestGreen">Yes</font> | [aoj-DSL_2_A.0.cpp](./tests/aoj-DSL_2_A.0)<br>[yosupo-point_set_range_composite.cpp](./tests/yosupo-point_set_range_composite)<br>[yosupo-range_kth_smallest.cpp](./tests/yosupo-range_kth_smallest) etc... |
 | [segment_tree_lazy.cpp](./include/structure/segment_tree_lazy) | <font color="ForestGreen">Yes</font> | [aoj-2450.cpp](./tests/aoj-2450)<br>[aoj-DSL_2_F.cpp](./tests/aoj-DSL_2_F)<br>[yosupo-range_affine_range_sum.cpp](./tests/yosupo-range_affine_range_sum) |
@@ -50,12 +50,12 @@ title: C++
 |:---------:|:--------:|:-------------|
 | [articulation_points.cpp](./include/graph/articulation_points) | <font color="ForestGreen">Yes</font> | [aoj-GRL_3_A.cpp](./tests/aoj-GRL_3_A) |
 | [bfs01.cpp](./include/graph/bfs01) | <font color="ForestGreen">Yes</font> | [aoj-2342.cpp](./tests/aoj-2342) |
-| [bidirected_graph.cpp](./include/graph/bidirected_graph) | <font color="ForestGreen">Yes</font> | [aoj-GRL_3_A.cpp](./tests/aoj-GRL_3_A)<br>[aoj-GRL_5_C.cpp](./tests/aoj-GRL_5_C)<br>[yosupo-vertex_add_path_sum.cpp](./tests/yosupo-vertex_add_path_sum) etc... |
+| [bidirected_graph.cpp](./include/graph/bidirected_graph) | <font color="ForestGreen">Yes</font> | [aoj-GRL_3_A.cpp](./tests/aoj-GRL_3_A)<br>[aoj-GRL_5_C.cpp](./tests/aoj-GRL_5_C)<br>[yosupo-lca.cpp](./tests/yosupo-lca) etc... |
 | [bipartite_matching.cpp](./include/graph/bipartite_matching) | <font color="ForestGreen">Yes</font> | [aoj-GRL_7_A.cpp](./tests/aoj-GRL_7_A) |
 | [capacity_graph.cpp](./include/graph/capacity_graph) | <font color="ForestGreen">Yes</font> | [aoj-GRL_6_A.cpp](./tests/aoj-GRL_6_A) |
 | [capacity_weighted_graph.cpp](./include/graph/capacity_weighted_graph) | <font color="ForestGreen">Yes</font> | [aoj-GRL_6_B.cpp](./tests/aoj-GRL_6_B) |
 | [definition.cpp](./include/graph/definition) | <font color="ForestGreen">Yes</font> | [articulation_points.cpp](./include/graph/articulation_points)<br>[bfs01.cpp](./include/graph/bfs01)<br>[bidirected_graph.cpp](./include/graph/bidirected_graph) etc... |
-| [dijkstra.cpp](./include/graph/dijkstra) | <font color="ForestGreen">Yes</font> | [aoj-2620.cpp](./tests/aoj-2620)<br>[aoj-GRL_1_A.cpp](./tests/aoj-GRL_1_A) |
+| [dijkstra.cpp](./include/graph/dijkstra) | <font color="ForestGreen">Yes</font> | [aoj-2620.cpp](./tests/aoj-2620)<br>[aoj-GRL_1_A.cpp](./tests/aoj-GRL_1_A)<br>[yosupo-shortest_path.cpp](./tests/yosupo-shortest_path) |
 | [directed_graph.cpp](./include/graph/directed_graph) | <font color="ForestGreen">Yes</font> | [aoj-2702.cpp](./tests/aoj-2702)<br>[aoj-GRL_3_C.cpp](./tests/aoj-GRL_3_C) |
 | [game.cpp](./include/graph/game) | <font color="ForestGreen">Yes</font> | [retrograde.cpp](./include/graph/retrograde)<br>[retrograde_weighted.cpp](./include/graph/retrograde_weighted) |
 | [lca.cpp](./include/graph/lca) | <font color="ForestGreen">Yes</font> | [aoj-GRL_5_C.cpp](./tests/aoj-GRL_5_C)<br>[euler_tour.cpp](./include/structure/euler_tour) |
@@ -106,7 +106,7 @@ title: C++
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:-------------|
 | [ext.cpp](./include/others/ext) | <font color="Red">No</font> |  |
-| [fast_cin.cpp](./include/others/fast_cin) | <font color="ForestGreen">Yes</font> | [yosupo-aplusb.cpp](./tests/yosupo-aplusb)<br>[yosupo-associative_array.cpp](./tests/yosupo-associative_array)<br>[yosupo-many_aplusb.cpp](./tests/yosupo-many_aplusb) etc... |
-| [fast_cout.cpp](./include/others/fast_cout) | <font color="ForestGreen">Yes</font> | [yosupo-aplusb.cpp](./tests/yosupo-aplusb)<br>[yosupo-associative_array.cpp](./tests/yosupo-associative_array)<br>[yosupo-many_aplusb.cpp](./tests/yosupo-many_aplusb) etc... |
+| [fast_cin.cpp](./include/others/fast_cin) | <font color="ForestGreen">Yes</font> | [yosupo-aplusb.cpp](./tests/yosupo-aplusb)<br>[yosupo-associative_array.cpp](./tests/yosupo-associative_array)<br>[yosupo-lca.cpp](./tests/yosupo-lca) etc... |
+| [fast_cout.cpp](./include/others/fast_cout) | <font color="ForestGreen">Yes</font> | [yosupo-aplusb.cpp](./tests/yosupo-aplusb)<br>[yosupo-associative_array.cpp](./tests/yosupo-associative_array)<br>[yosupo-lca.cpp](./tests/yosupo-lca) etc... |
 | [tree_dp.cpp](./include/others/tree_dp) | <font color="Red">No</font> |  |
 
