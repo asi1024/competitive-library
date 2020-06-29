@@ -22,12 +22,6 @@ int main() {
     fcout << -1 << fendl;
     return 0;
   }
-  if (d[s] == 0) {
-    // Hack for multiple solutions.
-    fcout << 0 << " " << 1 << fendl;
-    fcout << s << " " << t << fendl;
-    return 0;
-  }
 
   std::vector<int> trace;
   trace.reserve(m);
