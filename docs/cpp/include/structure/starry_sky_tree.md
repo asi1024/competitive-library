@@ -17,6 +17,13 @@ public:
   StarrySkyTree(int count) :
     n(log2ceil(count)), data(n * 2, 0), lazy(n * 2, 0) {}
 
+  StarrySkyTree(const std::vector<int> &init) :
+    n(log2ceil(init.size())), data(n * 2, 0), lazy(n * 2, 0) {
+    for (int i = 0; i < int(init.size()); ++i) {
+      update(i, i + 1, init[i]);
+    }
+  }
+
   void update(int l, int r, const T &val) {
     l += n;
     r += n;

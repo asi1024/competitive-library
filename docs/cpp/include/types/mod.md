@@ -91,6 +91,7 @@ public:
     return sw ? v1[n] : v2[n];
   }
   static Modulo comb(int a, int b) {
+    if (b == 0) return 1;
     if (b < 0 || b > a) return 0;
     return Modulo::fact(a, true) * Modulo::fact(b, false) *
            Modulo::fact(a - b, false);
