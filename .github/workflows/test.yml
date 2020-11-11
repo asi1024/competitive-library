@@ -24,10 +24,13 @@ jobs:
         include:
           - os: ubuntu-20.04
             compile: g++ -std=gnu++2a -O2 -Wall -Wextra -Wno-unused-result -Werror
+            stack-limit: 1048576
           - os: ubuntu-16.04
             compile: g++ -std=gnu++14 -O2 -Wall -Wextra -Wno-unused-result -Werror
-          # - os: macos-11.0
-          #   compile: g++ -std=gnu++17 -O2 -Wall -Wextra -Wno-unused-result -Werror
+            stack-limit: 1048576
+          - os: macos-11.0
+            compile: g++ -std=c++17 -O2 -Wall -Wextra -Wno-unused-result -Werror
+            stack-limit: 65532
 
     needs: check-format
     runs-on: ${{ matrix.os }}
@@ -60,5 +63,5 @@ jobs:
 
     - name: run test
       run: |
-        ulimit -s 1048576
+        ulimit -s ${{ matrix.stack-limit }}
         ./scripts/test.sh cpp
