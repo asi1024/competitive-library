@@ -11,6 +11,4 @@ See [example/tutorial.sh](https://github.com/asi1024/competitive-library/blob/ma
 - [C++](https://asi1024.github.io/competitive-library/cpp/)
 
 ## Supported versions
-- C++11 (gcc-4.8)
-- C++17 (gcc-7)
-- C++14 (clang-3.8)
+- C++14 or later

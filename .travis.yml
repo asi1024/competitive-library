@@ -6,17 +6,6 @@ matrix:
       compiler: g++
       addons:
         apt:
-          packages:
-            - g++-4.8
-      env:
-        - COMPILE="g++-4.8 -std=gnu++11 -O2 -Wall -Wextra -Wno-unused-result -Werror"
-      script:
-        - ./scripts/test.sh cpp
-
-    - language: cpp
-      compiler: g++
-      addons:
-        apt:
           sources:
             - ubuntu-toolchain-r-test
           packages:
