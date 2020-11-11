@@ -35,7 +35,7 @@ do
     pushd ${LABEL}
     download-${LABEL} ${ID}
     ${COMPILE} ${TEST} -o a.out
-    oj test --mle 256 --tle 32 --judge-command ${DIFF} -d ${ID}
+    oj test --tle 32 --judge-command ${DIFF} -d ${ID}
     echo ${ID}
     popd
 done
