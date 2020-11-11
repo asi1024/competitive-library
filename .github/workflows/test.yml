@@ -1,0 +1,64 @@
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  check-format:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: show versions
+      run: |
+        python --version
+        clang-format --version
+    - name: run test
+      run: |
+        ./build.sh
+        git diff --exit-code
+
+  validaton:
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-20.04
+            compile: g++ -std=gnu++2a -O2 -Wall -Wextra -Wno-unused-result -Werror
+          - os: ubuntu-16.04
+            compile: g++ -std=gnu++14 -O2 -Wall -Wextra -Wno-unused-result -Werror
+          # - os: macos-11.0
+          #   compile: g++ -std=gnu++17 -O2 -Wall -Wextra -Wno-unused-result -Werror
+
+    needs: check-format
+    runs-on: ${{ matrix.os }}
+    env:
+      COMPILE: ${{ matrix.compile }}
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: actions/cache@v2
+      id: cache-workspace
+      with:
+        path: ~/.workspace
+        key: ${{ runner.os }}-workspace
+
+    - name: setup python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+
+    - name: install dependencies
+      run: |
+        pip install -U pip
+        pip install -U online-judge-tools
+
+    - name: show versions
+      run: |
+        g++ --version
+        python --version
+
+    - name: run test
+      run: |
+        ulimit -s 1048576
+        ./scripts/test.sh cpp
