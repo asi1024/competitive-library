@@ -1,8 +1,10 @@
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
+    branches:
+      - '**'
 
 jobs:
   check-format:
@@ -18,6 +20,24 @@ jobs:
         ./build.sh
         git diff --exit-code
 
+  run-example:
+    runs-on: ubuntu-16.04
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: setup python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+
+    - name: run example
+      run: |
+        pip install -e .
+        pushd example
+        ./tutorial.sh
+        popd
+
   validaton:
     strategy:
       matrix:
@@ -32,7 +52,7 @@ jobs:
             compile: g++ -std=c++17 -O2 -Wall -Wextra -Wno-unused-result -Werror
             stack-limit: 65532
 
-    needs: check-format
+    needs: [check-format, run-example]
     runs-on: ${{ matrix.os }}
     env:
       COMPILE: ${{ matrix.compile }}
