@@ -21,7 +21,7 @@ jobs:
         git diff --exit-code
 
   run-example:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -29,7 +29,7 @@ jobs:
     - name: setup python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.8'
+        python-version: '3.10'
 
     - name: run example
       run: |
@@ -42,10 +42,10 @@ jobs:
     strategy:
       matrix:
         include:
-          - os: ubuntu-20.04
+          - os: ubuntu-latest
             compile: g++ -std=gnu++2a -O2 -Wall -Wextra -Wno-unused-result -Werror
             stack-limit: 1048576
-          - os: ubuntu-16.04
+          - os: ubuntu-latest
             compile: g++ -std=gnu++14 -O2 -Wall -Wextra -Wno-unused-result -Werror
             stack-limit: 1048576
           - os: macos-11.0
@@ -69,7 +69,7 @@ jobs:
     - name: setup python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.8'
+        python-version: '3.10'
 
     - name: install dependencies
       run: |
