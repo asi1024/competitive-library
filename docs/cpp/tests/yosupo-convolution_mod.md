@@ -29,7 +29,7 @@ int main() {
   }
   std::vector<Mod> c = convolution<3>(a, b);
   for (int i = 0; i < n + m - 1; ++i) {
-    std::cout << int(c[i]) << (i == n + m - 2 ? "\n" : " ");
+    fcout << int(c[i]) << (i == n + m - 2 ? "\n" : " ");
   }
   return 0;
 }

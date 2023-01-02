@@ -21,8 +21,7 @@ public:
     n = m;
   }
   Modulo(ull m) {
-    if (m >= M)
-      m %= M;
+    if (m >= M) m %= M;
     n = m;
   }
   explicit operator int() const { return n; }

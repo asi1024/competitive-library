@@ -5,7 +5,7 @@ title: C++
 
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:-------------|
-| [bit_operation.cpp](./include/template/bit_operation) | <font color="ForestGreen">Yes</font> | [lca.cpp](./include/graph/lca)<br>[segment_tree.cpp](./include/structure/segment_tree)<br>[segment_tree_beats.cpp](./include/structure/segment_tree_beats) etc... |
+| [bit_operation.cpp](./include/template/bit_operation) | <font color="ForestGreen">Yes</font> | [lca.cpp](./include/graph/lca)<br>[fmt.cpp](./include/math/fmt)<br>[segment_tree.cpp](./include/structure/segment_tree) etc... |
 | [cin.cpp](./include/template/cin) | <font color="Red">No</font> |  |
 | [const_value.cpp](./include/template/const_value) | <font color="ForestGreen">Yes</font> | [Geometry.cpp](./include/geometry/Geometry)<br>[bfs01.cpp](./include/graph/bfs01)<br>[definition.cpp](./include/graph/definition) etc... |
 | [cout.cpp](./include/template/cout) | <font color="Red">No</font> |  |
