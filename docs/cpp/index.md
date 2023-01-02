@@ -75,7 +75,7 @@ title: C++
 |:---------:|:--------:|:-------------|
 | [eratosthenes.cpp](./include/math/eratosthenes) | <font color="ForestGreen">Yes</font> | [aoj-1189.cpp](./tests/aoj-1189) |
 | [fft.cpp](./include/math/fft) | <font color="Red">No</font> |  |
-| [fmt.cpp](./include/math/fmt) | <font color="ForestGreen">Yes</font> | [aoj-2560.cpp](./tests/aoj-2560) |
+| [fmt.cpp](./include/math/fmt) | <font color="ForestGreen">Yes</font> | [aoj-2560.cpp](./tests/aoj-2560)<br>[yosupo-convolution_mod.cpp](./tests/yosupo-convolution_mod) |
 | [lup_decomposition.cpp](./include/math/lup_decomposition) | <font color="ForestGreen">Yes</font> | [aoj-2624.cpp](./tests/aoj-2624) |
 | [matrix.cpp](./include/math/matrix) | <font color="ForestGreen">Yes</font> | [aoj-2347.cpp](./tests/aoj-2347)<br>[aoj-ITP1_7_D.cpp](./tests/aoj-ITP1_7_D)<br>[lup_decomposition.cpp](./include/math/lup_decomposition) |
 
@@ -107,7 +107,7 @@ title: C++
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:-------------|
 | [ext.cpp](./include/others/ext) | <font color="Red">No</font> |  |
-| [fast_cin.cpp](./include/others/fast_cin) | <font color="ForestGreen">Yes</font> | [yosupo-aplusb.cpp](./tests/yosupo-aplusb)<br>[yosupo-associative_array.cpp](./tests/yosupo-associative_array)<br>[yosupo-lca.cpp](./tests/yosupo-lca) etc... |
-| [fast_cout.cpp](./include/others/fast_cout) | <font color="ForestGreen">Yes</font> | [yosupo-aplusb.cpp](./tests/yosupo-aplusb)<br>[yosupo-associative_array.cpp](./tests/yosupo-associative_array)<br>[yosupo-lca.cpp](./tests/yosupo-lca) etc... |
+| [fast_cin.cpp](./include/others/fast_cin) | <font color="ForestGreen">Yes</font> | [yosupo-aplusb.cpp](./tests/yosupo-aplusb)<br>[yosupo-associative_array.cpp](./tests/yosupo-associative_array)<br>[yosupo-convolution_mod.cpp](./tests/yosupo-convolution_mod) etc... |
+| [fast_cout.cpp](./include/others/fast_cout) | <font color="ForestGreen">Yes</font> | [yosupo-aplusb.cpp](./tests/yosupo-aplusb)<br>[yosupo-associative_array.cpp](./tests/yosupo-associative_array)<br>[yosupo-convolution_mod.cpp](./tests/yosupo-convolution_mod) etc... |
 | [tree_dp.cpp](./include/others/tree_dp) | <font color="Red">No</font> |  |
 
