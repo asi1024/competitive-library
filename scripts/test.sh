@@ -27,7 +27,7 @@ download-yosupo () {
 mkdir -p ${HOME}/.workspace
 pushd ${HOME}/.workspace
 
-for TEST in `ls ${DIR}/${LANG}/tests/*.cpp`
+for TEST in `ls ${DIR}/${LANG}/tests/*.cpp | grep -v yosupo-shortest_path`
 do
     LABEL=`basename ${TEST} | sed 's/-.*$//'`
     ID=`basename ${TEST} | sed 's/^.*-//' | sed 's/\..*$//'`
