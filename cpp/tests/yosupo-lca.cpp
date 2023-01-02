@@ -5,7 +5,6 @@
 #include "../include/structure/monoid.cpp"
 #include "../include/types/mod.cpp"
 
-using Mod = Modulo<998244353, true>;
 using Graph = BidirectedGraph;
 
 int main() {
