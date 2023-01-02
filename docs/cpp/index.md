@@ -5,7 +5,7 @@ title: C++
 
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:-------------|
-| [bit_operation.cpp](./include/template/bit_operation) | <font color="ForestGreen">Yes</font> | [lca.cpp](./include/graph/lca)<br>[segment_tree.cpp](./include/structure/segment_tree)<br>[segment_tree_lazy.cpp](./include/structure/segment_tree_lazy) etc... |
+| [bit_operation.cpp](./include/template/bit_operation) | <font color="ForestGreen">Yes</font> | [lca.cpp](./include/graph/lca)<br>[segment_tree.cpp](./include/structure/segment_tree)<br>[segment_tree_beats.cpp](./include/structure/segment_tree_beats) etc... |
 | [cin.cpp](./include/template/cin) | <font color="Red">No</font> |  |
 | [const_value.cpp](./include/template/const_value) | <font color="ForestGreen">Yes</font> | [Geometry.cpp](./include/geometry/Geometry)<br>[bfs01.cpp](./include/graph/bfs01)<br>[definition.cpp](./include/graph/definition) etc... |
 | [cout.cpp](./include/template/cout) | <font color="Red">No</font> |  |
@@ -38,6 +38,7 @@ title: C++
 | [monoid.cpp](./include/structure/monoid) | <font color="ForestGreen">Yes</font> | [aoj-2450.cpp](./tests/aoj-2450)<br>[aoj-DSL_2_F.cpp](./tests/aoj-DSL_2_F)<br>[yosupo-lca.cpp](./tests/yosupo-lca) etc... |
 | [rars.cpp](./include/structure/rars) | <font color="ForestGreen">Yes</font> | [aoj-DSL_2_G.cpp](./tests/aoj-DSL_2_G) |
 | [segment_tree.cpp](./include/structure/segment_tree) | <font color="ForestGreen">Yes</font> | [aoj-DSL_2_A.0.cpp](./tests/aoj-DSL_2_A.0)<br>[yosupo-point_set_range_composite.cpp](./tests/yosupo-point_set_range_composite)<br>[yosupo-range_kth_smallest.cpp](./tests/yosupo-range_kth_smallest) etc... |
+| [segment_tree_beats.cpp](./include/structure/segment_tree_beats) | <font color="ForestGreen">Yes</font> | [yosupo-range_chmin_chmax_add_range_sum.cpp](./tests/yosupo-range_chmin_chmax_add_range_sum) |
 | [segment_tree_lazy.cpp](./include/structure/segment_tree_lazy) | <font color="ForestGreen">Yes</font> | [aoj-2450.cpp](./tests/aoj-2450)<br>[aoj-DSL_2_F.cpp](./tests/aoj-DSL_2_F)<br>[yosupo-range_affine_range_sum.cpp](./tests/yosupo-range_affine_range_sum) |
 | [skew_heap.cpp](./include/structure/skew_heap) | <font color="ForestGreen">Yes</font> | [aoj-2559.cpp](./tests/aoj-2559) |
 | [slide_min.cpp](./include/structure/slide_min) | <font color="ForestGreen">Yes</font> | [aoj-DPL_1_G.cpp](./tests/aoj-DPL_1_G) |
