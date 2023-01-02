@@ -55,7 +55,7 @@ title: C++
 | [capacity_graph.cpp](./include/graph/capacity_graph) | <font color="ForestGreen">Yes</font> | [aoj-GRL_6_A.cpp](./tests/aoj-GRL_6_A) |
 | [capacity_weighted_graph.cpp](./include/graph/capacity_weighted_graph) | <font color="ForestGreen">Yes</font> | [aoj-GRL_6_B.cpp](./tests/aoj-GRL_6_B) |
 | [definition.cpp](./include/graph/definition) | <font color="ForestGreen">Yes</font> | [articulation_points.cpp](./include/graph/articulation_points)<br>[bfs01.cpp](./include/graph/bfs01)<br>[bidirected_graph.cpp](./include/graph/bidirected_graph) etc... |
-| [dijkstra.cpp](./include/graph/dijkstra) | <font color="ForestGreen">Yes</font> | [aoj-2620.cpp](./tests/aoj-2620)<br>[aoj-GRL_1_A.cpp](./tests/aoj-GRL_1_A)<br>[yosupo-shortest_path.cpp](./tests/yosupo-shortest_path) |
+| [dijkstra.cpp](./include/graph/dijkstra) | <font color="ForestGreen">Yes</font> | [aoj-2620.cpp](./tests/aoj-2620)<br>[aoj-GRL_1_A.cpp](./tests/aoj-GRL_1_A) |
 | [directed_graph.cpp](./include/graph/directed_graph) | <font color="ForestGreen">Yes</font> | [aoj-2702.cpp](./tests/aoj-2702)<br>[aoj-GRL_3_C.cpp](./tests/aoj-GRL_3_C) |
 | [game.cpp](./include/graph/game) | <font color="ForestGreen">Yes</font> | [retrograde.cpp](./include/graph/retrograde)<br>[retrograde_weighted.cpp](./include/graph/retrograde_weighted) |
 | [lca.cpp](./include/graph/lca) | <font color="ForestGreen">Yes</font> | [aoj-GRL_5_C.cpp](./tests/aoj-GRL_5_C)<br>[euler_tour.cpp](./include/structure/euler_tour) |
