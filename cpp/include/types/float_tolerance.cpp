@@ -103,11 +103,13 @@ operator>(const lhs_type &l, const float_tolerance<float_type, inv_eps> &r) {
   return r < l;
 }
 
+#if __cplusplus < 202002L
 template <typename lhs_type, typename float_type, const long long inv_eps>
 if_arithmetic_t<lhs_type, bool>
 operator==(const lhs_type &l, const float_tolerance<float_type, inv_eps> &r) {
   return r == l;
 }
+#endif
 
 template <typename float_type, const long long inv_eps>
 float_tolerance<float_type, inv_eps>
