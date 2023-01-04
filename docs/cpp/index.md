@@ -5,7 +5,7 @@ title: C++
 
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:-------------|
-| [bit_operation.cpp](./include/template/bit_operation) | <font color="ForestGreen">Yes</font> | [lca.cpp](./include/graph/lca)<br>[segment_tree.cpp](./include/structure/segment_tree)<br>[segment_tree_lazy.cpp](./include/structure/segment_tree_lazy) etc... |
+| [bit_operation.cpp](./include/template/bit_operation) | <font color="ForestGreen">Yes</font> | [lca.cpp](./include/graph/lca)<br>[fmt.cpp](./include/math/fmt)<br>[segment_tree.cpp](./include/structure/segment_tree) etc... |
 | [cin.cpp](./include/template/cin) | <font color="Red">No</font> |  |
 | [const_value.cpp](./include/template/const_value) | <font color="ForestGreen">Yes</font> | [Geometry.cpp](./include/geometry/Geometry)<br>[bfs01.cpp](./include/graph/bfs01)<br>[definition.cpp](./include/graph/definition) etc... |
 | [cout.cpp](./include/template/cout) | <font color="Red">No</font> |  |
@@ -38,6 +38,7 @@ title: C++
 | [monoid.cpp](./include/structure/monoid) | <font color="ForestGreen">Yes</font> | [aoj-2450.cpp](./tests/aoj-2450)<br>[aoj-DSL_2_F.cpp](./tests/aoj-DSL_2_F)<br>[yosupo-lca.cpp](./tests/yosupo-lca) etc... |
 | [rars.cpp](./include/structure/rars) | <font color="ForestGreen">Yes</font> | [aoj-DSL_2_G.cpp](./tests/aoj-DSL_2_G) |
 | [segment_tree.cpp](./include/structure/segment_tree) | <font color="ForestGreen">Yes</font> | [aoj-DSL_2_A.0.cpp](./tests/aoj-DSL_2_A.0)<br>[yosupo-point_set_range_composite.cpp](./tests/yosupo-point_set_range_composite)<br>[yosupo-range_kth_smallest.cpp](./tests/yosupo-range_kth_smallest) etc... |
+| [segment_tree_beats.cpp](./include/structure/segment_tree_beats) | <font color="ForestGreen">Yes</font> | [yosupo-range_chmin_chmax_add_range_sum.cpp](./tests/yosupo-range_chmin_chmax_add_range_sum) |
 | [segment_tree_lazy.cpp](./include/structure/segment_tree_lazy) | <font color="ForestGreen">Yes</font> | [aoj-2450.cpp](./tests/aoj-2450)<br>[aoj-DSL_2_F.cpp](./tests/aoj-DSL_2_F)<br>[yosupo-range_affine_range_sum.cpp](./tests/yosupo-range_affine_range_sum) |
 | [skew_heap.cpp](./include/structure/skew_heap) | <font color="ForestGreen">Yes</font> | [aoj-2559.cpp](./tests/aoj-2559) |
 | [slide_min.cpp](./include/structure/slide_min) | <font color="ForestGreen">Yes</font> | [aoj-DPL_1_G.cpp](./tests/aoj-DPL_1_G) |
@@ -55,7 +56,7 @@ title: C++
 | [capacity_graph.cpp](./include/graph/capacity_graph) | <font color="ForestGreen">Yes</font> | [aoj-GRL_6_A.cpp](./tests/aoj-GRL_6_A) |
 | [capacity_weighted_graph.cpp](./include/graph/capacity_weighted_graph) | <font color="ForestGreen">Yes</font> | [aoj-GRL_6_B.cpp](./tests/aoj-GRL_6_B) |
 | [definition.cpp](./include/graph/definition) | <font color="ForestGreen">Yes</font> | [articulation_points.cpp](./include/graph/articulation_points)<br>[bfs01.cpp](./include/graph/bfs01)<br>[bidirected_graph.cpp](./include/graph/bidirected_graph) etc... |
-| [dijkstra.cpp](./include/graph/dijkstra) | <font color="ForestGreen">Yes</font> | [aoj-2620.cpp](./tests/aoj-2620)<br>[aoj-GRL_1_A.cpp](./tests/aoj-GRL_1_A)<br>[yosupo-shortest_path.cpp](./tests/yosupo-shortest_path) |
+| [dijkstra.cpp](./include/graph/dijkstra) | <font color="ForestGreen">Yes</font> | [aoj-2620.cpp](./tests/aoj-2620)<br>[aoj-GRL_1_A.cpp](./tests/aoj-GRL_1_A) |
 | [directed_graph.cpp](./include/graph/directed_graph) | <font color="ForestGreen">Yes</font> | [aoj-2702.cpp](./tests/aoj-2702)<br>[aoj-GRL_3_C.cpp](./tests/aoj-GRL_3_C) |
 | [game.cpp](./include/graph/game) | <font color="ForestGreen">Yes</font> | [retrograde.cpp](./include/graph/retrograde)<br>[retrograde_weighted.cpp](./include/graph/retrograde_weighted) |
 | [lca.cpp](./include/graph/lca) | <font color="ForestGreen">Yes</font> | [aoj-GRL_5_C.cpp](./tests/aoj-GRL_5_C)<br>[euler_tour.cpp](./include/structure/euler_tour) |
@@ -74,7 +75,7 @@ title: C++
 |:---------:|:--------:|:-------------|
 | [eratosthenes.cpp](./include/math/eratosthenes) | <font color="ForestGreen">Yes</font> | [aoj-1189.cpp](./tests/aoj-1189) |
 | [fft.cpp](./include/math/fft) | <font color="Red">No</font> |  |
-| [fmt.cpp](./include/math/fmt) | <font color="ForestGreen">Yes</font> | [aoj-2560.cpp](./tests/aoj-2560) |
+| [fmt.cpp](./include/math/fmt) | <font color="ForestGreen">Yes</font> | [aoj-2560.cpp](./tests/aoj-2560)<br>[yosupo-convolution_mod.cpp](./tests/yosupo-convolution_mod) |
 | [lup_decomposition.cpp](./include/math/lup_decomposition) | <font color="ForestGreen">Yes</font> | [aoj-2624.cpp](./tests/aoj-2624) |
 | [matrix.cpp](./include/math/matrix) | <font color="ForestGreen">Yes</font> | [aoj-2347.cpp](./tests/aoj-2347)<br>[aoj-ITP1_7_D.cpp](./tests/aoj-ITP1_7_D)<br>[lup_decomposition.cpp](./include/math/lup_decomposition) |
 
@@ -106,7 +107,7 @@ title: C++
 | Algorithm | Verified | AOJ Problems |
 |:---------:|:--------:|:-------------|
 | [ext.cpp](./include/others/ext) | <font color="Red">No</font> |  |
-| [fast_cin.cpp](./include/others/fast_cin) | <font color="ForestGreen">Yes</font> | [yosupo-aplusb.cpp](./tests/yosupo-aplusb)<br>[yosupo-associative_array.cpp](./tests/yosupo-associative_array)<br>[yosupo-lca.cpp](./tests/yosupo-lca) etc... |
-| [fast_cout.cpp](./include/others/fast_cout) | <font color="ForestGreen">Yes</font> | [yosupo-aplusb.cpp](./tests/yosupo-aplusb)<br>[yosupo-associative_array.cpp](./tests/yosupo-associative_array)<br>[yosupo-lca.cpp](./tests/yosupo-lca) etc... |
+| [fast_cin.cpp](./include/others/fast_cin) | <font color="ForestGreen">Yes</font> | [yosupo-aplusb.cpp](./tests/yosupo-aplusb)<br>[yosupo-associative_array.cpp](./tests/yosupo-associative_array)<br>[yosupo-convolution_mod.cpp](./tests/yosupo-convolution_mod) etc... |
+| [fast_cout.cpp](./include/others/fast_cout) | <font color="ForestGreen">Yes</font> | [yosupo-aplusb.cpp](./tests/yosupo-aplusb)<br>[yosupo-associative_array.cpp](./tests/yosupo-associative_array)<br>[yosupo-convolution_mod.cpp](./tests/yosupo-convolution_mod) etc... |
 | [tree_dp.cpp](./include/others/tree_dp) | <font color="Red">No</font> |  |
 

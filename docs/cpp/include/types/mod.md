@@ -17,20 +17,21 @@ template <int M, bool IsPrime = false> class Modulo {
 public:
   Modulo() : n(0) { ; }
   Modulo(int m) : n(m) {
-    if (n >= M)
-      n %= M;
-    else if (n < 0)
-      n = (n % M + M) % M;
+    n %= M;
+    if (n < 0) n += M;
   }
   Modulo(ll m) {
-    if (m >= M)
-      m %= M;
-    else if (m < 0)
-      m = (m % M + M) % M;
+    m %= M;
+    if (m < 0) m += M;
+    n = m;
+  }
+  Modulo(ull m) {
+    if (m >= M) m %= M;
     n = m;
   }
   explicit operator int() const { return n; }
   explicit operator ll() const { return n; }
+  explicit operator ull() const { return n; }
   bool operator==(const Modulo &a) const { return n == a.n; }
   Modulo &operator+=(const Modulo &a) {
     n += a.n;

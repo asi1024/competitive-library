@@ -26,6 +26,7 @@
 #include "../structure/monoid.cpp"
 #include "../structure/rars.cpp"
 #include "../structure/segment_tree.cpp"
+#include "../structure/segment_tree_beats.cpp"
 #include "../structure/segment_tree_lazy.cpp"
 #include "../structure/skew_heap.cpp"
 #include "../structure/slide_min.cpp"

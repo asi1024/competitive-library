@@ -33,6 +33,7 @@ title: "main.cpp"
 #include "../structure/monoid.cpp"
 #include "../structure/rars.cpp"
 #include "../structure/segment_tree.cpp"
+#include "../structure/segment_tree_beats.cpp"
 #include "../structure/segment_tree_lazy.cpp"
 #include "../structure/skew_heap.cpp"
 #include "../structure/slide_min.cpp"
@@ -118,6 +119,7 @@ int main() { return 0; }
 - [monoid.cpp](../structure/monoid)
 - [rars.cpp](../structure/rars)
 - [segment_tree.cpp](../structure/segment_tree)
+- [segment_tree_beats.cpp](../structure/segment_tree_beats)
 - [segment_tree_lazy.cpp](../structure/segment_tree_lazy)
 - [skew_heap.cpp](../structure/skew_heap)
 - [slide_min.cpp](../structure/slide_min)
